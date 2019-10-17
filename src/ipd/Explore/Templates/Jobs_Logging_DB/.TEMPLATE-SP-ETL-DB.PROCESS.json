@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "itZr5hKQ24OjwDCGWI7SCe",
+      "objectName": "TEMPLATE-SP-ETL-DB",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_DB",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Integration Sub-Process (SP)",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "3NUs1c2CzoTeF8kcWEwXSe"
+         ],
+         "repoInfo": {
+            "repoHandle": "eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "3NUs1c2CzoTeF8kcWEwXSe",
+      "objectName": "SP-Test-Throw-Fault-Generic",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to Simulate Faults in Processess",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "sLruB3uopz4KhPV-gt-3319415-2019-04-30T13:34:30.293Z::pd.xml"
+         }
+      }
+   }
+]

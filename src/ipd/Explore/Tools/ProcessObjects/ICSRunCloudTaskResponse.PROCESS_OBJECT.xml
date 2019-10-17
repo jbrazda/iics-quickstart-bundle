@@ -1,0 +1,43 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NpET1cnFKi9zhFt-gt-941033-2018-07-20T16:33:12.642Z::po.xml</types1:EntryId>
+      <types1:Name>ICSRunCloudTaskResponse</types1:Name>
+      <types1:ParentFlowIds>uclmbcjIw8jIw8j-gt-941054-2018-07-20T16:33:24.332Z::pd.xml,rbg0ZkL0jmu6lS0-gt-110811-2018-07-20T16:34:00.028Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Structure to capture ICS Cloud Task</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:33:13Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:49Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="ICSRunCloudTaskResponse"
+                        isByCopy="true"
+                        name="ICSRunCloudTaskResponse">
+            <description>Structure to capture ICS Cloud Task</description>
+            <detail>
+               <field label="Run ID" name="RunID" type="int"/>
+               <field label="Task Status" name="TaskStatus" type="string"/>
+               <field label="Success Source Rows" name="SuccessSourceRows" type="int"/>
+               <field label="Success Target Rows" name="SuccessTargetRows" type="int"/>
+               <field label="Failed Target Rows" name="FailedTargetRows" type="int"/>
+               <field label="Start Time" name="StartTime" type="datetime"/>
+               <field label="End Time" name="EndTime" type="datetime"/>
+               <field label="Error Message" name="ErrorMessage" type="textarea"/>
+               <field label="Failed Source Rows" name="FailedSourceRows" type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>6AwTHQ8g7qoiueH9BH6HM6</types1:GUID>
+      <types1:DisplayName>ICSRunCloudTaskResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.327Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

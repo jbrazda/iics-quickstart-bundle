@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "fCcP6ry44WyeP4mrMzsjeH",
+      "objectName": "IPaaS-Configuration-DB",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Database Used to Store Simple key/value configurations",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "5LHk5hJdypKwKBq-gt-190192-2019-07-29T16:04:57.914Z::conn.xml"
+         }
+      }
+   }
+]

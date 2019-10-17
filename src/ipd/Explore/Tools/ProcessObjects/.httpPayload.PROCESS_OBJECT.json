@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "5QbGbxoQZy9hAvqDTlbOeb",
+      "objectName": "httpPayload",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represents HTTP request/response payload",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "teCpwNXHS45bfTQ-gt-944350-2018-07-20T16:32:57.317Z::po.xml"
+         }
+      }
+   }
+]

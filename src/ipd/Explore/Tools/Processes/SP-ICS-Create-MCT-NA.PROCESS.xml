@@ -1,0 +1,227 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>QREhNWIsoZduD2L-gt-941138-2018-07-20T16:34:08.768Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ICS-Create-MCT-NA</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Dynamically Create ICS Mapping Configuration Task</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:34:09Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:44Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:25:18Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ICS-Create-MCT-NA/SP-ICS-Create-MCT-NA.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ICS-Create-MCT-NA"
+                  name="SP-ICS-Create-MCT-NA">
+            <appliesTo/>
+            <description>Dynamically Create ICS Mapping Configuration Task</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_mapping_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_mapping_task_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_agent_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_parameters" type="objectlist">
+                  <options>
+                     <option name="referenceTo">ICS-API:Parameter</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_created_mct" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:MappingConfigTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_mapping_task" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:CreateMappingTaskRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_mapping_id" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_agent_id" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j8d7xh1h" targetId="j8d7xh1g"/>
+               </start>
+               <assignment id="j8d7xh1g">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := "SP-ICS-Create-MCT"
+let $mapping_label := concat("mapping:",$input.in_mapping_name)
+let $task_label   := concat("mct:",$input.in_mapping_task_name)
+let $agent_label  := concat("agent:",$input.in_agent_name)
+let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
+	else concat("pid:",$input.in_context[1]/parentProcessId)
+let $job_label := if (empty($input.in_context[1]/jobId)) then () 
+	else concat("job:",$input.in_context[1]/jobId)
+let $parts := ($p_name,$pid_label,  $job_label, $agent_label,$mapping_label,$task_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="j8d7xh1i" targetId="c"/>
+               </assignment>
+               <assignment id="j26rycy3">
+                  <title>Set Output</title>
+                  <operation source="field" to="output.out_created_mct">output.MappingTaskPostResponse</operation>
+                  <link id="j8c48ngh" targetId="j8c48ngg"/>
+               </assignment>
+               <service id="c">
+                  <title>Login</title>
+                  <serviceName>ICS-API:Login</serviceName>
+                  <serviceGUID/>
+                  <serviceInput/>
+                  <link id="j26rycv9" targetId="j26rycv8"/>
+               </service>
+               <service id="j26rycuc">
+                  <title>Create Mapping Task</title>
+                  <serviceName>ICS-API:Create Mapping Task</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                     <parameter name="MappingTask" source="formula">
+                        <expression language="XQuery">&lt;CreateMappingTaskRequest&gt;
+   {$input.in_parameters}
+   &lt;name&gt;{$input.in_mapping_task_name}&lt;/name&gt;
+   &lt;agentId&gt;{$temp.tmp_agent_id}&lt;/agentId&gt;
+   &lt;mappingId&gt;{$temp.tmp_mapping_id}&lt;/mappingId&gt;
+&lt;/CreateMappingTaskRequest&gt;
+</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="j26ryd0b" targetId="j26rycy3"/>
+               </service>
+               <service id="j8c48ngg">
+                  <title>Logout</title>
+                  <serviceName>ICS-API:Logout</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                  </serviceInput>
+                  <link id="j8c48ngi" targetId="d"/>
+               </service>
+               <container id="j26rycv8" type="parallel">
+                  <flow id="j26rycvf">
+                     <service id="j26rycve">
+                        <title>Get Agents</title>
+                        <serviceName>ICS-API:List Agents</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                           <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                        </serviceInput>
+                        <link id="j26rycwi" targetId="j26rycwh"/>
+                     </service>
+                     <assignment id="j26rycwh">
+                        <title>Assignment to tmp_agent_id</title>
+                        <operation source="formula" to="temp.tmp_agent_id">
+                           <expression language="XQuery">let $agent_list := $output.Agents
+let $agent_name := $input.in_agent_name
+let $agent_id   := $agent_list[Name = $agent_name]/Id/text()
+return $agent_id</expression>
+                        </operation>
+                     </assignment>
+                     <link id="j26rycvg" targetId="j26rycv8" type="containerLink"/>
+                  </flow>
+                  <flow id="j26rycvi">
+                     <service id="j26rycvm">
+                        <title>List Mappings</title>
+                        <serviceName>ICS-API:List Mappings</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                           <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                        </serviceInput>
+                        <link id="j26rycvx" targetId="j26rycvw"/>
+                     </service>
+                     <assignment id="j26rycvw">
+                        <title>Assignment to tmp_mapping_id</title>
+                        <operation source="formula" to="temp.tmp_mapping_id">
+                           <expression language="XQuery">let $mapping_list := $output.Mappings
+let $mapping_name := $input.in_mapping_name
+let $mapping_id  := $mapping_list[Name = $mapping_name]/Id/text()
+return $mapping_id</expression>
+                        </operation>
+                     </assignment>
+                     <link id="j26rycvj" targetId="j26rycv8" type="containerLink"/>
+                  </flow>
+                  <link id="j26rycvc" targetId="j26rycvf" type="containerLink"/>
+                  <link id="j26rycvd" targetId="j26rycvi" type="containerLink"/>
+                  <link id="j26rycw2" targetId="j26rycuc"/>
+               </container>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>7AE7tRjfz80kSpYNdzaj4G</types1:GUID>
+      <types1:DisplayName>SP-ICS-Create-MCT-NA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.187Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

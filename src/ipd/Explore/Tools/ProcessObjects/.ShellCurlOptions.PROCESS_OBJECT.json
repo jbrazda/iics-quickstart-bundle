@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "3bLiLIjOjYgjRKG4IIPxYo",
+      "objectName": "ShellCurlOptions",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Object represents Various Curl Options\nSome are defined explicitly for ease of use  other optional params should be placed in the optional-params field",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "oyun7wporzYLnzY-gt-1171989-2018-10-24T17:25:20.232Z::po.xml"
+         }
+      }
+   }
+]

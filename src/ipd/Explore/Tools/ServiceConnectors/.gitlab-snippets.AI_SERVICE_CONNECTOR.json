@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "1UgNOYX99vYl4ePFrQfEis",
+      "objectName": "gitlab-snippets",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Tools/ServiceConnectors",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Provides Support to store  and retrive configurations or other files as gitlab Snippets\nSee https://gitlab.com/help/api/README.md",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "rMZgpDqotxGomUh-gt-3857924-2019-10-09T14:01:23.276Z::svc.xml"
+         }
+      }
+   }
+]

@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "aN5IOe5YvSWkl79k3Dxi0T",
+      "objectName": "IPaaS Encrypt Utility",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Utility To encrypt Strings for configuration to be used in Automated steps",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "tmYOxfSmbduaa-gt-944503-2018-07-20T16:34:22.319Z::gt.xml"
+         }
+      }
+   }
+]

@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "cTNU76gEkYphQIgMrmWLMT",
+      "objectName": "httpHeaders",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represents a list of HTTP headers",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QeBAGE7pppppppp-gt-110764-2018-07-20T16:33:14.693Z::po.xml"
+         }
+      }
+   }
+]

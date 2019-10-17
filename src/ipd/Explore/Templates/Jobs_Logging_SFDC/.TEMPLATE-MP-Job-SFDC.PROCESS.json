@@ -1,0 +1,163 @@
+[
+   {
+      "objectGuid": "3TxXRBytv8viKeAoroXREr",
+      "objectName": "TEMPLATE-MP-Job-SFDC",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "9vd2qrDae3he3ErslVVfOw",
+            "gAPgQjt0NwpbghHGEyalKI",
+            "6Qfd83wdMtUgosGkvB0Gy0",
+            "a0KrGHUtRyKeBFAJ4OpfMs",
+            "lWurPrz0AW6hdK7bY2gVWz",
+            "8mX2dbmOledkm1Kn65In0q"
+         ],
+         "repoInfo": {
+            "repoHandle": "Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "9vd2qrDae3he3ErslVVfOw",
+      "objectName": "TEMPLATE-SP-ETL-SFDC",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Integration Sub-Process (SP)",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "gAPgQjt0NwpbghHGEyalKI",
+      "objectName": "CreateJobLogEntryRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Logging Entry Request to create the Record",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QoPVm5Y6tMFygls-gt-1756130-2019-04-30T13:34:30.687Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6Qfd83wdMtUgosGkvB0Gy0",
+      "objectName": "CreateJobLogEventRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "OjG4abck0Kn7wpo-gt-1756122-2019-04-30T13:34:30.649Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "a0KrGHUtRyKeBFAJ4OpfMs",
+      "objectName": "SP-IPaaS-Update-Job-Entry",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger_SFDC_Cloud",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "generic logging process of jobs",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "18ypmaaa-gt-1756170-2019-04-30T13:34:31.848Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "lWurPrz0AW6hdK7bY2gVWz",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "8mX2dbmOledkm1Kn65In0q",
+      "objectName": "UpdateJobLogEntryRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Logging Entry Update Existing Record",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "NxR6Eaaaaaaaaaa-gt-1846582-2019-04-30T13:34:30.643Z::po.xml"
+         }
+      }
+   }
+]

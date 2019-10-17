@@ -1,0 +1,72 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>sLruB3uopz4KhPV-gt-3319415-2019-04-30T13:34:30.293Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-Test-Throw-Fault-Generic</types1:Name>
+      <types1:ParentFlowIds>eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to Simulate Faults in Processess</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:30Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-05-05T01:31:45Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-Test-Throw-Fault-Generic/SP-Test-Throw-Fault-Generic.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-Test-Throw-Fault-Generic"
+                  name="SP-Test-Throw-Fault-Generic">
+            <appliesTo/>
+            <description>Process to Simulate Faults in Processess</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_faultCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_faultDetail" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="inf_faultReason" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j98ujyuj" targetId="j98ujyuf"/>
+               </start>
+               <throw id="j98ujyuf">
+                  <title>Throw with parameters</title>
+                  <throwInput>
+                     <parameter name="code" source="field" updatable="true">input.in_faultCode</parameter>
+                     <parameter name="detail" source="field" updatable="true">input.in_faultDetail</parameter>
+                     <parameter name="reason" source="field" updatable="true">input.inf_faultReason</parameter>
+                  </throwInput>
+               </throw>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>3NUs1c2CzoTeF8kcWEwXSe</types1:GUID>
+      <types1:DisplayName>SP-Test-Throw-Fault-Generic</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.604Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

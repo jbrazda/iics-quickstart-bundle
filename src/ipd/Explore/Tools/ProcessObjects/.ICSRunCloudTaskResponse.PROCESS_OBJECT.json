@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "6AwTHQ8g7qoiueH9BH6HM6",
+      "objectName": "ICSRunCloudTaskResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Structure to capture ICS Cloud Task",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "NpET1cnFKi9zhFt-gt-941033-2018-07-20T16:33:12.642Z::po.xml"
+         }
+      }
+   }
+]

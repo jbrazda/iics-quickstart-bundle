@@ -1,0 +1,61 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>fT7xvk0qZF3a-gt-3152407-2019-04-29T19:35:52.085Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ICS-GetTaskID</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to Resolve Task ID Using  a task Name</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-29T19:35:52Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ICS-GetTaskID"
+                  name="SP-ICS-GetTaskID">
+            <appliesTo/>
+            <description>Process to Resolve Task ID Using  a task Name</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jussk7i7" targetId="jussk7i6"/>
+               </start>
+               <service id="jussk7i6">
+                  <title>Login</title>
+                  <serviceName>ICS-API:Login</serviceName>
+                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceInput/>
+                  <link id="jussk7id" targetId="jussk7ic"/>
+               </service>
+               <service id="jussk7ic">
+                  <title>List Mapping Configuration Task</title>
+                  <serviceName>ICS-API:List Mapping Configuration Task</serviceName>
+                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                     <parameter name="masterTemplateId" source="field" updatable="true">output.ICS Username</parameter>
+                  </serviceInput>
+                  <link id="jussk7ie" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>3eXbQEMNtnujcbu9pOOgOH</types1:GUID>
+      <types1:DisplayName>SP-ICS-GetTaskID</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.625Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

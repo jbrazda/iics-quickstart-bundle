@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "cWKFJW9zqmEfTGz19gHEaJ",
+      "objectName": "FileInformation",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Extends File-Writer:FileInformation with Additional fileds for user friendly display",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zQgfRZoSRnCKwKB-gt-371162-2018-10-10T19:48:21.408Z::po.xml"
+         }
+      }
+   }
+]

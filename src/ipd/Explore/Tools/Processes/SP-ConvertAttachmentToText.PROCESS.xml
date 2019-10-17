@@ -1,0 +1,95 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kL0jmu6lS01BchM-gt-2183732-2019-08-28T21:15:08.716Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ConvertAttachmentToText</types1:Name>
+      <types1:ParentFlowIds>5Ihs9pNz6HKoJBU-gt-4288779-2019-06-19T14:17:32.914Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process converts an Attachment field to text</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-08-28T21:15:09Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-09-06T19:12:35Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-09-06T19:25:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ConvertAttachmentToText/SP-ConvertAttachmentToText.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ConvertAttachmentToText"
+                  name="SP-ConvertAttachmentToText">
+            <appliesTo/>
+            <description>Process converts an Attachment field to text</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Attachment to be converted, attachment must be a text file such .txt, .csv, .xml, .json"
+                          name="in_attachment"
+                          type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="Attchment converted to string"
+                      name="out_attachment_content"
+                      type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Attachment file information"
+                      name="out_attachment_info"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:AttachmentInformation</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">31o1RHhc6uRdN1eGygCG2Q</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jzvr9wl4" targetId="jzvr9wl3"/>
+               </start>
+               <assignment id="jzvr9wl3">
+                  <title>Assignment to out_attachment_content, out_attachment_info</title>
+                  <operation source="formula" to="output.out_attachment_content">
+                     <expression language="XQuery">util:base64Decode( sff:getBase64FromAttachment($input.in_attachment ))</expression>
+                  </operation>
+                  <operation source="formula" to="output.out_attachment_info">
+                     <expression language="XQuery">&lt;AttchmentInformation&gt;
+   &lt;FileName&gt;{sff:getAttachmentName($input.in_attachment )}&lt;/FileName&gt;
+   &lt;Size&gt;{sff:getAttachmentSize($input.in_attachment )}&lt;/Size&gt;
+   &lt;ContentType&gt;{sff:getAttachmentContentType($input.in_attachment )}&lt;/ContentType&gt;
+&lt;/AttchmentInformation&gt;
+</expression>
+                  </operation>
+                  <link id="jzvr9wl5" targetId="c"/>
+               </assignment>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>ioXrdNYzqYFhm23xQKiFKT</types1:GUID>
+      <types1:DisplayName>SP-ConvertAttachmentToText</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.668Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

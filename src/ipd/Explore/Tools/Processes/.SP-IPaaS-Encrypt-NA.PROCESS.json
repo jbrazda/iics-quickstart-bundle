@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "lNijfETItyRhk4BIYH0Roo",
+      "objectName": "SP-IPaaS-Encrypt-NA",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process calls Automated step on Agent to encrypt Data",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "pzsvE3C7snSDg8S-gt-232854-2018-07-20T16:33:51.253Z::pd.xml"
+         }
+      }
+   }
+]

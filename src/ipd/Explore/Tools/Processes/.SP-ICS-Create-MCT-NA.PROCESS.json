@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "7AE7tRjfz80kSpYNdzaj4G",
+      "objectName": "SP-ICS-Create-MCT-NA",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Dynamically Create ICS Mapping Configuration Task",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QREhNWIsoZduD2L-gt-941138-2018-07-20T16:34:08.768Z::pd.xml"
+         }
+      }
+   }
+]

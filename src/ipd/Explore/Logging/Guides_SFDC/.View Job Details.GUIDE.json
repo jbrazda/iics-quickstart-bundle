@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "36qC6WJVV9UdCykBHH4Ngh",
+      "objectName": "View Job Details",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0tVX0h5BQECepoL3KrkDWi"
+         ],
+         "repoInfo": {
+            "repoHandle": "rKkQIW3Ni7A7vNl-gt-2733919-2019-03-19T21:04:04.275Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0tVX0h5BQECepoL3KrkDWi",
+      "objectName": "SP Show Process Links",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "bcm6S6fPAreFRqX-gt-798738-2019-03-19T17:11:00.502Z::gt.xml"
+         }
+      }
+   }
+]

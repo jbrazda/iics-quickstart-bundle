@@ -1,0 +1,50 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NxR6Eaaaaaaaaaa-gt-1846582-2019-04-30T13:34:30.643Z::po.xml</types1:EntryId>
+      <types1:Name>UpdateJobLogEntryRequest</types1:Name>
+      <types1:ParentFlowIds>Rlt0i98C1LOwD0w-gt-3319441-2019-04-30T13:34:33.701Z::pd.xml,Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml,7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml,UH72yIYmWR7hsAV-gt-3319451-2019-04-30T13:34:33.745Z::pd.xml,18ypmaaa-gt-1756170-2019-04-30T13:34:31.848Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Job Logging Entry Update Existing Record</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-07-16T16:39:03Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="UpdateJobLogEntryRequest"
+                        isByCopy="true"
+                        name="UpdateJobLogEntryRequest">
+            <description>Job Logging Entry Update Existing Record</description>
+            <tags/>
+            <detail>
+               <field label="Status" name="Status" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"2","label":"FAULTED"},{"value":"3","label":"COMPLETED"}]</option>
+                  </options>
+               </field>
+               <field label="EndDate" name="EndDate" type="datetime"/>
+               <field label="ProcessExecutionContext"
+                      name="ProcessExecutionContext"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>8mX2dbmOledkm1Kn65In0q</types1:GUID>
+      <types1:DisplayName>UpdateJobLogEntryRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.806Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,284 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>MoONhsJlv58pIO3-gt-371172-2018-10-10T19:48:21.626Z::gt.xml</types1:EntryId>
+      <types1:Name>Conversion_Utility</types1:Name>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide to convert XML sample data to JSON and vice versa.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-10T19:48:22Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-06-27T18:18:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-06-27T18:18:51Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Conversion_Utility/Conversion_Utility.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Conversion Utility"
+                         doneOnEndStep="false"
+                         name="Conversion_Utility"
+                         runAsUser="$current">
+            <description>Guide to convert XML sample data to JSON and vice versa.</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="in_payload"
+                          required="false"
+                          type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_conversion_type"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"JSON to XML","value":"JSON to XML"},{"label":"XML to JSON","value":"XML to JSON"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="null" name="out_payload" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jkmx1fge" targetScreen="jkmx1fge">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jkmx1fge">
+                  <title>Convert Utility</title>
+                  <body contentType="text/html">&lt;h2&gt;XML/JSON Conversion Tool&lt;/h2&gt;
+&lt;p&gt;This Guide Converts XML to JSON and vice-versa using the built-in ICAI functions&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XML to JSON&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;JSON to XML&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" name="input.in_payload" type="text" value="in_payload (input)"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Conversion&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="in_conversion_type (input)" name="input.in_conversion_type" type="text" value="in_conversion_type (input)*"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" name="output.out_payload" type="text" value="out_payload (output)"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jkmx1fge_jnlwitn4" targetScreen="jnlwitn4">
+                        <text>Convert XML/JSON</text>
+                     </action>
+                     <action alt="null" id="jkmx1fge_jsm6b7jt" targetScreen="jsm6b7jt">
+                        <text>Simplify XML</text>
+                     </action>
+                     <action alt="null" id="jkmx1fge_jnlwitlx" targetScreen="jnlwitlx">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="input.in_payload"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">30</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.out_payload"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">30</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.in_conversion_type"
+                                     readonly="false"
+                                     required="true"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"JSON to XML","value":"JSON to XML"},{"label":"XML to JSON","value":"XML to JSON"}]</option>
+                           <option name="required">true</option>
+                           <option name="defaultvalue">JSON to XML</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen dontShowScreen="true" id="jnlwitlx">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jnlwitgl">
+                  <actions>
+                     <action alt="null" id="jnlwitgl_jnlwitlq" targetScreen="jnlwitlq">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="jnlwitnk">
+                  <actions>
+                     <action alt="" id="jnlwitnk_jnlwitgl" targetScreen="jnlwitgl">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="jnlwitp7">
+                  <actions>
+                     <action alt="" id="jnlwitp7_jnlwitnk" targetScreen="jnlwitnk">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="jsm6b7kd">
+                  <actions>
+                     <action alt="" id="jsm6b7kd_jnlwitgl" targetScreen="jnlwitgl">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <jumpTo id="jnlwitlq" targetTitle="Convert Utility">
+                  <actions>
+                     <action alt="null" id="jnlwitlq_jkmx1fge" targetScreen="jkmx1fge">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <dataDecision id="jnlwitn4">
+                  <title>in_payload</title>
+                  <dataName>input.in_payload</dataName>
+                  <actions>
+                     <action alt="equals " id="jnlwitn4_jnlwitnk" targetScreen="jnlwitnk">
+                        <text>Equals</text>
+                     </action>
+                     <action alt="else " id="jnlwitn4_jnlwitp1" targetScreen="jnlwitp1">
+                        <text>Otherwise</text>
+                     </action>
+                  </actions>
+               </dataDecision>
+               <dataDecision id="jnlwitp1">
+                  <title>in_conversion_type</title>
+                  <dataName>input.in_conversion_type</dataName>
+                  <actions>
+                     <action alt="equals JSON to XML"
+                             id="jnlwitp1_jnlwitp3"
+                             targetScreen="jnlwitp3">
+                        <text>JSON to XML</text>
+                     </action>
+                     <action alt="equals XML to JSON"
+                             id="jnlwitp1_jnlwitp5"
+                             targetScreen="jnlwitp5">
+                        <text>XML to JSON</text>
+                     </action>
+                  </actions>
+               </dataDecision>
+               <dataDecision id="jsm6b7jt">
+                  <title>in_payload</title>
+                  <dataName>input.in_payload</dataName>
+                  <actions>
+                     <action alt="equals " id="jsm6b7jt_jsm6b7kd" targetScreen="jsm6b7kd">
+                        <text>Equals</text>
+                     </action>
+                     <action alt="else " id="jsm6b7jt_jsm6b7n8" targetScreen="jsm6b7n8">
+                        <text>Otherwise</text>
+                     </action>
+                  </actions>
+               </dataDecision>
+               <assignment id="jnlwitp3">
+                  <title>Assignment to out_payload</title>
+                  <operation source="formula" to="output.out_payload">
+                     <expression language="XQuery">let $saxon_params :=&lt;xsl:output xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:saxon="http://saxon.sf.net/"
+                                method="xml"
+                                omit-xml-declaration="yes"
+                                indent="yes"
+                                saxon:indent-spaces="4"/&gt;
+let $xml := &lt;root&gt;
+{util:parseJSON($input.in_payload )}
+&lt;/root&gt;
+return 
+saxon:serialize($xml, $saxon_params)
+</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jnlwitp3_jnlwitp7" targetScreen="jnlwitp7">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="jnlwitp5">
+                  <title>Assignment to out_payload</title>
+                  <operation source="formula" to="output.out_payload">
+                     <expression language="XQuery">util:toJSON(util:parseXML($input.in_payload ))</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jnlwitp5_jnlwitp7" targetScreen="jnlwitp7">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="jsm6b7n8">
+                  <title>Assignment to out_payload 1</title>
+                  <operation source="formula" to="output.out_payload">
+                     <expression language="XQuery">let $saxon_params :=&lt;xsl:output xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:saxon="http://saxon.sf.net/"
+                                method="xml"
+                                omit-xml-declaration="yes"
+                                indent="yes"
+                                saxon:indent-spaces="4"/&gt;
+return 
+saxon:serialize(util:simplifyXml(util:parseXML($input.in_payload )), $saxon_params)</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jsm6b7n8_jsm6b7kd" targetScreen="jsm6b7kd">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>69cEIjvMjRKjYtccJrzFGA</types1:GUID>
+      <types1:DisplayName>Conversion Utility</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.415Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

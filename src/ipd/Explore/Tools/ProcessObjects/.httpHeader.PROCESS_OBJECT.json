@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "1vogd11AJF7c76UEauQgsw",
+      "objectName": "httpHeader",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represnts Request/Response header",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "lw7zsZvEIAkRtO3-gt-117853-2018-07-20T16:33:08.418Z::po.xml"
+         }
+      }
+   }
+]

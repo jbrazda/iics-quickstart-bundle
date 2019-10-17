@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "io3umXTuwkrdHCcLUtlIek",
+      "objectName": "iPaaS Admin Upload File to Agent",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Utility Guide to Upload File to Secure Agent",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "9CxtpLQkiz1fOmFAToyTE4"
+         ],
+         "repoInfo": {
+            "repoHandle": "hvWMOxBchzt1Y6t-gt-1279797-2018-11-13T19:59:58.11Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "9CxtpLQkiz1fOmFAToyTE4",
+      "objectName": "AgentFileWriter",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zr5tmYOxfSmbdua-gt-1264251-2018-11-13T19:51:57.403Z::conn.xml"
+         }
+      }
+   }
+]

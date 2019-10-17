@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "0GUr5eNGWAxkOV3B0qVHeU",
+      "objectName": "SP-ICS-GetTaskFlowList-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process retrieves Task Flow  List from ICS",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "8qUlLnzYLnzYLnz-gt-941835-2018-07-20T16:33:57.955Z::pd.xml"
+         }
+      }
+   }
+]

@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "hlC2KT9ASKijHyeyTX4v41",
+      "objectName": "RESTResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represents Raw  REST service Response",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "nImp6oIuQaaabcm-gt-110758-2018-07-20T16:33:07.421Z::po.xml"
+         }
+      }
+   }
+]

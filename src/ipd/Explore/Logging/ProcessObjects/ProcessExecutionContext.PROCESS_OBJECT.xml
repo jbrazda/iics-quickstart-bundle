@@ -1,0 +1,37 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml</types1:EntryId>
+      <types1:Name>ProcessExecutionContext</types1:Name>
+      <types1:ParentFlowIds>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml,7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml,3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml,eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="ProcessExecutionContext"
+                        isByCopy="true"
+                        name="ProcessExecutionContext">
+            <description>This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information </description>
+            <tags/>
+            <detail>
+               <field label="parentProcessId" name="parentProcessId" type="int"/>
+               <field label="mainProcessId" name="mainProcessId" type="int"/>
+               <field label="jobId" name="jobId" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>lWurPrz0AW6hdK7bY2gVWz</types1:GUID>
+      <types1:DisplayName>ProcessExecutionContext</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.089Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,91 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>STNkSmbduaa-gt-944410-2018-07-20T16:33:28.719Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ICS-GetMapping-Cloud</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process retrieves Mappings by ID from ICS</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:33:29Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:45Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:36:06Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ICS-GetMapping-Cloud/SP-ICS-GetMapping-Cloud.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ICS-GetMapping-Cloud"
+                  name="SP-ICS-GetMapping-Cloud">
+            <appliesTo/>
+            <description>Process retrieves Mappings by ID from ICS</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_mapping_id" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Mapping" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:Mapping</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <service id="c">
+                  <title>Login</title>
+                  <serviceName>ICS-API:Login</serviceName>
+                  <serviceGUID/>
+                  <serviceInput/>
+                  <link id="j8ejklhk" targetId="j8ejklhj"/>
+               </service>
+               <service id="j8ejklhj">
+                  <title>Get Mapping</title>
+                  <serviceName>ICS-API:Get Mapping</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                     <parameter name="icsMappingId" source="field" updatable="true">input.in_mapping_id</parameter>
+                  </serviceInput>
+                  <link id="j8ekswfb" targetId="j8ekswfa"/>
+               </service>
+               <service id="j8ekswfa">
+                  <title>Logout</title>
+                  <serviceName>ICS-API:Logout</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                  </serviceInput>
+                  <link id="j8ekswfc" targetId="d"/>
+               </service>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4Tde9RQvmcRhYQd4bb8Vy4</types1:GUID>
+      <types1:DisplayName>SP-ICS-GetMapping-Cloud</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.341Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

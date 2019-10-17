@@ -1,0 +1,50 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xxYxQ2Tp5OjG4ab-gt-1337153-2018-10-25T19:14:53.379Z::conn.xml</types1:EntryId>
+      <types1:Name>AddressDoctor-1</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>Informatica Address Doctor Connection</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-25T19:14:53Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-05-07T16:30:33Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AddressDoctor-1/AddressDoctor-1.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AddressDoctor"
+                     label="AddressDoctor"
+                     name="AddressDoctor-1">
+            <description>Informatica Address Doctor Connection</description>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="Login" value="jbrazda@informatica.com"/>
+               <attribute encrypted="true" name="Password" value=""/>
+               <attribute encrypted="false"
+                          name="EndPointUrl"
+                          value="https://validator5.addressdoctor.com/webservice5/v2/addressvalidation.asmx"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Informatica_AddressDoctor_Cloud_API/Informatica_AddressDoctor_Cloud_API_svcDef.xml"
+                               name="Informatica_AddressDoctor_Cloud_API"
+                               supportsConnectionTest="false"
+                               uuid="33f7e25b-9505-4647-a3d5-27e2f3771c73">
+               <description>Service Process to call out to Informatica Address Doctor Cloud</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>7pFwIQcjoJ8b9rSPlqaAUz</types1:GUID>
+      <types1:DisplayName>AddressDoctor</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.775Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

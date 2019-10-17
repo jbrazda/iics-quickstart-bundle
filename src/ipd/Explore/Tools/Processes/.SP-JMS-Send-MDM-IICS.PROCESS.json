@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "8M4kDUMUZeUgOp0qm7DrYr",
+      "objectName": "SP-JMS-Send-MDM-IICS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "TEST process to send JMS message to  Outbound message queue",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "clopz4KhPVEQrXh-gt-371192-2018-10-10T19:48:22.042Z::pd.xml"
+         }
+      }
+   }
+]

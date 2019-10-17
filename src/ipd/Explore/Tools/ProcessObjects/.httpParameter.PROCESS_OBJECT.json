@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "gOTOBFRDA6glxbbLcLRw2F",
+      "objectName": "httpParameter",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Object represents HTTP query parameter",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "T6JfOMWSwxF1T4W-gt-944386-2018-07-20T16:33:15.734Z::po.xml"
+         }
+      }
+   }
+]

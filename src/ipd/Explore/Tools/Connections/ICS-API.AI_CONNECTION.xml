@@ -1,0 +1,54 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>seLm5phuCMLkZlk-gt-110746-2018-07-20T16:32:56.301Z::conn.xml</types1:EntryId>
+      <types1:Name>ICS-API</types1:Name>
+      <types1:ParentFlowIds>aaaaa-gt-117889-2018-07-20T16:33:47.008Z::pd.xml,8qUlLnzYLnzYLnz-gt-941835-2018-07-20T16:33:57.955Z::pd.xml,giQpvJQhtGci3zy-gt-3152353-2019-04-29T19:35:50.106Z::pd.xml,jm9RuuB3uopz4Kh-gt-941820-2018-07-20T16:33:49.148Z::pd.xml,fT7xvk0qZF3a-gt-3152407-2019-04-29T19:35:52.085Z::pd.xml,ZVQU8lpDqotxGom-gt-232814-2018-07-20T16:33:17.835Z::pd.xml,STNkSmbduaa-gt-944410-2018-07-20T16:33:28.719Z::pd.xml,IMR7hsAVR3aaa-gt-941883-2018-07-20T16:34:24.553Z::gt.xml,QREhNWIsoZduD2L-gt-941138-2018-07-20T16:34:08.768Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>ICS API Connection</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:32:56Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2018-10-23T16:18:18Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T20:04:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/ICS-API/ICS-API.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="ICS-API"
+                     label="ICS-API"
+                     name="ICS-API">
+            <description>ICS API Connection</description>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="IcsLoginUrl"
+                          value="https://dm-us.informaticacloud.com/ma"/>
+               <attribute encrypted="false"
+                          name="Username"
+                          value="jbrazda-iics@informatica.com"/>
+               <attribute encrypted="true" name="Password" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/ICS_API/ICS_API_svcDef.xml"
+                               name="ICS_API"
+                               supportsConnectionTest="false"
+                               uuid="5948d459-e805-42c1-b510-47e0685c1be2">
+               <description>Native connector for Informatica Cloud API.</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>9BvRWvqMsiEk6qnJ0A0UWE</types1:GUID>
+      <types1:DisplayName>ICS-API</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.34Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

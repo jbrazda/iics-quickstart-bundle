@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "1OpWSaZgo8NeIz7ogKH1ip",
+      "objectName": "SP-util-shell-curl-NA",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. \nprocess Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "abbfZk9EW4ARW8U-gt-301155-2018-10-24T17:25:21.013Z::pd.xml"
+         }
+      }
+   }
+]

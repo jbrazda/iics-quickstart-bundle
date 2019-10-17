@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "31o1RHhc6uRdN1eGygCG2Q",
+      "objectName": "AttachmentInformation",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Attachment Object Information Holder",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "BbeGoQwg74Rpf6J-gt-2267328-2019-08-28T21:27:46.436Z::po.xml"
+         }
+      }
+   }
+]

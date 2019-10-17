@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "4Tde9RQvmcRhYQd4bb8Vy4",
+      "objectName": "SP-ICS-GetMapping-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process retrieves Mappings by ID from ICS",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "STNkSmbduaa-gt-944410-2018-07-20T16:33:28.719Z::pd.xml"
+         }
+      }
+   }
+]

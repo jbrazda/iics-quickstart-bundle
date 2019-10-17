@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "a9GIgMrdO73bMsXmCLEEc1",
+      "objectName": "How-To: Use Template Processes SFDC",
+      "objectType": "GUIDE",
+      "path": "/Explore/Templates/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "3TxXRBytv8viKeAoroXREr",
+            "84sV2BKWoYYi3TjNavvAcF"
+         ],
+         "repoInfo": {
+            "repoHandle": "2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "3TxXRBytv8viKeAoroXREr",
+      "objectName": "TEMPLATE-MP-Job-SFDC",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "84sV2BKWoYYi3TjNavvAcF",
+      "objectName": "iPaaS Job View",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml"
+         }
+      }
+   }
+]

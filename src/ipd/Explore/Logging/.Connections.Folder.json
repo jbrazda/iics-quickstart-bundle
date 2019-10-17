@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "5SgAuSuw8aQckvZcfcrM4q",
+      "objectName": "Connections",
+      "objectType": "Folder",
+      "path": "/Explore/Logging",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Connections used by Logging and Monitoring Components",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

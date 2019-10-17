@@ -1,0 +1,259 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hvWMOxBchzt1Y6t-gt-1279797-2018-11-13T19:59:58.11Z::gt.xml</types1:EntryId>
+      <types1:Name>iPaaS_Admin_Upload_File_to_Agent</types1:Name>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Utility Guide to Upload File to Secure Agent</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-11-13T19:59:58Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:36:23Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.iPaaS_Admin_Upload_File_to_Agent/iPaaS_Admin_Upload_File_to_Agent.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="iPaaS Admin Upload File to Agent"
+                         doneOnEndStep="false"
+                         name="iPaaS_Admin_Upload_File_to_Agent"
+                         runAsUser="$current">
+            <description>Utility Guide to Upload File to Secure Agent</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="null" name="tmp_attachment" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_file_writer_task" type="reference">
+                  <options>
+                     <option name="referenceTo">AgentFileWriter:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9CxtpLQkiz1fOmFAToyTE4</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_relative_path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">/home/iclab</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_file_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jog5sgv1" targetScreen="jog5sgv1">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jog5sgv1">
+                  <title>Upload File</title>
+                  <body contentType="text/html">&lt;p&gt;This Guide allows to upload File to Secure Agent (Testing or Configuration Files)&lt;/p&gt;
+&lt;p&gt;This guide is using the&amp;nbsp;&lt;strong&gt;file-aurora-shared-writer&amp;nbsp;&lt;/strong&gt;connection.&lt;/p&gt;
+&lt;p&gt;It is configured to base path:&amp;nbsp;&lt;strong&gt;/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: #ff0000;"&gt;Existing files will be overriden!&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Use visely:&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Target File Name&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_file_name (temporary)" name="temp.tmp_file_name" type="text" value="tmp_file_name (temporary)"&gt;&amp;nbsp;*&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Relative Path&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_relative_path (temporary)" name="temp.tmp_relative_path" type="text" value="tmp_relative_path (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;File&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_attachment (temporary)" name="temp.tmp_attachment" type="text" value="tmp_attachment (temporary)"&gt;&amp;nbsp;* Maximum file size 5 MB&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jog5sgv1_jog5sgxq" targetScreen="jog5sgxq">
+                        <text>Upload</text>
+                     </action>
+                     <action alt="null" id="jog5sgv1_jog5sgvf" targetScreen="jog5sgvf">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_relative_path"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_attachment"
+                                     readonly="false"
+                                     required="false"
+                                     type="attachment">
+                        <options>
+                           <option hide="true" name="count">1</option>
+                           <option name="maxsize">5242880</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_file_name"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jogiwqfc">
+                  <title>Upload Results</title>
+                  <body contentType="text/html">&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;File Directory&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="fileInfo&gt;File directory" name="output.fileInfo[1]/dir" readonly="readonly" type="text" value="fileInfo&gt;File directory"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;File Name&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="fileInfo&gt;Full file name" name="output.fileInfo[1]/fullName" readonly="readonly" type="text" value="fileInfo&gt;Full file name"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Full Path&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="fileInfo&gt;Full file name" name="output.fileInfo[1]/fullName" readonly="readonly" type="text" value="fileInfo&gt;Full file name"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;File Size&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.fileInfo[1]/size" readonly="readonly" type="text" value="fileInfo&gt;File size"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.faultInfo[1]/reason" readonly="readonly" type="text" value="faultInfo&gt;reason"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jogiwqfc_jog5sgvf" targetScreen="jog5sgvf">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.fileInfo[1]/dir"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.fileInfo[1]/fullName"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.fileInfo[1]/size"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.faultInfo[1]/reason"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <service id="jog5sgvn">
+                  <title>SP-util-upload-agent</title>
+                  <serviceName>SP-util-upload-agent</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter id="jogilnc1"
+                                name="in_fileWriteTask"
+                                source="field"
+                                updatable="true">temp.tmp_file_writer_task</parameter>
+                     <parameter id="jogilnc2"
+                                name="in_attachment"
+                                source="field"
+                                updatable="true">temp.tmp_attachment</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="" id="jog5sgvn_jogiwqfc" targetScreen="jogiwqfc">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jog5sgvf">
+                  <actions>
+                     <action alt="null" id="jog5sgvf_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <assignment id="jog5sgxq">
+                  <title>Assignment to Relative path, File name etc.</title>
+                  <operation source="field" to="temp.tmp_file_writer_task[1]/filePath">temp.tmp_relative_path</operation>
+                  <operation source="field" to="temp.tmp_file_writer_task[1]/fileName">temp.tmp_file_name</operation>
+                  <operation source="constant" to="temp.tmp_file_writer_task[1]/format">Attachment</operation>
+                  <actions>
+                     <action alt="null" id="jog5sgxq_jog5sgvn" targetScreen="jog5sgvn">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>io3umXTuwkrdHCcLUtlIek</types1:GUID>
+      <types1:DisplayName>iPaaS Admin Upload File to Agent</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.628Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

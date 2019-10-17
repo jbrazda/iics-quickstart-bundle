@@ -1,0 +1,493 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rMZgpDqotxGomUh-gt-3857924-2019-10-09T14:01:23.276Z::svc.xml</types1:EntryId>
+      <types1:Name>gitlab-snippets</types1:Name>
+      <types1:ParentFlowIds>OnTTpOzEkhK6LlR-gt-79426-2019-10-09T18:48:50.657Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Provides Support to store  and retrive configurations or other files as gitlab Snippets
+See https://gitlab.com/help/api/README.md</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-10-09T14:01:23Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-14T14:05:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-14T14:05:55Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/gitlab_snippets/gitlab_snippets_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="gitlab-snippets"
+                            label=""
+                            name="gitlab-snippets"
+                            uuid="7cf5fdba-abb9-48d4-b6d1-e2481c1eddbd">
+            <description>Provides Support to store  and retrive configurations or other files as gitlab Snippets
+See https://gitlab.com/help/api/README.md</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Gitlab API Base URL (example: https://gitlab.example.com/api)"
+                                    masked="false"
+                                    name="service_url"
+                                    required="true"
+                                    testWith="https://gitlab.com/api"
+                                    type="string"/>
+               <connectionAttribute description="Private Access Token"
+                                    masked="true"
+                                    name="access_token"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="Api Version (currently v4)"
+                                    masked="false"
+                                    name="api_version"
+                                    required="true"
+                                    testWith="v4"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="base GET"
+                       maxRedirects="100"
+                       name="base GET"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Abstract Action for Get Operations</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$service_url || '/' || $api_version}"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="PRIVATE-TOKEN">{$access_token}</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="base POST"
+                       maxRedirects="100"
+                       name="base POST"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Abstract Action to GET requests</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$service_url || '/' || $api_version}"
+                                        verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="PRIVATE-TOKEN">{$access_token}</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="base GET"
+                       label="Get Snippets"
+                       maxRedirects="100"
+                       name="Get Snippets"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get a list of the current user's snippets.</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="PRIVATE-TOKEN" type="header"/>
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding url="/snippets" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="out_snippets" type="objectlist">
+                        <options>
+                           <option name="referenceTo">snippet</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $snippet_list := util:parseJSON($payload)
+return 
+for $item in $snippet_list
+return
+&lt;snippet&gt;
+ {$item/*}
+&lt;/snippet&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="base GET"
+                       label="Get Raw Snippet"
+                       maxRedirects="100"
+                       name="Get Raw Snippet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Retrieves Raw File contents of the snippet</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="PRIVATE-TOKEN" type="header"/>
+                           <attribute inherit="exclude" name="Accept" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Snippet ID"
+                                name="id"
+                                nogen="true"
+                                required="false"
+                                testWith="1902983"
+                                type="string"/>
+                     <parameter description="Use this parameter to parse raw data to desired format and present as xml object"
+                                name="parse_as"
+                                required="false"
+                                testWith="xml"
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"xml","label":"xml"},{"value":"json","label":"json"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/snippets/{$id}/raw" verb="GET">
+                        <httpHeaders>
+                           <header name="Accept">text/xml</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Raw File Content" name="file_content" type="textarea">
+                        <xquery>{$RESTResponse/*:payload/text()}</xquery>
+                     </field>
+                     <field description="Parsed XML" name="parsed_xml" type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                        <xquery>{switch ($parse_as) 
+case 'xml' return util:parseXML($RESTResponse/*:payload/text())
+case 'json' return util:parseJSON(jsonStr)
+default return ()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="base GET"
+                       label="Get Snippet"
+                       maxRedirects="100"
+                       name="Get Snippet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get Snippet Metadata</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="PRIVATE-TOKEN" type="header"/>
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="id"
+                                nogen="true"
+                                required="false"
+                                testWith="1902983"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/snippets/{$id}" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="Snippet Information"
+                            name="snippet_info"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">snippet</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Write"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="base POST"
+                       label="Create Snippet"
+                       maxRedirects="100"
+                       name="Create Snippet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Create New Snippet</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                           <attribute inherit="inherit" name="PRIVATE-TOKEN" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="title" required="false" testWith="Test" type="string"/>
+                     <parameter name="file_name"
+                                required="false"
+                                testWith="test.xml"
+                                type="string"/>
+                     <parameter name="content"
+                                required="false"
+                                testWith="&amp;lt;snippet&amp;gt;&amp;#xD;     &amp;lt;visibility&amp;gt;private&amp;lt;/visibility&amp;gt;&amp;#xD;     &amp;lt;updated_at&amp;gt;2019-10-09T13:53:06.417Z&amp;lt;/updated_at&amp;gt;&amp;#xD;     &amp;lt;web_url&amp;gt;https://gitlab.com/snippets/1902616&amp;lt;/web_url&amp;gt;&amp;#xD;     &amp;lt;project_id/&amp;gt;&amp;#xD;     &amp;lt;file_name&amp;gt;alert_configuration.xml&amp;lt;/file_name&amp;gt;&amp;#xD;     &amp;lt;author&amp;gt;&amp;#xD;         &amp;lt;avatar_url&amp;gt;https://secure.gravatar.com/avatar/f47f430e8f1ad5ff22dae39f93b79302?s=80&amp;amp;amp;d=identicon&amp;lt;/avatar_url&amp;gt;&amp;#xD;         &amp;lt;web_url&amp;gt;https://gitlab.com/jaroslav.brazda&amp;lt;/web_url&amp;gt;&amp;#xD;         &amp;lt;name&amp;gt;Jaroslav Brazda&amp;lt;/name&amp;gt;&amp;#xD;         &amp;lt;id&amp;gt;4757395&amp;lt;/id&amp;gt;&amp;#xD;         &amp;lt;state&amp;gt;active&amp;lt;/state&amp;gt;&amp;#xD;         &amp;lt;username&amp;gt;jaroslav.brazda&amp;lt;/username&amp;gt;&amp;#xD;     &amp;lt;/author&amp;gt;&amp;#xD;     &amp;lt;description/&amp;gt;&amp;#xD;     &amp;lt;created_at&amp;gt;2019-10-09T13:53:06.417Z&amp;lt;/created_at&amp;gt;&amp;#xD;     &amp;lt;id&amp;gt;1902616&amp;lt;/id&amp;gt;&amp;#xD;     &amp;lt;title&amp;gt;IICS Alert Service Configuration&amp;lt;/title&amp;gt;&amp;#xD;     &amp;lt;raw_url&amp;gt;https://gitlab.com/snippets/1902616/raw&amp;lt;/raw_url&amp;gt;&amp;#xD; &amp;lt;/snippet&amp;gt;"
+                                type="textarea"/>
+                     <parameter name="description"
+                                required="false"
+                                testWith="This Is A Test Snippet"
+                                type="string"/>
+                     <parameter name="visibility"
+                                required="false"
+                                testWith="private"
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"private","label":"private"},{"value":"internal","label":"internal"},{"value":"public","label":"public"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/snippets" verb="POST">
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Created Gitlab Snippet"
+                            name="created_snippet"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">snippet</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Write"
+                       failOnError="true"
+                       forSearch="false"
+                       label="Update Snippet"
+                       maxRedirects="100"
+                       name="Update Snippet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Updates Existing Snippet</description>
+                  <input>
+                     <parameter name="id"
+                                nogen="true"
+                                required="true"
+                                testWith="1902642"
+                                type="string"/>
+                     <parameter name="title"
+                                required="false"
+                                testWith="TEST UPdate Title"
+                                type="string"/>
+                     <parameter name="file_name" required="false" testWith="" type="string"/>
+                     <parameter name="description" required="false" testWith="" type="textarea"/>
+                     <parameter name="content" required="false" testWith="" type="string"/>
+                     <parameter name="visibility" required="false" testWith="" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"private","label":"private"},{"value":"internal","label":"internal"},{"value":"public","label":"public"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$service_url || '/' || $api_version || '/snippets/' || $id }"
+                                        verb="PUT">
+                        <httpHeaders>
+                           <header name="PRIVATE-TOKEN">{$access_token}</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="updated_snippet"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">snippet</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Delete"
+                       failOnError="true"
+                       forSearch="false"
+                       label="Delete Snippet"
+                       maxRedirects="100"
+                       name="Delete Snippet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Deletes Existing Snippet</description>
+                  <input>
+                     <parameter name="id"
+                                nogen="true"
+                                required="false"
+                                testWith="1902625"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{$service_url || '/' || $api_version || '/snippets/' || $id }"
+                                        verb="DELETE">
+                        <httpHeaders>
+                           <header name="PRIVATE-TOKEN">{$access_token}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="base GET"
+                       label="Get Resource"
+                       maxRedirects="100"
+                       name="Get Resource"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get Any Gitlab Resource Identified by URL</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="PRIVATE-TOKEN" type="header"/>
+                           <attribute inherit="exclude" name="Accept" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Resource URL"
+                                name="in_resource_url"
+                                nogen="true"
+                                required="false"
+                                testWith="https://gitlab.com/api/v4/snippets/1902983"
+                                type="url"/>
+                     <parameter name="in_accept"
+                                nogen="true"
+                                required="false"
+                                testWith="application/json"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{$in_resource_url}" verb="GET">
+                        <httpHeaders>
+                           <header name="Accept">{if (empty($in_accept)) then 'application/json' else $in_accept}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="out_resource_payload"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="snippet">
+                  <description>Gitlab Snippet Object</description>
+                  <detail>
+                     <field name="visibility" type="picklist">
+                        <options>
+                           <option name="values">[{"value":"private","label":"private"},{"value":"internal","label":"internal"},{"value":"public","label":"public"}]</option>
+                        </options>
+                     </field>
+                     <field name="updated_at" type="string"/>
+                     <field name="web_url" type="url"/>
+                     <field name="project_id" type="string"/>
+                     <field name="file_name" type="string"/>
+                     <field name="author" type="reference">
+                        <options>
+                           <option name="referenceTo">author</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="description" type="textarea"/>
+                     <field name="created_at" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="title" type="string"/>
+                     <field name="raw_url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="author">
+                  <description>Rest Resource Author</description>
+                  <detail>
+                     <field name="avatar_url" type="image"/>
+                     <field name="web_url" type="url"/>
+                     <field name="name" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="state" type="string"/>
+                     <field name="username" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>1UgNOYX99vYl4ePFrQfEis</types1:GUID>
+      <types1:DisplayName>gitlab-snippets</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.898Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

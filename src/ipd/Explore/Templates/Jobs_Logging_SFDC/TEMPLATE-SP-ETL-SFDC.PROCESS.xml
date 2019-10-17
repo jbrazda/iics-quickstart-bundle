@@ -1,0 +1,225 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml</types1:EntryId>
+      <types1:Name>TEMPLATE-SP-ETL-SFDC</types1:Name>
+      <types1:ParentFlowIds>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Template for Integration Sub-Process (SP)</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:32Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-30T13:35:20Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-SFDC/TEMPLATE-SP-ETL-SFDC.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEMPLATE-SP-ETL-SFDC"
+                  name="TEMPLATE-SP-ETL-SFDC">
+            <appliesTo/>
+            <description>Template for Integration Sub-Process (SP)</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_faultInfo" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FaultInfo</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">91gnTcWCdhAkc5YWMvtKez</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">TEMPLATE-SP-ETL</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j84pnuy0" targetId="j84ih0fn"/>
+               </start>
+               <assignment id="j84ih0fn">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $title := $temp.tmp_process_name 
+let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
+	else concat("pid:",$input.in_context[1]/parentProcessId)
+let $job_label := if (empty($input.in_context[1]/jobId)) then () 
+	else concat("job:",$input.in_context[1]/jobId)
+let $parts := ($title, $pid_label,  $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_context">
+                     <expression language="XQuery">let $pid := util:getProcessId()
+return if (empty($input.in_context)) then
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$pid}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{util:generateUUID()}&lt;/jobId&gt;
+  &lt;/ProcessExecutionContext&gt;
+else 
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$input.in_context[1]/mainProcessId}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{$input.in_context[1]/jobId}&lt;/jobId&gt;
+  &lt;/ProcessExecutionContext&gt;</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="juydk0fa" targetId="juydk0f9"/>
+               </assignment>
+               <service id="juydk0f9">
+                  <title>Log Start</title>
+                  <serviceName>SP-IPaaS-Create-Job-Event-Entry</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="in_CreateJobLogEventRequest" source="formula">
+                        <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;TODO: Integration Started Message&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;TODO: ADD DETAIL&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;1&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="juydk0fb" targetId="j9iq3fev"/>
+               </service>
+               <eventContainer id="j9iq3fev">
+                  <subflow id="j9iq3ff2">
+                     <title>SP-Test-Throw-Fault-Generic</title>
+                     <subflowGUID>aW8SmuKTtfjcmsHYQ7Hj0s</subflowGUID>
+                     <subflowPath>SP-Test-Throw-Fault-Generic-Cloud</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="in_faultCode" source="constant" updatable="true">500</parameter>
+                        <parameter name="in_faultDetail" source="constant" updatable="true">Test Fault Detail</parameter>
+                        <parameter name="inf_faultReason" source="constant" updatable="true">Test</parameter>
+                     </input>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="j9iq3few">
+                     <service id="juydk0mj">
+                        <title>Log Success</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="formula">
+                              <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;TODO: Step Completed Message&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;Example Detail&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;1&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_title}&lt;/process_name&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;</expression>
+                           </parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="j9iq3ff5" targetId="j9iq3fev" type="containerLink"/>
+                  </flow>
+                  <flow id="j9iq3fez">
+                     <assignment id="j9iqk5zk">
+                        <title>Update fault Info, Process Title</title>
+                        <operation source="field" to="temp.tmp_faultInfo[1]/processName">temp.tmp_process_title</operation>
+                        <operation source="formula" to="temp.tmp_process_title">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return $process_title</expression>
+                        </operation>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                        </operation>
+                        <link id="juydk0jv" targetId="juydk0ju"/>
+                     </assignment>
+                     <service id="juydk0ju">
+                        <title>Log Error</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="formula">
+                              <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;Integration Process Step Failed&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;Code: {$output.faultInfo[1]/code} 
+	Reson:{$output.faultInfo[1]/reason}
+	Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;
+
+</expression>
+                           </parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="j9iq3ff7" targetId="j9iq3fev" type="containerLink"/>
+                  </flow>
+                  <link id="j9iq3ff3" targetId="j9iq3few" type="containerLink"/>
+                  <link id="jnap5niq" targetId="j9iq3fjg"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j83fl9t4" interrupting="true">
+                        <link id="j9iq3ff4" targetId="j9iq3fez" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="j9iq3fjg"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>9vd2qrDae3he3ErslVVfOw</types1:GUID>
+      <types1:DisplayName>TEMPLATE-SP-ETL-SFDC</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.698Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,610 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml</types1:EntryId>
+      <types1:Name>iPaaS_Job_View-3</types1:Name>
+      <types1:ParentFlowIds>2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide  Provides Administrative and troubleshooting functions such as 
+- Search IPaaS  ICRT Job  logs
+- ability to find job related processes</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-03-19T17:11:01Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-30T13:34:32Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-30T13:34:47Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_3/iPaaS_Job_View_3.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         disableScreenRollback="true"
+                         displayName="iPaaS Job View"
+                         doneOnEndStep="true"
+                         name="iPaaS_Job_View-3"
+                         runAsUser="$current">
+            <description>Guide  Provides Administrative and troubleshooting functions such as 
+- Search IPaaS  ICRT Job  logs
+- ability to find job related processes</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_job_id" required="true" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_limit" required="false" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="null" name="tmp_ic_job_log" type="reference">
+                  <options>
+                     <option name="referenceTo">Salesforce:IC_JOB_LOG__c</option>
+                     <option name="required">false</option>
+                     <option name="guid"/>
+                  </options>
+               </field>
+               <field description="null" name="tmp_job_event" type="reference">
+                  <options>
+                     <option name="referenceTo">Salesforce:IC_JOB_EVENTS__c</option>
+                     <option name="required">false</option>
+                     <option name="guid"/>
+                  </options>
+               </field>
+               <field description="null" name="tmp_event_query" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_search_field" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"EVENT_MESSAGE__c","value":"EVENT_MESSAGE__c"},{"label":"EVENT_DETAIL_SEARCH__c","value":"EVENT_DETAIL_SEARCH__c"},{"label":"ENVIRONMENT__c","value":"ENVIRONMENT__c"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_search_string" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_time_from" type="datetime">
+                  <options>
+                     <option name="thirtyMinutesIncrement">true</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_time_to" type="datetime">
+                  <options>
+                     <option name="thirtyMinutesIncrement">true</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_search_process" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_job_duration" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_start_date_str" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_end_date_str" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_logging_level" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="j9alhyvc">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="j9alhyvc_jbff8c8j" targetScreen="jbff8c8j">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jb452xj3">
+                  <title>Job Details</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;&lt;img style="width: 100px; height: 83px; float: right;" title="directive.png" src="project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/directive.png" alt="directive.png"&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="temp.tmp_ic_job_log.Name" readonly="readonly" type="text" value="tmp_ic_job_log&gt;Name"&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Process ID&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB PROCESS ID" name="temp.tmp_ic_job_log.JOB_PROCESS_ID__c" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB PROCESS ID"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Start Date&lt;/td&gt;
+&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;START DATE" name="temp.tmp_ic_job_log.START_DATE__c" readonly="readonly" type="text" value="tmp_ic_job_log&gt;START DATE"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;End Date&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;END DATE" name="temp.tmp_ic_job_log.END_DATE__c" readonly="readonly" type="text" value="tmp_ic_job_log&gt;END DATE"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Status&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;STATUS" name="temp.tmp_ic_job_log.STATUS__c" readonly="readonly" type="text" value="tmp_ic_job_log&gt;STATUS"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Initiator&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;INITIATOR" name="temp.tmp_ic_job_log.INITIATOR__c" readonly="readonly" type="text" value="tmp_ic_job_log&gt;INITIATOR"&gt; &amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Job Duration&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_job_duration (temporary)" name="temp.tmp_job_duration" readonly="readonly" type="text" value="tmp_job_duration (temporary)"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Events:&lt;/strong&gt;&lt;br&gt;Limit Display rows to&amp;nbsp;in_limit &lt;input class="" name="input.in_limit" type="text" value="in_limit (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_job_event (temporary)" name="temp.tmp_job_event" type="text" value="tmp_job_event (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Query:&lt;/p&gt;
+&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_event_query (temporary)" name="temp.tmp_event_query" readonly="readonly" type="text" value="tmp_event_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jb452xj3_jb452xio" targetScreen="jb452xio">
+                        <text>Refresh</text>
+                     </action>
+                     <action alt="null" id="jb452xj3_js2denph" targetScreen="js2denph">
+                        <text>Display Selected Event Process</text>
+                     </action>
+                     <action alt="null" id="jb452xj3_js2ecihg" targetScreen="js2ecihg">
+                        <text>Display Job Process</text>
+                     </action>
+                     <action alt="null" id="jb452xj3_jbff8c3s" targetScreen="jbff8c3s">
+                        <text>Filter Events</text>
+                     </action>
+                     <action alt="null" id="jb452xj3_jb452xj2" targetScreen="jb452xj2">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_event_query"
+                                     readonly="true"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.in_limit"
+                                     readonly="false"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.Name"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">80</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.JOB_PROCESS_ID__c"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">80</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.START_DATE__c"
+                                     readonly="true"
+                                     required="false"
+                                     type="datetime">
+                        <options>
+                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.STATUS__c"
+                                     readonly="true"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                           <option hide="true" name="searchservice.name">rest:/sfHideGetPicklistFieldValuesREST</option>
+                           <option name="searchservice.parameters">
+                              <serviceInput>
+                                 <parameter name="Object Type" source="constant">Salesforce:IC_JOB_LOG__c</parameter>
+                                 <parameter name="Field Name" source="constant">STATUS__c</parameter>
+                              </serviceInput>
+                           </option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.INITIATOR__c"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">255</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_job_duration"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log.END_DATE__c"
+                                     readonly="true"
+                                     required="false"
+                                     type="datetime">
+                        <options>
+                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_job_event"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="referenceTo">Salesforce:IC_JOB_EVENTS__c</option>
+                           <option name="required">false</option>
+                           <option name="guid"/>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PROCESS_ID__c","type":"string","label":"Process ID","renderingType":"string"},{"name":"PROCESS_NAME__c","type":"string","label":"Process Name","renderingType":"string"},{"name":"EVENT_MESSAGE__c","type":"textarea","label":"Message","renderingType":"textarea"},{"name":"EVENT_DETAIL_TEXT__c","type":"textarea","label":"Detail","renderingType":"textarea"},{"name":"EVENT_TIME__c","type":"datetime","label":"Time","renderingType":"datetime"},{"name":"INITIATOR__c","type":"string","label":"Initiator","renderingType":"string"},{"name":"ENVIRONMENT__c","type":"string","label":"Environment","renderingType":"string"},{"name":"LOGGING_LEVEL__c","type":"picklist","label":"Logging Level","renderingType":"picklist"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                           <option hide="true" name="searchservice.name">service:/avosObjectQuerySearchService</option>
+                           <option name="searchservice.parameters">
+                              <serviceInput>
+                                 <parameter name="Where Clause" source="constant">{$temp.tmp_event_query}</parameter>
+                              </serviceInput>
+                           </option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jbff8c3s">
+                  <title>Filter Criteria</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Search Integration Job Event&lt;img style="float: right;" title="Query" src="project:/com.activevos.cumulus.cloud.extend.playbook.resources/icons/query.png" alt=""&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Search String:&amp;nbsp;&lt;input class="" title="tmp_search_string (temporary)" name="temp.tmp_search_string" type="text" value="tmp_search_string (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;fieldset&gt;&lt;legend&gt;Options&lt;/legend&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Events between&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_time_from (temporary)" name="temp.tmp_time_from" type="text" value="tmp_time_from (temporary)"&gt;&amp;nbsp;and&amp;nbsp;&lt;input class="" title="tmp_time_to (temporary)" name="temp.tmp_time_to" type="text" value="tmp_time_to (temporary)"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Find Events with Search String in:&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_search_field (temporary)" name="temp.tmp_search_field" type="text" value="tmp_search_field (temporary)"&gt; &amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Process Name Contains:&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_search_process (temporary)" name="temp.tmp_search_process" type="text" value="tmp_search_process (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Limit result to:&lt;/td&gt;
+&lt;td&gt;&lt;input class="" name="input.in_limit" type="text" value="in_limit (input)"&gt;&amp;nbsp;rows&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Logging Level &amp;gt;=&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_logging_level (temporary)" name="temp.tmp_logging_level" type="text" value="tmp_logging_level (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/fieldset&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jbff8c3s_jbfi1etu" targetScreen="jbfi1etu">
+                        <text>Apply Filter</text>
+                     </action>
+                     <action alt="null" id="jbff8c3s_jbfi1etm" targetScreen="jbfi1etm">
+                        <text>Cancel</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_search_string"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_time_from"
+                                     readonly="true"
+                                     required="false"
+                                     type="datetime">
+                        <options>
+                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue" source="field">temp.tmp_ic_job_log.START_DATE__c</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_time_to"
+                                     readonly="true"
+                                     required="false"
+                                     type="datetime">
+                        <options>
+                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue" source="formula">fn_name:time_from_now value:0,HM_flag:M</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_search_process"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.in_limit"
+                                     readonly="false"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_search_field"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"EVENT_MESSAGE__c","value":"EVENT_MESSAGE__c"},{"label":"EVENT_DETAIL_SEARCH__c","value":"EVENT_DETAIL_SEARCH__c"},{"label":"ENVIRONMENT__c","value":"ENVIRONMENT__c"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_logging_level"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen dontShowScreen="true" id="js2denr2">
+                  <title>End 1</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <endScreen dontShowScreen="true" id="js2ecihf">
+                  <title>End 1 1</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <endScreen dontShowScreen="true" id="jb452xj2">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jthefy4t">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="jthefy42">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="jthefy4a">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="jthefy4p">
+                  <actions/>
+               </empty>
+               <jumpTo id="jb452xio" targetTitle="Prepare Query">
+                  <actions>
+                     <action alt="null" id="jb452xio_jbff8c6k" targetScreen="jbff8c6k">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="js2denqf" targetTitle="Job Details">
+                  <actions>
+                     <action alt="null" id="js2denqf_jb452xj3" targetScreen="jb452xj3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="js2ecihd" targetTitle="Job Details">
+                  <actions>
+                     <action alt="null" id="js2ecihd_jb452xj3" targetScreen="jb452xj3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jbfi1etu" targetTitle="Prepare Query">
+                  <actions>
+                     <action alt="null" id="jbfi1etu_jbff8c6k" targetScreen="jbff8c6k">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jbfi1etm" targetTitle="Job Details">
+                  <actions>
+                     <action alt="null" id="jbfi1etm_jb452xj3" targetScreen="jb452xj3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <subflow id="js2denph">
+                  <title>SP Show Process Links</title>
+                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowPath>SP_Show_Process_Links</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="js2densi"
+                                name="in_process_id"
+                                source="field"
+                                updatable="true">temp.tmp_job_event.PROCESS_ID__c</parameter>
+                     <parameter id="js2densj"
+                                name="in_enviornment"
+                                source="field"
+                                updatable="true">temp.tmp_job_event.ENVIRONMENT__c</parameter>
+                     <parameter id="js2densk"
+                                name="in_process_name"
+                                source="field"
+                                updatable="true">temp.tmp_job_event.PROCESS_NAME__c</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="js2denph_js2denqf" targetScreen="js2denqf">
+                        <text>Back</text>
+                     </action>
+                     <action alt="null" id="js2denph_js2denr2" targetScreen="js2denr2">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <subflow id="js2ecihg">
+                  <title>SP Show Job Process Links</title>
+                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowPath>SP_Show_Process_Links</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="js2ecihr"
+                                name="in_process_id"
+                                source="field"
+                                updatable="true">temp.tmp_ic_job_log.JOB_PROCESS_ID__c</parameter>
+                     <parameter id="js2ecihs"
+                                name="in_enviornment"
+                                source="field"
+                                updatable="true">temp.tmp_ic_job_log.ENVIRONMENT__c</parameter>
+                     <parameter id="js2eciht"
+                                name="in_process_name"
+                                source="field"
+                                updatable="true">temp.tmp_ic_job_log.Name</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="js2ecihg_js2ecihd" targetScreen="js2ecihd">
+                        <text>Back</text>
+                     </action>
+                     <action alt="null" id="js2ecihg_js2ecihf" targetScreen="js2ecihf">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <assignment id="jbff8c8j">
+                  <title>Initialize</title>
+                  <operation source="formula" to="input.in_limit">
+                     <expression language="XQuery">if (empty($input.in_limit)) then 100 else $input.in_limit</expression>
+                  </operation>
+                  <operation source="query" to="temp.tmp_ic_job_log">
+                     <query from="Salesforce:IC_JOB_LOG__c">
+                        <where>Id = '{$input.in_job_id}'  </where>
+                     </query>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jbff8c8j_jbff8c6k" targetScreen="jbff8c6k">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="jbff8c6k">
+                  <title>Prepare Query</title>
+                  <operation source="formula" to="temp.tmp_event_query">
+                     <expression language="XQuery">let $logging_level :=
+    switch (upper-case($temp.tmp_logging_level))
+    case "ERROR" return 
+            &lt;condition&gt;LOGGING_LEVEL__c = '3'&lt;/condition&gt;
+    case "WARNING" return 
+            &lt;condition&gt;LOGGING_LEVEL__c IN ('3', '2')&lt;/condition&gt;
+    case "INFO"  return 
+            &lt;condition&gt;LOGGING_LEVEL__c IN ('3', '2', '1')&lt;/condition&gt;
+    default return ()
+let $field_seearch_cond := if (empty($temp.tmp_search_field)) then ()
+    else &lt;condition&gt;{$temp.tmp_search_field} LIKE '%{$temp.tmp_search_string}%'&lt;/condition&gt;
+let $query :=&lt;query&gt;
+  &lt;condition&gt;JOB_ID__c = '{$input.in_job_id}'&lt;/condition&gt;
+  {$field_seearch_cond}
+  &lt;condition&gt;PROCESS_NAME__c LIKE '%{$temp.tmp_search_process}%'&lt;/condition&gt;
+  {if (empty($temp.tmp_time_from)) then () else
+  &lt;condition&gt;EVENT_TIME__c &amp;gt;= {$temp.tmp_time_from}&lt;/condition&gt;
+  }
+  {if (empty($temp.tmp_time_to)) then () else
+  &lt;condition&gt;EVENT_TIME__c &amp;lt;= {$temp.tmp_time_to}&lt;/condition&gt;
+  }
+  {$logging_level}
+ &lt;/query&gt;
+ 
+let $conditions := for $condition in $query/condition/text()
+  where (:Filter conditions that had empty values:)
+  not (contains($condition,"''")) and not(contains($condition,"%%"))
+  return $condition
+
+let $limit_part := if (empty($input.in_limit)) then () else concat("LIMIT ",$input.in_limit)
+let $order_by_part := '&amp;#10; ORDER BY EVENT_TIME__c DESC &amp;#10;'
+return
+concat(string-join($conditions, "&amp;#10; AND ")," ", $order_by_part, $limit_part)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_job_duration">
+                     <expression language="XQuery">let $start := $temp.tmp_ic_job_log.START_DATE__c
+let $end   := $temp.tmp_ic_job_log.END_DATE__c
+return
+if (empty($temp.tmp_ic_job_log.END_DATE__c )) 
+then
+	string(current-dateTime() - xs:dateTime(string($start)))
+else 
+	string(xs:dateTime(string($end))  - xs:dateTime(string($start)))</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jbff8c6k_jb452xj3" targetScreen="jb452xj3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>84sV2BKWoYYi3TjNavvAcF</types1:GUID>
+      <types1:DisplayName>iPaaS Job View</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.59Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

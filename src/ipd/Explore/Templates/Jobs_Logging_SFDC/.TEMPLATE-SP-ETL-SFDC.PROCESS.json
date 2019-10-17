@@ -1,0 +1,94 @@
+[
+   {
+      "objectGuid": "9vd2qrDae3he3ErslVVfOw",
+      "objectName": "TEMPLATE-SP-ETL-SFDC",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Integration Sub-Process (SP)",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "aW8SmuKTtfjcmsHYQ7Hj0s",
+            "lWurPrz0AW6hdK7bY2gVWz",
+            "91gnTcWCdhAkc5YWMvtKez"
+         ],
+         "repoInfo": {
+            "repoHandle": "3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "aW8SmuKTtfjcmsHYQ7Hj0s",
+      "objectName": "SP-Test-Throw-Fault-Generic-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to Simulate Faults in Processess",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "aaa-gt-3319405-2019-04-30T13:34:30.004Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "lWurPrz0AW6hdK7bY2gVWz",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "91gnTcWCdhAkc5YWMvtKez",
+      "objectName": "FaultInfo",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represents Generic process or service fault info Expanding built-in fault for logging purposes\n \n",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "PXyDQeH2PKDC0hC-gt-1846590-2019-04-30T13:34:30.669Z::po.xml"
+         }
+      }
+   }
+]

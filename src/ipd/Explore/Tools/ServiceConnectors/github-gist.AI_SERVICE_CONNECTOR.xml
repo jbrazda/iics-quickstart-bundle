@@ -1,0 +1,977 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>KjvMKQr3rp3yD7t-gt-4147664-2019-06-19T14:29:04.059Z::svc.xml</types1:EntryId>
+      <types1:Name>github-gist</types1:Name>
+      <types1:ParentFlowIds>XShOeCFk4AdypKw-gt-6237215-2019-06-21T13:55:49.804Z::conn.xml,eMi4tciSrZMSPfX-gt-4192745-2019-06-19T17:12:46.079Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>Github REST V3 APi to manage Gists
+see https://developer.github.com/v3/gists/
+
+This connector is useful to store and retrive configurations, templates, snippets, etc</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-06-19T14:29:04Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-10T16:55:40Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-10T16:55:44Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/github_gist/github_gist_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="github-gist"
+                            label=""
+                            name="github-gist"
+                            uuid="3eca5d7c-ee39-4e22-9c8e-5380c7f358f0">
+            <description>Github REST V3 APi to manage Gists
+see https://developer.github.com/v3/gists/
+
+This connector is useful to store and retrive configurations, templates, snippets, etc</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Base URI of the REST endpoint&#xA;should be https://api.github.com"
+                                    masked="false"
+                                    name="base_uri"
+                                    required="true"
+                                    testWith="https://api.github.com"
+                                    type="string"/>
+               <connectionAttribute description="Gist API Access Token"
+                                    masked="true"
+                                    name="access_token"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="API Version (currently V3)"
+                                    masked="false"
+                                    name="api_version"
+                                    required="true"
+                                    testWith="v3"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="baseGet"
+                       maxRedirects="100"
+                       name="baseGet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Base get Action</description>
+                  <input>
+                     <parameter name="media_type"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"raw","label":"raw"},{"value":"base64","label":"base64"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="When enabled Action will return all Action response headers"
+                                name="get_response_headers"
+                                nogen="true"
+                                required="false"
+                                testWith="true"
+                                type="boolean"/>
+                     <parameter description="Use this parameter with actions that return paged lists, this will parse URLs for page next,last, prvious/first&#xA;from Link Response header&#xA;&lt;https://api.github.com/search/code?q=addClass+user%3Amozilla&amp;page=15&gt;; rel=&#34;next&#34;,&#xA;  &lt;https://api.github.com/search/code?q=addClass+user%3Amozilla&amp;page=34&gt;; rel=&#34;last&#34;,&#xA;  &lt;https://api.github.com/search/code?q=addClass+user%3Amozilla&amp;page=1&gt;; rel=&#34;first&#34;,&#xA;  &lt;https://api.github.com/search/code?q=addClass+user%3Amozilla&amp;page=13&gt;; rel=&#34;prev&#34;"
+                                name="parse_paging_links"
+                                nogen="true"
+                                required="false"
+                                testWith="true"
+                                type="boolean"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_uri}" verb="GET">
+                        <httpHeaders>
+                           <header name="Accept">{if (not(empty($media_type ))) then concat("application/vnd.github.",$api_version,".",$media_type ) else "application/json"}</header>
+                           <header name="Authorization">{concat("token ",$access_token)}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Response Headers are provided when the parameter get_response_headers is set to true"
+                            name="responseHeaders"
+                            type="string">
+                        <xquery>{if (string($get_response_headers) = 'true' ) 
+then 
+  for $header in $ResponseHeaders
+  return
+  &lt;header&gt;
+     &lt;name&gt;{data($header/@name)}&lt;/name&gt;
+     &lt;value&gt;{data($header/text())}&lt;/value&gt;
+  &lt;/header&gt;
+else ()}</xquery>
+                     </field>
+                     <field description="This Output parameter will be generated for actions that return lists when  the parse_paging_links parameter is set to true.&#xA;&#xA;See https://developer.github.com/v3/guides/traversing-with-pagination/"
+                            name="pagingLinks"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">pageLink</option>
+                        </options>
+                        <xquery>{if (string($parse_paging_links) = 'true' ) then
+    let $link-header := data($ResponseHeaders[@name="link"]/text())
+    (:
+    parsing the Link Response header for paging
+    See https://developer.github.com/v3/guides/traversing-with-pagination/
+    :)
+    let $items := tokenize($link-header,",")
+    let $links := for $item in $items
+        let $link-parts := tokenize($item,";")
+        let $URL := substring($link-parts[1],2,string-length($link-parts[1])-2)
+        let $rel := tokenize(normalize-space($link-parts[2]),"=")[2]
+        return 
+        &lt;link&gt;
+            &lt;rel&gt;{$rel}&lt;/rel&gt;
+            &lt;url&gt;{$URL}&lt;/url&gt;
+        &lt;/link&gt;
+
+    return $links
+else ()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="basePost"
+                       maxRedirects="100"
+                       name="basePost"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>base POST Action</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_uri}" verb="POST">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Authorization">{concat("token ",$access_token)}</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getPublicGists"
+                       maxRedirects="100"
+                       name="getPublicGists"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>List all public gists sorted by most recently updated to least recently updated.
+
+Note: With pagination, you can fetch up to 3000 gists. For example, you can fetch 100 pages with 30 gists per page or 30 pages with 100 gists per page.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned."
+                                name="since"
+                                nogen="true"
+                                required="false"
+                                testWith="2019-06-01T00:00:00Z"
+                                type="datetime"/>
+                     <parameter description="By passing the per_page parameter, you can specify how many items you want each page to return, up to 100 items."
+                                name="per_page"
+                                nogen="true"
+                                required="false"
+                                testWith="50"
+                                type="int"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{(:GET /gists/public:)&#xA;let $uriParts := ($base_uri,&#34;gists/public&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gists" type="objectlist">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $gist_list := util:parseJSON($payload)
+return 
+for $item in $gist_list
+return
+&lt;gist&gt;
+ {$item/*}
+&lt;/gist&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getStarredGists"
+                       maxRedirects="100"
+                       name="getStarredGists"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>List the authenticated user's starred gists:</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned."
+                                name="since"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="By passing the per_page parameter, you can specify how many items you want each page to return, up to 100 items."
+                                name="per_page"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{(:GET /gists/starred:)&#xA;let $uriParts := ($base_uri,&#34;gists/starred&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return &#xA;  string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gists" type="objectlist">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $gist_list := util:parseJSON($payload)
+return 
+for $item in $gist_list
+return
+&lt;gist&gt;
+ {$item/*}
+&lt;/gist&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getGist"
+                       maxRedirects="100"
+                       name="getGist"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get a single gist To get a specific version of the Gist also provide sha  signature parameter</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Gist ID"
+                                name="gist_id"
+                                nogen="true"
+                                required="true"
+                                testWith="9d114714259bb05f9dc7f89bbfa978d5"
+                                type="string"/>
+                     <parameter description="SHA ID of the Gist revision"
+                                name="sha"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{if (empty($sha)) then concat($base_uri,&#34;/gists/&#34;,$gist_id)&#xA;else concat($base_uri,&#34;/gists/&#34;,$gist_id,&#34;/&#34;,$sha )}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gist" type="reference" xmlElement=".">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Write"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="basePost"
+                       label="createGist"
+                       maxRedirects="100"
+                       name="createGist"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Allows you to add a new gist with one or more files.</description>
+                  <inheritanceMetadata>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="gist"
+                                required="false"
+                                testWith="{&#xA;  &#34;description&#34;: &#34;Hello World Examples&#34;,&#xA;  &#34;public&#34;: true,&#xA;  &#34;files&#34;: {&#xA;    &#34;hello_world.rb&#34;: {&#xA;      &#34;content&#34;: &#34;class HelloWorld\n   def initialize(name)\n      @name = name.capitalize\n   end\n   def sayHi\n      puts \&#34;Hello !\&#34;\n   end\nend\n\nhello = HelloWorld.new(\&#34;World\&#34;)\nhello.sayHi&#34;&#xA;    },&#xA;    &#34;hello_world.py&#34;: {&#xA;      &#34;content&#34;: &#34;class HelloWorld:\n\n    def __init__(self, name):\n        self.name = name.capitalize()\n       \n    def sayHi(self):\n        print \&#34;Hello \&#34; + self.name + \&#34;!\&#34;\n\nhello = HelloWorld(\&#34;world\&#34;)\nhello.sayHi()&#34;&#xA;    },&#xA;    &#34;hello_world_ruby.txt&#34;: {&#xA;      &#34;content&#34;: &#34;Run `ruby hello_world.rb` to print Hello World&#34;&#xA;    },&#xA;    &#34;hello_world_python.txt&#34;: {&#xA;      &#34;content&#34;: &#34;Run `python hello_world.py` to print Hello World&#34;&#xA;    }&#xA;  }&#xA;}"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">createGist</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/gists" verb="POST">
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="publishedGist"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Write"
+                       failOnError="true"
+                       forSearch="false"
+                       label="updateGist"
+                       maxRedirects="100"
+                       name="updateGist"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Allows you to update or delete a gist file and rename gist files. Files from the previous version of the gist that aren't explicitly changed during an edit are unchanged.</description>
+                  <input>
+                     <parameter description="Gist ID"
+                                name="gist_id"
+                                nogen="true"
+                                required="true"
+                                testWith="2422a51a1c43df1eeb1cb93139968590"
+                                type="string"/>
+                     <parameter description="Gist Data"
+                                name="gist"
+                                required="true"
+                                testWith="{&#xA;  &#34;description&#34;: &#34;Hello World Examples&#34;,&#xA;  &#34;files&#34;: {&#xA;    &#34;hello_world_ruby.txt&#34;: {&#xA;      &#34;content&#34;: &#34;Run `ruby hello_world.rb` or `python hello_world.py` to print Hello World&#34;,&#xA;      &#34;filename&#34;: &#34;hello_world.md&#34;&#xA;    },&#xA;    &#34;new_file.txt&#34;: {&#xA;      &#34;content&#34;: &#34;This is a new placeholder file.&#34;&#xA;    }&#xA;  }&#xA;}"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">createGist</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_uri,&#34;/gists/&#34;,$gist_id)}"
+                                        verb="PATCH">
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Authorization">{concat("token ",$access_token)}</header>
+                        </httpHeaders>
+                        <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="updatedGist"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Delete"
+                       failOnError="true"
+                       forSearch="false"
+                       label="deletGist"
+                       maxRedirects="100"
+                       name="deletGist"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Delete a gist</description>
+                  <input>
+                     <parameter name="gist_id"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_uri,&#34;/gists/&#34;,$gist_id)}"
+                                        verb="DELETE">
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Authorization">{{concat("token ",$access_token)}}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getGistFile"
+                       maxRedirects="100"
+                       name="getGistFile"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Retrive Gist file raw Data</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="raw_url"
+                                nogen="true"
+                                required="true"
+                                testWith="https://gist.githubusercontent.com/jbrazda/0ec8c51c0f9956b203a0ba484a90e368/raw/d2550829202d9fee10e7981bd9a5dab33f3476ae/ElectronicFulfillmentRequest.xml"
+                                type="url"/>
+                     <parameter description="Use this parameter to parse raw data to desired format and present as xml object"
+                                name="parse_as"
+                                nogen="true"
+                                required="false"
+                                testWith="xml"
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"xml","label":"xml"},{"value":"json","label":"json"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{$raw_url}" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="file_content" type="textarea">
+                        <xquery>{$RESTResponse/*:payload/text()}</xquery>
+                     </field>
+                     <field description="" name="parsed_xml" type="reference">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                        <xquery>{switch ($parse_as) 
+case 'xml' return util:parseXML($RESTResponse/*:payload/text())
+case 'json' return util:parseJSON(jsonStr)
+default return ()}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getUserGists"
+                       maxRedirects="100"
+                       name="getUserGists"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>List the authenticated user's gists or if called anonymously, this will return all public gists</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="User Name"
+                                name="user"
+                                nogen="true"
+                                required="false"
+                                testWith="jbrazda"
+                                type="string"/>
+                     <parameter description="This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ. Only gists updated at or after this time are returned."
+                                name="since"
+                                nogen="true"
+                                required="false"
+                                testWith="2019-06-01T00:00:00Z"
+                                type="datetime"/>
+                     <parameter description="By passing the per_page parameter, you can specify how many items you want each page to return, up to 100 items"
+                                name="per_page"
+                                nogen="true"
+                                required="false"
+                                testWith="50"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{(:GET /users/:username/gists:)&#xA;let $uriParts := ($base_uri,&#34;users&#34;,$user,&#34;gists&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gists" type="objectlist">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $gist_list := util:parseJSON($payload)
+return 
+for $item in $gist_list
+return
+&lt;gist&gt;
+ {$item/*}
+&lt;/gist&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="geGistsResultPage"
+                       maxRedirects="100"
+                       name="geGistsResultPage"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Action to retrieve specific page based on links generated  in Listing response header</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="url"
+                                required="true"
+                                testWith="https://api.github.com/gists/public?since=2019-06-01T00%3A00%3A00Z&amp;amp;per_page=50&amp;amp;page=2"
+                                type="url"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{$url}" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gists" type="objectlist">
+                        <options>
+                           <option name="referenceTo">gist</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $gist_list := util:parseJSON($payload)
+return 
+for $item in $gist_list
+return
+&lt;gist&gt;
+ {$item/*}
+&lt;/gist&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Read"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getUserProfile"
+                       maxRedirects="100"
+                       name="getUserProfile"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>get User Profile using Connector Credentials</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="media_type" type="parameter"/>
+                           <attribute inherit="inherit" name="get_response_headers" type="parameter"/>
+                           <attribute inherit="inherit" name="parse_paging_links" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields">
+                           <attribute inherit="inherit" name="responseHeaders" type="field"/>
+                           <attribute inherit="inherit" name="pagingLinks" type="field"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Authorization" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding url="/user" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="githubUserProfile"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">UserProfile</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="gist">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="owner" type="reference">
+                        <options>
+                           <option name="referenceTo">owner</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="forks" type="string"/>
+                     <field name="commits_url" type="url"/>
+                     <field name="comments" type="int"/>
+                     <field name="forks_url" type="url"/>
+                     <field name="git_push_url" type="url"/>
+                     <field name="created_at" type="string"/>
+                     <field name="description" type="string"/>
+                     <field name="truncated" type="string"/>
+                     <field name="history" type="objectlist">
+                        <options>
+                           <option name="referenceTo">history</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="url" type="url"/>
+                     <field name="public" type="string"/>
+                     <field name="updated_at" type="string"/>
+                     <field name="html_url" type="url"/>
+                     <field name="git_pull_url" type="url"/>
+                     <field name="comments_url" type="url"/>
+                     <field name="files" type="reference">
+                        <options>
+                           <option name="referenceTo">files</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="id" type="string"/>
+                     <field name="user" type="string"/>
+                     <field name="node_id" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="owner">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="gists_url" type="url"/>
+                     <field name="repos_url" type="url"/>
+                     <field name="following_url" type="url"/>
+                     <field name="starred_url" type="url"/>
+                     <field name="login" type="string"/>
+                     <field name="followers_url" type="url"/>
+                     <field name="type" type="string"/>
+                     <field name="url" type="url"/>
+                     <field name="subscriptions_url" type="url"/>
+                     <field name="received_events_url" type="url"/>
+                     <field name="avatar_url" type="image"/>
+                     <field name="events_url" type="url"/>
+                     <field name="html_url" type="url"/>
+                     <field name="site_admin" type="string"/>
+                     <field name="id" type="string"/>
+                     <field name="gravatar_id" type="string"/>
+                     <field name="node_id" type="string"/>
+                     <field name="organizations_url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="history">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="committed_at" type="string"/>
+                     <field name="change_status" type="reference">
+                        <options>
+                           <option name="referenceTo">change_status</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="version" type="string"/>
+                     <field name="user" type="reference">
+                        <options>
+                           <option name="referenceTo">user</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="change_status">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="total" type="int"/>
+                     <field name="additions" type="int"/>
+                     <field name="deletions" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="user">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="gists_url" type="url"/>
+                     <field name="repos_url" type="url"/>
+                     <field name="following_url" type="url"/>
+                     <field name="starred_url" type="url"/>
+                     <field name="login" type="string"/>
+                     <field name="followers_url" type="url"/>
+                     <field name="type" type="string"/>
+                     <field name="url" type="url"/>
+                     <field name="subscriptions_url" type="url"/>
+                     <field name="received_events_url" type="url"/>
+                     <field name="avatar_url" type="image"/>
+                     <field name="events_url" type="url"/>
+                     <field name="html_url" type="url"/>
+                     <field name="site_admin" type="string"/>
+                     <field name="id" type="string"/>
+                     <field name="gravatar_id" type="string"/>
+                     <field name="node_id" type="string"/>
+                     <field name="organizations_url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="files">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="file" type="objectlist">
+                        <options>
+                           <option name="referenceTo">file</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="file">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="filename" type="string"/>
+                     <field name="size" type="int"/>
+                     <field name="truncated" type="string"/>
+                     <field name="language" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="content" type="string"/>
+                     <field name="raw_url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createGist">
+                  <description>Create Gist PO</description>
+                  <detail>
+                     <field name="description" type="string"/>
+                     <field name="public" type="boolean"/>
+                     <field name="files" type="reference">
+                        <options>
+                           <option name="referenceTo">createGistFile</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createGistFile">
+                  <description/>
+                  <detail>
+                     <field name="file" type="objectlist">
+                        <options>
+                           <option name="referenceTo">$any</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="header">
+                  <description>HTTP Header</description>
+                  <detail>
+                     <field name="name" type="string"/>
+                     <field name="value" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="pageLink">
+                  <description>Parsed page Links for paging the get list result sets 
+See</description>
+                  <detail>
+                     <field name="rel" type="string"/>
+                     <field name="url" type="url"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="UserProfile">
+                  <description>https://api.github.com/user Profile Data</description>
+                  <detail>
+                     <field name="gists_url" type="string"/>
+                     <field name="repos_url" type="string"/>
+                     <field name="following_url" type="string"/>
+                     <field name="bio" type="string"/>
+                     <field name="created_at" type="string"/>
+                     <field name="login" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="blog" type="string"/>
+                     <field name="subscriptions_url" type="string"/>
+                     <field name="updated_at" type="string"/>
+                     <field name="site_admin" type="string"/>
+                     <field name="company" type="string"/>
+                     <field name="id" type="int"/>
+                     <field name="public_repos" type="int"/>
+                     <field name="gravatar_id" type="string"/>
+                     <field name="email" type="string"/>
+                     <field name="organizations_url" type="string"/>
+                     <field name="hireable" type="string"/>
+                     <field name="starred_url" type="string"/>
+                     <field name="followers_url" type="string"/>
+                     <field name="public_gists" type="int"/>
+                     <field name="url" type="string"/>
+                     <field name="received_events_url" type="string"/>
+                     <field name="followers" type="int"/>
+                     <field name="avatar_url" type="string"/>
+                     <field name="events_url" type="string"/>
+                     <field name="html_url" type="string"/>
+                     <field name="following" type="int"/>
+                     <field name="name" type="string"/>
+                     <field name="location" type="string"/>
+                     <field name="node_id" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>aXpKwYgvdgcbMOhXzbXTqd</types1:GUID>
+      <types1:DisplayName>github-gist</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.024Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,45 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>oyun7wporzYLnzY-gt-1171989-2018-10-24T17:25:20.232Z::po.xml</types1:EntryId>
+      <types1:Name>ShellCurlOptions-1</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Object represents Various Curl Options
+Some are defined explicitly for ease of use  other optional params should be placed in the optional-params field</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-24T17:25:20Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="ShellCurlOptions"
+                        isByCopy="true"
+                        name="ShellCurlOptions-1">
+            <description>Object represents Various Curl Options
+Some are defined explicitly for ease of use  other optional params should be placed in the optional-params field</description>
+            <detail>
+               <field label="Resource URL" name="url" type="url"/>
+               <field label="Output File (-o, --output)" name="output" type="string"/>
+               <field label="Verbose Output (-v, --verbose)"
+                      name="verbose"
+                      type="boolean"/>
+               <field label="Request Method (-X, --request)"
+                      name="requestMethod"
+                      type="string"/>
+               <field label="Fail silently (-f, --fail)" name="fail" type="boolean"/>
+               <field label="Advanced Options" name="advancedOptions" type="textarea"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>3bLiLIjOjYgjRKG4IIPxYo</types1:GUID>
+      <types1:DisplayName>ShellCurlOptions</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.462Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

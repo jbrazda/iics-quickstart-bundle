@@ -1,0 +1,257 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bcm6S6fPAreFRqX-gt-798738-2019-03-19T17:11:00.502Z::gt.xml</types1:EntryId>
+      <types1:Name>SP_Show_Process_Links</types1:Name>
+      <types1:ParentFlowIds>q3GZkL0jmu6lS01-gt-923009-2019-03-19T21:02:32.262Z::gt.xml,rKkQIW3Ni7A7vNl-gt-2733919-2019-03-19T21:04:04.275Z::gt.xml,Lv18pNz6HKoJBUh-gt-898877-2019-03-19T17:11:01.261Z::gt.xml,DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml,TeFRqXpIW7WHK80-gt-168251-2018-07-24T14:05:54.728Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-03-19T17:11:01Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-06-27T18:04:02Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-06-27T18:04:05Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.SP_Show_Process_Links/SP_Show_Process_Links.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         disableScreenRollback="true"
+                         displayName="SP Show Process Links"
+                         doneOnEndStep="true"
+                         name="SP_Show_Process_Links"
+                         runAsUser="$current">
+            <description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Process ID to generate links for"
+                          name="in_process_id"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Environment name must contain &#34;Cloud&#34; Keyword for Cloud server instances otherwise must match the agent name for processes running on agent"
+                          name="in_enviornment"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Process Name"
+                          name="in_process_name"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="null" name="tmp_process_view" type="url">
+                  <options>
+                     <option name="urlDisplayReadonlyAs">Link</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_process_view_detail" type="url">
+                  <options>
+                     <option name="urlDisplayReadonlyAs">Link</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_process_log" type="url">
+                  <options>
+                     <option name="urlDisplayReadonlyAs">Link</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <possibleOutcomes>
+               <outcome id="outcome_js2cncvq">Back</outcome>
+               <outcome id="outcome_js2cncvr">Exit</outcome>
+            </possibleOutcomes>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="j9alhyvc">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="j9alhyvc_js2cncul" targetScreen="js2cncul">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="js2cncv1">
+                  <title>Process View</title>
+                  <body contentType="text/html">&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Process: [ &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="in_process_id (input)" name="input.in_process_id" readonly="readonly" type="text" value="in_process_id (input)"&gt; ]&amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="in_process_name (input)" name="input.in_process_name" readonly="readonly" type="text" value="in_process_name (input)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_process_view (temporary)" name="temp.tmp_process_view" readonly="readonly" type="text" value="tmp_process_view (temporary)"&gt;&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_process_view_detail (temporary)" name="temp.tmp_process_view_detail" readonly="readonly" type="text" value="tmp_process_view_detail (temporary)"&gt;&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_process_log (temporary)" name="temp.tmp_process_log" readonly="readonly" type="text" value="tmp_process_log (temporary)"&gt;&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;Note:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open Salesforce UI in regular window wher you can run test and other guides&lt;/li&gt;
+&lt;li&gt;To use&amp;nbsp;above links you must be logged in to &lt;a title="Informatica Cloud Login Page" href="https://dm-us.informaticacloud.com/identity-service/home"&gt;Informatica Cloud&lt;/a&gt; in private Incognito Window&lt;/li&gt;
+&lt;li&gt;Right clik on one of the links above and open in Icognito Window&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="js2cncv1_js2cncvo" targetScreen="js2cncvo">
+                        <text>Back</text>
+                     </action>
+                     <action alt="null" id="js2cncv1_js2cncv0" targetScreen="js2cncv0">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_process_view_detail"
+                                     readonly="true"
+                                     required="false"
+                                     type="url">
+                        <options>
+                           <option name="urlDisplayReadonlyAs">Link</option>
+                           <option name="required">false</option>
+                           <option name="urlDisplayReadOnlyLabel">Open Process View Detail</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_process_log"
+                                     readonly="true"
+                                     required="false"
+                                     type="url">
+                        <options>
+                           <option name="urlDisplayReadonlyAs">Link</option>
+                           <option name="required">false</option>
+                           <option name="urlDisplayReadOnlyLabel">Open Process Log</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_process_view"
+                                     readonly="true"
+                                     required="false"
+                                     type="url">
+                        <options>
+                           <option name="urlDisplayReadonlyAs">Link</option>
+                           <option name="required">false</option>
+                           <option name="urlDisplayReadOnlyLabel">Open Process View</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.in_process_id"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="input.in_process_name"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen dontShowScreen="true" id="js2cncvo" outcomeId="outcome_js2cncvq">
+                  <title>Back</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <endScreen dontShowScreen="true" id="js2cncv0" outcomeId="outcome_js2cncvr">
+                  <title>Exit</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jxez2wau">
+                  <actions/>
+               </empty>
+               <assignment id="js2cncul">
+                  <title>Generate URLs</title>
+                  <operation source="formula" to="temp.tmp_process_view">
+                     <expression language="XQuery">let $base_url    := util:resolveURN("ae:base-uri")
+let $org_id      := util:getOrganizationId()
+let $environment := encode-for-uri($input.in_enviornment)
+let $pid         := $input.in_process_id 
+let $pname       := encode-for-uri($input.in_process_name)
+let $url :=  if (contains($environment, "Cloud"))
+    then concat($base_url,"/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/",$pid,"/",$pname,"-",$pid,"%7B%7D")
+    else concat($base_url,"/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/",$pid,"/",$pname,"-",$pid,"%7B",$environment,"%7D")
+return
+$url
+
+
+(:Following are example URLs to display process Detail
+ICRT - https://ps1w2-ics.rt.informaticacloud.com/activevos/001WOZ/local/na_agent_01/process/processview.action?pid=95035&amp;ssr=1
+IICS
+BPEL Process View
+https://na1.ai.dm-us.informaticacloud.com/activevos/local/iclab/process/processview.action?ssr=1&amp;pid=7516
+IPD Process View
+Agent - https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app
+:)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_view_detail">
+                     <expression language="XQuery">let $base_url := util:resolveURN("ae:base-uri")
+let $org_id   := util:getOrganizationId()
+let $environment := $input.in_enviornment 
+let $pid := $input.in_process_id 
+(:https://na1.ai.dm-us.informaticacloud.com/activevos/d8UL5i5Pm4KddufpfKuiaN/process/processview.action?ssr=1&amp;pid=328928888233140224:)
+let $url :=  if (contains($environment, "Cloud"))
+	then concat($base_url,"/activevos/",$org_id,"/process/processview.action?ssr=1&amp;amp;pid=",$pid)
+    else concat($base_url,"/activevos/",$org_id,"/local/",$environment,"/process/processview.action?ssr=1&amp;amp;pid=",$pid)
+return
+$url</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_log">
+                     <expression language="XQuery">let $base_url := util:resolveURN("ae:base-uri")
+let $org_id   := util:getOrganizationId()
+let $environment := encode-for-uri($input.in_enviornment  )
+let $pid := $input.in_process_id 
+let $url :=  if (contains($environment, "Cloud"))
+	then concat($base_url,"/activevos/",$org_id,"/processview/processview_log.action?pid=",$pid)
+    else concat($base_url,"/activevos/",$org_id,"/local/",$environment,"/processview/processview_log.action?pid=",$pid)
+return
+$url</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="js2cncul_js2cncv1" targetScreen="js2cncv1">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>0tVX0h5BQECepoL3KrkDWi</types1:GUID>
+      <types1:DisplayName>SP Show Process Links</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.842Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

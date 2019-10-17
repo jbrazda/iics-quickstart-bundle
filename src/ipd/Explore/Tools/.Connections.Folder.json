@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "24PSasCglzujDSp0EaobaA",
+      "objectName": "Connections",
+      "objectType": "Folder",
+      "path": "/Explore/Tools",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Tools Connections",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

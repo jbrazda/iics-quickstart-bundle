@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "9BvRWvqMsiEk6qnJ0A0UWE",
+      "objectName": "ICS-API",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "ICS API Connection",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "seLm5phuCMLkZlk-gt-110746-2018-07-20T16:32:56.301Z::conn.xml"
+         }
+      }
+   }
+]

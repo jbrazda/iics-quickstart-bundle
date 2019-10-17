@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "4qjjt0TibYxkze5Aq74mgj",
+      "objectName": "Email",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Shared Email Service to send  alerts and notifications",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "eMuzBq695kchzt1-gt-3182512-2019-01-23T20:02:33.079Z::conn.xml"
+         }
+      }
+   }
+]

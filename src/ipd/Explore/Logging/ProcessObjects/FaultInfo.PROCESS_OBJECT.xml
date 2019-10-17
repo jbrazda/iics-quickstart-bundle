@@ -1,0 +1,42 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>PXyDQeH2PKDC0hC-gt-1846590-2019-04-30T13:34:30.669Z::po.xml</types1:EntryId>
+      <types1:Name>FaultInfo</types1:Name>
+      <types1:ParentFlowIds>EhNWIsoZduD2L5S-gt-1373703-2018-11-13T20:22:13.491Z::pd.xml,3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml,eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
+ 
+</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="FaultInfo"
+                        isByCopy="true"
+                        name="FaultInfo">
+            <description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
+ 
+</description>
+            <detail>
+               <field label="code" name="code" type="string"/>
+               <field label="reason" name="reason" type="string"/>
+               <field label="detail" name="detail" type="string"/>
+               <field label="processName" name="processName" type="string"/>
+               <field label="processId" name="processId" type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>91gnTcWCdhAkc5YWMvtKez</types1:GUID>
+      <types1:DisplayName>FaultInfo</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.976Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

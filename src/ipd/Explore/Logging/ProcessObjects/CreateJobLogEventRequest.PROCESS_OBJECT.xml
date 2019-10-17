@@ -1,0 +1,56 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>OjG4abck0Kn7wpo-gt-1756122-2019-04-30T13:34:30.649Z::po.xml</types1:EntryId>
+      <types1:Name>CreateJobLogEventRequest</types1:Name>
+      <types1:ParentFlowIds>gjrwXtqdsQR6kbe-gt-3314301-2019-04-30T13:34:32.107Z::pd.xml,YtFgpKi9zhFtybd-gt-3314271-2019-04-30T13:34:31.814Z::pd.xml,Omkbclopz4KhPVE-gt-3319431-2019-04-30T13:34:33.657Z::pd.xml,Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml,7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>IPaaS Job Log Event</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-07-16T16:45:24Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="CreateJobLogEventRequest"
+                        isByCopy="true"
+                        name="CreateJobLogEventRequest">
+            <description>IPaaS Job Log Event </description>
+            <tags/>
+            <detail>
+               <field label="event_message" name="event_message" type="string"/>
+               <field label="event_time" name="event_time" type="datetime"/>
+               <field label="event_detail" name="event_detail" type="string"/>
+               <field label="process_id" name="process_id" type="int"/>
+               <field label="logging_level" name="logging_level" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"1","label":"INFO"},{"value":"2","label":"WARNING"},{"value":"3","label":"ERROR"}]</option>
+                  </options>
+               </field>
+               <field label="process_name" name="process_name" type="string"/>
+               <field label="environment" name="environment" type="string"/>
+               <field label="ProcessExecutionContext"
+                      name="ProcessExecutionContext"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </field>
+               <field label="process_title" name="process_title" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>6Qfd83wdMtUgosGkvB0Gy0</types1:GUID>
+      <types1:DisplayName>CreateJobLogEventRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.614Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

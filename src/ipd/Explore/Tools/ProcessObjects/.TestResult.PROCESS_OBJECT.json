@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "3OZRTFmaS7bjXv1PyXqY6o",
+      "objectName": "TestResult",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Object Represent a Test Reults",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "ov6or3rp3yD7tyG-gt-64980-2018-07-18T13:21:57.231Z::po.xml"
+         }
+      }
+   }
+]

@@ -1,0 +1,334 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Nr3tfUbbf5ZK0CY-gt-1141049-2018-10-24T17:25:20.64Z::gt.xml</types1:EntryId>
+      <types1:Name>Test-SP-util-shell-curl-NA</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Test Case for SP-util-shell-curl-NA</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-24T17:25:21Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-08-06T22:59:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-08-06T22:59:46Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Test_SP_util_shell_curl_NA/Test_SP_util_shell_curl_NA.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Test-SP-util-shell-curl-NA"
+                         doneOnEndStep="true"
+                         name="Test-SP-util-shell-curl-NA"
+                         runAsUser="$current">
+            <description>Test Case for SP-util-shell-curl-NA</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="j8ly6bwm">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="j8ly6bwm_j8m0nfxy" targetScreen="j8m0nfxy">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="j8m0nfxy">
+                  <title>Tests</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Test and Demo cUrl Service Wrappper&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;See &lt;a title="Man Page curl" href="https://curl.haxx.se/docs/manpage.html"&gt;curl documentation&lt;/a&gt; for available options&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="j8m0nfxy_j8m0nfze" targetScreen="j8m0nfze">
+                        <text>Test Download</text>
+                     </action>
+                     <action alt="null" id="j8m0nfxy_j8m0nfyt" targetScreen="j8m0nfyt">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="jnng7z67">
+                  <title>Output</title>
+                  <body contentType="text/html">&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Output&lt;/td&gt;
+&lt;td&gt;Value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;outputString&lt;/td&gt;
+&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="outputString (output)" name="output.outputString" readonly="readonly" type="text" value="outputString (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;responseCode&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="responseCode (output)" name="output.responseCode" readonly="readonly" type="text" value="responseCode (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;errorString&lt;/td&gt;
+&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.errorString" readonly="readonly" type="text" value="errorString (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;headers&lt;/td&gt;
+&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="responseheaders (output)" name="output.responseheaders" readonly="readonly" type="text" value="responseheaders (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jnng7z67_j8m0nfyt" targetScreen="j8m0nfyt">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.responseCode"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.errorString"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                           <option name="text_size">200</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.responseheaders"
+                                     readonly="true"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">10</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.outputString"
+                                     readonly="true"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">10</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen id="j8ly6bxp">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Done</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="j8m0nfyt">
+                  <actions>
+                     <action alt="null" id="j8m0nfyt_j8ly6bxp" targetScreen="j8ly6bxp">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <callProcess id="j8m0nfze">
+                  <title>SP-util-shell-curl-NA</title>
+                  <subflowGUID>1OpWSaZgo8NeIz7ogKH1ip</subflowGUID>
+                  <subflowPath>SP-util-shell-curl-NA</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jz0fcqft"
+                                name="targetFile"
+                                source="screen"
+                                updatable="true">screen.targetFile</parameter>
+                     <parameter id="jz0fcqfu"
+                                name="resourceUrl"
+                                source="screen"
+                                updatable="true">screen.resourceUrl</parameter>
+                     <parameter id="jz0fcqfv"
+                                name="workingDirectory"
+                                source="constant"
+                                updatable="true">/home/iclab/data/WHO/test</parameter>
+                     <parameter id="jz0fcqfw"
+                                name="verboseOutput"
+                                source="screen"
+                                updatable="true">screen.verboseOutput</parameter>
+                     <parameter id="jz0fcqfx"
+                                name="dumpHeaders"
+                                source="screen"
+                                updatable="true">screen.dumpHeaders</parameter>
+                     <parameter id="jz0fcqfy"
+                                name="optionalParams"
+                                source="screen"
+                                updatable="true">screen.optionalParams</parameter>
+                     <parameter id="jz0fcqfz"
+                                name="createDirs"
+                                source="constant"
+                                updatable="true">true</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="responseCode" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="outputString" type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="errorString" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="responseheaders" type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="outRestResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:RESTResponse</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                        </options>
+                     </field>
+                     <field name="curlErrorString" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="curlResponseCode" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="curlOutputString" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <screen id="j8m0nfze-servicescreen">
+                     <title>SP-util-shell-curl-NA</title>
+                     <body contentType="text/html">&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Source URL&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.resourceUrl" type="text" value="resourceUrl*"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Output File&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.targetFile" type="text" value="targetFile"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Dump Headers&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.dumpHeaders" type="text" value="dumpHeaders"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Verbose Output&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.verboseOutput" type="text" value="verboseOutput"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Optional Params&lt;/td&gt;
+&lt;td&gt;&lt;input title="Edit a field to change the field properties." name="screen.optionalParams" type="text" value="optionalParams"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.targetFile"
+                                        readonly="false"
+                                        required="false"
+                                        type="string">
+                           <options>
+                              <option name="required">false</option>
+                              <option name="defaultvalue">Population_using_solid_fuels_estimates.csv</option>
+                              <option name="text_size">100</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.resourceUrl"
+                                        readonly="false"
+                                        required="true"
+                                        type="url">
+                           <options>
+                              <option name="urlDisplayReadonlyAs">Link</option>
+                              <option name="required">true</option>
+                              <option name="defaultvalue">xhttp://apps.who.int/gho/athena/data/xmart.csv?target=GHO/WHS5_512&amp;profile=crosstable&amp;filter=COUNTRY:*;REGION:*&amp;x-sideaxis=COUNTRY;DATASOURCE&amp;x-topaxis=GHO;YEAR;RESIDENCEAREATYPE&amp;x-collapse=true</option>
+                              <option name="frame_width">100</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.dumpHeaders"
+                                        readonly="false"
+                                        required="false"
+                                        type="boolean">
+                           <options>
+                              <option name="defaultvalue">true</option>
+                              <option name="boolean_show_as">checkbox</option>
+                              <option name="required">false</option>
+                              <option name="hover_text">Dump the response headers to targetFile.headers</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.verboseOutput"
+                                        readonly="false"
+                                        required="false"
+                                        type="boolean">
+                           <options>
+                              <option name="defaultvalue">true</option>
+                              <option name="boolean_show_as">checkbox</option>
+                              <option name="required">false</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.optionalParams"
+                                        readonly="false"
+                                        required="false"
+                                        type="textarea">
+                           <options>
+                              <option name="text_width">100</option>
+                              <option name="text_height">5</option>
+                              <option name="required">false</option>
+                           </options>
+                        </screenDataItem>
+                     </screenData>
+                  </screen>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+                  <actions>
+                     <action alt="" id="j8m0nfze_jnng7z67" targetScreen="jnng7z67">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>8Umt40sVBRcccjyfEbEJKx</types1:GUID>
+      <types1:DisplayName>Test-SP-util-shell-curl-NA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.681Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

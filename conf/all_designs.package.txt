@@ -1,0 +1,3 @@
+Explore/Logging.Project
+Explore/Templates.Project
+Explore/Tools.Project

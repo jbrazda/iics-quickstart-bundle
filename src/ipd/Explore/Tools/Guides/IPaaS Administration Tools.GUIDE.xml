@@ -1,0 +1,170 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:EntryId>
+      <types1:Name>IPaaS_Administration_Tools</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>IIICS Custom Administration Tools Launcher</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-03-20T15:42:56Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-10T02:57:58Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.IPaaS_Administration_Tools/IPaaS_Administration_Tools.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="IPaaS Administration Tools"
+                         doneOnEndStep="false"
+                         name="IPaaS_Administration_Tools"
+                         runAsUser="$current">
+            <description>IIICS Custom Administration Tools Launcher</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jthdkbpg" targetScreen="jthdkbpg">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jthdkbpg">
+                  <title>IICS Administration Tools</title>
+                  <body contentType="text/html">&lt;p style="text-align: center;"&gt;&lt;strong&gt;Informatica Cloud Administration Tools&lt;/strong&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;img style="width: 471px; height: 186px;" title="Sales Call Follow-Up 1" src="project:/com.activevos.cumulus.cloud.extend.playbook.resources/scfu/scfu-1.jpg" alt=""&gt;&lt;/p&gt;
+&lt;p style="text-align: center;"&gt;&lt;img title="Sales Call Follow-Up 1" src="https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png" alt=""&gt;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jthdkbpg_jthdkbqd" targetScreen="jthdkbqd">
+                        <text>View Integration Job Logs</text>
+                     </action>
+                     <action alt="null" id="jthdkbpg_jthdkbrd" targetScreen="jthdkbrd">
+                        <text>Upload File To Secure Agent</text>
+                     </action>
+                     <action alt="null" id="jthdkbpg_jthdkbs9" targetScreen="jthdkbs9">
+                        <text>Secure Agent Shell</text>
+                     </action>
+                     <action alt="null" id="jthdkbpg_jthdkbte" targetScreen="jthdkbte">
+                        <text>Conversion Utility</text>
+                     </action>
+                     <action alt="null" id="jthdkbpg_jthdkbvb" targetScreen="jthdkbvb">
+                        <text>Encryption Utiliy</text>
+                     </action>
+                     <action alt="null" id="jthdkbpg_jthdkbps" targetScreen="jthdkbps">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jthdkbps">
+                  <actions>
+                     <action alt="null" id="jthdkbps_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <subflow id="jthdkbqd">
+                  <title>iPaaS Log Search SFDC</title>
+                  <subflowGUID>7EprYO837YQfqO1fZpsW8k</subflowGUID>
+                  <subflowPath>iPaaS_Log_Search_SFDC</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <actions>
+                     <action alt="null" id="jthdkbqd_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <subflow id="jthdkbrd">
+                  <title>iPaaS Admin Upload File to Agent</title>
+                  <subflowGUID>io3umXTuwkrdHCcLUtlIek</subflowGUID>
+                  <subflowPath>iPaaS_Admin_Upload_File_to_Agent</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <actions>
+                     <action alt="null" id="jthdkbrd_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <subflow id="jthdkbs9">
+                  <title>Admin Shell</title>
+                  <subflowGUID>aePU92FcuCxiU6xBc4iBOD</subflowGUID>
+                  <subflowPath>Admin_Shell</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <actions>
+                     <action alt="null" id="jthdkbs9_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <subflow id="jthdkbte">
+                  <title>Conversion Utility</title>
+                  <subflowGUID>69cEIjvMjRKjYtccJrzFGA</subflowGUID>
+                  <subflowPath>Conversion_Utility</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jthdkbu8"
+                                name="in_conversion_type"
+                                source="constant"
+                                updatable="true"/>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="out_payload" type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="jthdkbte_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <subflow id="jthdkbvb">
+                  <title>IPaaS Encrypt Utility</title>
+                  <subflowGUID>aN5IOe5YvSWkl79k3Dxi0T</subflowGUID>
+                  <subflowPath>IPaaS_Encrypt_Utility</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <actions>
+                     <action alt="null" id="jthdkbvb_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>6kQJjy5duPehKV68pdbKa2</types1:GUID>
+      <types1:DisplayName>IPaaS Administration Tools</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:55.119Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

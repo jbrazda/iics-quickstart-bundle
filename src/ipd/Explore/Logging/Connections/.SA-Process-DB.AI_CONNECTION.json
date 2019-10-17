@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "cwiIqhPn2WhhmsmgTJGD0d",
+      "objectName": "SA-Process-DB",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Logging/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Connection to process Engine Database\nWARNING - use this only if you know what you doing, this connection can be useful to get access to execution and process engine data, with the power comes responsibility.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "MRgpDqotxGomUhG-gt-169912-2018-07-24T15:18:24.622Z::conn.xml"
+         }
+      }
+   }
+]

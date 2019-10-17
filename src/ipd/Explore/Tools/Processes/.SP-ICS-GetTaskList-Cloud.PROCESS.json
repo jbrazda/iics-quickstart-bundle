@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "0b3gDimMIY7enmbV0S5hkE",
+      "objectName": "SP-ICS-GetTaskList-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process retrieves a Task list from ICS\nTask types\nAVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "aaaaa-gt-117889-2018-07-20T16:33:47.008Z::pd.xml"
+         }
+      }
+   }
+]

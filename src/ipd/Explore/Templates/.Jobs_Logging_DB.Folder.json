@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "lMHIB8jCUObfGoq38vUXyf",
+      "objectName": "Jobs_Logging_DB",
+      "objectType": "Folder",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Job Tracking and Integration Templates which use DB for Logging",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

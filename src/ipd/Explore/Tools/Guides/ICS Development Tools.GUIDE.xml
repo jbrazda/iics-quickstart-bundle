@@ -1,0 +1,297 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>IMR7hsAVR3aaa-gt-941883-2018-07-20T16:34:24.553Z::gt.xml</types1:EntryId>
+      <types1:Name>ICS_Development_Tools</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Helper Tool to Query ICS Repository Metadata</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:34:25Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:50Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:36:29Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.ICS_Development_Tools/ICS_Development_Tools.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="ICS Development Tools"
+                         doneOnEndStep="true"
+                         name="ICS_Development_Tools"
+                         runAsUser="$current">
+            <description>Helper Tool to Query ICS Repository Metadata</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="null" name="tmp_task" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:Task</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_mapping" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:Mapping</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_task_flows" type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:TaskFlow</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="j26ifcct">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="j26ifcct_j8ejh5pr" targetScreen="j8ejh5pr">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="j8ejh5pr">
+                  <title>ICS Integration Developmet Tools</title>
+                  <body contentType="text/html">&lt;p&gt;This Guide provides an access to ICS&amp;nbsp;Data for development and testing purposes&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="j8ejh5pr_j8ejh5q5" targetScreen="j8ejh5q5">
+                        <text>View Tasks</text>
+                     </action>
+                     <action alt="null" id="j8ejh5pr_j8el9zg0" targetScreen="j8el9zg0">
+                        <text>View Task Flows</text>
+                     </action>
+                     <action alt="null" id="j8ejh5pr_j8eljwlr" targetScreen="j8eljwlr">
+                        <text>View Mappings</text>
+                     </action>
+                     <action alt="null" id="j8ejh5pr_j8ejh5qb" targetScreen="j8ejh5qb">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="j8ek4qh4">
+                  <title>TaskList</title>
+                  <body contentType="text/html">&lt;p&gt;Task List&lt;/p&gt;
+&lt;p&gt;&lt;input class="" name="temp.tmp_task" type="text" value="tmp_task (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="j8ek4qh4_j8ejh5q4" targetScreen="j8ejh5q4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_task"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="referenceTo">ICS-API:Task</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"Id","type":"string","label":"Id","renderingType":"string"},{"name":"Name","type":"string","label":"Name","renderingType":"string"},{"name":"Description","type":"string","label":"Description","renderingType":"string"},{"name":"Type","type":"string","label":"Type","renderingType":"string"},{"name":"CreatedBy","type":"string","label":"CreatedBy","renderingType":"string"},{"name":"CreateTime","type":"string","label":"CreateTime","renderingType":"string"},{"name":"UpdatedBy","type":"string","label":"UpdatedBy","renderingType":"string"},{"name":"UpdateTime","type":"string","label":"UpdateTime","renderingType":"string"},{"name":"OrgId","type":"string","label":"OrgId","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">output.Tasks</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="j8el9zge">
+                  <title>Task Flows</title>
+                  <body contentType="text/html">&lt;p&gt;Task Flows&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_task_flows (temporary)" name="temp.tmp_task_flows" type="text" value="tmp_task_flows (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="j8el9zge_j8ejh5q4" targetScreen="j8ejh5q4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_task_flows"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="referenceTo">ICS-API:TaskFlow</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"Id","type":"string","label":"Id","renderingType":"string"},{"name":"Name","type":"string","label":"Name","renderingType":"string"},{"name":"Description","type":"string","label":"Description","renderingType":"string"},{"name":"ScheduleId","type":"string","label":"ScheduleId","renderingType":"string"},{"name":"Type","type":"string","label":"Type","renderingType":"string"},{"name":"CreatedBy","type":"string","label":"CreatedBy","renderingType":"string"},{"name":"CreateTime","type":"datetime","label":"CreateTime","renderingType":"datetime"},{"name":"UpdatedBy","type":"string","label":"UpdatedBy","renderingType":"string"},{"name":"UpdateTime","type":"datetime","label":"UpdateTime","renderingType":"datetime"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">output.TaskFlows</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="j8eljwm5">
+                  <title>Mappings</title>
+                  <body contentType="text/html">&lt;p&gt;Mappings&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_mapping (temporary)" name="temp.tmp_mapping" type="text" value="tmp_mapping (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="j8eljwm5_j8ejh5q4" targetScreen="j8ejh5q4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_mapping"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="referenceTo">ICS-API:Mapping</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"Id","type":"string","label":"Id","renderingType":"string"},{"name":"Name","type":"string","label":"Name","renderingType":"string"},{"name":"Description","type":"string","label":"Description","renderingType":"string"},{"name":"DeployedTemplateId","type":"string","label":"DeployedTemplateId","renderingType":"string"},{"name":"Type","type":"string","label":"Type","renderingType":"string"},{"name":"DeployTime","type":"datetime","label":"DeployTime","renderingType":"datetime"},{"name":"HasParameters","type":"boolean","label":"HasParameters","renderingType":"boolean","options":{"option":[{"name":"boolean_show_as","$t":"checkbox"}]}},{"name":"HasParametersDeployed","type":"boolean","label":"HasParametersDeployed","renderingType":"boolean","options":{"option":[{"name":"boolean_show_as","$t":"checkbox"}]}},{"name":"Valid","type":"boolean","label":"Valid","renderingType":"boolean","options":{"option":[{"name":"boolean_show_as","$t":"checkbox"}]}},{"name":"Tasks","type":"int","label":"Tasks","renderingType":"int"},{"name":"CreatedBy","type":"string","label":"CreatedBy","renderingType":"string"},{"name":"CreateTime","type":"datetime","label":"CreateTime","renderingType":"datetime"},{"name":"UpdatedBy","type":"string","label":"UpdatedBy","renderingType":"string"},{"name":"UpdateTime","type":"datetime","label":"UpdateTime","renderingType":"datetime"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">output.Mappings</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen dontShowScreen="true" id="j8ejh5qb">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+               <endScreen dontShowScreen="true" id="j26ifcd5">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Done</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="j8ejh5q4">
+                  <actions>
+                     <action alt="null" id="j8ejh5q4_j26ifcd5" targetScreen="j26ifcd5">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <callProcess id="j8ejh5q5">
+                  <title>SP-ICS-GetTaskList-Cloud</title>
+                  <subflowGUID>0b3gDimMIY7enmbV0S5hkE</subflowGUID>
+                  <subflowPath>SP-ICS-GetTaskList-Cloud</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jutv1jat"
+                                name="in_task_type"
+                                source="screen"
+                                updatable="true">screen.in_task_type</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="Tasks" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ICS-API:Task</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <screen id="j8ejh5q5-servicescreen">
+                     <title>SP-ICS-GetTaskList-Cloud</title>
+                     <body contentType="text/html">&lt;p&gt;Task Type&amp;nbsp;&amp;nbsp;&lt;input class="" title="Edit a field to change the field properties." name="screen.in_task_type" type="text" value="in_task_type"&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.in_task_type"
+                                        readonly="false"
+                                        required="false"
+                                        type="picklist">
+                           <options>
+                              <option name="values">[{"label":"AVS","value":"AVS"},{"label":"DMASK","value":"DMASK"},{"label":"DQA","value":"DQA"},{"label":"DRS","value":"DRS"},{"label":"DSS","value":"DSS"},{"label":"MTT","value":"MTT"},{"label":"PCS","value":"PCS"},{"label":"DNB_WORKFLOW","value":"DNB_WORKFLOW"}]</option>
+                              <option name="required">false</option>
+                              <option name="defaultvalue">AVS</option>
+                           </options>
+                        </screenDataItem>
+                     </screenData>
+                  </screen>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+                  <actions>
+                     <action alt="" id="j8ejh5q5_j8ek4qh4" targetScreen="j8ek4qh4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <callProcess id="j8el9zg0">
+                  <title>SP-ICS-GetTaskFlowList-Cloud</title>
+                  <subflowGUID>0GUr5eNGWAxkOV3B0qVHeU</subflowGUID>
+                  <subflowPath>SP-ICS-GetTaskFlowList-Cloud</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <subflowOutput>
+                     <field name="TaskFlows" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ICS-API:TaskFlow</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="j8el9zg0_j8el9zge" targetScreen="j8el9zge">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <callProcess id="j8eljwlr">
+                  <title>SP-ICS-GetMappings-Cloud</title>
+                  <subflowGUID>20pRHV9fvTQjNjoOzMhkOL</subflowGUID>
+                  <subflowPath>SP-ICS-GetMappings-Cloud</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <subflowOutput>
+                     <field name="Mappings" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ICS-API:Mapping</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="j8eljwlr_j8eljwm5" targetScreen="j8eljwm5">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>6L6LOgrG0d1dmOVrCVrrqE</types1:GUID>
+      <types1:DisplayName>ICS Development Tools</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.782Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

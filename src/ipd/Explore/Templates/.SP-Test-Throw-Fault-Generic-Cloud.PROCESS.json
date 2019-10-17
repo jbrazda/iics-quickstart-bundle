@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "aW8SmuKTtfjcmsHYQ7Hj0s",
+      "objectName": "SP-Test-Throw-Fault-Generic-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to Simulate Faults in Processess",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "aaa-gt-3319405-2019-04-30T13:34:30.004Z::pd.xml"
+         }
+      }
+   }
+]

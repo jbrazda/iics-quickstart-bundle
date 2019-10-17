@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "69cEIjvMjRKjYtccJrzFGA",
+      "objectName": "Conversion Utility",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide to convert XML sample data to JSON and vice versa.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "MoONhsJlv58pIO3-gt-371172-2018-10-10T19:48:21.626Z::gt.xml"
+         }
+      }
+   }
+]

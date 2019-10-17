@@ -1,0 +1,476 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>PD4ARW8UBM7zsZv-gt-859751-2019-07-29T15:38:44.674Z::gt.xml</types1:EntryId>
+      <types1:Name>iPaaS_Configuration_Manager</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-07-29T15:38:45Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-07-29T17:23:11Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:23:23Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="iPaaS Configuration Manager"
+                         doneOnEndStep="true"
+                         name="iPaaS_Configuration_Manager"
+                         runAsUser="$current">
+            <description>Guide to manage configuration properties stored as a Key/Value pairs in the Database</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_configurations" type="objectlist">
+                  <options>
+                     <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">fCcP6ry44WyeP4mrMzsjeH</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_selected_configuration" type="reference">
+                  <options>
+                     <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_query" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_query_limit" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option hide="true" name="initialvalue">100</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_key_search" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_property_key" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="tmp_property_value" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="null" name="temp_DataAccessRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jp8dxku2">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jp8dxku2_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jp8dxkub">
+                  <title>View/Manage Configuration</title>
+                  <body contentType="text/html">&lt;p&gt;Configuration table&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_selected_configuration (temporary)" name="temp.tmp_selected_configuration" type="text" value="tmp_selected_configuration (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Query&lt;/p&gt;
+&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_query (temporary)" name="temp.tmp_query" readonly="readonly" type="text" value="tmp_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jp8dxkub_jp8dxkuu" targetScreen="jp8dxkuu">
+                        <text>Add New Configuration Item</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8dxkux" targetScreen="jp8dxkux">
+                        <text>Delete Selected Item</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8dxl5a" targetScreen="jp8dxl5a">
+                        <text>Edit Selected</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8dxkv3" targetScreen="jp8dxkv3">
+                        <text>Filter</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8g7jba" targetScreen="jp8g7jba">
+                        <text>Refresh</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8dxl7x" targetScreen="jp8dxl7x">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_selected_configuration"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PKEY","type":"string","label":"Key","renderingType":"string"},{"name":"PVALUE","type":"string","label":"Value","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">temp.tmp_configurations</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_query"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jp8dxkuu">
+                  <title>Add Configuration</title>
+                  <body contentType="text/html">&lt;p&gt;Key&lt;br&gt;&lt;input class="" title="tmp_property_key (temporary)" name="temp.tmp_property_key" type="text" value="tmp_property_key (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Value&lt;br&gt;&lt;input class="" title="tmp_property_value (temporary)" name="temp.tmp_property_value" type="text" value="tmp_property_value (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jp8dxkuu_jp8dxl0b" targetScreen="jp8dxl0b">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_property_key"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="text_size">100</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_property_value"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">10</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jp8dxkux">
+                  <title>Comfirm Delete</title>
+                  <body contentType="text/html">&lt;p&gt;Dou you really want to remove this item?&lt;/p&gt;
+&lt;p&gt;Key&amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_selected_configuration&gt;PKEY" name="temp.tmp_selected_configuration[1]/PKEY" readonly="readonly" type="text" value="tmp_selected_configuration&gt;PKEY"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Value&lt;br&gt; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_property_value (temporary)" name="temp.tmp_property_value" readonly="readonly" type="text" value="tmp_property_value (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jp8dxkux_jp8g7j9u" targetScreen="jp8g7j9u">
+                        <text>Yes</text>
+                     </action>
+                     <action alt="null" id="jp8dxkux_jp8dxl2g" targetScreen="jp8dxl2g">
+                        <text>No</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_selected_configuration[1]/PKEY"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">256</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_property_value"
+                                     readonly="true"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jp8dxkv0">
+                  <title>Edit Configuration Item</title>
+                  <body contentType="text/html">&lt;p&gt;Key:&amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_property_key (temporary)" name="temp.tmp_property_key" readonly="readonly" type="text" value="tmp_property_key (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Value&lt;br&gt;&lt;input class="" title="tmp_property_value (temporary)" name="temp.tmp_property_value" type="text" value="tmp_property_value (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jp8dxkv0_jp8g7jas" targetScreen="jp8g7jas">
+                        <text>Save</text>
+                     </action>
+                     <action alt="null" id="jp8dxkv0_jp8dxl4l" targetScreen="jp8dxl4l">
+                        <text>Cancel</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_property_value"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">20</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_property_key"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jp8dxkv3">
+                  <title>Filter by key</title>
+                  <body contentType="text/html">&lt;p&gt;Search for Key Value&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Use % as a wildcard&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_key_search (temporary)" name="temp.tmp_key_search" type="text" value="tmp_key_search (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jp8dxkv3_jp8dxl7n" targetScreen="jp8dxl7n">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_key_search"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="text_size">50</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <service id="jp8g7j9u">
+                  <title>execSQLProxy Delete Item</title>
+                  <serviceName>execSQLProxy</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter id="jp8ds935"
+                                name="dataAccessRequest"
+                                source="formula"
+                                updatable="false">xpath &lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;delete_from_ic_configuration&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;DELETE FROM IC_CONFIGURATION WHERE PKEY = ?&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$temp.tmp_selected_configuration[1]/PKEY}&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="jp8g7j9u_jp8dxl3c" targetScreen="jp8dxl3c">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <service id="jp8g7jas">
+                  <title>execSQLProxy Update Item</title>
+                  <serviceName>execSQLProxy</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter id="jp8dsdn0"
+                                name="dataAccessRequest"
+                                source="formula"
+                                updatable="false">xpath &lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;update_from_ic_configuration&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;UPDATE IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$temp.tmp_property_key}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$temp.tmp_property_value}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$temp.tmp_property_key}&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="jp8g7jas_jp8dxl68" targetScreen="jp8dxl68">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <endScreen dontShowScreen="true" id="jp8dxl7x">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jyonu9e1">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="jyonu9df">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="jyonu9dq">
+                  <actions/>
+               </empty>
+               <jumpTo id="jp8dxl1l" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl1l_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8dxl3c" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl3c_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8dxl2g" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl2g_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8dxl68" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl68_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8dxl4l" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl4l_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8dxl7n" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8dxl7n_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="jp8g7jba" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8g7jba_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <create id="jp8dxl0b">
+                  <title>IC_CONFIGURATION</title>
+                  <entityName>IPaaS-Configuration-DB:IC_CONFIGURATION</entityName>
+                  <createInput>
+                     <parameter id="jp8g7j8d" name="PKEY" source="field" updatable="true">temp.tmp_property_key</parameter>
+                     <parameter id="jp8g7j8e" name="PVALUE" source="field" updatable="true">temp.tmp_property_value</parameter>
+                  </createInput>
+                  <actions>
+                     <action alt="null" id="jp8dxl0b_jp8dxl1l" targetScreen="jp8dxl1l">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </create>
+               <assignment id="jp8dxku3">
+                  <title>Set Query</title>
+                  <operation source="formula" to="temp.tmp_query">
+                     <expression language="XQuery">let $query := switch (true())
+  case empty($temp.tmp_key_search) return concat("LIMIT ", $temp.tmp_query_limit)
+    case contains($temp.tmp_key_search,"%") return concat("PKEY LIKE '",$temp.tmp_key_search,"' LIMIT ",$temp.tmp_query_limit)
+    default return concat("PKEY LIKE '%",$temp.tmp_key_search,"%' LIMIT ",$temp.tmp_query_limit)
+
+return 
+$query</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jp8dxku3_jp8dxkvq" targetScreen="jp8dxkvq">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="jp8dxkvq">
+                  <title>Assignment to tmp_configurations</title>
+                  <operation source="list" to="temp.tmp_configurations">
+                     <query from="IPaaS-Configuration-DB:IC_CONFIGURATION">
+                        <where>{$temp.tmp_query} </where>
+                     </query>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="jp8dxkvq_jp8dxkub" targetScreen="jp8dxkub">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="jp8dxl5a">
+                  <title>Read Properties</title>
+                  <operation source="field" to="temp.tmp_property_key">temp.tmp_selected_configuration[1]/PKEY</operation>
+                  <operation source="field" to="temp.tmp_property_value">temp.tmp_selected_configuration[1]/PVALUE</operation>
+                  <actions>
+                     <action alt="null" id="jp8dxl5a_jp8dxkv0" targetScreen="jp8dxkv0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>6OhyC2hvWBZfbzWLWPtjuH</types1:GUID>
+      <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.6Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

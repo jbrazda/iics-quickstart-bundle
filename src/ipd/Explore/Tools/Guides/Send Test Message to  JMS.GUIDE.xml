@@ -1,0 +1,132 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>K5BjE7ppppppppp-gt-2102599-2018-10-10T19:48:22.582Z::gt.xml</types1:EntryId>
+      <types1:Name>Send_Test_Message_to_JMS</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-10T19:48:23Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:36:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Send_Test_Message_to_JMS/Send_Test_Message_to_JMS.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Send Test Message to  JMS"
+                         doneOnEndStep="false"
+                         name="Send_Test_Message_to_JMS"
+                         runAsUser="$current">
+            <description/>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Screenflow Designer 9</generator>
+            <tempFields>
+               <field name="tmp_message_payload" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field name="tmp_message_attchment" type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jlhdkr9s" targetScreen="jlhdkr9s">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jlhdkr9s">
+                  <title>JMS Send</title>
+                  <body contentType="text/html">&lt;p&gt;Test process to send a message to&amp;nbsp; MDM jms queue&lt;/p&gt;
+&lt;p&gt;Paste Message Here&lt;br&gt;&lt;input class="" title="tmp_message_payload (temporary)" name="temp.tmp_message_payload" type="text" value="tmp_message_payload (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jlhdkr9s_jlhfa0d5" targetScreen="jlhfa0d5">
+                        <text>Send</text>
+                     </action>
+                     <action alt="null" id="jlhdkr9s_jlhfa0di" targetScreen="jlhfa0di">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_message_payload"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">20</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen id="jlhfa0di">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jnlyld1h">
+                  <actions/>
+               </empty>
+               <jumpTo id="jlhfa0e8" targetTitle="JMS Send">
+                  <actions>
+                     <action alt="null" id="jlhfa0e8_jlhdkr9s" targetScreen="jlhdkr9s">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <callProcess id="jlhfa0d5">
+                  <title>SP-JMS-Send-MDM-IICS</title>
+                  <subflowGUID>8M4kDUMUZeUgOp0qm7DrYr</subflowGUID>
+                  <subflowPath>SP-JMS-Send-MDM-IICS</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jlhdkr3e" name="in_message" source="field" updatable="true">temp.tmp_message_payload</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="jlhfa0d5_jlhfa0e8" targetScreen="jlhfa0e8">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>3TOKLJL3xEacC4EDcnn264</types1:GUID>
+      <types1:DisplayName>Send Test Message to  JMS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.771Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

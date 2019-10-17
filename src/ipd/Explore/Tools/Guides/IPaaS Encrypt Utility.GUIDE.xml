@@ -1,0 +1,123 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>tmYOxfSmbduaa-gt-944503-2018-07-20T16:34:22.319Z::gt.xml</types1:EntryId>
+      <types1:Name>IPaaS_Encrypt_Utility</types1:Name>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Utility To encrypt Strings for configuration to be used in Automated steps</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:34:22Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:49Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:36:11Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.IPaaS_Encrypt_Utility/IPaaS_Encrypt_Utility.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="IPaaS Encrypt Utility"
+                         doneOnEndStep="true"
+                         name="IPaaS_Encrypt_Utility"
+                         runAsUser="$current">
+            <description>Utility To encrypt Strings for configuration to be used in Automated steps</description>
+            <appliesTo/>
+            <generator>Informatica Screenflow Designer 8</generator>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jc9mq1jb">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jc9mq1jb_jc9u1z9r" targetScreen="jc9u1z9r">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jc9mq1ji">
+                  <title>Result</title>
+                  <body contentType="text/html">&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Encrypted Result:&lt;/p&gt;
+&lt;p&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_encrypted (output)" name="output.out_encrypted" readonly="readonly" type="text" value="out_encrypted (output)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jc9mq1ji_jc9mq1jl" targetScreen="jc9mq1jl">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.out_encrypted"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <service id="jc9u1z9r">
+                  <title>SP-IPaaS-Encrypt-NA</title>
+                  <serviceName>SP-IPaaS-Encrypt-NA</serviceName>
+                  <serviceInput>
+                     <parameter id="jc9u1yn8"
+                                name="in_encrypt"
+                                source="screen"
+                                updatable="false">screen.in_encrypt</parameter>
+                  </serviceInput>
+                  <screen id="jc9u1z9r-servicescreen">
+                     <title>SP-IPaaS-Encrypt-NA</title>
+                     <body contentType="text/html">&lt;p&gt;&lt;strong&gt;IPaaS Encryption Utility&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Enter String to Encrypt&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;input class="" title="Double click on field to change field properties" name="screen.in_encrypt" type="text" value="screen.in_encrypt"&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.in_encrypt"
+                                        readonly="false"
+                                        required="false"
+                                        type="string">
+                           <options>
+                              <option name="required">false</option>
+                              <option name="text_size">120</option>
+                           </options>
+                        </screenDataItem>
+                     </screenData>
+                  </screen>
+                  <actions>
+                     <action alt="" id="jc9u1z9r_jc9mq1ji" targetScreen="jc9mq1ji">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
+               <endScreen dontShowScreen="true" id="jc9mq1jl">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+               </endScreen>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>aN5IOe5YvSWkl79k3Dxi0T</types1:GUID>
+      <types1:DisplayName>IPaaS Encrypt Utility</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.767Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

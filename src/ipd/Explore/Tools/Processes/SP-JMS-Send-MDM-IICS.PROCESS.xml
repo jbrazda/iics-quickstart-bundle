@@ -1,0 +1,82 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>clopz4KhPVEQrXh-gt-371192-2018-10-10T19:48:22.042Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-JMS-Send-MDM-IICS</types1:Name>
+      <types1:ParentFlowIds>K5BjE7ppppppppp-gt-2102599-2018-10-10T19:48:22.582Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>TEST process to send JMS message to  Outbound message queue</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-10T19:48:22Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:25:58Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-JMS-Send-MDM-IICS/SP-JMS-Send-MDM-IICS.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-JMS-Send-MDM-IICS"
+                  name="SP-JMS-Send-MDM-IICS">
+            <appliesTo/>
+            <description>TEST process to send JMS message to  Outbound message queue</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 9</generator>
+            <input>
+               <parameter description="" name="in_message" type="xml">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jlhdy5fk" targetId="jlhdy5fy"/>
+               </start>
+               <eventContainer id="jlhdy5fy">
+                  <service id="jlhdy5fj">
+                     <title>JMS Enqueue Service</title>
+                     <serviceName>jmsEnqueueService</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="momManager" source="constant">MDMJMSListener</parameter>
+                        <parameter name="destination" source="constant">jms/queue/customer_iics</parameter>
+                        <parameter name="message" source="field" updatable="true">input.in_message</parameter>
+                        <parameter name="format" source="constant">XML</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="jlhdy5g0">
+                     <link id="jlhdy5g1" targetId="jlhdy5fy" type="containerLink"/>
+                  </flow>
+                  <flow id="jlhdy5g3">
+                     <link id="jlhdy5g4" targetId="jlhdy5fy" type="containerLink"/>
+                  </flow>
+                  <link id="jlhdy5fz" targetId="jlhdy5g0" type="containerLink"/>
+                  <link id="jlhdy5fl" targetId="c"/>
+                  <events>
+                     <catch faultField="faultInfo" id="jlhdy5fq" interrupting="true">
+                        <link id="jlhdy5g2" targetId="jlhdy5g3" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>8M4kDUMUZeUgOp0qm7DrYr</types1:GUID>
+      <types1:DisplayName>SP-JMS-Send-MDM-IICS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.867Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

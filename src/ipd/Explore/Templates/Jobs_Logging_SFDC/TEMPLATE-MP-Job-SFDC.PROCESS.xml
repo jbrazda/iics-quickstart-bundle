@@ -1,0 +1,310 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml</types1:EntryId>
+      <types1:Name>TEMPLATE-MP-Job-SFDC</types1:Name>
+      <types1:ParentFlowIds>2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Template for Main Job Processes</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:35Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-30T13:35:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-SFDC/TEMPLATE-MP-Job-SFDC.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEMPLATE-MP-Job-SFDC"
+                  name="TEMPLATE-MP-Job-SFDC">
+            <appliesTo/>
+            <description>Template for Main Job Processes</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_wait_to_complete" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">gAPgQjt0NwpbghHGEyalKI</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_UpdateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8mX2dbmOledkm1Kn65In0q</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">TEMPLATE-MP-Job</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEventRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6Qfd83wdMtUgosGkvB0Gy0</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="getJobStatus">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="job_id"
+                                required="true"
+                                type="int"/>
+                  </input>
+                  <output>
+                     <field description="" name="status" type="string"/>
+                  </output>
+                  <deployment>
+                     <rest/>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <assignment id="c">
+                  <title>Initialize</title>
+                  <operation source="formula" to="output.out_context">
+                     <expression language="XQuery">let $pid := util:getProcessId()
+return if (empty($input.in_context)) then
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$pid}&lt;/mainProcessId&gt;
+  &lt;/ProcessExecutionContext&gt;
+else 
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$input.in_context[1]/mainProcessId}&lt;/mainProcessId&gt;
+  &lt;/ProcessExecutionContext&gt;</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_CreateJobLogEntryRequest">
+                     <expression language="XQuery">&lt;CreateJobLogEntryRequest&gt;`
+   &lt;StartDate&gt;{fn:current-dateTime()}&lt;/StartDate&gt;
+   &lt;JobName&gt;{$temp.tmp_process_name}&lt;/JobName&gt;
+   &lt;ProcessId&gt;{util:getProcessId()}&lt;/ProcessId&gt;
+&lt;/CreateJobLogEntryRequest&gt;
+</expression>
+                  </operation>
+                  <operation source="field"
+                             to="temp.tmp_CreateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                  <link id="juydetb4" targetId="juydetb3"/>
+               </assignment>
+               <assignment id="jnbz3txg">
+                  <title>Assignment to output.out_context[1]/jobId, tmp_process_title etc.</title>
+                  <operation source="formula" to="output.out_context[1]/jobId">
+                     <expression language="XQuery">$output.out_createdJobID </expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $pid_label := if (empty($output.out_context[1]/parentProcessId)) then ()
+	else concat("pid:",$output.out_context[1]/parentProcessId)
+let $job_label := if (empty($output.out_context[1]/jobId)) then () 
+	else concat("job:",$output.out_createdJobID )
+
+
+let $parts := ($p_name,$pid_label,$job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="jnbz3txi" targetId="j9fuax9n"/>
+               </assignment>
+               <service id="juydetb3">
+                  <title>Create Job Entry</title>
+                  <serviceName>SP-IPaaS-Create-Job-Entry</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="in_CreateJobLogEntryRequest" source="field" updatable="true">temp.tmp_CreateJobLogEntryRequest</parameter>
+                  </serviceInput>
+                  <link id="juydetb5" targetId="jnbz3txg"/>
+               </service>
+               <container id="j9fuax9n" type="exclusive">
+                  <title>Wait for Job to Complete?</title>
+                  <flow id="j9fuax9o">
+                     <link id="j9fuax9t" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <flow id="j9fuax9p">
+                     <milestone id="j9fuax9q"/>
+                     <link id="j9fuax9u" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <link id="j9fuax9r" targetId="j9fuax9o" type="containerLink">
+                     <condition source="formula">
+                        <function name="true">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuax9s" targetId="j9fuax9p" type="containerLink">
+                     <condition source="formula">
+                        <function name="false">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuaxa1" targetId="j84qss48"/>
+               </container>
+               <eventContainer id="j84qss48">
+                  <subflow id="j84qss2l">
+                     <title>TEMPLATE-SP-ETL</title>
+                     <subflowGUID>9vd2qrDae3he3ErslVVfOw</subflowGUID>
+                     <subflowPath>TEMPLATE-SP-ETL-SFDC</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="in_context" source="field" updatable="true">output.out_context</parameter>
+                     </input>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="j84qss4b">
+                     <assignment id="j9fuaxir">
+                        <title>Assignment to Status, EndDate, etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">3</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                     </assignment>
+                     <link id="j84qss4c" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <flow id="j84qss4f">
+                     <assignment id="j84qss4e">
+                        <title>Update Process Title</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <link id="j9fuaxkr" targetId="j9fuaxkq"/>
+                     </assignment>
+                     <assignment id="j9fuaxkq">
+                        <title>Assignment to Status, EndDate etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">2</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                        <operation source="formula" to="temp.tmp_CreateJobLogEventRequest">
+                           <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;Unexpected Job Failure&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;Code: {$output.faultInfo[1]/code} 
+Reson:{$output.faultInfo[1]/reason}
+Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;process_id&gt;{$output.out_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name }&lt;/process_name&gt;
+   {$output.out_context }
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+&lt;/CreateJobLogEventRequest&gt;
+</expression>
+                        </operation>
+                        <link id="juydetfe" targetId="juydetfd"/>
+                     </assignment>
+                     <service id="juydetfd">
+                        <title>Log Error</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="field" updatable="true">temp.tmp_CreateJobLogEventRequest</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="j84qss4g" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <link id="j84qss49" targetId="j84qss4b" type="containerLink"/>
+                  <link id="j9fuaxpl" targetId="j9fuaxpk"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j84qss3z" interrupting="true">
+                        <link id="j84qss4d" targetId="j84qss4f" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <subflow id="j9fuaxpk">
+                  <title>SP-IPaaS-Update-Job-Entry-NA</title>
+                  <subflowGUID>a0KrGHUtRyKeBFAJ4OpfMs</subflowGUID>
+                  <subflowPath>SP-IPaaS-Update-Job-Entry</subflowPath>
+                  <runForEach>false</runForEach>
+                  <input>
+                     <parameter name="in_UpdateJobLogEntryRequest" source="field" updatable="true">temp.tmp_UpdateJobLogEntryRequest</parameter>
+                  </input>
+                  <outputDef/>
+                  <link id="j9fuaxpx" targetId="d"/>
+               </subflow>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>3TxXRBytv8viKeAoroXREr</types1:GUID>
+      <types1:DisplayName>TEMPLATE-MP-Job-SFDC</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:55.099Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

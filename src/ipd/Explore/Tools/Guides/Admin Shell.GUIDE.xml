@@ -1,0 +1,221 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>NGJZx1Xmgaabclv-gt-2102609-2018-10-10T19:48:22.644Z::gt.xml</types1:EntryId>
+      <types1:Name>Admin_Shell</types1:Name>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Utility Guide to Invoke Shell commands on the  Secure Agent</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-10T19:48:23Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-07-10T02:54:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-10T02:55:05Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Admin_Shell/Admin_Shell.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Admin Shell"
+                         doneOnEndStep="true"
+                         name="Admin_Shell"
+                         runAsUser="$current">
+            <description>Utility Guide to Invoke Shell commands on the  Secure Agent</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="null" name="tmp_ouput" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_command" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                     <option name="initialvalue">ls -la</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_workDir" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">/home/iclab</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jidn8e6z">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jidn8e6z_jkokoon7" targetScreen="jkokoon7">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jkokoon7">
+                  <title>Shell Command Tool</title>
+                  <body contentType="text/html">&lt;p&gt;Command in:&amp;nbsp;&lt;input class="" title="tmp_workDir (temporary)" name="temp.tmp_workDir" type="text" value="tmp_workDir (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input title="tmp_command (temporary)" name="temp.tmp_command" type="text" value="tmp_command (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Response Code:&lt;/td&gt;
+&lt;td&gt;&lt;input style="font-family: Lucida Console-Consolas,Currier; -moz-appearance: none; background-color: lightgrey; border: none;" title="responseCode (output)" name="output.responseCode" readonly="readonly" type="text" value="responseCode (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Error String&lt;/td&gt;
+&lt;td&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input style="font-family: Lucida Console,Consolas,Currier; -moz-appearance: none; background-color: lightgrey; border: none;" name="output.errorString" readonly="readonly" type="text" value="errorString (output)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_ouput (temporary)" name="temp.tmp_ouput" type="text" value="tmp_ouput (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jkokoon7_jkokoooc" targetScreen="jkokoooc">
+                        <text>Run</text>
+                     </action>
+                     <action alt="null" id="jkokoon7_jkokoop9" targetScreen="jkokoop9">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.responseCode"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.errorString"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_command"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">10</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_workDir"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="text_size">50</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ouput"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">30</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen dontShowScreen="true" id="jkokoop9">
+                  <title/>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text>Done</text>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jxwnh0z9">
+                  <actions/>
+               </empty>
+               <jumpTo id="jkokoopz" targetTitle="Shell Command Tool">
+                  <actions>
+                     <action alt="null" id="jkokoopz_jkokoon7" targetScreen="jkokoon7">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <callProcess id="jkokoooc">
+                  <title>SP-Shell-CMD</title>
+                  <subflowGUID>6fQrafQfG0olcEFSeGsIyv</subflowGUID>
+                  <subflowPath>SP-Shell-CMD</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jkokooqm"
+                                name="in_shell_cmd"
+                                source="field"
+                                updatable="true">temp.tmp_command</parameter>
+                     <parameter id="jkokooqn"
+                                name="in_work_dir"
+                                source="field"
+                                updatable="true">temp.tmp_workDir</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="outputString" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="responseCode" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                     <field name="errorString" type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="jkokoooc_jkokooos" targetScreen="jkokooos">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <assignment id="jkokooos">
+                  <title>Assignment to tmp_ouput</title>
+                  <operation source="field" to="temp.tmp_ouput">output.outputString</operation>
+                  <actions>
+                     <action alt="null" id="jkokooos_jkokoopz" targetScreen="jkokoopz">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>aePU92FcuCxiU6xBc4iBOD</types1:GUID>
+      <types1:DisplayName>Admin Shell</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.83Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

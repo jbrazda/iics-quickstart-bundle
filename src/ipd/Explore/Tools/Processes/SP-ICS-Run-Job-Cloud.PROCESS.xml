@@ -1,0 +1,231 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>rbg0ZkL0jmu6lS0-gt-110811-2018-07-20T16:34:00.028Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ICS-Run-Job-Cloud</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>This process will run an ICS Cloud task
+Required parameters are Task Name and Task Type
+Optionally you can set Other Parameters
+if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
+if task completes before timeout it will reply with error on timeout. 
+Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-20T16:34:00Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:43Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:25:33Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ICS-Run-Job-Cloud/SP-ICS-Run-Job-Cloud.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ICS-Run-Job-Cloud"
+                  name="SP-ICS-Run-Job-Cloud">
+            <appliesTo/>
+            <description>This process will run an ICS Cloud task
+Required parameters are Task Name and Task Type
+Optionally you can set Other Parameters
+if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
+if task completes before timeout it will reply with error on timeout. 
+Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="in_task_name"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_task_type"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"AVS","value":"AVS"},{"label":"DMASK","value":"DMASK"},{"label":"DQA","value":"DQA"},{"label":"DRS","value":"DRS"},{"label":"DSS","value":"DSS"},{"label":"MTT","value":"MTT"},{"label":"PCS","value":"PCS"},{"label":"WORKFLOW","value":"WORKFLOW"},{"label":"DNB_WORKFLOW","value":"DNB_WORKFLOW"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_wait_for_task_to_complete" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_max_wait" type="int">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_fail_on_task_error" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_RunCloudTaskResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ICSRunCloudTaskResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_task_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j8d6ukib" targetId="j8d6ukia"/>
+               </start>
+               <assignment id="j8d6ukia">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_task_name">
+                     <expression language="XQuery">concat($input.in_task_name," [",$input.in_task_type,"]")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := "SP-ICS-Run-Job"
+let $task_name_label := $temp.tmp_task_name
+let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
+	else concat("pid:",$input.in_context[1]/parentProcessId)
+let $job_label := if (empty($input.in_context[1]/jobId)) then () 
+	else concat("job:",$input.in_context[1]/jobId)
+
+let $parts := ($p_name, $pid_label, $job_label, $task_name_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="j8d6ukic" targetId="j8d6ukg8"/>
+               </assignment>
+               <eventContainer id="j8d6ukg8">
+                  <service id="j8d6ukbu">
+                     <title>Run Cloud Task</title>
+                     <serviceName>ICSExecuteTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Task Name" source="formula">
+                           <expression language="XQuery">$temp.tmp_task_name </expression>
+                        </parameter>
+                        <parameter name="Wait for Task to Complete" source="field" updatable="true">input.in_wait_for_task_to_complete</parameter>
+                        <parameter name="Max Wait" source="field" updatable="true">input.in_max_wait</parameter>
+                        <parameter name="Fail on Cloud Task Errors" source="field" updatable="true">input.in_fail_on_task_error</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="j8d6ukgb">
+                     <assignment id="j8d6ukga">
+                        <title>Set Output</title>
+                        <operation source="formula" to="output.out_RunCloudTaskResponse">
+                           <expression language="XQuery">&lt;ICSRunCloudTaskResponse&gt;
+   &lt;RunID&gt;{$output.RunId}&lt;/RunID&gt;
+   &lt;TaskStatus&gt;{$output.TaskStatus}&lt;/TaskStatus&gt;
+   &lt;SuccessSourceRows&gt;{$output.SuccessSourceRows}&lt;/SuccessSourceRows&gt;
+   &lt;SuccessTargetRows&gt;{$output.SuccessTargetRows}&lt;/SuccessTargetRows&gt;
+   &lt;FailedSourceRows&gt;{$output.FailedSourceRows}&lt;/FailedSourceRows&gt;
+   &lt;FailedTargetRows&gt;{$output.FailedTargetRows}&lt;/FailedTargetRows&gt;
+   &lt;StartTime&gt;{$output.StartTime}&lt;/StartTime&gt;
+   &lt;EndTime&gt;{$output.EndTime}&lt;/EndTime&gt;
+   &lt;ErrorMessage&gt;{$output.ErrorMessage}&lt;/ErrorMessage&gt;
+&lt;/ICSRunCloudTaskResponse&gt;
+</expression>
+                        </operation>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $src_success_label := concat("srcs:",$output.SuccessSourceRows)
+let $src_failed_label  := concat("srcf:",$output.FailedSourceRows)
+let $tgt_success_label := concat("tgts:",$output.SuccessTargetRows)
+let $tgt_failed_label  := concat("tgtf:",$output.FailedTargetRows)
+let $id_label     	   := concat("id:",$output.RunId)
+let $error_label := if (empty($output.ErrorMessage)) then () else concat("error:",$output.ErrorMessage)
+
+
+let $parts := (
+	$temp.tmp_process_title,
+    $id_label,
+    $src_success_label,
+    $src_failed_label,
+    $tgt_success_label,
+    $tgt_failed_label,
+    $error_label)
+    
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <link id="j8dav241" targetId="j8dav240"/>
+                     </assignment>
+                     <end id="j8dav240"/>
+                  </flow>
+                  <flow id="j8d6ukgf">
+                     <assignment id="j8dan8ec">
+                        <title>Set Process Title</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <link id="j8dan8ed" targetId="j8d6ukge"/>
+                     </assignment>
+                     <throw id="j8d6ukge">
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="j8d6ukg9" targetId="j8d6ukgb" type="containerLink"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j8d6ukg3" interrupting="true">
+                        <link id="j8d6ukgd" targetId="j8d6ukgf" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>k6zqBz4qgYIh9KEZH4csmh</types1:GUID>
+      <types1:DisplayName>SP-ICS-Run-Job-Cloud</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.223Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

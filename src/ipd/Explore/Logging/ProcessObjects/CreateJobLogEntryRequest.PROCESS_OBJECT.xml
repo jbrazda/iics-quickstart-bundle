@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>QoPVm5Y6tMFygls-gt-1756130-2019-04-30T13:34:30.687Z::po.xml</types1:EntryId>
+      <types1:Name>CreateJobLogEntryRequest</types1:Name>
+      <types1:ParentFlowIds>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml,7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml,XM3jhBjop81V4Ad-gt-1756160-2019-04-30T13:34:31.791Z::pd.xml,TDbf13ErhNzUzeA-gt-1756150-2019-04-30T13:34:31.731Z::pd.xml,PdzfYtjCtbdsreK-gt-1756140-2019-04-30T13:34:31.671Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Job Logging Entry Request to create the Record</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-07-16T16:45:45Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="CreateJobLogEntryRequest"
+                        isByCopy="true"
+                        name="CreateJobLogEntryRequest">
+            <description>Job Logging Entry Request to create the Record</description>
+            <tags/>
+            <detail>
+               <field label="ProcessExecutionContext"
+                      name="ProcessExecutionContext"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="relationshipName">Child</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                  </options>
+               </field>
+               <field label="StartDate" name="StartDate" type="datetime"/>
+               <field label="JobName" name="JobName" type="string"/>
+               <field label="ProcessId" name="ProcessId" type="int"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>gAPgQjt0NwpbghHGEyalKI</types1:GUID>
+      <types1:DisplayName>CreateJobLogEntryRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.761Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

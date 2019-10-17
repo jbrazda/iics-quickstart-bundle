@@ -1,0 +1,54 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ov6or3rp3yD7tyG-gt-64980-2018-07-18T13:21:57.231Z::po.xml</types1:EntryId>
+      <types1:Name>TestResult</types1:Name>
+      <types1:ParentFlowIds>Y8DglxbdypKwKBq-gt-747303-2018-07-18T13:22:01.881Z::pd.xml,2uI5CUP9WYVMPIN-gt-171624-2018-10-03T18:35:21.856Z::pd.xml,UrXoE9paabdqpw0-gt-171649-2018-10-03T18:35:45.74Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>This Object Represent a Test Reults</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-18T13:21:57Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:50:02Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="TestResult"
+                        isByCopy="true"
+                        name="TestResult">
+            <description>This Object Represent a Test Reults</description>
+            <tags/>
+            <detail>
+               <field label="Test Name" name="testName" type="string"/>
+               <field label="Test Result" name="testResult" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"succes","label":"succes"},{"value":"fail","label":"fail"}]</option>
+                  </options>
+               </field>
+               <field label="Message" name="message" type="richtextarea"/>
+               <field label="expected" name="expected" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+               <field label="actual" name="actual" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="relationshipName">Child</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>3OZRTFmaS7bjXv1PyXqY6o</types1:GUID>
+      <types1:DisplayName>TestResult</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.215Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

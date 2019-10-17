@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "91gnTcWCdhAkc5YWMvtKez",
+      "objectName": "FaultInfo",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represents Generic process or service fault info Expanding built-in fault for logging purposes\n \n",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "PXyDQeH2PKDC0hC-gt-1846590-2019-04-30T13:34:30.669Z::po.xml"
+         }
+      }
+   }
+]

@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "aXpKwYgvdgcbMOhXzbXTqd",
+      "objectName": "github-gist",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Tools/ServiceConnectors",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Github REST V3 APi to manage Gists\nsee https://developer.github.com/v3/gists/\n\nThis connector is useful to store and retrive configurations, templates, snippets, etc",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "KjvMKQr3rp3yD7t-gt-4147664-2019-06-19T14:29:04.059Z::svc.xml"
+         }
+      }
+   }
+]

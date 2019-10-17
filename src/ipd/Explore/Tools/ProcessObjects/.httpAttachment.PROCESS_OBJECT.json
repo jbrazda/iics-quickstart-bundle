@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "7S47q8tMizkgqSxwg33SU4",
+      "objectName": "httpAttachment",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "HTTP Attachment payload data",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "v6or3rp3yD7tyGo-gt-941718-2018-07-20T16:32:58.345Z::po.xml"
+         }
+      }
+   }
+]

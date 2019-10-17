@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "7pFwIQcjoJ8b9rSPlqaAUz",
+      "objectName": "AddressDoctor",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Informatica Address Doctor Connection",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "xxYxQ2Tp5OjG4ab-gt-1337153-2018-10-25T19:14:53.379Z::conn.xml"
+         }
+      }
+   }
+]

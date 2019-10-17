@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "lWurPrz0AW6hdK7bY2gVWz",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml"
+         }
+      }
+   }
+]

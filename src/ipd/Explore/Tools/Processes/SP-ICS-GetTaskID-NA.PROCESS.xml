@@ -1,0 +1,142 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>giQpvJQhtGci3zy-gt-3152353-2019-04-29T19:35:50.106Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ICS-GetTaskID-NA</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to retrive Complete ICS DI Task Log</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-29T19:35:50Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-05-07T17:13:42Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:25:27Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskID-NA/SP-ICS-GetTaskID-NA.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ICS-GetTaskID-NA"
+                  name="SP-ICS-GetTaskID-NA">
+            <appliesTo/>
+            <description>Process to retrive Complete ICS DI Task Log</description>
+            <tags>.agent:NA</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Task name"
+                          name="in_task_name"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Task Type"
+                          name="in_task_type"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"AVS","value":"AVS"},{"label":"DMASK","value":"DMASK"},{"label":"DNB_TASK","value":"DNB_TASK"},{"label":"DNB_WORKFLOW","value":"DNB_WORKFLOW"},{"label":"DQA","value":"DQA"},{"label":"DRS","value":"DRS"},{"label":"DSS","value":"DSS"},{"label":"MTT","value":"MTT"},{"label":"PCS","value":"PCS"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Job Run ID"
+                          name="in_run_id"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="Resolved Task Metadata"
+                      name="out_task_info"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">ICS-API:Task</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9BvRWvqMsiEk6qnJ0A0UWE</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>NA</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="justr27u" targetId="justr27t"/>
+               </start>
+               <service id="justr27t">
+                  <title>Login</title>
+                  <serviceName>ICS-API:Login</serviceName>
+                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceInput/>
+                  <link id="justr280" targetId="justr27z"/>
+               </service>
+               <service id="justr27z">
+                  <title>List Tasks</title>
+                  <serviceName>ICS-API:List Tasks</serviceName>
+                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceInput>
+                     <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
+                     <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
+                     <parameter name="taskType" source="field" updatable="true">input.in_task_type</parameter>
+                  </serviceInput>
+                  <link id="justr293" targetId="justr292"/>
+               </service>
+               <assignment id="justr292">
+                  <title>Find Task</title>
+                  <operation source="formula" to="output.out_task_info">
+                     <expression language="XQuery">let $tasks := $output.Tasks 
+return $tasks[Name/text() = $input.in_task_name]</expression>
+                  </operation>
+                  <link id="jusuhj6m" targetId="jusuhj6l"/>
+               </assignment>
+               <container id="jusuhj6l" type="exclusive">
+                  <title>out_task_info</title>
+                  <flow id="jusuhj6v">
+                     <end id="jve1m6ab"/>
+                  </flow>
+                  <flow id="jusuhj6x">
+                     <throw id="jutt26au">
+                        <title>Task Not Found</title>
+                        <throwInput>
+                           <parameter name="code" source="constant" updatable="true">ERROR</parameter>
+                           <parameter name="detail" source="constant" updatable="true">Could not find task with name {$input.in_task_name} </parameter>
+                           <parameter name="reason" source="constant" updatable="true"/>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="jusuhj6o" targetId="jusuhj6v" type="containerLink">
+                     <condition source="formula">
+                        <function name="set">
+                           <arg name="field">{$output.out_task_info}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jusuhj6r" targetId="jusuhj6x" type="containerLink">
+                     <condition source="formula">
+                        <function name="unset">
+                           <arg name="field">{$output.out_task_info}</arg>
+                        </function>
+                     </condition>
+                  </link>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1GVIrMQ6usFfsFOJc8v8cI</types1:GUID>
+      <types1:DisplayName>SP-ICS-GetTaskID-NA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.793Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

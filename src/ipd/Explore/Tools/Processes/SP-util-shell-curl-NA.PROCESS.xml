@@ -1,0 +1,381 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>abbfZk9EW4ARW8U-gt-301155-2018-10-24T17:25:21.013Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-util-shell-curl-NA</types1:Name>
+      <types1:ParentFlowIds>Nr3tfUbbf5ZK0CY-gt-1141049-2018-10-24T17:25:20.64Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. 
+process Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-10-24T17:25:21Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:35:47Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-07-29T17:26:26Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-util-shell-curl-NA/SP-util-shell-curl-NA.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-util-shell-curl-NA"
+                  name="SP-util-shell-curl-NA">
+            <appliesTo/>
+            <description>Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. 
+process Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="targetFile is used to write an output of the request, when specified -o $targetFile will be generated to curl command"
+                          name="targetFile"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=" resourceUrl is required paramater most of the curl supported url schemes are supported read the curl documentation for details"
+                          name="resourceUrl"
+                          required="true"
+                          type="url">
+                  <options>
+                     <option name="urlDisplayReadonlyAs">Link</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Working directoy is the shell execution working directory"
+                          name="workingDirectory"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Verbose otput switch -v"
+                          name="verboseOutput"
+                          type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Dump http headers, will be activated only in case of http or https scheme when this swithc is enabled"
+                          name="dumpHeaders"
+                          type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                     <option name="hover_text">Dump the response headers to targetFile.headers</option>
+                  </options>
+               </parameter>
+               <parameter description="Thsis input parameter allows to pass any arbitrary curl parameters please consult with curl documentation"
+                          name="optionalParams"
+                          type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Adds --create-dirs option when enabled"
+                          name="createDirs"
+                          type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Inbound process execution context passed from a parent process that allows tracking of the parent and main integration job process"
+                          name="in_context"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="responseCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="outputString" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="errorString" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="responseheaders" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="outRestResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:RESTResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="curlErrorString" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="curlResponseCode" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="curlOutputString" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_is_verbose_target" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_resource_url_scheme" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j8nhppwt" targetId="j8nhppws"/>
+               </start>
+               <assignment id="j8nhppws">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := "SP-util-shell-curl"
+
+let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
+	else concat("pid:",$input.in_context[1]/parentProcessId)
+let $job_label := if (empty($input.in_context[1]/jobId)) then () 
+	else concat("job:",$input.in_context[1]/jobId)
+
+let $parts := ($p_name,$pid_label, $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_resource_url_scheme">
+                     <expression language="XQuery">lower-case(substring-before($input.resourceUrl, "://"))</expression>
+                  </operation>
+                  <link id="j8nhppwu" targetId="c"/>
+               </assignment>
+               <assignment id="jek2afk7">
+                  <title>Set Output Fields</title>
+                  <operation source="field" to="output.curlOutputString">output.outputString</operation>
+                  <operation source="field" to="output.curlErrorString">output.errorString</operation>
+                  <operation source="field" to="output.curlResponseCode">output.responseCode</operation>
+                  <link id="jfu1i18z" targetId="jfu1i18y"/>
+               </assignment>
+               <service id="c">
+                  <title>Run curl</title>
+                  <serviceName>avShellService</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="command" source="formula">
+                        <expression language="XQuery">let $curl_command_location := util:resolveURN("urn:agent:shell:curl")
+let $curl_command := if ( $curl_command_location = "urn:agent:shell:curl") then 
+						"curl" else $curl_command_location
+(: use  above urn to override default location of curl 
+	- it defaults path resolved location 
+:)
+(: targetFile is used to write an output of the request :)
+let $targetFile  := normalize-space($input.targetFile) 
+let $url 		 := concat("'",$input.resourceUrl,"'")
+(:always use silent mode :)
+let $silent      := "-s"
+let $verbose 	 := if (string($input.verboseOutput) = "true") then "-v" else ()
+(:switch to dump a headers to a file :)
+let $dumpHeaders := switch (true())
+                    case (empty($input.targetFile) and string($input.dumpHeaders) = "true" ) 
+                    	return concat("-D request_",util:getProcessId(),".headers")
+                    case (string($input.dumpHeaders) = "true")
+                    	return concat("-D ",$targetFile,".headers")
+					default return ()
+let $createDirs  := if (string($input.createDirs) = "true") then "--create-dirs" else () 
+let $targetFile  := if (empty($input.targetFile)) then () else  concat("-o ",$input.targetFile)
+
+let $commandSegments := ($curl_command, $silent, $verbose, $createDirs, $dumpHeaders, $input.optionalParams, $targetFile, $url)
+let $command     := string-join($commandSegments, " ")
+return $command
+</expression>
+                     </parameter>
+                     <parameter name="workingDirPath" source="field" updatable="true">input.workingDirectory</parameter>
+                  </serviceInput>
+                  <link id="jfu1i195" targetId="jek2afk7"/>
+               </service>
+               <container id="jfu1i18y" type="exclusive">
+                  <title>curl Response Code</title>
+                  <flow id="jfu1i19n">
+                     <link id="jfu1i19o" targetId="jfu1i18y" type="containerLink"/>
+                  </flow>
+                  <flow id="jfu1i19q">
+                     <throw id="jfu1i19p">
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.curlResponseCode</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.curlErrorString</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.outputString</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="jfu1i19k" targetId="jfu1i19n" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$output.curlResponseCode}</arg>
+                           <arg name="right">0</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jfu1i19l" targetId="jfu1i19q" type="containerLink"/>
+                  <link id="jfu1i190" targetId="j8oiz6uw"/>
+               </container>
+               <container id="j8oiz6uw" type="exclusive">
+                  <title>dumpHeaders</title>
+                  <flow id="j8oiz6ux">
+                     <service id="j8oiz6uy">
+                        <title>read headers</title>
+                        <serviceName>avShellService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="command" source="formula">
+                              <expression language="XQuery">let $targetFile  := normalize-space($input.targetFile) 
+return
+switch (true())
+    case (empty($input.targetFile) and string($input.dumpHeaders) = "true" ) 
+    	return concat("cat request_",util:getProcessId(),".headers")
+    default return concat("cat ",$targetFile,".headers")
+</expression>
+                           </parameter>
+                           <parameter name="workingDirPath" source="field" updatable="true">input.workingDirectory</parameter>
+                        </serviceInput>
+                        <link id="j8oiz6v4" targetId="j8oiz6uz"/>
+                     </service>
+                     <assignment id="j8oiz6uz">
+                        <title>Assignment to headers</title>
+                        <operation source="field" to="output.responseheaders">output.outputString</operation>
+                        <link id="j9fm2m3m" targetId="j9fm2m3l"/>
+                     </assignment>
+                     <container id="j9fm2m3l" type="exclusive">
+                        <title>tmp_resource_url_scheme</title>
+                        <flow id="j9fm2m4g">
+                           <assignment id="j9fm2m4f">
+                              <title>Set outRestResponse</title>
+                              <operation source="formula" to="output.outRestResponse">
+                                 <expression language="XQuery">(:parse all http headers and responses from curl output header file - requires dumpHeaders paramater to be true:)
+let $headers := tokenize($output.outputString, "&amp;#10;")
+(:get all responses there will be morre than 1 if http trnasfer is chunked 
+Examples
+    HTTP/2 200 
+    or
+    HTTP/1.1 100 Continue
+    HTTP/1.1 200 OK
+:)
+let $httpStatusMessages := for $header in $headers
+				     let $tokens := tokenize($header, " ")
+                     where starts-with($tokens[1],"HTTP")
+                     return $header
+let $finalStatusCode := tokenize($httpStatusMessages[last()]," ")[2]
+return
+&lt;RESTResponse&gt;
+   &lt;statusCode&gt;{$finalStatusCode}&lt;/statusCode&gt;
+   &lt;headers&gt;
+        {
+            for $header in $headers[position() &gt; 1 ]
+            let $header_parts := tokenize($header, ": ")
+            return 
+            &lt;header&gt;
+                &lt;name&gt;{$header_parts[1]}&lt;/name&gt;
+                &lt;value&gt;{$header_parts[2]}&lt;/value&gt;
+            &lt;/header&gt;
+        }
+   &lt;/headers&gt;
+&lt;/RESTResponse&gt;</expression>
+                              </operation>
+                           </assignment>
+                           <link id="j9fm2m4h" targetId="j9fm2m3l" type="containerLink"/>
+                        </flow>
+                        <flow id="j9fm2m4j">
+                           <link id="j9fm2m4k" targetId="j9fm2m3l" type="containerLink"/>
+                        </flow>
+                        <link id="j9fm2m4d" targetId="j9fm2m4g" type="containerLink">
+                           <condition source="formula">
+                              <function name="contains">
+                                 <arg name="left">{$temp.tmp_resource_url_scheme}</arg>
+                                 <arg name="right">http</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="j9fm2m4e" targetId="j9fm2m4j" type="containerLink"/>
+                     </container>
+                     <link id="j8oiz6v3" targetId="j8oiz6uw" type="containerLink"/>
+                  </flow>
+                  <flow id="j8oiz6v0">
+                     <link id="j8oiz6v5" targetId="j8oiz6uw" type="containerLink"/>
+                  </flow>
+                  <link id="j8oiz6v1" targetId="j8oiz6ux" type="containerLink">
+                     <condition source="formula">
+                        <function name="true">
+                           <arg name="field">{$input.dumpHeaders}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j8oiz6v2" targetId="j8oiz6v0" type="containerLink">
+                     <condition source="formula">
+                        <function name="false">
+                           <arg name="field">{$input.dumpHeaders}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j98sdka2" targetId="d"/>
+               </container>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1OpWSaZgo8NeIz7ogKH1ip</types1:GUID>
+      <types1:DisplayName>SP-util-shell-curl-NA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:53.835Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

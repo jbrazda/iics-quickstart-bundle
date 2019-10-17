@@ -1,0 +1,113 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>EhNWIsoZduD2L5S-gt-1373703-2018-11-13T20:22:13.491Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-util-upload-agent</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to push file to Agent File System</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-11-13T20:22:13Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-30T14:04:29Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-30T14:04:56Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-util-upload-agent/SP-util-upload-agent.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-util-upload-agent"
+                  name="SP-util-upload-agent">
+            <appliesTo/>
+            <description>Process to push file to Agent File System</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="in_fileWriteTask"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">AgentFileWriter:FileWriteTask</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9CxtpLQkiz1fOmFAToyTE4</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_attachment"
+                          required="true"
+                          type="attachment">
+                  <options>
+                     <option hide="true" name="count">1</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="File Information" name="fileInfo" type="reference">
+                  <options>
+                     <option name="referenceTo">AgentFileWriter:FileInformation</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9CxtpLQkiz1fOmFAToyTE4</option>
+                  </options>
+               </field>
+               <field description="" name="faultInfo" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FaultInfo</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">91gnTcWCdhAkc5YWMvtKez</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jog6kk25" targetId="jog6kk2q"/>
+               </start>
+               <eventContainer id="jog6kk2q">
+                  <service id="jog6kk24">
+                     <title>FileWriter</title>
+                     <serviceName>AgentFileWriter:FileWriter</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="fileWriteTask" source="field" updatable="true">input.in_fileWriteTask</parameter>
+                        <parameter name="attachment" source="field" updatable="true">input.in_attachment</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="jog6kk2s">
+                     <link id="jog6kk2t" targetId="jog6kk2q" type="containerLink"/>
+                  </flow>
+                  <flow id="jog6kk2v">
+                     <link id="jog6kk2w" targetId="jog6kk2q" type="containerLink"/>
+                  </flow>
+                  <link id="jog6kk2r" targetId="jog6kk2s" type="containerLink"/>
+                  <link id="jog6kk26" targetId="c"/>
+                  <events>
+                     <catch faultField="faultInfo" id="jog6kk2p" interrupting="true">
+                        <link id="jog6kk2u" targetId="jog6kk2v" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>5UIqPii5ISxl1ajarQ3Bsr</types1:GUID>
+      <types1:DisplayName>SP-util-upload-agent</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:54.837Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

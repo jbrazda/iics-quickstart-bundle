@@ -1,0 +1,127 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>teCpwNXHS45bfTQ-gt-3319501-2019-04-30T13:34:36.317Z::gt.xml</types1:EntryId>
+      <types1:Name>How-To_Use_Template_Processes_DB</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:36Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-17T21:25:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-17T21:25:58Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DB/How_To_Use_Template_Processes_DB.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="How-To Use Template Processes DB"
+                         doneOnEndStep="false"
+                         name="How-To_Use_Template_Processes_DB"
+                         runAsUser="$current">
+            <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jkba8tdu" targetScreen="jkba8tdu">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jkba8tdu">
+                  <title>Template use guide</title>
+                  <body contentType="text/html">&lt;h2&gt;Informatica Cloud Process Guides&lt;/h2&gt;
+&lt;h3&gt;How-to use templates provided in this package&lt;/h3&gt;
+&lt;p&gt;1. Copy template process to desired destination project&lt;/p&gt;
+&lt;p&gt;2. Rename process to desired name, follow naming conventions&lt;/p&gt;
+&lt;p&gt;3. Update Inti Secition of the template, make sute that Set process Title is updated accordingly to reflect new process name&lt;/p&gt;
+&lt;p&gt;4. Update any other activities in the template as desired.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jkba8tdu_jkba8te0" targetScreen="jkba8te0">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jkba8tdu_jkba8tec" targetScreen="jkba8tec">
+                        <text>Run Example Job - DB Logging</text>
+                     </action>
+                  </actions>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jkba8te0">
+                  <actions>
+                     <action alt="null" id="jkba8te0_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <subflow id="jkba8tf4">
+                  <title>iPaaS Job View</title>
+                  <subflowGUID>anJKIeJPfDJk8kvVHqi4Wo</subflowGUID>
+                  <subflowPath>iPaaS_Job_View_DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jv4151tv" name="in_job_id" source="field" updatable="true">output.out_context[1]/jobId</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="jkba8tf4_jkba8te0" targetScreen="jkba8te0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+               <callProcess id="jkba8tec">
+                  <title>TEMPLATE-MP-Job</title>
+                  <subflowGUID>5ak48QqN0cQbpMDlnU3Uwd</subflowGUID>
+                  <subflowPath>TEMPLATE-MP-Job-DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <subflowOutput>
+                     <field name="out_context" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:ProcessExecutionContext</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="jkba8tec_jkba8tf4" targetScreen="jkba8tf4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>1Qu1h6KagGgh1aPQpSuVi5</types1:GUID>
+      <types1:DisplayName>How-To Use Template Processes DB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-17T21:28:55.11Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
