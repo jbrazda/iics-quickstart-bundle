@@ -2,6 +2,7 @@
     "markdown-toc.anchorMode": "github.com",    
     "cSpell.words": [
         "Lifecycle",
-        "SDLC"
+        "SDLC",
+        "Stateful"
     ]
 }
