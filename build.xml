@@ -419,18 +419,20 @@
     
     
     <target name="iics.package.report" depends="-env.info,install.tools.reporting" unless="${tools.reporting.disabled}">
-                
+        <property name="iics.report.name" value="${release.package.label}"/>
+        <property name="iics.report.source" location="${iics.import.dir}/${release.package.label}.zip"/>
+
         <ant antfile="${tools.package.reporting}" target="basex.create.db" inheritall="false" inheritrefs="false">
-            <property name="basex.create.db.name" value="${release.package.label}"/>
-            <property name="basex.create.db.source" location="${iics.import.dir}/${release.package.label}.zip"/>
+            <property name="basex.create.db.name" value="${iics.report.name}"/>
+            <property name="basex.create.db.source" location="${iics.report.source}"/>
             <property name="env.info.displayed" value="true"/>
         </ant>
         <property file="${iics.tools.dir.reporting}/build.properties"/>
 
-        <echo level="info">Openning Browser ${shell.open} "${basex.http.base_url}/iics/report?database=${release.package.label}"</echo>
+        <echo level="info">Openning Browser ${shell.open} "${basex.http.base_url}/iics/report?database=${iics.report.name}"</echo>
         <exec executable="${shell}" spawn="yes">
             <arg value="${shell.options}" />
-            <arg value='${shell.open} "${basex.http.base_url}/iics/report?database=${release.package.label}"' />
+            <arg value='${shell.open} "${basex.http.base_url}/iics/report?database=${iics.report.name}"' />
         </exec>
     </target>
 
@@ -479,6 +481,13 @@
         <echo level="info">Updated Update Designs distribution in ${iics.binaries.dir}/${iics.package.output}_Update_Excluding_Connections.zip</echo>
 	</target>
 
+    
+    
+    <target name="-set-export-report-properties">
+        <property name="iics.report.name" value="${iics.package.output}"/>
+        <property name="iics.report.source" location="${iics.export.dir}/${iics.export.output}"/>
+    </target>
+    
     <target name="update.src" depends="-env.info,
         -select-release,
         -load.release.properties,
@@ -487,14 +496,15 @@
          iics.extract" 
         description="Updates design ources directory fron Source Environment Org using iics Export utility">
     </target>
-    
         
     <target name="download.src" depends="-env.info,
         -select-release,
         -load.release.properties,
         -select-source-environment,
         -set-source-properties,
-        iics.export" 
+         iics.export,
+        -set-export-report-properties,
+         iics.package.report" 
         description="Downloads Designs From Source Environment Org using iics Export utility">
     </target>
 
