@@ -13,11 +13,11 @@ This project contains set of re-usable IICS Designs SDLC utilities, examples and
 ## Provided Assets
 
 - [Logging Framework](doc/logging_framework.md)
-- Administration and Development Support Guides
+- [Administration and Development Support Guides](doc/guides.md)
 - Process Templates and Examples
 - Asset Management Scripts to Export Import and Version Control IPD Designs Implemented as Apache Ant Scripts
 - Integration with other SDLC Assisting Tools (Migration transformation Tool, IICS Reporting Tool)
-- Best practices and Other Code Examples
+- Best practices and Other Integration use case Examples
 
 ## Glossary of Terms used in this Documents
 
