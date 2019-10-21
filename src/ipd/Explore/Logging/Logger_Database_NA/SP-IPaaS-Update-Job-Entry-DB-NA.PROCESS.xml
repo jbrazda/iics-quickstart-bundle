@@ -1,0 +1,161 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Rlt0i98C1LOwD0w-gt-3319441-2019-04-30T13:34:33.701Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-IPaaS-Update-Job-Entry-DB-NA</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Update Existing Job Entry withy a status and End Date</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:34Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-30T16:43:19Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-05-05T01:45:05Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry-DB-NA/SP-IPaaS-Update-Job-Entry-DB-NA.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-IPaaS-Update-Job-Entry-DB-NA"
+                  name="SP-IPaaS-Update-Job-Entry-DB-NA">
+            <appliesTo/>
+            <description>Update Existing Job Entry withy a status and End Date</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Update Job Entry Request"
+                          name="in_UpdateJobLogEntryRequest"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">8mX2dbmOledkm1Kn65In0q</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="Job Log Entry Object"
+                      name="tmp_ipaas_job_log_entry"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">IPaaS-Logging:IC_JOB_LOG</option>
+                     <option name="required">false</option>
+                     <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
+                  </options>
+               </field>
+               <field description="Dynamically Updated Process Title"
+                      name="tmp_process_title"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Temporary script output"
+                      name="tmp_script_out"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Process Name Used to generate Process Title"
+                      name="tmp_process_name"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">SP-IPaaS-Update-Job-Entry-DB-NA</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j9ecmg0g" targetId="j9ecmg0f"/>
+               </start>
+               <assignment id="j9ecmg0f">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $context := $input.in_UpdateJobLogEntryRequest[1]/ProcessExecutionContext
+let $pid_label := if (empty($context/parentProcessId/text())) then ()
+	else concat("pid:",$context/parentProcessId/text())
+let $job_label := if (empty($context/jobId/text())) then () 
+	else concat("job:",$context/jobId/text())
+
+let $parts := ($p_name,$pid_label, $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="j9ecmg0h" targetId="j95wbzsu"/>
+               </assignment>
+               <assignment id="j97duztn">
+                  <title>Query Job Record</title>
+                  <operation source="query" to="temp.tmp_ipaas_job_log_entry">
+                     <query from="IPaaS-Logging:IC_JOB_LOG">
+                        <where>JOB_ID = '{$input.in_UpdateJobLogEntryRequest[1]/ProcessExecutionContext[1]/jobId}'</where>
+                     </query>
+                  </operation>
+                  <link id="j97duzu2" targetId="j97duzu1"/>
+               </assignment>
+               <milestone id="j95wbzsu">
+                  <title>sync response</title>
+                  <link id="j97duzto" targetId="j97duztn"/>
+               </milestone>
+               <container id="j97duzu1" type="exclusive">
+                  <title>tmp_ipaas_job_log_entry</title>
+                  <flow id="j97duzua">
+                     <assignment id="j98k79tk">
+                        <title>Assignment to STATUS, END_DATE</title>
+                        <operation source="formula" to="temp.tmp_ipaas_job_log_entry.STATUS">
+                           <expression language="XQuery">$input.in_UpdateJobLogEntryRequest[1]/Status </expression>
+                        </operation>
+                        <operation source="formula" to="temp.tmp_ipaas_job_log_entry.END_DATE">
+                           <expression language="XQuery">$input.in_UpdateJobLogEntryRequest[1]/EndDate </expression>
+                        </operation>
+                        <link id="j9abjagp" targetId="j97duzv7"/>
+                     </assignment>
+                     <end id="j97duzv7">
+                        <title>End</title>
+                     </end>
+                  </flow>
+                  <flow id="j97duzud">
+                     <end id="j97duzve">
+                        <title>End</title>
+                     </end>
+                  </flow>
+                  <link id="j97duzu7" targetId="j97duzua" type="containerLink">
+                     <condition source="formula">
+                        <function name="set">
+                           <arg name="field">{$temp.tmp_ipaas_job_log_entry}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j97duzu8" targetId="j97duzud" type="containerLink">
+                     <condition source="formula">
+                        <function name="unset">
+                           <arg name="field">{$temp.tmp_ipaas_job_log_entry}</arg>
+                        </function>
+                     </condition>
+                  </link>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1tqPYx4STQakSnr4ViDqie</types1:GUID>
+      <types1:DisplayName>SP-IPaaS-Update-Job-Entry-DB-NA</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.539Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

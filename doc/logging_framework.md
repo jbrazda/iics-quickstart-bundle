@@ -12,7 +12,7 @@
 
 ## Overview
 
-Common use while implement event-driven Integrations in IICS is a need to track Integration failures, milestones or other events that happen during Integration process execution.
+Common use case while implement event-driven Integrations in IICS is a need to track Integration failures, milestones or other events that happen during Integration process execution.
 ICAI does not keep persistent execution log logs for extended period of time so the need to store tracking integration Externally outside of Process engine database.
 ICAI typically purges persisted process log information 1 day after completion or after fault.
 

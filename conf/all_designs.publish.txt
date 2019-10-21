@@ -1,40 +1,20 @@
+Explore/Tools/ServiceConnectors/IICS REST API V3.AI_SERVICE_CONNECTOR
+Explore/Tools/ServiceConnectors/github-gist.AI_SERVICE_CONNECTOR
+Explore/Tools/ServiceConnectors/gitlab-snippets.AI_SERVICE_CONNECTOR
 Explore/Logging/Connections/IPaaS-Logging.AI_CONNECTION
 Explore/Logging/Connections/SA-Process-DB.AI_CONNECTION
-Explore/Templates/Guides/How-To: Use Template Processes DB.GUIDE
-Explore/Templates/Guides/How-To: Use Template Processes SFDC.GUIDE
-Explore/Templates/Jobs_Logging_DB/TEMPLATE-MP-Job-DB.PROCESS
-Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
-Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-MP-Job-SFDC.PROCESS
-Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-SP-ETL-SFDC.PROCESS
-Explore/Templates/SP-Test-Throw-Fault-Generic-Cloud.PROCESS
-Explore/Templates/SP-Test-Throw-Fault-Generic.PROCESS
 Explore/Tools/Connections/AddressDoctor.AI_CONNECTION
 Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION
 Explore/Tools/Connections/Email.AI_CONNECTION
 Explore/Tools/Connections/ICS-API.AI_CONNECTION
 Explore/Tools/Connections/IPaaS-Configuration-DB.AI_CONNECTION
 Explore/Tools/Connections/github-gist.AI_CONNECTION
-Explore/Tools/Guides/Admin Shell.GUIDE
-Explore/Tools/Guides/Conversion Utility.GUIDE
-Explore/Tools/Guides/DAS Tools.GUIDE
-Explore/Tools/Guides/ICS Development Tools.GUIDE
-Explore/Tools/Guides/IPaaS Administration Tools.GUIDE
-Explore/Tools/Guides/IPaaS Encrypt Utility.GUIDE
-Explore/Tools/Guides/Send Test Message to  JMS.GUIDE
-Explore/Tools/Guides/Test-SP-util-shell-curl-NA.GUIDE
-Explore/Tools/Guides/iPaaS Admin Upload File to Agent.GUIDE
-Explore/Tools/Guides/iPaaS Configuration Manager.GUIDE
-Explore/Tools/ProcessObjects/AttachmentInformation.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/FileInformation.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/ICSRunCloudTaskResponse.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/RESTResponse.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/ShellCurlOptions.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/TestResult.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/httpAttachment.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/httpHeader.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/httpHeaders.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/httpParameter.PROCESS_OBJECT
-Explore/Tools/ProcessObjects/httpPayload.PROCESS_OBJECT
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-MP-Job-DB.PROCESS
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
+Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-MP-Job-SFDC.PROCESS
+Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-SP-ETL-SFDC.PROCESS
+Explore/Templates/SP-Test-Throw-Fault-Generic-Cloud.PROCESS
+Explore/Templates/SP-Test-Throw-Fault-Generic.PROCESS
 Explore/Tools/Processes/SP-ConvertAttachmentToText.PROCESS
 Explore/Tools/Processes/SP-ICS-Create-MCT-NA.PROCESS
 Explore/Tools/Processes/SP-ICS-Create-MCT.PROCESS
@@ -51,6 +31,14 @@ Explore/Tools/Processes/SP-JMS-Send-MDM-IICS.PROCESS
 Explore/Tools/Processes/SP-Shell-CMD.PROCESS
 Explore/Tools/Processes/SP-util-shell-curl-NA.PROCESS
 Explore/Tools/Processes/SP-util-upload-agent.PROCESS
-Explore/Tools/ServiceConnectors/IICS REST API V3.AI_SERVICE_CONNECTOR
-Explore/Tools/ServiceConnectors/github-gist.AI_SERVICE_CONNECTOR
-Explore/Tools/ServiceConnectors/gitlab-snippets.AI_SERVICE_CONNECTOR
+Explore/Tools/Guides/Admin Shell.GUIDE
+Explore/Templates/Guides/How-To Use Template Processes DB.GUIDE
+Explore/Templates/Guides/How-To Use Template Processes SFDC.GUIDE
+Explore/Tools/Guides/Conversion Utility.GUIDE
+Explore/Tools/Guides/DAS Tools.GUIDE
+Explore/Tools/Guides/ICS Development Tools.GUIDE
+Explore/Tools/Guides/IPaaS Administration Tools.GUIDE
+Explore/Tools/Guides/IPaaS Encrypt Utility.GUIDE
+Explore/Tools/Guides/Test-SP-util-shell-curl-NA.GUIDE
+Explore/Tools/Guides/iPaaS Admin Upload File to Agent.GUIDE
+Explore/Tools/Guides/iPaaS Configuration Manager.GUIDE

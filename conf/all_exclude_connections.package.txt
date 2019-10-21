@@ -1,3 +1,14 @@
-
-Explore/Tools/ProcessObjects.Folder
+Explore/Logging/Guides_Database.Folder
+Explore/Logging/Guides_SFDC.Folder
+Explore/Logging/Guides.Folder
+Explore/Logging/Logger_Database_NA.Folder
+Explore/Logging/Logger_SFDC_Cloud.Folder
+Explore/Logging/Logger_SFDC_NA.Folder
+Explore/Logging/ProcessObjects.Folder
+Explore/Logging/Setup.Folder
+Explore/Templates/Guides.Folder
+Explore/Templates/Jobs_Logging_DB.Folder
+Explore/Templates/Jobs_Logging_SFDC.Folder
+Explore/Tools/Guides.Folder
 Explore/Tools/Processes.Folder
+Explore/Tools/ProcessObjects.Folder

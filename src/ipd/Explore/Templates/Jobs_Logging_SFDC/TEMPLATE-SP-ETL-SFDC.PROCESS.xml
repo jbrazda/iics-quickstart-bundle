@@ -16,7 +16,7 @@
       <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-04-30T13:35:20Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:24:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-SFDC/TEMPLATE-SP-ETL-SFDC.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -221,5 +221,5 @@ return $process_title</expression>
       <types1:GUID>9vd2qrDae3he3ErslVVfOw</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.739Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.306Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,0 +1,137 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>kOrvyXYDdxKlFmV-gt-5182246-2019-05-08T16:28:05.916Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-Setup-Logging-DB</types1:Name>
+      <types1:ParentFlowIds>OPE4zlrMZgpDqot-gt-4938428-2019-05-07T19:05:56.645Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process manages theLogging framework Storage on  Supported Databases PostgreSQL, Oracle, MSSQL, MySQL</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-05-08T16:28:06Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-05-08T18:44:01Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-05-08T18:44:07Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-Setup-Logging-DB/SP-Setup-Logging-DB.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-Setup-Logging-DB"
+                  name="SP-Setup-Logging-DB">
+            <appliesTo/>
+            <description>Process manages theLogging framework Storage on  Supported Databases PostgreSQL, Oracle, MSSQL, MySQL</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="DB Stup task Create Schema,Drop Schema,Reset Schema, Purge Data"
+                          name="in_task"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"Create Schema","value":"Create Schema"},{"label":"Drop Schema","value":"Drop Schema"},{"label":"Reset Schema","value":"Reset Schema"},{"label":"Purge Data","value":"Purge Data"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="One of the supported Databases "
+                          name="in_dbType"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"MSSQL","value":"MSSQL"},{"label":"MySQL","value":"MySQL"},{"label":"PostgreSQL","value":"PostgreSQL"},{"label":"Oracle","value":"Oracle"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Data Source Name"
+                          name="in_dataSource"
+                          required="true"
+                          type="picklist">
+                  <options>
+                     <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_multiDataAccessResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tMultiResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">jhXRGp8HGy8fOjJy57yhy1</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="multiDataAccessRequest containing action commands"
+                      name="tmp_multiDataAccessRequest"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">jhXRGp8HGy8fOjJy57yhy1</option>
+                  </options>
+               </field>
+               <field description="URL containing idividual Databas ection DDL Scripts presented as MDAS requests xml in GitHub Gist"
+                      name="tmp_ddl_gist_url"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jvfij6yl" targetId="jvffqwak"/>
+               </start>
+               <assignment id="jvffqwak">
+                  <title>Assignment to tmp_multiDataAccessRequest, temp.tmp_multiDataAccessRequest[1]/dataSource</title>
+                  <operation source="formula" to="temp.tmp_multiDataAccessRequest">
+                     <expression language="XQuery">let $gist_base_url := $temp.tmp_ddl_gist_url 
+let $task	 := replace($input.in_task," ","")
+let $dbType  := $input.in_dbType 
+let $gist_url := concat($gist_base_url,"/raw/IICS_Logging_MDAS_", $task ,"_",$dbType,".xml")
+return
+doc($gist_url)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_multiDataAccessRequest[1]/dataSource">
+                     <expression language="XQuery">$input.in_dataSource </expression>
+                  </operation>
+                  <link id="jvffqwam" targetId="jvffqw97"/>
+               </assignment>
+               <assignment id="jvffqwav">
+                  <title>Assignment to out_multiDataAccessResponse</title>
+                  <operation source="field" to="output.out_multiDataAccessResponse">output.multiDataAccessResponse</operation>
+                  <link id="jvffqwax" targetId="c"/>
+               </assignment>
+               <service id="jvffqw97">
+                  <title>execMultiSQL</title>
+                  <serviceName>execMultiSQL</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="multiDataAccessRequest" source="field">temp.tmp_multiDataAccessRequest</parameter>
+                  </serviceInput>
+                  <link id="jvffqwaw" targetId="jvffqwav"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>jSu7p8fQuE8dQDuX3vRk6v</types1:GUID>
+      <types1:DisplayName>SP-Setup-Logging-DB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:01.557Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "a9GIgMrdO73bMsXmCLEEc1",
-      "objectName": "How-To: Use Template Processes SFDC",
+      "objectGuid": "0owfDrtZtSle01jnBxdkSM",
+      "objectName": "iPaaS Log Search DB",
       "objectType": "GUIDE",
-      "path": "/Explore/Templates/Guides",
+      "path": "/Explore/Logging/Guides_Database",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend",
+            "description": "This Guide  Provides Administrative and troubleshooting functions such as \n- search IPaaS ICAI Job  logs\n- ability to find job related processes",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,23 +16,23 @@
             "minor": 0
          },
          "objectRefs": [
-            "3TxXRBytv8viKeAoroXREr",
-            "84sV2BKWoYYi3TjNavvAcF"
+            "4375TaZUXDxeLADp2bIEuS",
+            "anJKIeJPfDJk8kvVHqi4Wo"
          ],
          "repoInfo": {
-            "repoHandle": "2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml"
+            "repoHandle": "dvSzYLnzYLnzYLn-gt-1211794-2018-07-24T14:05:56.058Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "3TxXRBytv8viKeAoroXREr",
-      "objectName": "TEMPLATE-MP-Job-SFDC",
-      "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_SFDC",
+      "objectGuid": "4375TaZUXDxeLADp2bIEuS",
+      "objectName": "IPaaS-Logging",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Logging/Connections",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes",
+            "description": "IPaaS Database for Logging and job tracking",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -42,15 +42,15 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml"
+            "repoHandle": "CDMxrteIssjqluQ-gt-1208791-2018-07-24T14:05:36.452Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "84sV2BKWoYYi3TjNavvAcF",
-      "objectName": "iPaaS Job View",
+      "objectGuid": "anJKIeJPfDJk8kvVHqi4Wo",
+      "objectName": "iPaaS Job View DB",
       "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_SFDC",
+      "path": "/Explore/Logging/Guides_Database",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
@@ -64,7 +64,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml"
+            "repoHandle": "TeFRqXpIW7WHK80-gt-168251-2018-07-24T14:05:54.728Z::gt.xml"
          }
       }
    }

@@ -17,7 +17,7 @@
       <types1:ModificationDate>2018-10-23T16:18:18Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-04-29T20:04:21Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:24:08Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/ICS-API/ICS-API.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -50,5 +50,5 @@
       <types1:GUID>9BvRWvqMsiEk6qnJ0A0UWE</types1:GUID>
       <types1:DisplayName>ICS-API</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:30.954Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:02.8Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

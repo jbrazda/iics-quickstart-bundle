@@ -1,0 +1,229 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml</types1:EntryId>
+      <types1:Name>Logging_Framework_Configuration</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>This Guide helps to Setup and Configure  Logging and Tracking Components</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T20:25:53Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-18T16:53:50Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-18T17:47:11Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Logging_Framework_Configuration/Logging_Framework_Configuration.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Logging Framework Configuration"
+                         doneOnEndStep="false"
+                         name="Logging_Framework_Configuration"
+                         runAsUser="$current">
+            <description>This Guide helps to Setup and Configure  Logging and Tracking Components</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_url_mysql_ddl_gist" type="url">
+                  <options>
+                     <option name="urlDisplayReadonlyAs">IFrame</option>
+                     <option name="required">false</option>
+                     <option name="initialvalue">https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/4e19882b35af1052dc40b68f84889cc686168693/IICS_Logging_MySQL.sql</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jv48rr44" targetScreen="jv48rr44">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jv48rr44">
+                  <title>Welcome</title>
+                  <body contentType="text/html">&lt;h2&gt;&lt;img style="width: 786px; height: 696px; float: right;" title="https://www.lucidchart.com/publicSegments/view/459d21e0-5054-4cc1-a496-6b877cfbe108/image.png" src="https://www.lucidchart.com/publicSegments/view/459d21e0-5054-4cc1-a496-6b877cfbe108/image.png" alt="https://www.lucidchart.com/publicSegments/view/459d21e0-5054-4cc1-a496-6b877cfbe108/image.png"&gt;&lt;/h2&gt;
+&lt;div&gt;
+&lt;div&gt;Common&amp;nbsp;use&amp;nbsp;while&amp;nbsp;implement&amp;nbsp;event-driven&amp;nbsp;Integrations&amp;nbsp;in&amp;nbsp;IICS&amp;nbsp;is&amp;nbsp;a&amp;nbsp;need&amp;nbsp;to&amp;nbsp;track&amp;nbsp;Integration&amp;nbsp;failures,&amp;nbsp;milestones&amp;nbsp;or&amp;nbsp;other&amp;nbsp;events&amp;nbsp;that&amp;nbsp;happen&amp;nbsp;during&amp;nbsp;Integration&amp;nbsp;process&amp;nbsp;execution.&lt;/div&gt;
+&lt;div&gt;ICAI&amp;nbsp;does&amp;nbsp;not&amp;nbsp;keep&amp;nbsp;persistent&amp;nbsp;execution&amp;nbsp;log&amp;nbsp;logs&amp;nbsp;for&amp;nbsp;extended&amp;nbsp;period&amp;nbsp;of&amp;nbsp;time&amp;nbsp;so&amp;nbsp;the&amp;nbsp;need&amp;nbsp;to&amp;nbsp;store&amp;nbsp;tracking&amp;nbsp;integration&amp;nbsp;Externally&amp;nbsp;outside&amp;nbsp;of&amp;nbsp;Process&amp;nbsp;engine&amp;nbsp;database.&lt;/div&gt;
+&lt;div&gt;ICAI&amp;nbsp;typically&amp;nbsp;purges&amp;nbsp;persisted&amp;nbsp;process&amp;nbsp;log&amp;nbsp;information&amp;nbsp;1&amp;nbsp;day&amp;nbsp;after&amp;nbsp;completion&amp;nbsp;or&amp;nbsp;after&amp;nbsp;fault&amp;nbsp;(We&amp;nbsp;recommend&amp;nbsp;to&amp;nbsp;increase&amp;nbsp;faulted&amp;nbsp;process&amp;nbsp;retention&amp;nbsp;to&amp;nbsp;7&amp;nbsp;days&amp;nbsp;with&amp;nbsp;this&amp;nbsp;pattern)&lt;/div&gt;
+&lt;br&gt;
+&lt;div&gt;This&amp;nbsp;project&amp;nbsp;provides&amp;nbsp;a&amp;nbsp;set&amp;nbsp;of&amp;nbsp;pre-built&amp;nbsp;Components&amp;nbsp;allows&amp;nbsp;to&amp;nbsp;Design&amp;nbsp;Integration&amp;nbsp;processes&amp;nbsp;leveraging&amp;nbsp;Informatica&amp;nbsp;Cloud&amp;nbsp;best&amp;nbsp;practices&amp;nbsp;and&amp;nbsp;design&amp;nbsp;patterns.&lt;/div&gt;
+&lt;br&gt;
+&lt;div&gt;Integration&amp;nbsp;processes&amp;nbsp;often&amp;nbsp;share&amp;nbsp;same&amp;nbsp;characteristics:&lt;/div&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Processes&amp;nbsp;can&amp;nbsp;be&amp;nbsp;batch&amp;nbsp;or&amp;nbsp;event-driven,&amp;nbsp;near&amp;nbsp;real&amp;nbsp;time&amp;nbsp;integrations.&lt;/li&gt;
+&lt;li&gt;Processes&amp;nbsp;can&amp;nbsp;be&amp;nbsp;both&amp;nbsp;Stateful/Stateless&amp;nbsp;(Business&amp;nbsp;Process,&amp;nbsp;Job,&amp;nbsp;Composite&amp;nbsp;Service)&lt;/li&gt;
+&lt;li&gt;There&amp;nbsp;might&amp;nbsp;be&amp;nbsp;need&amp;nbsp;for&amp;nbsp;unified&amp;nbsp;external&amp;nbsp;logging&amp;nbsp;(Job&amp;nbsp;Tracking)&amp;nbsp;and&amp;nbsp;error&amp;nbsp;handling&lt;/li&gt;
+&lt;li&gt;Integration&amp;nbsp;Process&amp;nbsp;may&amp;nbsp;be&amp;nbsp;composed&amp;nbsp;from&amp;nbsp;multiple&amp;nbsp;steps/suppresses&amp;nbsp;to&amp;nbsp;simplify&amp;nbsp;maintenance&amp;nbsp;and&amp;nbsp;enable&amp;nbsp;re-use,&amp;nbsp;in&amp;nbsp;such&amp;nbsp;case&amp;nbsp;we&amp;nbsp;might&amp;nbsp;need&amp;nbsp;to&amp;nbsp;build&amp;nbsp;layers&amp;nbsp;to&amp;nbsp;provide&amp;nbsp;an&amp;nbsp;end&amp;nbsp;to&amp;nbsp;end&amp;nbsp;transactional&amp;nbsp;tracking&amp;nbsp;system.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div&gt;Example&amp;nbsp;design&amp;nbsp;is&amp;nbsp;outlined&amp;nbsp;on&amp;nbsp;the&amp;nbsp;image&lt;/div&gt;
+&lt;div&gt;Following&amp;nbsp;this&amp;nbsp;Design&amp;nbsp;patter&amp;nbsp;allows&amp;nbsp;process&amp;nbsp;execution&amp;nbsp;to&amp;nbsp;be&amp;nbsp;easily&amp;nbsp;tracked&amp;nbsp;and&amp;nbsp;monitored&amp;nbsp;outside&amp;nbsp;of&amp;nbsp;runtime&amp;nbsp;environment&amp;nbsp;and&amp;nbsp;improves&amp;nbsp;error&amp;nbsp;handling&amp;nbsp;and&amp;nbsp;speed&amp;nbsp;of&amp;nbsp;development&amp;nbsp;as&amp;nbsp;the&amp;nbsp;components&amp;nbsp;provided&amp;nbsp;with&amp;nbsp;this&amp;nbsp;framework&amp;nbsp;also&amp;nbsp;significantly&amp;nbsp;improve&amp;nbsp;efficiency&amp;nbsp;and&amp;nbsp;ability&amp;nbsp;to&amp;nbsp;test&amp;nbsp;and&amp;nbsp;support&amp;nbsp;implementation.&amp;nbsp;This&amp;nbsp;pattern&amp;nbsp;also&amp;nbsp;allows&amp;nbsp;to&amp;nbsp;build&amp;nbsp;a&amp;nbsp;robust&amp;nbsp;unit&amp;nbsp;and&amp;nbsp;regression&amp;nbsp;testing.&lt;/div&gt;
+&lt;br&gt;
+&lt;div&gt;The&amp;nbsp;typical&amp;nbsp;CAI&amp;nbsp;integration&amp;nbsp;will&amp;nbsp;be&amp;nbsp;composed&amp;nbsp;of&amp;nbsp;several&amp;nbsp;Layers&amp;nbsp;as&amp;nbsp;depicted&amp;nbsp;on&amp;nbsp;the&amp;nbsp;following&amp;nbsp;Image&lt;/div&gt;
+&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;Trigger&amp;nbsp;-&amp;nbsp;Inbound&amp;nbsp;SOAP&amp;nbsp;or&amp;nbsp;REST&amp;nbsp;message,&amp;nbsp;Scheduled&amp;nbsp;Process,&amp;nbsp;JMS&amp;nbsp;or&amp;nbsp;other&amp;nbsp;events&amp;nbsp;such&amp;nbsp;as&amp;nbsp;File&amp;nbsp;Listener&amp;nbsp;events&lt;/li&gt;
+&lt;li&gt;Job&amp;nbsp;process&amp;nbsp;-&amp;nbsp;records&amp;nbsp;Job&amp;nbsp;tracking&amp;nbsp;Information,&amp;nbsp;handles&amp;nbsp;subprocess&amp;nbsp;reports,&amp;nbsp;aggregates&amp;nbsp;subprocess&amp;nbsp;results&amp;nbsp;in&amp;nbsp;case&amp;nbsp;of&amp;nbsp;batch&amp;nbsp;list&amp;nbsp;processing,&amp;nbsp;records&amp;nbsp;job&amp;nbsp;final&amp;nbsp;status,&amp;nbsp;records&amp;nbsp;error&amp;nbsp;events&amp;nbsp;in&amp;nbsp;case&amp;nbsp;of&amp;nbsp;unexpected&amp;nbsp;job&amp;nbsp;failure&lt;/li&gt;
+&lt;li&gt;Integration&amp;nbsp;Process&amp;nbsp;-&amp;nbsp;Runs&amp;nbsp;actual&amp;nbsp;Integration&amp;nbsp;tasks,&amp;nbsp;This&amp;nbsp;process&amp;nbsp;can&amp;nbsp;be&amp;nbsp;composed&amp;nbsp;of&amp;nbsp;many&amp;nbsp;chained&amp;nbsp;processes,&amp;nbsp;sub-processes&amp;nbsp;and&amp;nbsp;records&amp;nbsp;events&amp;nbsp;such&amp;nbsp;as
+&lt;ul&gt;
+&lt;li&gt;INFO&amp;nbsp;-&amp;nbsp;Start/stop&amp;nbsp;or&amp;nbsp;milestones&lt;/li&gt;
+&lt;li&gt;WARNING&amp;nbsp;–&amp;nbsp;Non&amp;nbsp;Critical,&amp;nbsp;non&amp;nbsp;interrupting&amp;nbsp;errors&lt;/li&gt;
+&lt;li&gt;ERROR&amp;nbsp;–&amp;nbsp;Critical,&amp;nbsp;interrupting&amp;nbsp;errors&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;br&gt;
+&lt;div&gt;Integration&amp;nbsp;process&amp;nbsp;and&amp;nbsp;its&amp;nbsp;children&amp;nbsp;propagate&amp;nbsp;critical&amp;nbsp;errors&amp;nbsp;upstream&amp;nbsp;and&amp;nbsp;all&amp;nbsp;unexpected&amp;nbsp;interrupting&amp;nbsp;errors&amp;nbsp;are&amp;nbsp;handled&amp;nbsp;by&amp;nbsp;the&amp;nbsp;main&amp;nbsp;Job&amp;nbsp;process&lt;/div&gt;
+&lt;div&gt;This&amp;nbsp;design&amp;nbsp;pattern&amp;nbsp;uses&amp;nbsp;two&amp;nbsp;Logging&amp;nbsp;tables&amp;nbsp;or&amp;nbsp;entities&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Follow this guide to drive through the options for the use of this pattern and assist in the Configuration of this framework.&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jv48rr44_jv49skwe" targetScreen="jv49skwe">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jv48rr44_jv49skwm" targetScreen="jv49skwm">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="jv49skwm">
+                  <title>Storage Selection</title>
+                  <body contentType="text/html">&lt;p&gt;This framork is designed with different options to store the logging and tracking data. It uses simple data model composed of two related objects/entities&lt;img style="width: 185px; height: 156px; float: right;" title="scfu-10.jpg" src="project:/com.activevos.cumulus.cloud.extend.playbook.resources/scfu/scfu-10.jpg" alt="scfu-10.jpg"&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Job Entry&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;Job Events&amp;nbsp;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Framework can be &amp;nbsp;used with any relational Databse and Salesforce as backend store for log entries. It currently p[rovides a support for following backends&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL&lt;/li&gt;
+&lt;li&gt;MS SQL Server&lt;/li&gt;
+&lt;li&gt;Oracle&lt;/li&gt;
+&lt;li&gt;
+&lt;div&gt;
+&lt;div&gt;PostgreSQL&lt;/div&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;Salesforce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Decisison Matrix&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Use SFDC when&lt;/td&gt;
+&lt;td&gt;Use RDBMS When&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="vertical-align: top;"&gt;
+&lt;ul&gt;
+&lt;li&gt;Salesforce is one of the Integrated Systems&lt;/li&gt;
+&lt;li&gt;Relatively low volumes of jobs or transactions&lt;/li&gt;
+&lt;li&gt;Want to keep all log information in the Cloud&lt;/li&gt;
+&lt;li&gt;Salesforce would be a primary UI to&amp;nbsp;inspect log data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;td style="vertical-align: top;"&gt;
+&lt;ul&gt;
+&lt;li&gt;Salesforce is not an option or used by the organization&lt;/li&gt;
+&lt;li&gt;High Volume of logging data would be prohibitively expensive on SFDC&lt;/li&gt;
+&lt;li&gt;Risk of exceeding API limits on SFDC APIs&lt;/li&gt;
+&lt;li&gt;Prefer to store data on&amp;nbsp;premise&amp;nbsp;or Cloud DB hosted at same location as secure agents&lt;/li&gt;
+&lt;li&gt;Already have existing Staging DB used by Secure agents or other integrations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jv49skwm_jv49skx6" targetScreen="jv49skx6">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jv49skwm_jv5ajb0x" targetScreen="jv5ajb0x">
+                        <text>Use Salesforce</text>
+                     </action>
+                     <action alt="null" id="jv49skwm_jvfnnsdy" targetScreen="jvfnnsdy">
+                        <text>Use RDBMS</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="jv5ajb0x">
+                  <title>Salesforce Specific Requirements</title>
+                  <body contentType="text/html">&lt;p&gt;Requirements to use This logging framework with Salesfore as a backend&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure you have license for salesforce connector enabled in your IICS org&lt;/li&gt;
+&lt;li&gt;Create user in in IICS that would be used to connect SFDC managed package to IICS Org&lt;/li&gt;
+&lt;li&gt;Install Salesforce MAnaged Package in your SFDC org&lt;/li&gt;
+&lt;li&gt;Configure connectivity to SFDC&amp;nbsp;Configure&amp;nbsp;Salesforce connection in Salesforce/Salesforce project&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jv5ajb0x_jv49skx6" targetScreen="jv49skx6">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jv49skwe">
+                  <actions>
+                     <action alt="null" id="jv49skwe_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="jv49skx6">
+                  <actions>
+                     <action alt="" id="jv49skx6_jv49skwe" targetScreen="jv49skwe">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <subflow id="jvfnnsdy">
+                  <title>Setup Logging DB</title>
+                  <subflowGUID>akOVKXc0aE7lAct0X7uEMo</subflowGUID>
+                  <subflowPath>Setup_Logging_DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <actions>
+                     <action alt="null" id="jvfnnsdy_jv49skx6" targetScreen="jv49skx6">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>121jjjlqAKNhxs9emgKOWk</types1:GUID>
+      <types1:DisplayName>Logging Framework Configuration</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.636Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

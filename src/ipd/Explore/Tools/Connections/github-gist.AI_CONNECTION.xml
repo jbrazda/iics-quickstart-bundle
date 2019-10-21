@@ -14,9 +14,9 @@
       <types1:CreationDate>2019-06-19T17:12:46Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
       <types1:ModificationDate>2019-10-14T20:45:36Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-10T16:49:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:24:16Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/github-gist/github-gist.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -49,5 +49,5 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:GUID>783B3Uk32OWgmfwwiq9GId</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.787Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.437Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

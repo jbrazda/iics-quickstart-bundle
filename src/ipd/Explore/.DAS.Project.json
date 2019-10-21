@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "hnj9FM2QFKbba2XrEV8l6N",
+      "objectName": "DAS",
+      "objectType": "Project",
+      "path": "/Explore",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Data Access Service Wrapper",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

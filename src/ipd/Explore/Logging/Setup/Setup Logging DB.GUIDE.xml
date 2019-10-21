@@ -1,0 +1,267 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>OPE4zlrMZgpDqot-gt-4938428-2019-05-07T19:05:56.645Z::gt.xml</types1:EntryId>
+      <types1:Name>Setup_Logging_DB</types1:Name>
+      <types1:ParentFlowIds>Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide to setup DB Logging use PostgreSQL</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-05-07T19:05:57Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-18T16:30:09Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-21T15:28:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Setup_Logging_DB/Setup_Logging_DB.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="Setup Logging DB"
+                         doneOnEndStep="false"
+                         name="Setup_Logging_DB"
+                         runAsUser="$current">
+            <description>Guide to setup DB Logging use PostgreSQL</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_dbType" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"MSSQL","value":"MSSQL"},{"label":"MySQL","value":"MySQL"},{"label":"PostgreSQL","value":"PostgreSQL"},{"label":"Oracle","value":"Oracle"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_dataSource" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_task" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"Create Schema","value":"Create Schema"},{"label":"Drop Schema","value":"Drop Schema"},{"label":"Reset Schema","value":"Reset Schema"},{"label":"Purge Data","value":"Purge Data"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="null" id="jd300kk3_jvffo6ba" targetScreen="jvffo6ba">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jvffo6ba">
+                  <title>DB Setup</title>
+                  <body contentType="text/html">&lt;p&gt;Job Tracking/Logging&amp;nbsp;Bundle DB Setup&lt;/p&gt;
+&lt;p&gt;If you want to setup DB yourself or you need request DBA to create manage DB schema for yo, use Following links point to DDL/SQL examples to create/manage DB Schema for corresponding DB&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Database&lt;/td&gt;
+&lt;td&gt;MSSQL&lt;/td&gt;
+&lt;td&gt;MySQL&lt;/td&gt;
+&lt;td&gt;PostgreSQL&lt;/td&gt;
+&lt;td&gt;Oracle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DDL&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;a href="https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MSSQL.sql"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MySQL.sql"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a title="View the DDL Gist" href="https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_PostgreSQL.sql"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_Oracle.sql"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Create Schema DAS Script&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;a title="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_CreateSchema_MSSQL.xml" href="#"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_CreateSchema_MySQL.xml"&gt;View&lt;/a&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_CreateSchema_PostgreSQL.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_CreateSchema_Oracle.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reset Schema DAS Script&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_ResetSchema_MSSQL.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_ResetSchema_MySQL.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_ResetSchema_PostgreSQL.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/IICS_Logging_MDAS_ResetSchema_Oracle.xml"&gt;View&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You can also use this guide to create DB for you You will need configured Data Access Service connection with necessary DDL permissions&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Follow guide to setup and install DAS Service and and DAS wrapper&lt;/li&gt;
+&lt;li&gt;USe the guide to setup your DB&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jvffo6ba_jvffo6bg" targetScreen="jvffo6bg">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jvffo6ba_jvffo6bs" targetScreen="jvffo6bs">
+                        <text>Use this Guide to Manage DB Schema</text>
+                     </action>
+                  </actions>
+               </screen>
+               <screen id="jvffo6bs">
+                  <title>Database Options</title>
+                  <body contentType="text/html">&lt;p&gt;Database Options&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Database Type&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_dbType (temporary)" name="temp.tmp_dbType" type="text" value="tmp_dbType (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data Source&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_dataSource (temporary)" name="temp.tmp_dataSource" type="text" value="tmp_dataSource (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Action&lt;/td&gt;
+&lt;td&gt;&lt;input name="temp.tmp_task" type="text" value="tmp_task (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jvffo6bs_jvffo6cb" targetScreen="jvffo6cb">
+                        <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jvffo6bs_jvffo6cp" targetScreen="jvffo6cp">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_dataSource"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_dbType"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"MSSQL","value":"MSSQL"},{"label":"MySQL","value":"MySQL"},{"label":"PostgreSQL","value":"PostgreSQL"},{"label":"Oracle","value":"Oracle"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_task"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"Create Schema","value":"Create Schema"},{"label":"Drop Schema","value":"Drop Schema"},{"label":"Reset Schema","value":"Reset Schema"},{"label":"Purge Data","value":"Purge Data"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="jvffo6d4">
+                  <title>Maintenance Task Results</title>
+                  <body contentType="text/html">&lt;p&gt;Task Results&lt;/p&gt;
+&lt;p&gt;&amp;nbsp; &lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_multiDataAccessResponse&gt;result" name="output.out_multiDataAccessResponse[1]/result" readonly="readonly" type="text" value="out_multiDataAccessResponse&gt;result"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="jvffo6d4_jvffo6cb" targetScreen="jvffo6cb">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.out_multiDataAccessResponse[1]/result"
+                                     readonly="true"
+                                     renderingType="table"
+                                     required="false"
+                                     type="objectlist">
+                        <options>
+                           <option hide="true" name="referenceTo">DataAccessService:tResponse</option>
+                           <option name="relationshipName">Child</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"statementId","type":"string","label":"statementId","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+               <empty gatewayType="exclusive" id="jvffo6bg">
+                  <actions>
+                     <action alt="null" id="jvffo6bg_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="jvffo6cb">
+                  <actions>
+                     <action alt="" id="jvffo6cb_jvffo6bg" targetScreen="jvffo6bg">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <callProcess id="jvffo6cp">
+                  <title>SP-Setup-Logging-DB</title>
+                  <subflowGUID>jSu7p8fQuE8dQDuX3vRk6v</subflowGUID>
+                  <subflowPath>SP-Setup-Logging-DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="jvfi37vj" name="in_task" source="field" updatable="true">temp.tmp_task</parameter>
+                     <parameter id="jvfi37vk" name="in_dbType" source="field" updatable="true">temp.tmp_dbType</parameter>
+                     <parameter id="jvfi37vl"
+                                name="in_dataSource"
+                                source="field"
+                                updatable="true">temp.tmp_dataSource</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="out_multiDataAccessResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">DataAccessService:tMultiResponse</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">jhXRGp8HGy8fOjJy57yhy1</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="null" id="jvffo6cp_jvffo6d4" targetScreen="jvffo6d4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>akOVKXc0aE7lAct0X7uEMo</types1:GUID>
+      <types1:DisplayName>Setup Logging DB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.244Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

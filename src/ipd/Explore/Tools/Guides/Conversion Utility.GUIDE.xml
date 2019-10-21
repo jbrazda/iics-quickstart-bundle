@@ -280,5 +280,5 @@ saxon:serialize(util:simplifyXml(util:parseXML($input.in_payload )), $saxon_para
       <types1:GUID>69cEIjvMjRKjYtccJrzFGA</types1:GUID>
       <types1:DisplayName>Conversion Utility</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.372Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:02.973Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

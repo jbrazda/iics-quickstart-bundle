@@ -1,0 +1,49 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>98dpgbcggaaaaa-gt-1846616-2019-04-30T13:34:30.969Z::po.xml</types1:EntryId>
+      <types1:Name>JobLogEventResponse</types1:Name>
+      <types1:ParentFlowIds>gjrwXtqdsQR6kbe-gt-3314301-2019-04-30T13:34:32.107Z::pd.xml,YtFgpKi9zhFtybd-gt-3314271-2019-04-30T13:34:31.814Z::pd.xml,Omkbclopz4KhPVE-gt-3319431-2019-04-30T13:34:33.657Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>IpaaS Job Log Event</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:31Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="JobLogEventResponse"
+                        isByCopy="true"
+                        name="JobLogEventResponse">
+            <description>IpaaS Job Log Event </description>
+            <tags/>
+            <detail>
+               <field label="id" name="id" type="string"/>
+               <field label="job_id" name="job_id" type="string"/>
+               <field label="event_message" name="event_message" type="string"/>
+               <field label="event_time" name="event_time" type="datetime"/>
+               <field label="event_detail" name="event_detail" type="string"/>
+               <field label="process_id" name="process_id" type="int"/>
+               <field label="org_id" name="org_id" type="string"/>
+               <field label="logging_level" name="logging_level" type="picklist">
+                  <options>
+                     <option name="values">[{"value":"1","label":"INFO"},{"value":"2","label":"WARNING"},{"value":"3","label":"ERROR"}]</option>
+                  </options>
+               </field>
+               <field label="process_name" name="process_name" type="string"/>
+               <field label="environment" name="environment" type="string"/>
+               <field label="process_title" name="process_title" type="string"/>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>aT9a6aWupiNb21AS5zv3A2</types1:GUID>
+      <types1:DisplayName>JobLogEventResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:01.972Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

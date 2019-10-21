@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "1uYv4DN9CBYjMacTxn4jAk",
+      "objectName": "SP-IPaaS-Create-Job-Event-Entry-NA",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger_SFDC_NA",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "generic logging for IPAAS events",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "aT9a6aWupiNb21AS5zv3A2",
+            "6Qfd83wdMtUgosGkvB0Gy0"
+         ],
+         "repoInfo": {
+            "repoHandle": "YtFgpKi9zhFtybd-gt-3314271-2019-04-30T13:34:31.814Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "aT9a6aWupiNb21AS5zv3A2",
+      "objectName": "JobLogEventResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IpaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "98dpgbcggaaaaa-gt-1846616-2019-04-30T13:34:30.969Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6Qfd83wdMtUgosGkvB0Gy0",
+      "objectName": "CreateJobLogEventRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "OjG4abck0Kn7wpo-gt-1756122-2019-04-30T13:34:30.649Z::po.xml"
+         }
+      }
+   }
+]

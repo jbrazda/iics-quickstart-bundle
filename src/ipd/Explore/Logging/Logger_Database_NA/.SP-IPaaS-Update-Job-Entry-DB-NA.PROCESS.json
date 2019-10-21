@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "1tqPYx4STQakSnr4ViDqie",
+      "objectName": "SP-IPaaS-Update-Job-Entry-DB-NA",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger_Database_NA",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Update Existing Job Entry withy a status and End Date",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "4375TaZUXDxeLADp2bIEuS",
+            "8mX2dbmOledkm1Kn65In0q"
+         ],
+         "repoInfo": {
+            "repoHandle": "Rlt0i98C1LOwD0w-gt-3319441-2019-04-30T13:34:33.701Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4375TaZUXDxeLADp2bIEuS",
+      "objectName": "IPaaS-Logging",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Logging/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Database for Logging and job tracking",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "CDMxrteIssjqluQ-gt-1208791-2018-07-24T14:05:36.452Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "8mX2dbmOledkm1Kn65In0q",
+      "objectName": "UpdateJobLogEntryRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Logging Entry Update Existing Record",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "NxR6Eaaaaaaaaaa-gt-1846582-2019-04-30T13:34:30.643Z::po.xml"
+         }
+      }
+   }
+]

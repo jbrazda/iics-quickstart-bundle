@@ -17,7 +17,7 @@ WARNING - use this only if you know what you doing, this connection can be usefu
       <types1:ModificationDate>2019-04-30T15:27:35Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-05-07T19:46:36Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:23:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/SA-Process-DB/SA-Process-DB.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -66,5 +66,5 @@ WARNING - use this only if you know what you doing, this connection can be usefu
       <types1:GUID>cwiIqhPn2WhhmsmgTJGD0d</types1:GUID>
       <types1:DisplayName>SA-Process-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.075Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:02.41Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

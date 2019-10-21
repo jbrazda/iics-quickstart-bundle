@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "jSu7p8fQuE8dQDuX3vRk6v",
+      "objectName": "SP-Setup-Logging-DB",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Setup",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process manages theLogging framework Storage on  Supported Databases PostgreSQL, Oracle, MSSQL, MySQL",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "jhXRGp8HGy8fOjJy57yhy1"
+         ],
+         "repoInfo": {
+            "repoHandle": "kOrvyXYDdxKlFmV-gt-5182246-2019-05-08T16:28:05.916Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "jhXRGp8HGy8fOjJy57yhy1",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "i5XRqXpIW7WHK80-gt-66339-2018-07-18T13:21:56.138Z::conn.xml"
+         }
+      }
+   }
+]

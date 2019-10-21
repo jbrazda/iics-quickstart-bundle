@@ -17,7 +17,7 @@
       <types1:ModificationDate>2019-06-18T13:22:22Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-06-18T13:22:40Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:24:04Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/Email/Email.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -58,5 +58,5 @@
       <types1:GUID>4qjjt0TibYxkze5Aq74mgj</types1:GUID>
       <types1:DisplayName>Email</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.101Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:01.637Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

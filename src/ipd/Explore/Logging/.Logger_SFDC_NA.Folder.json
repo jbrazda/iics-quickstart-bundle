@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "5Gk9zVf5Nq5iidnEje9mG2",
+      "objectName": "Logger_SFDC_NA",
+      "objectType": "Folder",
+      "path": "/Explore/Logging",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Processes for logging to SFDC",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

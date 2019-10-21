@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "121jjjlqAKNhxs9emgKOWk",
+      "objectName": "Logging Framework Configuration",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Guide helps to Setup and Configure  Logging and Tracking Components",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "akOVKXc0aE7lAct0X7uEMo"
+         ],
+         "repoInfo": {
+            "repoHandle": "Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "akOVKXc0aE7lAct0X7uEMo",
+      "objectName": "Setup Logging DB",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Setup",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide to setup DB Logging use PostgreSQL",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "OPE4zlrMZgpDqot-gt-4938428-2019-05-07T19:05:56.645Z::gt.xml"
+         }
+      }
+   }
+]

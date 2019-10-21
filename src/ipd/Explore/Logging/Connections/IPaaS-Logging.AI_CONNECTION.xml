@@ -17,7 +17,7 @@
       <types1:ModificationDate>2018-08-01T17:25:10Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-04-29T22:29:58Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:23:35Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/IPaaS-Logging/IPaaS-Logging.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -65,5 +65,5 @@
       <types1:GUID>4375TaZUXDxeLADp2bIEuS</types1:GUID>
       <types1:DisplayName>IPaaS-Logging</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:31.028Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:02.947Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

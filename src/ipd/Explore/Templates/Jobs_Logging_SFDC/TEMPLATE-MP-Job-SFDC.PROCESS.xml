@@ -14,9 +14,9 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-04-30T13:34:35Z</types1:CreationDate>
       <types1:ModifiedBy/>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-04-30T13:35:21Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-21T15:24:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-SFDC/TEMPLATE-MP-Job-SFDC.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -306,5 +306,5 @@ Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
       <types1:GUID>3TxXRBytv8viKeAoroXREr</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-21T13:09:32.192Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-21T15:32:03.805Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
