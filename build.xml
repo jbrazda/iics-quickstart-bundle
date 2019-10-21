@@ -233,7 +233,6 @@
         <echo level="info">=================================</echo>
         <input validargs="${available.releases.list}" message="Select Release Configuration:" addproperty="iics.release">
         </input>
-        
     </target>
     
     <target name="-select-package-config" unless="iics.target.package.config">
