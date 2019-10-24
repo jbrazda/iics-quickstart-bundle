@@ -47,8 +47,8 @@ Using pre-build packages is easy but has some down-sides such as need to adjust 
 Use build from source method which allows you to automate these adjustments in bulk using a declarative configuration and set of provided scripts
 
 1. Download pre built Distribution from [Releases]
-   1. Use [ICAI-IPS-Bundle_InitialInstall_All_Designs.zip](releases/latest/download/ICAI-IPS-Bundle_InitialInstall_All_Designs.zip) to initial install
-   2. Use [ICAI-IPS-Bundle_Update_Excluding_Connections.zip](releases/latest/download/ICAI-IPS-Bundle_Update_Excluding_Connections.zip) to update your Bundle in environments whet it was already installed before
+   1. Use [ICAI-IPS-Bundle_InitialInstall_All_Designs.zip](https://github.com/jbrazda/icai-ips-bundle/releases/latest/download/ICAI-IPS-Bundle_InitialInstall_All_Designs.zip) to initial install
+   2. Use [ICAI-IPS-Bundle_Update_Excluding_Connections.zip](https://github.com/jbrazda/icai-ips-bundle/releases/latest/download/ICAI-IPS-Bundle_Update_Excluding_Connections.zip) to update your Bundle in environments whet it was already installed before
 2. Import Distribution Package Bundle
 3. Configure, adjust and publish provided designs
 
