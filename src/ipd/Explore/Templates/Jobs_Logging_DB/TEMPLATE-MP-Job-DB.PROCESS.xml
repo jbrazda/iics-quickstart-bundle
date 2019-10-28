@@ -7,17 +7,17 @@
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Template for Main Job Processes</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-04-30T13:34:36Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-04-30T15:42:14Z</types1:ModificationDate>
+      <types1:ModificationDate>2019-10-28T16:05:29Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-05-05T01:31:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-28T16:06:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-DB/TEMPLATE-MP-Job-DB.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,7 +27,7 @@
                   name="TEMPLATE-MP-Job-DB">
             <appliesTo/>
             <description>Template for Main Job Processes</description>
-            <tags>.agent:iclab</tags>
+            <tags>.agent:NA</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="" name="in_context" type="reference">
@@ -98,7 +98,7 @@
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>iclab</targetLocation>
+               <targetLocation>NA</targetLocation>
                <rest/>
             </deployment>
             <eventDefinitions>
@@ -140,7 +140,7 @@ else
   &lt;/ProcessExecutionContext&gt;</expression>
                   </operation>
                   <operation source="formula" to="temp.tmp_process_title">
-                     <expression language="XQuery">let $p_name := "TEMPLATE-MP-Job"
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
 let $pid_label := if (empty($output.out_context[1]/parentProcessId)) then ()
 	else concat("pid:",$output.out_context[1]/parentProcessId)
 let $job_label := if (empty($output.out_context[1]/jobId)) then () 
@@ -259,9 +259,12 @@ return ipd:setProcessTitle($process_title)</expression>
                                    to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
                         <operation source="formula" to="temp.tmp_CreateJobLogEventRequest">
                            <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
-   &lt;event_message&gt;{$output.faultInfo[1]/reason}&lt;/event_message&gt;
+   &lt;event_message&gt;Job Fault&lt;/event_message&gt;
    &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
-   &lt;event_detail&gt;{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;event_detail&gt;Error Code: {$output.faultInfo[1]/code}
+Error Reson: {$output.faultInfo[1]/reason}
+Error Detail:
+{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
    &lt;process_id&gt;{$output.out_context[1]/parentProcessId}&lt;/process_id&gt;
    &lt;logging_level&gt;3&lt;/logging_level&gt;
    &lt;process_name&gt;{$temp.tmp_process_name }&lt;/process_name&gt;
@@ -297,5 +300,5 @@ return ipd:setProcessTitle($process_title)</expression>
       <types1:GUID>5ak48QqN0cQbpMDlnU3Uwd</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-23T22:39:08.674Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-28T16:35:48.696Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

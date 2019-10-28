@@ -3,10 +3,10 @@
 <!-- TOC -->
 
 - [IICS Logging Framework](#iics-logging-framework)
-    - [Overview](#overview)
-        - [Decision Matrix](#decision-matrix)
-        - [Job Tracking/Logging Bundle DB Setup](#job-trackinglogging-bundle-db-setup)
-    - [Use of the Framework](#use-of-the-framework)
+  - [Overview](#overview)
+    - [Decision Matrix](#decision-matrix)
+    - [Job Tracking/Logging Bundle DB Setup](#job-trackinglogging-bundle-db-setup)
+  - [Use of the Framework](#use-of-the-framework)
 
 <!-- /TOC -->
 

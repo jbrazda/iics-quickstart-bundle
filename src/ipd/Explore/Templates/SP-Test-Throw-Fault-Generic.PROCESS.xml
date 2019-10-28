@@ -16,7 +16,7 @@
       <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-05-05T01:31:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-28T16:06:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-Test-Throw-Fault-Generic/SP-Test-Throw-Fault-Generic.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -68,5 +68,5 @@
       <types1:GUID>3NUs1c2CzoTeF8kcWEwXSe</types1:GUID>
       <types1:DisplayName>SP-Test-Throw-Fault-Generic</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-23T22:39:07.301Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-28T16:35:47.27Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>PXyDQeH2PKDC0hC-gt-1846590-2019-04-30T13:34:30.669Z::po.xml</types1:EntryId>
       <types1:Name>FaultInfo</types1:Name>
-      <types1:ParentFlowIds>EhNWIsoZduD2L5S-gt-1373703-2018-11-13T20:22:13.491Z::pd.xml,3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml,eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>EhNWIsoZduD2L5S-gt-1373703-2018-11-13T20:22:13.491Z::pd.xml,3tciSrZMSPfXBiV-gt-3314281-2019-04-30T13:34:31.879Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
       <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
  
@@ -38,5 +38,5 @@
       <types1:GUID>91gnTcWCdhAkc5YWMvtKez</types1:GUID>
       <types1:DisplayName>FaultInfo</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-23T22:39:08.012Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-28T16:35:47.547Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

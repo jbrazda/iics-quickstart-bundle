@@ -5,19 +5,19 @@
       <types1:Name>TEMPLATE-SP-ETL-DB</types1:Name>
       <types1:ParentFlowIds>7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Template for Integration Sub-Process (SP)</types1:Description>
+      <types1:Description>Template for Integration Sub-Process (SP) Demo</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-04-30T13:34:35Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-04-30T16:24:14Z</types1:ModificationDate>
+      <types1:ModificationDate>2019-10-28T16:05:46Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-05-05T01:31:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-10-28T16:06:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-DB/TEMPLATE-SP-ETL-DB.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -26,8 +26,8 @@
                   displayName="TEMPLATE-SP-ETL-DB"
                   name="TEMPLATE-SP-ETL-DB">
             <appliesTo/>
-            <description>Template for Integration Sub-Process (SP)</description>
-            <tags>.agent:iclab</tags>
+            <description>Template for Integration Sub-Process (SP) Demo</description>
+            <tags>.agent:NA</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="" name="in_context" type="reference">
@@ -72,7 +72,7 @@
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>iclab</targetLocation>
+               <targetLocation>NA</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -153,7 +153,7 @@ else
                               <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
    &lt;event_message&gt;TODO: Step Completed Message&lt;/event_message&gt;
    &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
-   &lt;event_detail&gt;Example Detail&lt;/event_detail&gt;
+   &lt;event_detail&gt;TODDO: Sete Detail Info&lt;/event_detail&gt;
    &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
    &lt;logging_level&gt;1&lt;/logging_level&gt;
    &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
@@ -162,8 +162,9 @@ else
 &lt;/CreateJobLogEventRequest&gt;</expression>
                            </parameter>
                         </serviceInput>
+                        <link id="jzkcwq38" targetId="jzkcwq37"/>
                      </service>
-                     <link id="j9iq3ff5" targetId="j9iq3fev" type="containerLink"/>
+                     <end id="jzkcwq37"/>
                   </flow>
                   <flow id="j9iq3fez">
                      <assignment id="j9iqk5zk">
@@ -182,40 +183,50 @@ return $process_title</expression>
                         <link id="jv3ynm29" targetId="jv3ynm28"/>
                      </assignment>
                      <service id="jv3ynm28">
-                        <title>SP-IPaaS-Create-Job-Event-Entry-DB-NA</title>
+                        <title>Log Error</title>
                         <serviceName>SP-IPaaS-Create-Job-Event-Entry-DB-NA</serviceName>
                         <serviceGUID/>
                         <serviceInput>
                            <parameter name="in_CreateJobLogEventRequest" source="formula">
                               <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
-   &lt;event_message&gt;Fault: {$output.faultInfo[1]/code} {$output.faultInfo[1]/reason }&lt;/event_message&gt;
+   &lt;event_message&gt;TODO: Update this message: Integration Step Failed&lt;/event_message&gt;
    &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
-   &lt;event_detail&gt;{$output.faultInfo[1]/detail }&lt;/event_detail&gt;
+   &lt;event_detail&gt;
+Code: {$output.faultInfo[1]/code} 
+Reason:{$output.faultInfo[1]/reason}   
+Detail:
+{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
    &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
-   &lt;logging_level&gt;1&lt;/logging_level&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
    &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
    &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
    {$temp.tmp_context[1]}
 &lt;/CreateJobLogEventRequest&gt;</expression>
                            </parameter>
                         </serviceInput>
+                        <link id="jzkcwq2n" targetId="jzkcwq2m"/>
                      </service>
-                     <link id="j9iq3ff7" targetId="j9iq3fev" type="containerLink"/>
+                     <throw id="jzkcwq2m">
+                        <title>Throw Error</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
                   </flow>
                   <link id="j9iq3ff3" targetId="j9iq3few" type="containerLink"/>
-                  <link id="jnap5niq" targetId="j9iq3fjg"/>
                   <events>
                      <catch faultField="faultInfo" id="j83fl9t4" interrupting="true">
                         <link id="j9iq3ff4" targetId="j9iq3fez" type="containerLink"/>
                      </catch>
                   </events>
                </eventContainer>
-               <end id="j9iq3fjg"/>
             </flow>
          </process>
       </types1:Entry>
       <types1:GUID>itZr5hKQ24OjwDCGWI7SCe</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-23T22:39:08.057Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-10-28T16:35:47.575Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
