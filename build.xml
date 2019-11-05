@@ -7,7 +7,7 @@
                    
      jbrazda                                                                
      ====================================================================== -->
-<project name="IICS Build Script" default="help" basedir=".">
+<project name="IICS Build Script - IPS Bundle" default="help" basedir=".">
     <description>
             IICS CAI Components Build Script
     </description>
@@ -263,7 +263,7 @@
         <basename file="${iics.target.package.config}" property="iics.target.package.config.basename" suffix="package.txt" />
         <echo level="info">Selected Target Package Configuration: ${iics.target.package.config.basename}</echo>
         <echo level="info">Selected File: ${iics.target.package.config}</echo>
-        <property name="release.package.label" value="${iics.package.output}_${iics.release.basename}_${iics.target.package.config.basename}"/>
+        <property name="release.package.label" value="${iics.package.output}_${iics.release.basename}_${iics.target.environment}_${iics.target.package.config.basename}"/>
         <echo level="info">Output Package Label: ${release.package.label}</echo>
     </target>
     

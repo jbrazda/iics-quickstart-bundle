@@ -1,0 +1,5 @@
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-MP-Job-DB.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Update-Job-Entry-DB-NA.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Create-Job-Event-Entry-DB-NA.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Create-Job-Entry-DB-NA.PROCESS
