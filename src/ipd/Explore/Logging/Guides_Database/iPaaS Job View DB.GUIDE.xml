@@ -16,7 +16,7 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-07-24T14:05:55Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-04-30T16:49:13Z</types1:ModificationDate>
+      <types1:ModificationDate>2019-10-31T04:52:18Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -47,23 +47,14 @@
                </parameter>
             </input>
             <tempFields>
-               <field description="List of Job Log Entries"
-                      name="tmp_ic_job_logs"
-                      type="objectlist">
-                  <options>
-                     <option name="referenceTo">IPaaS-Logging:IC_JOB_LOG</option>
-                     <option hide="true" name="multiSelect">true</option>
-                     <option name="required">false</option>
-                     <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
-                  </options>
-               </field>
                <field description="List of Job Events"
                       name="tmp_job_events"
                       type="objectlist">
                   <options>
-                     <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS</option>
+                     <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS_VIEW</option>
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
+                     <option name="isCopy">true</option>
                      <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
                   </options>
                </field>
@@ -71,8 +62,9 @@
                       name="tmp_ic_job_log"
                       type="reference">
                   <options>
-                     <option name="referenceTo">IPaaS-Logging:IC_JOB_LOG</option>
+                     <option name="referenceTo">IPaaS-Logging:IC_JOB_LOG_VIEW</option>
                      <option name="required">false</option>
+                     <option name="isCopy">true</option>
                      <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
                   </options>
                </field>
@@ -80,8 +72,9 @@
                       name="tmp_job_event"
                       type="reference">
                   <options>
-                     <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS</option>
+                     <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS_VIEW</option>
                      <option name="required">false</option>
+                     <option name="isCopy">true</option>
                      <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
                   </options>
                </field>
@@ -92,14 +85,12 @@
                      <option name="text_width">100</option>
                      <option name="text_height">5</option>
                      <option name="required">false</option>
-                     <option name="guid"/>
                   </options>
                </field>
                <field description="" name="tmp_search_field" type="picklist">
                   <options>
                      <option name="values">[{"label":"EVENT_MESSAGE","value":"EVENT_MESSAGE"},{"label":"EVENT_DETAIL","value":"EVENT_DETAIL"},{"label":"ENVIRONMENT","value":"ENVIRONMENT"}]</option>
                      <option name="required">false</option>
-                     <option name="guid"/>
                   </options>
                </field>
                <field description="" name="tmp_search_string" type="string">
@@ -143,7 +134,6 @@
                   <options>
                      <option name="values">[{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
                      <option name="required">false</option>
-                     <option name="guid"/>
                   </options>
                </field>
             </tempFields>
@@ -166,28 +156,32 @@
                </startScreen>
                <screen id="jb452xj3">
                   <title>Job Details</title>
-                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Job&amp;nbsp;&amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB_NAME" name="temp.tmp_ic_job_log.JOB_NAME" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB_NAME"&gt;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Job&amp;nbsp; &amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB_NAME" name="temp.tmp_ic_job_log[1]/JOB_NAME" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB_NAME"&gt;&amp;nbsp; (ID: &lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB_ID" name="temp.tmp_ic_job_log[1]/JOB_ID" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB_ID*"&gt; )&lt;/strong&gt;&lt;/p&gt;
 &lt;table cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Process ID&lt;/td&gt;
-&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB_PROCESS_ID" name="temp.tmp_ic_job_log.JOB_PROCESS_ID" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB_PROCESS_ID"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;JOB_PROCESS_ID" name="temp.tmp_ic_job_log[1]/JOB_PROCESS_ID" readonly="readonly" type="text" value="tmp_ic_job_log&gt;JOB_PROCESS_ID"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Start Date&lt;/td&gt;
-&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;START_DATE" name="temp.tmp_ic_job_log.START_DATE" readonly="readonly" type="text" value="tmp_ic_job_log&gt;START_DATE"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;START_DATE" name="temp.tmp_ic_job_log[1]/START_DATE" readonly="readonly" type="text" value="tmp_ic_job_log&gt;START_DATE"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;End Date&lt;/td&gt;
-&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;END_DATE" name="temp.tmp_ic_job_log.END_DATE" readonly="readonly" type="text" value="tmp_ic_job_log&gt;END_DATE"&gt; &amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;END_DATE" name="temp.tmp_ic_job_log[1]/END_DATE" readonly="readonly" type="text" value="tmp_ic_job_log&gt;END_DATE"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Status&lt;/td&gt;
-&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;STATUS" name="temp.tmp_ic_job_log.STATUS" readonly="readonly" type="text" value="tmp_ic_job_log&gt;STATUS"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;(&lt;input title="tmp_ic_job_log&gt;STATUS" name="temp.tmp_ic_job_log[1]/STATUS" readonly="readonly" type="text" value="tmp_ic_job_log&gt;STATUS"&gt;)&amp;nbsp;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;STATUS_LABEL" name="temp.tmp_ic_job_log[1]/STATUS_LABEL" readonly="readonly" type="text" value="tmp_ic_job_log&gt;STATUS_LABEL"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Initiator&lt;/td&gt;
-&lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;INITIATOR" name="temp.tmp_ic_job_log.INITIATOR" readonly="readonly" type="text" value="tmp_ic_job_log&gt;INITIATOR"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;INITIATOR" name="temp.tmp_ic_job_log[1]/INITIATOR" readonly="readonly" type="text" value="tmp_ic_job_log&gt;INITIATOR"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Environment&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_ic_job_log&gt;ENVIRONMENT" name="temp.tmp_ic_job_log[1]/ENVIRONMENT" readonly="readonly" type="text" value="tmp_ic_job_log&gt;ENVIRONMENT"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Job Duration&lt;/td&gt;
@@ -218,34 +212,6 @@
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
-                     <screenDataItem name="temp.tmp_ic_job_log.JOB_NAME"
-                                     readonly="true"
-                                     required="false"
-                                     type="string">
-                        <options>
-                           <option name="length">255</option>
-                           <option name="required">false</option>
-                        </options>
-                     </screenDataItem>
-                     <screenDataItem name="temp.tmp_ic_job_log.END_DATE"
-                                     readonly="true"
-                                     required="false"
-                                     type="datetime">
-                        <options>
-                           <option name="precision">6</option>
-                           <option name="thirtyMinutesIncrement">true</option>
-                           <option name="required">false</option>
-                        </options>
-                     </screenDataItem>
-                     <screenDataItem name="temp.tmp_ic_job_log.INITIATOR"
-                                     readonly="true"
-                                     required="false"
-                                     type="string">
-                        <options>
-                           <option name="length">255</option>
-                           <option name="required">false</option>
-                        </options>
-                     </screenDataItem>
                      <screenDataItem name="temp.tmp_event_query"
                                      readonly="true"
                                      required="false"
@@ -272,16 +238,88 @@
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
-                     <screenDataItem name="temp.tmp_ic_job_log.STATUS"
+                     <screenDataItem name="temp.tmp_job_event"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="reference">
+                        <options>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PROCESS_ID","type":"double","label":"Process ID","renderingType":"double"},{"name":"PROCESS_NAME","type":"string","label":"Process Name","renderingType":"string"},{"name":"PROCESS_TITLE","type":"string","label":"Process Title","renderingType":"string"},{"name":"EVENT_MESSAGE","type":"string","label":"Event Message","renderingType":"string"},{"name":"EVENT_DETAIL","type":"string","label":"Event Detail","renderingType":"string"},{"name":"LOGGING_LEVEL_LABEL","type":"string","label":"Logging  Level","renderingType":"string"},{"name":"LOGGING_LEVEL","type":"double","label":"LOGGING_LEVEL","renderingType":"double"},{"name":"EVENT_TIME","type":"datetime","label":"Event Time","renderingType":"datetime"},{"name":"ENVIRONMENT","type":"string","label":"Environment","renderingType":"string"},{"name":"ORG_ID","type":"string","label":"Org ID","renderingType":"string"},{"name":"INITIATOR","type":"string","label":"Initiator","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS_VIEW</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">aeqQp5Jx2jYdMy5IHkySUZ</option>
+                           <option name="text_height">10</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">temp.tmp_job_events</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/START_DATE"
                                      readonly="true"
                                      required="false"
-                                     type="int">
+                                     type="datetime">
                         <options>
-                           <option name="digits">4</option>
+                           <option name="precision">6</option>
+                           <option name="thirtyMinutesIncrement">true</option>
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
-                     <screenDataItem name="temp.tmp_ic_job_log.JOB_PROCESS_ID"
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/END_DATE"
+                                     readonly="true"
+                                     required="false"
+                                     type="datetime">
+                        <options>
+                           <option name="precision">6</option>
+                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/INITIATOR"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">255</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/JOB_NAME"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">255</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/ENVIRONMENT"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">256</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/JOB_ID"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">36</option>
+                           <option name="required">true</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/STATUS_LABEL"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="length">9</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/JOB_PROCESS_ID"
                                      readonly="true"
                                      required="false"
                                      type="int">
@@ -290,27 +328,13 @@
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
-                     <screenDataItem name="temp.tmp_ic_job_log.START_DATE"
+                     <screenDataItem name="temp.tmp_ic_job_log[1]/STATUS"
                                      readonly="true"
                                      required="false"
-                                     type="datetime">
+                                     type="int">
                         <options>
-                           <option name="thirtyMinutesIncrement">true</option>
+                           <option name="digits">3</option>
                            <option name="required">false</option>
-                        </options>
-                     </screenDataItem>
-                     <screenDataItem name="temp.tmp_job_event"
-                                     readonly="false"
-                                     renderingType="table"
-                                     required="false"
-                                     type="reference">
-                        <options>
-                           <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS</option>
-                           <option name="required">false</option>
-                           <option name="guid">4375TaZUXDxeLADp2bIEuS</option>
-                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PROCESS_ID","type":"int","label":"PROCESS_ID","renderingType":"int"},{"name":"PROCESS_NAME","type":"string","label":"PROCESS_NAME","renderingType":"string"},{"name":"PROCESS_TITLE","type":"string","label":"PROCESS_TITLE","renderingType":"string"},{"name":"EVENT_MESSAGE","type":"string","label":"EVENT_MESSAGE","renderingType":"string"},{"name":"EVENT_DETAIL","type":"string","label":"EVENT_DETAIL","renderingType":"string"},{"name":"EVENT_TIME","type":"datetime","label":"EVENT_TIME","renderingType":"datetime"},{"name":"ENVIRONMENT","type":"string","label":"ENVIRONMENT","renderingType":"string"},{"name":"ORG_ID","type":"string","label":"ORG_ID","renderingType":"string"},{"name":"INITIATOR","type":"string","label":"INITIATOR","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
-                           <option hide="true" name="valuelist.source">objectListField</option>
-                           <option hide="true" name="valuelist.objectlistfield">temp.tmp_job_events</option>
                         </options>
                      </screenDataItem>
                   </screenData>
@@ -447,16 +471,16 @@
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="jv40uxjy">
+               <empty gatewayType="exclusive" id="k2e8c1ze">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jv40uxj7">
+               <empty gatewayType="exclusive" id="k2e8c1yn">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jv40uxjf">
+               <empty gatewayType="exclusive" id="k2e8c1yv">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jv40uxju">
+               <empty gatewayType="exclusive" id="k2e8c1za">
                   <actions/>
                </empty>
                <jumpTo id="jb452xio" targetTitle="Prepare Query">
@@ -500,18 +524,18 @@
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
-                     <parameter id="jthel27o"
+                     <parameter id="jzab5tq7"
                                 name="in_process_id"
                                 source="field"
-                                updatable="true">temp.tmp_ic_job_log.JOB_PROCESS_ID</parameter>
-                     <parameter id="jthel27p"
+                                updatable="true">temp.tmp_ic_job_log[1]/JOB_PROCESS_ID</parameter>
+                     <parameter id="jzab5tq8"
                                 name="in_enviornment"
                                 source="field"
-                                updatable="true">temp.tmp_ic_job_log.ENVIRONMENT</parameter>
-                     <parameter id="jthel27q"
+                                updatable="true">temp.tmp_ic_job_log[1]/ENVIRONMENT</parameter>
+                     <parameter id="jzab5tq9"
                                 name="in_process_name"
                                 source="field"
-                                updatable="true">temp.tmp_ic_job_log.JOB_NAME</parameter>
+                                updatable="true">temp.tmp_ic_job_log[1]/JOB_NAME</parameter>
                   </serviceInput>
                   <actions>
                      <action alt="null" id="jthel27d_jthel27a" targetScreen="jthel27a">
@@ -528,18 +552,18 @@
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
-                     <parameter id="jthel21d"
+                     <parameter id="jzab5tok"
                                 name="in_process_id"
                                 source="field"
-                                updatable="true">temp.tmp_job_event.PROCESS_ID</parameter>
-                     <parameter id="jthel21e"
+                                updatable="true">temp.tmp_job_event[1]/PROCESS_ID</parameter>
+                     <parameter id="jzab5tol"
                                 name="in_enviornment"
                                 source="field"
-                                updatable="true">temp.tmp_job_event.ENVIRONMENT</parameter>
-                     <parameter id="jthel21f"
+                                updatable="true">temp.tmp_job_event[1]/ENVIRONMENT</parameter>
+                     <parameter id="jzab5tom"
                                 name="in_process_name"
                                 source="field"
-                                updatable="true">temp.tmp_job_event.PROCESS_NAME</parameter>
+                                updatable="true">temp.tmp_job_event[1]/PROCESS_NAME</parameter>
                   </serviceInput>
                   <actions>
                      <action alt="null" id="jthel216_jthel258" targetScreen="jthel258">
@@ -555,11 +579,6 @@
                   <operation source="formula" to="input.in_limit">
                      <expression language="XQuery">if (empty($input.in_limit)) then 100 else $input.in_limit</expression>
                   </operation>
-                  <operation source="query" to="temp.tmp_ic_job_log">
-                     <query from="IPaaS-Logging:IC_JOB_LOG">
-                        <where>JOB_ID = '{$input.in_job_id}'</where>
-                     </query>
-                  </operation>
                   <actions>
                      <action alt="null" id="jbff8c8j_jbff8c6k" targetScreen="jbff8c6k">
                         <text>Continue</text>
@@ -568,6 +587,11 @@
                </assignment>
                <assignment id="jbff8c6k">
                   <title>Prepare Query</title>
+                  <operation source="query" to="temp.tmp_ic_job_log">
+                     <query from="IPaaS-Logging:IC_JOB_LOG_VIEW">
+                        <where>JOB_ID = '{$input.in_job_id}'</where>
+                     </query>
+                  </operation>
                   <operation source="formula" to="temp.tmp_event_query">
                      <expression language="XQuery">let $logging_level :=
   	switch ($temp.tmp_logging_level)
@@ -599,10 +623,10 @@ return
 concat(string-join($conditions, "&amp;#10; AND ")," ",$limit_part)</expression>
                   </operation>
                   <operation source="formula" to="temp.tmp_job_duration">
-                     <expression language="XQuery">let $start := $temp.tmp_ic_job_log.START_DATE
-let $end   := $temp.tmp_ic_job_log.END_DATE 
+                     <expression language="XQuery">let $start := $temp.tmp_ic_job_log[1]/START_DATE 
+let $end   := $temp.tmp_ic_job_log[1]/END_DATE 
 return
-if (empty($temp.tmp_ic_job_log.END_DATE)) 
+if (empty($end) or $end = '') 
 then
 	string(current-dateTime() - xs:dateTime(string($start)))
 else 
@@ -617,7 +641,7 @@ else
                <assignment id="jb452xif">
                   <title>Set Detail Query</title>
                   <operation source="list" to="temp.tmp_job_events">
-                     <query from="IPaaS-Logging:IC_JOB_EVENTS">
+                     <query from="IPaaS-Logging:IC_JOB_EVENTS_VIEW">
                         <where>{$temp.tmp_event_query}</where>
                      </query>
                   </operation>
@@ -633,5 +657,5 @@ else
       <types1:GUID>anJKIeJPfDJk8kvVHqi4Wo</types1:GUID>
       <types1:DisplayName>iPaaS Job View DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-28T16:35:48.463Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-05T19:42:12.905Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

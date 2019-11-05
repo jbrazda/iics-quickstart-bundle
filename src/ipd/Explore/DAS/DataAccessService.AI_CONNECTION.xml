@@ -16,7 +16,7 @@
       <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2018-07-18T18:08:02Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-11-05T19:01:43Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/DataAccessService/DataAccessService.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -39,5 +39,5 @@
       <types1:GUID>jhXRGp8HGy8fOjJy57yhy1</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-28T16:35:47.345Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-05T19:42:11.798Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

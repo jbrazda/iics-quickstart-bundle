@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-12-26T21:00:28Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-07-09T12:32:56Z</types1:ModificationDate>
+      <types1:ModificationDate>2019-11-05T19:11:49Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-07-09T12:33:00Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-11-05T19:11:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.DAS_Tools/DAS_Tools.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -110,7 +110,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Data Source&lt;/td&gt;
-&lt;td&gt;&lt;input class="" style="background: url('../../../avccatalog/_aeavcc_20181217130747/project:/com.activevos.socrates.screenflow.editor/web/images/dotdotdot.png') right center no-repeat; padding-right: 20px; orphans: 2; white-space: normal; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;" title="dataAccessRequest&gt;dataSource" name="temp.dataAccessRequest[1]/dataSource" type="text" value="dataAccessRequest&gt;dataSource"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="dataAccessRequest&gt;dataSource" name="temp.dataAccessRequest[1]/dataSource" type="text" value="dataAccessRequest&gt;dataSource"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -156,17 +156,6 @@
                            <option name="defaultvalue">test_statement</option>
                         </options>
                      </screenDataItem>
-                     <screenDataItem name="temp.dataAccessRequest[1]/dataSource"
-                                     readonly="false"
-                                     required="false"
-                                     type="picklist">
-                        <options>
-                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS1","label":"DS1"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
-                           <option name="required">false</option>
-                           <option name="defaultvalue">DS1</option>
-                           <option hide="true" name="valuelist.source">searchservice</option>
-                        </options>
-                     </screenDataItem>
                      <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/hasResultSet"
                                      readonly="false"
                                      required="false"
@@ -195,6 +184,17 @@
                            <option name="text_width">100</option>
                            <option name="text_height">20</option>
                            <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.dataAccessRequest[1]/dataSource"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">DS1</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
                         </options>
                      </screenDataItem>
                   </screenData>
@@ -320,5 +320,5 @@ saxon:serialize(util:simplifyXml($output.dataAccessResponse),$saxon_params)</exp
       <types1:GUID>66YiKxYUh0Fbd0hUtLF9uY</types1:GUID>
       <types1:DisplayName>DAS Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-28T16:35:47.514Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-05T19:42:12.487Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

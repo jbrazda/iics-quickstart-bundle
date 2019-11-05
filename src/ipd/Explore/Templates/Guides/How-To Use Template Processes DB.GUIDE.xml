@@ -14,7 +14,7 @@
       <types1:CreationDate>2019-04-30T13:34:36Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
       <types1:ModificationDate>2019-10-17T21:25:56Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2019-10-17T21:25:58Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DB/How_To_Use_Template_Processes_DB.xml</types1:PublishedContributionId>
@@ -123,5 +123,5 @@
       <types1:GUID>1Qu1h6KagGgh1aPQpSuVi5</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-28T16:35:48.891Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-05T19:42:13.238Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

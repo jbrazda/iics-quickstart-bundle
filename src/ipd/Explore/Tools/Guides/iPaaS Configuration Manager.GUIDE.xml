@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-07-29T15:38:45Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-07-29T17:23:11Z</types1:ModificationDate>
+      <types1:ModificationDate>2019-11-05T19:31:40Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-21T15:24:43Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-11-05T19:31:43Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -48,39 +48,57 @@
                      <option name="isCopy">true</option>
                   </options>
                </field>
-               <field description="null" name="tmp_query" type="string">
+               <field description="Temporary Variable to store Search Query to read properties"
+                      name="tmp_query"
+                      type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="null" name="tmp_query_limit" type="int">
+               <field description="Query limit defaults to 100"
+                      name="tmp_query_limit"
+                      type="int">
                   <options>
                      <option name="required">false</option>
-                     <option hide="true" name="initialvalue">100</option>
+                     <option name="initialvalue">100</option>
                   </options>
                </field>
-               <field description="null" name="tmp_key_search" type="string">
+               <field description="Search by key, like condition will be used"
+                      name="tmp_key_search"
+                      type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="null" name="tmp_property_key" type="string">
+               <field description="Property Ket" name="tmp_property_key" type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="null" name="tmp_property_value" type="textarea">
+               <field description="Peoperty Value Can be arbitrary text/XML number"
+                      name="tmp_property_value"
+                      type="textarea">
                   <options>
                      <option name="text_width">100</option>
                      <option name="text_height">5</option>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="null" name="temp_DataAccessRequest" type="reference">
+               <field description="DAS Request"
+                      name="temp_DataAccessRequest"
+                      type="reference">
                   <options>
                      <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="Data Source Name configured in DAS to strore Configuratiions"
+                      name="tmp_config_dataSource"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">DS1</option>
                   </options>
                </field>
             </tempFields>
@@ -95,7 +113,7 @@
                   <title>Start</title>
                   <body contentType="text/html"/>
                   <actions>
-                     <action alt="null" id="jp8dxku2_jp8dxku3" targetScreen="jp8dxku3">
+                     <action alt="null" id="jp8dxku2_k2m6wduw" targetScreen="k2m6wduw">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -107,6 +125,11 @@
 &lt;p&gt;&lt;input class="" title="tmp_selected_configuration (temporary)" name="temp.tmp_selected_configuration" type="text" value="tmp_selected_configuration (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;Query&lt;/p&gt;
 &lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_query (temporary)" name="temp.tmp_query" readonly="readonly" type="text" value="tmp_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Current Configuration of the guide uses DAS Service Data Source with JNDI Name jdbc/&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_config_dataSource (temporary)" name="temp.tmp_config_dataSource" readonly="readonly" type="text" value="tmp_config_dataSource (temporary)"&gt; to write/delete&amp;nbsp; properties.&lt;/li&gt;
+&lt;li&gt;You will need to configure the Data Source In process Engine Secure agent to be able to create, update and delete the properties in the&amp;nbsp; IC_Configuration DB table.&lt;/li&gt;
+&lt;li&gt;You can override the default DS name by defining the urn mapping urn:configuration:dataSource with value DS1 to DS5&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
@@ -145,6 +168,14 @@
                         </options>
                      </screenDataItem>
                      <screenDataItem name="temp.tmp_query"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_config_dataSource"
                                      readonly="true"
                                      required="false"
                                      type="string">
@@ -286,7 +317,7 @@
                   <serviceName>execSQLProxy</serviceName>
                   <serviceGUID/>
                   <serviceInput>
-                     <parameter id="jp8ds935"
+                     <parameter id="k2m85ggb"
                                 name="dataAccessRequest"
                                 source="formula"
                                 updatable="false">xpath &lt;tDataAccessRequest&gt;
@@ -299,7 +330,7 @@
          &lt;data&gt;{$temp.tmp_selected_configuration[1]/PKEY}&lt;/data&gt;
       &lt;/parameter&gt;
    &lt;/sqlStatement&gt;
-   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+   &lt;dataSource&gt;{$temp.tmp_config_dataSource }&lt;/dataSource&gt;
 &lt;/tDataAccessRequest&gt;
 
 </parameter>
@@ -315,7 +346,7 @@
                   <serviceName>execSQLProxy</serviceName>
                   <serviceGUID/>
                   <serviceInput>
-                     <parameter id="jp8dsdn0"
+                     <parameter id="k2m85f6c"
                                 name="dataAccessRequest"
                                 source="formula"
                                 updatable="false">xpath &lt;tDataAccessRequest&gt;
@@ -336,7 +367,7 @@
          &lt;data&gt;{$temp.tmp_property_key}&lt;/data&gt;
       &lt;/parameter&gt;
    &lt;/sqlStatement&gt;
-   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+   &lt;dataSource&gt;{$temp.tmp_config_dataSource }&lt;/dataSource&gt;
 &lt;/tDataAccessRequest&gt;
 
 </parameter>
@@ -355,13 +386,13 @@
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="jyonu9e1">
+               <empty gatewayType="exclusive" id="k2m8yknl">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jyonu9df">
+               <empty gatewayType="exclusive" id="k2m8ykmz">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jyonu9dq">
+               <empty gatewayType="exclusive" id="k2m8ykna">
                   <actions/>
                </empty>
                <jumpTo id="jp8dxl1l" targetTitle="Set Query">
@@ -426,6 +457,17 @@
                      </action>
                   </actions>
                </create>
+               <assignment id="k2m6wduw">
+                  <title>Assignment to tmp_config_dataSource</title>
+                  <operation source="formula" to="temp.tmp_config_dataSource">
+                     <expression language="XQuery">if (util:resolveURN('urn:ic_configuration:dataSource')= 'urn:ic_configuration:dataSource' ) then 'DS1' else util:resolveURN('urn:ic_configuration:dataSource')</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="k2m6wduw_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
                <assignment id="jp8dxku3">
                   <title>Set Query</title>
                   <operation source="formula" to="temp.tmp_query">
@@ -472,5 +514,5 @@ $query</expression>
       <types1:GUID>6OhyC2hvWBZfbzWLWPtjuH</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-10-28T16:35:48.317Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-05T19:42:12.779Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
