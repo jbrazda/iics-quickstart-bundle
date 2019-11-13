@@ -96,5 +96,5 @@ AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</description>
       <types1:GUID>0b3gDimMIY7enmbV0S5hkE</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskList-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-11-05T19:42:12.19Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-11-13T20:30:44.796Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,5 +1,6 @@
 Main
 
+build.deploy
 build.ipd.dist.packages
 clean.release
 download.src

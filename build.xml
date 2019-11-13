@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- ====================================================================== 
-     Aug 29, 2019 12:35:05 PM                                                        
-
-     project Informatica Cloud Custom Fault Alert Service Build   
-     description
-                   
-     jbrazda                                                                
-     ====================================================================== -->
 <project name="IICS Build Script - IPS Bundle" default="help" basedir=".">
     <description>
             IICS CAI Components Build Script
@@ -16,58 +8,58 @@
     <target name="-init" unless="initialized">
         <property file="${iics_user.property.file}" />
         <property file="build.properties" />
-    	
-    	<!-- Global properties -->
+        
+        <!-- Global properties -->
         <property environment="env" />
         
-	    <condition property="isUnix">
-	        <os family="unix" />
-	    </condition>
+        <condition property="isUnix">
+            <os family="unix" />
+        </condition>
 
-	    <condition property="isWindows">
-	        <os family="windows" />
-	    </condition>
+        <condition property="isWindows">
+            <os family="windows" />
+        </condition>
 
-	    <condition property="exec.ext" value="sh">
-	        <os family="unix" />
-	    </condition>
+        <condition property="exec.ext" value="sh">
+            <os family="unix" />
+        </condition>
 
-	    <condition property="exec.ext" value="bat">
-	        <os family="windows" />
-	    </condition>
+        <condition property="exec.ext" value="bat">
+            <os family="windows" />
+        </condition>
 
-	    <condition property="shell" value="bash">
-	        <os family="unix" />
-	    </condition>
+        <condition property="shell" value="bash">
+            <os family="unix" />
+        </condition>
 
-	    <condition property="shell" value="cmd.exe">
-	        <os family="windows" />
-	    </condition>
+        <condition property="shell" value="cmd.exe">
+            <os family="windows" />
+        </condition>
 
-	    <condition property="shell.options" value="-c">
-	        <os name="Mac OS X" />
-	    </condition>
+        <condition property="shell.options" value="-c">
+            <os name="Mac OS X" />
+        </condition>
 
-	    <condition property="shell.open" value=" open ">
-	        <os name="Mac OS X" />
-	    </condition>
+        <condition property="shell.open" value=" open ">
+            <os name="Mac OS X" />
+        </condition>
 
-	    <property name="shell.open" value="" />
+        <property name="shell.open" value="" />
 
-	    <condition property="shell.options" value="-c">
-	        <os family="unix" />
-	    </condition>
+        <condition property="shell.options" value="-c">
+            <os family="unix" />
+        </condition>
 
-	    <condition property="shell.options" value="/c">
-	        <os family="windows" />
-	    </condition>
-    	
+        <condition property="shell.options" value="/c">
+            <os family="windows" />
+        </condition>
+        
         <path id="saxon.classpath">
             <fileset dir="${saxon.lib}">
                 <include name="*.jar" />
             </fileset>
         </path>
-    	
+        
         
 
         <!-- IICS Package Manager Tool OS Specific-->
@@ -91,12 +83,12 @@
         </condition>
 
         <!-- Check Availability of iics and supporting modules-->
-        <condition property="iics.available">
+        <condition property="iics.available" value="true" else="false">
             <available file="${tool.iics}" />
         </condition>
         
-        <condition property="tools.reporting.installed">
-            <available file="${tools.package.reporting}" />
+        <condition property="tools.reporting.installed" value="true" else="false">
+                   <available file="${tools.package.reporting}" />
         </condition>
         
         <condition property="tools.reporting.install">
@@ -108,7 +100,7 @@
             </not>
         </condition>
         
-        <condition property="tools.transform.installed">
+        <condition property="tools.transform.installed" value="true" else="false">
             <available file="${tools.package.transform}" />
         </condition>
         
@@ -121,9 +113,7 @@
             </not>
         </condition>
 
-
-    	
-    	<property name="initialized" value="true"/>
+        <property name="initialized" value="true"/>
     </target>
 
 
@@ -148,6 +138,9 @@
         <echo level="info">env.SHELL:       ${env.SHELL}</echo>
         <echo level="info">env.PATH:        ${env.PATH}</echo>
         <echo level="info">env.JAVA_HOME:   ${env.JAVA_HOME}</echo>
+        <echo level="info">IICS Tool Module Available: ${iics.available}</echo>
+        <echo level="info">Reporting Module Available: ${tools.reporting.installed}</echo>
+        <echo level="info">Tramsform Module Available: ${tools.transform.installed}</echo>
         <echo level="info">========================================</echo>
         <property name="env.info.displayed" value="true" />
     </target>
@@ -167,7 +160,7 @@
 
 
 
-    <target name="-download.iics" depends="-env.info" unless="iics.available">
+    <target name="-download.iics" depends="-env.info" unless="${iics.available}">
         <!-- Download OS Specific version of the tool-->
         <condition property="url.download.iics" value="${url.download.iics.win.x86}">
             <and>
@@ -187,32 +180,31 @@
         <condition property="url.download.iics" value="${url.download.iics.linux}">
             <os family="unix" />
         </condition>
-        <echo level="info">IICS Tool Available: ${iics.available}</echo>
+        
         <echo level="info">Downloading: ${url.download.iics}</echo>
         <mkdir dir="${tools.lib}" />
         <get src="${url.download.iics}" dest="${tool.iics}" />
         <chmod file="${tool.iics}" perm="ugo+rx" />
     </target>
-	
-	
-	<target name="install.tools.transform" depends="-env.info"
-	    if="${tools.transform.install}">
-		<echo level="info">IICS Tramsform Module Available: ${iics.available}</echo>
+    
+    
+    <target name="install.tools.transform" depends="-env.info"
+        if="${tools.transform.install}">
         <echo level="info">Downloading: ${url.download.iics.tools.transform}</echo>
         <mkdir dir="${iics.tools.dir.transform}" />
         <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}" usetimestamp="true" />
         <unzip dest="${iics.tools.dir.transform}" src="${tools.download.dir}/${url.download.iics.tools.transform.archive}">
             <patternset>
                 <include name="xsl/**"/>
-            	<include name="lib/**"/>
-            	<include name="build.xml"/>
+                <include name="lib/**"/>
+                <include name="build.xml"/>
             </patternset>
         </unzip>
-	</target>
+    </target>
     
     <target name="install.tools.reporting" depends="-env.info"
         if="${tools.reporting.install}">
-        <echo level="info">Reporting Module Available: ${iics.available}</echo>
+        
         <echo level="info">Downloading: ${url.download.iics.tools.reporting}</echo>
         <mkdir dir="${iics.tools.dir.reporting}" />
         <get src="${url.download.iics.tools.reporting}" dest="${tools.download.dir}" usetimestamp="true" />
@@ -276,9 +268,7 @@
     <target name="-set-release-properties">
         <basename file="${iics.release}" property="iics.release.basename" suffix="release.properties" />
         <echo level="info">Selected Release Configuration: ${iics.release.basename}</echo>
-        <echo level="info">Selected File: ${iics.release}</echo>
-
-                
+        <echo level="info">Selected File: ${iics.release}</echo>           
     </target>
     
     <target name="-select-source-environment" unless="iics.source.environment" depends="-load.release.properties">
@@ -330,9 +320,9 @@
     
     <target name="-check.source.creds">
         <check.credentials 
-                    userproperty="iics.source.user"
-                    passwordproperty="iics.source.password"
-                    validationresult="source.creds.set"/>
+            userproperty="iics.source.user"
+            passwordproperty="iics.source.password"
+            validationresult="source.creds.set"/>
     </target>
 
     <target name="-iics.input.source.creds" depends="-set.source.credentials,-check.source.creds" unless="${target.creds.set}">
@@ -362,6 +352,17 @@
         <condition property="iics.export.available">
             <available file="${iics.export.dir}/${iics.export.output}" />
         </condition>
+    </target>
+    
+    <target name="-copy.designs.transform">
+        <property name="transform.src.folder" location="${basedir}/target/transform/src"></property>
+        <property name="transform.temp.folder" location="${basedir}/target/transform/temp"></property>
+        <echo level="info">Copying Sources from ${iics.extract.dir} to ${transform.src.folder}</echo>
+        <delete dir="${transform.src.folder}"/>
+        <copy todir="${transform.src.folder}" overwrite="true" verbose="true">
+            <fileset dir="${iics.extract.dir}">
+            </fileset>
+        </copy>  
     </target>
 
     <target name="iics.list" depends="-download.iics,-check.export.files,-iics.input.source.creds" unless="iics.list.available">
@@ -397,22 +398,17 @@
             todir="${iics.extract.dir}" />
     </target>
     
+    
+    
+    
     <target name="iics.prepare.package" 
         unless="${tools.transform.disabled}"
         depends="-env.info,-select-release,-load.release.properties,install.tools.transform">
-        <property name="transform.src.folder" location="${basedir}/target/transform/src"></property>
-    	<property name="transform.temp.folder" location="${basedir}/target/transform/temp"></property>
-    	<echo level="info">Copying Sources from ${iics.extract.dir} to ${transform.src.folder}</echo>
-    	<delete dir="${transform.src.folder}"/>
-        <copy todir="${transform.src.folder}" overwrite="true" verbose="true">
-            <fileset dir="${iics.extract.dir}">
-            </fileset>
-        </copy>
-    	<ant antfile="${tools.package.transform}" target="transform" inheritall="false" inheritrefs="false">
+        <ant antfile="${tools.package.transform}" target="transform" inheritall="false" inheritrefs="false">
             <property name="iics.release" value="${iics.release.basename}"/>
-        	<property name="transform.source.dir" location="${transform.src.folder}"/>
-        	<property name="transform.target.dir" location="${transform.temp.folder}"/>
-    		<property name="migration.properties.base" value="${iics.external.properties.dir}"/>
+            <property name="transform.source.dir" location="${transform.src.folder}"/>
+            <property name="transform.target.dir" location="${transform.temp.folder}"/>
+            <property name="migration.properties.base" value="${iics.external.properties.dir}"/>
         </ant>
     </target>
     
@@ -435,19 +431,27 @@
         </exec>
     </target>
 
-    <target name="iics.package" depends="-download.iics,-load.release.properties,iics.prepare.package" >
-     
+    <target name="iics.package" depends="-download.iics,-load.release.properties,-copy.designs.transform,iics.prepare.package" >
         <iics.package id="${iics.release.basename}" 
             workspace="${transform.src.folder}" 
             output="${release.package.label}.zip" 
             todir="${iics.import.dir}" 
             file="${iics.target.package.config}"  />
     </target>
-	
+    
     <target name="iics.import" depends="-download.iics,-load.release.properties">
          <iics.import id="${iics.release.basename}" 
             region="${iics.region}" 
             file="${iics.import.dir}/${release.package.label}.zip"
+            user="${iics.target.user}" 
+            password="${iics.target.password}" />
+    </target>
+    
+    
+    <target name="iics.publish" depends="-download.iics,-load.release.properties">
+        <iics.publish id="${iics.release.basename}" 
+            region="${iics.region}" 
+            file="${iics.target.publish.config}"
             user="${iics.target.user}" 
             password="${iics.target.password}" />
     </target>
@@ -490,10 +494,11 @@
     <target name="update.src" depends="-env.info,
         -select-release,
         -load.release.properties,
+         clean.release,
         -select-source-environment,
         -set-source-properties,
          iics.extract" 
-        description="Updates design ources directory fron Source Environment Org using iics Export utility">
+        description="Updates ${basedir}/src/ipd directory fron Source Environment Org using iics Export utility">
     </target>
         
     <target name="download.src" depends="-env.info,
@@ -504,13 +509,13 @@
          iics.export,
         -set-export-report-properties,
          iics.package.report" 
-        description="Downloads Designs From Source Environment Org using iics Export utility">
+        description="Downloads Designs From Source Environment Org using iics export utility">
     </target>
 
     <target name="package.src" depends="-env.info,
         -select-release,
         -load.release.properties,
-    	-download.iics,
+        -download.iics,
         -set-target-properties,
         -select-package-config,
         -set-package-properties,
@@ -528,25 +533,34 @@
         -select-package-config,
         -set-package-properties,
         -iics.input.target.creds,
-         iics.package,
          iics.import" 
-        description="Imports package for a select Environment and Package Configuration">
+        description="Imports package using a slelected Environment and Package configuration">
     </target>
     
     <target name="publish" depends="-env.info,
         -select-release,
-    	-download.iics,
+        -download.iics,
         -load.release.properties,
         -set-target-properties,
         -select-publish-config,
         -set-publish-properties,
-        -iics.input.target.creds"
+        -iics.input.target.creds,
+         iics.publish"
         description="Publishes Objects Defined in the Configuration Files">
-        <iics.publish id="${iics.release.basename}" 
-                    region="${iics.region}" 
-                    file="${iics.target.publish.config}"
-                    user="${iics.target.user}" 
-                    password="${iics.target.password}" />
+    </target>
+    
+    
+    <target name="build.deploy" depends="-select-release,
+        -load.release.properties,
+        -download.iics,
+        -set-target-properties,
+        -select-package-config,
+        -set-package-properties,
+         iics.package,
+        -iics.input.target.creds,
+         iics.import,
+         publish"
+        description="Combines package.src, import, publish steps into one step">
     </target>
 
 
@@ -570,9 +584,15 @@
             <property name="iics.list.command.@{id}" 
                 value='list -r @{region} -u @{user} -p @{password} @{query} -o "@{toDir}/@{output}"' />
             <echo level="info">Running list -r @{region} -u @{user} -p **** @{query} -o "@{toDir}/@{output}"</echo>
-            <exec dir="${basedir}" executable="${tool.iics}">
+            <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.list.output.@{id}">
                 <arg line="${iics.list.command.@{id}}" />
             </exec>
+            <condition property="iics.list.result.@{id}" value="false" else="true" >
+                   <contains string="${iics.list.output.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.list.output.@{id}}</echo>
+            <echo level="info">iics list success ${iics.list.result.@{id}}</echo>
+            <fail unless="${iics.list.result.@{id}}" message="iics list error"/>
         </sequential>
     </macrodef>
 
@@ -595,9 +615,15 @@
             <echo level="info">Exporting package using: @{listFile}</echo>
             <property name="iics.export.command.@{id}" value='export -r @{region} -u "@{user}" -p "@{password}" -f "@{toDir}/@{listFile}" -z "@{toDir}/@{outputfile}"' />
             <echo level="info">Running iics export -r @{region} -u "@{user}" -p "******" -f "@{toDir}/@{listFile}" -z "@{toDir}/@{outputfile}"</echo>
-            <exec dir="${basedir}" executable="${tool.iics}">
+            <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.export.output.@{id}">
                 <arg line="${iics.export.command.@{id}}" />
             </exec>
+            <condition property="iics.export.result.@{id}" value="false" else="true" >
+                   <contains string="${iics.export.output.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.export.output.@{id}}</echo>
+            <echo level="info">iics list success ${iics.export.result.@{id}}</echo>
+            <fail unless="${iics.export.result.@{id}}" message="iics export error"/>
         </sequential>
     </macrodef>
 
@@ -609,10 +635,17 @@
             <mkdir dir="@{toDir}" />
             <property name="iics.extract.command.@{id}" value='extract -z "@{file}" -w "@{toDir}"' />
             <echo level="info">Running iics ${iics.extract.command.@{id}}</echo>
-            <exec dir="${basedir}" executable="${tool.iics}">
-                <arg line="${iics.extract.command.@{id}}" />
+            <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.extract.output.@{id}">
+                <arg line="${iics.extract.command.@{id}}"/>
             </exec>
+            <condition property="iics.extractresult.@{id}" value="false" else="true" >
+                   <contains string="${iics.extractoutput.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.extractoutput.@{id}}</echo>
+            <echo level="info">iics list success ${iics.extractresult.@{id}}</echo>
+            <fail unless="${iics.extractresult.@{id}}" message="iics export error"/>
         </sequential>
+        
     </macrodef>
 
 
@@ -632,9 +665,15 @@
             <property name="iics.package.command.@{id}" 
                 value='package -z "@{toDir}/@{output}" -w "@{workspace}" -f "@{file}"' />
             <echo level="info">Running iics ${iics.package.command.@{id}}</echo>
-            <exec dir="${basedir}" executable="${tool.iics}" failonerror="true">
+            <exec dir="${basedir}" executable="${tool.iics}" failonerror="true" outputproperty="iics.package.output.@{id}">
                 <arg line="${iics.package.command.@{id}}" />
             </exec>
+            <condition property="iics.package.result.@{id}" value="false" else="true" >
+                   <contains string="${iics.package.output.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.package.output.@{id}}</echo>
+            <echo level="info">iics package success ${iics.package.result.@{id}}</echo>
+            <fail unless="${iics.package.result.@{id}}" message="iics package error"/>
         </sequential>
     </macrodef>
     
@@ -670,9 +709,15 @@
             <property name="iics.import.command.@{id}" 
                 value='import -r @{region} -u "@{user}" -p "@{password}" -z "@{file}" -m @{maxWaitTime} -s @{sync} -P @{pollingInterval} -v @{logLevel}' />
             <echo level="info">Running iics import -r @{region} -u "@{user}" -p "*****" -z "@{file}" -m @{maxWaitTime} -s @{sync} -P @{pollingInterval} -v @{logLevel}</echo>
-            <exec dir="${basedir}" executable="${tool.iics}">
+            <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.import.output.@{id}">
                 <arg line="${iics.import.command.@{id}}" />
             </exec>
+            <condition property="iics.import.result.@{id}" value="false" else="true" >
+                   <contains string="${iics.import.output.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.import.output.@{id}}</echo>
+            <echo level="info">iics import success ${iics.import.result.@{id}}</echo>
+            <fail unless="${iics.import.result.@{id}}" message="iics import error"/>
         </sequential>
     </macrodef>
     
@@ -706,9 +751,15 @@
             <property name="iics.publish.command.@{id}" 
                 value='publish -r @{region} -u "@{user}" -p "@{password}" -f "@{file}" -m @{maxWaitTime} -s @{sync} -P @{pollingInterval} -v @{logLevel}' />
             <echo level="info">Running iics publish -r @{region} -u "@{user}" -p "*****" -f "@{file}" -m @{maxWaitTime} -s @{sync} -P @{pollingInterval} -v @{logLevel}</echo>
-            <exec dir="${basedir}" executable="${tool.iics}">
+            <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.publish.output.@{id}">
                 <arg line="${iics.publish.command.@{id}}" />
             </exec>
+            <condition property="iics.publish.result.@{id}" value="false" else="true" >
+                   <contains string="${iics.publish.output.@{id}}" substring="Exiting with error" casesensitive="false" />
+            </condition>
+            <echo level="info">${iics.publish.output.@{id}}</echo>
+            <echo level="info">iics publish success ${iics.publish.result.@{id}}</echo>
+            <fail unless="${iics.publish.result.@{id}}" message="iics publish error"/>
         </sequential>
     </macrodef>
 
