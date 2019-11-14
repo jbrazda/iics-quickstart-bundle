@@ -11,7 +11,16 @@ This project contains set of re-usable IICS Designs SDLC utilities, examples and
     - [Build from Source](#build-from-source)
     - [Use pre-built binaries](#use-pre-built-binaries)
   - [Configure Individual Components](#configure-individual-components)
-  - [Connectors](#connectors)
+  - [Connectors and Connections](#connectors-and-connections)
+    - [AgentFileWriter](#agentfilewriter)
+    - [DataAccessService](#dataaccessservice)
+    - [Email](#email)
+    - [github-gist](#github-gist)
+    - [gitlab-snippets](#gitlab-snippets)
+    - [ICS-API](#ics-api)
+    - [IPaaS-Configuration-DB](#ipaas-configuration-db)
+    - [IPaaS-Logging](#ipaas-logging)
+    - [SA-Process-DB](#sa-process-db)
   - [Processes](#processes)
   - [Glossary of Terms used in this Documents](#glossary-of-terms-used-in-this-documents)
 
@@ -54,7 +63,51 @@ Use build from source method which allows you to automate these adjustments in b
 
 ## Configure Individual Components
 
-## Connectors
+## Connectors and Connections
+
+### AgentFileWriter
+
+| ==          | Value                                                                                              |
+|-------------|----------------------------------------------------------------------------------------------------|
+| Design      | Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION.xml                                        |
+| Description | Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents |
+
+This connection can be used to write files to Secure agent and is used by the SP-util-upload-agent process
+Key Configuration property that might be your secure agent specific is File Connector/EventTargets/Directory
+which is configured by default to `/tmp` directory. You also might want to create separate
+Connections and corresponding process for each secure agent in case you need to push files to different agents.
+Ideally One connection can be used and push of the files is done via any member of agent groups to shared
+filesytem mounted to all members of the Secure Agent Group.
+
+### DataAccessService
+
+Design: Explore/DAS/DataAccessService.AI_CONNECTION.xml
+Description: DO NOT USE THIS SERVICE DIRECTLY is defined only to provide design time metadata definitions for Automated Steps execSQL and execMultiSQL
+
+To configure this connection, just publish `DataAccessService` Connector and then `DataAccessService` Connection
+Then You can publish corresponding Proxy processes (`execMultiSQLProxy`, `execSQLProxy`) that give access to DAS  from Cloud guides and processes
+
+Use `Data Access Services/execMultiSQL` or `Data Access Services/execSQL` to invoke data Access Service automated steps from IPD processes
+
+### Email
+
+Design: Explore/Tools/Connections/Email.AI_CONNECTION.xml
+Description: Shared Email Service to send alerts and notifications
+
+### github-gist
+
+### gitlab-snippets
+
+### ICS-API
+
+### IPaaS-Configuration-DB
+
+### IPaaS-Logging
+
+Design: Explore/Logging/Connections/IPaaS-Logging.AI_CONNECTION.xml
+Description: IPaaS Database for Logging and job tracking\
+
+### SA-Process-DB
 
 ## Processes
 

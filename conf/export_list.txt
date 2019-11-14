@@ -1,0 +1,4 @@
+Explore/DAS.Project
+Explore/Logging.Project
+Explore/Templates.Project
+Explore/Tools.Project
