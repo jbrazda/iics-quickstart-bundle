@@ -462,27 +462,27 @@
         <delete dir="${basedir}/target/${iics.release.basename}" verbose="true">
         </delete>
     </target>
-	
-	<target name="build.ipd.dist.packages" depends="-env.info,
+    
+    <target name="build.ipd.dist.packages" depends="-env.info,
         -select-release,
         -load.release.properties" 
-		if="iics.release.basename"
-		description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
-		<property name="iics.binaries.dir" location="${basedir}/dist"></property>
-		
-		<iics.package id="initial_release" 
-		            workspace="${iics.extract.dir}" 
-		            output="${iics.package.output}_InitialInstall_All_Designs.zip" 
-		            todir="${iics.binaries.dir}" 
-		            file="${basedir}/conf/all_designs.package.txt"/>
-		<echo level="info">Updated All Designs distribution in ${iics.binaries.dir}/${iics.package.output}_InitialInstall_All_Designs.zip</echo>
-		<iics.package id="update_release" 
+        if="iics.release.basename"
+        description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
+        <property name="iics.binaries.dir" location="${basedir}/dist"></property>
+        
+        <iics.package id="initial_release" 
+                    workspace="${iics.extract.dir}" 
+                    output="${iics.package.output}_InitialInstall_All_Designs.zip" 
+                    todir="${iics.binaries.dir}" 
+                    file="${basedir}/conf/all_designs.package.txt"/>
+        <echo level="info">Updated All Designs distribution in ${iics.binaries.dir}/${iics.package.output}_InitialInstall_All_Designs.zip</echo>
+        <iics.package id="update_release" 
                     workspace="${iics.extract.dir}" 
                     output="${iics.package.output}_Update_Excluding_Connections.zip" 
                     todir="${iics.binaries.dir}" 
                     file="${basedir}/conf/all_exclude_connections.package.txt"/>
         <echo level="info">Updated Update Designs distribution in ${iics.binaries.dir}/${iics.package.output}_Update_Excluding_Connections.zip</echo>
-	</target>
+    </target>
 
     
     
