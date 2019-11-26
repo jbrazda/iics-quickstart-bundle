@@ -408,7 +408,7 @@
             <property name="iics.release" value="${iics.release.basename}"/>
             <property name="transform.source.dir" location="${transform.src.folder}"/>
             <property name="transform.target.dir" location="${transform.temp.folder}"/>
-            <property name="migration.properties.base" value="${iics.external.properties.dir}"/>
+            <property name="migration.properties.base" value="${iics.migration.properties.base}"/>
         </ant>
     </target>
     

@@ -16,11 +16,12 @@ This project contains set of re-usable IICS Designs SDLC utilities, examples and
     - [DataAccessService](#dataaccessservice)
     - [Email](#email)
     - [github-gist](#github-gist)
+      - [Setup GitHub Gist Account and Access Token](#setup-github-gist-account-and-access-token)
     - [gitlab-snippets](#gitlab-snippets)
+      - [Setup GitLab Account and Access Token](#setup-gitlab-account-and-access-token)
     - [ICS-API](#ics-api)
     - [IPaaS-Configuration-DB](#ipaas-configuration-db)
     - [IPaaS-Logging](#ipaas-logging)
-    - [SA-Process-DB](#sa-process-db)
   - [Processes](#processes)
   - [Glossary of Terms used in this Documents](#glossary-of-terms-used-in-this-documents)
 
@@ -34,13 +35,15 @@ This project contains set of re-usable IICS Designs SDLC utilities, examples and
 - [Asset Management Scripts](doc/build.md) to export, import, publish and Version Control IPD Designs Implemented as Apache Ant Scripts
 - Integration with other SDLC Assisting Tools ([Migration/Transformation Tool](https://github.com/jbrazda/icai-migration-tools), [IICS Reporting Tool](https://github.com/jbrazda/iics-reporting-tools))
 - Best practices and Other Integration use case Examples
+  - [Naming Conventions](https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/naming_conventions.md)
+  - [How to Setup Your Development Environment](https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/set_development_environment.md)
 
 ## Before You Start
 
 - **Read the provided documentation**
 - This bundle is continuously developed and improved, feel free to subscribe and monitor updates that might be useful for you in the future
 - This bundle is not officially supported by Informatica, please report any issues you find via Github issues report
-- Do not or move imported assets Project/ Folder Locations after import, this would make updates much more difficult
+- Do not or move imported assets Project/Folder Locations after import, this would make updates much more difficult
 - You can update or change imported resources to adjust them for your needs but keep in mind that it would be your responsibility to merge or maintain any changes you have made to provided designs
 - Any of the provided assets can significantly re-designed or removed in the future releases
 
@@ -67,10 +70,8 @@ Use build from source method which allows you to automate these adjustments in b
 
 ### AgentFileWriter
 
-| ==          | Value                                                                                              |
-|-------------|----------------------------------------------------------------------------------------------------|
-| Design      | Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION.xml                                        |
-| Description | Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents |
+Design: Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION.xml
+Description: Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents
 
 This connection can be used to write files to Secure agent and is used by the SP-util-upload-agent process
 Key Configuration property that might be your secure agent specific is File Connector/EventTargets/Directory
@@ -94,34 +95,100 @@ Use `Data Access Services/execMultiSQL` or `Data Access Services/execSQL` to inv
 Design: Explore/Tools/Connections/Email.AI_CONNECTION.xml
 Description: Shared Email Service to send alerts and notifications
 
+Use Email Connection to send email notifications as an activity withing your Integration Processes
+
 ### github-gist
+
+Github REST V3 APi to manage Gists
+see [GIST API Documentation](https://developer.github.com/v3/gists/)
+
+This connector is useful to store and retrieve configurations, templates, snippets, etc.
+See an example of using Gist as a configuration storage provider [Alert Service](https://github.com/jbrazda/icai-fault-alert-service)
+
+#### Setup GitHub Gist Account and Access Token
+
+Make sure your secure agents can access the GitHub API to store and retrieve the Alert Service configuration file.
+
+This Alert Service Implementation can use Github Gist (both Cloud and On premise Github Enterprise Edition) as a storage for its configuration
+It is recommended to use private gist to store this configuration, you will need to create Security token to access private gists via API
+
+1. Login to Github with an account that would be owner of the configurations (this should be likely service Account or account managed by IT Infrastructure administrators)
+2. Go to [Account Settings/Developer Settings/Personal access tokens](https://github.com/settings/tokens)
+3. Create new token and give it descriptive name such as `IICS-Configuration-Gist-Access`
+4. Select only gist permission
+
+    ![Github_New_personal_access_token](./doc/images/Github_New_personal_access_token.png)
+
+5. Capture generated token and save it in a save location for later use in the Service Connector configuration after Deployment of the IICS package
+
+    ![Personal_Access_Tokens](./doc/images/Personal_Access_Tokens.png)
+
+Connector Properties
+
+| Name         | Description                                                                        |
+| ------------ | ---------------------------------------------------------------------------------- |
+| base_uri     | Base URI of the REST endpoint Base URI of the REST endpoint https://api.github.com |
+| access_token | Gist API Access Token                                                              |
+| api_version  | API Version (currently V3)                                                         |
 
 ### gitlab-snippets
 
+Provides Support to store  and retrieve configurations or other files as GitLab Snippets
+See [Gilab API Documentation](https://gitlab.com/help/api/README.md)
+
+#### Setup GitLab Account and Access Token
+
+Make sure your secure agents can access the GitLab API to store and retrieve the Alert Service configuration file.
+
+This Alert Service Implementation can use Cloud Hosted or on-premise GitLab as a storage for its configuration
+It is recommended to use private snippets to store this configuration, you will need to create Security token to access private Assets via API
+
+1. Login to GitLab with an account that would be owner of the configurations (this should be likely service Account or account managed by IT Infrastructure administrators)
+2. Go to [Account Settings/Access Tokens](https://gitlab.com/profile/personal_access_tokens)
+3. Create new token and give it descriptive name such as `IICS-Configuration-API-Access`
+4. Optionally set expiration date
+5. Select api access permission
+
+    ![Personal Access Tokens](./doc/images/GitLab_Personal_Access_Tokens_User_Settings.png)
+
+6. Capture generated Token and use it to configure GitLab Service Connector
+
+Connector Properties
+
+| Name         | Description                                                   |
+| ------------ | ------------------------------------------------------------- |
+| base_uri     | GitLab API Base URL (example: https://gitlab.example.com/api) |
+| access_token | API Access Token                                              |
+| api_version  | API Version (currently v4)                                    |
+
 ### ICS-API
 
+This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities
+
 ### IPaaS-Configuration-DB
+
+Database Used to Store Simple key/value configurations
+
+This Connection provides ability to store configurations in External Database and Guides/processes to manage such configurations
 
 ### IPaaS-Logging
 
 Design: Explore/Logging/Connections/IPaaS-Logging.AI_CONNECTION.xml
-Description: IPaaS Database for Logging and job tracking\
-
-### SA-Process-DB
+Description: IPaaS Database for Logging and job tracking
 
 ## Processes
 
 ## Glossary of Terms used in this Documents
 
 | Term                            | Description                                                                                                                                                        |
-|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | IICS                            | Informatica Intelligent Cloud Services, Informatica Cloud Integration platform                                                                                     |
 | ICAI                            | (formerly ICRT) Informatica Cloud Application Integration, see ICRT                                                                                                |
 | ICDI                            | (formerly ICS) Informatica Cloud Data Integration is an ETL batch integration component of IICS platform                                                           |
 | BPEL                            | Business Process Execution Language                                                                                                                                |
 | BPMN                            | Business Process Modeling Notation                                                                                                                                 |
 | WSDL                            | Web Service Definition Language                                                                                                                                    |
-| API                             | Application Programming Interface                                                                                                                                  |
+| API                             | `Application Programming Interface                                                                                                                                 |
 | REST                            | REpresentational State Transfer                                                                                                                                    |
 | IPD                             | Informatica Process Designer                                                                                                                                       |
 | Application Integration Console | ICAI Cloud and Secure Agent Runtime Administration Tool                                                                                                            |

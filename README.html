@@ -748,7 +748,29 @@ pre {
 </ul>
 </li>
 <li><a href="#configure-individual-components">Configure Individual Components</a></li>
-<li><a href="#connectors">Connectors</a></li>
+<li>
+<a href="#connectors-and-connections">Connectors and Connections</a>
+<ul>
+<li><a href="#agentfilewriter">AgentFileWriter</a></li>
+<li><a href="#dataaccessservice">DataAccessService</a></li>
+<li><a href="#email">Email</a></li>
+<li>
+<a href="#github-gist">github-gist</a>
+<ul>
+<li><a href="#setup-github-gist-account-and-access-token">Setup GitHub Gist Account and Access Token</a></li>
+</ul>
+</li>
+<li>
+<a href="#gitlab-snippets">gitlab-snippets</a>
+<ul>
+<li><a href="#setup-gitlab-account-and-access-token">Setup GitLab Account and Access Token</a></li>
+</ul>
+</li>
+<li><a href="#ics-api">ICS-API</a></li>
+<li><a href="#ipaas-configuration-db">IPaaS-Configuration-DB</a></li>
+<li><a href="#ipaas-logging">IPaaS-Logging</a></li>
+</ul>
+</li>
 <li><a href="#processes">Processes</a></li>
 <li><a href="#glossary-of-terms-used-in-this-documents">Glossary of Terms used in this Documents</a></li>
 </ul>
@@ -764,7 +786,12 @@ pre {
 <li>
 <a href="doc/build.md">Asset Management Scripts</a> to export, import, publish and Version Control IPD Designs Implemented as Apache Ant Scripts</li>
 <li>Integration with other SDLC Assisting Tools (<a href="https://github.com/jbrazda/icai-migration-tools">Migration/Transformation Tool</a>, <a href="https://github.com/jbrazda/iics-reporting-tools">IICS Reporting Tool</a>)</li>
-<li>Best practices and Other Integration use case Examples</li>
+<li>Best practices and Other Integration use case Examples
+<ul>
+<li><a href="https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/naming_conventions.md">Naming Conventions</a></li>
+<li><a href="https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/set_development_environment.md">How to Setup Your Development Environment</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="before-you-start">
 <a id="user-content-before-you-start" class="anchor" href="#before-you-start" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before You Start</h2>
@@ -772,7 +799,7 @@ pre {
 <li><strong>Read the provided documentation</strong></li>
 <li>This bundle is continuously developed and improved, feel free to subscribe and monitor updates that might be useful for you in the future</li>
 <li>This bundle is not officially supported by Informatica, please report any issues you find via Github issues report</li>
-<li>Do not or move imported assets Project/ Folder Locations after import, this would make updates much more difficult</li>
+<li>Do not or move imported assets Project/Folder Locations after import, this would make updates much more difficult</li>
 <li>You can update or change imported resources to adjust them for your needs but keep in mind that it would be your responsibility to merge or maintain any changes you have made to provided designs</li>
 <li>Any of the provided assets can significantly re-designed or removed in the future releases</li>
 </ul>
@@ -797,8 +824,148 @@ Use build from source method which allows you to automate these adjustments in b
 </ol>
 <h2 id="configure-individual-components">
 <a id="user-content-configure-individual-components" class="anchor" href="#configure-individual-components" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configure Individual Components</h2>
-<h2 id="connectors">
-<a id="user-content-connectors" class="anchor" href="#connectors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Connectors</h2>
+<h2 id="connectors-and-connections">
+<a id="user-content-connectors-and-connections" class="anchor" href="#connectors-and-connections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Connectors and Connections</h2>
+<h3 id="agentfilewriter">
+<a id="user-content-agentfilewriter" class="anchor" href="#agentfilewriter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AgentFileWriter</h3>
+<p>Design: Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION.xml
+Description: Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</p>
+<p>This connection can be used to write files to Secure agent and is used by the SP-util-upload-agent process
+Key Configuration property that might be your secure agent specific is File Connector/EventTargets/Directory
+which is configured by default to <code>/tmp</code> directory. You also might want to create separate
+Connections and corresponding process for each secure agent in case you need to push files to different agents.
+Ideally One connection can be used and push of the files is done via any member of agent groups to shared
+filesytem mounted to all members of the Secure Agent Group.</p>
+<h3 id="dataaccessservice">
+<a id="user-content-dataaccessservice" class="anchor" href="#dataaccessservice" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DataAccessService</h3>
+<p>Design: Explore/DAS/DataAccessService.AI_CONNECTION.xml
+Description: DO NOT USE THIS SERVICE DIRECTLY is defined only to provide design time metadata definitions for Automated Steps execSQL and execMultiSQL</p>
+<p>To configure this connection, just publish <code>DataAccessService</code> Connector and then <code>DataAccessService</code> Connection
+Then You can publish corresponding Proxy processes (<code>execMultiSQLProxy</code>, <code>execSQLProxy</code>) that give access to DAS  from Cloud guides and processes</p>
+<p>Use <code>Data Access Services/execMultiSQL</code> or <code>Data Access Services/execSQL</code> to invoke data Access Service automated steps from IPD processes</p>
+<h3 id="email">
+<a id="user-content-email" class="anchor" href="#email" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Email</h3>
+<p>Design: Explore/Tools/Connections/Email.AI_CONNECTION.xml
+Description: Shared Email Service to send alerts and notifications</p>
+<p>Use Email Connection to send email notifications as an activity withing your Integration Processes</p>
+<h3 id="github-gist">
+<a id="user-content-github-gist" class="anchor" href="#github-gist" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>github-gist</h3>
+<p>Github REST V3 APi to manage Gists
+see <a href="https://developer.github.com/v3/gists/">GIST API Documentation</a></p>
+<p>This connector is useful to store and retrieve configurations, templates, snippets, etc.
+See an example of using Gist as a configuration storage provider <a href="https://github.com/jbrazda/icai-fault-alert-service">Alert Service</a></p>
+<h4 id="setup-github-gist-account-and-access-token">
+<a id="user-content-setup-github-gist-account-and-access-token" class="anchor" href="#setup-github-gist-account-and-access-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup GitHub Gist Account and Access Token</h4>
+<p>Make sure your secure agents can access the GitHub API to store and retrieve the Alert Service configuration file.</p>
+<p>This Alert Service Implementation can use Github Gist (both Cloud and On premise Github Enterprise Edition) as a storage for its configuration
+It is recommended to use private gist to store this configuration, you will need to create Security token to access private gists via API</p>
+<ol>
+<li>
+<p>Login to Github with an account that would be owner of the configurations (this should be likely service Account or account managed by IT Infrastructure administrators)</p>
+</li>
+<li>
+<p>Go to <a href="https://github.com/settings/tokens">Account Settings/Developer Settings/Personal access tokens</a></p>
+</li>
+<li>
+<p>Create new token and give it descriptive name such as <code>IICS-Configuration-Gist-Access</code></p>
+</li>
+<li>
+<p>Select only gist permission</p>
+<p><a href="doc/images/Github_New_personal_access_token.png" target="_blank" rel="noopener noreferrer"><img src="doc/images/Github_New_personal_access_token.png" alt="Github_New_personal_access_token" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Capture generated token and save it in a save location for later use in the Service Connector configuration after Deployment of the IICS package</p>
+<p><a href="doc/images/Personal_Access_Tokens.png" target="_blank" rel="noopener noreferrer"><img src="doc/images/Personal_Access_Tokens.png" alt="Personal_Access_Tokens" style="max-width:100%;"></a></p>
+</li>
+</ol>
+<p>Connector Properties</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_uri</td>
+<td>Base URI of the REST endpoint Base URI of the REST endpoint <a href="https://api.github.com">https://api.github.com</a>
+</td>
+</tr>
+<tr>
+<td>access_token</td>
+<td>Gist API Access Token</td>
+</tr>
+<tr>
+<td>api_version</td>
+<td>API Version (currently V3)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gitlab-snippets">
+<a id="user-content-gitlab-snippets" class="anchor" href="#gitlab-snippets" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gitlab-snippets</h3>
+<p>Provides Support to store  and retrieve configurations or other files as GitLab Snippets
+See <a href="https://gitlab.com/help/api/README.md" rel="nofollow">Gilab API Documentation</a></p>
+<h4 id="setup-gitlab-account-and-access-token">
+<a id="user-content-setup-gitlab-account-and-access-token" class="anchor" href="#setup-gitlab-account-and-access-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup GitLab Account and Access Token</h4>
+<p>Make sure your secure agents can access the GitLab API to store and retrieve the Alert Service configuration file.</p>
+<p>This Alert Service Implementation can use Cloud Hosted or on-premise GitLab as a storage for its configuration
+It is recommended to use private snippets to store this configuration, you will need to create Security token to access private Assets via API</p>
+<ol>
+<li>
+<p>Login to GitLab with an account that would be owner of the configurations (this should be likely service Account or account managed by IT Infrastructure administrators)</p>
+</li>
+<li>
+<p>Go to <a href="https://gitlab.com/profile/personal_access_tokens" rel="nofollow">Account Settings/Access Tokens</a></p>
+</li>
+<li>
+<p>Create new token and give it descriptive name such as <code>IICS-Configuration-API-Access</code></p>
+</li>
+<li>
+<p>Optionally set expiration date</p>
+</li>
+<li>
+<p>Select api access permission</p>
+<p><a href="doc/images/GitLab_Personal_Access_Tokens_User_Settings.png" target="_blank" rel="noopener noreferrer"><img src="doc/images/GitLab_Personal_Access_Tokens_User_Settings.png" alt="Personal Access Tokens" style="max-width:100%;"></a></p>
+</li>
+<li>
+<p>Capture generated Token and use it to configure GitLab Service Connector</p>
+</li>
+</ol>
+<p>Connector Properties</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base_uri</td>
+<td>GitLab API Base URL (example: <a href="https://gitlab.example.com/api" rel="nofollow">https://gitlab.example.com/api</a>)</td>
+</tr>
+<tr>
+<td>access_token</td>
+<td>API Access Token</td>
+</tr>
+<tr>
+<td>api_version</td>
+<td>API Version (currently v4)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ics-api">
+<a id="user-content-ics-api" class="anchor" href="#ics-api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ICS-API</h3>
+<p>This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities</p>
+<h3 id="ipaas-configuration-db">
+<a id="user-content-ipaas-configuration-db" class="anchor" href="#ipaas-configuration-db" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IPaaS-Configuration-DB</h3>
+<p>Database Used to Store Simple key/value configurations</p>
+<p>This Connection provides ability to store configurations in External Database and Guides/processes to manage such configurations</p>
+<h3 id="ipaas-logging">
+<a id="user-content-ipaas-logging" class="anchor" href="#ipaas-logging" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>IPaaS-Logging</h3>
+<p>Design: Explore/Logging/Connections/IPaaS-Logging.AI_CONNECTION.xml
+Description: IPaaS Database for Logging and job tracking</p>
 <h2 id="processes">
 <a id="user-content-processes" class="anchor" href="#processes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Processes</h2>
 <h2 id="glossary-of-terms-used-in-this-documents">
@@ -837,7 +1004,7 @@ Use build from source method which allows you to automate these adjustments in b
 </tr>
 <tr>
 <td>API</td>
-<td>Application Programming Interface</td>
+<td>`Application Programming Interface</td>
 </tr>
 <tr>
 <td>REST</td>
