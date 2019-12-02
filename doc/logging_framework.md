@@ -4,9 +4,18 @@
 
 - [IICS Logging Framework](#iics-logging-framework)
   - [Overview](#overview)
+    - [IICS Logging Diagram](#iics-logging-diagram)
     - [Decision Matrix](#decision-matrix)
+    - [Data Model](#data-model)
+      - [Job Tracking Table - IC_JOB_LOG](#job-tracking-table---ic_job_log)
+      - [Event Tracking table – IC_JOB_EVENTS](#event-tracking-table--ic_job_events)
     - [Job Tracking/Logging Bundle DB Setup](#job-trackinglogging-bundle-db-setup)
   - [Use of the Framework](#use-of-the-framework)
+    - [Job Input Fields](#job-input-fields)
+    - [Execution Context](#execution-context)
+    - [Job Temp Fields](#job-temp-fields)
+    - [Job Output Fields](#job-output-fields)
+    - [Job Process Initialization](#job-process-initialization)
 
 <!-- /TOC -->
 
@@ -29,22 +38,21 @@ Integration processes often share same characteristics:
 
 The typical CAI integration often composed of several Layers as depicted on the following Image
 
+### IICS Logging Diagram
+
 ![IICS Logging Design](https://www.lucidchart.com/publicSegments/view/459d21e0-5054-4cc1-a496-6b877cfbe108/image.png)
 
 Following this Design patter allows process execution to be easily tracked and monitored outside of runtime environment and improves error handling and speed of development as the components provided with this framework also significantly improve efficiency and ability to test and support implementation. This pattern also allows to build a robust unit and regression testing.
 
-- Trigger - Inbound SOAP or REST message, Scheduled Process, JMS or other events such as File Listener events
-- Job process - records Job tracking Information, handles subprocess reports, aggregates subprocess results in case of batch list processing, records job final status, records error events in case of unexpected job failure
-- Integration Process - Runs actual Integration tasks, This process can be composed of many chained processes, sub-processes and records events such as
-    - INFO - Start/Finish or milestones
-    - WARNING – Non Critical, non interrupting errors
-    - ERROR – Critical, interrupting errors
+- Trigger - Inbound SOAP or REST message, Scheduled Process, JMS or other events such as a File Listener events
+- Job process - records a Job tracking Information, handles subprocess reports, aggregates subprocess results in case of batch list processing, records job final status, records error events in case of unexpected job failure
+- Integration Process - Performs actual integration tasks. This process can be composed of many chained processes, sub-processes and records events such as
+  - INFO - Start/Finish or milestones
+  - WARNING – Non Critical, non interrupting errors
+  - ERROR – Critical, interrupting errors
 
 Integration process and its children propagate critical errors upstream and all unexpected interrupting errors are handled by the main Job process
 This framework is designed with different options to store the logging and tracking data. It uses simple data model composed of two related objects/entities
-
-- Job Tracking Table - IC_JOB_LOG
-- Event Tracking table – IC_JOB_EVENTS
 
 Framework can be  used with any relational Database and Salesforce as backend store for log entries. It currently provides a support for following back-ends
 
@@ -64,6 +72,41 @@ Framework can be  used with any relational Database and Salesforce as backend st
 | Salesforce would be a primary UI to inspect log data | Prefer to store data on premise or Cloud DB hosted at same location as secure agents |
 |                                                      | Already have existing Staging DB used by Secure agents or other integrations         |
 
+### Data Model
+
+![SFDC Schema Logging](images/Salesforce_Schema_Builder_Logging.png)
+
+#### Job Tracking Table - IC_JOB_LOG
+
+| Field          | Type                 | Description                                                                                                                             |
+| -------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| JOB_ID         | VARCHAR(36) NOT NULL | PK - uuid                                                                                                                               |
+| JOB_PROCESS_ID | BIGINT               | Matching main job process ID (this process id is passed down to all sub processes as a parameter to allow tracking and event reporting) |
+| JOB_NAME       | VARCHAR(255)         | Job Name, Usually Matches the JOB Process Name                                                                                          |
+| START_DATE     | TIMESTAMP(6)         | Start Date                                                                                                                              |
+| END_DATE       | TIMESTAMP(6)         | End Date                                                                                                                                |
+| STATUS         | SMALLINT             | 1-Running, 2-Failed, 3-Completed                                                                                                        |
+| INITIATOR      | VARCHAR(255)         | User Login Id (system user or actual user who started a job)                                                                            |
+| ORG_ID         | VARCHAR(32)          | IICS Org ID                                                                                                                             |
+| ENVIRONMENT    | VARCHAR(256)         | ICCS Environment (Resolved from URN Mapping )                                                                                           |
+
+#### Event Tracking table – IC_JOB_EVENTS
+
+| Field         | Type                 | Description                                                  |
+| ------------- | -------------------- | ------------------------------------------------------------ |
+| EVENT_ID      | VARCHAR(36) NOT NULL | PK GUID                                                      |
+| JOB_ID        | VARCHAR(36)          | FK Job ID (main Job tracking ID)                             |
+| PROCESS_ID    | BIGINT               | Process ID that Generated Event                              |
+| PROCESS_NAME  | VARCHAR(256)         | Process Name                                                 |
+| PROCESS_TITLE | VARCHAR(256)         | Process Title                                                |
+| LOGGING_LEVEL | SMALLINT             | 1=INFO, 2=WARNING, 3=ERROR                                   |
+| EVENT_TIME    | TIMESTAMP(6)         | Event Timestamp                                              |
+| EVENT_MESSAGE | VARCHAR(1024)        | Event Message                                                |
+| EVENT_DETAIL  | TEXT                 | Event Detail                                                 |
+| ORG_ID        | VARCHAR(32)          | Org ID                                                       |
+| ENVIRONMENT   | VARCHAR(256)         | ICCS Environment (Resolved from URN Mapping )                |
+| INITIATOR     | VARCHAR(255)         | User Login Id (system user or actual user who started a job) |
+
 ### Job Tracking/Logging Bundle DB Setup
 
 Framework provides ICAI Guide and Process which can automate DB Configuration
@@ -79,7 +122,112 @@ Following Table also provides links to pre-defined Informatica Data Access Servi
 
 ## Use of the Framework
 
-TBD
+The Logging Framework Bundle Provides examples end Templates of the processes.
+Most of integration processes will start with some Event as Depicted on [IICS Logging Diagram](#iics-logging-diagram)
+
+Process Can Be started by
+
+- IICS Scheduler
+- Inbound Message on Cloud
+- Inbound Message on Secure Agent
+- JMS Message Listener
+- Any of the File based Listeners (File Connector, FTP, AWS S3 Connector)
+- Salesforce Eventing
+
+Trigger Process is responsible to capture and react to specified events and start corresponding Job Process.
+This process often runs job in asynchronous fashion but in some cases it runs Integration synchronously. 
+Synchronous invocation more common for interactive composite services where caller service needs to receive result of event processing in rea-time synchronous pattern.
+You should prefer asynchronous behaviors whenever overall response times
+
+Example Event Handler With Asynchronous processing
+
+![Inbound Message Handler](images/Application_Integration_Inbound_Handler.png)
+
+Main job process is responsible to create Job Entry in the Logging DB It also often defines Integration Specific
+Inbound Parameters which are typically passed down to Integration (ETL) Sub process. See below image of such Job process.
+
+![Job Process](images/Application_Integration_Job_Process.png)
+
+All processes participation in this execution chain `Trigger > Job > Integration SubProcess` share a set of common input, temporary and output fields
+
+### Job Input Fields
+
+| Field               | Type                        | Description                               |
+| ------------------- | --------------------------- | ----------------------------------------- |
+| in_context          | $po:ProcessExecutionContext | Execution context Based on Process object |
+| in_wait_to_complete | boolean                     | Defines whether the Job should wait for ETL process completion or run asynchronously                                          |
+
+> Note that the Execution Context is used to pass following data to all downstream processes and is dynamically updated and passed down to all child processes in execution chain, 
+> Note that there are typically tow context objects (in_context and tmp_context or out_context) tmp/out contexts are passed to child processes.
+
+### Execution Context
+
+This is a process Object Structure containing following fields, which allow us to track all Integration events within execution chain composed of one or many sub-processes against common Job ID
+
+| Field           | Type    | Description                                              |
+| --------------- | ------- | -------------------------------------------------------- |
+| jobId           | string  | Job ID (GUID)                                            |
+| mainProcessId   | integer | Main Process ID (typically Job ID or Trigger process ID) |
+| parentProcessId | integer | Parent Process ID                                        |
+
+### Job Temp Fields
+
+| Field                        | Type                         | Description                                                                                                                 |
+| ---------------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| tmp_process_name             | string                       | Must match the actual process Name (it is used to generate process title and must be updated when using a Template process) |
+| tmp_process_title            | string                       | Stores generated process Title                                                                                                                            |
+| tmp_script_out               | string                       | Temporary output used when updating process Title or other temp outputs                                                                                                                            |
+| tmp_CreateJobLogEventRequest | $po:CreateJobLogEventRequest | Used to create Log Events                                                                                                                            |
+|                              |                              |                                                                                                                             |
+
+### Job Output Fields
+
+Job always returns out_context (its own execution context which contains process ID, And Job id)
+
+| Field       | Type   | Description                                        |
+| ----------- | ------ | -------------------------------------------------- |
+| out_context | string |                                                    |
+| Other       | Any    | Output parameters are specific to each integration |
+
+### Job Process Initialization
+
+All Job Processes follow the same pattern so minimal changes are required when you use provided Process Tenplate.
+
+TODO -ADD Details
+
+Example Sub-process Fault Event Handling
+
+```xquery
+let $detail := $output.faultInfo[1]/detail
+let $error_detail := switch (true())
+        case ($detail/text()) return $detail/text()
+        case ($detail/* instance of element()) return util:toXML($detail)
+        default return string($detail)
+
+let $pb_request := $input.in_StatusUpdate
+return
+<CreateJobLogEventRequest>
+   <event_message>Job Fault</event_message>
+   <event_time>{current-dateTime()}</event_time>
+   <event_detail>Error Code: {$output.faultInfo[1]/code}
+Error Reason: {$output.faultInfo[1]/reason}
+Error Detail:
+{$error_detail}
+Request Data:
+{ (: it might be useful to print out the input parameters of the process to log details :)
+ for $field in $pb_request/*
+ return
+ concat(local-name($field),':',$field/text(),' ')
+}
+
+</event_detail>
+   <process_id>{$output.out_context[1]/parentProcessId}</process_id>
+   <logging_level>3</logging_level>
+   <process_name>{$temp.tmp_process_name }</process_name>
+   {$output.out_context }
+   <process_title>{$temp.tmp_process_title}</process_title>
+</CreateJobLogEventRequest>
+```
 
 [ddl_MSSQL]: https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MSSQL.sql
 [ddl_Mysql]: https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MySQL.sql
