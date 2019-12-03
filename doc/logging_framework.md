@@ -34,6 +34,12 @@
       - [Integration Completed](#integration-completed)
       - [Error](#error)
   - [Logging Framework Guides](#logging-framework-guides)
+    - [iPaaS_Log_Search_DB](#ipaas_log_search_db)
+      - [Main Screen](#main-screen)
+      - [Search Events](#search-events)
+      - [Job View](#job-view)
+      - [Process Views](#process-views)
+      - [Faulted Process View](#faulted-process-view)
 
 <!-- /TOC -->
 
@@ -491,6 +497,30 @@ Logging framework  provides set of pre-built guides that provide ability to
 - Search and Inspect Logged Data
 - Create Custom guides to facilitate unit testing and Debugging of the Integration process while
 - Set of How-tos and demos to configure and use logging framework
+
+### iPaaS_Log_Search_DB 
+
+This Guide Provides Administrative and troubleshooting functions such as - search IPaaS ICAI Job logs - ability to find job related processes
+
+#### Main Screen
+
+![iPaaS_Log_Search_Main](images/iPaaS_Log_Search_Main.png)
+
+#### Search Events
+
+![iPaaS_Log_Search_Error_Events](images/iPaaS_Log_Search_Error_Events.png)
+
+#### Job View
+
+![iPaaS_Log_Search_Job_View](images/iPaaS_Log_Search_Job_View.png)
+
+#### Process Views
+
+![iPaaS_Log_Search_Process_View](images/iPaaS_Log_Search_Process_View.png)
+
+#### Faulted Process View
+
+![Application_Integration_Console_Process_View_ValidationError](images/Application_Integration_Console_Process_View_ValidationError.png)
 
 | Name                               | Location                                                              | Description                                                                                                                                                                                                                                                                                          |
 | ---------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
