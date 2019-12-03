@@ -18,11 +18,22 @@
     - [Job Process Initialization](#job-process-initialization)
       - [Setting process Tile](#setting-process-tile)
       - [Set Execution Context](#set-execution-context)
-  - [Creating Job Entry](#creating-job-entry)
-  - [Invoke Main Integration Process](#invoke-main-integration-process)
-  - [Error Handling](#error-handling)
+    - [Creating Job Entry](#creating-job-entry)
+    - [Invoke Main Integration Process](#invoke-main-integration-process)
+    - [Error Handling](#error-handling)
       - [Example Sub-process Fault Event Handling](#example-sub-process-fault-event-handling)
-    - [Logging Framework Processes](#logging-framework-processes)
+    - [Integration Processes](#integration-processes)
+  - [Logging Framework Processes](#logging-framework-processes)
+    - [SP-IPaaS-Create-Job-Entry](#sp-ipaas-create-job-entry)
+      - [Input](#input)
+    - [SP-IPaaS-Update-Job-Entry](#sp-ipaas-update-job-entry)
+      - [Input](#input-1)
+    - [SP-IPaaS-Create-Job-Event-Entry](#sp-ipaas-create-job-event-entry)
+      - [Input Examples](#input-examples)
+      - [Integration Started](#integration-started)
+      - [Integration Completed](#integration-completed)
+      - [Error](#error)
+  - [Logging Framework Guides](#logging-framework-guides)
 
 <!-- /TOC -->
 
@@ -261,7 +272,7 @@ else
   </ProcessExecutionContext>
 ```
 
-## Creating Job Entry
+### Creating Job Entry
 
 First step after process Initialization is to create a Job Entry.
 It is a simple insert to Logging DB or create SFDC Object depending if you use DB or SFDC as storage provider for logs
@@ -274,10 +285,9 @@ Input is the `CreateJobLogEntryRequest` process object generated as follows.
    <JobName>{$temp.tmp_process_title}</JobName>
    <ProcessId>{util:getProcessId()}</ProcessId>
 </CreateJobLogEntryRequest>
-
 ```
 
-## Invoke Main Integration Process
+### Invoke Main Integration Process
 
 Main integration process is responsible to perform actual integration steps.
 It must have at least Process Execution Context `in_context` input parameter which provides
@@ -287,7 +297,7 @@ other parameters driving the integration logic or representing inbound data to b
 Follow provided [naming conventions][icai_namimg_conventions] to define such parameters,
 prefer use of Process Objects to represent more complex data structures or lists of entries.
 
-## Error Handling
+### Error Handling
 
 Integration process can fail unexpectedly at any step of execution for different reasons.
 This framework provides unified error handling mechanism to catch, handle and track all unexpected errors.
@@ -336,7 +346,29 @@ Request Data:
 </CreateJobLogEventRequest>
 ```
 
-### Logging Framework Processes
+### Integration Processes
+
+Integration processes will vary significantly depending on the Integration use cases, but all integration processes will have some steps in common such as start event, 
+end even, explicit Error handling for known expected errors  data Validation One or more interactions with integrated systems, They can implement retry logic, data validation and mapping etc.
+
+You can use provided ETL process template `Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB` or `Templates\Jobs_Logging_SFDC\TEMPLATE-SP-ETL-SFDC` as a scaffold to build your specific business logic
+
+This template contains pre-defined common Field and their Initialization as well as key business Logic building blocks such as Logging Steps and Error Handling Steps as depicted on following picture.
+
+![TEMPLATE-SP-ETL-SFDC](images/TEMPLATE-SP-ETL-SFDC.png)
+
+To Adjust process for your needs You have to do following
+
+1. Copy process to corresponding Project Folder
+2. Rename process to desired target Name
+3. Make sure that you also update the `tmp_process_name` variable to match your new process name
+4. Add Process title labels such as Object Id references as desired
+5. Update logging Steps wit Your custom messages and Logging details
+6. Replace provided Simulation of Fault with real System Integration Steps
+7. Add Input/Output parameters as needed
+8. Make sure You update The JOb and Trigger process to have matching parameters consistent with your requirements.
+
+## Logging Framework Processes
 
 Logging Framework contains implementation of logger Service for DB and Salesforce which have matching functionality and same data model.
 Both implementations use the same Process Object structures which encapsulate the Storage System interactions. Salesforce Implementation also
@@ -360,6 +392,118 @@ number of API calls to SFDC when you choose very granular verbose logging.
 | TEMPLATE-SP-ETL-DB                    | Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS.xml                     | Template for Integration Sub-Process (SP) Demo                                                        |
 | TEMPLATE-MP-Job-SFDC                  | Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-MP-Job-SFDC.PROCESS.xml                 | Template for Main Job Processes                                                                       |
 | TEMPLATE-SP-ETL-SFDC                  | Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-SP-ETL-SFDC.PROCESS.xml                 | Template for Integration Sub-Process (SP)                                                             |
+
+### SP-IPaaS-Create-Job-Entry
+
+Process Creates a new Job Entry
+
+![SP-IPaaS-Create-Job-Entry](images/SP-IPaaS-Create-Job-Entry.png)
+
+#### Input
+
+Example: in_CreateJobLogEntryRequest
+
+```xquery
+<CreateJobLogEntryRequest>
+   <StartDate>{fn:current-dateTime()}</StartDate>
+   <JobName>{$temp.tmp_process_title}</JobName>
+   <ProcessId>{util:getProcessId()}</ProcessId>
+</CreateJobLogEntryRequest>
+```
+
+### SP-IPaaS-Update-Job-Entry
+
+Process Updates Job Entry with final Status and End Time
+
+![SP-IPaaS-Update-Job-Entry](images/SP-IPaaS-Update-Job-Entry.png)
+
+#### Input
+
+Example: in_UpdateJobLogEntryRequest
+
+Success
+
+![tmp_UpdateJobLogEntryRequestStatus](images/UpdateJobLogEntryRequestStatus.png)
+
+Error
+
+![tmp_UpdateJobLogEntryRequestStatus_error](images/UpdateJobLogEntryRequestStatus_error.png)
+
+### SP-IPaaS-Create-Job-Event-Entry
+
+Process Creates Integration Job Event Entries
+
+#### Input Examples
+
+#### Integration Started
+
+```xquery
+<CreateJobLogEventRequest>
+   <event_message>TODO: Integration Started Message</event_message>
+   <event_time>{current-dateTime()}</event_time>
+   <event_detail>TODO: ADD DETAIL</event_detail>
+   <process_id>{$temp.tmp_context[1]/parentProcessId}</process_id>
+   <logging_level>1</logging_level>
+   <process_name>{$temp.tmp_process_name}</process_name>
+   <process_title>{$temp.tmp_process_title}</process_title>
+   {$temp.tmp_context[1]}
+</CreateJobLogEventRequest>
+```
+
+#### Integration Completed
+
+```xquery
+<CreateJobLogEventRequest>
+   <event_message>TODO: Step Completed Message</event_message>
+   <event_time>{current-dateTime()}</event_time>
+   <event_detail>TODO: Set Detail Info</event_detail>
+   <process_id>{$temp.tmp_context[1]/parentProcessId}</process_id>
+   <logging_level>1</logging_level>
+   <process_name>{$temp.tmp_process_name}</process_name>
+   <process_title>{$temp.tmp_process_title}</process_title>
+   {$temp.tmp_context[1]}
+</CreateJobLogEventRequest>
+```
+
+#### Error
+
+```xquery
+<CreateJobLogEventRequest>
+   <event_message>TODO: Update this message: Integration Step Failed</event_message>
+   <event_time>{current-dateTime()}</event_time>
+   <event_detail>
+Code: {$output.faultInfo[1]/code}
+Reason:{$output.faultInfo[1]/reason}
+Detail:
+{$output.faultInfo[1]/detail}</event_detail>
+   <process_id>{$temp.tmp_context[1]/parentProcessId}</process_id>
+   <logging_level>3</logging_level>
+   <process_name>{$temp.tmp_process_name}</process_name>
+   <process_title>{$temp.tmp_process_title}</process_title>
+   {$temp.tmp_context[1]}
+</CreateJobLogEventRequest>
+```
+
+## Logging Framework Guides
+
+Logging framework  provides set of pre-built guides that provide ability to
+
+- Search and Inspect Logged Data
+- Create Custom guides to facilitate unit testing and Debugging of the Integration process while
+- Set of How-tos and demos to configure and use logging framework
+
+| Name                               | Location                                                              | Description                                                                                                                                                                                                                                                                                          |
+| ---------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| iPaaS_Job_View_DB                  | Explore/Logging/Guides_Database/iPaaS Job View DB.GUIDE.xml           | Guide  Provides Administrative and troubleshooting functions such as  - Search IPaaS  ICRT Job  logs - ability to find job related processes                                                                                                                                                         |
+| iPaaS_Log_Search_DB                | Explore/Logging/Guides_Database/iPaaS Log Search DB.GUIDE.xml         | This Guide  Provides Administrative and troubleshooting functions such as  - search IPaaS ICAI Job  logs - ability to find job related processes                                                                                                                                                     |
+| iPaaS_Job_View                     | Explore/Logging/Guides_SFDC/iPaaS Job View.GUIDE.xml                  | Guide  Provides Administrative and troubleshooting functions such as  - Search IPaaS  ICRT Job  logs - ability to find job related processes                                                                                                                                                         |
+| iPaaS_Log_Search_SFDC              | Explore/Logging/Guides_SFDC/iPaaS Log Search SFDC.GUIDE.xml           | This Guide  Provides Administrative and troubleshooting functions such as  - Search IPaaS  ICRT Job  logs - ability to find job related processes                                                                                                                                                    |
+| View_Job_Details                   | Explore/Logging/Guides_SFDC/View Job Details.GUIDE.xml                | Guide  Provides Administrative and troubleshooting functions such as  - Search IPaaS  ICRT Job  logs - ability to find job related processes                                                                                                                                                         |
+| Logging_Framework_Configuration    | Explore/Logging/Guides/Logging Framework Configuration.GUIDE.xml      | This Guide helps to Setup and Configure  Logging and Tracking Components                                                                                                                                                                                                                             |
+| SP_Show_Process_Links              | Explore/Logging/Guides/SP Show Process Links.GUIDE.xml                | Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com |
+| Setup_Logging_DB                   | Explore/Logging/Setup/Setup Logging DB.GUIDE.xml                      | Guide to setup DB Logging use PostgreSQL                                                                                                                                                                                                                                                             |
+| How-To_Use_Template_Processes_DB   | Explore/Templates/Guides/How-To Use Template Processes DB.GUIDE.xml   | This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend                                                                                                                                                                                           |
+| How-To_Use_Template_Processes_SFDC | Explore/Templates/Guides/How-To Use Template Processes SFDC.GUIDE.xml | This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend                                                                                                                                                                                         |
 
 [ddl_MSSQL]: https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MSSQL.sql
 [ddl_Mysql]: https://gist.githubusercontent.com/jbrazda/8e0be794bebf57965b4b810ee4ee1c67/raw/IICS_Logging_MySQL.sql
