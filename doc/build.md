@@ -1,6 +1,5 @@
 # Automation to Build and Deploy IICS Design Packages
 
-
 This package contains [Apache Ant Script](../build.xml) to maintain the sources in VCS Repository, build and deploy to target IICS environments
 
 ## Pre-Requisites
@@ -17,7 +16,7 @@ To build and install from source, you'll need a following set of tools
 
 Main configuration file defines key modules locations and enables/disables supporting Tools maintained externally as a dependency.
 
-Example main Configuration file (build.properties) 
+Example main Configuration file (build.properties)
 
 ```properties
 # lib path
@@ -31,15 +30,16 @@ tools.iics.win.x86=${tools.lib}/iics.exe
 tools.iics.win.amd64=${tools.lib}/iics.exe
 
 ## url.download.iics - OS Specific URL
-url.download.iics.mac=https://github.com/InformaticaCloudApplicationIntegration/Tools/raw/master/IICS%20Asset%20Management%20CLI/v2/mac-x86_64/iics
-url.download.iics.win=https://github.com/InformaticaCloudApplicationIntegration/Tools/raw/master/IICS%20Asset%20Management%20CLI/v2/win-x86_64/iics.exe
-url.download.iics.win.x86=https://github.com/InformaticaCloudApplicationIntegration/Tools/raw/master/IICS%20Asset%20Management%20CLI/v2/win-i386/iics.exe
-url.download.iics.linux=https://github.com/InformaticaCloudApplicationIntegration/Tools/raw/master/IICS%20Asset%20Management%20CLI/v2/linux-x86_64/iics
+url.download.iics.base=https://github.com/InformaticaCloudApplicationIntegration/Tools/raw/master/IICS%20Asset%20Management%20CLI/v2
+url.download.iics.mac=${url.download.iics.base}/mac-x86_64/iics
+url.download.iics.win=${url.download.iics.base}/win-x86_64/iics.exe
+url.download.iics.win.x86=${url.download.iics.base}/win-i386/iics.exe
+url.download.iics.linux=${url.download.iics.base}/linux-x86_64/iics
 
 ## URLs to Download IICS Migration and Reporting Tools Modules
 url.download.iics.tools.transform.archive=icai_migration_tools.zip
 url.download.iics.tools.transform=https://raw.githubusercontent.com/jbrazda/icai-migration-tools/master/dist/${url.download.iics.tools.transform.archive}
-url.download.iics.tools.reporting.archive=v1.1.zip
+url.download.iics.tools.reporting.archive=v1.3.zip
 url.download.iics.tools.reporting=https://github.com/jbrazda/iics-reporting-tools/archive/${url.download.iics.tools.reporting.archive}
 
 ## Directories for IICS Tools Module Installations
@@ -93,7 +93,7 @@ iics.password.prod=SET_PASSWORD
 Update existing or copy [conf/iclab-dev.release.properties](conf/iclab-dev.release.properties) file which defines a key Environment specific parameters
 
 ```properties
-# define a comma separated list of environment org labels such as 
+# define a comma separated list of environment org labels such as
 # dev,test,uat,prod
 iics.environment.list=dev,test,prod
 
@@ -101,7 +101,7 @@ iics.environment.list=dev,test,prod
 # and other environment Specific properties
 # we recommend to use ${user.home}/iics protected directory
 # never commit this file to version control with this project as it contains credentials to your IICS Orgs
-# the iics.external.properties must contain set of properties 
+# the iics.external.properties must contain set of properties
 # following this naming convention for each environment defined in the iics.environment.list
 # iics.user.${environment}=
 # iics.password.${environment}=
@@ -109,18 +109,18 @@ iics.environment.list=dev,test,prod
 iics.external.properties.dir=${user.home}/iics
 iics.external.properties=${iics.external.properties.dir}/iclab.properties
 
-# this query is used by iics list command to retrieve available sources from repository 
+# this query is used by iics list command to retrieve available sources from repository
 # to extract the designs from IICS
 # see https://network.informatica.com/docs/DOC-18245#jive_content_id_List_Command
 iics.query=-q "location==Alerting"
 
-# Defines the output file for the list command 
+# Defines the output file for the list command
 # the output location will be driven by the following expression
 # ${basedir}/target/${selected.release.basename}/export/${iics.source.environment}/${iics.list.output}
 iics.list.output=export_list.txt
 
 # Defines the output file name for iics export command
-# the output location will be driven by the 
+# the output location will be driven by the
 # ${basedir}/target/${selected.release.basename}/export/${iics.source.environment}/${iics.export.output}
 iics.export.output=FaultAlertService.zip
 
@@ -194,7 +194,7 @@ ipd.migrate.processes.tracingLevelUpdate.enabled=true
 ipd.migrate.processes.tracingLevelUpdate.levels=verbose
 
 # Includes Excludes for each level
-# Use this property to include specific processes to get their Logging levels updated 
+# Use this property to include specific processes to get their Logging levels updated
 # Use relative path reference starting from $basedir or use Ant pattern expressions.
 # This property is required when migrate.processObjects.enabled=true is set
 
@@ -220,7 +220,7 @@ ipd.migrate.processes.tracingLevelUpdate.execute=false
 ipd.migrate.processes.suspendOnFault.true.execute=true
 ipd.migrate.processes.suspendOnFault.true.includes=**/*.PROCESS.xml
 ipd.migrate.processes.suspendOnFault.true.excludes=
- 
+
 #includes/excludes for processes to disable suspendOnFault
 ipd.migrate.processes.suspendOnFault.false.execute=true
 ipd.migrate.processes.suspendOnFault.false.includes=none
@@ -243,19 +243,21 @@ Following is a list of available targets which you can retrieve by running `ant 
 
 ```text
 ant -projecthelp
-Buildfile: /Users/jbrazda/git/icai-fault-alert-service/build.xml
+Buildfile: /Users/jbrazda/git/icai-ips-bundle/build.xml
 
-            IICS CAI Component Build Script
+            IICS CAI Components Build Script
 
 Main targets:
 
- clean.release  Deletes Export/import temporary files in ${basedir}/target/${iics.release.basename}
- download.src   Downloads Designs From Source Environment Org using iics Export utility
- help           help - describes how to use this script
- import         Imports package for a select Environment and Package Configuration
- package.src    Builds Package for specified target environment from ${basedir}/src/ipd
- publish        Publishes Objects Defined in the Configuration Files
- update.src     Updates design sources directory for a Source Environment Org using iics Export/Extract utility
+ build.deploy             Combines package.src, import, publish steps into one step
+ build.ipd.dist.packages  Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github
+ clean.release            Cleans Export/import files in ${basedir}/target/${iics.release.basename}
+ download.src             Downloads Designs From Source Environment Org using iics export utility
+ help                     help - describes how to use this script
+ import                   Imports package using a selected Environment and Package configuration
+ package.src              Builds Package for specified target environment from ${basedir}/src/ipd
+ publish                  Publishes Objects Defined in the Configuration Files
+ update.src               Updates ${basedir}/src/ipd directory from Source Environment Org using iics Export utility
 Default target: help
 ```
 
@@ -305,55 +307,152 @@ Import package using an `import` target of ant script
 
 Publish imported resources using a `publish` target of ant script
 
-#### Example package.src Script output
+## Build Using Command Line
 
-Command
+### Package Sources
+
+Use following command as an example
+
+Required properties to be set
+
+| Property                        | Description                                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `iics.release`                  | Points to Release configuration file                                                             |
+| `iics.target.environment`       | Must be one of the Environments specified in the iics.release.properties `iics.environment.list` |
+| `iics.target.package.config`    | Defines Target package Configuration file                                                        |
+| `iics.package.transform.config` | Required when the migration transformation step is enabled (`tools.transform.disabled=false`)    |
+
+> Note that reference property `iics.package.transform.config` is a relative reference from the actual location of the transformation build script module located in the
+> `project_root/target/lib/transform/build.xml` pointing typically to `../../../conf/your_custom.transform.properties`
+
+Below is the example of target directory contents where the build tool modules are expanded form their github distribution and the transformation and packaging is done in this directory as well. Also note that the `target` directory is excluded from version control and listed in `.gitignore` file. The `target` is a working directory of the provided build and transformation steps.
+
+```text
+target
+├── iics
+│   ├── export /-- this is where the package is exported from corresponding source environment
+│   │   └── dev
+│   │       ├── ICAI-IPS-Bundle.zip
+│   │       └── export_list.txt
+│   └── import /-- directory contains package step import packages produced in corresponding directory derived from the target environment name
+│       ├── dev
+│       │   └── ICAI-IPS-Bundle_iics_dev_all_designs.zip
+│       └── test
+│           └── ICAI-IPS-Bundle_iics_test_all_designs.zip
+├── lib
+│   ├── iics
+│   ├── reporting
+│   │   ├── LICENSE
+│   │   ├── README.html
+│   │   ├── README.md
+│   │   ├── build.properties
+│   │   ├── build.xml
+│   │   ├── doc
+│   │   │   ├── images
+│   │   │   │   ├── IICS\ _DesignReport_DependencyTree.png
+│   │   │   │   ├── IICS_Databases.png
+│   │   │   │   ├── IICS_DesignReport_with_Dependencies.png
+│   │   │   │   ├── IICS_Designs_Report.png
+│   │   │   │   └── IICS_Object_Impact_Analysis.png
+│   │   │   └── screenshots.md
+│   │   ├── iics
+│   │   │   ├── common.xqm
+│   │   │   ├── databases
+│   │   │   │   └── databases.xqm
+│   │   │   ├── design_detail.xqm
+│   │   │   ├── designs_report.xqm
+│   │   │   ├── modules
+│   │   │   │   ├── html.xqm
+│   │   │   │   ├── ipd-metadata-html.xqm
+│   │   │   │   ├── ipd-metadata.xqm
+│   │   │   │   └── util.xqm
+│   │   │   └── static
+│   │   │       ├── external
+│   │   │       │   ├── databases.min.css
+│   │   │       │   ├── datatables.min.js
+│   │   │       │   ├── informatica-logo.png
+│   │   │       │   └── plotly-latest.min.js
+│   │   │       ├── icons
+│   │   │       │   ├── connections.svg
+│   │   │       │   ├── guide.svg
+│   │   │       │   ├── infa-logo.svg
+│   │   │       │   ├── my_processes.svg
+│   │   │       │   ├── process.svg
+│   │   │       │   ├── processobject-x22.png
+│   │   │       │   ├── service_connector.svg
+│   │   │       │   ├── success.svg
+│   │   │       │   ├── taskflow.svg
+│   │   │       │   └── validation_error.svg
+│   │   │       ├── js.js
+│   │   │       └── style.css
+│   │   └── sample-data
+│   │       └── graph-vis
+│   │           └── basic.html
+│   └── transform
+│       ├── build.xml
+│       ├── lib
+│       │   ├── ant
+│       │   │   └── migration.properties
+│       │   ├── ant-contrib-1.0b3.jar
+│       │   └── saxon9he.jar
+│       └── xsl
+│           ├── format_xml.xsl
+│           ├── move_service_to_agent.xsl
+│           ├── move_service_to_cloud.xsl
+│           ├── remove_tags.xsl
+│           ├── set_service_suspendOnFault.xsl
+│           └── set_service_tracingLevel.xsl
+└── transform /-- directory used as temp for transformation and packaging of the designs
+
+```
 
 ```shell
 ant package.src \
--Diics.release=./conf/iclab-dev.release.properties \
+-Diics.release=./conf/iics.release.properties \
 -Diics.target.environment=dev \
 -Diics.target.package.config=./conf/all_designs.package.txt \
--Dselected.transform.properties=/Users/jbrazda/iics/AlertServices_iclab_dev.transform.properties
+-Diics.package.transform.config=../../../conf/template.transform.properties
 ```
 
 See [Example Output](example_package.src_output.txt)
 
-## Build Using Command Line
+### Build a full package, DEV Environment Target
 
-You can run the same as in eclipse from command line using a following commands
-(this is personally my preferred method)
+This is typically used on for the first migration of of a corresponding package to upstream environment
 
-Build a full package, DEV Environment Target
+> Note that the any external dependencies used by the package like  connections, or other designs from other projects must be imported before package that depends on those resources
+> We typically use this step in combination wit reporting tool to inspect the contents and dependencies of the target package before running actual import/publish steps
 
 ```shell
 ant package.src \
--Diics.release=./conf/iclab-dev.release.properties \
+-Diics.release=./conf/iics.release.properties \
 -Diics.target.environment=dev \
 -Diics.target.package.config=./conf/all_designs.package.txt \
--Dselected.transform.properties=/Users/jbrazda/iics/AlertServices_iclab_dev.transform.properties
+-Diics.package.transform.config=../../../conf/template.transform.properties
 ```
 
-Build a Package without Connections DEV Target
+## Build a Package without Connections DEV Target
+
+This command is used for subsequent deployments where we want to ensure that connections are excluded from import package to prevent their override on import and thus loosing the environment specific settings we did after first import this set of parameters  will be also used when using CI/CD tools to automate the migration of package to upstream environments
 
 ```shell
 ant package.src \
--Diics.release=./conf/iclab-dev.release.properties \
+-Diics.release=./conf/iics.release.properties \
 -Diics.target.environment=dev \
 -Diics.target.package.config=./conf/all_exclude_connections.package.txt
--Dselected.transform.properties=/Users/jbrazda/iics/AlertServices_iclab_dev.transform.properties
+-Diics.package.transform.config=../../../conf/template.transform.properties
 ```
 
-Import Package to test environment
+### Import Package to test environment
 
 ```shell
 ant import \
--Diics.release=./conf/iclab-dev.release.properties \
+-Diics.release=./conf/iics.release.properties \
 -Diics.target.environment=test \
 -Diics.target.package.config=./conf/all_exclude_connections.package.txt
 ```
 
-Publish Imported Assets
+## Publish Imported Assets
 
 ```shell
 ant publish \
@@ -362,7 +461,64 @@ ant publish \
 -Diics.target.publish.config=./conf/all_designs.publish.txt
 ```
 
-[alert_service_help]: https://network.informatica.com/onlinehelp/IICS/prod/CAI/en/index.htm#page/cai-aae-monitor/System_Services.html
+### Perform Build and Deploy in one step
+
+This ant target is a combination of above three steps (package, import, publish), This is also the command you want to use for automation of build and deployment by CI/CD tools.
+
+```shell
+ ant build.deploy \
+ -Diics.release=./conf/iics.release.properties \
+ -Diics.target.environment=test \
+ -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+ -Diics.package.transform.config=../../../conf/template.transform.properties \
+ -Diics.target.publish.config=./conf/all_designs.publish.txt \
+ -Dtools.reporting.disabled=true
+```
+
+## Download Package from Environment
+
+```shell
+ant download.src \
+-Diics.release=./conf/iclab-dev.release.properties \
+-Diics.source.environment=dev
+```
+
+## Update Sources for Version Control
+
+First make sure your local repository sits on the correct branch matching your export source environment i.e. `dev`
+
+Make sure your git tree up to date with remote
+
+```shell
+git pull --rebase
+```
+
+You might want to cleanup the `project_home/target/{release_name}` before updating the sources
+
+```shell
+ant clean.release \
+-Diics.release=./conf/iics.release.properties \
+-Diics.source.environment=dev
+```
+
+then run `update.src` target which will download the latest version of your package designs from source environment and expand package to `project_home/src/ipd` directory
+
+```shell
+ant update.src \
+-Diics.release=./conf/iics.release.properties \
+-Diics.source.environment=dev
+```
+
+Once the sources are update you can inspect the changes in the designs via reporting toll and git diff
+
+Once you confirmed that everything is up to date perform regular VCS commit
+
+```shell
+git add .
+git commit -m "Your message"
+git push
+```
+
 [development_setup]: https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/set_development_environment.md
 [iics_cli]: https://network.informatica.com/docs/DOC-18245
 [ipd_install_guide]: https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/install_process_developer.md

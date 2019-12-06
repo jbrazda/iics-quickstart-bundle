@@ -180,7 +180,7 @@ All processes participation in this execution chain `Trigger > Job > Integration
 | in_context          | $po:ProcessExecutionContext | Execution context Based on Process object |
 | in_wait_to_complete | boolean                     | Defines whether the Job should wait for ETL process completion or run asynchronously                                          |
 
-> Note that the Execution Context is used to pass following data to all downstream processes and is dynamically updated and passed down to all child processes in execution chain, 
+> Note that the Execution Context is used to pass following data to all downstream processes and is dynamically updated and passed down to all child processes in execution chain,
 > Note that there are typically tow context objects (in_context and tmp_context or out_context) tmp/out contexts are passed to child processes.
 
 ### Execution Context
@@ -282,7 +282,7 @@ else
 
 First step after process Initialization is to create a Job Entry.
 It is a simple insert to Logging DB or create SFDC Object depending if you use DB or SFDC as storage provider for logs
-Job entry is created via the `SP-IPaaS-Create-Job-Entry` or `SP-IPaaS-Update-Job-Entry-DB-{agentGroup}` process. 
+Job entry is created via the `SP-IPaaS-Create-Job-Entry` or `SP-IPaaS-Update-Job-Entry-DB-{agentGroup}` process.
 Input is the `CreateJobLogEntryRequest` process object generated as follows.
 
 ```xquery
@@ -354,7 +354,7 @@ Request Data:
 
 ### Integration Processes
 
-Integration processes will vary significantly depending on the Integration use cases, but all integration processes will have some steps in common such as start event, 
+Integration processes will vary significantly depending on the Integration use cases, but all integration processes will have some steps in common such as start event,
 end even, explicit Error handling for known expected errors  data Validation One or more interactions with integrated systems, They can implement retry logic, data validation and mapping etc.
 
 You can use provided ETL process template `Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB` or `Templates\Jobs_Logging_SFDC\TEMPLATE-SP-ETL-SFDC` as a scaffold to build your specific business logic
@@ -498,7 +498,7 @@ Logging framework  provides set of pre-built guides that provide ability to
 - Create Custom guides to facilitate unit testing and Debugging of the Integration process while
 - Set of How-tos and demos to configure and use logging framework
 
-### iPaaS_Log_Search_DB 
+### iPaaS_Log_Search_DB
 
 This Guide Provides Administrative and troubleshooting functions such as - search IPaaS ICAI Job logs - ability to find job related processes
 

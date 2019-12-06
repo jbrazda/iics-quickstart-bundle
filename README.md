@@ -134,7 +134,7 @@ Connector Properties
 ### gitlab-snippets
 
 Provides Support to store  and retrieve configurations or other files as GitLab Snippets
-See [Gilab API Documentation](https://gitlab.com/help/api/README.md)
+See [Gitlab API Documentation](https://gitlab.com/help/api/README.md)
 
 #### Setup GitLab Account and Access Token
 
