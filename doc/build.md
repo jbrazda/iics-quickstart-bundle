@@ -2,6 +2,30 @@
 
 This package contains [Apache Ant Script](../build.xml) to maintain the sources in VCS Repository, build and deploy to target IICS environments
 
+<!-- TOC -->
+
+- [Automation to Build and Deploy IICS Design Packages](#automation-to-build-and-deploy-iics-design-packages)
+  - [Pre-Requisites](#pre-requisites)
+  - [Inspect and adjust Main build.properties configuration file](#inspect-and-adjust-main-buildproperties-configuration-file)
+  - [Configure credentials file](#configure-credentials-file)
+    - [Transformation Properties](#transformation-properties)
+      - [Example Transformation Properties File](#example-transformation-properties-file)
+      - [Main Ant Script Properties](#main-ant-script-properties)
+      - [Ant Build Script](#ant-build-script)
+    - [Build Package From Source](#build-package-from-source)
+      - [In Process Developer](#in-process-developer)
+  - [Build Using Command Line](#build-using-command-line)
+    - [Package Sources](#package-sources)
+    - [Build a full package, DEV Environment Target](#build-a-full-package-dev-environment-target)
+  - [Build a Package without Connections DEV Target](#build-a-package-without-connections-dev-target)
+    - [Import Package to test environment](#import-package-to-test-environment)
+  - [Publish Imported Assets](#publish-imported-assets)
+    - [Perform Build and Deploy in one step](#perform-build-and-deploy-in-one-step)
+  - [Download Package from Environment](#download-package-from-environment)
+  - [Update Sources for Version Control](#update-sources-for-version-control)
+
+<!-- /TOC -->
+
 ## Pre-Requisites
 
 It is highly recommend to use the build from source as it allows you to change certain attributes of service deployment such as target Secure agent group, etc.
