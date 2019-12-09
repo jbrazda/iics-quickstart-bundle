@@ -525,6 +525,15 @@ ant clean.release \
 -Diics.source.environment=dev
 ```
 
+Build script ius using the Project name or tag to generate list of resources to be exported. you can also use pre-defined resource List as shown in following example
+
+```shell
+ant download.src \
+-Diics.release=./conf/iics.release.properties \
+-Diics.source.environment=dev \
+-Diics.export.list.location=./conf/export_list.txt
+```
+
 then run `update.src` target which will download the latest version of your package designs from source environment and expand package to `project_home/src/ipd` directory
 
 ```shell
