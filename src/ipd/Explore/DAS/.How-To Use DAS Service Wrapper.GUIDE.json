@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "4OI2DlXvTSHfBDKeDXeoOF",
+      "objectName": "How-To Use DAS Service Wrapper",
+      "objectType": "GUIDE",
+      "path": "/Explore/DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide Describes How to use Data Access Service Wrapper",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "B7O2htghGZ5i4rs-gt-3150651-2019-04-29T19:52:29.446Z::gt.xml"
+         }
+      }
+   }
+]

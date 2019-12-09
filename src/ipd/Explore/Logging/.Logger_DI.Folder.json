@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "i6O48qGrn2EepUsvnSviIl",
+      "objectName": "Logger_DI",
+      "objectType": "Folder",
+      "path": "/Explore/Logging",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Example Logging within DI Task Flows",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

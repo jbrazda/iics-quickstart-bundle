@@ -1,0 +1,58 @@
+[
+   {
+      "objectGuid": "1Vh3qdgOsYpjNAONqIMcsP",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "6WpXgRmRlWMg3Uvus96aeN"
+         ],
+         "repoInfo": {
+            "repoHandle": "0101P60B000000000008"
+         }
+      }
+   },
+   {
+      "objectGuid": "6WpXgRmRlWMg3Uvus96aeN",
+      "objectName": "NA",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0101P625000000000002"
+         }
+      }
+   }
+]

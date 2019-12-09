@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "810Wt8b51k8js0j7sVonmg",
+      "objectName": "m_Logging_UpdateJobEntry",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Mapping To update Job Entry with a final Status and End Time\nFinal Status should be\n2 - Failed\n3 - Completed",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0101P617000000000005"
+         }
+      }
+   }
+]

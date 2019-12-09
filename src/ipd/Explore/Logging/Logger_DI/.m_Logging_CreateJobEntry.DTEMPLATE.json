@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "3PMQLPBBRWdeGhD4nE1Z6T",
+      "objectName": "m_Logging_CreateJobEntry",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Mapping to create Job entry \nJob Entry is created in state 1-Running\nBecause task flows run in the cloud server instance as IPS process, use Cloud Server as environment",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0101P617000000000004"
+         }
+      }
+   }
+]

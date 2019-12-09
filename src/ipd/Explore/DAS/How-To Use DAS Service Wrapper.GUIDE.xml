@@ -1,0 +1,657 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>B7O2htghGZ5i4rs-gt-3150651-2019-04-29T19:52:29.446Z::gt.xml</types1:EntryId>
+      <types1:Name>How-To_Use_DAS_Service_Wrapper</types1:Name>
+      <types1:MimeType>application/xml+screenflow</types1:MimeType>
+      <types1:Description>Guide Describes How to use Data Access Service Wrapper</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-29T19:52:29Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:56:35Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:54:41Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.How_To_Use_DAS_Service_Wrapper/How_To_Use_DAS_Service_Wrapper.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                         xmlns:list="urn:activevos:spi:list:functions"
+                         allowRestart="true"
+                         displayName="How-To Use DAS Service Wrapper"
+                         doneOnEndStep="false"
+                         name="How-To_Use_DAS_Service_Wrapper"
+                         runAsUser="$current">
+            <description>Guide Describes How to use Data Access Service Wrapper</description>
+            <appliesTo/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <runOn target="desktop"/>
+            <notes/>
+            <deployment/>
+            <sendFeedback>
+               <emailTo/>
+            </sendFeedback>
+            <flow>
+               <startScreen id="jd300kk3">
+                  <title>Start</title>
+                  <body contentType="text/html"/>
+                  <actions>
+                     <action alt="" id="jd300kk3_jv2s3mu0" targetScreen="jv2s3mu0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="true"/>
+               </startScreen>
+               <screen id="jv2s3mu0">
+                  <title>DAS Service Documentation</title>
+                  <body contentType="text/html">&lt;h1 id="markdown-header-data-access-service-support-for-informatica-cloud-application-integration"&gt;Data Access Service Support for Informatica Cloud Application Integratio&lt;/h1&gt;
+&lt;h2 id="markdown-header-introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Informatica Application Integration Platform (Informatica Cloud Real Time - ICRT) provides many built in connectors including JDBC Connector.&lt;/p&gt;
+&lt;p&gt;Although JDBC Connector provide simple metadata-driven access to read and write database records, you may need some more advanced access that is not supported by this connector such as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bulk inserts, updates&lt;/li&gt;
+&lt;li&gt;Invoke Arbitrary SQL including DDL statements&lt;/li&gt;
+&lt;li&gt;Invoke Stored Procedures&lt;/li&gt;
+&lt;li&gt;Access Database Specific features such as Invoking Oracle Pipelined and Parallel Table Functions&lt;/li&gt;
+&lt;li&gt;Performance Optimized Queries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Informatica Process Engine provides built-in JDBC Connectivity which can be leveraged in such cases, but requires ad-hoc use of Data Access Service (DAS).&lt;/p&gt;
+&lt;p&gt;Data Access Service provides implementers with the ability to interact with a database to manipulate its structure and content, and execute queries and stored procedures.&lt;/p&gt;
+&lt;p&gt;This package contains Generic Wrapper for this Service That allows Consumption of this System Service directly from IPD processes&amp;nbsp;&lt;a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/com.activee.bpep.doc/html/UG28-9-1.html" rel="nofollow" data-is-external-link="true"&gt;See the documentation for DAS&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="markdown-header-features"&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Support for execSQL and execMultiSql operations&lt;/li&gt;
+&lt;li&gt;Supports all parameters and data types supported by the DAS (except binary blobs and attachments)&lt;/li&gt;
+&lt;li&gt;Support for stored procedures calls and batched updates&lt;/li&gt;
+&lt;li&gt;Exposed as Automated Step (Seamless integration with IPD)&lt;/li&gt;
+&lt;li&gt;Support up to 5 Data sources (possible to extend)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="markdown-header-installation"&gt;Installation&lt;/h2&gt;
+&lt;p&gt;You will need an Informatica Process Developer to build and install this package&lt;/p&gt;
+&lt;h2 id="markdown-header-install-this-package-on-icsicrt"&gt;Install this package on ICS/ICRT&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Login to the&amp;nbsp;&lt;a href="https://dm-us.informaticacloud.com/identity-service/home" rel="nofollow" data-is-external-link="true"&gt;Informatica Cloud&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Assuming you have the ICRT license enabled, click&amp;nbsp;&lt;code&gt;Design &amp;gt; Services and Processes&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;In the ICRT process designer, launch&amp;nbsp;&lt;code&gt;Design Home &amp;gt; Forms &amp;gt; Process Developer &amp;gt; Landing page&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Download the Eclipse process Developer and install.&lt;/li&gt;
+&lt;li&gt;Import this project zip into an eclipse workspace using Eclipse menu&amp;nbsp;&lt;code&gt;File &amp;gt; Import &amp;gt; Existing Projects into Workspace&lt;/code&gt;&amp;nbsp;select the Archive Option&lt;/li&gt;
+&lt;li&gt;Validate the project and check for errors&lt;/li&gt;
+&lt;li&gt;Create&amp;nbsp;&lt;code&gt;target/bpr&lt;/code&gt;&amp;nbsp;directory in the project toot&lt;/li&gt;
+&lt;li&gt;Run&amp;nbsp;&lt;code&gt;File &amp;gt; Export &amp;gt; Orchestration &amp;gt; Contribution - Business Process Archive&lt;/code&gt;&amp;nbsp;project export wizard&lt;/li&gt;
+&lt;li&gt;Make sure that you set following export parameter as follows&lt;/li&gt;
+&lt;li&gt;Bpr File:&amp;nbsp;&lt;code&gt;/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Check the&amp;nbsp;&lt;code&gt;Save the contribution specification as Ant script ...&lt;/code&gt;&amp;nbsp;option, it is useful for subsequent builds&lt;/li&gt;
+&lt;li&gt;Set the Target bprd file name to&amp;nbsp;&lt;code&gt;/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd&lt;/code&gt;'&lt;/li&gt;
+&lt;li&gt;Optionally you can set the deployment option to deeply directly to your cloud org, this saves one step in the deployment as you have to deploy manually only to agents&lt;/li&gt;
+&lt;li&gt;Deployment Url should be following&amp;nbsp;&lt;code&gt;https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/[YOURORGID]/ActiveBpelDeployBPR&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Deploy the produced bpr from&amp;nbsp;&lt;code&gt;/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr&lt;/code&gt;&amp;nbsp;bot to your cloud org and all agents where you want to use this DAS service&lt;/li&gt;
+&lt;li&gt;Import attached&amp;nbsp;&lt;code&gt;/com.informatica.cloud.das/sample-data/IPD_SOURCE_RELEASE_1.0.zip&lt;/code&gt;&amp;nbsp;to your IPD&lt;/li&gt;
+&lt;li&gt;Adjust target Agent name in the imported Proxy processes&amp;nbsp;&lt;code&gt;execSQLProxy&lt;/code&gt;&amp;nbsp;and&amp;nbsp;&lt;code&gt;execMultiSQLProxy&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Setup and Configure DS1 to DSn in the&amp;nbsp;&lt;code&gt;Process Console &amp;gt; Admin &amp;gt; Datasource Service&lt;/code&gt;&amp;nbsp;section&lt;/li&gt;
+&lt;li&gt;Publish all provided resources imported in the step 15&lt;/li&gt;
+&lt;li&gt;You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)&lt;/li&gt;
+&lt;li&gt;Use the provided&amp;nbsp;&lt;code&gt;TEST DAS&lt;/code&gt;&amp;nbsp;process as reference and example of use to build your own processes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="markdown-header-package-contents"&gt;Package Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Automated Steps Processes supporting&amp;nbsp;&lt;code&gt;execSQL&lt;/code&gt;&amp;nbsp;and&amp;nbsp;&lt;code&gt;execMultiSql&lt;/code&gt;&amp;nbsp;operations of the DAS&lt;/li&gt;
+&lt;li&gt;Metadata to describe Automated step to IPD&lt;/li&gt;
+&lt;li&gt;Components to Support IPD Processes
+&lt;ul&gt;
+&lt;li&gt;Service Connector and Connection - provides metadata about the Automated Step Input/Output Parameters&lt;/li&gt;
+&lt;li&gt;Example Proxy Services (Provide access to Automated Steps from The Cloud Process or Guides)&lt;/li&gt;
+&lt;li&gt;Test Cases and sample code&lt;/li&gt;
+&lt;li&gt;Sample Data&lt;/li&gt;
+&lt;li&gt;Documentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="markdown-header-das-wrapper-components"&gt;DAS Wrapper Components&lt;/h2&gt;
+&lt;h3 id="markdown-header-bpel-processes-automated-steps"&gt;BPEL Processes (Automated Steps)&lt;/h3&gt;
+&lt;h4 id="markdown-header-execsqlbpel"&gt;execSQL.bpel&lt;/h4&gt;
+&lt;p&gt;Process Implements Automated Step Service available in the IPD under&amp;nbsp;&lt;code&gt;Services &amp;gt; Data Access Services &amp;gt; execSQL&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Input Fields:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;dataAccessRequest&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DataAccessService:tDataAccessRequest&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tDataAccessRequest Object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Output Fields:&lt;/strong&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Type&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;dataAccessResponse&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;DataAccessService:tResponse&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;tResponse Object&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h5 id="markdown-header-tdataaccessrequest-object"&gt;tDataAccessRequest Object&lt;/h5&gt;
+&lt;p&gt;execSQL Parameters&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;Parameter&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;sqlStatement&lt;/td&gt;
+&lt;td&gt;Element containing the required &amp;lt;statement&amp;gt; and optional parameters&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;includeMetadata&lt;/td&gt;
+&lt;td&gt;Returns a row of metadata about the query columns prior to the actual return data (default = false). Meta data includes data type and display size.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;maxRows&lt;/td&gt;
+&lt;td&gt;Maximum number of result rows to be returned. (default = 0 or unlimited)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;maxWaitSeconds&lt;/td&gt;
+&lt;td&gt;Maximum time to wait for results. (default = 0 or unlimited)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;columnCase&lt;/td&gt;
+&lt;td&gt;Specifies the case formatting of the columns in the result set (default is unchanged from server). Schema enumerations defined for this element include lowercase, uppercase, and unchanged&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;statementId&lt;/td&gt;
+&lt;td&gt;Specified as part of request to help identify results (default is to auto generate an Id that results in an Id such as statement-1, statement-2)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;statement&lt;/td&gt;
+&lt;td&gt;(Required.) SQL statement to execute&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parameter&lt;/td&gt;
+&lt;td&gt;Identifies the data to be inserted, updated or deleted from the data source. Parameter values are listed in order within a &amp;lt;parameterBatch&amp;gt; element associated with a statement. See Parameter-Based Request for Insert, Update, Delete Statements below.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;sqlType&lt;/td&gt;
+&lt;td&gt;Parameter attribute. Types include string (default), byte, short, int, long, float, double, date, binary, or clob&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;attachmentId&lt;/td&gt;
+&lt;td&gt;Parameter attribute. Specified as part of request to help identify results attachments, if any. See Handling Binary Data below.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hasResultSet&lt;/td&gt;
+&lt;td&gt;Indicates that a stored procedures returns data. Only use this parameter if this is true.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Note that the&amp;nbsp;&lt;code&gt;&amp;lt;parameter&amp;gt;&lt;/code&gt;,&amp;nbsp;&lt;code&gt;&amp;lt;parameterBatch&amp;gt;&lt;/code&gt;&amp;nbsp;and&amp;nbsp;&lt;code&gt;&amp;lt;procedure&amp;gt;&lt;/code&gt;&amp;nbsp;elements of the tDataAccessRequest are optional and mutually exclusive. You will use list of parameters only when the&amp;nbsp;&lt;code&gt;&amp;lt;statement&amp;gt;&amp;lt;/statement&amp;gt;&lt;/code&gt;&amp;nbsp;field (element) contain SQL statement formulated as prepared statements such as&lt;/p&gt;
+&lt;div class="codehilite language-sql"&gt;
+&lt;pre&gt;&lt;span class="k"&gt;INSERT&lt;/span&gt; &lt;span class="k"&gt;INTO&lt;/span&gt; &lt;span class="n"&gt;test_table&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;col_varchar&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;col_int&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;col_datetime&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;col_bigint&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;values&lt;/span&gt;
+    &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="o"&gt;?&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Complete tDataAccessRequest Structure example&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tDataAccessRequest&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;maxRows&amp;gt;&amp;lt;/maxRows&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;maxWaitSeconds&amp;gt;&amp;lt;/maxWaitSeconds&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;columnCase&amp;gt;&amp;lt;/columnCase&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;includeMetadata&amp;gt;&amp;lt;/includeMetadata&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;attachmentId&amp;gt;&amp;lt;/attachmentId&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;attachment&amp;gt;&amp;lt;/attachment&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameterBatch&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;attachmentId&amp;gt;&amp;lt;/attachmentId&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;attachment&amp;gt;&amp;lt;/attachment&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameterBatch&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;procedure&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;procedureParameter&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;name&amp;gt;&amp;lt;/name&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;mode&amp;gt;&amp;lt;/mode&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;attachment&amp;gt;&amp;lt;/attachment&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/procedureParameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/procedure&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;You can use DAS to invoke even DDL statements such as&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt; &lt;span class="nt"&gt;&amp;lt;tDataAccessRequest&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&lt;/span&gt;DS1&lt;span class="nt"&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;CREATE TABLE test_table (
+            idtest_table INT NULL AUTO_INCREMENT,
+            col_varchar VARCHAR(45) NULL,
+            col_int INT NULL,
+            col_datetime DATETIME NULL,
+            col_bigint BIGINT NULL,
+            PRIMARY KEY (idtest_table),
+            UNIQUE INDEX idtest_table_UNIQUE (idtest_table ASC));&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;includeMetadata&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/includeMetadata&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;create_test_table&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;false&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+ &lt;span class="nt"&gt;&amp;lt;/tDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;It is recommended to use parametrized queries unless you invoking some static SQL, Constructing SQL statements by string concatenation is considered unsafe and prone for SQL injection attacks especially when the parameters might be a user input on the web page or request parameter. prefer prepared statement style of invocation whenever possible.&lt;/p&gt;
+&lt;p&gt;Here is and example of such statements&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tDataAccessRequest&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;insert_rows&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;false&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;INSERT INTO test_table
+        (col_varchar,
+        col_int,
+        col_datetime,
+        col_bigint)
+        values (?,?,?,?)&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;string&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;int&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;23&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;date&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;{fn:current-dateTime()}&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;double&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;12345678&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&lt;/span&gt;DS1&lt;span class="nt"&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Response Example:&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tResponse&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;insert_rows&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;updatedRows&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/updatedRows&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tResponse&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Parameter batch will be used in the case when you want to perform bulk inserts or updates here is an example of such request&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tDataAccessRequest&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;test_table_insert_many&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;columnCase&amp;gt;&amp;lt;/columnCase&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;false&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;INSERT INTO test_table
+        (col_varchar,
+        col_int,
+        col_datetime,
+        col_bigint)
+        values (?,?,?,?)&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+
+      &lt;span class="nt"&gt;&amp;lt;parameterBatch&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;string&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;int&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;2&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;date&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;{fn:current-dateTime()}&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;double&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;444444444&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameterBatch&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameterBatch&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;string&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+           &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;3&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;int&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;date&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;{fn:current-dateTime()}&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;double&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+             &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;987654321&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameterBatch&amp;gt;&lt;/span&gt;
+
+   &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&lt;/span&gt;DS1&lt;span class="nt"&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Example Response:&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tResponse&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;test_table_insert_many&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;updatedRows&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/updatedRows&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;updatedRows&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/updatedRows&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tResponse&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Select Request Example:&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tDataAccessRequest&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;maxRows&amp;gt;&lt;/span&gt;10&lt;span class="nt"&gt;&amp;lt;/maxRows&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;maxWaitSeconds&amp;gt;&lt;/span&gt;5&lt;span class="nt"&gt;&amp;lt;/maxWaitSeconds&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;test_table_select_all&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;columnCase&amp;gt;&lt;/span&gt;unchanged&lt;span class="nt"&gt;&amp;lt;/columnCase&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;includeMetadata&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/includeMetadata&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;false&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;SELECT * FROM test_table&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&lt;/span&gt;DS1&lt;span class="nt"&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+ &lt;span class="nt"&gt;&amp;lt;/tDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Select Response Example:&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tResponse&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;test_table_select_all&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;metadata&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;idtest_table&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;dataType&amp;gt;&lt;/span&gt;INT&lt;span class="nt"&gt;&amp;lt;/dataType&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;displaySize&amp;gt;&lt;/span&gt;11&lt;span class="nt"&gt;&amp;lt;/displaySize&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/idtest_table&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_varchar&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;dataType&amp;gt;&lt;/span&gt;VARCHAR&lt;span class="nt"&gt;&amp;lt;/dataType&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;displaySize&amp;gt;&lt;/span&gt;45&lt;span class="nt"&gt;&amp;lt;/displaySize&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/col_varchar&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_int&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;dataType&amp;gt;&lt;/span&gt;INT&lt;span class="nt"&gt;&amp;lt;/dataType&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;displaySize&amp;gt;&lt;/span&gt;11&lt;span class="nt"&gt;&amp;lt;/displaySize&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/col_int&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_datetime&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;dataType&amp;gt;&lt;/span&gt;DATETIME&lt;span class="nt"&gt;&amp;lt;/dataType&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;displaySize&amp;gt;&lt;/span&gt;19&lt;span class="nt"&gt;&amp;lt;/displaySize&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/col_datetime&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_bigint&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;dataType&amp;gt;&lt;/span&gt;BIGINT&lt;span class="nt"&gt;&amp;lt;/dataType&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;displaySize&amp;gt;&lt;/span&gt;20&lt;span class="nt"&gt;&amp;lt;/displaySize&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/col_bigint&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/metadata&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;idtest_table&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/idtest_table&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_varchar&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/col_varchar&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_int&amp;gt;&lt;/span&gt;23&lt;span class="nt"&gt;&amp;lt;/col_int&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_datetime&amp;gt;&lt;/span&gt;2017-03-30T16:52:28Z&lt;span class="nt"&gt;&amp;lt;/col_datetime&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_bigint&amp;gt;&lt;/span&gt;12345678&lt;span class="nt"&gt;&amp;lt;/col_bigint&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;idtest_table&amp;gt;&lt;/span&gt;2&lt;span class="nt"&gt;&amp;lt;/idtest_table&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_varchar&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/col_varchar&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_int&amp;gt;&lt;/span&gt;2&lt;span class="nt"&gt;&amp;lt;/col_int&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_datetime&amp;gt;&lt;/span&gt;2017-03-30T16:52:29Z&lt;span class="nt"&gt;&amp;lt;/col_datetime&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_bigint&amp;gt;&lt;/span&gt;444444444&lt;span class="nt"&gt;&amp;lt;/col_bigint&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;idtest_table&amp;gt;&lt;/span&gt;3&lt;span class="nt"&gt;&amp;lt;/idtest_table&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_varchar&amp;gt;&lt;/span&gt;3&lt;span class="nt"&gt;&amp;lt;/col_varchar&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_int/&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_datetime&amp;gt;&lt;/span&gt;2017-03-30T16:52:29Z&lt;span class="nt"&gt;&amp;lt;/col_datetime&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;col_bigint&amp;gt;&lt;/span&gt;987654321&lt;span class="nt"&gt;&amp;lt;/col_bigint&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tResponse&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h4 id="markdown-header-execmultisqlbpel"&gt;execMultiSQl.bpel&lt;/h4&gt;
+&lt;p&gt;This allows to invoke multiple Database statements in one request, this is very useful when you need to run multiple statements of a different kind. It supports the same set parameters and both static and parametrized queries as well as stored procedures and DDL statement as the execSQL Service. It only adds ability to execute multiple statements at the same time where the DAs service provides individual result set or output for each statement&amp;nbsp;&lt;code&gt;execMultiSQL&lt;/code&gt;&amp;nbsp;supports can be used for example to couple two statements together such as inserting a row to the database and finding out the primary key generated as auto-increment or a sequence by the database which is often Database specific.&lt;/p&gt;
+&lt;p&gt;Example Multi Data Access Request&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;tMultiDataAccessRequest&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;insert_rows&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;false&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;INSERT INTO test_table
+        (col_varchar,
+        col_int,
+        col_datetime,
+        col_bigint)
+        values (?,?,?,?)&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;string&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;test&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;int&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;23&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;date&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;{fn:current-dateTime()}&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;parameter&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;sqlType&amp;gt;&lt;/span&gt;double&lt;span class="nt"&gt;&amp;lt;/sqlType&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;data&amp;gt;&lt;/span&gt;12345678&lt;span class="nt"&gt;&amp;lt;/data&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;sqlStatement&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;get_rows_id&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;hasResultSet&amp;gt;&lt;/span&gt;true&lt;span class="nt"&gt;&amp;lt;/hasResultSet&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;statement&amp;gt;&lt;/span&gt;SELECT LAST_INSERT_ID()&lt;span class="nt"&gt;&amp;lt;/statement&amp;gt;&lt;/span&gt; &lt;span class="c"&gt;&amp;lt;!-- Get Last inserted ID in MySql--&amp;gt;&lt;/span&gt;
+      &lt;span class="c"&gt;&amp;lt;!-- in SQL Server use SELECT SCOPE_IDENTITY()  --&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/sqlStatement&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;dataSource&amp;gt;&lt;/span&gt;DS1&lt;span class="nt"&gt;&amp;lt;/dataSource&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/tMultiDataAccessRequest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Response:&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;multiDataAccessResponse&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;insert_rows&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;updatedRows&amp;gt;&lt;/span&gt;1&lt;span class="nt"&gt;&amp;lt;/updatedRows&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;result&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;statementId&amp;gt;&lt;/span&gt;get_rows_id&lt;span class="nt"&gt;&amp;lt;/statementId&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;row&amp;gt;&lt;/span&gt;
+          &lt;span class="nt"&gt;&amp;lt;LAST_INSERT_ID&amp;gt;&lt;/span&gt;4&lt;span class="nt"&gt;&amp;lt;/LAST_INSERT_ID&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;/row&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;/result&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/multiDataAccessResponse&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h3 id="markdown-header-pdds"&gt;PDDs&lt;/h3&gt;
+&lt;p&gt;Each BPEL process (Service) needs a&amp;nbsp;&lt;a href="http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/com.activee.bpep.doc/html/UG20-5.html" rel="nofollow" data-is-external-link="true"&gt;Process Deployment Descriptor&lt;/a&gt;&amp;nbsp;to describe the process to a process engine. These are located in the deploy directory of this project Please consult the Documentation for further details on PDDs&lt;/p&gt;
+&lt;h3 id="markdown-header-xquery-library-modules"&gt;XQuery Library Modules&lt;/h3&gt;
+&lt;p&gt;This package contains two main modules&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/com.informatica.cloud.das/xquery/infa-das.xq&lt;/code&gt;&amp;nbsp;Module that implements custom function to transform input/output process object to the wire SOAP message format required by the DAS service and transform DAS responses back to simplified XML format of the process object response data&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;com.informatica.cloud.das/test/xquery/infa-das-test.xq&lt;/code&gt;&amp;nbsp;- unit test to validate functionality of the&amp;nbsp;&lt;code&gt;infa-das.xq&lt;/code&gt;&amp;nbsp;library module&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;com.informatica.cloud.das/test/xquery/infa-das-test.xq&lt;/code&gt;&amp;nbsp;- Library module for unit testing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="markdown-header-automated-step-service-metadata"&gt;Automated Step Service Metadata&lt;/h3&gt;
+&lt;p&gt;IPD needs a metadata to provide access to Services in the Designer, to make the automated step visible we need to provide a service descriptor similar to a metadata used and generated by the IPD designer In this case we have to create such file manually by following the XSD schema provided by the platform. Here is a complete listing of the&amp;nbsp;&lt;code&gt;config/services.xml&lt;/code&gt;&amp;nbsp;provided with this package.&lt;/p&gt;
+&lt;div class="codehilite language-xml"&gt;
+&lt;pre&gt;&lt;span class="cp"&gt;&amp;lt;?xml version="1.0" encoding="UTF-8"?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;screenflowContribution&lt;/span&gt; &lt;span class="na"&gt;xmlns=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosServiceDiscovery.xsd"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;service&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"execSQL"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;avosServiceName&amp;gt;&lt;/span&gt;execSQL&lt;span class="nt"&gt;&amp;lt;/avosServiceName&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;displayName&amp;gt;&lt;/span&gt;execSQL&lt;span class="nt"&gt;&amp;lt;/displayName&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;category&amp;gt;&lt;/span&gt;Data Access Services&lt;span class="nt"&gt;&amp;lt;/category&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;description&amp;gt;&lt;/span&gt;You can interact directly with a data source within a IPD process by using the Data Access system service.
+Using this service, you create an invoke activity that executes one statement on a specified data source and receives a result set as the response.
+This service Supports One SQL statement, but multiple batched updates/inserts&lt;span class="nt"&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;iconLocation&amp;gt;&lt;/span&gt;project:/com.informatica.cloud.das/images/database.png&lt;span class="nt"&gt;&amp;lt;/iconLocation&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;largeIconLocation&amp;gt;&lt;/span&gt;project:/com.informatica.cloud.das/images/database.png&lt;span class="nt"&gt;&amp;lt;/largeIconLocation&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;input&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;parameter&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"dataAccessRequest"&lt;/span&gt; &lt;span class="na"&gt;required=&lt;/span&gt;&lt;span class="s"&gt;"true"&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"reference"&lt;/span&gt;
+            &lt;span class="na"&gt;description=&lt;/span&gt;&lt;span class="s"&gt;"tDataAccessRequest Object"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;options&amp;gt;&lt;/span&gt;
+               &lt;span class="nt"&gt;&amp;lt;option&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"referenceTo"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;DataAccessService:tDataAccessRequest&lt;span class="nt"&gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/options&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/input&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;output&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;field&lt;/span&gt; &lt;span class="na"&gt;description=&lt;/span&gt;&lt;span class="s"&gt;"tResponse Object"&lt;/span&gt;
+                   &lt;span class="na"&gt;label=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;
+                   &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"dataAccessResponse"&lt;/span&gt;
+                   &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"reference"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;options&amp;gt;&lt;/span&gt;
+               &lt;span class="nt"&gt;&amp;lt;option&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"referenceTo"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;DataAccessService:tResponse&lt;span class="nt"&gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/options&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/field&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/output&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+
+   &lt;span class="nt"&gt;&amp;lt;service&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"execMultiSQL"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;avosServiceName&amp;gt;&lt;/span&gt;execMultiSQL&lt;span class="nt"&gt;&amp;lt;/avosServiceName&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;displayName&amp;gt;&lt;/span&gt;execMultiSQL&lt;span class="nt"&gt;&amp;lt;/displayName&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;category&amp;gt;&lt;/span&gt;Data Access Services&lt;span class="nt"&gt;&amp;lt;/category&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;description&amp;gt;&lt;/span&gt;You can interact directly with a data source within a IPD process by using the Data Access system service.
+Using this service, you create an invoke activity that executes Multiple statement on a specified data source and receives a result set as the response.
+You can execute any SQL statement, whether you are selecting, inserting, updating or deleting data or stored procedures from a data source.
+This service Supports One SQL statement, but multiple batched updates/inserts&lt;span class="nt"&gt;&amp;lt;/description&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;iconLocation&amp;gt;&lt;/span&gt;project:/com.informatica.cloud.das/images/database.png&lt;span class="nt"&gt;&amp;lt;/iconLocation&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;largeIconLocation&amp;gt;&lt;/span&gt;project:/com.informatica.cloud.das/images/database.png&lt;span class="nt"&gt;&amp;lt;/largeIconLocation&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;input&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;parameter&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"multiDataAccessRequest"&lt;/span&gt; &lt;span class="na"&gt;required=&lt;/span&gt;&lt;span class="s"&gt;"true"&lt;/span&gt; &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"reference"&lt;/span&gt;
+            &lt;span class="na"&gt;description=&lt;/span&gt;&lt;span class="s"&gt;"Provide one or many statements to be executed using the MultiDataAccessRequest"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;options&amp;gt;&lt;/span&gt;
+               &lt;span class="nt"&gt;&amp;lt;option&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"referenceTo"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;DataAccessService:tMultiDataAccessRequest&lt;span class="nt"&gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/options&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/parameter&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/input&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;output&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;field&lt;/span&gt; &lt;span class="na"&gt;description=&lt;/span&gt;&lt;span class="s"&gt;"tMultiResponse object"&lt;/span&gt;
+                   &lt;span class="na"&gt;label=&lt;/span&gt;&lt;span class="s"&gt;""&lt;/span&gt;
+                   &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"multiDataAccessResponse"&lt;/span&gt;
+                   &lt;span class="na"&gt;type=&lt;/span&gt;&lt;span class="s"&gt;"reference"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;options&amp;gt;&lt;/span&gt;
+               &lt;span class="nt"&gt;&amp;lt;option&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;"referenceTo"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;DataAccessService:tMultiResponse&lt;span class="nt"&gt;&amp;lt;/option&amp;gt;&lt;/span&gt;
+            &lt;span class="nt"&gt;&amp;lt;/options&amp;gt;&lt;/span&gt;
+         &lt;span class="nt"&gt;&amp;lt;/field&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/output&amp;gt;&lt;/span&gt;
+   &lt;span class="nt"&gt;&amp;lt;/service&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/screenflowContribution&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;Note that the Service Descriptors refer to process objects such as&amp;nbsp;&lt;code&gt;DataAccessService:tMultiResponse&lt;/code&gt;&amp;nbsp;or&amp;nbsp;&lt;code&gt;DataAccessService:tMultiDataAccessRequest&lt;/code&gt;&amp;nbsp;that are defined in separate files that must be also deployed and published on the target ICRT Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects. You will need to import and publish following Objects included in the&amp;nbsp;&lt;code&gt;/com.informatica.cloud.das/sample-data/IPD_SOURCE_RELEASE_1.0.zip&lt;/code&gt;&amp;nbsp;zip file&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DataAccessService.conn.xml&lt;/li&gt;
+&lt;li&gt;DataAccessService.svc.xml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are the Service Connector and connection Definition that should be used in the design of your processes only process objects defined in them, Do not use the service actions directly.&lt;/p&gt;
+&lt;p&gt;Other files included in this package are:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Description&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;TEST_DAS.gt.xml&lt;/td&gt;
+&lt;td&gt;Guide to test and demonstrate DAS Wrapper implementation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TEST_DAS.pd.xml&lt;/td&gt;
+&lt;td&gt;Unit test process to test, Validate and Demo functionality of the DAS Service Wrapper&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TestResult.po.xml&lt;/td&gt;
+&lt;td&gt;Process Object USed by the above test process and guides&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;execMultiSQLProxy.pd.xml&lt;/td&gt;
+&lt;td&gt;Example Proxy service to enable DAS automated Step invocation from GUIDE or Cloud Processes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;execSQLProxy.pd.xml&lt;/td&gt;
+&lt;td&gt;Example Proxy service to enable DAS automated Step invocation from GUIDE or Cloud Processes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;You will need to adjust&amp;nbsp;&lt;code&gt;execMultiSQLProxy.pd.xml&lt;/code&gt;&amp;nbsp;and&amp;nbsp;&lt;code&gt;execSQLProxy.pd.xml&lt;/code&gt;&amp;nbsp;accordingly after importing them to your Org as these processes must be deployed to agent to act as a proxy for calls from the Guide or Processes deployed on the Cloud process engine. You will need to set target Agent before publishing them. If you have more than one agent with DAS services configured you will have to clone these two processes and deploy the to all agent where the DAS Access from Cloud is needed. These two processes are not necessary if you create IPD process deployed and published to an agent where the DAS wrapper Automated Steps are deployed and Where the DAS service is configured. In this case IPD can call the DAS Automated steps directly as it is shown in the&amp;nbsp;&lt;code&gt;TEST_DAS.pd.xml&lt;/code&gt;&amp;nbsp;process&lt;/p&gt;
+&lt;h2 id="markdown-header-possible-adjustments"&gt;Possible Adjustments&lt;/h2&gt;
+&lt;h3 id="markdown-header-add-support-for-additional-data-sources"&gt;Add Support for Additional Data Sources&lt;/h3&gt;
+&lt;p&gt;If the currently supported 5 Data sources is not enough for your ICRT Implementation and you need more you can simply add more Data Source definitions into your environment and Automated Step processes&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Open each of the bpel processes included in the Informatica Process Developer&lt;/li&gt;
+&lt;li&gt;Add a new partner link called DSn where n is the number for new data Source PLT such as&amp;nbsp;&lt;code&gt;DS6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add a new if condition branch to existing process&lt;/li&gt;
+&lt;li&gt;Edit the condition and set it to following&amp;nbsp;&lt;code&gt;$gDataAccessRequest/das:sqlStatement/@dataSource='DS6'&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;rename the condition branch label 'if' to&amp;nbsp;&lt;code&gt;DS6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Drag and drop the corresponding&amp;nbsp;&lt;code&gt;execSQL&lt;/code&gt;&amp;nbsp;or&amp;nbsp;&lt;code&gt;execMultiSQL&lt;/code&gt;&amp;nbsp;operation from Partner link view on to new empty branch&lt;/li&gt;
+&lt;li&gt;Set Input of the Invoke to already existing global variable&amp;nbsp;&lt;code&gt;gDataAccessrequest&lt;/code&gt;&amp;nbsp;or&amp;nbsp;&lt;code&gt;gMultiDataAccessRequest&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Set the output to already existing global variable&amp;nbsp;&lt;code&gt;gDataAccessResponse&lt;/code&gt;&amp;nbsp;or&amp;nbsp;&lt;code&gt;gMultiDataAccessResponse&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Save the BPEL changes&lt;/li&gt;
+&lt;li&gt;Open corresponding PDD for the edited process, it will be automatically updated to include new partner link definition (a reference to new data source)&lt;/li&gt;
+&lt;li&gt;Edit the new 'DS6' PArtner link properties as it has missing mapping for a data source name, set the Service Invoke Handle to a&amp;nbsp;&lt;code&gt;System Service&lt;/code&gt;&amp;nbsp;and the JNDI name to&amp;nbsp;&lt;code&gt;jdbbc/DS6&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Save The PDD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Repeat the same for as many Data Sources as you need After you complete changes make sure than you export the contribution and build new bpr and deploy the package to both cloud Server and agents You should test new branches by creating similar process to provided&amp;nbsp;&lt;code&gt;TEST_DAS.pd.xml&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;You should also update the&amp;nbsp;&lt;code&gt;DataAccessService.svc.xml&lt;/code&gt;&amp;nbsp;in the IPD Connector designer and new data Sources to a DataSource field parameter pick-list definition and re-publish both connector and connection definition. This will ensure consistency of your metadata with your service implementation&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="jv2s3mu0_jd4cwa59" targetScreen="jd4cwa59">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </screen>
+               <endScreen id="jd4cwa59">
+                  <title>End</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
+            </flow>
+         </avosScreenflow>
+      </types1:Entry>
+      <types1:GUID>4OI2DlXvTSHfBDKeDXeoOF</types1:GUID>
+      <types1:DisplayName>How-To Use DAS Service Wrapper</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-09T23:11:36.797Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

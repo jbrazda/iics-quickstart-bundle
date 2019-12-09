@@ -1,0 +1,609 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Y8DglxbdypKwKBq-gt-747303-2018-07-18T13:22:01.881Z::pd.xml</types1:EntryId>
+      <types1:Name>TEST_DAS</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Test process to test various scenarios on DAS Service</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-18T13:22:02Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2019-04-29T19:59:14Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2019-04-29T19:59:31Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEST_DAS/TEST_DAS.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEST DAS"
+                  name="TEST_DAS">
+            <appliesTo/>
+            <description>Test process to test various scenarios on DAS Service</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="testResults" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:TestResult</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="testResult" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:TestResult</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="dasRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="multiDasRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ivjndd63" targetId="ivjndd62"/>
+               </start>
+               <assignment id="ivjndd62">
+                  <title>Set Create Table</title>
+                  <operation source="constant" to="temp.dasRequest[1]/dataSource">DS1</operation>
+                  <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/statement">CREATE TABLE test_table (
+  idtest_table INT NOT NULL AUTO_INCREMENT,
+  col_varchar VARCHAR(45) NULL,
+  col_int INT NULL,
+  col_datetime DATETIME NULL,
+  col_bigint BIGINT NULL,
+  PRIMARY KEY (idtest_table),
+  UNIQUE INDEX idtest_table_UNIQUE (idtest_table ASC));</operation>
+                  <operation source="constant"
+                             to="temp.dasRequest[1]/sqlStatement[1]/includeMetadata">true</operation>
+                  <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/statementId">create_test_table</operation>
+                  <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/hasResultSet">false</operation>
+                  <link id="ivjndd64" targetId="ivjwaak3"/>
+               </assignment>
+               <assignment id="ivjo3fkm">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="ivk2b9lc" targetId="ivk2b9lb"/>
+               </assignment>
+               <assignment id="ivk2b9lb">
+                  <title>Set Insert Statement</title>
+                  <operation source="formula" to="temp.dasRequest">
+                     <expression language="XQuery">&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;insert_rows&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;INSERT INTO test_table
+(col_varchar,
+col_int,
+col_datetime,
+col_bigint) 
+values (?,?,?,?)&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;test&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;int&lt;/sqlType&gt;
+         &lt;data&gt;23&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;date&lt;/sqlType&gt;
+         &lt;data&gt;{fn:current-dateTime()}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;double&lt;/sqlType&gt;
+         &lt;data&gt;12345678&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</expression>
+                  </operation>
+                  <link id="ivk2b9mn" targetId="ivk2b9md"/>
+               </assignment>
+               <assignment id="ivltrigy">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="ivltrind" targetId="ivltrinc"/>
+               </assignment>
+               <assignment id="ivltrinc">
+                  <title>Set Insert Many</title>
+                  <operation source="formula" to="temp.dasRequest">
+                     <expression language="XQuery">&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;test_table_insert_many&lt;/statementId&gt;
+      &lt;columnCase&gt;&lt;/columnCase&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;INSERT INTO test_table
+(col_varchar,
+col_int,
+col_datetime,
+col_bigint) 
+values (?,?,?,?)&lt;/statement&gt;
+
+      &lt;parameterBatch&gt;
+          &lt;parameter&gt;
+           &lt;sqlType&gt;string&lt;/sqlType&gt;
+           &lt;data&gt;test&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;int&lt;/sqlType&gt;
+             &lt;data&gt;2&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;date&lt;/sqlType&gt;
+             &lt;data&gt;{fn:current-dateTime()}&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;double&lt;/sqlType&gt;
+             &lt;data&gt;444444444&lt;/data&gt;
+          &lt;/parameter&gt;
+      &lt;/parameterBatch&gt;
+      &lt;parameterBatch&gt;
+          &lt;parameter&gt;
+           &lt;sqlType&gt;string&lt;/sqlType&gt;
+           &lt;data&gt;3&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;int&lt;/sqlType&gt;
+             &lt;data&gt;test&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;date&lt;/sqlType&gt;
+             &lt;data&gt;{fn:current-dateTime()}&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;double&lt;/sqlType&gt;
+             &lt;data&gt;987654321&lt;/data&gt;
+          &lt;/parameter&gt;
+      &lt;/parameterBatch&gt;
+    
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</expression>
+                  </operation>
+                  <link id="ivltrino" targetId="ivltrihv"/>
+               </assignment>
+               <assignment id="ivltrikp">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="ivluyixk" targetId="ivluyixj"/>
+               </assignment>
+               <assignment id="ivluyixj">
+                  <title>Select</title>
+                  <operation source="formula" to="temp.dasRequest">
+                     <expression language="XQuery">&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;maxRows&gt;10&lt;/maxRows&gt;
+      &lt;maxWaitSeconds&gt;5&lt;/maxWaitSeconds&gt;
+      &lt;statementId&gt;test_table_select_all&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;true&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;SELECT * FROM test_table&lt;/statement&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</expression>
+                  </operation>
+                  <link id="ivluyizg" targetId="ivluyiz6"/>
+               </assignment>
+               <assignment id="ivluyj14">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="iw2gibkk" targetId="iw2giboe"/>
+               </assignment>
+               <assignment id="iw2gibmx">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="iw2gibnc" targetId="ivluyit3"/>
+               </assignment>
+               <assignment id="ivluyit3">
+                  <title>Set Drop Table</title>
+                  <operation source="formula" to="temp.dasRequest">
+                     <expression language="XQuery">&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;drop_test_table&lt;/statementId&gt;
+      &lt;columnCase&gt;&lt;/columnCase&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;DROP TABLE test_table&lt;/statement&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</expression>
+                  </operation>
+                  <link id="ivluyiuo" targetId="ivluyiue"/>
+               </assignment>
+               <assignment id="ivluyiw2">
+                  <title>Assignment to testResults</title>
+                  <operation source="formula" to="output.testResults">
+                     <function name="list:append">
+                        <arg name="dest_field">{$output.testResults}</arg>
+                        <arg name="new_field">{$temp.testResult}</arg>
+                     </function>
+                  </operation>
+                  <link id="ivluyiwf" targetId="d"/>
+               </assignment>
+               <eventContainer id="ivjwaak3">
+                  <service id="c">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ivjwaak6">
+                     <assignment id="ivjwaaku">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">DDL CREATE TABLE</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivjwaak7" targetId="ivjwaak3" type="containerLink"/>
+                  </flow>
+                  <flow id="ivjwaaka">
+                     <assignment id="ivjwaak9">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">DDL CREATE TABLE</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code := concat("Code: ",$output.faultInfo[1]/code)
+let $reason := concat("Reason: ",$output.faultInfo[1]/reason)
+let $detail := concat("Detail: ",$output.faultInfo[1]/detail)
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivjwaakb" targetId="ivjwaak3" type="containerLink"/>
+                  </flow>
+                  <link id="ivjwaak4" targetId="ivjwaak6" type="containerLink"/>
+                  <link id="ivjwaal0" targetId="ivjo3fkm"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
+                        <link id="ivjwaak8" targetId="ivjwaaka" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ivk2b9md">
+                  <service id="ivk2b9mi">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ivk2b9me">
+                     <assignment id="ivk2b9mf">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">INSERT ROW</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivk2b9ml" targetId="ivk2b9md" type="containerLink"/>
+                  </flow>
+                  <flow id="ivk2b9mg">
+                     <assignment id="ivk2b9mh">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">INSERT ROW</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code   := concat("Code",$output.faultInfo[1]/code)
+let $reason := concat("Reason",$output.faultInfo[1]/reason)
+let $detail := concat("Detail",$output.faultInfo[1]/detail)
+
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivk2b9mm" targetId="ivk2b9md" type="containerLink"/>
+                  </flow>
+                  <link id="ivk2b9mj" targetId="ivk2b9me" type="containerLink"/>
+                  <link id="ivltrigz" targetId="ivltrigy"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
+                        <link id="ivk2b9mk" targetId="ivk2b9mg" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ivltrihv">
+                  <service id="ivltrii0">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ivltrihw">
+                     <assignment id="ivltrihx">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">INSERT ROWS</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivltrii3" targetId="ivltrihv" type="containerLink"/>
+                  </flow>
+                  <flow id="ivltrihy">
+                     <assignment id="ivltrihz">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">INSERT ROWS</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code   := concat("Code",$output.faultInfo[1]/code)
+let $reason := concat("Reason",$output.faultInfo[1]/reason)
+let $detail := concat("Detail",$output.faultInfo[1]/detail)
+
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivltrii4" targetId="ivltrihv" type="containerLink"/>
+                  </flow>
+                  <link id="ivltrii1" targetId="ivltrihw" type="containerLink"/>
+                  <link id="ivltrikq" targetId="ivltrikp"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
+                        <link id="ivltrii2" targetId="ivltrihy" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ivluyiz6">
+                  <service id="ivluyizb">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ivluyiz7">
+                     <assignment id="ivluyiz8">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">SELECT ALL</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivluyize" targetId="ivluyiz6" type="containerLink"/>
+                  </flow>
+                  <flow id="ivluyiz9">
+                     <assignment id="ivluyiza">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">SELECT ALL</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code   := concat("Code",$output.faultInfo[1]/code)
+let $reason := concat("Reason",$output.faultInfo[1]/reason)
+let $detail := concat("Detail",$output.faultInfo[1]/detail)
+
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivluyizf" targetId="ivluyiz6" type="containerLink"/>
+                  </flow>
+                  <link id="ivluyizc" targetId="ivluyiz7" type="containerLink"/>
+                  <link id="ivluyj15" targetId="ivluyj14"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
+                        <link id="ivluyizd" targetId="ivluyiz9" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="iw2giboe">
+                  <service id="iw2gibkj">
+                     <title>execMultiSQL</title>
+                     <serviceName>execMultiSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="multiDataAccessRequest" source="formula">
+                           <expression language="XQuery">&lt;tMultiDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;insert_rows&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;INSERT INTO test_table
+(col_varchar,
+col_int,
+col_datetime,
+col_bigint) 
+values (?,?,?,?)&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;test&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;int&lt;/sqlType&gt;
+         &lt;data&gt;23&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;date&lt;/sqlType&gt;
+         &lt;data&gt;{fn:current-dateTime()}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;double&lt;/sqlType&gt;
+         &lt;data&gt;12345678&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;get_rows_id&lt;/statementId&gt;
+      &lt;hasResultSet&gt;true&lt;/hasResultSet&gt;
+      &lt;statement&gt;SELECT LAST_INSERT_ID()&lt;/statement&gt;
+      &lt;!-- in SQL Server use SELECT SCOPE_IDENTITY()  --&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;DS1&lt;/dataSource&gt;
+&lt;/tMultiDataAccessRequest&gt;
+</expression>
+                        </parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="iw2giboh">
+                     <assignment id="iw2gibpf">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">MULTI SQL</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.multiDataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="iw2giboi" targetId="iw2giboe" type="containerLink"/>
+                  </flow>
+                  <flow id="iw2gibol">
+                     <assignment id="iw2gibqo">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">MULTI SQL</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code   := concat("Code",$output.faultInfo[1]/code)
+let $reason := concat("Reason",$output.faultInfo[1]/reason)
+let $detail := concat("Detail",$output.faultInfo[1]/detail)
+
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="iw2gibom" targetId="iw2giboe" type="containerLink"/>
+                  </flow>
+                  <link id="iw2gibof" targetId="iw2giboh" type="containerLink"/>
+                  <link id="iw2gibmy" targetId="iw2gibmx"/>
+                  <events>
+                     <catch faultField="faultInfo" id="iw2gibo2" interrupting="true">
+                        <link id="iw2giboj" targetId="iw2gibol" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <eventContainer id="ivluyiue">
+                  <service id="ivluyiuj">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="ivluyiuf">
+                     <assignment id="ivluyiug">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">DROP TABLE</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
+return util:toXML($dasResponse)</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivluyium" targetId="ivluyiue" type="containerLink"/>
+                  </flow>
+                  <flow id="ivluyiuh">
+                     <assignment id="ivluyiui">
+                        <title>Assignment to testResults</title>
+                        <operation source="constant" to="temp.testResult[1]/testName">DROP TABLE</operation>
+                        <operation source="constant" to="temp.testResult[1]/testResult">fail</operation>
+                        <operation source="formula" to="temp.testResult[1]/message">
+                           <expression language="XQuery">let $code   := concat("Code",$output.faultInfo[1]/code)
+let $reason := concat("Reason",$output.faultInfo[1]/reason)
+let $detail := concat("Detail",$output.faultInfo[1]/detail)
+
+let $messageParts := ($code,$reason,$detail)
+
+return string-join($messageParts, " ")
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="ivluyiun" targetId="ivluyiue" type="containerLink"/>
+                  </flow>
+                  <link id="ivluyiuk" targetId="ivluyiuf" type="containerLink"/>
+                  <link id="ivluyiw3" targetId="ivluyiw2"/>
+                  <events>
+                     <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
+                        <link id="ivluyiul" targetId="ivluyiuh" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4T2lQzKv7vZjNuf8ol8yo9</types1:GUID>
+      <types1:DisplayName>TEST DAS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-09T23:11:37.807Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

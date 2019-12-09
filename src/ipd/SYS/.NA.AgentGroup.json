@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "6WpXgRmRlWMg3Uvus96aeN",
+      "objectName": "NA",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0101P625000000000002"
+         }
+      }
+   }
+]

@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Provides Support to store  and retrive configurations or other files as gitlab Snippets\nSee https://gitlab.com/help/api/README.md",
+            "description": "Provides Support to store  and retrieve configurations or other files as gitlab Snippets\nSee https://gitlab.com/help/api/README.md",
             "documentState": "VALID"
          },
          "contextAttributes": null,

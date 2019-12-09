@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "55rilxzyHaTe1ngh9QtgKl",
+      "objectName": "TEST DAS",
+      "objectType": "GUIDE",
+      "path": "/Explore/DAS/Tests",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide To Run various data acess Service Wrapper test",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "qzUzeA8rJ4pbgch-gt-159666-2018-07-18T13:22:03.027Z::gt.xml"
+         }
+      }
+   }
+]

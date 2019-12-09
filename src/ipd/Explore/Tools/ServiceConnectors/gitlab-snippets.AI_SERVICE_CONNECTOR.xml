@@ -5,7 +5,7 @@
       <types1:Name>gitlab-snippets</types1:Name>
       <types1:ParentFlowIds>OnTTpOzEkhK6LlR-gt-79426-2019-10-09T18:48:50.657Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
-      <types1:Description>Provides Support to store  and retrive configurations or other files as gitlab Snippets
+      <types1:Description>Provides Support to store  and retrieve configurations or other files as gitlab Snippets
 See https://gitlab.com/help/api/README.md</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
@@ -15,8 +15,8 @@ See https://gitlab.com/help/api/README.md</types1:Description>
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-10-09T14:01:23Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-10-14T14:05:43Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2019-11-26T14:57:12Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2019-10-14T14:05:55Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/gitlab_snippets/gitlab_snippets_svcDef.xml</types1:PublishedContributionId>
@@ -29,7 +29,7 @@ See https://gitlab.com/help/api/README.md</types1:Description>
                             label=""
                             name="gitlab-snippets"
                             uuid="7cf5fdba-abb9-48d4-b6d1-e2481c1eddbd">
-            <description>Provides Support to store  and retrive configurations or other files as gitlab Snippets
+            <description>Provides Support to store  and retrieve configurations or other files as gitlab Snippets
 See https://gitlab.com/help/api/README.md</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
@@ -489,5 +489,5 @@ default return ()}</xquery>
       <types1:GUID>1UgNOYX99vYl4ePFrQfEis</types1:GUID>
       <types1:DisplayName>gitlab-snippets</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-11-13T20:30:45.103Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-12-09T23:11:37.351Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

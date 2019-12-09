@@ -1,0 +1,100 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>TLzA5FsdsFsdsFs-gt-752763-2018-07-18T13:22:00.673Z::pd.xml</types1:EntryId>
+      <types1:Name>execSQLProxy</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-07-18T13:22:01Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2018-07-18T18:16:18Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2018-07-18T18:54:12Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.execSQLProxy/execSQLProxy.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="execSQLProxy"
+                  name="execSQLProxy">
+            <appliesTo/>
+            <description>This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.</description>
+            <tags>.agent:iclab</tags>
+            <generator>Informatica Process Designer 9</generator>
+            <input>
+               <parameter description="" name="dataAccessRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="dataAccessResponse" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>iclab</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="iveac80q"/>
+               </start>
+               <eventContainer id="iveac80q">
+                  <service id="c">
+                     <title>execSQL</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">input.dataAccessRequest</parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="iveac80t">
+                     <assignment id="ivijvknt">
+                        <title>Assignment to dataAccessResponse</title>
+                        <operation source="field" to="output.dataAccessResponse">output.dataAccessResponse</operation>
+                     </assignment>
+                     <link id="iveac80u" targetId="iveac80q" type="containerLink"/>
+                  </flow>
+                  <flow id="iveac80x">
+                     <throw id="iveac81m">
+                        <title>fault</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="iveac80r" targetId="iveac80t" type="containerLink"/>
+                  <link id="ivijvknw" targetId="d"/>
+                  <events>
+                     <catch faultField="faultInfo" id="iveac80o" interrupting="true">
+                        <link id="iveac80v" targetId="iveac80x" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>dkcwMWPZRk4jqXT9TMUwgq</types1:GUID>
+      <types1:DisplayName>execSQLProxy</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-09T23:11:36.924Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

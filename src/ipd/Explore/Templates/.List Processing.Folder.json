@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "25aMZPNdTDjl4NE7Ls9rU0",
+      "objectName": "List Processing",
+      "objectType": "Folder",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Examples of process that processes list of Items",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

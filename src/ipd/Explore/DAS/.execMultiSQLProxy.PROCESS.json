@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "1H3UtktK7r4hpKFkSq0gYT",
+      "objectName": "execMultiSQLProxy",
+      "objectType": "PROCESS",
+      "path": "/Explore/DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This service allows to Access the execMultiSQL DAS Services running on the Secure Agent from the cloud process or the guide.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "P274Rpf6JfOMWSw-gt-749200-2018-07-18T13:21:58.677Z::pd.xml"
+         }
+      }
+   }
+]
