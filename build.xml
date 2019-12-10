@@ -639,13 +639,12 @@
                 <arg line="${iics.extract.command.@{id}}"/>
             </exec>
             <condition property="iics.extractresult.@{id}" value="false" else="true" >
-                   <contains string="${iics.extractoutput.@{id}}" substring="Exiting with error" casesensitive="false" />
+                   <contains string="${iics.extract.output.@{id}}" substring="Exiting with error" casesensitive="false" />
             </condition>
-            <echo level="info">${iics.extractoutput.@{id}}</echo>
+            <echo level="info">${iics.extract.output.@{id}}</echo>
             <echo level="info">iics list success ${iics.extractresult.@{id}}</echo>
             <fail unless="${iics.extractresult.@{id}}" message="iics export error"/>
         </sequential>
-        
     </macrodef>
 
 
