@@ -509,6 +509,8 @@ ant download.src \
 
 ## Update Sources for Version Control
 
+[![asciicast](https://asciinema.org/a/hhJbH9ORpSxngHf0FYkWHK54z.svg)](https://asciinema.org/a/hhJbH9ORpSxngHf0FYkWHK54z)
+
 First make sure your local repository sits on the correct branch matching your export source environment i.e. `dev`
 
 Make sure your git tree up to date with remote
