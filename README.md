@@ -127,9 +127,9 @@ Connector Properties
 
 | Name         | Description                                                                        |
 | ------------ | ---------------------------------------------------------------------------------- |
-| base_uri     | Base URI of the REST endpoint Base URI of the REST endpoint https://api.github.com |
 | access_token | Gist API Access Token                                                              |
 | api_version  | API Version (currently V3)                                                         |
+| base_uri     | Base URI of the REST endpoint Base URI of the REST endpoint https://api.github.com |
 
 ### gitlab-snippets
 
@@ -156,7 +156,7 @@ It is recommended to use private snippets to store this configuration, you will 
 Connector Properties
 
 | Name         | Description                                                   |
-| ------------ | ------------------------------------------------------------- |
+|--------------|---------------------------------------------------------------|
 | base_uri     | GitLab API Base URL (example: https://gitlab.example.com/api) |
 | access_token | API Access Token                                              |
 | api_version  | API Version (currently v4)                                    |
@@ -181,20 +181,20 @@ Description: IPaaS Database for Logging and job tracking
 ## Glossary of Terms used in this Documents
 
 | Term                            | Description                                                                                                                                                        |
-| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| IICS                            | Informatica Intelligent Cloud Services, Informatica Cloud Integration platform                                                                                     |
-| ICAI                            | (formerly ICRT) Informatica Cloud Application Integration, see ICRT                                                                                                |
-| ICDI                            | (formerly ICS) Informatica Cloud Data Integration is an ETL batch integration component of IICS platform                                                           |
+|---------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| API                             | Application Programming Interface                                                                                                                                  |
+| Application Integration Console | ICAI Cloud and Secure Agent Runtime Administration Tool                                                                                                            |
 | BPEL                            | Business Process Execution Language                                                                                                                                |
 | BPMN                            | Business Process Modeling Notation                                                                                                                                 |
-| WSDL                            | Web Service Definition Language                                                                                                                                    |
-| API                             | `Application Programming Interface                                                                                                                                 |
-| REST                            | REpresentational State Transfer                                                                                                                                    |
-| IPD                             | Informatica Process Designer                                                                                                                                       |
-| Application Integration Console | ICAI Cloud and Secure Agent Runtime Administration Tool                                                                                                            |
-| Informatica Secure Agent        | Informatica Data Integration Execution Agent that Provides ability to integrate data on premise and in the Cloud, hybrid data integration both batch and real time |
 | DAS                             | Data Access Service                                                                                                                                                |
+| ICAI                            | (formerly ICRT) Informatica Cloud Application Integration, see ICRT                                                                                                |
+| ICDI                            | (formerly ICS) Informatica Cloud Data Integration is an ETL batch integration component of IICS platform                                                           |
+| IICS                            | Informatica Intelligent Cloud Services, Informatica Cloud Integration platform                                                                                     |
+| IPD                             | Informatica Process Designer                                                                                                                                       |
+| Informatica Secure Agent        | Informatica Data Integration Execution Agent that Provides ability to integrate data on premise and in the Cloud, hybrid data integration both batch and real time |
+| REST                            | REpresentational State Transfer                                                                                                                                    |
 | SDLC                            | Software Development Lifecycle                                                                                                                                     |
+| WSDL                            | Web Service Definition Language                                                                                                                                    |
 
 [alert_service_help]: https://network.informatica.com/onlinehelp/IICS/prod/CAI/en/index.htm#page/cai-aae-monitor/System_Services.html
 [development_setup]: https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/set_development_environment.md
