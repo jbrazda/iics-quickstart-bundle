@@ -23,6 +23,7 @@ This package contains [Apache Ant Script](../build.xml) to maintain the sources 
     - [Perform Build and Deploy in one step](#perform-build-and-deploy-in-one-step)
   - [Download Package from Environment](#download-package-from-environment)
   - [Update Sources for Version Control](#update-sources-for-version-control)
+  - [How to Create iics Package, Publish Configuration files](#how-to-create-iics-package-publish-configuration-files)
 
 <!-- /TOC -->
 
@@ -509,8 +510,6 @@ ant download.src \
 
 ## Update Sources for Version Control
 
-[![asciicast](https://asciinema.org/a/hhJbH9ORpSxngHf0FYkWHK54z.svg)](https://asciinema.org/a/hhJbH9ORpSxngHf0FYkWHK54z)
-
 First make sure your local repository sits on the correct branch matching your export source environment i.e. `dev`
 
 Make sure your git tree up to date with remote
@@ -553,6 +552,60 @@ git add .
 git commit -m "Your message"
 git push
 ```
+
+## How to Create iics Package, Publish Configuration files
+
+`iics` Asset Management utility can use set of pre-defined configuration files to export/package/import IICS Assets. You can use shell script to produce such list of designs to be exported packaged or published
+
+For example to list all Process Design in the expanded source directory of your project you can use following
+
+```shell
+find ./src/ipd -name "*PROCESS.xml" | gsed -r 's/(\.\/src\/ipd\/)|(\.xml)//g'
+```
+
+This will produce following output on this project (the scripts lists all *.PROCESS.xml files and removes the ./src/ipd from the begging of the relative path and removes the extension from design name)
+
+```text
+Explore/Tools/Processes/SP-ICS-Run-Job-Cloud.PROCESS
+Explore/Tools/Processes/SP-ICS-GetTaskList-Cloud.PROCESS
+Explore/Tools/Processes/SP-ICS-GetMappings-Cloud.PROCESS
+Explore/Tools/Processes/SP-ICS-GetTaskID.PROCESS
+Explore/Tools/Processes/SP-util-shell-curl-NA.PROCESS
+Explore/Tools/Processes/SP-ICS-GetMapping-Cloud.PROCESS
+Explore/Tools/Processes/SP-util-upload-agent.PROCESS
+Explore/Tools/Processes/SP-ICS-Create-MCT-NA.PROCESS
+Explore/Tools/Processes/SP-ICS-Run-Job-NA.PROCESS
+Explore/Tools/Processes/SP-ICS-Create-MCT.PROCESS
+Explore/Tools/Processes/SP-IPaaS-Encrypt-NA.PROCESS
+Explore/Tools/Processes/SP-ConvertAttachmentToText.PROCESS
+Explore/Tools/Processes/SP-JMS-Send-MDM-IICS.PROCESS
+Explore/Tools/Processes/SP-ICS-GetTaskID-NA.PROCESS
+Explore/Tools/Processes/SP-ICS-GetTaskFlowList-Cloud.PROCESS
+Explore/Tools/Processes/SP-Shell-CMD.PROCESS
+Explore/DAS/execSQLProxy.PROCESS
+Explore/DAS/Tests/TEST DAS.PROCESS
+Explore/DAS/execMultiSQLProxy.PROCESS
+Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-MP-Job-SFDC.PROCESS
+Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-SP-ETL-SFDC.PROCESS
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
+Explore/Templates/Jobs_Logging_DB/TEMPLATE-MP-Job-DB.PROCESS
+Explore/Templates/SP-Test-Throw-Fault-Generic.PROCESS
+Explore/Templates/SP-Test-Throw-Fault-Generic-Cloud.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Update-Job-Entry-DB-NA.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Create-Job-Event-Entry-DB-NA.PROCESS
+Explore/Logging/Logger_Database_NA/SP-IPaaS-Create-Job-Entry-DB-NA.PROCESS
+Explore/Logging/Setup/SP-Setup-Logging-DB.PROCESS
+Explore/Logging/Logger_SFDC_Cloud/SP-IPaaS-Create-Job-Entry.PROCESS
+Explore/Logging/Logger_SFDC_Cloud/SP-IPaaS-Update-Job-Entry.PROCESS
+Explore/Logging/Logger_SFDC_Cloud/SP-IPaaS-Create-Job-Event-Entry.PROCESS
+Explore/Logging/Logger_SFDC_NA/SP-IPaaS-Create-Job-Entry-NA.PROCESS
+Explore/Logging/Logger_SFDC_NA/SP-IPaaS-Update-Job-Entry-NA.PROCESS
+Explore/Logging/Logger_SFDC_NA/SP-IPaaS-Create-Job-Event-Entry-NA.PROCESS
+```
+
+> Note we had to use used GNU sed as on Mac BSD built-in sed does not support capture groups and -r switch (install `gsed` with Brew or MacPorts)
+> You can do similar on Windows git bash or Linux with just `sed` command.
+> You might still want to re-order individual designs in the configuration to reflect desired order of publish command
 
 [development_setup]: https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/set_development_environment.md
 [iics_cli]: https://network.informatica.com/docs/DOC-18245
