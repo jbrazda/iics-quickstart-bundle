@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>KjvMKQr3rp3yD7t-gt-4147664-2019-06-19T14:29:04.059Z::svc.xml</types1:EntryId>
       <types1:Name>github-gist</types1:Name>
-      <types1:ParentFlowIds>XShOeCFk4AdypKw-gt-6237215-2019-06-21T13:55:49.804Z::conn.xml,eMi4tciSrZMSPfX-gt-4192745-2019-06-19T17:12:46.079Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>eMi4tciSrZMSPfX-gt-4192745-2019-06-19T17:12:46.079Z::conn.xml,XShOeCFk4AdypKw-gt-6237215-2019-06-21T13:55:49.804Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Github REST V3 APi to manage Gists
 see https://developer.github.com/v3/gists/
@@ -973,5 +973,5 @@ See</description>
       <types1:GUID>aXpKwYgvdgcbMOhXzbXTqd</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-12-09T23:11:37.234Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-23T18:48:04.203Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -126,7 +126,7 @@ It is recommended to use private gist to store this configuration, you will need
 Connector Properties
 
 | Name         | Description                                                                        |
-| ------------ | ---------------------------------------------------------------------------------- |
+|--------------|------------------------------------------------------------------------------------|
 | access_token | Gist API Access Token                                                              |
 | api_version  | API Version (currently V3)                                                         |
 | base_uri     | Base URI of the REST endpoint Base URI of the REST endpoint https://api.github.com |
