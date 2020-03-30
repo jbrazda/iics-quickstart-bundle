@@ -1,3 +1,5 @@
+Explore/DAS.Project
+Explore/Logging/Guides_Database.Folder
 Explore/Logging/Guides_Database.Folder
 Explore/Logging/Guides_SFDC.Folder
 Explore/Logging/Guides.Folder
