@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "5ak48QqN0cQbpMDlnU3Uwd",
+      "objectGuid": "hcH0Cde8Y2GjqGhTQpv9oz",
       "objectName": "TEMPLATE-MP-Job-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DB",
@@ -16,39 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "itZr5hKQ24OjwDCGWI7SCe",
-            "6Qfd83wdMtUgosGkvB0Gy0",
-            "lWurPrz0AW6hdK7bY2gVWz"
+            "a8f1LmXZlzibFVDqCJ5equ",
+            "jJIHZ3UwecldLOFbMHDroh",
+            "7gNn29q0tM6bKwqIv38g4s"
          ],
          "repoInfo": {
-            "repoHandle": "7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml"
+            "repoHandle": "vD4teIssjqluQga-gt-6187152-2020-03-24T18:08:20.338Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "itZr5hKQ24OjwDCGWI7SCe",
-      "objectName": "TEMPLATE-SP-ETL-DB",
-      "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DB",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Template for Integration Sub-Process (SP) Demo",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "6Qfd83wdMtUgosGkvB0Gy0",
+      "objectGuid": "a8f1LmXZlzibFVDqCJ5equ",
       "objectName": "CreateJobLogEventRequest",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
@@ -65,12 +43,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "OjG4abck0Kn7wpo-gt-1756122-2019-04-30T13:34:30.649Z::po.xml"
+            "repoHandle": "abcoq3xgjATO9pH-gt-5237529-2020-03-24T18:08:18.014Z::po.xml"
          }
       }
    },
    {
-      "objectGuid": "lWurPrz0AW6hdK7bY2gVWz",
+      "objectGuid": "jJIHZ3UwecldLOFbMHDroh",
       "objectName": "ProcessExecutionContext",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
@@ -87,7 +65,29 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml"
+            "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "7gNn29q0tM6bKwqIv38g4s",
+      "objectName": "TEMPLATE-SP-ETL-DB",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_DB",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Integration Sub-Process (SP) Demo",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "9zhFtybduaa-gt-5306440-2020-03-24T18:08:15.976Z::pd.xml"
          }
       }
    }

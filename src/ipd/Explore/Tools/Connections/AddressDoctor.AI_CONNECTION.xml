@@ -1,8 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>xxYxQ2Tp5OjG4ab-gt-1337153-2018-10-25T19:14:53.379Z::conn.xml</types1:EntryId>
-      <types1:Name>AddressDoctor-1</types1:Name>
+      <types1:EntryId>yKAWa-gt-6187008-2020-03-24T18:08:13.394Z::conn.xml</types1:EntryId>
+      <types1:Name>AddressDoctor</types1:Name>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Informatica Address Doctor Connection</types1:Description>
       <types1:AppliesTo/>
@@ -10,19 +10,20 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-10-25T19:14:53Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-27T17:04:47Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-21T15:23:57Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connection/AddressDoctor-1/AddressDoctor-1.conn.xml</types1:PublishedContributionId>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-27T17:04:59Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AddressDoctor/AddressDoctor.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
                      displayName="AddressDoctor"
                      label="AddressDoctor"
-                     name="AddressDoctor-1">
+                     name="AddressDoctor">
             <description>Informatica Address Doctor Connection</description>
             <tags/>
             <agent/>
@@ -43,8 +44,8 @@
             </businessConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>7pFwIQcjoJ8b9rSPlqaAUz</types1:GUID>
+      <types1:GUID>58vC2cnmBIOdBfUYH3IdAj</types1:GUID>
       <types1:DisplayName>AddressDoctor</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.454Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:14.994Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

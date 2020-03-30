@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>NGJZx1Xmgaabclv-gt-2102609-2018-10-10T19:48:22.644Z::gt.xml</types1:EntryId>
+      <types1:EntryId>sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml</types1:EntryId>
       <types1:Name>Admin_Shell</types1:Name>
-      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Utility Guide to Invoke Shell commands on the  Secure Agent</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-10-10T19:48:23Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-07-10T02:54:52Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-27T15:17:08Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-07-10T02:55:05Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-27T15:17:11Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Admin_Shell/Admin_Shell.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -51,7 +51,7 @@
                <field description="" name="tmp_workDir" type="string">
                   <options>
                      <option name="required">false</option>
-                     <option name="initialvalue">/home/iclab</option>
+                     <option name="initialvalue">.</option>
                   </options>
                </field>
             </tempFields>
@@ -154,7 +154,7 @@
                      <text>Done</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="jxwnh0z9">
+               <empty gatewayType="exclusive" id="k8abwkki">
                   <actions/>
                </empty>
                <jumpTo id="jkokoopz" targetTitle="Shell Command Tool">
@@ -166,7 +166,7 @@
                </jumpTo>
                <callProcess id="jkokoooc">
                   <title>SP-Shell-CMD</title>
-                  <subflowGUID>6fQrafQfG0olcEFSeGsIyv</subflowGUID>
+                  <subflowGUID>6LCl0Gjkdewi7UAhtDFfuY</subflowGUID>
                   <subflowPath>SP-Shell-CMD</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -214,8 +214,8 @@
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>aePU92FcuCxiU6xBc4iBOD</types1:GUID>
+      <types1:GUID>aqpUO15ISL4jLLs0xDJxmL</types1:GUID>
       <types1:DisplayName>Admin Shell</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.607Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.485Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

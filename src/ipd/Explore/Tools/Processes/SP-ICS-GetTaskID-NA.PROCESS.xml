@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>giQpvJQhtGci3zy-gt-3152353-2019-04-29T19:35:50.106Z::pd.xml</types1:EntryId>
+      <types1:EntryId>oRvsGRvDINciZBp-gt-1951753-2020-03-24T18:08:17.238Z::pd.xml</types1:EntryId>
       <types1:Name>SP-ICS-GetTaskID-NA</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process to retrive Complete ICS DI Task Log</types1:Description>
@@ -10,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-04-29T19:35:50Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-05-07T17:13:42Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-24T18:35:14Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-07-29T17:25:27Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-24T20:10:45Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskID-NA/SP-ICS-GetTaskID-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -63,7 +63,7 @@
                      <option name="referenceTo">ICS-API:Task</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">9BvRWvqMsiEk6qnJ0A0UWE</option>
+                     <option name="guid">9yKFXii7ZmkiUYE6xjuwuh</option>
                   </options>
                </field>
             </output>
@@ -79,14 +79,14 @@
                <service id="justr27t">
                   <title>Login</title>
                   <serviceName>ICS-API:Login</serviceName>
-                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceGUID>9yKFXii7ZmkiUYE6xjuwuh</serviceGUID>
                   <serviceInput/>
                   <link id="justr280" targetId="justr27z"/>
                </service>
                <service id="justr27z">
                   <title>List Tasks</title>
                   <serviceName>ICS-API:List Tasks</serviceName>
-                  <serviceGUID>9BvRWvqMsiEk6qnJ0A0UWE</serviceGUID>
+                  <serviceGUID>9yKFXii7ZmkiUYE6xjuwuh</serviceGUID>
                   <serviceInput>
                      <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
                      <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
@@ -135,8 +135,8 @@ return $tasks[Name/text() = $input.in_task_name]</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>1GVIrMQ6usFfsFOJc8v8cI</types1:GUID>
+      <types1:GUID>2KxGZQD9iSodU7F2u3zDMy</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskID-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.592Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.467Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

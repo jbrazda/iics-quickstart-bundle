@@ -1,9 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>bdrxeLeG3vASaaa-gt-159660-2018-07-18T13:21:55.023Z::svc.xml</types1:EntryId>
+      <types1:EntryId>mUhGdwOLIFvukNX-gt-1951643-2020-03-24T18:08:11.193Z::svc.xml</types1:EntryId>
       <types1:Name>DataAccessService</types1:Name>
-      <types1:ParentFlowIds>71WFsWTzIf6riX2-gt-171437-2018-10-03T18:34:13.937Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +10,12 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-07-18T13:21:55Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-11-05T19:01:26Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-11-05T19:01:30Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-24T19:33:23Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -349,8 +347,8 @@
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>cZ66760oF8pjwt5OEx7AY1</types1:GUID>
+      <types1:GUID>fnG0seP4jM2ljV7FCQzLYx</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:03.72Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:14.452Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

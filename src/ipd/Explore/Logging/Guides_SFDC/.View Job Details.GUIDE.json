@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "36qC6WJVV9UdCykBHH4Ngh",
+      "objectGuid": "g6o2cQ9GgmYkypVqo8nkoh",
       "objectName": "View Job Details",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_SFDC",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "0tVX0h5BQECepoL3KrkDWi"
+            "5qIuCPZACbreESh7CW8Z4f"
          ],
          "repoInfo": {
-            "repoHandle": "rKkQIW3Ni7A7vNl-gt-2733919-2019-03-19T21:04:04.275Z::gt.xml"
+            "repoHandle": "NclJKoJBUhtycot-gt-5237589-2020-03-24T18:08:18.632Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "0tVX0h5BQECepoL3KrkDWi",
+      "objectGuid": "5qIuCPZACbreESh7CW8Z4f",
       "objectName": "SP Show Process Links",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "bcm6S6fPAreFRqX-gt-798738-2019-03-19T17:11:00.502Z::gt.xml"
+            "repoHandle": "FlprzYLnzYLnzYL-gt-6187094-2020-03-24T18:08:16.501Z::gt.xml"
          }
       }
    }

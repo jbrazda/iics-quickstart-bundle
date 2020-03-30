@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "7pFwIQcjoJ8b9rSPlqaAUz",
+      "objectGuid": "58vC2cnmBIOdBfUYH3IdAj",
       "objectName": "AddressDoctor",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "xxYxQ2Tp5OjG4ab-gt-1337153-2018-10-25T19:14:53.379Z::conn.xml"
+            "repoHandle": "yKAWa-gt-6187008-2020-03-24T18:08:13.394Z::conn.xml"
          }
       }
    }

@@ -1,32 +1,33 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>Y8DglxbdypKwKBq-gt-747303-2018-07-18T13:22:01.881Z::pd.xml</types1:EntryId>
+      <types1:EntryId>Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml</types1:EntryId>
       <types1:Name>TEST_DAS</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Test process to test various scenarios on DAS Service</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-07-18T13:22:02Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-04-29T19:59:14Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-27T15:08:16Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-04-29T19:59:31Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-27T15:08:41Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEST_DAS/TEST_DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="TEST DAS"
-                  name="TEST_DAS">
+                  name="TEST_DAS"
+                  overrideAPIName="false">
             <appliesTo/>
             <description>Test process to test various scenarios on DAS Service</description>
-            <tags>.agent:iclab</tags>
+            <tags>.agent:NA</tags>
             <generator>Informatica Process Designer 11</generator>
             <output>
                <field description="" name="testResults" type="objectlist">
@@ -35,6 +36,21 @@
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="processID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="environment" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="processName" type="string">
+                  <options>
+                     <option name="required">false</option>
                   </options>
                </field>
             </output>
@@ -63,7 +79,7 @@
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>iclab</targetLocation>
+               <targetLocation>NA</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -73,18 +89,31 @@
                <assignment id="ivjndd62">
                   <title>Set Create Table</title>
                   <operation source="constant" to="temp.dasRequest[1]/dataSource">DS1</operation>
-                  <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/statement">CREATE TABLE test_table (
-  idtest_table INT NOT NULL AUTO_INCREMENT,
+                  <operation source="formula" to="temp.dasRequest[1]/sqlStatement[1]/statement">
+                     <expression language="XQuery">let $sql := &lt;sql&gt;CREATE SEQUENCE test_table_seq;
+
+CREATE TABLE test_table (
+  idtest_table INT NOT NULL DEFAULT NEXTVAL ('test_table_seq'),
   col_varchar VARCHAR(45) NULL,
   col_int INT NULL,
-  col_datetime DATETIME NULL,
+  col_datetime TIMESTAMP(0) NULL,
   col_bigint BIGINT NULL,
   PRIMARY KEY (idtest_table),
-  UNIQUE INDEX idtest_table_UNIQUE (idtest_table ASC));</operation>
+  CONSTRAINT idtest_table_UNIQUE UNIQUE (idtest_table));
+&lt;/sql&gt;
+return $sql/text()</expression>
+                  </operation>
                   <operation source="constant"
                              to="temp.dasRequest[1]/sqlStatement[1]/includeMetadata">true</operation>
                   <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/statementId">create_test_table</operation>
                   <operation source="constant" to="temp.dasRequest[1]/sqlStatement[1]/hasResultSet">false</operation>
+                  <operation source="formula" to="output.processID">
+                     <expression language="XQuery">util:getProcessId()</expression>
+                  </operation>
+                  <operation source="constant" to="output.processName">TEST_DAS</operation>
+                  <operation source="formula" to="output.environment">
+                     <expression language="XQuery">util:resolveURN('urn:environment:name')</expression>
+                  </operation>
                   <link id="ivjndd64" targetId="ivjwaak3"/>
                </assignment>
                <assignment id="ivjo3fkm">
@@ -262,7 +291,7 @@ values (?,?,?,?)&lt;/statement&gt;
       &lt;statementId&gt;drop_test_table&lt;/statementId&gt;
       &lt;columnCase&gt;&lt;/columnCase&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;DROP TABLE test_table&lt;/statement&gt;
+      &lt;statement&gt;DROP TABLE test_table; DROP SEQUENCE test_table_seq;&lt;/statement&gt;
    &lt;/sqlStatement&gt;
    &lt;dataSource&gt;DS1&lt;/dataSource&gt;
 &lt;/tDataAccessRequest&gt;
@@ -504,8 +533,12 @@ values (?,?,?,?)&lt;/statement&gt;
    &lt;sqlStatement&gt;
       &lt;statementId&gt;get_rows_id&lt;/statementId&gt;
       &lt;hasResultSet&gt;true&lt;/hasResultSet&gt;
-      &lt;statement&gt;SELECT LAST_INSERT_ID()&lt;/statement&gt;
-      &lt;!-- in SQL Server use SELECT SCOPE_IDENTITY()  --&gt;
+      &lt;statement&gt;SELECT currval('test_table_seq');&lt;/statement&gt;
+      &lt;!-- How to get last inserted row ID for autoincrements?
+      SQL Server use SELECT SCOPE_IDENTITY()  
+      Postgress SELECT currval('persons_id_seq');
+      MySQl SELECT LAST_INSERT_ID()
+      --&gt;
    &lt;/sqlStatement&gt;
    &lt;dataSource&gt;DS1&lt;/dataSource&gt;
 &lt;/tMultiDataAccessRequest&gt;
@@ -602,8 +635,8 @@ return string-join($messageParts, " ")
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>4T2lQzKv7vZjNuf8ol8yo9</types1:GUID>
+      <types1:GUID>1OhIsv9XOryjqHq8x31xGe</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:03.963Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.027Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

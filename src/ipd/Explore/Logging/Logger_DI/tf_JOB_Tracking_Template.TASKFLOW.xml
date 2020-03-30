@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>WVdzm5Y6tMFygls-gt-7130952-2019-08-27T18:52:58.779Z::tf.xml</types1:EntryId>
+      <types1:EntryId>WdyH72yIYmWR7hs-gt-17502004-2020-03-24T18:08:21.787Z::tf.xml</types1:EntryId>
       <types1:Name>tf_JOB_Tracking_Template</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description>Example Task flow template to use as a starting point to develop new task flows</types1:Description>
@@ -10,10 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-08-27T18:52:59Z</types1:CreationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy/>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-26T01:01:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_JOB_Tracking_Template/tf_JOB_Tracking_Template.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -82,7 +85,7 @@
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mct_Logging_CreateJobEntry</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">8ow2dzKcMgTeC1oMPQhiw7</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">gwMcWDI7JmqgsqgHBwyum3</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
                         <parameter name="taskField" source="nested">
@@ -143,7 +146,7 @@
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mct_Logging_CreateEventEntry</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">gH1dPKkd70nfOx00YpTxi3</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">eL0hPthBBMRlQJnYnKr3wP</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
                         <parameter name="taskField" source="nested">
@@ -233,7 +236,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">86400</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mct_Logging_UpdateJobEntry</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">hWzPDr65h0Efa0Yzjqo6Si</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2OPKdrmxx1te7ns0Uqd4A9</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
                         <parameter name="taskField" source="nested">
@@ -320,8 +323,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>5szXTUqHhGUcKXyatBksWY</types1:GUID>
+      <types1:GUID>8prC4AM9Anzf8pEeDj0eWd</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:05.531Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:16.834Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

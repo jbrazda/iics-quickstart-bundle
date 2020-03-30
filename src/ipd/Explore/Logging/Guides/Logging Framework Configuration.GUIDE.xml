@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml</types1:EntryId>
+      <types1:EntryId>zx1XmgaabclvAhr-gt-1951797-2020-03-24T18:08:19.416Z::gt.xml</types1:EntryId>
       <types1:Name>Logging_Framework_Configuration</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>This Guide helps to Setup and Configure  Logging and Tracking Components</types1:Description>
@@ -10,14 +10,11 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-04-30T20:25:53Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-10-18T16:53:50Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-18T17:47:11Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/sf.Logging_Framework_Configuration/Logging_Framework_Configuration.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-24T18:35:16Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -210,7 +207,7 @@
                </empty>
                <subflow id="jvfnnsdy">
                   <title>Setup Logging DB</title>
-                  <subflowGUID>akOVKXc0aE7lAct0X7uEMo</subflowGUID>
+                  <subflowGUID>2MMQuXd5tm2eghsxW91sWd</subflowGUID>
                   <subflowPath>Setup_Logging_DB</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <actions>
@@ -222,8 +219,8 @@
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>121jjjlqAKNhxs9emgKOWk</types1:GUID>
+      <types1:GUID>2nrk6oQFJ5gd0z1kzbniOP</types1:GUID>
       <types1:DisplayName>Logging Framework Configuration</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.785Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.624Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

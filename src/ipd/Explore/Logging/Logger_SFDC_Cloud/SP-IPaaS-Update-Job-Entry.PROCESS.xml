@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>18ypmaaa-gt-1756170-2019-04-30T13:34:31.848Z::pd.xml</types1:EntryId>
+      <types1:EntryId>HWwjlybduaa-gt-1951827-2020-03-24T18:08:19.545Z::pd.xml</types1:EntryId>
       <types1:Name>SP-IPaaS-Update-Job-Entry</types1:Name>
-      <types1:ParentFlowIds>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>Ti8RVf4VQT53nQc-gt-5281432-2020-03-24T18:08:21.735Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>generic logging process of jobs</types1:Description>
       <types1:AppliesTo/>
@@ -11,12 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-04-30T13:34:32Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-24T18:35:16Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-21T15:24:22Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-26T00:51:14Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry/SP-IPaaS-Update-Job-Entry.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -37,7 +38,7 @@
                      <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">8mX2dbmOledkm1Kn65In0q</option>
+                     <option name="guid">cNRcz5CBc2Pbg5h9Nn5G4M</option>
                   </options>
                </parameter>
             </input>
@@ -137,8 +138,8 @@ return string-join($parts," ")</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>a0KrGHUtRyKeBFAJ4OpfMs</types1:GUID>
+      <types1:GUID>0k2fe3EcQywg1labuwVv6X</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Update-Job-Entry</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.759Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.622Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

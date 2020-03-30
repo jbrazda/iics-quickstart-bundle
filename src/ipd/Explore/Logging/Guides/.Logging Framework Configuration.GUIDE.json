@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "121jjjlqAKNhxs9emgKOWk",
+      "objectGuid": "2nrk6oQFJ5gd0z1kzbniOP",
       "objectName": "Logging Framework Configuration",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "akOVKXc0aE7lAct0X7uEMo"
+            "2MMQuXd5tm2eghsxW91sWd"
          ],
          "repoInfo": {
-            "repoHandle": "Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml"
+            "repoHandle": "zx1XmgaabclvAhr-gt-1951797-2020-03-24T18:08:19.416Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "akOVKXc0aE7lAct0X7uEMo",
+      "objectGuid": "2MMQuXd5tm2eghsxW91sWd",
       "objectName": "Setup Logging DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Setup",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "OPE4zlrMZgpDqot-gt-4938428-2019-05-07T19:05:56.645Z::gt.xml"
+            "repoHandle": "VTowoGsciQlBWlD-gt-5237609-2020-03-24T18:08:18.759Z::gt.xml"
          }
       }
    }

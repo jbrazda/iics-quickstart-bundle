@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "a9GIgMrdO73bMsXmCLEEc1",
+      "objectGuid": "5u6384QupA0jJoriKP9Ooj",
       "objectName": "How-To Use Template Processes SFDC",
       "objectType": "GUIDE",
       "path": "/Explore/Templates/Guides",
@@ -16,16 +16,38 @@
             "minor": 0
          },
          "objectRefs": [
-            "3TxXRBytv8viKeAoroXREr",
-            "84sV2BKWoYYi3TjNavvAcF"
+            "704G6J4kNdxe4FcWO7FXUR",
+            "83segJCuM8feXyvtda6UaB"
          ],
          "repoInfo": {
-            "repoHandle": "2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml"
+            "repoHandle": "tWFrLWEQT53nQci-gt-1870057-2020-03-24T18:08:22.312Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "3TxXRBytv8viKeAoroXREr",
+      "objectGuid": "704G6J4kNdxe4FcWO7FXUR",
+      "objectName": "iPaaS Job View",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "documentState": "INVALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "loALVYxWPQE8jIw-gt-1951743-2020-03-24T18:08:17.179Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "83segJCuM8feXyvtda6UaB",
       "objectName": "TEMPLATE-MP-Job-SFDC",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_SFDC",
@@ -42,29 +64,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "84sV2BKWoYYi3TjNavvAcF",
-      "objectName": "iPaaS Job View",
-      "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_SFDC",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml"
+            "repoHandle": "Ti8RVf4VQT53nQc-gt-5281432-2020-03-24T18:08:21.735Z::pd.xml"
          }
       }
    }

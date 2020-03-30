@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "1yPuC1X1GAeltQBH62oCEF",
+      "objectGuid": "62EQGTctXoflW1oeckqbKU",
       "objectName": "ProcessObjects",
       "objectType": "Folder",
       "path": "/Explore/Logging",
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "",
+            "description": "Process Objects used by the Logging framework",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

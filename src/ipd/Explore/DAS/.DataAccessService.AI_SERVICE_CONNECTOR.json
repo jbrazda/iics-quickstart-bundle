@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "cZ66760oF8pjwt5OEx7AY1",
+      "objectGuid": "fnG0seP4jM2ljV7FCQzLYx",
       "objectName": "DataAccessService",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/DAS",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "bdrxeLeG3vASaaa-gt-159660-2018-07-18T13:21:55.023Z::svc.xml"
+            "repoHandle": "mUhGdwOLIFvukNX-gt-1951643-2020-03-24T18:08:11.193Z::svc.xml"
          }
       }
    }

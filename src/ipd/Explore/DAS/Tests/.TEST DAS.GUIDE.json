@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "55rilxzyHaTe1ngh9QtgKl",
+      "objectGuid": "4a73fqRAXfGdj4QKDZ36SF",
       "objectName": "TEST DAS",
       "objectType": "GUIDE",
       "path": "/Explore/DAS/Tests",
@@ -15,9 +15,33 @@
             "major": 1,
             "minor": 0
          },
+         "objectRefs": [
+            "7Gv30yF1SAmblOFOEmSwCZ"
+         ],
+         "repoInfo": {
+            "repoHandle": "FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "7Gv30yF1SAmblOFOEmSwCZ",
+      "objectName": "Show Process Links",
+      "objectType": "GUIDE",
+      "path": "/Explore/DAS/Tests",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "qzUzeA8rJ4pbgch-gt-159666-2018-07-18T13:22:03.027Z::gt.xml"
+            "repoHandle": "s3FdpOfTRgpDqot-gt-7608317-2020-03-27T15:00:22.98Z::gt.xml"
          }
       }
    }

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3NUs1c2CzoTeF8kcWEwXSe",
+      "objectGuid": "1ZKarw0xpyEfQ1ZSVhods0",
       "objectName": "SP-Test-Throw-Fault-Generic",
       "objectType": "PROCESS",
       "path": "/Explore/Templates",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "sLruB3uopz4KhPV-gt-3319415-2019-04-30T13:34:30.293Z::pd.xml"
+            "repoHandle": "hK6LlRkPUEbfV3H-gt-1951663-2020-03-24T18:08:11.25Z::pd.xml"
          }
       }
    }

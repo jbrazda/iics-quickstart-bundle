@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "0owfDrtZtSle01jnBxdkSM",
+      "objectGuid": "3fMCexzb8UghCGoRLCEX2s",
       "objectName": "iPaaS Log Search DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_Database",
@@ -16,16 +16,16 @@
             "minor": 0
          },
          "objectRefs": [
-            "4375TaZUXDxeLADp2bIEuS",
-            "anJKIeJPfDJk8kvVHqi4Wo"
+            "1WEsQ1BnaCNlHLEkh8PJca",
+            "dT4a8mv0dmakB8rX5zj8sL"
          ],
          "repoInfo": {
-            "repoHandle": "dvSzYLnzYLnzYLn-gt-1211794-2018-07-24T14:05:56.058Z::gt.xml"
+            "repoHandle": "PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "4375TaZUXDxeLADp2bIEuS",
+      "objectGuid": "1WEsQ1BnaCNlHLEkh8PJca",
       "objectName": "IPaaS-Logging",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Logging/Connections",
@@ -42,12 +42,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "CDMxrteIssjqluQ-gt-1208791-2018-07-24T14:05:36.452Z::conn.xml"
+            "repoHandle": "cnyXYDdxKlFmVSc-gt-5306363-2020-03-24T18:08:12.045Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "anJKIeJPfDJk8kvVHqi4Wo",
+      "objectGuid": "dT4a8mv0dmakB8rX5zj8sL",
       "objectName": "iPaaS Job View DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_Database",
@@ -64,7 +64,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "TeFRqXpIW7WHK80-gt-168251-2018-07-24T14:05:54.728Z::gt.xml"
+            "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
          }
       }
    }

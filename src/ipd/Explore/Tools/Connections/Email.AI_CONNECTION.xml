@@ -1,9 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>eMuzBq695kchzt1-gt-3182512-2019-01-23T20:02:33.079Z::conn.xml</types1:EntryId>
+      <types1:EntryId>VlDjAqQHhwq9bds-gt-5306400-2020-03-24T18:08:15.762Z::conn.xml</types1:EntryId>
       <types1:Name>Email</types1:Name>
-      <types1:ParentFlowIds>dypKwKBqRi92qBb-gt-3083011-2019-01-23T15:25:16.06Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Shared Email Service to send  alerts and notifications</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-01-23T20:02:33Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-06-18T13:22:22Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-24T18:45:13Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-21T15:24:04Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-24T20:10:15Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/Email/Email.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,18 +29,18 @@
             <agent/>
             <attributes>
                <attribute encrypted="false" name="Authentication" value="Enable"/>
-               <attribute encrypted="false" name="hostName" value="smtp.office365.com"/>
+               <attribute encrypted="false" name="hostName" value="smtp.gmail.com"/>
                <attribute encrypted="false" name="port" value="587"/>
-               <attribute encrypted="false" name="username" value="jbrazda@informatica.com"/>
+               <attribute encrypted="false" name="username" value="jbrazda@unicosolution.com"/>
                <attribute encrypted="true" name="password" value=""/>
                <attribute encrypted="false" name="security" value="TLS"/>
                <attribute encrypted="false" name="connectionTimeout" value="30000"/>
                <attribute encrypted="false"
                           name="testToAddress"
-                          value="jbrazda@informatica.com"/>
+                          value="jbrazda@unicosolution.com"/>
                <attribute encrypted="false"
                           name="fromAddress"
-                          value="jbrazda@informatica.com"/>
+                          value="jbrazda@unicosolution.com"/>
             </attributes>
             <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                            agentOnly="false"
@@ -55,8 +54,8 @@
             </javaConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>4qjjt0TibYxkze5Aq74mgj</types1:GUID>
+      <types1:GUID>4KKTgnBrayxkDx06mAWaQo</types1:GUID>
       <types1:DisplayName>Email</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.044Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:14.977Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml</types1:EntryId>
-      <types1:Name>iPaaS_Job_View-3</types1:Name>
-      <types1:ParentFlowIds>2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml</types1:ParentFlowIds>
+      <types1:EntryId>loALVYxWPQE8jIw-gt-1951743-2020-03-24T18:08:17.179Z::gt.xml</types1:EntryId>
+      <types1:Name>iPaaS_Job_View</types1:Name>
+      <types1:ParentFlowIds>tWFrLWEQT53nQci-gt-1870057-2020-03-24T18:08:22.312Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -13,14 +13,14 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-03-19T17:11:01Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-04-30T13:34:32Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-26T00:20:44Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-21T15:29:37Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_3/iPaaS_Job_View_3.xml</types1:PublishedContributionId>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-26T00:39:08Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View/iPaaS_Job_View.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -29,7 +29,7 @@
                          disableScreenRollback="true"
                          displayName="iPaaS Job View"
                          doneOnEndStep="true"
-                         name="iPaaS_Job_View-3"
+                         name="iPaaS_Job_View"
                          runAsUser="$current">
             <description>Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -54,14 +54,12 @@
                   <options>
                      <option name="referenceTo">Salesforce:IC_JOB_LOG__c</option>
                      <option name="required">false</option>
-                     <option name="guid"/>
                   </options>
                </field>
                <field description="null" name="tmp_job_event" type="reference">
                   <options>
                      <option name="referenceTo">Salesforce:IC_JOB_EVENTS__c</option>
                      <option name="required">false</option>
-                     <option name="guid"/>
                   </options>
                </field>
                <field description="null" name="tmp_event_query" type="textarea">
@@ -287,7 +285,6 @@
                         <options>
                            <option name="referenceTo">Salesforce:IC_JOB_EVENTS__c</option>
                            <option name="required">false</option>
-                           <option name="guid"/>
                            <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PROCESS_ID__c","type":"string","label":"Process ID","renderingType":"string"},{"name":"PROCESS_NAME__c","type":"string","label":"Process Name","renderingType":"string"},{"name":"EVENT_MESSAGE__c","type":"textarea","label":"Message","renderingType":"textarea"},{"name":"EVENT_DETAIL_TEXT__c","type":"textarea","label":"Detail","renderingType":"textarea"},{"name":"EVENT_TIME__c","type":"datetime","label":"Time","renderingType":"datetime"},{"name":"INITIATOR__c","type":"string","label":"Initiator","renderingType":"string"},{"name":"ENVIRONMENT__c","type":"string","label":"Environment","renderingType":"string"},{"name":"LOGGING_LEVEL__c","type":"picklist","label":"Logging Level","renderingType":"picklist"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
                            <option hide="true" name="valuelist.source">searchservice</option>
                            <option hide="true" name="searchservice.name">service:/avosObjectQuerySearchService</option>
@@ -428,16 +425,16 @@
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="jthefy4t">
+               <empty gatewayType="exclusive" id="k880frkm">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jthefy42">
+               <empty gatewayType="exclusive" id="k880frjv">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jthefy4a">
+               <empty gatewayType="exclusive" id="k880frk3">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jthefy4p">
+               <empty gatewayType="exclusive" id="k880frki">
                   <actions/>
                </empty>
                <jumpTo id="jb452xio" targetTitle="Prepare Query">
@@ -477,7 +474,7 @@
                </jumpTo>
                <subflow id="js2denph">
                   <title>SP Show Process Links</title>
-                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -505,7 +502,7 @@
                </subflow>
                <subflow id="js2ecihg">
                   <title>SP Show Job Process Links</title>
-                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -537,7 +534,7 @@
                      <expression language="XQuery">if (empty($input.in_limit)) then 100 else $input.in_limit</expression>
                   </operation>
                   <operation source="query" to="temp.tmp_ic_job_log">
-                     <query from="Salesforce:IC_JOB_LOG__c">
+                     <query advanceQuery="false" from="Salesforce:IC_JOB_LOG__c">
                         <where>Id = '{$input.in_job_id}'  </where>
                      </query>
                   </operation>
@@ -603,8 +600,8 @@ else
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>84sV2BKWoYYi3TjNavvAcF</types1:GUID>
+      <types1:GUID>704G6J4kNdxe4FcWO7FXUR</types1:GUID>
       <types1:DisplayName>iPaaS Job View</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.521Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.455Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

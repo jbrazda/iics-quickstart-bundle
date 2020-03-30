@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "1Qu1h6KagGgh1aPQpSuVi5",
+      "objectGuid": "0TDbowvyedFiXZqIUfUGqs",
       "objectName": "How-To Use Template Processes DB",
       "objectType": "GUIDE",
       "path": "/Explore/Templates/Guides",
@@ -16,61 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "5ak48QqN0cQbpMDlnU3Uwd",
-            "lWurPrz0AW6hdK7bY2gVWz",
-            "anJKIeJPfDJk8kvVHqi4Wo"
+            "dT4a8mv0dmakB8rX5zj8sL",
+            "hcH0Cde8Y2GjqGhTQpv9oz",
+            "jJIHZ3UwecldLOFbMHDroh"
          ],
          "repoInfo": {
-            "repoHandle": "teCpwNXHS45bfTQ-gt-3319501-2019-04-30T13:34:36.317Z::gt.xml"
+            "repoHandle": "Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "5ak48QqN0cQbpMDlnU3Uwd",
-      "objectName": "TEMPLATE-MP-Job-DB",
-      "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DB",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "7hwLdqcgm8lnCmp-gt-3314329-2019-04-30T13:34:35.949Z::pd.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "lWurPrz0AW6hdK7bY2gVWz",
-      "objectName": "ProcessExecutionContext",
-      "objectType": "PROCESS_OBJECT",
-      "path": "/Explore/Logging/ProcessObjects",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "QeBAGE7pppppppp-gt-1846598-2019-04-30T13:34:30.693Z::po.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "anJKIeJPfDJk8kvVHqi4Wo",
+      "objectGuid": "dT4a8mv0dmakB8rX5zj8sL",
       "objectName": "iPaaS Job View DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_Database",
@@ -87,7 +43,51 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "TeFRqXpIW7WHK80-gt-168251-2018-07-24T14:05:54.728Z::gt.xml"
+            "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "hcH0Cde8Y2GjqGhTQpv9oz",
+      "objectName": "TEMPLATE-MP-Job-DB",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_DB",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "vD4teIssjqluQga-gt-6187152-2020-03-24T18:08:20.338Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "jJIHZ3UwecldLOFbMHDroh",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
          }
       }
    }

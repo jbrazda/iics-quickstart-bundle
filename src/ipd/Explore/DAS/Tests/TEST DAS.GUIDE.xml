@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>qzUzeA8rJ4pbgch-gt-159666-2018-07-18T13:22:03.027Z::gt.xml</types1:EntryId>
+      <types1:EntryId>FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml</types1:EntryId>
       <types1:Name>TEST_DAS</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide To Run various data acess Service Wrapper test</types1:Description>
@@ -10,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-07-18T13:22:03Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-11-05T19:10:57Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-27T15:09:14Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-11-05T19:11:02Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-27T15:09:17Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.TEST_DAS/TEST_DAS.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -133,7 +133,10 @@
                            <option name="text_width">100</option>
                            <option name="text_height">10</option>
                            <option name="required">false</option>
-                           <option name="defaultvalue">SELECT page_url FROM source_metadata</option>
+                           <option name="defaultvalue">SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public'
+ORDER BY table_name;</option>
                         </options>
                      </screenDataItem>
                      <screenDataItem name="temp.dataAccessRequest[1]/sqlStatement[1]/columnCase"
@@ -209,6 +212,9 @@
                      <action alt="null" id="ivjssaqi_ivjssaqt" targetScreen="ivjssaqt">
                         <text>Run Test Again</text>
                      </action>
+                     <action alt="null" id="ivjssaqi_k8abcc8u" targetScreen="k8abcc8u">
+                        <text>View Test Proces</text>
+                     </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
                      <screenDataItem name="output.testResults"
@@ -281,6 +287,13 @@
                      </action>
                   </actions>
                </empty>
+               <empty gatewayType="exclusive" id="k8abcc9v">
+                  <actions>
+                     <action alt="" id="k8abcc9v_ivjssaqp" targetScreen="ivjssaqp">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
                <jumpTo id="jq5ldi7q" targetTitle="Run SQL">
                   <actions>
                      <action alt="null" id="jq5ldi7q_ivjsmmsf" targetScreen="ivjsmmsf">
@@ -295,10 +308,46 @@
                      </action>
                   </actions>
                </jumpTo>
+               <subflow id="k8abcc8u">
+                  <title>Show Process Links</title>
+                  <subflowGUID>7Gv30yF1SAmblOFOEmSwCZ</subflowGUID>
+                  <subflowPath>Show_Process_Links</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="k8abffe8"
+                                name="in_process_id"
+                                source="formula"
+                                updatable="true">xpath $output.processID </parameter>
+                     <parameter id="k8abffe9"
+                                name="in_enviornment"
+                                source="field"
+                                updatable="true">output.environment</parameter>
+                     <parameter id="k8abffea"
+                                name="in_process_name"
+                                source="field"
+                                updatable="true">output.processName</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="" id="k8abcc8u_k8abcc9v" targetScreen="k8abcc9v">
+                        <text>Back</text>
+                     </action>
+                     <action alt="" id="k8abcc8u_k8abcc9v_1" targetScreen="k8abcc9v">
+                        <text>Exit</text>
+                     </action>
+                  </actions>
+               </subflow>
                <assignment id="jq5ldi61">
                   <title>Assignment</title>
                   <operation source="formula" to="temp.resultXml">
-                     <expression language="XQuery">util:toXML($output.dataAccessResponse)</expression>
+                     <expression language="XQuery">let $saxon_params :=
+&lt;xsl:output xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:saxon="http://saxon.sf.net/"
+  method="xml"
+  omit-xml-declaration="yes"
+  indent="yes"
+  saxon:indent-spaces="4"/&gt;
+return
+saxon:serialize($output.dataAccessResponse, $saxon_params)</expression>
                   </operation>
                   <actions>
                      <action alt="null" id="jq5ldi61_jq5ldi7q" targetScreen="jq5ldi7q">
@@ -309,8 +358,8 @@
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>55rilxzyHaTe1ngh9QtgKl</types1:GUID>
+      <types1:GUID>4a73fqRAXfGdj4QKDZ36SF</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-23T18:48:04.052Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-30T18:06:15.5Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
