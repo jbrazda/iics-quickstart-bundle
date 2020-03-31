@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "4q9TjUsVJHHlLJC6Kev0GC",
+      "objectGuid": "4Tde9RQvmcRhYQd4bb8Vy4",
       "objectName": "SP-ICS-GetMapping-Cloud",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "pckbclopz4KhPVE-gt-1951693-2020-03-24T18:08:14.245Z::pd.xml"
+            "repoHandle": "STNkSmbduaa-gt-944410-2018-07-20T16:33:28.719Z::pd.xml"
          }
       }
    }

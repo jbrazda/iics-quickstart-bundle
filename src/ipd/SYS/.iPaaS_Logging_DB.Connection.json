@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectGuid": "1Vh3qdgOsYpjNAONqIMcsP",
       "objectName": "iPaaS_Logging_DB",
       "objectType": "Connection",
       "path": "/SYS",
@@ -21,15 +21,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "heeW1km6OSsdU3oCZmJkkf"
+            "6WpXgRmRlWMg3Uvus96aeN"
          ],
          "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
+            "repoHandle": "0101P60B000000000008"
          }
       }
    },
    {
-      "objectGuid": "heeW1km6OSsdU3oCZmJkkf",
+      "objectGuid": "6WpXgRmRlWMg3Uvus96aeN",
       "objectName": "NA",
       "objectType": "AgentGroup",
       "path": "/SYS",
@@ -51,7 +51,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000002"
+            "repoHandle": "0101P625000000000002"
          }
       }
    }

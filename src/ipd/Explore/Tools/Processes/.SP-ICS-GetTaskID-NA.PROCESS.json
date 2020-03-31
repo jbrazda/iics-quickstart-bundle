@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "2KxGZQD9iSodU7F2u3zDMy",
+      "objectGuid": "1GVIrMQ6usFfsFOJc8v8cI",
       "objectName": "SP-ICS-GetTaskID-NA",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "9yKFXii7ZmkiUYE6xjuwuh"
+            "9BvRWvqMsiEk6qnJ0A0UWE"
          ],
          "repoInfo": {
-            "repoHandle": "oRvsGRvDINciZBp-gt-1951753-2020-03-24T18:08:17.238Z::pd.xml"
+            "repoHandle": "giQpvJQhtGci3zy-gt-3152353-2019-04-29T19:35:50.106Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "9yKFXii7ZmkiUYE6xjuwuh",
+      "objectGuid": "9BvRWvqMsiEk6qnJ0A0UWE",
       "objectName": "ICS-API",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "pyqaa-gt-1870011-2020-03-24T18:08:14.252Z::conn.xml"
+            "repoHandle": "seLm5phuCMLkZlk-gt-110746-2018-07-20T16:32:56.301Z::conn.xml"
          }
       }
    }

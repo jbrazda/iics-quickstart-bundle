@@ -1,8 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>FDqZF3a-gt-1951817-2020-03-24T18:08:19.504Z::pd.xml</types1:EntryId>
-      <types1:Name>SP-IPaaS-Update-Job-Entry-NA</types1:Name>
+      <types1:EntryId>UH72yIYmWR7hsAV-gt-3319451-2019-04-30T13:34:33.745Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-IPaaS-Update-Job-Entry-NA-1</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Generic logging process of jobs in SFDC</types1:Description>
       <types1:AppliesTo/>
@@ -10,17 +10,20 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-24T18:35:16Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:34Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-30T21:53:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:56:04Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry-NA-1/SP-IPaaS-Update-Job-Entry-NA-1.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="SP-IPaaS-Update-Job-Entry-NA"
-                  name="SP-IPaaS-Update-Job-Entry-NA">
+                  name="SP-IPaaS-Update-Job-Entry-NA-1">
             <appliesTo/>
             <description>Generic logging process of jobs in SFDC</description>
             <tags>.agent:NA</tags>
@@ -34,7 +37,7 @@
                      <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">cNRcz5CBc2Pbg5h9Nn5G4M</option>
+                     <option name="guid">8mX2dbmOledkm1Kn65In0q</option>
                   </options>
                </parameter>
             </input>
@@ -57,7 +60,7 @@
                </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="none">
+            <deployment suspendOnFault="false" tracingLevel="verbose">
                <targetLocation>NA</targetLocation>
                <rest/>
             </deployment>
@@ -134,8 +137,8 @@ return string-join($parts," ")</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>9ghyM8QydIhgVfpujBrZgg</types1:GUID>
+      <types1:GUID>9XvPF0bYgikduDR9nsVKYy</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Update-Job-Entry-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:15.707Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:10.76Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

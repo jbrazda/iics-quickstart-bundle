@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "2SxjEDCPfYxcZVkA8Q1F2I",
+      "objectGuid": "jSu7p8fQuE8dQDuX3vRk6v",
       "objectName": "SP-Setup-Logging-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Logging/Setup",
@@ -16,18 +16,18 @@
             "minor": 0
          },
          "objectRefs": [
-            "4nQ50tIl0DkbgcRRWyJfah"
+            "jhXRGp8HGy8fOjJy57yhy1"
          ],
          "repoInfo": {
-            "repoHandle": "yvs7xvk0qZF3a-gt-6187074-2020-03-24T18:08:16.391Z::pd.xml"
+            "repoHandle": "kOrvyXYDdxKlFmV-gt-5182246-2019-05-08T16:28:05.916Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectGuid": "jhXRGp8HGy8fOjJy57yhy1",
       "objectName": "DataAccessService",
       "objectType": "AI_CONNECTION",
-      "path": "/Explore/DAS",
+      "path": "/Explore/DAS/Connections",
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+            "repoHandle": "i5XRqXpIW7WHK80-gt-66339-2018-07-18T13:21:56.138Z::conn.xml"
          }
       }
    }

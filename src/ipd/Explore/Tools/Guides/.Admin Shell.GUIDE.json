@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "aqpUO15ISL4jLLs0xDJxmL",
+      "objectGuid": "aePU92FcuCxiU6xBc4iBOD",
       "objectName": "Admin Shell",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "6LCl0Gjkdewi7UAhtDFfuY"
+            "6fQrafQfG0olcEFSeGsIyv"
          ],
          "repoInfo": {
-            "repoHandle": "sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml"
+            "repoHandle": "NGJZx1Xmgaabclv-gt-2102609-2018-10-10T19:48:22.644Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "6LCl0Gjkdewi7UAhtDFfuY",
+      "objectGuid": "6fQrafQfG0olcEFSeGsIyv",
       "objectName": "SP-Shell-CMD",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "28ueJEaaaaaaaaa-gt-5306420-2020-03-24T18:08:15.865Z::pd.xml"
+            "repoHandle": "L6hyifPNzUzeA8r-gt-363008-2018-10-10T19:48:21.599Z::pd.xml"
          }
       }
    }

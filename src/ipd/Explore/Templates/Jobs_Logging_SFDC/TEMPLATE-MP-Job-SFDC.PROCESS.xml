@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>Ti8RVf4VQT53nQc-gt-5281432-2020-03-24T18:08:21.735Z::pd.xml</types1:EntryId>
+      <types1:EntryId>Y8AyNnQMMnGbciZ-gt-3313131-2019-04-30T13:34:34.818Z::pd.xml</types1:EntryId>
       <types1:Name>TEMPLATE-MP-Job-SFDC</types1:Name>
-      <types1:ParentFlowIds>tWFrLWEQT53nQci-gt-1870057-2020-03-24T18:08:22.312Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Template for Main Job Processes</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-24T18:35:19Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-30T13:34:35Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-30T21:53:58Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-26T00:51:14Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:55:43Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-SFDC/TEMPLATE-MP-Job-SFDC.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -35,7 +35,7 @@
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
                   </options>
                </parameter>
                <parameter description="" name="in_wait_to_complete" type="boolean">
@@ -52,7 +52,7 @@
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">lWurPrz0AW6hdK7bY2gVWz</option>
                   </options>
                </field>
             </output>
@@ -72,7 +72,7 @@
                      <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">0yCYvtJEtRAgdylNn0lcu7</option>
+                     <option name="guid">gAPgQjt0NwpbghHGEyalKI</option>
                   </options>
                </field>
                <field description="" name="tmp_UpdateJobLogEntryRequest" type="reference">
@@ -80,7 +80,7 @@
                      <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">cNRcz5CBc2Pbg5h9Nn5G4M</option>
+                     <option name="guid">8mX2dbmOledkm1Kn65In0q</option>
                   </options>
                </field>
                <field description="" name="tmp_process_name" type="string">
@@ -94,7 +94,7 @@
                      <option name="referenceTo">$po:CreateJobLogEventRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">a8f1LmXZlzibFVDqCJ5equ</option>
+                     <option name="guid">6Qfd83wdMtUgosGkvB0Gy0</option>
                   </options>
                </field>
             </tempFields>
@@ -114,7 +114,7 @@
                   <output>
                      <field description="" name="status" type="string"/>
                   </output>
-                  <deployment>
+                  <deployment tracingLevel="verbose">
                      <rest/>
                   </deployment>
                </messageDefinition>
@@ -208,7 +208,7 @@ return string-join($parts," ")</expression>
                <eventContainer id="j84qss48">
                   <subflow id="j84qss2l">
                      <title>TEMPLATE-SP-ETL</title>
-                     <subflowGUID>2zsIoYezGANlIMEkIlrcYo</subflowGUID>
+                     <subflowGUID>9vd2qrDae3he3ErslVVfOw</subflowGUID>
                      <subflowPath>TEMPLATE-SP-ETL-SFDC</subflowPath>
                      <runForEach>false</runForEach>
                      <input>
@@ -291,7 +291,7 @@ Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
                </eventContainer>
                <subflow id="j9fuaxpk">
                   <title>SP-IPaaS-Update-Job-Entry-NA</title>
-                  <subflowGUID>0k2fe3EcQywg1labuwVv6X</subflowGUID>
+                  <subflowGUID>a0KrGHUtRyKeBFAJ4OpfMs</subflowGUID>
                   <subflowPath>SP-IPaaS-Update-Job-Entry</subflowPath>
                   <runForEach>false</runForEach>
                   <input>
@@ -304,8 +304,8 @@ Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>83segJCuM8feXyvtda6UaB</types1:GUID>
+      <types1:GUID>3TxXRBytv8viKeAoroXREr</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:16.842Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:11.661Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3pRcpiUoa6ncyC7xq0ex8U",
+      "objectGuid": "3PMQLPBBRWdeGhD4nE1Z6T",
       "objectName": "m_Logging_CreateJobEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -22,7 +22,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN17000000000004"
+            "repoHandle": "0101P617000000000004"
          }
       }
    }

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "33k2Qtk0Ij7bzxCBz5E5op",
+      "objectGuid": "cwiIqhPn2WhhmsmgTJGD0d",
       "objectName": "SA-Process-DB",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Logging/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "wkNmumf6S3wOLIF-gt-6186998-2020-03-24T18:08:13.362Z::conn.xml"
+            "repoHandle": "MRgpDqotxGomUhG-gt-169912-2018-07-24T15:18:24.622Z::conn.xml"
          }
       }
    }

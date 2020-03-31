@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>hHwzZsMBw8jIw8j-gt-1951633-2020-03-24T18:08:11.123Z::gt.xml</types1:EntryId>
+      <types1:EntryId>B7O2htghGZ5i4rs-gt-3150651-2019-04-29T19:52:29.446Z::gt.xml</types1:EntryId>
       <types1:Name>How-To_Use_DAS_Service_Wrapper</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide Describes How to use Data Access Service Wrapper</types1:Description>
@@ -10,12 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-04-29T19:52:29Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-30T21:53:35Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-27T14:26:02Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:56:15Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_DAS_Service_Wrapper/How_To_Use_DAS_Service_Wrapper.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -649,8 +650,8 @@ This service Supports One SQL statement, but multiple batched updates/inserts&lt
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>4h0oW7LOPMBcUSb4eKwlMZ</types1:GUID>
+      <types1:GUID>4OI2DlXvTSHfBDKeDXeoOF</types1:GUID>
       <types1:DisplayName>How-To Use DAS Service Wrapper</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:14.532Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:09.632Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

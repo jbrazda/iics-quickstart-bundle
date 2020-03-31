@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>s3FdpOfTRgpDqot-gt-7608317-2020-03-27T15:00:22.98Z::gt.xml</types1:EntryId>
+      <types1:EntryId>rY6tMFyglsO7RY6-gt-9489016-2020-03-30T21:53:38.279Z::gt.xml</types1:EntryId>
       <types1:Name>Show_Process_Links</types1:Name>
-      <types1:ParentFlowIds>FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>qzUzeA8rJ4pbgch-gt-159666-2018-07-18T13:22:03.027Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</types1:Description>
       <types1:AppliesTo/>
@@ -11,11 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-27T15:00:23Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-27T15:00:48Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2020-03-30T21:53:38Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:56:16Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.Show_Process_Links/Show_Process_Links.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -247,8 +249,8 @@ $url</expression>
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>7Gv30yF1SAmblOFOEmSwCZ</types1:GUID>
+      <types1:GUID>2ygrp6whqywhZ0u686fH6C</types1:GUID>
       <types1:DisplayName>Show Process Links</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:15.053Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:09.966Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

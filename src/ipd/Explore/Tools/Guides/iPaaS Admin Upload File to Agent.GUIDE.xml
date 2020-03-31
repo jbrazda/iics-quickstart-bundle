@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml</types1:EntryId>
+      <types1:EntryId>hvWMOxBchzt1Y6t-gt-1279797-2018-11-13T19:59:58.11Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Admin_Upload_File_to_Agent</types1:Name>
-      <types1:ParentFlowIds>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Utility Guide to Upload File to Secure Agent</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-24T18:35:15Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-24T20:11:07Z</types1:PublicationDate>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2018-11-13T19:59:58Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-30T21:53:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:56:11Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Admin_Upload_File_to_Agent/iPaaS_Admin_Upload_File_to_Agent.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -45,7 +45,7 @@
                      <option name="referenceTo">AgentFileWriter:FileWriteTask</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">g6EWDQPAJAWgFg1H9sXx4a</option>
+                     <option name="guid">9CxtpLQkiz1fOmFAToyTE4</option>
                   </options>
                </field>
                <field description="null" name="tmp_relative_path" type="string">
@@ -252,8 +252,8 @@
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>0FCslbR0FsshCmxMcjULOJ</types1:GUID>
+      <types1:GUID>io3umXTuwkrdHCcLUtlIek</types1:GUID>
       <types1:DisplayName>iPaaS Admin Upload File to Agent</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:15.447Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:10.5Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

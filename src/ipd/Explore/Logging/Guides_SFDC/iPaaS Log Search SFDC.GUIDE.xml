@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>zCZcjKsJlv58pIO-gt-5281377-2020-03-24T18:08:19.405Z::gt.xml</types1:EntryId>
+      <types1:EntryId>Lv18pNz6HKoJBUh-gt-898877-2019-03-19T17:11:01.261Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Log_Search_SFDC</types1:Name>
-      <types1:ParentFlowIds>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>This Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -13,13 +13,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-24T18:35:16Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
+      <types1:CreationDate>2019-03-19T17:11:01Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-30T21:53:55Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-26T00:18:00Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T21:56:20Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Log_Search_SFDC/iPaaS_Log_Search_SFDC.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -718,7 +718,7 @@
                </jumpTo>
                <subflow id="jkwripq4">
                   <title>iPaaS Job View</title>
-                  <subflowGUID>g6o2cQ9GgmYkypVqo8nkoh</subflowGUID>
+                  <subflowGUID>36qC6WJVV9UdCykBHH4Ngh</subflowGUID>
                   <subflowPath>View_Job_Details</subflowPath>
                   <appliesTo>Salesforce:IC_JOB_LOG__c</appliesTo>
                   <appliesToDataName source="field">temp.tmp_ic_job_log</appliesToDataName>
@@ -731,7 +731,7 @@
                </subflow>
                <subflow id="js2dzl5w">
                   <title>SP Show Process Links</title>
-                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
+                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -857,8 +857,8 @@ concat(string-join($conditions, "&amp;#10; AND ")," ",$order_by_part,$limit_part
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>3mpz03dfst4hjYMSmmgXes</types1:GUID>
+      <types1:GUID>7EprYO837YQfqO1fZpsW8k</types1:GUID>
       <types1:DisplayName>iPaaS Log Search SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-30T18:06:15.614Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T16:14:10.921Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

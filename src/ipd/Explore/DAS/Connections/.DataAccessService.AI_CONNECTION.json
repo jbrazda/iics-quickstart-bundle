@@ -1,12 +1,12 @@
 [
    {
-      "objectGuid": "fnG0seP4jM2ljV7FCQzLYx",
+      "objectGuid": "jhXRGp8HGy8fOjJy57yhy1",
       "objectName": "DataAccessService",
-      "objectType": "AI_SERVICE_CONNECTOR",
-      "path": "/Explore/DAS",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
       "metadata": {
          "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
+            "contentType": "Binary",
             "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
             "documentState": "VALID"
          },
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "mUhGdwOLIFvukNX-gt-1951643-2020-03-24T18:08:11.193Z::svc.xml"
+            "repoHandle": "i5XRqXpIW7WHK80-gt-66339-2018-07-18T13:21:56.138Z::conn.xml"
          }
       }
    }

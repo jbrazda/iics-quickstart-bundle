@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "7gNn29q0tM6bKwqIv38g4s",
+      "objectGuid": "itZr5hKQ24OjwDCGWI7SCe",
       "objectName": "TEMPLATE-SP-ETL-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DB",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "1ZKarw0xpyEfQ1ZSVhods0"
+            "3NUs1c2CzoTeF8kcWEwXSe"
          ],
          "repoInfo": {
-            "repoHandle": "9zhFtybduaa-gt-5306440-2020-03-24T18:08:15.976Z::pd.xml"
+            "repoHandle": "eCUP9WYVMPINciZ-gt-3313153-2019-04-30T13:34:35.068Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "1ZKarw0xpyEfQ1ZSVhods0",
+      "objectGuid": "3NUs1c2CzoTeF8kcWEwXSe",
       "objectName": "SP-Test-Throw-Fault-Generic",
       "objectType": "PROCESS",
       "path": "/Explore/Templates",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "hK6LlRkPUEbfV3H-gt-1951663-2020-03-24T18:08:11.25Z::pd.xml"
+            "repoHandle": "sLruB3uopz4KhPV-gt-3319415-2019-04-30T13:34:30.293Z::pd.xml"
          }
       }
    }
