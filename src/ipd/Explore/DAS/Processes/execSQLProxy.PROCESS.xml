@@ -13,8 +13,8 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-07-18T13:22:01Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:36Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2020-03-31T17:41:33Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2020-03-30T21:55:38Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.execSQLProxy/execSQLProxy.pd.xml</types1:PublishedContributionId>
@@ -96,5 +96,5 @@
       <types1:GUID>dkcwMWPZRk4jqXT9TMUwgq</types1:GUID>
       <types1:DisplayName>execSQLProxy</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T16:14:09.984Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T17:44:35.483Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

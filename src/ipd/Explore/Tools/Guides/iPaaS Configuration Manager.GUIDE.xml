@@ -14,7 +14,7 @@
       <types1:CreationDate>2019-07-29T15:38:45Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
       <types1:ModificationDate>2020-03-30T21:53:54Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2020-03-30T21:56:07Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
@@ -514,5 +514,5 @@ $query</expression>
       <types1:GUID>6OhyC2hvWBZfbzWLWPtjuH</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T16:14:10.517Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T17:44:35.629Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

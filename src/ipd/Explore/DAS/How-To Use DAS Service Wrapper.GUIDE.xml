@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2019-04-29T19:52:29Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:35Z</types1:ModificationDate>
+      <types1:ModificationDate>2020-03-31T17:41:31Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:56:15Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-03-31T17:41:35Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_DAS_Service_Wrapper/How_To_Use_DAS_Service_Wrapper.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -653,5 +653,5 @@ This service Supports One SQL statement, but multiple batched updates/inserts&lt
       <types1:GUID>4OI2DlXvTSHfBDKeDXeoOF</types1:GUID>
       <types1:DisplayName>How-To Use DAS Service Wrapper</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T16:14:09.632Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T17:44:34.788Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

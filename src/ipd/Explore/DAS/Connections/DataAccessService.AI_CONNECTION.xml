@@ -14,10 +14,10 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-07-18T13:21:56Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:37Z</types1:ModificationDate>
+      <types1:ModificationDate>2020-03-31T17:41:33Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:54:55Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-03-31T17:41:36Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/DataAccessService/DataAccessService.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -31,6 +31,8 @@
             <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                                agentOnly="false"
                                connectorPath="project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml"
+                               guid="cZ66760oF8pjwt5OEx7AY1"
+                               name="DataAccessService"
                                supportsConnectionTest="false"
                                uuid="93d7509e-96fb-4872-b8c1-41f382c1811f">
                <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</description>
@@ -40,5 +42,5 @@
       <types1:GUID>jhXRGp8HGy8fOjJy57yhy1</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T16:14:10.226Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T17:44:35.699Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
