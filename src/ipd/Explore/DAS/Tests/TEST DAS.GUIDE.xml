@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-07-18T13:22:03Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-31T17:41:34Z</types1:ModificationDate>
+      <types1:ModificationDate>2020-03-31T20:17:50Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-31T17:41:41Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-03-31T20:17:53Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.TEST_DAS/TEST_DAS.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -44,6 +44,19 @@
                   <options>
                      <option name="text_width">100</option>
                      <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_dataSource" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                     <option name="required">false</option>
+                     <option name="initialvalue">DS1</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_db_type" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"MSSQL","value":"MSSQL"},{"label":"MySQL","value":"MySQL"},{"label":"PostgreSQL","value":"PostgreSQL"}]</option>
                      <option name="required">false</option>
                   </options>
                </field>
@@ -76,7 +89,7 @@
                      <action alt="null" id="ivjsmmry_ivjsmmsf" targetScreen="ivjsmmsf">
                         <text>Run Simple SQL</text>
                      </action>
-                     <action alt="null" id="ivjsmmry_ivjssaqa" targetScreen="ivjssaqa">
+                     <action alt="null" id="ivjsmmry_k8gbql6f" targetScreen="k8gbql6f">
                         <text>Test Run execSQL</text>
                      </action>
                   </actions>
@@ -201,6 +214,59 @@ ORDER BY table_name;</option>
                      </screenDataItem>
                   </screenData>
                </screen>
+               <screen id="k8gbql6f">
+                  <title>Test Scenarios</title>
+                  <body contentType="text/html">&lt;p&gt;This Test demonstrates the use of the DAS service with typical statements and&lt;/p&gt;
+&lt;p&gt;To make this test runable you have to setup Data Source on Data Acess service with JNDI name jndi/DS1 - jndi/DS5&lt;/p&gt;
+&lt;p&gt;Tehst needs CREATE TABLE, CREATE SEQUENCE, DROP TABLE, DROP SEQUENCE permissions&lt;/p&gt;
+&lt;p&gt;Select test parameters&lt;/p&gt;
+&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Parameter&lt;/td&gt;
+&lt;td&gt;Value&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Data Source&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_dataSource (temporary)" name="temp.tmp_dataSource" type="text" value="tmp_dataSource (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Database Type&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_db_type (temporary)" name="temp.tmp_db_type" type="text" value="tmp_db_type (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Following test scenarios will be executed&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="k8gbql6f_ivjssaqa" targetScreen="ivjssaqa">
+                        <text>Run Test</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_dataSource"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                           <option name="required">false</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_db_type"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"MSSQL","value":"MSSQL"},{"label":"MySQL","value":"MySQL"},{"label":"PostgreSQL","value":"PostgreSQL"}]</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
                <screen id="ivjssaqi">
                   <title>Test Results</title>
                   <body contentType="text/html">&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.testResults" readonly="readonly" type="text" value="testResults (output)"&gt;&amp;nbsp;&lt;/p&gt;</body>
@@ -252,6 +318,13 @@ ORDER BY table_name;</option>
                   <title>TEST DAS</title>
                   <serviceName>TEST_DAS</serviceName>
                   <serviceGUID/>
+                  <serviceInput>
+                     <parameter id="k8gcd2hw" name="in_db_type" source="field" updatable="true">temp.tmp_db_type</parameter>
+                     <parameter id="k8gcd2hx"
+                                name="in_dataSource"
+                                source="field"
+                                updatable="true">temp.tmp_dataSource</parameter>
+                  </serviceInput>
                   <actions>
                      <action alt="null" id="ivjssaqa_ivjssaqi" targetScreen="ivjssaqi">
                         <text>Continue</text>
@@ -328,10 +401,10 @@ ORDER BY table_name;</option>
                                 updatable="true">output.processName</parameter>
                   </serviceInput>
                   <actions>
-                     <action alt="" id="k8abcc8u_k8abcc9v" targetScreen="k8abcc9v">
+                     <action alt="null" id="k8abcc8u_k8abcc9v" targetScreen="k8abcc9v">
                         <text>Back</text>
                      </action>
-                     <action alt="" id="k8abcc8u_k8abcc9v_1" targetScreen="k8abcc9v">
+                     <action alt="null" id="k8abcc8u_k8abcc9v_1" targetScreen="k8abcc9v">
                         <text>Exit</text>
                      </action>
                   </actions>
@@ -361,5 +434,5 @@ saxon:serialize($output.dataAccessResponse, $saxon_params)</expression>
       <types1:GUID>55rilxzyHaTe1ngh9QtgKl</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T17:44:35.737Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-03-31T22:03:39.538Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
