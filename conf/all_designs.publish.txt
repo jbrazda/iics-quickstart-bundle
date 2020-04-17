@@ -1,14 +1,14 @@
 Explore/Tools/ServiceConnectors/IICS REST API V3.AI_SERVICE_CONNECTOR
 Explore/Tools/ServiceConnectors/github-gist.AI_SERVICE_CONNECTOR
 Explore/Tools/ServiceConnectors/gitlab-snippets.AI_SERVICE_CONNECTOR
-Explore/DAS/DataAccessService.AI_SERVICE_CONNECTOR
+Explore/DAS/Connectors/DataAccessService.AI_SERVICE_CONNECTOR
 Explore/Tools/Connections/AddressDoctor.AI_CONNECTION
 Explore/Tools/Connections/AgentFileWriter.AI_CONNECTION
 Explore/Tools/Connections/github-gist.AI_CONNECTION
 Explore/Tools/Connections/IPaaS-Configuration-DB.AI_CONNECTION
 Explore/Tools/Connections/Email.AI_CONNECTION
 Explore/Tools/Connections/ICS-API.AI_CONNECTION
-Explore/DAS/DataAccessService.AI_CONNECTION
+Explore/DAS/Connections/DataAccessService.AI_CONNECTION
 Explore/Logging/Connections/SA-Process-DB.AI_CONNECTION
 Explore/Logging/Connections/IPaaS-Logging.AI_CONNECTION
 Explore/Tools/Processes/SP-ICS-Run-Job-Cloud.PROCESS
@@ -27,9 +27,9 @@ Explore/Tools/Processes/SP-JMS-Send-MDM-IICS.PROCESS
 Explore/Tools/Processes/SP-ICS-GetTaskID-NA.PROCESS
 Explore/Tools/Processes/SP-ICS-GetTaskFlowList-Cloud.PROCESS
 Explore/Tools/Processes/SP-Shell-CMD.PROCESS
-Explore/DAS/execSQLProxy.PROCESS
+Explore/DAS/Processes/execSQLProxy.PROCESS
+Explore/DAS/Processes/execMultiSQLProxy.PROCESS
 Explore/DAS/Tests/TEST DAS.PROCESS
-Explore/DAS/execMultiSQLProxy.PROCESS
 Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-MP-Job-SFDC.PROCESS
 Explore/Templates/Jobs_Logging_SFDC/TEMPLATE-SP-ETL-SFDC.PROCESS
 Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
