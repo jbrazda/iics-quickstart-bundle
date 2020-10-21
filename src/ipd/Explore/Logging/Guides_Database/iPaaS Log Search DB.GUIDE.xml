@@ -16,7 +16,7 @@
       <types1:CreationDate>2018-07-24T14:05:56Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
       <types1:ModificationDate>2020-03-30T21:53:57Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
       <types1:PublicationDate>2020-03-30T21:56:25Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Log_Search_DB/iPaaS_Log_Search_DB.xml</types1:PublishedContributionId>
@@ -853,5 +853,5 @@ $url</expression>
       <types1:GUID>0owfDrtZtSle01jnBxdkSM</types1:GUID>
       <types1:DisplayName>iPaaS Log Search DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T22:03:39.677Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-21T14:12:22.503Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

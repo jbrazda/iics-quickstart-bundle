@@ -16,7 +16,7 @@
       <types1:ModificationDate>2020-03-30T21:53:55Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:55:53Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-10-14T16:05:53Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Create-Job-Event-Entry-DB-NA/SP-IPaaS-Create-Job-Event-Entry-DB-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -159,5 +159,5 @@ return
       <types1:GUID>1GjZsNSjFCHjk8QVRiIsGF</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Create-Job-Event-Entry-DB-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T22:03:39.692Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-21T14:12:22.48Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

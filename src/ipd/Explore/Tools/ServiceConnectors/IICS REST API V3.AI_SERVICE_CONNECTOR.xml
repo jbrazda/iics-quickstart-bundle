@@ -1040,5 +1040,5 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
       <types1:GUID>7uTqDBoPPD0ffKK6lClMKV</types1:GUID>
       <types1:DisplayName>IICS REST API V3</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T22:03:39.245Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-21T14:12:22.05Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

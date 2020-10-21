@@ -7,17 +7,17 @@
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:iclab</types1:Tags>
+      <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
       <types1:CreationDate>2018-11-13T19:51:57Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2018-12-26T14:47:11Z</types1:ModificationDate>
+      <types1:ModificationDate>2020-04-06T17:42:36Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:54:44Z</types1:PublicationDate>
+      <types1:PublicationDate>2020-04-06T17:42:50Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/AgentFileWriter/AgentFileWriter.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -26,8 +26,8 @@
                      label="AgentFileWriter"
                      name="AgentFileWriter">
             <description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</description>
-            <tags>.agent:iclab</tags>
-            <agent>iclab</agent>
+            <tags>.agent:NA</tags>
+            <agent>NA</agent>
             <attributes/>
             <producers>
                <producer enabled="true" name="FileWriter" typeName="FileWriter">
@@ -42,6 +42,26 @@
                      <attribute encrypted="false" name="forceWrites" value="true"/>
                      <attribute encrypted="false" name="bufferSize" value=""/>
                      <attribute encrypted="false" name="charset" value=""/>
+                  </attributes>
+               </producer>
+               <producer enabled="true"
+                         name="DelimitedContentWriter"
+                         typeName="DelimitedContentWriter">
+                  <description>Use this event target to serialize process objects to delimited content files, such as CSV, and save them to files on a disk.</description>
+                  <attributes>
+                     <attribute encrypted="false" name="directoryName" value="/tmp"/>
+                     <attribute encrypted="false" name="fileExist" value="Override"/>
+                     <attribute encrypted="false" name="moveExisting" value=""/>
+                     <attribute encrypted="false" name="eagerDeleteTargetFile" value="true"/>
+                     <attribute encrypted="false" name="tempPrefix" value=""/>
+                     <attribute encrypted="false" name="tempFileName" value=""/>
+                     <attribute encrypted="false" name="forceWrites" value="true"/>
+                     <attribute encrypted="false" name="bufferSize" value=""/>
+                     <attribute encrypted="false" name="charset" value=""/>
+                     <attribute encrypted="false" name="delimiter" value=","/>
+                     <attribute encrypted="false" name="textQualifier" value="&#34;"/>
+                     <attribute encrypted="false" name="skipHeaders" value="false"/>
+                     <attribute encrypted="false" name="lineEnding" value="Windows"/>
                   </attributes>
                </producer>
             </producers>
@@ -60,5 +80,5 @@
       <types1:GUID>9CxtpLQkiz1fOmFAToyTE4</types1:GUID>
       <types1:DisplayName>AgentFileWriter</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-03-31T22:03:38.943Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2020-10-21T14:12:21.769Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
