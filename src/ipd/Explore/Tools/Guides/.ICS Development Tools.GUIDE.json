@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "6L6LOgrG0d1dmOVrCVrrqE",
+      "objectGuid": "2wFiBZYlD0zfS5Y3Gu3pqE",
       "objectName": "ICS Development Tools",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -16,24 +16,26 @@
             "minor": 0
          },
          "objectRefs": [
-            "0GUr5eNGWAxkOV3B0qVHeU",
-            "0b3gDimMIY7enmbV0S5hkE",
-            "20pRHV9fvTQjNjoOzMhkOL"
+            "7oo6zDUv2Dfkkdu8bCkbAi",
+            "6a4ZVnZlQipcUJjkSavwML",
+            "axNDVsTpsDPfQpjmuSloYg",
+            "8zl4tdNcb0ygudpYfhTAiZ",
+            "9yKFXii7ZmkiUYE6xjuwuh"
          ],
          "repoInfo": {
-            "repoHandle": "IMR7hsAVR3aaa-gt-941883-2018-07-20T16:34:24.553Z::gt.xml"
+            "repoHandle": "Hi5Xt1T4W6jKsJl-gt-5237579-2020-03-24T18:08:18.539Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "0GUr5eNGWAxkOV3B0qVHeU",
-      "objectName": "SP-ICS-GetTaskFlowList-Cloud",
+      "objectGuid": "7oo6zDUv2Dfkkdu8bCkbAi",
+      "objectName": "SP-IICS-GetAuditLog",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Process retrieves Task Flow  List from ICS",
+            "description": "",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -43,12 +45,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "8qUlLnzYLnzYLnz-gt-941835-2018-07-20T16:33:57.955Z::pd.xml"
+            "repoHandle": "PMaaaa-gt-26584560-2020-06-24T21:45:25.675Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "0b3gDimMIY7enmbV0S5hkE",
+      "objectGuid": "6a4ZVnZlQipcUJjkSavwML",
       "objectName": "SP-ICS-GetTaskList-Cloud",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -65,12 +67,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "aaaaa-gt-117889-2018-07-20T16:33:47.008Z::pd.xml"
+            "repoHandle": "BG53nQciSrZMSPf-gt-6187084-2020-03-24T18:08:16.441Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "20pRHV9fvTQjNjoOzMhkOL",
+      "objectGuid": "axNDVsTpsDPfQpjmuSloYg",
       "objectName": "SP-ICS-GetMappings-Cloud",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -87,7 +89,51 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "jm9RuuB3uopz4Kh-gt-941820-2018-07-20T16:33:49.148Z::pd.xml"
+            "repoHandle": "yPt8nTaaaaa-gt-1951723-2020-03-24T18:08:14.395Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "8zl4tdNcb0ygudpYfhTAiZ",
+      "objectName": "SP-ICS-GetTaskFlowList-Cloud",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process retrieves Task Flow  List from ICS",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "o1QLnzYLnzYLnzY-gt-5281366-2020-03-24T18:08:15.241Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "9yKFXii7ZmkiUYE6xjuwuh",
+      "objectName": "ICS-API",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "ICS API Connection",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "pyqaa-gt-1870011-2020-03-24T18:08:14.252Z::conn.xml"
          }
       }
    }

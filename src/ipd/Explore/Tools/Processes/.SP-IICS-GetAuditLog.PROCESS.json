@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "7oo6zDUv2Dfkkdu8bCkbAi",
+      "objectName": "SP-IICS-GetAuditLog",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "9yKFXii7ZmkiUYE6xjuwuh"
+         ],
+         "repoInfo": {
+            "repoHandle": "PMaaaa-gt-26584560-2020-06-24T21:45:25.675Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "9yKFXii7ZmkiUYE6xjuwuh",
+      "objectName": "ICS-API",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "ICS API Connection",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "pyqaa-gt-1870011-2020-03-24T18:08:14.252Z::conn.xml"
+         }
+      }
+   }
+]

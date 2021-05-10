@@ -1,0 +1,252 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>m2FNBeNTYglxbdy-gt-2226164-2020-04-23T18:07:45.196Z::svc.xml</types1:EntryId>
+      <types1:Name>IICS-REST-API-V2</types1:Name>
+      <types1:ParentFlowIds>YNqRi92qBbbeJOS-gt-5032181-2020-04-23T18:35:13.816Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>The REST API version 2 resources in this section apply to multiple services in Informatica Intelligent Cloud Services. This connector is complementary ti IICS Built-in connector it ads functionality not impleented in Built in ICS API connector</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-04-23T18:07:45Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-27T18:45:03Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-23T18:45:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/IICS_REST_API_V2/IICS_REST_API_V2_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="IICS-REST-API-V2"
+                            label=""
+                            name="IICS-REST-API-V2"
+                            uuid="1bed3004-01f4-45c4-9fa4-a5868eb4cd71">
+            <description>The REST API version 2 resources in this section apply to multiple services in Informatica Intelligent Cloud Services. This connector is complementary ti IICS Built-in connector it ads functionality not impleented in Built in ICS API connector</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="baseGet"
+                       maxRedirects="100"
+                       name="baseGet"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Base GET Action</description>
+                  <input>
+                     <parameter description="IICS POD serverUrl ( retrieved from Login Response Operation&#xA;Use IICS Connector V3 or V2 Login Operation first)"
+                                name="base_url"
+                                required="true"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter description="icSessionId Parameter passed to the API header"
+                                name="session_id"
+                                required="true"
+                                testWith="0u1PQC383QkehOp2B4GkYO"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_url}" verb="GET">
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                           <header name="icSessionId">{$session_id}</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="basePost"
+                       maxRedirects="100"
+                       name="basePost"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Implements abstract POST Action</description>
+                  <input>
+                     <parameter description="IICS POD serverUrl ( retrieved from Login Response Operation&#xA;Use IICS Connector V3 or V2 Login Operation first)"
+                                name="base_url"
+                                required="true"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter description="icSessionId Parameter passed to the API header"
+                                name="session_id"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_url}" verb="GET"/>
+                  </binding>
+                  <output/>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getAgentDetail"
+                       maxRedirects="100"
+                       name="getAgentDetail"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>You can request the details about Secure Agents or details about the services that run on Secure Agents.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                           <attribute inherit="inherit" name="icSessionId" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="To request the details about the services that run on a particular Secure Agent, include the agent ID"
+                                name="agent_id"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{if (empty($agent_id )) &#xA;&#x9;then concat($base_url,&#34;/api/v2/agent/details&#34;)&#xA;    else concat($base_url,&#34;/api/v2/agent/details/&#34;,$agent_id )}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="agentDetails" type="objectlist">
+                        <options>
+                           <option name="referenceTo">agentDetail</option>
+                        </options>
+                        <xquery>{let $payload := $RESTResponse/*:payload/text()
+let $payloadXML := try {
+        util:parseJSON($payload)
+        } catch * {
+            ()
+        }
+return
+for $item in $payloadXML
+return
+&lt;agent&gt;
+	{$item/*}
+&lt;/agent&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="agentDetail">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="updatedBy" type="string"/>
+                     <field name="configUpdateTime" type="string"/>
+                     <field name="active" type="string"/>
+                     <field name="updateTime" type="string"/>
+                     <field name="agentConfigs" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="packages" type="string"/>
+                     <field name="orgId" type="string"/>
+                     <field name="platform" type="string"/>
+                     <field name="upgradeStatus" type="string"/>
+                     <field name="lastUpgraded" type="string"/>
+                     <field name="proxyPort" type="int"/>
+                     <field name="agentEngines" type="objectlist">
+                        <options>
+                           <option name="referenceTo">agentEngines</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="createTime" type="string"/>
+                     <field name="createdBy" type="string"/>
+                     <field name="platformAgent" type="string"/>
+                     <field name="serverUrl" type="string"/>
+                     <field name="lastStatusChange" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="agentVersion" type="double"/>
+                     <field name="id" type="string"/>
+                     <field name="agentHost" type="string"/>
+                     <field name="spiUrl" type="string"/>
+                     <field name="lastUpgradeCheck" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="agentEngines">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="agentEngineConfigs" type="objectlist">
+                        <options>
+                           <option name="referenceTo">agentEngineConfigs</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="type" type="string"/>
+                     <field name="packages" type="string"/>
+                     <field name="agentEngineStatus" type="reference">
+                        <options>
+                           <option name="referenceTo">agentEngineStatus</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="agentEngineConfigs">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="customized" type="string"/>
+                     <field name="name" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="value" type="string"/>
+                     <field name="platform" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="agentEngineStatus">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="subState" type="int"/>
+                     <field name="appname" type="string"/>
+                     <field name="replacePolicy" type="string"/>
+                     <field name="createTime" type="string"/>
+                     <field name="appDisplayName" type="string"/>
+                     <field name="appversion" type="string"/>
+                     <field name="updateTime" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="desiredStatus" type="string"/>
+                     <field name="status" type="string"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>a3UJFZgHrYziHawHm3HrIE</types1:GUID>
+      <types1:DisplayName>IICS-REST-API-V2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:23.662Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

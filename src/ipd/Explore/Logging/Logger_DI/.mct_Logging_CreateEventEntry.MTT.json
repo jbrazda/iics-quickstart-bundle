@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "gH1dPKkd70nfOx00YpTxi3",
+      "objectGuid": "eL0hPthBBMRlQJnYnKr3wP",
       "objectName": "mct_Logging_CreateEventEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
@@ -21,17 +21,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "1Vh3qdgOsYpjNAONqIMcsP",
-            "6WpXgRmRlWMg3Uvus96aeN",
-            "1rAuqPikla8kqU8FAFc5Cu"
+            "amgbRivrJQhitzHvCcgymi",
+            "heeW1km6OSsdU3oCZmJkkf",
+            "20f2BKvwvILhxqZxRlAc0Z"
          ],
          "repoInfo": {
-            "repoHandle": "0101P60Z000000000004"
+            "repoHandle": "0118TN0Z000000000002"
          }
       }
    },
    {
-      "objectGuid": "1Vh3qdgOsYpjNAONqIMcsP",
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
       "objectName": "iPaaS_Logging_DB",
       "objectType": "Connection",
       "path": "/SYS",
@@ -53,12 +53,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0101P60B000000000008"
+            "repoHandle": "0118TN0B000000000002"
          }
       }
    },
    {
-      "objectGuid": "6WpXgRmRlWMg3Uvus96aeN",
+      "objectGuid": "heeW1km6OSsdU3oCZmJkkf",
       "objectName": "NA",
       "objectType": "AgentGroup",
       "path": "/SYS",
@@ -80,12 +80,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0101P625000000000002"
+            "repoHandle": "0118TN25000000000002"
          }
       }
    },
    {
-      "objectGuid": "1rAuqPikla8kqU8FAFc5Cu",
+      "objectGuid": "20f2BKvwvILhxqZxRlAc0Z",
       "objectName": "m_Logging_CreateEvent_Entry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -107,7 +107,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0101P617000000000006"
+            "repoHandle": "0118TN17000000000002"
          }
       }
    }

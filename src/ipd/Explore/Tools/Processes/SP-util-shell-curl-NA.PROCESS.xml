@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>abbfZk9EW4ARW8U-gt-301155-2018-10-24T17:25:21.013Z::pd.xml</types1:EntryId>
+      <types1:EntryId>tciSrZMSPfXBiVG-gt-1951703-2020-03-24T18:08:14.316Z::pd.xml</types1:EntryId>
       <types1:Name>SP-util-shell-curl-NA</types1:Name>
-      <types1:ParentFlowIds>Nr3tfUbbf5ZK0CY-gt-1141049-2018-10-24T17:25:20.64Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>kbclopz4KhPVEQr-gt-5306490-2020-03-24T18:08:17.3Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. 
 process Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent</types1:Description>
@@ -12,13 +12,13 @@ process Assumes that curl is available on the system path and the Shell service 
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-10-24T17:25:21Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:44Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-09T20:59:45Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:55:25Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-09T21:01:48Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-util-shell-curl-NA/SP-util-shell-curl-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -374,8 +374,8 @@ return
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>1OpWSaZgo8NeIz7ogKH1ip</types1:GUID>
+      <types1:GUID>97so2J3JKbaeAdqkOCzhYJ</types1:GUID>
       <types1:DisplayName>SP-util-shell-curl-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:06.11Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:23.391Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>IMR7hsAVR3aaa-gt-941883-2018-07-20T16:34:24.553Z::gt.xml</types1:EntryId>
+      <types1:EntryId>Hi5Xt1T4W6jKsJl-gt-5237579-2020-03-24T18:08:18.539Z::gt.xml</types1:EntryId>
       <types1:Name>ICS_Development_Tools</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Helper Tool to Query ICS Repository Metadata</types1:Description>
@@ -10,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2018-07-20T16:34:25Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:52Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-06-24T22:09:05Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:56:14Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-06-24T22:09:10Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.ICS_Development_Tools/ICS_Development_Tools.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -53,6 +53,15 @@
                      <option name="isCopy">true</option>
                   </options>
                </field>
+               <field description="" name="tmp_audit_Logs" type="objectlist">
+                  <options>
+                     <option name="referenceTo">ICS-API:AuditLogResults</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">9yKFXii7ZmkiUYE6xjuwuh</option>
+                  </options>
+               </field>
             </tempFields>
             <runOn target="desktop"/>
             <notes/>
@@ -86,6 +95,9 @@
                      </action>
                      <action alt="null" id="j8ejh5pr_j8eljwlr" targetScreen="j8eljwlr">
                         <text>View Mappings</text>
+                     </action>
+                     <action alt="null" id="j8ejh5pr_kbtvip6y" targetScreen="kbtvip6y">
+                        <text>Get Audit Logs</text>
                      </action>
                      <action alt="null" id="j8ejh5pr_j8ejh5qb" targetScreen="j8ejh5qb">
                         <text>Exit</text>
@@ -174,6 +186,32 @@
                      </screenDataItem>
                   </screenData>
                </screen>
+               <screen id="kbtvip7d">
+                  <title>Audit Logs</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_audit_Logs (temporary)" name="temp.tmp_audit_Logs" readonly="readonly" type="text" value="tmp_audit_Logs (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kbtvip7d_j8ejh5q4" targetScreen="j8ejh5q4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_audit_Logs"
+                                     readonly="true"
+                                     renderingType="table"
+                                     required="false"
+                                     type="objectlist">
+                        <options>
+                           <option name="referenceTo">ICS-API:AuditLogResults</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"Id","type":"string","label":"Id","renderingType":"string"},{"name":"Event","type":"picklist","label":"Event","renderingType":"picklist"},{"name":"EntryTime","type":"datetime","label":"EntryTime","renderingType":"datetime"},{"name":"Message","type":"string","label":"Message","renderingType":"string"},{"name":"ObjectId","type":"string","label":"ObjectId","renderingType":"string"},{"name":"ObjectName","type":"string","label":"ObjectName","renderingType":"string"},{"name":"OrgId","type":"string","label":"OrgId","renderingType":"string"},{"name":"Username","type":"string","label":"Username","renderingType":"string"},{"name":"Version","type":"string","label":"Version","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">9yKFXii7ZmkiUYE6xjuwuh</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
                <endScreen dontShowScreen="true" id="j8ejh5qb">
                   <title/>
                   <body contentType="text/html"/>
@@ -199,7 +237,7 @@
                </empty>
                <callProcess id="j8ejh5q5">
                   <title>SP-ICS-GetTaskList-Cloud</title>
-                  <subflowGUID>0b3gDimMIY7enmbV0S5hkE</subflowGUID>
+                  <subflowGUID>6a4ZVnZlQipcUJjkSavwML</subflowGUID>
                   <subflowPath>SP-ICS-GetTaskList-Cloud</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -240,14 +278,14 @@
                      <text>Continue</text>
                   </screenActionLabel>
                   <actions>
-                     <action alt="" id="j8ejh5q5_j8ek4qh4" targetScreen="j8ek4qh4">
+                     <action alt="null" id="j8ejh5q5_j8ek4qh4" targetScreen="j8ek4qh4">
                         <text>Continue</text>
                      </action>
                   </actions>
                </callProcess>
                <callProcess id="j8el9zg0">
                   <title>SP-ICS-GetTaskFlowList-Cloud</title>
-                  <subflowGUID>0GUr5eNGWAxkOV3B0qVHeU</subflowGUID>
+                  <subflowGUID>8zl4tdNcb0ygudpYfhTAiZ</subflowGUID>
                   <subflowPath>SP-ICS-GetTaskFlowList-Cloud</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <subflowOutput>
@@ -268,7 +306,7 @@
                </callProcess>
                <callProcess id="j8eljwlr">
                   <title>SP-ICS-GetMappings-Cloud</title>
-                  <subflowGUID>20pRHV9fvTQjNjoOzMhkOL</subflowGUID>
+                  <subflowGUID>axNDVsTpsDPfQpjmuSloYg</subflowGUID>
                   <subflowPath>SP-ICS-GetMappings-Cloud</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <subflowOutput>
@@ -287,11 +325,97 @@
                      </action>
                   </actions>
                </callProcess>
+               <callProcess id="kbtvip6y">
+                  <title>SP-IICS-GetAuditLog</title>
+                  <subflowGUID>7oo6zDUv2Dfkkdu8bCkbAi</subflowGUID>
+                  <subflowPath>SP-IICS-GetAuditLog</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="kbtvipag"
+                                name="in_batch_id"
+                                source="screen"
+                                updatable="true">screen.in_batch_id</parameter>
+                     <parameter id="kbtvipah"
+                                name="in_battch_size"
+                                source="screen"
+                                updatable="true">screen.in_battch_size</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="AuditLogs" type="objectlist">
+                        <options>
+                           <option name="referenceTo">ICS-API:ActivityLogResults</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">9yKFXii7ZmkiUYE6xjuwuh</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <screen id="kbtvip6y-servicescreen">
+                     <title>SP-IICS-GetAuditLog</title>
+                     <body contentType="text/html">&lt;table cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;in_batch_id&lt;/td&gt;
+&lt;td&gt;&lt;input title="Edit a field to change the field properties." name="screen.in_batch_id" type="text" value="in_batch_id"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;in_battch_size&lt;/td&gt;
+&lt;td&gt;&lt;input title="Edit a field to change the field properties." name="screen.in_battch_size" type="text" value="in_battch_size"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</body>
+                     <actionPrompt/>
+                     <actions/>
+                     <screenData skipIfRequiredFilled="false">
+                        <screenDataItem name="screen.in_batch_id"
+                                        readonly="false"
+                                        required="false"
+                                        type="string">
+                           <options>
+                              <option name="required">false</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.in_battch_size"
+                                        readonly="false"
+                                        required="false"
+                                        type="string">
+                           <options>
+                              <option name="required">false</option>
+                           </options>
+                        </screenDataItem>
+                     </screenData>
+                  </screen>
+                  <screenActionLabel>
+                     <text>Continue</text>
+                  </screenActionLabel>
+                  <actions>
+                     <action alt="" id="kbtvip6y_kbtwopcp" targetScreen="kbtwopcp">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <assignment id="kbtwopcp">
+                  <title>Assignment to tmp_audit_Logs</title>
+                  <operation source="formula" to="temp.tmp_audit_Logs">
+                     <expression language="XQuery">$output.AuditLogs </expression>
+                  </operation>
+                  <actions>
+                     <action alt="" id="kbtwopcp_kbtvip7d" targetScreen="kbtvip7d">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>6L6LOgrG0d1dmOVrCVrrqE</types1:GUID>
+      <types1:GUID>2wFiBZYlD0zfS5Y3Gu3pqE</types1:GUID>
       <types1:DisplayName>ICS Development Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:06.343Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:25.043Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

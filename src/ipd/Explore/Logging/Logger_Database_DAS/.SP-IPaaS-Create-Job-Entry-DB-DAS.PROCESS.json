@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "6tVLnJckNT1kjjAu4TDycj",
+      "objectName": "SP-IPaaS-Create-Job-Entry-DB-DAS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger_Database_DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "generic logging process of jobs",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0yCYvtJEtRAgdylNn0lcu7",
+            "4nQ50tIl0DkbgcRRWyJfah"
+         ],
+         "repoInfo": {
+            "repoHandle": "nXVuslqAOclkZ2s-gt-19353411-2021-02-10T20:21:44.219Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0yCYvtJEtRAgdylNn0lcu7",
+      "objectName": "CreateJobLogEntryRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Logging Entry Request to create the Record",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "oO3WAiRASmvD4te-gt-5306480-2020-03-24T18:08:17.237Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+         }
+      }
+   }
+]

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "0b3gDimMIY7enmbV0S5hkE",
+      "objectGuid": "6a4ZVnZlQipcUJjkSavwML",
       "objectName": "SP-ICS-GetTaskList-Cloud",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "aaaaa-gt-117889-2018-07-20T16:33:47.008Z::pd.xml"
+            "repoHandle": "BG53nQciSrZMSPf-gt-6187084-2020-03-24T18:08:16.441Z::pd.xml"
          }
       }
    }

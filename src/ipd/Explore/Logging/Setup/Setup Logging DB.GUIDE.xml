@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>OPE4zlrMZgpDqot-gt-4938428-2019-05-07T19:05:56.645Z::gt.xml</types1:EntryId>
+      <types1:EntryId>VTowoGsciQlBWlD-gt-5237609-2020-03-24T18:08:18.759Z::gt.xml</types1:EntryId>
       <types1:Name>Setup_Logging_DB</types1:Name>
-      <types1:ParentFlowIds>Dr3tfUbbf5ZK0CY-gt-3472196-2019-04-30T20:25:53.48Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>zx1XmgaabclvAhr-gt-1951797-2020-03-24T18:08:19.416Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide to setup DB Logging use PostgreSQL</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-05-07T19:05:57Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:52Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:56:26Z</types1:PublicationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-09T20:59:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-09T21:02:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Setup_Logging_DB/Setup_Logging_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -230,7 +230,7 @@
                </empty>
                <callProcess id="jvffo6cp">
                   <title>SP-Setup-Logging-DB</title>
-                  <subflowGUID>jSu7p8fQuE8dQDuX3vRk6v</subflowGUID>
+                  <subflowGUID>2SxjEDCPfYxcZVkA8Q1F2I</subflowGUID>
                   <subflowPath>SP-Setup-Logging-DB</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -247,7 +247,7 @@
                            <option name="referenceTo">DataAccessService:tMultiResponse</option>
                            <option name="required">false</option>
                            <option name="isCopy">true</option>
-                           <option name="guid">jhXRGp8HGy8fOjJy57yhy1</option>
+                           <option name="guid">4nQ50tIl0DkbgcRRWyJfah</option>
                         </options>
                      </field>
                   </subflowOutput>
@@ -260,8 +260,8 @@
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>akOVKXc0aE7lAct0X7uEMo</types1:GUID>
+      <types1:GUID>2MMQuXd5tm2eghsxW91sWd</types1:GUID>
       <types1:DisplayName>Setup Logging DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:07.12Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:25.216Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

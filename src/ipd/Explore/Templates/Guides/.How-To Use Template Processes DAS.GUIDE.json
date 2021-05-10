@@ -1,0 +1,94 @@
+[
+   {
+      "objectGuid": "2NOuSfUhfMGdsxPwINAuIO",
+      "objectName": "How-To Use Template Processes DAS",
+      "objectType": "GUIDE",
+      "path": "/Explore/Templates/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "dT4a8mv0dmakB8rX5zj8sL",
+            "jJIHZ3UwecldLOFbMHDroh",
+            "cv6B8oAoQuVhlw4vywQvcH"
+         ],
+         "repoInfo": {
+            "repoHandle": "ox9AWbg0ZkL0jmu-gt-19357087-2021-02-10T20:21:05.923Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "dT4a8mv0dmakB8rX5zj8sL",
+      "objectName": "iPaaS Job View DB",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_Database",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "jJIHZ3UwecldLOFbMHDroh",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "cv6B8oAoQuVhlw4vywQvcH",
+      "objectName": "TEMPLATE-MP-Job-DAS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "yxaa-gt-38882483-2021-02-10T20:21:05.739Z::pd.xml"
+         }
+      }
+   }
+]

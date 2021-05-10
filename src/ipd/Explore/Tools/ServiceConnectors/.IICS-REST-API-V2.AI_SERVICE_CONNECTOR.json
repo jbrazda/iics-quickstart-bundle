@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "a3UJFZgHrYziHawHm3HrIE",
+      "objectName": "IICS-REST-API-V2",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Tools/ServiceConnectors",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "The REST API version 2 resources in this section apply to multiple services in Informatica Intelligent Cloud Services. This connector is complementary ti IICS Built-in connector it ads functionality not impleented in Built in ICS API connector",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "m2FNBeNTYglxbdy-gt-2226164-2020-04-23T18:07:45.196Z::svc.xml"
+         }
+      }
+   }
+]

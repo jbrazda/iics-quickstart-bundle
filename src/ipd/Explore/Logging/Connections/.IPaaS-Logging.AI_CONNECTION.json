@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "4375TaZUXDxeLADp2bIEuS",
+      "objectGuid": "1WEsQ1BnaCNlHLEkh8PJca",
       "objectName": "IPaaS-Logging",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Logging/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "CDMxrteIssjqluQ-gt-1208791-2018-07-24T14:05:36.452Z::conn.xml"
+            "repoHandle": "cnyXYDdxKlFmVSc-gt-5306363-2020-03-24T18:08:12.045Z::conn.xml"
          }
       }
    }

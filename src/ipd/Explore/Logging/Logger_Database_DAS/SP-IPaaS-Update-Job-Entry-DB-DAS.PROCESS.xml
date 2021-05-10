@@ -1,0 +1,167 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>jDlUxQ2Tp5OjG4a-gt-19353391-2021-02-10T20:21:44.157Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-IPaaS-Update-Job-Entry-DB-DAS</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Update Existing Job Entry withy a status and End Date</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2021-02-10T20:21:44Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2021-02-10T20:33:21Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2021-02-10T20:33:53Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry-DB-DAS/SP-IPaaS-Update-Job-Entry-DB-DAS.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-IPaaS-Update-Job-Entry-DB-DAS"
+                  name="SP-IPaaS-Update-Job-Entry-DB-DAS"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>Update Existing Job Entry withy a status and End Date</description>
+            <tags>.agent:NA</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Update Job Entry Request"
+                          name="in_UpdateJobLogEntryRequest"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">cNRcz5CBc2Pbg5h9Nn5G4M</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="Dynamically Updated Process Title"
+                      name="tmp_process_title"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Temporary script output"
+                      name="tmp_script_out"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Process Name Used to generate Process Title"
+                      name="tmp_process_name"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">SP-IPaaS-Update-Job-Entry-DB-NA</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_dataAccessRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4nQ50tIl0DkbgcRRWyJfah</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_data_source" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>NA</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j9ecmg0g" targetId="j9ecmg0f"/>
+               </start>
+               <assignment id="j9ecmg0f">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $context := $input.in_UpdateJobLogEntryRequest[1]/ProcessExecutionContext
+let $pid_label := if (empty($context/parentProcessId/text())) then ()
+	else concat("pid:",$context/parentProcessId/text())
+let $job_label := if (empty($context/jobId/text())) then () 
+	else concat("job:",$context/jobId/text())
+
+let $parts := ($p_name,$pid_label, $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_data_source">
+                     <expression language="XQuery">util:resolveURN("urn:logging:DataSource")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_dataAccessRequest">
+                     <expression language="XQuery">&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;update_job_entry&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;true&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;UPDATE dbo.IC_JOB_LOG
+SET
+    [STATUS] = ?,
+    [END_DATE] = ?
+
+WHERE 	
+ JOB_ID = ?
+      &lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;int&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_UpdateJobLogEntryRequest[1]/Status }&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;date&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_UpdateJobLogEntryRequest[1]/EndDate  }&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_UpdateJobLogEntryRequest[1]/ProcessExecutionContext[1]/jobId  }&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;{$temp.tmp_data_source }&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+</expression>
+                  </operation>
+                  <link id="j9ecmg0h" targetId="j95wbzsu"/>
+               </assignment>
+               <milestone id="j95wbzsu">
+                  <title>sync response</title>
+                  <link id="kiiylofx" targetId="kiiylofw"/>
+               </milestone>
+               <service id="kiiylofw">
+                  <title>execSQL</title>
+                  <serviceName>execSQL</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="dataAccessRequest" source="field">temp.tmp_dataAccessRequest</parameter>
+                  </serviceInput>
+                  <link id="kiiylogl" targetId="kiiylogk"/>
+               </service>
+               <end id="kiiylogk">
+                  <title>End</title>
+               </end>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>2MLp5xCWUgtbj22iGZwhgA</types1:GUID>
+      <types1:DisplayName>SP-IPaaS-Update-Job-Entry-DB-DAS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:24.878Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

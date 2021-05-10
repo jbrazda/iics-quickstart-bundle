@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>5LHk5hJdypKwKBq-gt-190192-2019-07-29T16:04:57.914Z::conn.xml</types1:EntryId>
+      <types1:EntryId>aaaa-gt-5306353-2020-03-24T18:08:12.006Z::conn.xml</types1:EntryId>
       <types1:Name>IPaaS-Configuration-DB</types1:Name>
-      <types1:ParentFlowIds>PD4ARW8UBM7zsZv-gt-859751-2019-07-29T15:38:44.674Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Database Used to Store Simple key/value configurations</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +11,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-07-29T16:04:58Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-10-14T20:40:15Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-27T16:19:09Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:54:49Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-27T16:19:18Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/IPaaS-Configuration-DB/IPaaS-Configuration-DB.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -31,15 +31,15 @@
             <attributes>
                <attribute encrypted="false"
                           name="JDBC Connection URL"
-                          value="jdbc:mysql://localhost/demodb?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=EST"/>
+                          value="jdbc:sqlserver://dbs.unicosolution.lan:1433;databaseName=IC_DEV;"/>
                <attribute encrypted="false"
                           name="JDBC Jar Directory"
-                          value="/home/iclab/iics/infaagent_prod/apps/process-engine/ext"/>
+                          value="/home/infa/DevSecureAgent/apps/process-engine/ext"/>
                <attribute encrypted="false"
                           name="JDBC Driver Class Name"
-                          value="com.mysql.jdbc.Driver"/>
-               <attribute encrypted="false" name="Schema" value="demodb"/>
-               <attribute encrypted="false" name="Username" value="demodb"/>
+                          value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+               <attribute encrypted="false" name="Schema" value="dbo"/>
+               <attribute encrypted="false" name="Username" value="infa"/>
                <attribute encrypted="true" name="Password" value=""/>
                <attribute encrypted="false" name="Object Filter" value="IC_CONFIGURATION"/>
                <attribute encrypted="false" name="TimeZone" value="Default"/>
@@ -62,8 +62,8 @@
             </javaConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>fCcP6ry44WyeP4mrMzsjeH</types1:GUID>
+      <types1:GUID>6emsaVEsYkyhugVpC1hCOM</types1:GUID>
       <types1:DisplayName>IPaaS-Configuration-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:05.82Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:23.988Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

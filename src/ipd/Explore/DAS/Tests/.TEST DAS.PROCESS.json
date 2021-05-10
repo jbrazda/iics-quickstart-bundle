@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "4T2lQzKv7vZjNuf8ol8yo9",
+      "objectGuid": "1OhIsv9XOryjqHq8x31xGe",
       "objectName": "TEST DAS",
       "objectType": "PROCESS",
       "path": "/Explore/DAS/Tests",
@@ -15,9 +15,33 @@
             "major": 1,
             "minor": 0
          },
+         "objectRefs": [
+            "ar2f3TQjvIegmzyWlxpwC0"
+         ],
+         "repoInfo": {
+            "repoHandle": "Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ar2f3TQjvIegmzyWlxpwC0",
+      "objectName": "TestResult",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Object Represent a Test Reults",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Y8DglxbdypKwKBq-gt-747303-2018-07-18T13:22:01.881Z::pd.xml"
+            "repoHandle": "gi9zhFtybduaa-gt-5237486-2020-03-24T18:08:13.106Z::po.xml"
          }
       }
    }

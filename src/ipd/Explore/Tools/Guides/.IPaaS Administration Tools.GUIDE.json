@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "6kQJjy5duPehKV68pdbKa2",
+      "objectGuid": "8WPWXuoACwji7tDXMjdfg2",
       "objectName": "IPaaS Administration Tools",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -16,107 +16,19 @@
             "minor": 0
          },
          "objectRefs": [
-            "69cEIjvMjRKjYtccJrzFGA",
-            "7EprYO837YQfqO1fZpsW8k",
-            "aN5IOe5YvSWkl79k3Dxi0T",
-            "aePU92FcuCxiU6xBc4iBOD",
-            "io3umXTuwkrdHCcLUtlIek"
+            "0FCslbR0FsshCmxMcjULOJ",
+            "aqpUO15ISL4jLLs0xDJxmL",
+            "1iZssfMiHihflxy0AoH4Il",
+            "3mpz03dfst4hjYMSmmgXes",
+            "i2sGIbd2BUUkea7gdkm785"
          ],
          "repoInfo": {
-            "repoHandle": "dtgq695kchzt1Y6-gt-4312989-2019-03-20T15:42:56.056Z::gt.xml"
+            "repoHandle": "lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "69cEIjvMjRKjYtccJrzFGA",
-      "objectName": "Conversion Utility",
-      "objectType": "GUIDE",
-      "path": "/Explore/Tools/Guides",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Guide to convert XML sample data to JSON and vice versa.",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "MoONhsJlv58pIO3-gt-371172-2018-10-10T19:48:21.626Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "7EprYO837YQfqO1fZpsW8k",
-      "objectName": "iPaaS Log Search SFDC",
-      "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_SFDC",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "This Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "Lv18pNz6HKoJBUh-gt-898877-2019-03-19T17:11:01.261Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "aN5IOe5YvSWkl79k3Dxi0T",
-      "objectName": "IPaaS Encrypt Utility",
-      "objectType": "GUIDE",
-      "path": "/Explore/Tools/Guides",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "Binary",
-            "description": "Utility To encrypt Strings for configuration to be used in Automated steps",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "tmYOxfSmbduaa-gt-944503-2018-07-20T16:34:22.319Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "aePU92FcuCxiU6xBc4iBOD",
-      "objectName": "Admin Shell",
-      "objectType": "GUIDE",
-      "path": "/Explore/Tools/Guides",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "NGJZx1Xmgaabclv-gt-2102609-2018-10-10T19:48:22.644Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "io3umXTuwkrdHCcLUtlIek",
+      "objectGuid": "0FCslbR0FsshCmxMcjULOJ",
       "objectName": "iPaaS Admin Upload File to Agent",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -133,7 +45,95 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "hvWMOxBchzt1Y6t-gt-1279797-2018-11-13T19:59:58.11Z::gt.xml"
+            "repoHandle": "RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "aqpUO15ISL4jLLs0xDJxmL",
+      "objectName": "Admin Shell",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "1iZssfMiHihflxy0AoH4Il",
+      "objectName": "Conversion Utility",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide to convert XML sample data to JSON and vice versa.",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "8RVf4VQT53nQciS-gt-5306339-2020-03-24T18:08:11.962Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "3mpz03dfst4hjYMSmmgXes",
+      "objectName": "iPaaS Log Search SFDC",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_SFDC",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zCZcjKsJlv58pIO-gt-5281377-2020-03-24T18:08:19.405Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "i2sGIbd2BUUkea7gdkm785",
+      "objectName": "IPaaS Encrypt Utility",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Utility To encrypt Strings for configuration to be used in Automated steps",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "Ki0lHww43dtQR6k-gt-5306430-2020-03-24T18:08:15.92Z::gt.xml"
          }
       }
    }

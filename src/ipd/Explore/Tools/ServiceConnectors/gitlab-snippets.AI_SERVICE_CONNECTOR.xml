@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>rMZgpDqotxGomUh-gt-3857924-2019-10-09T14:01:23.276Z::svc.xml</types1:EntryId>
+      <types1:EntryId>DNVabbfTQbdxWq9-gt-6187018-2020-03-24T18:08:13.475Z::svc.xml</types1:EntryId>
       <types1:Name>gitlab-snippets</types1:Name>
-      <types1:ParentFlowIds>OnTTpOzEkhK6LlR-gt-79426-2019-10-09T18:48:50.657Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>qZx1XmgaabclvAh-gt-7365226-2020-03-25T23:14:02.626Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Provides Support to store  and retrieve configurations or other files as gitlab Snippets
 See https://gitlab.com/help/api/README.md</types1:Description>
@@ -12,13 +12,13 @@ See https://gitlab.com/help/api/README.md</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-10-09T14:01:23Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-11-26T14:57:12Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-03-25T23:14:01Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-24T21:50:46Z</types1:PublicationDate>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T18:29:50Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/gitlab_snippets/gitlab_snippets_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -486,8 +486,8 @@ default return ()}</xquery>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>1UgNOYX99vYl4ePFrQfEis</types1:GUID>
+      <types1:GUID>5aLJgZIK8wekZYYldV5Qmz</types1:GUID>
       <types1:DisplayName>gitlab-snippets</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:04.876Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:23.868Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

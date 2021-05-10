@@ -1,0 +1,94 @@
+[
+   {
+      "objectGuid": "5bsWceZVI8zezWPk9FlrWN",
+      "objectName": "SP-IPaaS-Create-Job-Event-Entry-DB-DAS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger_Database_DAS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "generic logging for IPAAS events",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "hWam20mHBmPdPfP0rGjUEF",
+            "a8f1LmXZlzibFVDqCJ5equ",
+            "4nQ50tIl0DkbgcRRWyJfah"
+         ],
+         "repoInfo": {
+            "repoHandle": "f6NFuxTtlI20hEL-gt-19353371-2021-02-10T20:21:44.096Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "hWam20mHBmPdPfP0rGjUEF",
+      "objectName": "JobLogEventResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IpaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "cnyXYDdxKlFmVSc-gt-5281326-2020-03-24T18:08:15.045Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "a8f1LmXZlzibFVDqCJ5equ",
+      "objectName": "CreateJobLogEventRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "abcoq3xgjATO9pH-gt-5237529-2020-03-24T18:08:18.014Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+         }
+      }
+   }
+]

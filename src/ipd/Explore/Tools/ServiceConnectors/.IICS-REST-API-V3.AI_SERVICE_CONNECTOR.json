@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "035COj5HDGMk9BFhGZxqy5",
+      "objectName": "IICS-REST-API-V3",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Tools/ServiceConnectors",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml"
+         }
+      }
+   }
+]

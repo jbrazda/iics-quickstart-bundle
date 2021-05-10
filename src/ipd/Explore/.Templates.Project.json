@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "a57zhP1MO2CgUJS1cJjmCb",
+      "objectGuid": "968Mze8x6UodijCfDlyDGb",
       "objectName": "Templates",
       "objectType": "Project",
       "path": "/Explore",
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "",
+            "description": "Project Contains Reusable Design Templates",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

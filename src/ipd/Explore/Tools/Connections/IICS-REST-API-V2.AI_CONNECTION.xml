@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YNqRi92qBbbeJOS-gt-5032181-2020-04-23T18:35:13.816Z::conn.xml</types1:EntryId>
+      <types1:Name>IICS-REST-API-V2</types1:Name>
+      <types1:ParentFlowIds>cgp5OjG4abck0Kn-gt-5013926-2020-04-23T17:34:19.03Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-04-23T18:35:14Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-23T18:35:58Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-23T18:46:30Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/IICS-REST-API-V2/IICS-REST-API-V2.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="IICS-REST-API-V2"
+                     label="IICS-REST-API-V2"
+                     name="IICS-REST-API-V2">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/IICS_REST_API_V2/IICS_REST_API_V2_svcDef.xml"
+                               guid="a3UJFZgHrYziHawHm3HrIE"
+                               name="IICS-REST-API-V2"
+                               supportsConnectionTest="false"
+                               uuid="1bed3004-01f4-45c4-9fa4-a5868eb4cd71">
+               <description>The REST API version 2 resources in this section apply to multiple services in Informatica Intelligent Cloud Services. This connector is complementary ti IICS Built-in connector it ads functionality not impleented in Built in ICS API connector</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>0UyujOCpoiokMXGJttFUIU</types1:GUID>
+      <types1:DisplayName>IICS-REST-API-V2</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:24.418Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

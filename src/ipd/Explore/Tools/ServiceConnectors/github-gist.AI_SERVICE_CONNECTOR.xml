@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>KjvMKQr3rp3yD7t-gt-4147664-2019-06-19T14:29:04.059Z::svc.xml</types1:EntryId>
+      <types1:EntryId>dv7yjJYKqUlLnzY-gt-5237472-2020-03-24T18:08:13.058Z::svc.xml</types1:EntryId>
       <types1:Name>github-gist</types1:Name>
-      <types1:ParentFlowIds>eMi4tciSrZMSPfX-gt-4192745-2019-06-19T17:12:46.079Z::conn.xml,XShOeCFk4AdypKw-gt-6237215-2019-06-21T13:55:49.804Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>jEaaaaaaaaaaaaa-gt-5237549-2020-03-24T18:08:18.157Z::conn.xml,qwx8R8WrY1SypmX-gt-7365196-2020-03-25T23:14:02.527Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Github REST V3 APi to manage Gists
 see https://developer.github.com/v3/gists/
@@ -14,13 +14,13 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-06-19T14:29:04Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2019-10-10T16:55:40Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-10T16:55:44Z</types1:PublicationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-11-09T16:21:49Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-03-30T18:29:49Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/github_gist/github_gist_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -336,7 +336,7 @@ return
                                 name="gist_id"
                                 nogen="true"
                                 required="true"
-                                testWith="9d114714259bb05f9dc7f89bbfa978d5"
+                                testWith="23843b329123c8c08f1065401f15d019"
                                 type="string"/>
                      <parameter description="SHA ID of the Gist revision"
                                 name="sha"
@@ -970,8 +970,8 @@ See</description>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>aXpKwYgvdgcbMOhXzbXTqd</types1:GUID>
+      <types1:GUID>9T6SRi7SD2Ik90R03f8dsX</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:04.892Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:23.925Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

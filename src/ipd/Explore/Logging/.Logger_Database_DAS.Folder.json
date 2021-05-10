@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "0pSAvKsrmChkH20vbWEsUG",
+      "objectName": "Logger_Database_DAS",
+      "objectType": "Folder",
+      "path": "/Explore/Logging",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Processes to Log Data to DB via DAS Service Wrapper",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

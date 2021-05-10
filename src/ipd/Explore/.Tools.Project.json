@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "7NKXyyTcsX7erou31OWRgG",
+      "objectGuid": "6GODajHA2Abk24033zBSwQ",
       "objectName": "Tools",
       "objectType": "Project",
       "path": "/Explore",
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "",
+            "description": "Project Contains Utility Connections, Processes and Guides",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

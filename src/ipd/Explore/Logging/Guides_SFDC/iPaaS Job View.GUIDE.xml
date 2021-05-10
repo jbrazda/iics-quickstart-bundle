@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>DjhFXyDQeH2PKDC-gt-2646948-2019-03-19T17:11:00.848Z::gt.xml</types1:EntryId>
-      <types1:Name>iPaaS_Job_View-3</types1:Name>
-      <types1:ParentFlowIds>2wQuoJ49ARJi4tc-gt-3314319-2019-04-30T13:34:35.862Z::gt.xml</types1:ParentFlowIds>
+      <types1:EntryId>loALVYxWPQE8jIw-gt-1951743-2020-03-24T18:08:17.179Z::gt.xml</types1:EntryId>
+      <types1:Name>iPaaS_Job_View</types1:Name>
+      <types1:ParentFlowIds>tWFrLWEQT53nQci-gt-1870057-2020-03-24T18:08:22.312Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -13,14 +13,14 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda-iics@informatica.com</types1:CreatedBy>
-      <types1:CreationDate>2019-03-19T17:11:01Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda-iics@informatica.com</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-30T21:53:54Z</types1:ModificationDate>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2020-04-09T20:59:48Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda-iics@informatica.com</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T21:56:19Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_3/iPaaS_Job_View_3.xml</types1:PublishedContributionId>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2020-04-09T21:02:46Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View/iPaaS_Job_View.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -29,7 +29,7 @@
                          disableScreenRollback="true"
                          displayName="iPaaS Job View"
                          doneOnEndStep="true"
-                         name="iPaaS_Job_View-3"
+                         name="iPaaS_Job_View"
                          runAsUser="$current">
             <description>Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -474,7 +474,7 @@
                </jumpTo>
                <subflow id="js2denph">
                   <title>SP Show Process Links</title>
-                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -502,7 +502,7 @@
                </subflow>
                <subflow id="js2ecihg">
                   <title>SP Show Job Process Links</title>
-                  <subflowGUID>0tVX0h5BQECepoL3KrkDWi</subflowGUID>
+                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -600,8 +600,8 @@ else
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>84sV2BKWoYYi3TjNavvAcF</types1:GUID>
+      <types1:GUID>704G6J4kNdxe4FcWO7FXUR</types1:GUID>
       <types1:DisplayName>iPaaS Job View</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2020-11-23T22:24:06.294Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-05-10T16:14:24.276Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
