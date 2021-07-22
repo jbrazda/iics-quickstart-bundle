@@ -431,5 +431,5 @@ saxon:serialize($output.dataAccessResponse, $saxon_params)</expression>
       <types1:GUID>4a73fqRAXfGdj4QKDZ36SF</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:27:10.427Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:59:47.585Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

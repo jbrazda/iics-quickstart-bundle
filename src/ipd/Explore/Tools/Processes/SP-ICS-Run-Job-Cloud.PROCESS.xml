@@ -227,5 +227,5 @@ return ipd:setProcessTitle($process_title)</expression>
       <types1:GUID>6MKQQOT5rg7j1wNreSnPg0</types1:GUID>
       <types1:DisplayName>SP-ICS-Run-Job-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:27:09.74Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:59:46.508Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
