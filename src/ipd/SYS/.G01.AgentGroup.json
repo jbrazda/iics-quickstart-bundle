@@ -1,7 +1,7 @@
 [
    {
-      "objectGuid": "heeW1km6OSsdU3oCZmJkkf",
-      "objectName": "NA",
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
       "objectType": "AgentGroup",
       "path": "/SYS",
       "metadata": {
@@ -22,7 +22,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000002"
+            "repoHandle": "0118TN25000000000003"
          }
       }
    }

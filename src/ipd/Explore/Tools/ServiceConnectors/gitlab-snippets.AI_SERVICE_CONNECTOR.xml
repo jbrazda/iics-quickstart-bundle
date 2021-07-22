@@ -15,10 +15,10 @@ See https://gitlab.com/help/api/README.md</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-25T23:14:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-06-03T15:59:00Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-03-30T18:29:50Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-06-03T16:01:25Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/gitlab_snippets/gitlab_snippets_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -415,7 +415,7 @@ default return ()}</xquery>
                                 name="in_resource_url"
                                 nogen="true"
                                 required="false"
-                                testWith="https://gitlab.com/api/v4/snippets/1902983"
+                                testWith="https://gitlab.com/api/v4/snippets/1902616/raw"
                                 type="url"/>
                      <parameter name="in_accept"
                                 nogen="true"
@@ -489,5 +489,5 @@ default return ()}</xquery>
       <types1:GUID>5aLJgZIK8wekZYYldV5Qmz</types1:GUID>
       <types1:DisplayName>gitlab-snippets</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.868Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:09.917Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

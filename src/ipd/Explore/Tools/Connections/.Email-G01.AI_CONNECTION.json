@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "2ZM6icvXPAkk6jxADngnoK",
+      "objectName": "Email-G01",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Shared Email Service to send  alerts and notifications on Local Agents group G01",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml"
+         }
+      }
+   }
+]

@@ -8,7 +8,7 @@
          "additionalInfo": {
             "contentType": "JSON",
             "description": "MCT to Create Job Entry",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": [
             {
@@ -23,7 +23,7 @@
          "objectRefs": [
             "amgbRivrJQhitzHvCcgymi",
             "3pRcpiUoa6ncyC7xq0ex8U",
-            "heeW1km6OSsdU3oCZmJkkf"
+            "8OoRwZrdncvfN5Q97mLbQt"
          ],
          "repoInfo": {
             "repoHandle": "0118TN0Z000000000004"
@@ -85,8 +85,8 @@
       }
    },
    {
-      "objectGuid": "heeW1km6OSsdU3oCZmJkkf",
-      "objectName": "NA",
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
       "objectType": "AgentGroup",
       "path": "/SYS",
       "metadata": {
@@ -107,7 +107,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000002"
+            "repoHandle": "0118TN25000000000003"
          }
       }
    }

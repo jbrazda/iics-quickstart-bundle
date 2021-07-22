@@ -8,7 +8,7 @@
          "additionalInfo": {
             "contentType": "JSON",
             "description": "MCT to Create Event Entry",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": [
             {
@@ -22,8 +22,8 @@
          },
          "objectRefs": [
             "amgbRivrJQhitzHvCcgymi",
-            "heeW1km6OSsdU3oCZmJkkf",
-            "20f2BKvwvILhxqZxRlAc0Z"
+            "20f2BKvwvILhxqZxRlAc0Z",
+            "8OoRwZrdncvfN5Q97mLbQt"
          ],
          "repoInfo": {
             "repoHandle": "0118TN0Z000000000002"
@@ -58,33 +58,6 @@
       }
    },
    {
-      "objectGuid": "heeW1km6OSsdU3oCZmJkkf",
-      "objectName": "NA",
-      "objectType": "AgentGroup",
-      "path": "/SYS",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "JSON",
-            "description": null,
-            "documentState": "VALID"
-         },
-         "contextAttributes": [
-            {
-               "name": "id",
-               "value": "@1"
-            }
-         ],
-         "modelVersion": {
-            "major": 0,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "0118TN25000000000002"
-         }
-      }
-   },
-   {
       "objectGuid": "20f2BKvwvILhxqZxRlAc0Z",
       "objectName": "m_Logging_CreateEvent_Entry",
       "objectType": "DTEMPLATE",
@@ -108,6 +81,33 @@
          "objectRefs": [],
          "repoInfo": {
             "repoHandle": "0118TN17000000000002"
+         }
+      }
+   },
+   {
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN25000000000003"
          }
       }
    }

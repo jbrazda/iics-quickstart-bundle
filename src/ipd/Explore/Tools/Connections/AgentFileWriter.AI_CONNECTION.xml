@@ -3,21 +3,21 @@
    <types1:Item>
       <types1:EntryId>HQuoJ49ARJi4tci-gt-6187041-2020-03-24T18:08:13.544Z::conn.xml</types1:EntryId>
       <types1:Name>AgentFileWriter</types1:Name>
-      <types1:ParentFlowIds>if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml,kgf3yD7tyGoQwg7-gt-4631193-2020-05-01T20:28:12.176Z::pd.xml,RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,A4oDdvrTdtqSLlB-gt-7651286-2021-07-14T14:14:27.423Z::pd.xml,EogjER0XabeAzu2-gt-72497801-2021-06-30T18:02:29.492Z::pd.xml,if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml,jn9OQcjoYsjqluQ-gt-4435398-2021-07-14T14:14:28.149Z::gt.xml,kgf3yD7tyGoQwg7-gt-4631193-2020-05-01T20:28:12.176Z::pd.xml,RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml,YDdxKlFmVSciY3A-gt-4435408-2021-07-14T14:14:28.2Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-27T17:02:44Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-05-20T13:55:29Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-17T03:07:27Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-20T13:55:38Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/AgentFileWriter/AgentFileWriter.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -26,8 +26,8 @@
                      label="AgentFileWriter"
                      name="AgentFileWriter">
             <description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</description>
-            <tags>.agent:NA</tags>
-            <agent>NA</agent>
+            <tags>.agent:G01</tags>
+            <agent>G01</agent>
             <attributes/>
             <producers>
                <producer enabled="true" name="FileWriter" typeName="FileWriter">
@@ -80,5 +80,5 @@
       <types1:GUID>g6EWDQPAJAWgFg1H9sXx4a</types1:GUID>
       <types1:DisplayName>AgentFileWriter</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.891Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:09.977Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

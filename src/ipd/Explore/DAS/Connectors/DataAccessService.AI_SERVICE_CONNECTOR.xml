@@ -14,10 +14,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:43Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2021-06-24T17:22:52Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-17T03:07:13Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-06-24T17:21:21Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -210,7 +210,7 @@
                      </field>
                      <field name="dataSource" type="picklist">
                         <options>
-                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
+                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"},{"value":"DS6","label":"DS6"},{"value":"DS7","label":"DS7"},{"value":"DS8","label":"DS8"},{"value":"DS9","label":"DS9"},{"value":"DS10","label":"DS10"}]</option>
                         </options>
                      </field>
                   </detail>
@@ -234,7 +234,7 @@
                      </field>
                      <field name="dataSource" type="picklist">
                         <options>
-                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS1","label":"DS1"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
+                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"},{"value":"DS6","label":"DS6"},{"value":"DS7","label":"DS7"},{"value":"DS8","label":"DS8"},{"value":"DS9","label":"DS9"},{"value":"DS10","label":"DS10"}]</option>
                         </options>
                      </field>
                   </detail>
@@ -257,7 +257,7 @@
                               name="tProcedureSignature">
                   <description/>
                   <detail>
-                     <field name="procedureParameter" type="objectlist">
+                     <field name="parameter" type="objectlist">
                         <options>
                            <option name="referenceTo">ProcedureParameter</option>
                            <option name="relationshipName">Child</option>
@@ -352,5 +352,5 @@
       <types1:GUID>fnG0seP4jM2ljV7FCQzLYx</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.821Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.191Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

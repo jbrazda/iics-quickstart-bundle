@@ -229,5 +229,5 @@ return $process_title</expression>
       <types1:GUID>2zsIoYezGANlIMEkIlrcYo</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.29Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.3Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

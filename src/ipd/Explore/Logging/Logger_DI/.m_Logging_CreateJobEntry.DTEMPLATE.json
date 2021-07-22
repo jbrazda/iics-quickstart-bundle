@@ -20,9 +20,38 @@
             "major": 0,
             "minor": 0
          },
-         "objectRefs": [],
+         "objectRefs": [
+            "amgbRivrJQhitzHvCcgymi"
+         ],
          "repoInfo": {
             "repoHandle": "0118TN17000000000004"
+         }
+      }
+   },
+   {
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0B000000000002"
          }
       }
    }

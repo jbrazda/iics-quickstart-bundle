@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>s3FdpOfTRgpDqot-gt-7608317-2020-03-27T15:00:22.98Z::gt.xml</types1:EntryId>
       <types1:Name>Show_Process_Links</types1:Name>
-      <types1:ParentFlowIds>FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>93aaa-gt-72286424-2021-06-30T18:02:29.79Z::gt.xml,FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</types1:Description>
       <types1:AppliesTo/>
@@ -253,5 +253,5 @@ $url</expression>
       <types1:GUID>7Gv30yF1SAmblOFOEmSwCZ</types1:GUID>
       <types1:DisplayName>Show Process Links</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.201Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.22Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

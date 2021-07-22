@@ -14,7 +14,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:45Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-06-24T17:35:15Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -23,17 +23,20 @@
                         isByCopy="true"
                         name="RESTResponse">
             <description>Represents Raw  REST service Response</description>
+            <tags/>
             <detail>
                <field label="headers" name="headers" type="reference">
                   <options>
                      <option name="referenceTo">$po:httpHeaders</option>
                      <option name="relationshipName">Child</option>
+                     <option name="guid">0V9FXKnpGo0fe6M0I5RFo2</option>
                   </options>
                </field>
                <field label="payload" name="payload" type="reference">
                   <options>
                      <option name="referenceTo">$po:httpPayload</option>
                      <option name="relationshipName">Child</option>
+                     <option name="guid">4h8HgsvcOJzbNHL8OonLsf</option>
                   </options>
                </field>
                <field label="statusCode" name="statusCode" type="int"/>
@@ -43,5 +46,5 @@
       <types1:GUID>3OtuNFJzJQtlgd0Fh1VpyW</types1:GUID>
       <types1:DisplayName>RESTResponse</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.378Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.781Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

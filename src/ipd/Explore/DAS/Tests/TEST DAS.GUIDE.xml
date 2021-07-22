@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:50Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-06-24T17:26:35Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:43Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-06-24T17:31:12Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.TEST_DAS/TEST_DAS.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -49,9 +49,9 @@
                </field>
                <field description="" name="tmp_dataSource" type="picklist">
                   <options>
-                     <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                     <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"},{"label":"DS6","value":"DS6"},{"label":"DS7","value":"DS7"},{"label":"DS8","value":"DS8"},{"label":"DS9","value":"DS9"},{"label":"DS10","value":"DS10"}]</option>
                      <option name="required">false</option>
-                     <option name="initialvalue">DS1</option>
+                     <option hide="true" name="initialvalue">DS1</option>
                   </options>
                </field>
                <field description="" name="tmp_db_type" type="picklist">
@@ -123,7 +123,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Data Source&lt;/td&gt;
-&lt;td&gt;&lt;input class="" title="dataAccessRequest&gt;dataSource" name="temp.dataAccessRequest[1]/dataSource" type="text" value="dataAccessRequest&gt;dataSource"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input title="dataAccessRequest&gt;dataSource" name="temp.dataAccessRequest[1]/dataSource" type="text" value="dataAccessRequest&gt;dataSource"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -206,10 +206,8 @@ ORDER BY table_name;</option>
                                      required="false"
                                      type="picklist">
                         <options>
-                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"}]</option>
+                           <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"},{"value":"DS6","label":"DS6"},{"value":"DS7","label":"DS7"},{"value":"DS8","label":"DS8"},{"value":"DS9","label":"DS9"},{"value":"DS10","label":"DS10"}]</option>
                            <option name="required">false</option>
-                           <option name="defaultvalue">DS1</option>
-                           <option hide="true" name="valuelist.source">searchservice</option>
                         </options>
                      </screenDataItem>
                   </screenData>
@@ -251,9 +249,8 @@ ORDER BY table_name;</option>
                                      required="false"
                                      type="picklist">
                         <options>
-                           <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"}]</option>
+                           <option name="values">[{"label":"DS1","value":"DS1"},{"label":"DS2","value":"DS2"},{"label":"DS3","value":"DS3"},{"label":"DS4","value":"DS4"},{"label":"DS5","value":"DS5"},{"label":"DS6","value":"DS6"},{"label":"DS7","value":"DS7"},{"label":"DS8","value":"DS8"},{"label":"DS9","value":"DS9"},{"label":"DS10","value":"DS10"}]</option>
                            <option name="required">false</option>
-                           <option hide="true" name="valuelist.source">searchservice</option>
                         </options>
                      </screenDataItem>
                      <screenDataItem name="temp.tmp_db_type"
@@ -434,5 +431,5 @@ saxon:serialize($output.dataAccessResponse, $saxon_params)</expression>
       <types1:GUID>4a73fqRAXfGdj4QKDZ36SF</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.314Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.427Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

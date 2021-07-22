@@ -8,7 +8,7 @@
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
             "description": "Process to push file to Agent File System",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": null,
          "modelVersion": {

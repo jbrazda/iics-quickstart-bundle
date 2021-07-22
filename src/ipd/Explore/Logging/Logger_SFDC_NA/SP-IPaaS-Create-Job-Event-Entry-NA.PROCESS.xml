@@ -6,27 +6,28 @@
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>generic logging for IPAAS events</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:51Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-05-25T19:27:27Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:33Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-25T19:27:33Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Create-Job-Event-Entry-NA/SP-IPaaS-Create-Job-Event-Entry-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="SP-IPaaS-Create-Job-Event-Entry-NA"
-                  name="SP-IPaaS-Create-Job-Event-Entry-NA">
+                  name="SP-IPaaS-Create-Job-Event-Entry-NA"
+                  overrideAPIName="false">
             <appliesTo/>
             <description>generic logging for IPAAS events</description>
-            <tags>.agent:NA</tags>
+            <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description=""
@@ -65,7 +66,7 @@
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>NA</targetLocation>
+               <targetLocation>G01</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -148,5 +149,5 @@ return
       <types1:GUID>a0qdPKNepSPeh7jc2cWR0c</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Create-Job-Event-Entry-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.716Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:11.355Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

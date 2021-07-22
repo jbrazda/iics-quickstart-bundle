@@ -34,7 +34,7 @@
          "additionalInfo": {
             "contentType": "JSON",
             "description": "MCT to Update Job Log entry with a final Status and End Time",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": [
             {
@@ -61,7 +61,7 @@
          "additionalInfo": {
             "contentType": "JSON",
             "description": "MCT to Create Job Entry",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": [
             {
@@ -88,7 +88,7 @@
          "additionalInfo": {
             "contentType": "JSON",
             "description": "MCT to Create Event Entry",
-            "documentState": "VALID"
+            "documentState": "INVALID"
          },
          "contextAttributes": [
             {

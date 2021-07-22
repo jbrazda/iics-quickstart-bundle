@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>gi9zhFtybduaa-gt-5237486-2020-03-24T18:08:13.106Z::po.xml</types1:EntryId>
       <types1:Name>TestResult</types1:Name>
-      <types1:ParentFlowIds>Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml,EogjER0XabeAzu2-gt-72497801-2021-06-30T18:02:29.492Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
       <types1:Description>This Object Represent a Test Reults</types1:Description>
       <types1:AppliesTo/>
@@ -50,5 +50,5 @@
       <types1:GUID>ar2f3TQjvIegmzyWlxpwC0</types1:GUID>
       <types1:DisplayName>TestResult</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.558Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.176Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

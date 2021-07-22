@@ -7,17 +7,17 @@
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>IPaaS Database for Logging and job tracking</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-09-29T18:37:32Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-05-25T19:24:27Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-09-29T18:37:49Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-07-01T14:43:03Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/IPaaS-Logging/IPaaS-Logging.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -26,20 +26,18 @@
                      label="IPaaS-Logging"
                      name="IPaaS-Logging">
             <description>IPaaS Database for Logging and job tracking</description>
-            <tags>.agent:NA</tags>
-            <agent>NA</agent>
+            <tags>.agent:G01</tags>
+            <agent>G01</agent>
             <attributes>
                <attribute encrypted="false"
                           name="JDBC Connection URL"
-                          value="jdbc:sqlserver://dbs.unicosolution.lan:1433;databaseName=IC_DEV;"/>
-               <attribute encrypted="false"
-                          name="JDBC Jar Directory"
-                          value="/home/infa/DevSecureAgent/apps/process-engine/ext"/>
+                          value="jdbc:sqlserver://10.12.129.32:1433;databaseName=IC_DEV"/>
+               <attribute encrypted="false" name="JDBC Jar Directory" value=""/>
                <attribute encrypted="false"
                           name="JDBC Driver Class Name"
                           value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
                <attribute encrypted="false" name="Schema" value="dbo"/>
-               <attribute encrypted="false" name="Username" value="infa"/>
+               <attribute encrypted="false" name="Username" value="iics_dev"/>
                <attribute encrypted="true" name="Password" value=""/>
                <attribute encrypted="false"
                           name="Object Filter"
@@ -67,5 +65,5 @@
       <types1:GUID>1WEsQ1BnaCNlHLEkh8PJca</types1:GUID>
       <types1:DisplayName>IPaaS-Logging</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.571Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.052Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

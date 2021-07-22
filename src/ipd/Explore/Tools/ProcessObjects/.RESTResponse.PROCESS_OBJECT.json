@@ -6,8 +6,33 @@
       "path": "/Explore/Tools/ProcessObjects",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
+            "contentType": "application/json; charset=utf-8",
             "description": "Represents Raw  REST service Response",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "0V9FXKnpGo0fe6M0I5RFo2",
+            "4h8HgsvcOJzbNHL8OonLsf"
+         ],
+         "repoInfo": {
+            "repoHandle": "K1g7Gaaa-gt-5306410-2020-03-24T18:08:15.81Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0V9FXKnpGo0fe6M0I5RFo2",
+      "objectName": "httpHeaders",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents a list of HTTP headers",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -17,7 +42,29 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "K1g7Gaaa-gt-5306410-2020-03-24T18:08:15.81Z::po.xml"
+            "repoHandle": "nG5YLnzYLnzYLnz-gt-1870001-2020-03-24T18:08:14.212Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4h8HgsvcOJzbNHL8OonLsf",
+      "objectName": "httpPayload",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents HTTP request/response payload",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "bdtqSLlBWlD2pHA-gt-5281293-2020-03-24T18:08:12.023Z::po.xml"
          }
       }
    }

@@ -13,7 +13,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:41Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-06-24T17:35:44Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,6 +22,7 @@
                         isByCopy="true"
                         name="httpPayload">
             <description>Represents HTTP request/response payload</description>
+            <tags/>
             <detail>
                <field label="payload" name="payload" type="reference">
                   <options>
@@ -33,6 +34,7 @@
                   <options>
                      <option name="referenceTo">$po:httpAttachment</option>
                      <option name="relationshipName">Child</option>
+                     <option name="guid">akDmo8UfrpQdFpZvxgrpIz</option>
                   </options>
                </field>
             </detail>
@@ -41,5 +43,5 @@
       <types1:GUID>4h8HgsvcOJzbNHL8OonLsf</types1:GUID>
       <types1:DisplayName>httpPayload</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:23.881Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.399Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

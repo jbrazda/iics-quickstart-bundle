@@ -1,7 +1,7 @@
 [
    {
       "objectGuid": "2KxGZQD9iSodU7F2u3zDMy",
-      "objectName": "SP-ICS-GetTaskID-NA",
+      "objectName": "SP-ICS-GetTaskID-G01",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
       "metadata": {

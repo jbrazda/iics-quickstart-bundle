@@ -17,7 +17,7 @@
       <types1:ModificationDate>2020-04-09T20:59:45Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:03Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-06-03T14:30:04Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskFlowList-Cloud/SP-ICS-GetTaskFlowList-Cloud.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -81,5 +81,5 @@
       <types1:GUID>8zl4tdNcb0ygudpYfhTAiZ</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskFlowList-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.01Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:09.755Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -6,8 +6,32 @@
       "path": "/Explore/Tools/ProcessObjects",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
+            "contentType": "application/json; charset=utf-8",
             "description": "Represents a list of HTTP headers",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "5oOlj4900KYep2JcdhWkcO"
+         ],
+         "repoInfo": {
+            "repoHandle": "nG5YLnzYLnzYLnz-gt-1870001-2020-03-24T18:08:14.212Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "5oOlj4900KYep2JcdhWkcO",
+      "objectName": "httpHeader",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "Binary",
+            "description": "Represnts Request/Response header",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -17,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "nG5YLnzYLnzYLnz-gt-1870001-2020-03-24T18:08:14.212Z::po.xml"
+            "repoHandle": "5FsdsFsdsFsdsFs-gt-5237462-2020-03-24T18:08:12.913Z::po.xml"
          }
       }
    }

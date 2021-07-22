@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Job_View_DB</types1:Name>
-      <types1:ParentFlowIds>ox9AWbg0ZkL0jmu-gt-19357087-2021-02-10T20:21:05.923Z::gt.xml,PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml,Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>jn9OQcjoYsjqluQ-gt-4435398-2021-07-14T14:14:28.149Z::gt.xml,ox9AWbg0ZkL0jmu-gt-19357087-2021-02-10T20:21:05.923Z::gt.xml,PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml,Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide  Provides Administrative and troubleshooting functions such as 
 - Search IPaaS  ICRT Job  logs
@@ -19,7 +19,7 @@
       <types1:ModificationDate>2020-04-09T20:59:50Z</types1:ModificationDate>
       <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:50Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-05-11T13:21:43Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_DB/iPaaS_Job_View_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -660,5 +660,5 @@ else
       <types1:GUID>dT4a8mv0dmakB8rX5zj8sL</types1:GUID>
       <types1:DisplayName>iPaaS Job View DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-05-10T16:14:24.502Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:10.485Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

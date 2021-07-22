@@ -1,41 +1,42 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>VlDjAqQHhwq9bds-gt-5306400-2020-03-24T18:08:15.762Z::conn.xml</types1:EntryId>
-      <types1:Name>Email</types1:Name>
+      <types1:EntryId>nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml</types1:EntryId>
+      <types1:Name>Email-G01</types1:Name>
+      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
-      <types1:Description>Shared Email Service to send  alerts and notifications</types1:Description>
+      <types1:Description>Shared Email Service to send  alerts and notifications on Local Agents group G01</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags/>
+      <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
+      <types1:CreationDate>2021-07-14T14:43:35Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-05-25T13:55:45Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-07-14T14:47:20Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-05-25T13:56:02Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connection/Email/Email.conn.xml</types1:PublishedContributionId>
+      <types1:PublicationDate>2021-07-14T14:47:40Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Email-G01/Email-G01.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
-                     displayName="Email"
-                     label="Email"
-                     name="Email">
-            <description>Shared Email Service to send  alerts and notifications</description>
-            <tags/>
-            <agent/>
+                     displayName="Email-G01"
+                     label="Email-G01"
+                     name="Email-G01">
+            <description>Shared Email Service to send  alerts and notifications on Local Agents group G01</description>
+            <tags>.agent:G01</tags>
+            <agent>G01</agent>
             <attributes>
-               <attribute encrypted="false" name="Authentication" value="Enable"/>
-               <attribute encrypted="false" name="hostName" value="smtp.office365.com"/>
-               <attribute encrypted="false" name="port" value="587"/>
+               <attribute encrypted="false" name="Authentication" value="Disable"/>
                <attribute encrypted="false"
-                          name="username"
-                          value="nrr-iics-alerts_svc@huronconsultinggroup.com"/>
+                          name="hostName"
+                          value="mail.huronconsultinggroup.com"/>
+               <attribute encrypted="false" name="port" value="25"/>
+               <attribute encrypted="false" name="username" value="jbrazda"/>
                <attribute encrypted="true" name="password" value=""/>
-               <attribute encrypted="false" name="security" value="TLS"/>
+               <attribute encrypted="false" name="security" value="None"/>
                <attribute encrypted="false" name="connectionTimeout" value="30000"/>
                <attribute encrypted="false" name="testToAddress" value="jbrazda@hcg.com"/>
                <attribute encrypted="false"
@@ -54,8 +55,8 @@
             </javaConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>4KKTgnBrayxkDx06mAWaQo</types1:GUID>
-      <types1:DisplayName>Email</types1:DisplayName>
+      <types1:GUID>2ZM6icvXPAkk6jxADngnoK</types1:GUID>
+      <types1:DisplayName>Email-G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:27:09.879Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2021-07-22T14:27:09.731Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
