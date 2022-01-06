@@ -175,7 +175,7 @@ jobs:
       IICS_TARGET_ENVIRONMENT: prod
       IICS_USER_NAME: ${{ secrets.IICS_PROD_ORG_USER }}
       IICS_USER_PWD: ${{ secrets.IICS_PROD_ORG_PWD }}
-    if: ${{ contains(github.event.inputs.deploy_to,'test' ) }}
+    if: ${{ contains(github.event.inputs.deploy_to,'prod' ) }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
