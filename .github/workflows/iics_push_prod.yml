@@ -31,6 +31,7 @@ jobs:
         -Diics.user.prod="${{ secrets.IICS_PROD_ORG_USER }}" \
         -Diics.password.prod="${{ secrets.IICS_PROD_ORG_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
+        -Diics.export.list.location=./conf/export_list.txt \
         -Diics.source.environment=test \
         -Dtools.reporting.disabled=true
     - name: Package # Package current head for Archival
