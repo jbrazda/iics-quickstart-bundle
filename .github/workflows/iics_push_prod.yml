@@ -1,4 +1,4 @@
-name: IICS CI Workflow PROD Push
+name: Deploy PROD Push
   # Following Project Secrets must be defined in the CI/CD Configuration
   # IICS_PROD_ORG_USER: ""
   # IICS_PROD_ORG_PWD: ""

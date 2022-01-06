@@ -5,6 +5,8 @@ name: Manual Push Head REVISION to TEST and PROD Environments
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 # Following Project Secrets must be defined in the CI/CD Configuration
+# IICS_DEV_ORG_USER: ""
+# IICS_DEV_ORG_PWD: ""
 # IICS_TEST_ORG_USER: ""
 # IICS_TEST_ORG_PWD: ""
 # IICS_PROD_ORG_USER: ""
@@ -15,20 +17,41 @@ name: Manual Push Head REVISION to TEST and PROD Environments
 
 on:
   workflow_dispatch:
-    # Inputs the workflow accepts.
+    # Inputs the workflow accepts. use ${{ github.event.inputs.input_name }}
     inputs:
-      commitMessage:
-        # Custom commit message for commit snapshot
-        description: 'Commit Message'
+      package_config:
+        # Override Custom Configuration
+        description: 'Package Configuration'
         # Default value if no value is explicitly provided
-        default: 'IICS Dev Environment Snapshot'
+        default: './conf/all_exclude_connections.package.txt'
         # Input has to be provided for the workflow to run
         required: true
+      publish_config:
+        # Override Custom Configuration
+        description: 'Publish Configuration'
+        # Default value if no value is explicitly provided
+        default: './conf/all_designs.publish.txt'
+        # Input has to be provided for the workflow to run
+        required: true
+      deploy_to:
+        # Controls where to Deploy current revision build
+        description: 'Deploy To Environment (comma separated list) Allowed Values: dev,test,prod'
+        # Default value if no value is explicitly provided
+        default: 'test,prod'
+        # Input has to be provided for the workflow to run
+        required: true
+      
 
 jobs:
-  dev_commit_snapshot:
-  #  Export IICS Assets from the environment
+  deploy_dev:
     runs-on: ubuntu-latest
+    environment: dev
+    env:
+      IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      IICS_TARGET_ENVIRONMENT: dev
+      IICS_USER_NAME: ${{ secrets.IICS_DEV_ORG_USER }}
+      IICS_USER_PWD: ${{ secrets.IICS_DEV_ORG_PWD }}
+    if: ${{ contains(github.event.inputs.deploy_to,'dev' ) }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -36,33 +59,170 @@ jobs:
       with:
         distribution: zulu
         java-version: 1.8
-    - name: Cleanup old Sources
-      # we need to cleanup old sources to handle renamed and deleted files
+      
+    - name: Export Assets From Target Org
       run: |
-        rm -rf ./src/iics
-    - name: Export Project and Refresh From Source Org (DEV)
-      env:
-        IICS_SOURCE_ENVIRONMENT: dev
-        IICS_EXPORT_PATH: ./target/iics/export/dev
-        IICS_EXPORT_FILE: IICS-QuickStart-Bundle
-      # Update src task does export, expand and unzip nested archives to update src/iics design data
-      run: |
-        ant update.src \
-        -Diics.user.${{ env.IICS_SOURCE_ENVIRONMENT }}="${{ secrets.IICS_DEV_ORG_USER }}" \
-        -Diics.password.${{ env.IICS_SOURCE_ENVIRONMENT }}="${{ secrets.IICS_DEV_ORG_PWD }}" \
+        ant download.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
-        -Diics.export.list.location=./conf/export_list.txt \
-        -Diics.source.environment=${{ env.IICS_SOURCE_ENVIRONMENT }} \
+        -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Dtools.reporting.disabled=true
-    - name: Update Publish All Configuration
+    - name: Package # Package current head for Archival
       run: |
-        find ./src/ipd -name "*.AI_SERVICE_CONNECTOR.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' > conf/all_designs.publish.txt && \
-        find ./src/ipd -name "*.AI_CONNECTION.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
-        find ./src/ipd -name "*.PROCESS.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
-        find ./src/ipd -name "*.GUIDE.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt
-    - name: Commit and Push Changes
-      uses: actions-x/commit@v2
+        ant package.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+    - name: Rename Archive Package # Add timestamp for Archival
+
+      run: |
+        exported_name=${{ env.IICS_EXPORT_FILE }}.zip
+        archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+    - name : Backup Packages to S3
+      uses: opspresso/action-s3-sync@v0.2.1
+      env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"
+          FROM_PATH: "./target/iics"
+          DEST_PATH: "s3://infa.cloud.in/hcg"
+          OPTIONS: ""
+    - name: Build Deploy
+      run: |
+        ant build.deploy \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=${{ github.event.inputs.package_config }} \
+        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }}  \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+  deploy_test:
+    runs-on: ubuntu-latest
+    environment: test
+    env:
+      IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      IICS_TARGET_ENVIRONMENT: test
+      IICS_USER_NAME: ${{ secrets.IICS_TEST_ORG_USER }}
+      IICS_USER_PWD: ${{ secrets.IICS_TEST_ORG_PWD }}
+    if: ${{ contains(github.event.inputs.deploy_to,'test' ) }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v2.5.0
       with:
-        message: ${{ github.event.inputs.commitMessage }}
-        branch: dev
-        files: .
+        distribution: zulu
+        java-version: 1.8
+      
+    - name: Export Assets From Target Org
+      run: |
+        ant download.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Dtools.reporting.disabled=true
+    - name: Package # Package current head for Archival
+      run: |
+        ant package.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+    - name: Rename Archive Package # Add timestamp for Archival
+
+      run: |
+        exported_name=${{ env.IICS_EXPORT_FILE }}.zip
+        archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+    - name : Backup Packages to S3
+      uses: opspresso/action-s3-sync@v0.2.1
+      env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"
+          FROM_PATH: "./target/iics"
+          DEST_PATH: "s3://infa.cloud.in/hcg"
+          OPTIONS: ""
+    - name: Build Deploy
+      run: |
+        ant build.deploy \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=${{ github.event.inputs.package_config }} \
+        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }} \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+  deploy_prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    env:
+      IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      IICS_TARGET_ENVIRONMENT: prod
+      IICS_USER_NAME: ${{ secrets.IICS_PROD_ORG_USER }}
+      IICS_USER_PWD: ${{ secrets.IICS_PROD_ORG_PWD }}
+    if: ${{ contains(github.event.inputs.deploy_to,'test' ) }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v2.5.0
+      with:
+        distribution: zulu
+        java-version: 1.8
+      
+    - name: Export Assets From Target Org
+      run: |
+        ant download.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Dtools.reporting.disabled=true
+    - name: Package # Package current head for Archival
+      run: |
+        ant package.src \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+    - name: Rename Archive Package # Add timestamp for Archival
+
+      run: |
+        exported_name=${{ env.IICS_EXPORT_FILE }}.zip
+        archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+    - name : Backup Packages to S3
+      uses: opspresso/action-s3-sync@v0.2.1
+      env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"
+          FROM_PATH: "./target/iics"
+          DEST_PATH: "s3://infa.cloud.in/hcg"
+          OPTIONS: ""
+    - name: Build Deploy
+      run: |
+        ant build.deploy \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ secrets.IICS_USER_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=${{ github.event.inputs.package_config }} \
+        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }} \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true

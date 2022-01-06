@@ -24,6 +24,7 @@ jobs:
   dev_commit_snapshot:
   #  Export IICS Assets from the environment
     runs-on: ubuntu-latest
+    environment: dev
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
