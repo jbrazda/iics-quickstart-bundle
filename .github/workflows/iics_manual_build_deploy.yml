@@ -1,6 +1,6 @@
 # This is a basic workflow that is manually triggered
 
-name: Manual Push Head REVISION to TEST and PROD Environments
+name: Manual Deployment
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
@@ -84,7 +84,7 @@ jobs:
       run: |
         exported_name=${{ env.IICS_EXPORT_FILE }}.zip
         archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
-        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$archived_name"
     - name : Backup Packages to S3
       uses: opspresso/action-s3-sync@v0.2.1
       env:
@@ -146,7 +146,7 @@ jobs:
       run: |
         exported_name=${{ env.IICS_EXPORT_FILE }}.zip
         archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
-        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$archived_name"
     - name : Backup Packages to S3
       uses: opspresso/action-s3-sync@v0.2.1
       env:
@@ -208,7 +208,7 @@ jobs:
       run: |
         exported_name=${{ env.IICS_EXPORT_FILE }}.zip
         archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
-        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }} /"$archived_name"
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$archived_name"
     - name : Backup Packages to S3
       uses: opspresso/action-s3-sync@v0.2.1
       env:
