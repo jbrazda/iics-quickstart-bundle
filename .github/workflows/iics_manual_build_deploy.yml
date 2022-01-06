@@ -63,8 +63,8 @@ jobs:
     - name: Export Assets From Target Org
       run: |
         ant download.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.export.list.location=./conf/export_list.txt \
         -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
@@ -72,8 +72,8 @@ jobs:
     - name: Package # Package current head for Archival
       run: |
         ant package.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
@@ -97,8 +97,8 @@ jobs:
     - name: Build Deploy
       run: |
         ant build.deploy \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
@@ -125,8 +125,8 @@ jobs:
     - name: Export Assets From Target Org
       run: |
         ant download.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.export.list.location=./conf/export_list.txt \
         -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
@@ -134,8 +134,8 @@ jobs:
     - name: Package # Package current head for Archival
       run: |
         ant package.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
@@ -159,8 +159,8 @@ jobs:
     - name: Build Deploy
       run: |
         ant build.deploy \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
@@ -187,8 +187,8 @@ jobs:
     - name: Export Assets From Target Org
       run: |
         ant download.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.export.list.location=./conf/export_list.txt \
         -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
@@ -196,8 +196,8 @@ jobs:
     - name: Package # Package current head for Archival
       run: |
         ant package.src \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
@@ -221,8 +221,8 @@ jobs:
     - name: Build Deploy
       run: |
         ant build.deploy \
-        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_NAME }}" \
-        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }} ="${{ env.IICS_USER_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
