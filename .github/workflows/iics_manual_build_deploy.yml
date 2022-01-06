@@ -30,7 +30,7 @@ on:
         # Override Custom Configuration
         description: 'Publish Configuration'
         # Default value if no value is explicitly provided
-        default: './conf/all_designs.publish.txt'
+        default: '../../../conf/all_designs.publish.txt'
         # Input has to be provided for the workflow to run
         required: true
       deploy_to:
