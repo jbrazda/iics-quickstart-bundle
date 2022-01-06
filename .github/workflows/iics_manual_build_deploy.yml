@@ -102,7 +102,7 @@ jobs:
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
-        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }}  \
+        -Diics.target.publish.config=${{ github.event.inputs.publish_config }}  \
         -Dtools.reporting.disabled=true \
         -Dtools.transform.disabled=true
   deploy_test:
@@ -164,7 +164,7 @@ jobs:
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
-        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }} \
+        -Diics.target.publish.config=${{ github.event.inputs.publish_config }} \
         -Dtools.reporting.disabled=true \
         -Dtools.transform.disabled=true
   deploy_prod:
@@ -226,6 +226,6 @@ jobs:
         -Diics.release=./conf/iics.release.properties \
         -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Diics.target.package.config=${{ github.event.inputs.package_config }} \
-        -Diics.target.publish.config=.${{ github.event.inputs.publish_config }} \
+        -Diics.target.publish.config=${{ github.event.inputs.publish_config }} \
         -Dtools.reporting.disabled=true \
         -Dtools.transform.disabled=true
