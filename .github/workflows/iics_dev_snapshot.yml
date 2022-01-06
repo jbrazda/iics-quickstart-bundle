@@ -1,0 +1,63 @@
+# This is a basic workflow that is manually triggered
+
+name: Manual Dev Snapshot
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+# Following Project Secrets must be defined in the CI/CD Configuration
+# IICS_DEV_ORG_USER
+# IICS_DEV_ORG_PWD
+
+on:
+  workflow_dispatch:
+    # Inputs the workflow accepts.
+    inputs:
+      commitMessage:
+        # Custom commit message for commit snapshot
+        description: 'Commit Message'
+        # Default value if no value is explicitly provided
+        default: 'IICS Dev Environment Snapshot'
+        # Input has to be provided for the workflow to run
+        required: true
+
+jobs:
+  dev_commit_snapshot:
+  #  Export IICS Assets from the environment
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v2.5.0
+      with:
+        distribution: zulu
+        java-version: 1.8
+    - name: Cleanup old Sources
+      # we need to cleanup old sources to handle renamed and deleted files
+      run: |
+        rm -rf ./src/iics
+    - name: Export Project and Refresh From Source Org (DEV)
+      env:
+        IICS_SOURCE_ENVIRONMENT: dev
+        IICS_EXPORT_PATH: ./target/iics/export/dev
+        IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      # Update src task does export, expand and unzip nested archives to update src/iics design data
+      run: |
+        ant update.src \
+        -Diics.user.${{ env.IICS_SOURCE_ENVIRONMENT }}="${{ secrets.IICS_DEV_ORG_USER }}" \
+        -Diics.password.${{ env.IICS_SOURCE_ENVIRONMENT }}="${{ secrets.IICS_DEV_ORG_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.export.list.location=./conf/export_list.txt \
+        -Diics.source.environment=${{ env.IICS_SOURCE_ENVIRONMENT }} \
+        -Dtools.reporting.disabled=true
+    - name: Update Publish All Configuration
+      run: |
+        find ./src/ipd -name "*.AI_SERVICE_CONNECTOR.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' > conf/all_designs.publish.txt && \
+        find ./src/ipd -name "*.AI_CONNECTION.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
+        find ./src/ipd -name "*.PROCESS.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
+        find ./src/ipd -name "*.GUIDE.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt
+    - name: Commit and Push Changes
+      uses: actions-x/commit@v2
+      with:
+        message: ${{ github.event.inputs.commitMessage }}
+        branch: dev
+        files: .

@@ -1,0 +1,72 @@
+name: IICS CI Workflow TEST Push
+  # Following Project Secrets must be defined in the CI/CD Configuration
+  # IICS_TEST_ORG_USER: ""
+  # IICS_TEST_ORG_PWD: ""
+  # AWS_ACCESS_KEY_ID: "" 
+  # AWS_SECRET_ACCESS_KEY: ""
+
+on:
+  # Trigger the workflow on push request,
+  # but only for the dev branch
+  push:
+    branches:
+      - push_test
+jobs:
+  buid_deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v2.5.0
+      with:
+        distribution: zulu
+        java-version: 1.8
+      
+    - name: Export Assets From Target Org
+      run: |
+        ant download.src \
+        -Diics.user.test="${{ secrets.IICS_TEST_ORG_USER }}" \
+        -Diics.password.test="${{ secrets.IICS_TEST_ORG_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.source.environment=test \
+        -Dtools.reporting.disabled=true
+    - name: Package # Package current head for Archival
+      run: |
+        ant package.src \
+        -Diics.user.test="${{ secrets.IICS_TEST_ORG_USER }}" \
+        -Diics.password.test="${{ secrets.IICS_TEST_ORG_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=test \
+        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
+    - name: Rename Archive Package # Add timestamp for Archival
+      env:
+        IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      run: |
+        exported_name=${{ env.IICS_EXPORT_FILE }}.zip
+        archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
+        mv ./target/iics/export/test/"$exported_name" ./target/iics/export/test/"$archived_name"
+    - name : Backup Packages to S3
+      uses: opspresso/action-s3-sync@v0.2.1
+      env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-east-1"
+          FROM_PATH: "./target/iics"
+          DEST_PATH: "s3://infa.cloud.in/hcg"
+          OPTIONS: ""
+    - name: Build Deploy
+      run: |
+        ant build.deploy \
+        -Diics.user.test="${{ secrets.IICS_TEST_ORG_USER }}" \
+        -Diics.password.test="${{ secrets.IICS_TEST_ORG_PWD }}" \
+        -Diics.release=./conf/iics.release.properties \
+        -Diics.target.environment=test \
+        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Diics.target.publish.config=./conf/all_designs.publish.txt \
+        -Dtools.reporting.disabled=true \
+        -Dtools.transform.disabled=true
