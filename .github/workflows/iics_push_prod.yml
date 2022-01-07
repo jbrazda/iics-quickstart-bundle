@@ -10,7 +10,7 @@ on:
   # but only for the dev branch
   push:
     branches:
-      - push_prod
+      - master
 jobs:
   buid_deploy:
     runs-on: ubuntu-latest
@@ -19,7 +19,7 @@ jobs:
       IICS_EXPORT_FILE: IICS-QuickStart-Bundle
       IICS_TARGET_ENVIRONMENT: prod
       IICS_CONFIG_EXPORT: ./conf/export_list.txt 
-      IICS_CONFIG_BACKUP: ./conf/all_exclude_connections.package.txt 
+      IICS_CONFIG_BACKUP: ./conf/all_exclude_connections.package.txt
       IICS_CONFIG_PACKAGE: ./conf/push_test_prod.package.txt
       # Transfom ocnfig is optional, required when the IICS_PACKAGE_TRANSFORM_DISABLED = false
       IICS_CONFIG_TRANSFORM: ../../../conf/template.transform.properties
@@ -71,7 +71,7 @@ jobs:
           AWS_REGION: "us-east-1"
           FROM_PATH: "./target/iics"
           DEST_PATH: ${{ env.AWS_S3_BUCKET }}
-          OPTIONS
+          OPTIONS: ""
     - name: Build Deploy
       run: |
         ant build.deploy \
