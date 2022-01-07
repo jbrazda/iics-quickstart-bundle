@@ -26,7 +26,7 @@ jobs:
       IICS_PACKAGE_TRANSFORM_DISABLED: true
       IICS_CONFIG_PUBLISH: ./conf/all_designs.publish.txt
       IICS_USER_NAME: ${{ secrets.IICS_PROD_ORG_USER }}
-      IICS_USER_PWD: ${{ secrets.IICS_PROD_ORG_USER }}
+      IICS_USER_PWD: ${{ secrets.IICS_PROD_ORG_PWD }}
       # S3 Bucket for Target Org Asset Backup
       AWS_S3_BUCKET: "s3://infa.cloud.in/hcg"
     ## DO NOT EDIT STEPS BELOW UNLESS YOU WANT TO CHANGE THOSE, USE ENV VARIABLES ABOVE CONFIGURE THE BUILD
