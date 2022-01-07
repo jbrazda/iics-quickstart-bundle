@@ -1,9 +1,9 @@
 name: Deploy PROD Push
   # Following Project Secrets must be defined in the CI/CD Configuration
-  # IICS_PROD_ORG_USER: ""
-  # IICS_PROD_ORG_PWD: ""
-  # AWS_ACCESS_KEY_ID: "" 
-  # AWS_SECRET_ACCESS_KEY: ""
+  # IICS_PROD_ORG_USER
+  # IICS_PROD_ORG_PWD
+  # AWS_ACCESS_KEY_ID 
+  # AWS_SECRET_ACCESS_KEY
 
 on:
   # Trigger the workflow on push request,
@@ -13,11 +13,24 @@ on:
       - push_prod
 jobs:
   buid_deploy:
-
     runs-on: ubuntu-latest
-
+    environment: prod
+    env:
+      IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+      IICS_TARGET_ENVIRONMENT: prod
+      IICS_CONFIG_EXPORT: ./conf/export_list.txt 
+      IICS_CONFIG_BACKUP: ./conf/all_exclude_connections.package.txt 
+      IICS_CONFIG_PACKAGE: ./conf/push_test_prod.package.txt
+      # Transfom ocnfig is optional, required when the IICS_PACKAGE_TRANSFORM_DISABLED = false
+      IICS_CONFIG_TRANSFORM: ../../../conf/template.transform.properties
+      IICS_PACKAGE_TRANSFORM_DISABLED: true
+      IICS_CONFIG_PUBLISH: ./conf/all_designs.publish.txt
+      IICS_USER_NAME: ${{ secrets.IICS_PROD_ORG_USER }}
+      IICS_USER_PWD: ${{ secrets.IICS_PROD_ORG_USER }}
+      # S3 Bucket for Target Org Asset Backup
+      AWS_S3_BUCKET: "s3://infa.cloud.in/hcg"
+    ## DO NOT EDIT STEPS BELOW UNLESS YOU WANT TO CHANGE THOSE, USE ENV VARIABLES ABOVE CONFIGURE THE BUILD
     steps:
-
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
       uses: actions/setup-java@v2.5.0
@@ -28,46 +41,46 @@ jobs:
     - name: Export Assets From Target Org
       run: |
         ant download.src \
-        -Diics.user.prod="${{ secrets.IICS_PROD_ORG_USER }}" \
-        -Diics.password.prod="${{ secrets.IICS_PROD_ORG_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
-        -Diics.export.list.location=./conf/export_list.txt \
-        -Diics.source.environment=test \
+        -Diics.export.list.location=${{ env.IICS_EXPORT_FILE }} \
+        -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Dtools.reporting.disabled=true
     - name: Package # Package current head for Archival
       run: |
         ant package.src \
-        -Diics.user.prod="${{ secrets.IICS_PROD_ORG_USER }}" \
-        -Diics.password.prod="${{ secrets.IICS_PROD_ORG_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
-        -Diics.target.environment=test \
-        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=${{ env.IICS_CONFIG_BACKUP }} \
         -Dtools.reporting.disabled=true \
         -Dtools.transform.disabled=true
-    - name: Rename Archive Package # Add timestamp for Archival
-      env:
-        IICS_EXPORT_FILE: IICS-QuickStart-Bundle
+    - name: Rename Archive Package # Add timestamp to a exported backup file for archival
       run: |
         exported_name=${{ env.IICS_EXPORT_FILE }}.zip
         archived_name=${{ env.IICS_EXPORT_FILE }}-$(date +"%Y-%m-%d-%H%M%S").zip
-        mv ./target/iics/export/prod/"$exported_name" ./target/iics/export/prod/"$archived_name"
-    - name : Backup Packages to S3
+        mv ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$exported_name" ./target/iics/export/${{ env.IICS_TARGET_ENVIRONMENT }}/"$archived_name"
+    # Backup Exported and build files to AWS
+    - name : Backup Packages to S3 
       uses: opspresso/action-s3-sync@v0.2.1
       env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-east-1"
           FROM_PATH: "./target/iics"
-          DEST_PATH: "s3://infa.cloud.in/hcg"
-          OPTIONS: ""
+          DEST_PATH: ${{ env.AWS_S3_BUCKET }}
+          OPTIONS
     - name: Build Deploy
       run: |
         ant build.deploy \
-        -Diics.user.prod="${{ secrets.IICS_PROD_ORG_USER }}" \
-        -Diics.password.prod="${{ secrets.IICS_PROD_ORG_PWD }}" \
+        -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
+        -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
-        -Diics.target.environment=test \
-        -Diics.target.package.config=./conf/all_exclude_connections.package.txt \
-        -Diics.target.publish.config=./conf/all_designs.publish.txt \
+        -Diics.target.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
+        -Diics.target.package.config=${{ env.IICS_CONFIG_PACKAGE }} \
+        -Diics.target.publish.config=${{ env.IICS_CONFIG_PUBLISH }} \
+        -Diics.package.transform.config=${{ env.IICS_CONFIG_TRANSFORM }} \
         -Dtools.reporting.disabled=true \
-        -Dtools.transform.disabled=true
+        -Dtools.transform.disabled=${{ env.IICS_PACKAGE_TRANSFORM_DISABLED }}
