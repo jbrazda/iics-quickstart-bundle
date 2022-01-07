@@ -14,7 +14,7 @@ on:
 jobs:
   buid_deploy:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: test
     env:
       IICS_EXPORT_FILE: IICS-QuickStart-Bundle
       IICS_TARGET_ENVIRONMENT: test
