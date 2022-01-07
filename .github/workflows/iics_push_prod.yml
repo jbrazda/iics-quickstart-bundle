@@ -44,7 +44,7 @@ jobs:
         -Diics.user.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_NAME }}" \
         -Diics.password.${{ env.IICS_TARGET_ENVIRONMENT }}="${{ env.IICS_USER_PWD }}" \
         -Diics.release=./conf/iics.release.properties \
-        -Diics.export.list.location=${{ env.IICS_EXPORT_FILE }} \
+        -Diics.export.list.location=${{ env.IICS_CONFIG_EXPORT }} \
         -Diics.source.environment=${{ env.IICS_TARGET_ENVIRONMENT }} \
         -Dtools.reporting.disabled=true
     - name: Package # Package current head for Archival
