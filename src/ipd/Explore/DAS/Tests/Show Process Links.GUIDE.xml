@@ -5,7 +5,8 @@
       <types1:Name>Show_Process_Links</types1:Name>
       <types1:ParentFlowIds>93aaa-gt-72286424-2021-06-30T18:02:29.79Z::gt.xml,FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</types1:Description>
+      <types1:Description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +15,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-27T15:00:23Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:41Z</types1:ModificationDate>
+      <types1:ModificationDate>2021-12-09T17:46:49Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:44Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-12-09T17:48:27Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Show_Process_Links/Show_Process_Links.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +30,8 @@
                          doneOnEndStep="true"
                          name="Show_Process_Links"
                          runAsUser="$current">
-            <description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com</description>
+            <description>Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com
+version: 2.0</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -191,7 +193,7 @@
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="k8abbs1u">
+               <empty gatewayType="exclusive" id="kwz94zee">
                   <actions/>
                </empty>
                <assignment id="js2cncul">
@@ -253,5 +255,5 @@ $url</expression>
       <types1:GUID>7Gv30yF1SAmblOFOEmSwCZ</types1:GUID>
       <types1:DisplayName>Show Process Links</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:46.991Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:33.993Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
