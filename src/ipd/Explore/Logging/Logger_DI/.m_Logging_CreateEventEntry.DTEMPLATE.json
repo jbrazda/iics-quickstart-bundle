@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "2K2VAKKJmGtdTmT20xKa2b",
+      "objectName": "m_Logging_CreateEventEntry",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Mapping to create Event Log entry to monitor job execution\nEvent logging Levels 1-Info, 2-Warning, 3-Error\nBecause task flows run in the cloud server instance as IPS process, use Cloud Server as environment\n ",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN1700000000000J"
+         }
+      }
+   }
+]

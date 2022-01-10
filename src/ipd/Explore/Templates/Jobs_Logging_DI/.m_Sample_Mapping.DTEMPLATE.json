@@ -1,0 +1,58 @@
+[
+   {
+      "objectGuid": "aMKy55HgsCPgl5XSlbTr0l",
+      "objectName": "m_Sample_Mapping",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "amgbRivrJQhitzHvCcgymi"
+         ],
+         "repoInfo": {
+            "repoHandle": "0118TN1700000000000L"
+         }
+      }
+   },
+   {
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0B000000000002"
+         }
+      }
+   }
+]

@@ -1,0 +1,114 @@
+[
+   {
+      "objectGuid": "5EzY36uULkYbQqn78T8MKu",
+      "objectName": "mt_Sample_Mapping",
+      "objectType": "MTT",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "amgbRivrJQhitzHvCcgymi",
+            "8OoRwZrdncvfN5Q97mLbQt",
+            "aMKy55HgsCPgl5XSlbTr0l"
+         ],
+         "repoInfo": {
+            "repoHandle": "0118TN0Z00000000000J"
+         }
+      }
+   },
+   {
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0B000000000002"
+         }
+      }
+   },
+   {
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN25000000000003"
+         }
+      }
+   },
+   {
+      "objectGuid": "aMKy55HgsCPgl5XSlbTr0l",
+      "objectName": "m_Sample_Mapping",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN1700000000000L"
+         }
+      }
+   }
+]

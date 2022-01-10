@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "8prC4AM9Anzf8pEeDj0eWd",
+      "objectGuid": "7yQZxYMRa4kgxkW4GENes2",
       "objectName": "tf_JOB_Tracking_Template",
       "objectType": "TASKFLOW",
       "path": "/Explore/Logging/Logger_DI",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Example Task flow template to use as a starting point to develop new task flows",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,25 +16,25 @@
             "minor": 0
          },
          "objectRefs": [
-            "2OPKdrmxx1te7ns0Uqd4A9",
-            "gwMcWDI7JmqgsqgHBwyum3",
-            "eL0hPthBBMRlQJnYnKr3wP"
+            "5mQSVYzXARFdIWEE2wmfwm",
+            "1mAmqoMzIaEblXG9awIMml",
+            "504jPbKnYu0ep9XgdKq4Qp"
          ],
          "repoInfo": {
-            "repoHandle": "WdyH72yIYmWR7hs-gt-17502004-2020-03-24T18:08:21.787Z::tf.xml"
+            "repoHandle": "TnJhtghGZ5i4rsw-gt-1339491-2022-01-10T20:39:57.736Z::tf.xml"
          }
       }
    },
    {
-      "objectGuid": "2OPKdrmxx1te7ns0Uqd4A9",
-      "objectName": "mct_Logging_UpdateJobEntry",
+      "objectGuid": "5mQSVYzXARFdIWEE2wmfwm",
+      "objectName": "mt_Logging_CreateJobEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
       "metadata": {
          "additionalInfo": {
             "contentType": "JSON",
-            "description": "MCT to Update Job Log entry with a final Status and End Time",
-            "documentState": "INVALID"
+            "description": "MT to Create Job Entry",
+            "documentState": "VALID"
          },
          "contextAttributes": [
             {
@@ -48,20 +48,20 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0Z000000000003"
+            "repoHandle": "0118TN0Z00000000000I"
          }
       }
    },
    {
-      "objectGuid": "gwMcWDI7JmqgsqgHBwyum3",
-      "objectName": "mct_Logging_CreateJobEntry",
+      "objectGuid": "1mAmqoMzIaEblXG9awIMml",
+      "objectName": "mt_Logging_UpdateJobEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
       "metadata": {
          "additionalInfo": {
             "contentType": "JSON",
-            "description": "MCT to Create Job Entry",
-            "documentState": "INVALID"
+            "description": "MT to Update Job Log entry with a final Status and End Time",
+            "documentState": "VALID"
          },
          "contextAttributes": [
             {
@@ -75,20 +75,20 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0Z000000000004"
+            "repoHandle": "0118TN0Z00000000000G"
          }
       }
    },
    {
-      "objectGuid": "eL0hPthBBMRlQJnYnKr3wP",
-      "objectName": "mct_Logging_CreateEventEntry",
+      "objectGuid": "504jPbKnYu0ep9XgdKq4Qp",
+      "objectName": "mt_Logging_CreateEventEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
       "metadata": {
          "additionalInfo": {
             "contentType": "JSON",
-            "description": "MCT to Create Event Entry",
-            "documentState": "INVALID"
+            "description": "MT to Create Event Entry",
+            "documentState": "VALID"
          },
          "contextAttributes": [
             {
@@ -102,7 +102,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0Z000000000002"
+            "repoHandle": "0118TN0Z00000000000H"
          }
       }
    }
