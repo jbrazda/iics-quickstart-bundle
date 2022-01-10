@@ -1,5 +1,3 @@
-target
-
 # maven related ignores
 target
 pom.xml.tag
@@ -33,7 +31,6 @@ buildNumber.properties
 .metadata
 .classpath
 .settings/
-bin/
 build/
 tmp/
 *.tmp
