@@ -5,7 +5,8 @@
       <types1:Name>DataAccessService</types1:Name>
       <types1:ParentFlowIds>n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml,wfQHhwq9bdsreK8-gt-10328025-2020-07-25T20:17:07.836Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
-      <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</types1:Description>
+      <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +15,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-06-24T17:22:52Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:ModificationDate>2021-12-09T17:44:07Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-06-24T17:21:21Z</types1:PublicationDate>
+      <types1:PublicationDate>2021-12-09T17:45:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,7 +29,8 @@
                             label=""
                             name="DataAccessService"
                             uuid="93d7509e-96fb-4872-b8c1-41f382c1811f">
-            <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL</description>
+            <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
+version: 2.0</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
             <actions>
@@ -167,19 +169,22 @@
                               name="ProcedureParameter">
                   <description/>
                   <detail>
-                     <field name="name" type="string"/>
-                     <field name="sqlType" type="picklist">
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="sqlType" nullable="true" required="false" type="picklist">
                         <options>
                            <option name="values">[{"value":"byte","label":"byte"},{"value":"short","label":"short"},{"value":"int","label":"int"},{"value":"long","label":"long"},{"value":"float","label":"float"},{"value":"double","label":"double"},{"value":"string","label":"string"},{"value":"date","label":"date"},{"value":"clob","label":"clob"},{"value":"binary","label":"binary"}]</option>
                         </options>
                      </field>
-                     <field name="mode" type="picklist">
+                     <field name="mode" nullable="true" required="false" type="picklist">
                         <options>
                            <option name="values">[{"value":"in","label":"in"},{"value":"out","label":"out"},{"value":"inout","label":"inout"}]</option>
                         </options>
                      </field>
-                     <field name="data" type="string"/>
-                     <field name="attachment" type="string"/>
+                     <field name="data" nullable="true" required="false" type="string"/>
+                     <field name="attachment"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -187,14 +192,20 @@
                               name="Parameter">
                   <description/>
                   <detail>
-                     <field name="sqlType" type="picklist">
+                     <field name="sqlType" nullable="true" required="false" type="picklist">
                         <options>
                            <option name="values">[{"value":"byte","label":"byte"},{"value":"short","label":"short"},{"value":"int","label":"int"},{"value":"long","label":"long"},{"value":"float","label":"float"},{"value":"double","label":"double"},{"value":"string","label":"string"},{"value":"date","label":"date"},{"value":"clob","label":"clob"},{"value":"binary","label":"binary"}]</option>
                         </options>
                      </field>
-                     <field name="attachmentId" type="string"/>
-                     <field name="data" type="string"/>
-                     <field name="attachment" type="string"/>
+                     <field name="attachmentId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="data" nullable="true" required="false" type="string"/>
+                     <field name="attachment"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -202,13 +213,19 @@
                               name="tDataAccessRequest">
                   <description/>
                   <detail>
-                     <field name="sqlStatement" type="reference">
+                     <field name="sqlStatement"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">tSqlStatement</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="dataSource" type="picklist">
+                     <field name="dataSource"
+                            nullable="true"
+                            required="false"
+                            type="picklist">
                         <options>
                            <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"},{"value":"DS6","label":"DS6"},{"value":"DS7","label":"DS7"},{"value":"DS8","label":"DS8"},{"value":"DS9","label":"DS9"},{"value":"DS10","label":"DS10"}]</option>
                         </options>
@@ -226,13 +243,19 @@
                               name="tMultiDataAccessRequest">
                   <description/>
                   <detail>
-                     <field name="sqlStatement" type="objectlist">
+                     <field name="sqlStatement"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">tSqlStatement</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="dataSource" type="picklist">
+                     <field name="dataSource"
+                            nullable="true"
+                            required="false"
+                            type="picklist">
                         <options>
                            <option name="values">[{"value":"DS1","label":"DS1"},{"value":"DS2","label":"DS2"},{"value":"DS3","label":"DS3"},{"value":"DS4","label":"DS4"},{"value":"DS5","label":"DS5"},{"value":"DS6","label":"DS6"},{"value":"DS7","label":"DS7"},{"value":"DS8","label":"DS8"},{"value":"DS9","label":"DS9"},{"value":"DS10","label":"DS10"}]</option>
                         </options>
@@ -244,7 +267,10 @@
                               name="tMultiResponse">
                   <description/>
                   <detail>
-                     <field name="result" type="objectlist">
+                     <field name="result"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">tResponse</option>
                            <option name="relationshipName">Child</option>
@@ -257,7 +283,10 @@
                               name="tProcedureSignature">
                   <description/>
                   <detail>
-                     <field name="parameter" type="objectlist">
+                     <field name="parameter"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">ProcedureParameter</option>
                            <option name="relationshipName">Child</option>
@@ -270,17 +299,26 @@
                               name="tResponse">
                   <description/>
                   <detail>
-                     <field name="statementId" type="string"/>
-                     <field name="sqlcode" type="double"/>
-                     <field name="sqlstate" type="string"/>
-                     <field name="errorMessage" type="string"/>
-                     <field name="metadata" type="reference">
+                     <field name="statementId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="sqlcode" nullable="true" required="false" type="double"/>
+                     <field name="sqlstate" nullable="true" required="false" type="string"/>
+                     <field name="errorMessage"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="metadata"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">tMetadata</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="row" type="objectlist">
+                     <field name="row" nullable="true" required="false" type="objectlist">
                         <options>
                            <option name="referenceTo">tRow</option>
                            <option name="relationshipName">Child</option>
@@ -293,8 +331,14 @@
                               name="tRow">
                   <description/>
                   <detail>
-                     <field name="updatedRows" type="double"/>
-                     <field name="attachmentId" type="string"/>
+                     <field name="updatedRows"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="attachmentId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -302,7 +346,10 @@
                               name="tSqlParameterBatch">
                   <description/>
                   <detail>
-                     <field name="parameter" type="objectlist">
+                     <field name="parameter"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">Parameter</option>
                            <option name="relationshipName">Child</option>
@@ -315,30 +362,57 @@
                               name="tSqlStatement">
                   <description/>
                   <detail>
-                     <field name="maxRows" type="double"/>
-                     <field name="maxWaitSeconds" type="double"/>
-                     <field name="statementId" type="string"/>
-                     <field name="columnCase" type="picklist">
+                     <field name="maxRows" nullable="true" required="false" type="double"/>
+                     <field name="maxWaitSeconds"
+                            nullable="true"
+                            required="false"
+                            type="double"/>
+                     <field name="statementId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="columnCase"
+                            nullable="true"
+                            required="false"
+                            type="picklist">
                         <options>
                            <option name="values">[{"value":"lowercase","label":"lowercase"},{"value":"uppercase","label":"uppercase"},{"value":"unchanged","label":"unchanged"}]</option>
                         </options>
                      </field>
-                     <field name="includeMetadata" type="boolean"/>
-                     <field name="hasResultSet" type="boolean"/>
-                     <field name="statement" type="textarea"/>
-                     <field name="parameter" type="objectlist">
+                     <field name="includeMetadata"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="hasResultSet"
+                            nullable="true"
+                            required="false"
+                            type="boolean"/>
+                     <field name="statement"
+                            nullable="true"
+                            required="false"
+                            type="textarea"/>
+                     <field name="parameter"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">Parameter</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="parameterBatch" type="objectlist">
+                     <field name="parameterBatch"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">tSqlParameterBatch</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="procedure" type="reference">
+                     <field name="procedure"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">tProcedureSignature</option>
                            <option name="relationshipName">Child</option>
@@ -352,5 +426,5 @@
       <types1:GUID>fnG0seP4jM2ljV7FCQzLYx</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:46.737Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:33.474Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

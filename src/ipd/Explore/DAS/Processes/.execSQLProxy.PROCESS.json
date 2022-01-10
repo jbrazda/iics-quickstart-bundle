@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.",
+            "description": "This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,
