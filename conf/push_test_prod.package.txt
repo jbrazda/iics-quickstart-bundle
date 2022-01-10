@@ -4,6 +4,7 @@ Explore/Logging/Guides_SFDC.Folder
 Explore/Logging/Guides.Folder
 Explore/Logging/Logger_Database_DAS.Folder
 Explore/Logging/Logger_Database_NA.Folder
+Explore/Logging/Logger_DI.Folder
 Explore/Logging/Logger_SFDC_Cloud.Folder
 Explore/Logging/Logger_SFDC_NA.Folder
 Explore/Logging/ProcessObjects.Folder
