@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide To Run various data acess Service Wrapper test",
+            "description": "Guide To Run Data Access Service Wrapper Tests\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -31,7 +31,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com",
+            "description": "Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,

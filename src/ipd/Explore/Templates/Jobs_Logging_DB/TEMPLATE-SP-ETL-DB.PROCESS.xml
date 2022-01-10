@@ -13,18 +13,21 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:45Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-01-08T18:56:21Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2020-12-09T15:56:47Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-DB/TEMPLATE-SP-ETL-DB.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="TEMPLATE-SP-ETL-DB"
-                  name="TEMPLATE-SP-ETL-DB">
+                  name="TEMPLATE-SP-ETL-DB"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
             <description>Template for Integration Sub-Process (SP) Demo</description>
             <tags>.agent:NA</tags>
@@ -153,7 +156,7 @@ else
                               <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
    &lt;event_message&gt;TODO: Step Completed Message&lt;/event_message&gt;
    &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
-   &lt;event_detail&gt;TODDO: Sete Detail Info&lt;/event_detail&gt;
+   &lt;event_detail&gt;TODO: Set Detail Info&lt;/event_detail&gt;
    &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
    &lt;logging_level&gt;1&lt;/logging_level&gt;
    &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
@@ -228,5 +231,5 @@ Detail:
       <types1:GUID>7gNn29q0tM6bKwqIv38g4s</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:46.975Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:33.944Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

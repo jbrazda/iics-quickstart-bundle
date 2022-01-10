@@ -15,7 +15,7 @@
       <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2021-05-20T13:16:19Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2021-05-20T13:16:27Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-Setup-Logging-DB/SP-Setup-Logging-DB.pd.xml</types1:PublishedContributionId>
@@ -134,5 +134,5 @@ doc($gist_url)</expression>
       <types1:GUID>2SxjEDCPfYxcZVkA8Q1F2I</types1:GUID>
       <types1:DisplayName>SP-Setup-Logging-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:47.827Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:35.013Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

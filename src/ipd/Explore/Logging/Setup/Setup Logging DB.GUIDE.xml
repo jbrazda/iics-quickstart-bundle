@@ -15,7 +15,7 @@
       <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2020-04-09T20:59:54Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2021-05-20T13:16:38Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Setup_Logging_DB/Setup_Logging_DB.xml</types1:PublishedContributionId>
@@ -263,5 +263,5 @@
       <types1:GUID>2MMQuXd5tm2eghsxW91sWd</types1:GUID>
       <types1:DisplayName>Setup Logging DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:48.079Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:35.293Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -30,8 +30,8 @@
       "path": "/Explore/DAS/Connections",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
-            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL",
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,

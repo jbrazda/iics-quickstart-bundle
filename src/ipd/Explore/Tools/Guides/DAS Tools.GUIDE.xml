@@ -14,7 +14,7 @@
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2020-04-09T20:59:41Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2020-04-09T21:02:37Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.DAS_Tools/DAS_Tools.xml</types1:PublishedContributionId>
@@ -320,5 +320,5 @@ saxon:serialize(util:simplifyXml($output.dataAccessResponse),$saxon_params)</exp
       <types1:GUID>3KGF1ctxe8Th9LaXNFkl6u</types1:GUID>
       <types1:DisplayName>DAS Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2021-07-22T14:59:46.629Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T01:09:33.543Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
