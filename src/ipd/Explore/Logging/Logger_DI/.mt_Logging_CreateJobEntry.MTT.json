@@ -1,0 +1,114 @@
+[
+   {
+      "objectGuid": "5mQSVYzXARFdIWEE2wmfwm",
+      "objectName": "mt_Logging_CreateJobEntry",
+      "objectType": "MTT",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "MT to Create Job Entry",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "amgbRivrJQhitzHvCcgymi",
+            "a72tUKwVnPZfY8TJK5T5KF",
+            "8OoRwZrdncvfN5Q97mLbQt"
+         ],
+         "repoInfo": {
+            "repoHandle": "0118TN0Z00000000000I"
+         }
+      }
+   },
+   {
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0B000000000002"
+         }
+      }
+   },
+   {
+      "objectGuid": "a72tUKwVnPZfY8TJK5T5KF",
+      "objectName": "m_Logging_CreateJobEntry",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Mapping to create Job entry \nJob Entry is created in state 1-Running\nBecause task flows run in the cloud server instance as IPS process, use Cloud Server as environment",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN1700000000000K"
+         }
+      }
+   },
+   {
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN25000000000003"
+         }
+      }
+   }
+]

@@ -1,0 +1,114 @@
+[
+   {
+      "objectGuid": "1mAmqoMzIaEblXG9awIMml",
+      "objectName": "mt_Logging_UpdateJobEntry",
+      "objectType": "MTT",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "MT to Update Job Log entry with a final Status and End Time",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "amgbRivrJQhitzHvCcgymi",
+            "j8h4QT1uSsBiEYEK5sJ9gx",
+            "8OoRwZrdncvfN5Q97mLbQt"
+         ],
+         "repoInfo": {
+            "repoHandle": "0118TN0Z00000000000G"
+         }
+      }
+   },
+   {
+      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0B000000000002"
+         }
+      }
+   },
+   {
+      "objectGuid": "j8h4QT1uSsBiEYEK5sJ9gx",
+      "objectName": "m_Logging_UpdateJobEntry",
+      "objectType": "DTEMPLATE",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "Mapping To update Job Entry with a final Status and End Time\nFinal Status should be\n2 - Failed\n3 - Completed",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN1700000000000I"
+         }
+      }
+   },
+   {
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN25000000000003"
+         }
+      }
+   }
+]

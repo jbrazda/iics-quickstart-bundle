@@ -14,9 +14,9 @@
       <types1:CreationDate>2021-02-10T20:21:06Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2021-02-10T20:42:18Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-02-10T20:42:57Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-01-10T01:59:03Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DAS/How_To_Use_Template_Processes_DAS.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -123,5 +123,5 @@
       <types1:GUID>2NOuSfUhfMGdsxPwINAuIO</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-10T01:29:04.613Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T21:28:06.86Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
