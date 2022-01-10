@@ -6,7 +6,7 @@
       "path": "/Explore/Templates/Jobs_Logging_DI",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
+            "contentType": "application/json; charset=utf-8",
             "description": "Example Task Flow template to use as a starting point to develop new task flows",
             "documentState": "VALID"
          },

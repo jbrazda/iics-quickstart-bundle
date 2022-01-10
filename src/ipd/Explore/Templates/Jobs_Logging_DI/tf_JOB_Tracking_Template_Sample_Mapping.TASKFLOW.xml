@@ -12,8 +12,12 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-10T20:40:50Z</types1:CreationDate>
-      <types1:ModifiedBy/>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-01-10T23:24:56Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-01-10T23:25:08Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_JOB_Tracking_Template_Sample_Mapping/tf_JOB_Tracking_Template_Sample_Mapping.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -77,6 +81,8 @@
                <field description="" name="Create Event Entry Completed" type="reference">
                   <options>
                      <option name="referenceTo">$po:mt-Logging-CreateEventEntry</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
                   </options>
                </field>
                <field description="" name="Update Job Entry Completed" type="reference">
@@ -711,5 +717,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>8Xv147vkTu0huIQqjnlzWr</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template_Sample_Mapping</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-10T21:28:06.942Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-10T23:44:41.583Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
