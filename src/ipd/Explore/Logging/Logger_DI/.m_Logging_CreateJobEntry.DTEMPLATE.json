@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3pRcpiUoa6ncyC7xq0ex8U",
+      "objectGuid": "a72tUKwVnPZfY8TJK5T5KF",
       "objectName": "m_Logging_CreateJobEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -20,38 +20,9 @@
             "major": 0,
             "minor": 0
          },
-         "objectRefs": [
-            "amgbRivrJQhitzHvCcgymi"
-         ],
-         "repoInfo": {
-            "repoHandle": "0118TN17000000000004"
-         }
-      }
-   },
-   {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
-      "objectName": "iPaaS_Logging_DB",
-      "objectType": "Connection",
-      "path": "/SYS",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "JSON",
-            "description": null,
-            "documentState": "COMPLETE"
-         },
-         "contextAttributes": [
-            {
-               "name": "id",
-               "value": "@1"
-            }
-         ],
-         "modelVersion": {
-            "major": 0,
-            "minor": 0
-         },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
+            "repoHandle": "0118TN1700000000000K"
          }
       }
    }
