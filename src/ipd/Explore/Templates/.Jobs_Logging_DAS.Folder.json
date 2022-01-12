@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "",
+            "description": "Job Tracking and Integration Templates which use DAS for Logging (use this when you do not have license for JDBC_IC Connector)",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

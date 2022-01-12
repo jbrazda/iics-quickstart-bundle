@@ -7,28 +7,30 @@
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Template for Main Job Processes</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:NA</types1:Tags>
+      <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2021-02-10T20:21:06Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-02-10T21:04:00Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-01-11T18:10:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2021-02-10T21:04:18Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-DAS/TEMPLATE-MP-Job-DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="TEMPLATE-MP-Job-DAS"
                   name="TEMPLATE-MP-Job-DAS"
                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
             <description>Template for Main Job Processes</description>
-            <tags>.agent:NA</tags>
+            <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="" name="in_context" type="reference">
@@ -99,7 +101,7 @@
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>NA</targetLocation>
+               <targetLocation>G01</targetLocation>
                <rest/>
             </deployment>
             <eventDefinitions>
@@ -301,5 +303,5 @@ Error Detail:
       <types1:GUID>cv6B8oAoQuVhlw4vywQvcH</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T00:05:04.068Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-11T21:24:33.129Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

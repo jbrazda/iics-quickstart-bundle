@@ -43,7 +43,14 @@
         <condition property="shell.open" value=" open ">
             <os name="Mac OS X" />
         </condition>
-
+		
+    	<condition property="shell.open" value=" wslview ">
+    		<and> <!-- Detecting WSL Linux runtime to open urls in windows default browser in wsl runtime -->
+    			<os name="Linux"/>
+    			<contains string="${os.version}" substring="WSL" />
+    		</and>
+        </condition>
+    	
         <property name="shell.open" value="" />
 
         <condition property="shell.options" value="-c">
@@ -443,27 +450,26 @@
         </delete>
     </target>
 
+    <target name="clean.target" description="Cleans target directory in ${basedir}/target">
+        <echo level="info">Deleting ${basedir}/target</echo>
+        <delete dir="${basedir}/target" verbose="true"/>
+    </target>
+
     <target name="clean.src" depends="-load.release.properties" if="iics.release.basename" description="Cleans src in ${iics.extract.dir}">
         <echo level="info">Deleting ${iics.extract.dir}</echo>
         <delete dir="${iics.extract.dir}" verbose="true">
         </delete>
     </target>
 
-	
-	
     <target name="build.ipd.dist.packages" depends="-env.info,
         -select-release,
-        -load.release.properties,
-    	-download.iics,
-    	-load.release.properties,
-    	install.tools.nzip,
-    	-copy.designs.transform" 
-    	if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
-        <property name="iics.binaries.dir" location="${basedir}/dist"/>
-        <mkdir dir="${iics.binaries.dir}"/>
-        <iics.package id="initial_release" workspace="${transform.src.folder}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_designs.package.txt" />
+        -load.release.properties" if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
+        <property name="iics.binaries.dir" location="${basedir}/dist">
+        </property>
+
+        <iics.package id="initial_release" workspace="${iics.extract.dir}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_designs.package.txt" />
         <echo level="info">Updated All Designs distribution in ${iics.binaries.dir}/${iics.package.output}_InitialInstall_All_Designs.zip</echo>
-        <iics.package id="update_release" workspace="${transform.src.folder}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_exclude_connections.package.txt" />
+        <iics.package id="update_release" workspace="${iics.extract.dir}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_exclude_connections.package.txt" />
         <echo level="info">Updated Update Designs distribution in ${iics.binaries.dir}/${iics.package.output}_Update_Excluding_Connections.zip</echo>
     </target>
 

@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "",
+            "description": "Templates to use Logging Framework in the Task Flows to track execution of CDI Tasks",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],
