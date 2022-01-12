@@ -7,8 +7,17 @@ name: Deploy TEST Push
 
 on:
   # Trigger the workflow on push request,
-  # but only for the dev branch
+  # but only for the defined branch
+  # ignore changes to listed paths
   push:
+    paths-ignore:
+      - '.vscode/**'
+      - '/doc/**'
+      - '/sample-data/**'
+      - '**.md'
+      - '.ant_targets'
+      - '.project'
+      - 'update_publish_all_config.sh'
     branches:
       - push_test
 jobs:
