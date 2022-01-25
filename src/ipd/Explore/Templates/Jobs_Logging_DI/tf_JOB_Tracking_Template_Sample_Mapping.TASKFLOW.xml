@@ -12,9 +12,9 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-10T20:40:50Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-10T23:24:56Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-01-12T18:55:31Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2022-01-10T23:25:08Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_JOB_Tracking_Template_Sample_Mapping/tf_JOB_Tracking_Template_Sample_Mapping.tf.xml</types1:PublishedContributionId>
@@ -54,7 +54,7 @@
                      <option name="referenceTo">$po:mt-Logging-CreateJobEntry</option>
                   </options>
                </field>
-               <field description="" name="Sample Mapping" type="reference">
+               <field description="" name="Mapping" type="reference">
                   <options>
                      <option name="failOnNotRun">false</option>
                      <option name="failOnFault">false</option>
@@ -108,7 +108,6 @@
                   <operation source="formula" to="temp.tmp_job_name">
                      <expression language="XQuery">util:getAssetName()</expression>
                   </operation>
-                  <operation source="constant" to="temp.tmp_process_name">m_Sample_Mapping</operation>
                   <link id="ky2k523k" targetId="ky2k523p"/>
                </assignment>
                <eventContainer id="ky2k523p">
@@ -178,7 +177,7 @@
                </eventContainer>
                <eventContainer id="ky3jxait">
                   <service id="ky3jxain">
-                     <title>Sample Mapping</title>
+                     <title>Mapping</title>
                      <serviceName>ICSExecuteDataTask</serviceName>
                      <serviceGUID/>
                      <serviceInput>
@@ -189,24 +188,24 @@
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
-                           <operation source="field" to="mt-Sample-Mapping">temp.Sample Mapping</operation>
+                           <operation source="field" to="mt-Sample-Mapping">temp.Mapping</operation>
                         </parameter>
                      </serviceInput>
                      <serviceOutput>
-                        <operation source="field" to="temp.Sample Mapping/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Task_Status">Task Status</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/Error_Message">Error Message</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/TotalTransErrors">Total Transformation Errors</operation>
-                        <operation source="field" to="temp.Sample Mapping/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Mapping/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Mapping/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Mapping/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Mapping/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Mapping/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Mapping/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Mapping/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Mapping/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Mapping/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Mapping/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Mapping/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Mapping/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Mapping/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Mapping/output/FirstErrorCode">First Error Code</operation>
                      </serviceOutput>
                   </service>
                   <flow id="ky901a7n">
@@ -228,22 +227,26 @@
                                  <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_event_ID">
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
-                                 <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">TODO Update Message</operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">
+                                    <expression language="XQuery">util:iif($temp.Mapping[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')
+</expression>
+                                 </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.SampleMapping[1]/output[1]
+                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/output[1]
 let $detail := &lt;detail&gt;
 Success Source Rows: {$job_output/Success_Source_Rows/text() }
-Failed Soource Rows: {$job_output/Failed_Source_Rows/text() }
+Failed Source Rows: {$job_output/Failed_Source_Rows/text() }
 Success Target Rows: {$job_output/Success_Target_Rows/text() }
-Failed Target Rows:  {$job_output/Failed_Target_Rows/text() }
+Failed Target Rows: {$job_output/Failed_Target_Rows/text() }
 Start Time: {$job_output//Start_Time/text() }
 End Time: {$job_output//End_Time/text() }
 Object Name: {$job_output/Object_Name/text() }
 Log ID: {$job_output/Log_Id/text() }
 Run ID: {$job_output/Run_Id/text() }
 Task Status: {$job_output/Task_Status/text()}
+Error Message: {$job_output/Error_Message/text()}
 &lt;/detail&gt;
 return
 (:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
@@ -253,8 +256,10 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
-                                 <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">1</operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">
+                                    <expression language="XQuery">$temp.Mapping[1]/output[1]/Task_Status </expression>
+                                 </operation>
                                  <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
@@ -264,8 +269,14 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
-                                 <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">
+                                    <expression language="XQuery">$temp.Mapping[1]/output[1]/Object_Name </expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
+                                    <expression language="XQuery">$temp.Mapping[1]/output[1]/Object_Name </expression>
+                                 </operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -388,7 +399,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                         </events>
                      </eventContainer>
                      <end id="ky901agv">
-                        <title>End 1</title>
+                        <title>End</title>
                      </end>
                   </flow>
                   <flow id="ky901a7q">
@@ -411,10 +422,10 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
                                  <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">TODO Update Message</operation>
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">Integration Step Failed</operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.SampleMapping[1]/fault[1]
+                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/fault[1]
 let $detail := &lt;detail&gt;
 Error Message: {$job_output/reason/text()}
 &lt;/detail&gt;
@@ -437,8 +448,14 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
-                                 <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">
+                                    <expression language="XQuery">$temp.Mapping[1]/output[1]/Object_Name </expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
+                                    <expression language="XQuery">$temp.Mapping[1]/output[1]/Object_Name </expression>
+                                 </operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -571,13 +588,13 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                   </flow>
                   <link id="ky901a7m" targetId="ky901a7n" type="containerLink"/>
                   <events>
-                     <catch faultField="temp.Sample Mapping/fault"
+                     <catch faultField="temp.Mapping/fault"
                             id="ky3jxair"
                             interrupting="true"
                             name="error">
                         <link id="ky901a7p" targetId="ky901a7q" type="containerLink"/>
                      </catch>
-                     <catch faultField="temp.Sample Mapping/fault"
+                     <catch faultField="temp.Mapping/fault"
                             id="ky3jxais"
                             interrupting="true"
                             name="warning"/>
@@ -717,5 +734,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>8Xv147vkTu0huIQqjnlzWr</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template_Sample_Mapping</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:34.483Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:46.904Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "Logging framework components provide  job tracking and logging to external DB or Salesforce",
+            "description": "Logging framework components provide  job tracking and logging to external DB or Salesforce\nversion: 2.0",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

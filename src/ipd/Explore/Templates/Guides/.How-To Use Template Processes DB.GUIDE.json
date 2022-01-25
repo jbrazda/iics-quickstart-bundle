@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend",
+            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -55,7 +55,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes",
+            "description": "Template for Main Job Processes\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,

@@ -4,7 +4,8 @@
       <types1:EntryId>tWFrLWEQT53nQci-gt-1870057-2020-03-24T18:08:22.312Z::gt.xml</types1:EntryId>
       <types1:Name>How-To_Use_Template_Processes_SFDC</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend</types1:Description>
+      <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,10 +14,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:54Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-01-13T18:22:17Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:44Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-01-13T18:22:24Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_SFDC/How_To_Use_Template_Processes_SFDC.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,7 +28,8 @@
                          doneOnEndStep="false"
                          name="How-To_Use_Template_Processes_SFDC"
                          runAsUser="$current">
-            <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend</description>
+            <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with SFDC as  a backend
+version: 2.0</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -122,5 +124,5 @@
       <types1:GUID>5u6384QupA0jJoriKP9Ooj</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:34.484Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:46.818Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

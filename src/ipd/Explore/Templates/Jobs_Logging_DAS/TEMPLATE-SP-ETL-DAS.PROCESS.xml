@@ -5,7 +5,8 @@
       <types1:Name>TEMPLATE-SP-ETL-DAS</types1:Name>
       <types1:ParentFlowIds>yxaa-gt-38882483-2021-02-10T20:21:05.739Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Template for Integration Sub-Process (SP) Demo</types1:Description>
+      <types1:Description>Template for Integration Sub-Process (SP) Demo
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +15,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2021-02-10T20:21:04Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-11T18:11:12Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:ModificationDate>2022-01-13T18:25:13Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-02-10T21:04:18Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-01-13T18:25:29Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-DAS/TEMPLATE-SP-ETL-DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +30,8 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Template for Integration Sub-Process (SP) Demo</description>
+            <description>Template for Integration Sub-Process (SP) Demo
+version: 2.0</description>
             <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -84,6 +86,9 @@
                </start>
                <assignment id="j84ih0fn">
                   <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
                   <operation source="formula" to="temp.tmp_process_title">
                      <expression language="XQuery">let $title := $temp.tmp_process_name 
 let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
@@ -135,7 +140,7 @@ else
                </service>
                <eventContainer id="j9iq3fev">
                   <subflow id="j9iq3ff2">
-                     <title>SP-Test-Throw-Fault-Generic</title>
+                     <title>Simulate Error</title>
                      <subflowGUID>1ZKarw0xpyEfQ1ZSVhods0</subflowGUID>
                      <subflowPath>SP-Test-Throw-Fault-Generic</subflowPath>
                      <runForEach>false</runForEach>
@@ -231,5 +236,5 @@ Detail:
       <types1:GUID>lQIftjtUH4ajxX40hlujym</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:32.227Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:44.2Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

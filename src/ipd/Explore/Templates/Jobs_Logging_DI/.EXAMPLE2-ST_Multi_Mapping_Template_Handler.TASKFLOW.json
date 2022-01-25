@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "27YdzYRyhpPeBcR0v2huCq",
+      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_Handler",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "arfQo6Li6wQkR6Rte6APwl",
+            "9fshaX5sjjjfwaHL7vOyCP"
+         ],
+         "repoInfo": {
+            "repoHandle": "w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "arfQo6Li6wQkR6Rte6APwl",
+      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-1",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "EBNjDg8SOlA1vyo-gt-999978-2022-01-12T15:40:24.494Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "9fshaX5sjjjfwaHL7vOyCP",
+      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-2",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "YOvGqUlLnzYLnzY-gt-1000002-2022-01-12T15:40:24.816Z::tf.xml"
+         }
+      }
+   }
+]
