@@ -155,8 +155,8 @@
         <echo level="info">This ant script provides set of scripts to manage and release IICS Assetst</echo>
         <echo level="info">Read the doc/README.MD for more details</echo>
         <echo level="info">use ant -projecthelp to see available targets</echo>
-        <property name="help.file" value="${basedir}/README.md" />
-        <echo level="info">${shell.open} ${help.file}</echo>
+        <property name="help.file" location="${basedir}/README.md" />
+    	<echo level="info">${shell} ${shell.options} '${shell.open}${help.file}'</echo>
         <exec executable="${shell}" spawn="yes">
             <arg value="${shell.options}" />
             <arg line="'${shell.open} ${help.file}'" />
