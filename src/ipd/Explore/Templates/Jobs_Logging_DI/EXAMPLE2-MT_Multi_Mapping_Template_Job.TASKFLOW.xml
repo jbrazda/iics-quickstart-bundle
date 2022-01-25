@@ -1,0 +1,383 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>vZE4O9pH8sVYx8R-gt-1018722-2022-01-12T15:40:27.34Z::tf.xml</types1:EntryId>
+      <types1:Name>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-01-12T15:40:27Z</types1:CreationDate>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-01-12T18:55:32Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="EXAMPLE2-MT_Multi_Mapping_Template_Job"
+                   name="EXAMPLE2-MT_Multi_Mapping_Template_Job"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Example Task Flow template to use as a starting point to develop new task flows</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_job_ID" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_environment" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_job_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Create Job Entry" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-Logging-CreateJobEntry</option>
+                  </options>
+               </field>
+               <field description="" name="Update Job Entry Completed" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-Logging-UpdateJobEntry</option>
+                  </options>
+               </field>
+               <field description="" name="Update Job Entry Failed" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-Logging-UpdateJobEntry</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="ky2k523a" targetId="ky2k5239"/>
+               </start>
+               <assignment id="ky2k5239">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_job_ID">
+                     <expression language="XQuery">util:generateUUID()</expression>
+                  </operation>
+                  <operation source="constant" to="temp.tmp_environment">Data Integration</operation>
+                  <operation source="formula" to="temp.tmp_job_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
+                  <link id="ky2k523k" targetId="ky2k523p"/>
+               </assignment>
+               <eventContainer id="ky2k523p">
+                  <service id="ky2k523j">
+                     <title>Create Job Entry</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateJobEntry</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">5mQSVYzXARFdIWEE2wmfwm</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="mt-Logging-CreateJobEntry">temp.Create Job Entry</operation>
+                           <operation source="field" to="mt-Logging-CreateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID</operation>
+                           <operation source="field" to="mt-Logging-CreateJobEntry/inout[1]/prm_job_name">temp.tmp_job_name</operation>
+                           <operation source="formula" to="mt-Logging-CreateJobEntry/inout[1]/prm_Initiator">
+                              <expression language="XQuery">util:getUserName()</expression>
+                           </operation>
+                           <operation source="field" to="mt-Logging-CreateJobEntry/inout[1]/prm_environment">temp.tmp_environment</operation>
+                           <operation source="formula" to="mt-Logging-CreateJobEntry/inout[1]/prm_orgID">
+                              <expression language="XQuery">util:getOrganizationId()</expression>
+                           </operation>
+                           <operation source="formula" to="mt-Logging-CreateJobEntry/inout[1]/prm_process_ID">
+                              <expression language="XQuery">util:getProcessId()</expression>
+                           </operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Create Job Entry/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Create Job Entry/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_job_ID">prm_job_ID</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_job_name">prm_job_name</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_orgID">prm_orgID</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_environment">prm_environment</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_Initiator">prm_Initiator</operation>
+                        <operation source="field" to="temp.Create Job Entry/inout/prm_process_ID">prm_process_ID</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kyanlzd1" targetId="kyanlzd4"/>
+                  <events>
+                     <catch faultField="temp.Create Job Entry/fault"
+                            id="ky2k523n"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.Create Job Entry/fault"
+                            id="ky2k523o"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <eventContainer id="kyanlzd4">
+                  <subflow id="kyanlzd0">
+                     <title>Run Integration Process</title>
+                     <subflowGUID>27YdzYRyhpPeBcR0v2huCq</subflowGUID>
+                     <subflowPath>EXAMPLE2-ST_Multi_Mapping_Template_Handler</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="in_job_id" source="field" updatable="true">temp.tmp_job_ID</parameter>
+                     </input>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="kyanlzd6">
+                     <eventContainer id="kyanlze2">
+                        <service id="kyanlzde">
+                           <title>Update Job Entry Completed</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Completed</operation>
+                                 <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">3</operation>
+                                 <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
+(:we need to pass quotes to properly parasmetrize the query:)</expression>
+                                 </operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/inout/prm_status">prm_status</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="kyaseorf" targetId="kyaseore"/>
+                        <events>
+                           <catch faultField="temp.Update Job Entry Completed/fault"
+                                  id="ky2k5275"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Update Job Entry Completed/fault"
+                                  id="ky2k5276"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <end id="kyaseore">
+                        <title>End</title>
+                     </end>
+                  </flow>
+                  <flow id="kyanlzd9">
+                     <eventContainer id="kyanlzg1">
+                        <service id="kyanlzfd">
+                           <title>Update Job Entry Failed</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Failed</operation>
+                                 <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">2</operation>
+                                 <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
+(:we need to pass quotes to properly parasmetrize the query:)</expression>
+                                 </operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Task_Status">Task Status</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/output/End_Time">End Time</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/Error_Message">Error Message</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field"
+                                         to="temp.Update Job Entry Completed/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/inout/prm_status">prm_status</operation>
+                              <operation source="field" to="temp.Update Job Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
+                           </serviceOutput>
+                        </service>
+                        <link id="kyaseorm" targetId="kyaseorl"/>
+                        <events>
+                           <catch faultField="temp.Update Job Entry Failed/fault"
+                                  id="ky2k5275"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Update Job Entry Failed/fault"
+                                  id="ky2k5276"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <throw id="kyaseorl">
+                        <title>Throw Error</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="kyanlzd5" targetId="kyanlzd6" type="containerLink"/>
+                  <events>
+                     <catch faultField="faultInfo" id="kyanlzd3" interrupting="true">
+                        <link id="kyanlzd8" targetId="kyanlzd9" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-Logging-CreateJobEntry"
+                              isByCopy="true"
+                              name="mt-Logging-CreateJobEntry">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-Logging-UpdateJobEntry"
+                              isByCopy="true"
+                              name="mt-Logging-UpdateJobEntry">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>1lSugbtOqQMbk023Nm7T4F</types1:GUID>
+      <types1:DisplayName>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:47.059Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

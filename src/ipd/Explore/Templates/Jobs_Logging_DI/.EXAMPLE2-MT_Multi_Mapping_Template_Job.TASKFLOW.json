@@ -1,0 +1,104 @@
+[
+   {
+      "objectGuid": "1lSugbtOqQMbk023Nm7T4F",
+      "objectName": "EXAMPLE2-MT_Multi_Mapping_Template_Job",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "27YdzYRyhpPeBcR0v2huCq",
+            "5mQSVYzXARFdIWEE2wmfwm",
+            "1mAmqoMzIaEblXG9awIMml"
+         ],
+         "repoInfo": {
+            "repoHandle": "vZE4O9pH8sVYx8R-gt-1018722-2022-01-12T15:40:27.34Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "27YdzYRyhpPeBcR0v2huCq",
+      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_Handler",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "5mQSVYzXARFdIWEE2wmfwm",
+      "objectName": "mt_Logging_CreateJobEntry",
+      "objectType": "MTT",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "MT to Create Job Entry",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0Z00000000000I"
+         }
+      }
+   },
+   {
+      "objectGuid": "1mAmqoMzIaEblXG9awIMml",
+      "objectName": "mt_Logging_UpdateJobEntry",
+      "objectType": "MTT",
+      "path": "/Explore/Logging/Logger_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "MT to Update Job Log entry with a final Status and End Time",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN0Z00000000000G"
+         }
+      }
+   }
+]
