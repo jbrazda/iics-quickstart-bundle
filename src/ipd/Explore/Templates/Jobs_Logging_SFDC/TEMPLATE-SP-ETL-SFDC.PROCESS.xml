@@ -5,7 +5,8 @@
       <types1:Name>TEMPLATE-SP-ETL-SFDC</types1:Name>
       <types1:ParentFlowIds>Ti8RVf4VQT53nQc-gt-5281432-2020-03-24T18:08:21.735Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Template for Integration Sub-Process (SP)</types1:Description>
+      <types1:Description>Template for Integration Sub-Process (SP)
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,19 +15,23 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:48Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-01-13T18:20:07Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:10Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-01-13T18:20:18Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-SFDC/TEMPLATE-SP-ETL-SFDC.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="TEMPLATE-SP-ETL-SFDC"
-                  name="TEMPLATE-SP-ETL-SFDC">
+                  name="TEMPLATE-SP-ETL-SFDC"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Template for Integration Sub-Process (SP)</description>
+            <description>Template for Integration Sub-Process (SP)
+version: 2.0</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -83,6 +88,9 @@
                </start>
                <assignment id="j84ih0fn">
                   <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
                   <operation source="formula" to="temp.tmp_process_title">
                      <expression language="XQuery">let $title := $temp.tmp_process_name 
 let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
@@ -134,7 +142,7 @@ else
                </service>
                <eventContainer id="j9iq3fev">
                   <subflow id="j9iq3ff2">
-                     <title>SP-Test-Throw-Fault-Generic</title>
+                     <title>Simulate Error</title>
                      <subflowGUID>5QGscpnCI5jfEp0ogG1XQs</subflowGUID>
                      <subflowPath>SP-Test-Throw-Fault-Generic-Cloud</subflowPath>
                      <runForEach>false</runForEach>
@@ -229,5 +237,5 @@ return $process_title</expression>
       <types1:GUID>2zsIoYezGANlIMEkIlrcYo</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:32.902Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:45.323Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

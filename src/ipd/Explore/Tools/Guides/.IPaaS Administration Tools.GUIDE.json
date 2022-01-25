@@ -79,7 +79,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide to convert XML sample data to JSON and vice versa.",
+            "description": "Guide to convert XML sample data to JSON and vice versa.\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,

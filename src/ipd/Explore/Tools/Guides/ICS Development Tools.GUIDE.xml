@@ -4,7 +4,7 @@
       <types1:EntryId>Hi5Xt1T4W6jKsJl-gt-5237579-2020-03-24T18:08:18.539Z::gt.xml</types1:EntryId>
       <types1:Name>ICS_Development_Tools</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Helper Tool to Query ICS Repository Metadata</types1:Description>
+      <types1:Description>Helper Tool to Query ICS Repository Metadata version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,8 +13,8 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-06-24T22:09:05Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-01-25T01:46:31Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2022-01-10T01:58:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.ICS_Development_Tools/ICS_Development_Tools.xml</types1:PublishedContributionId>
@@ -27,7 +27,7 @@
                          doneOnEndStep="true"
                          name="ICS_Development_Tools"
                          runAsUser="$current">
-            <description>Helper Tool to Query ICS Repository Metadata</description>
+            <description>Helper Tool to Query ICS Repository Metadata version: 2.0</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -395,7 +395,7 @@
                      <text>Continue</text>
                   </screenActionLabel>
                   <actions>
-                     <action alt="" id="kbtvip6y_kbtwopcp" targetScreen="kbtwopcp">
+                     <action alt="null" id="kbtvip6y_kbtwopcp" targetScreen="kbtwopcp">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -406,7 +406,7 @@
                      <expression language="XQuery">$output.AuditLogs </expression>
                   </operation>
                   <actions>
-                     <action alt="" id="kbtwopcp_kbtvip7d" targetScreen="kbtvip7d">
+                     <action alt="null" id="kbtwopcp_kbtvip7d" targetScreen="kbtvip7d">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -417,5 +417,5 @@
       <types1:GUID>2wFiBZYlD0zfS5Y3Gu3pqE</types1:GUID>
       <types1:DisplayName>ICS Development Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:33.16Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:45.783Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

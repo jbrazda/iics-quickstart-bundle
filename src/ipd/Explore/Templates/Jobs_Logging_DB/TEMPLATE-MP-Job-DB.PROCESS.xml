@@ -5,7 +5,8 @@
       <types1:Name>TEMPLATE-MP-Job-DB</types1:Name>
       <types1:ParentFlowIds>Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Template for Main Job Processes</types1:Description>
+      <types1:Description>Template for Main Job Processes
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +15,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-11T18:09:35Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-01-13T18:26:17Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-11T18:10:36Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-01-13T18:26:30Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-DB/TEMPLATE-MP-Job-DB.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +30,8 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Template for Main Job Processes</description>
+            <description>Template for Main Job Processes
+version: 2.0</description>
             <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -87,7 +89,6 @@
                <field description="" name="tmp_process_name" type="string">
                   <options>
                      <option name="required">false</option>
-                     <option name="initialvalue">TEMPLATE-MP-Job</option>
                   </options>
                </field>
                <field description="" name="tmp_CreateJobLogEventRequest" type="reference">
@@ -127,6 +128,9 @@
                </start>
                <assignment id="c">
                   <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
                   <operation source="formula" to="output.out_context">
                      <expression language="XQuery">let $pid := util:getProcessId()
 return if (empty($input.in_context)) then
@@ -190,7 +194,7 @@ return string-join($parts," ")</expression>
                   <title>Wait for Job to Complete?</title>
                   <flow id="j9fuax9o">
                      <assignment id="kihjm3v1">
-                        <title>Assignment to in_context</title>
+                        <title>Set Execution Context</title>
                         <operation source="field" to="input.in_context">input.in_context</operation>
                      </assignment>
                      <link id="j9fuax9t" targetId="j9fuax9n" type="containerLink"/>
@@ -217,7 +221,7 @@ return string-join($parts," ")</expression>
                </container>
                <eventContainer id="j84qss48">
                   <subflow id="j84qss2l">
-                     <title>TEMPLATE-SP-ETL</title>
+                     <title>Run Integration Process</title>
                      <subflowGUID>7gNn29q0tM6bKwqIv38g4s</subflowGUID>
                      <subflowPath>TEMPLATE-SP-ETL-DB</subflowPath>
                      <runForEach>false</runForEach>
@@ -307,5 +311,5 @@ Error Detail:
       <types1:GUID>hcH0Cde8Y2GjqGhTQpv9oz</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-11T21:24:33.163Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-01-25T01:47:45.754Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
