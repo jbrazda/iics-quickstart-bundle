@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "4wVu3utuMQeeJTCmQIYbSI",
+      "objectName": "IICS-REST-API-V3",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Platform REST API version 3 \nSee Documentation \nhttps://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-3-resources.html",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "035COj5HDGMk9BFhGZxqy5"
+         ],
+         "repoInfo": {
+            "repoHandle": "bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "035COj5HDGMk9BFhGZxqy5",
+      "objectName": "IICS-REST-API-V3",
+      "objectType": "AI_SERVICE_CONNECTOR",
+      "path": "/Explore/Tools/ServiceConnectors",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Platform REST API version 3\nSee Documentation: \nhttps://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-\n3-resources.html",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml"
+         }
+      }
+   }
+]

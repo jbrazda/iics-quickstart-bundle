@@ -314,5 +314,5 @@ Detail:{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
       <types1:GUID>83segJCuM8feXyvtda6UaB</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-SFDC</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:46.719Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-01T21:43:18.1Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

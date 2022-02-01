@@ -14,10 +14,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:48Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-01T21:21:58Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-06-03T14:34:35Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-01T21:23:08Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Admin_Shell/Admin_Shell.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -80,7 +80,7 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Response Code:&lt;/td&gt;
-&lt;td&gt;&lt;input style="font-family: Lucida Console-Consolas,Currier; -moz-appearance: none; background-color: lightgrey; border: none;" title="responseCode (output)" name="output.responseCode" readonly="readonly" type="text" value="responseCode (output)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input style="font-family: monospace; -moz-appearance: none; background-color: lightgrey; border: none;" title="responseCode (output)" name="output.responseCode" readonly="readonly" type="text" value="responseCode (output)"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Error String&lt;/td&gt;
@@ -154,7 +154,7 @@
                      <text>Done</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="k8abwkki">
+               <empty gatewayType="exclusive" id="kz4mjkyn">
                   <actions/>
                </empty>
                <jumpTo id="jkokoopz" targetTitle="Shell Command Tool">
@@ -217,5 +217,5 @@
       <types1:GUID>aqpUO15ISL4jLLs0xDJxmL</types1:GUID>
       <types1:DisplayName>Admin Shell</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.348Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-01T21:43:16.548Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

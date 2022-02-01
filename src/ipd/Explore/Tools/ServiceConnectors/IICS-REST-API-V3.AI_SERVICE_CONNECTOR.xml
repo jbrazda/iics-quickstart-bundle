@@ -3,8 +3,12 @@
    <types1:Item>
       <types1:EntryId>zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml</types1:EntryId>
       <types1:Name>IICS-REST-API-V3</types1:Name>
+      <types1:ParentFlowIds>bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
-      <types1:Description>This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities</types1:Description>
+      <types1:Description>Platform REST API version 3
+See Documentation: 
+https://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-
+3-resources.html</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,10 +17,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-23T18:34:47Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-01T21:17:49Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-23T18:34:53Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-01T21:18:23Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/IICS_REST_API_V3/IICS_REST_API_V3_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,10 +31,13 @@
                             label=""
                             name="IICS-REST-API-V3"
                             uuid="d7548bc0-06f3-49dd-a1d3-19f011e362d4">
-            <description>This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities</description>
+            <description>Platform REST API version 3
+See Documentation: 
+https://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-
+3-resources.html</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
-               <connectionAttribute description="REST API base URL"
+               <connectionAttribute description="REST API base URL such as https://dm-us.informaticacloud.com"
                                     masked="false"
                                     name="service_url"
                                     required="true"
@@ -430,7 +437,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                      <parameter name="org_id"
                                 nogen="true"
                                 required="false"
-                                testWith="d8UL5i5Pm4KddufpfKuiaN"
+                                testWith="6gEJiax6MkgdgOv7ntp1MU"
                                 type="string"/>
                   </input>
                   <binding>
@@ -463,9 +470,21 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <option name="referenceTo">LicenseLicense request</option>
                         </options>
                      </parameter>
-                     <parameter name="org_id" required="false" testWith="" type="string"/>
-                     <parameter name="base_url" required="false" testWith="" type="string"/>
-                     <parameter name="session_id" required="false" testWith="" type="string"/>
+                     <parameter name="org_id"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="base_url"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="session_id"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
                   </input>
                   <binding>
                      <restSimpleBinding multiUsing="semicolonSeparated"
@@ -563,7 +582,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                   <output>
                      <field attachment="true"
                             description=""
-                            name="ExportPackageAs Attachment"
+                            name="ExportPackageAttachment"
                             type="attachment"/>
                   </output>
                </action>
@@ -626,15 +645,17 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                        responseEncoding="">
                   <description>Base action for post requests</description>
                   <input>
-                     <parameter name="base_url"
+                     <parameter description="IICS Base URL retrieved from Login response Note that this URL can be different from the connector base URL. always pass the URL from Login Response&#xA;The URL is specific to the IICS POD i.e. https://na1.dm-us.informaticacloud.com/saas"
+                                name="base_url"
                                 nogen="true"
                                 required="true"
                                 testWith="https://na1.dm-us.informaticacloud.com/saas"
                                 type="string"/>
-                     <parameter name="session_id"
+                     <parameter description="Session ID from login response"
+                                name="session_id"
                                 nogen="true"
                                 required="true"
-                                testWith="aaTrGB01yUYcsaKQfgBO6Q"
+                                testWith="7Z02AQc8pe6f8PnLxXXfo7"
                                 type="string"/>
                   </input>
                   <binding>
@@ -660,15 +681,17 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                        responseEncoding="">
                   <description>base action for GET requests</description>
                   <input>
-                     <parameter name="base_url"
+                     <parameter description="IICS Base URL retrieved from Login response Note that this URL can be different from the connector base URL. always pass the URL from Login Response&#xA;The URL is specific to the IICS POD i.e. https://na1.dm-us.informaticacloud.com/saas"
+                                name="base_url"
                                 nogen="true"
                                 required="true"
                                 testWith="https://na1.dm-us.informaticacloud.com/saas"
                                 type="string"/>
-                     <parameter name="session_id"
+                     <parameter description="Session ID from login response"
+                                name="session_id"
                                 nogen="true"
                                 required="true"
-                                testWith="aaTrGB01yUYcsaKQfgBO6Q"
+                                testWith="alRpDTaT4aVl8Gdkj24oQ5"
                                 type="string"/>
                   </input>
                   <binding>
@@ -681,6 +704,395 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                   </binding>
                   <output/>
                </action>
+               <action category="Users"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getUsers"
+                       maxRedirects="100"
+                       name="getUsers"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Use the users resource to request Informatica Intelligent Cloud Services user details. You can request the details for all users in the organization or request the details for a particular user.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Query filter. You can filter using one of the following fields:&#xA;userId. Unique identifier for the user.&#xA;userName. Informatica Intelligent Cloud Services user name.&#xA;&#xA;i.e userName==jbrazda@hcg.com.edu"
+                                name="q"
+                                nogen="true"
+                                required="false"
+                                testWith="userName==jbrazda@hcg.com.edu"
+                                type="string"/>
+                     <parameter description="Maximum number of users to return.&#xA;Maximum of 200. Default is 100."
+                                name="limit"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Amount to offset the list of results.&#xA;Default is 0."
+                                name="skip"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/users&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="getUsersResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">users</option>
+                        </options>
+                        <xquery>{let $responseBody := util:parseJSON($RESTResponse/*:payload/text())
+return
+&lt;users&gt;
+	{
+    for $user in $responseBody
+    	return
+        &lt;user&gt;
+        	{$user/*}
+        &lt;/user&gt;
+    }
+&lt;/users&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Users"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="basePost"
+                       label="CreateUser"
+                       maxRedirects="100"
+                       name="CreateUser"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>If you have administrator privileges, you can use the users resource to create or delete a user.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="overwrite" name="generateUsing" type="generateUsing"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter name="CreateUserRequest"
+                                required="true"
+                                testWith="&lt;createUserRequest xmlns:m=&#34;urn:informatica:ae:xquery:json2xml:meta-data&#34;&gt;&#xA;   &lt;name&gt;jaroslav.brazda@gmeil.com.edu&lt;/name&gt;  &#xA;   &lt;firstName&gt;Jaroslav&lt;/firstName&gt;  &#xA;   &lt;lastName&gt;Brazda&lt;/lastName&gt;  &#xA;   &lt;email&gt;jaroslav.brazda@gmeil.com&lt;/email&gt;  &#xA;   &lt;phone&gt;1234567890&lt;/phone&gt;  &#xA;   &lt;title&gt;Student Account&lt;/title&gt;  &#xA;   &lt;description&gt;IICS Training Student Account&lt;/description&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;9gedBDoYQoQibNMohf5KCh&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;5RZKlypdE5QiAIIAngXSS8&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;8hQVJFGyyQkep1g2AeEewB&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;jDzrayqa8ycckXIXPB89Uh&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;4BPvlNjZwXJj5CN6Pf6jUu&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;kIrabY9KNeElcZfw6iUH6A&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;aKOABsXIRP6eI0aEE32bg8&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;9dKyXtuAcJIdKsKZGohq49&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;lObMwXOTigHi5XBJTU1Z8Q&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;9aTuLGRQgHyjpftpLFj7Qg&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;5cAMKPWEVuBePscQdHRaGx&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;i57A1ij0i6PcA6SbHT4EUO&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;l61Xn8zFz4wfYIhb4N6x8l&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;jYxryaaIs0jjAYLQMAYbIU&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;iObMwXOTigHi5XBJTU1Z8N&lt;/roles&gt;  &#xA;   &lt;roles m:isArray=&#34;true&#34;&gt;15sm0mkzOLjcU8k6tI478h&lt;/roles&gt;  &#xA;   &lt;groups m:isArray=&#34;true&#34;&gt;3jjrAYgva8mlCV1DZCoLQ1&lt;/groups&gt;  &lt;/createUserRequest&gt;"
+                                type="reference">
+                        <options>
+                           <option name="referenceTo">createUserRequest</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/public/core/v3/users" verb="POST">
+                        <body>{let $payload := $CreateUserRequest 
+return 
+util:toJSON($payload/*)}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="createUserResponse"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo">createUserResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
+               <action category="Groups"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getRoles"
+                       maxRedirects="100"
+                       name="getRoles"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Use this action to get the details for roles in your organization</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Query filter. You can filter using one of the following fields:&#xA;roleId. Unique identifier for the role.&#xA;roleName. Name of the role.&#xA;&#xA;Example roleName==&#34;Designer&#34;"
+                                name="q"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Returns the privileges associated with the role specified in the query filter.&#xA;Include the following phrase in the query parameters:&#xA;expand=privileges"
+                                name="expand"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/roles&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-expand := if (empty($expand )) then () else concat(&#34;expand=&#34;,encode-for-uri($expand))&#xA;&#xA;&#xA;let $paramList := ($p-q,$p-expand)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="getRolesResponse" type="reference">
+                        <options>
+                           <option name="referenceTo">getRolesResponse</option>
+                        </options>
+                        <xquery>{let $responseBody := util:parseJSON($RESTResponse/*:payload/text())
+return
+&lt;roles&gt;
+	{
+    for $item in $responseBody
+    	return
+        &lt;role&gt;
+        	{$item/*}
+        &lt;/role&gt;
+    }
+&lt;/roles&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="Groups"
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="baseGet"
+                       label="getUserGroups"
+                       maxRedirects="100"
+                       name="getUserGroups"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>You can request the details for all user groups in the organization or request the details for a particular user group.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="Query filter. You can filter using one of the following fields:&#xA;userGroupId. Unique identifier for the user group.&#xA;userGroupName. Name of the user group."
+                                name="q"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Maximum number of user groups to return.&#xA;Default is 100."
+                                name="limit"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Amount to offset the list of results.&#xA;Default is 0."
+                                name="skip"
+                                nogen="true"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/userGroups&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="getUserGroupsResponse" type="objectlist">
+                        <options>
+                           <option name="referenceTo">getUserGroupsResponse</option>
+                        </options>
+                        <xquery>{let $responseBody := util:parseJSON($RESTResponse/*:payload/text())
+return
+&lt;groups&gt;
+	{
+    for $item in $responseBody
+    	return
+        &lt;group&gt;
+        	{$item/*}
+        &lt;/group&gt;
+    }
+&lt;/groups&gt;}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       isAbstract="true"
+                       label="baseDelete"
+                       maxRedirects="100"
+                       name="baseDelete"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Abstract Action for DELETE Operations</description>
+                  <input>
+                     <parameter description="IICS Base URL retrieved from Login response Note that this URL can be different from the connector base URL. always pass the URL from Login Response&#xA;The URL is specific to the IICS POD i.e. https://na1.dm-us.informaticacloud.com/saas"
+                                name="base_url"
+                                nogen="true"
+                                required="false"
+                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                type="string"/>
+                     <parameter description="Session ID from login response"
+                                name="session_id"
+                                nogen="true"
+                                required="false"
+                                testWith="7Hu6ckRZ0ipbzxsdiOmA60"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_url}" verb="DELETE">
+                        <httpHeaders>
+                           <header name="INFA-SESSION-ID">{$session_id}</header>
+                           <header name="Accept">application/json</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output/>
+               </action>
+               <action category="Users"
+                       failOnError="false"
+                       forSearch="false"
+                       inherits="baseDelete"
+                       label="DeleteUser"
+                       maxRedirects="100"
+                       name="DeleteUser"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Deletes IICS User Account </description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="output">
+                        <section type="outputFields"/>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                        <section type="otherParams"/>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description="User ID to be deleted"
+                                name="userId"
+                                nogen="true"
+                                required="true"
+                                testWith="9RpAB5jrx6Vc3WCvSQnDMh"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="/public/core/v3/users/{$userId}" verb="DELETE"/>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="UserDeleteResponseCode"
+                            responseStatusCode="true"
+                            type="string"/>
+                     <field description="" name="error" type="reference">
+                        <options>
+                           <option name="referenceTo">errorWithDetails</option>
+                        </options>
+                        <xquery>{let $responseBody := util:parseJSON($RESTResponse/*:payload/text())
+
+return
+if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getSampleData"
+                       maxRedirects="100"
+                       name="getSampleData"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Helper Action to get Sample Data from Mockup</description>
+                  <input/>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://run.mocky.io/v3/e354abe0-1d28-41d8-b5a6-10450b5d1ec0"
+                                        verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="getSampleDataResponse"
+                            type="reference"
+                            xmlElement=".">
+                        <options>
+                           <option name="referenceTo"/>
+                        </options>
+                     </field>
+                  </output>
+               </action>
             </actions>
             <objects>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -688,13 +1100,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartExportJobResponse">
                   <description/>
                   <detail>
-                     <field name="createTime" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="startTime" type="string"/>
-                     <field name="id" type="string"/>
-                     <field name="endTime" type="string"/>
-                     <field name="status" type="reference">
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="startTime" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="endTime" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">StartExportJobStatusResponse</option>
                            <option name="relationshipName">Child</option>
@@ -707,11 +1125,20 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LicenseResponse">
                   <description/>
                   <detail>
-                     <field name="customLimits" type="object"/>
-                     <field name="customLicenses" type="object"/>
-                     <field name="assignedEditions" type="object"/>
-                     <field name="id" type="string"/>
-                     <field name="parentOrg" type="string"/>
+                     <field name="customLimits"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
+                     <field name="customLicenses"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
+                     <field name="assignedEditions"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="parentOrg" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -719,7 +1146,10 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LookUpResponse">
                   <description/>
                   <detail>
-                     <field name="objects" type="objectlist">
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">LookUpObjectResponse</option>
                            <option name="relationshipName">Child</option>
@@ -732,13 +1162,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LoginResponse">
                   <description/>
                   <detail>
-                     <field name="userInfo" type="reference">
+                     <field name="userInfo"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">LoginUserInfoResponse</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="products" type="objectlist">
+                     <field name="products"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">LoginProductsResponse</option>
                            <option name="relationshipName">Child</option>
@@ -751,13 +1187,16 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartExportJobRequest">
                   <description/>
                   <detail>
-                     <field name="objects" type="objectlist">
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">StartExportJobObjectRequest</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="name" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -765,9 +1204,18 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LicenseLicenseRequest">
                   <description/>
                   <detail>
-                     <field name="customLimits" type="object"/>
-                     <field name="customLicenses" type="object"/>
-                     <field name="assignedEditions" type="object"/>
+                     <field name="customLimits"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
+                     <field name="customLicenses"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
+                     <field name="assignedEditions"
+                            nullable="true"
+                            required="false"
+                            type="object"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -775,7 +1223,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="DownloadExportPackageResponse">
                   <description/>
                   <detail>
-                     <field name="error" type="object"/>
+                     <field name="error" nullable="true" required="false" type="object"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -783,7 +1231,10 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LookUpRequest">
                   <description/>
                   <detail>
-                     <field name="objects" type="objectlist">
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">LookUpObjectRequest</option>
                            <option name="relationshipName">Child</option>
@@ -796,8 +1247,11 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="UploadImportPackageRequest">
                   <description/>
                   <detail>
-                     <field name="Content" type="attachment"/>
-                     <field name="PartName" type="string"/>
+                     <field name="Content"
+                            nullable="true"
+                            required="false"
+                            type="attachment"/>
+                     <field name="PartName" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -805,8 +1259,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LoginRequest">
                   <description/>
                   <detail>
-                     <field name="password" type="string"/>
-                     <field name="username" type="string"/>
+                     <field name="password" nullable="true" required="false" type="string"/>
+                     <field name="username" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -814,20 +1268,32 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartImportJobResponse">
                   <description/>
                   <detail>
-                     <field name="createTime" type="string"/>
-                     <field name="sourceOrgId" type="string"/>
-                     <field name="objects" type="reference">
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="sourceOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">$any</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="name" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="startTime" type="string"/>
-                     <field name="id" type="string"/>
-                     <field name="endTime" type="string"/>
-                     <field name="status" type="reference">
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="startTime" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="endTime" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">$any</option>
                            <option name="relationshipName">Child</option>
@@ -840,8 +1306,11 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="UploadImportPackageResponse">
                   <description/>
                   <detail>
-                     <field name="jobId" type="string"/>
-                     <field name="jobStatus" type="reference">
+                     <field name="jobId" nullable="true" required="false" type="string"/>
+                     <field name="jobStatus"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">UploadImportPackageJobStatusResponse</option>
                            <option name="relationshipName">Child</option>
@@ -854,7 +1323,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="string">
                   <description/>
                   <detail>
-                     <field name="string" type="string"/>
+                     <field name="string" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -862,7 +1331,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="boolean">
                   <description/>
                   <detail>
-                     <field name="boolean" type="boolean"/>
+                     <field name="boolean" nullable="true" required="false" type="boolean"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -870,7 +1339,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="double">
                   <description/>
                   <detail>
-                     <field name="double" type="double"/>
+                     <field name="double" nullable="true" required="false" type="double"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -878,7 +1347,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="integer">
                   <description/>
                   <detail>
-                     <field name="integer" type="int"/>
+                     <field name="integer" nullable="true" required="false" type="int"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -886,8 +1355,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LookUpObjectRequest">
                   <description/>
                   <detail>
-                     <field name="path" type="string"/>
-                     <field name="type" type="string"/>
+                     <field name="path" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -895,7 +1364,7 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartExportJobObjectRequest">
                   <description/>
                   <detail>
-                     <field name="id" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -903,8 +1372,11 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LoginProductsResponse">
                   <description/>
                   <detail>
-                     <field name="name" type="string"/>
-                     <field name="baseApiUrl" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="baseApiUrl"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -912,13 +1384,16 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LoginUserInfoResponse">
                   <description/>
                   <detail>
-                     <field name="sessionId" type="string"/>
-                     <field name="id" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="parentOrgId" type="string"/>
-                     <field name="orgId" type="string"/>
-                     <field name="orgName" type="string"/>
-                     <field name="status" type="string"/>
+                     <field name="sessionId" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="parentOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="orgName" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -926,12 +1401,18 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="LookUpObjectResponse">
                   <description/>
                   <detail>
-                     <field name="id" type="string"/>
-                     <field name="path" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="description" type="string"/>
-                     <field name="createdBy" type="string"/>
-                     <field name="updateTime" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="path" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -939,8 +1420,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartExportJobStatusResponse">
                   <description/>
                   <detail>
-                     <field name="state" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -948,13 +1429,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="GetExportJobStatusResponse">
                   <description/>
                   <detail>
-                     <field name="id" type="string"/>
-                     <field name="createTime" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="startTime" type="string"/>
-                     <field name="endTime" type="string"/>
-                     <field name="status" type="reference">
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="startTime" nullable="true" required="false" type="string"/>
+                     <field name="endTime" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">GetExportJobStatusStatusResponse</option>
                            <option name="relationshipName">Child</option>
@@ -967,8 +1454,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="GetExportJobStatusStatusResponse">
                   <description/>
                   <detail>
-                     <field name="state" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -976,8 +1463,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="UploadImportPackageJobStatusResponse">
                   <description/>
                   <detail>
-                     <field name="state" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -985,8 +1472,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="StartImportJobStatusResponse">
                   <description/>
                   <detail>
-                     <field name="state" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -994,25 +1481,37 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="GetImportJobStatusResponse">
                   <description/>
                   <detail>
-                     <field name="id" type="string"/>
-                     <field name="createTime" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="startTime" type="string"/>
-                     <field name="endTime" type="string"/>
-                     <field name="status" type="reference">
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="startTime" nullable="true" required="false" type="string"/>
+                     <field name="endTime" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">GetImportJobStatusStatusResponse</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="objects" type="reference">
+                     <field name="objects"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">$any</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="sourceOrgId" type="string"/>
+                     <field name="sourceOrgId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -1020,8 +1519,8 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="GetImportJobStatusStatusResponse">
                   <description/>
                   <detail>
-                     <field name="state" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -1029,9 +1528,384 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                               name="error">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="requestId" type="string"/>
-                     <field name="details" type="string"/>
-                     <field name="message" type="string"/>
+                     <field name="requestId" nullable="true" required="false" type="string"/>
+                     <field name="details" nullable="true" required="false" type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="users">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="user" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">user</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="user">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="lastName" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="timeZoneId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="roles" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">roles</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="groups" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">groups</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="maxLoginAttempts"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                     <field name="userName" nullable="true" required="false" type="string"/>
+                     <field name="title" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="firstName" nullable="true" required="false" type="string"/>
+                     <field name="lastLoginTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="phone" nullable="true" required="false" type="int"/>
+                     <field name="forcePasswordChange"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastLoginMode"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="email" nullable="true" required="false" type="string"/>
+                     <field name="authentication"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="roles">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="displayDescription"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="displayName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="roleName" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="groups">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="userGroupName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createUserRequest">
+                  <description/>
+                  <detail>
+                     <field name="name" nullable="false" required="true" type="string"/>
+                     <field name="firstName" nullable="false" required="true" type="string"/>
+                     <field name="lastName" nullable="false" required="true" type="string"/>
+                     <field name="email" nullable="true" required="true" type="string"/>
+                     <field name="authentication"
+                            nullable="true"
+                            required="true"
+                            type="int"/>
+                     <field name="roles" nullable="true" required="false" type="string"/>
+                     <field name="groups" nullable="true" required="false" type="string"/>
+                     <field name="phone" nullable="true" required="false" type="string"/>
+                     <field name="title" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="textarea"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="getRolesResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="role" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">role</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="role">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="displayDescription"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="privileges"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">privileges</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="displayName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="systemRole"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="roleName" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="privileges">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="service" nullable="true" required="false" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="status" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="getUserGroupsResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="group" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">group</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="group">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="roles" nullable="true" required="false" type="reference">
+                        <options>
+                           <option name="referenceTo">roles</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="userGroupName"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="users" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">users</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="groupUsers">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="userName" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="errorWithDetails">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="code" nullable="true" required="false" type="string"/>
+                     <field name="requestId" nullable="true" required="false" type="string"/>
+                     <field name="details"
+                            nullable="true"
+                            required="false"
+                            type="reference">
+                        <options>
+                           <option name="referenceTo">details</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="debugMessage"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="details">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="code" nullable="true" required="false" type="string"/>
+                     <field name="debugMessage"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="message" nullable="true" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="createUserResponse">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="lastName" nullable="true" required="false" type="string"/>
+                     <field name="updatedBy" nullable="true" required="false" type="string"/>
+                     <field name="timeZoneId"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="roles" nullable="true" required="false" type="objectlist">
+                        <options>
+                           <option name="referenceTo">roles</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="groups" nullable="true" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="maxLoginAttempts"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                     <field name="userName" nullable="true" required="false" type="string"/>
+                     <field name="title" nullable="true" required="false" type="string"/>
+                     <field name="orgId" nullable="true" required="false" type="string"/>
+                     <field name="firstName" nullable="true" required="false" type="string"/>
+                     <field name="lastLoginTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy" nullable="true" required="false" type="string"/>
+                     <field name="createTime"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="phone" nullable="true" required="false" type="string"/>
+                     <field name="forcePasswordChange"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="lastLoginMode"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="state" nullable="true" required="false" type="string"/>
+                     <field name="email" nullable="true" required="false" type="string"/>
+                     <field name="authentication"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
             </objects>
@@ -1040,5 +1914,5 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
       <types1:GUID>035COj5HDGMk9BFhGZxqy5</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V3</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.148Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-01T21:43:15.569Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

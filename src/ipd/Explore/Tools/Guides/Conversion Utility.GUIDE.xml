@@ -16,9 +16,9 @@ version: 2.0</types1:Description>
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2022-01-13T18:34:02Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:35Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-01T21:23:04Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Conversion_Utility/Conversion_Utility.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -282,5 +282,5 @@ saxon:serialize(util:simplifyXml(util:parseXML($input.in_payload )), $saxon_para
       <types1:GUID>1iZssfMiHihflxy0AoH4Il</types1:GUID>
       <types1:DisplayName>Conversion Utility</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:44.293Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-01T21:43:16.27Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

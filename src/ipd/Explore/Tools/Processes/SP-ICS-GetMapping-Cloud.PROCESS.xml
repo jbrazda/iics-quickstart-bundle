@@ -14,7 +14,7 @@
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2020-04-09T20:59:43Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2021-06-03T14:29:51Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetMapping-Cloud/SP-ICS-GetMapping-Cloud.pd.xml</types1:PublishedContributionId>
@@ -87,5 +87,5 @@
       <types1:GUID>4q9TjUsVJHHlLJC6Kev0GC</types1:GUID>
       <types1:DisplayName>SP-ICS-GetMapping-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:44.312Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-01T21:43:16.255Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
