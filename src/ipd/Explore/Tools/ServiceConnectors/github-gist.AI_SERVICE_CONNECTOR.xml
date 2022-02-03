@@ -17,10 +17,10 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-11-09T16:21:49Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-02T19:21:56Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-05-11T13:12:29Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-02T19:22:00Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/github_gist/github_gist_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -334,9 +334,8 @@ return
                   <input>
                      <parameter description="Gist ID"
                                 name="gist_id"
-                                nogen="true"
                                 required="true"
-                                testWith="23843b329123c8c08f1065401f15d019"
+                                testWith="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"
                                 type="string"/>
                      <parameter description="SHA ID of the Gist revision"
                                 name="sha"
@@ -736,41 +735,53 @@ return
                               name="gist">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="owner" type="reference">
+                     <field name="owner" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">owner</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="forks" type="string"/>
-                     <field name="commits_url" type="url"/>
-                     <field name="comments" type="int"/>
-                     <field name="forks_url" type="url"/>
-                     <field name="git_push_url" type="url"/>
-                     <field name="created_at" type="string"/>
-                     <field name="description" type="string"/>
-                     <field name="truncated" type="string"/>
-                     <field name="history" type="objectlist">
+                     <field name="forks" nullable="true" required="false" type="string"/>
+                     <field name="commits_url" nullable="true" required="false" type="url"/>
+                     <field name="comments" nullable="true" required="false" type="int"/>
+                     <field name="forks_url" nullable="true" required="false" type="url"/>
+                     <field name="git_push_url" nullable="true" required="false" type="url"/>
+                     <field name="created_at"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="truncated" nullable="true" required="false" type="string"/>
+                     <field name="history"
+                            nullable="true"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">history</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="url" type="url"/>
-                     <field name="public" type="string"/>
-                     <field name="updated_at" type="string"/>
-                     <field name="html_url" type="url"/>
-                     <field name="git_pull_url" type="url"/>
-                     <field name="comments_url" type="url"/>
-                     <field name="files" type="reference">
+                     <field name="url" nullable="true" required="false" type="url"/>
+                     <field name="public" nullable="true" required="false" type="string"/>
+                     <field name="updated_at"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="html_url" nullable="true" required="false" type="url"/>
+                     <field name="git_pull_url" nullable="true" required="false" type="url"/>
+                     <field name="comments_url" nullable="true" required="false" type="url"/>
+                     <field name="files" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">files</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="id" type="string"/>
-                     <field name="user" type="string"/>
-                     <field name="node_id" type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="user" nullable="true" required="false" type="string"/>
+                     <field name="node_id" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -778,24 +789,45 @@ return
                               name="owner">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="gists_url" type="url"/>
-                     <field name="repos_url" type="url"/>
-                     <field name="following_url" type="url"/>
-                     <field name="starred_url" type="url"/>
-                     <field name="login" type="string"/>
-                     <field name="followers_url" type="url"/>
-                     <field name="type" type="string"/>
-                     <field name="url" type="url"/>
-                     <field name="subscriptions_url" type="url"/>
-                     <field name="received_events_url" type="url"/>
-                     <field name="avatar_url" type="image"/>
-                     <field name="events_url" type="url"/>
-                     <field name="html_url" type="url"/>
-                     <field name="site_admin" type="string"/>
-                     <field name="id" type="string"/>
-                     <field name="gravatar_id" type="string"/>
-                     <field name="node_id" type="string"/>
-                     <field name="organizations_url" type="url"/>
+                     <field name="gists_url" nullable="true" required="false" type="url"/>
+                     <field name="repos_url" nullable="true" required="false" type="url"/>
+                     <field name="following_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="starred_url" nullable="true" required="false" type="url"/>
+                     <field name="login" nullable="true" required="false" type="string"/>
+                     <field name="followers_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="url" nullable="true" required="false" type="url"/>
+                     <field name="subscriptions_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="received_events_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="avatar_url" nullable="true" required="false" type="image"/>
+                     <field name="events_url" nullable="true" required="false" type="url"/>
+                     <field name="html_url" nullable="true" required="false" type="url"/>
+                     <field name="site_admin"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="gravatar_id"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="node_id" nullable="true" required="false" type="string"/>
+                     <field name="organizations_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -803,21 +835,27 @@ return
                               name="history">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="committed_at" type="string"/>
-                     <field name="change_status" type="reference">
+                     <field name="committed_at"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="change_status"
+                            nullable="true"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">change_status</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="version" type="string"/>
-                     <field name="user" type="reference">
+                     <field name="version" nullable="true" required="false" type="string"/>
+                     <field name="user" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">user</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="url" type="url"/>
+                     <field name="url" nullable="true" required="false" type="url"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -825,9 +863,9 @@ return
                               name="change_status">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="total" type="int"/>
-                     <field name="additions" type="int"/>
-                     <field name="deletions" type="int"/>
+                     <field name="total" nullable="true" required="false" type="int"/>
+                     <field name="additions" nullable="true" required="false" type="int"/>
+                     <field name="deletions" nullable="true" required="false" type="int"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -835,24 +873,45 @@ return
                               name="user">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="gists_url" type="url"/>
-                     <field name="repos_url" type="url"/>
-                     <field name="following_url" type="url"/>
-                     <field name="starred_url" type="url"/>
-                     <field name="login" type="string"/>
-                     <field name="followers_url" type="url"/>
-                     <field name="type" type="string"/>
-                     <field name="url" type="url"/>
-                     <field name="subscriptions_url" type="url"/>
-                     <field name="received_events_url" type="url"/>
-                     <field name="avatar_url" type="image"/>
-                     <field name="events_url" type="url"/>
-                     <field name="html_url" type="url"/>
-                     <field name="site_admin" type="string"/>
-                     <field name="id" type="string"/>
-                     <field name="gravatar_id" type="string"/>
-                     <field name="node_id" type="string"/>
-                     <field name="organizations_url" type="url"/>
+                     <field name="gists_url" nullable="true" required="false" type="url"/>
+                     <field name="repos_url" nullable="true" required="false" type="url"/>
+                     <field name="following_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="starred_url" nullable="true" required="false" type="url"/>
+                     <field name="login" nullable="true" required="false" type="string"/>
+                     <field name="followers_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="url" nullable="true" required="false" type="url"/>
+                     <field name="subscriptions_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="received_events_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
+                     <field name="avatar_url" nullable="true" required="false" type="image"/>
+                     <field name="events_url" nullable="true" required="false" type="url"/>
+                     <field name="html_url" nullable="true" required="false" type="url"/>
+                     <field name="site_admin"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="id" nullable="true" required="false" type="string"/>
+                     <field name="gravatar_id"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="node_id" nullable="true" required="false" type="string"/>
+                     <field name="organizations_url"
+                            nullable="true"
+                            required="false"
+                            type="url"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -860,7 +919,7 @@ return
                               name="files">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="file" type="objectlist">
+                     <field name="file" nullable="true" required="false" type="objectlist">
                         <options>
                            <option name="referenceTo">file</option>
                            <option name="relationshipName">Child</option>
@@ -873,13 +932,13 @@ return
                               name="file">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="filename" type="string"/>
-                     <field name="size" type="int"/>
-                     <field name="truncated" type="string"/>
-                     <field name="language" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="content" type="string"/>
-                     <field name="raw_url" type="url"/>
+                     <field name="filename" nullable="true" required="false" type="string"/>
+                     <field name="size" nullable="true" required="false" type="int"/>
+                     <field name="truncated" nullable="true" required="false" type="string"/>
+                     <field name="language" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="content" nullable="true" required="false" type="string"/>
+                     <field name="raw_url" nullable="true" required="false" type="url"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -887,9 +946,12 @@ return
                               name="createGist">
                   <description>Create Gist PO</description>
                   <detail>
-                     <field name="description" type="string"/>
-                     <field name="public" type="boolean"/>
-                     <field name="files" type="reference">
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="public" nullable="true" required="false" type="boolean"/>
+                     <field name="files" nullable="true" required="false" type="reference">
                         <options>
                            <option name="referenceTo">createGistFile</option>
                            <option name="relationshipName">Child</option>
@@ -902,7 +964,7 @@ return
                               name="createGistFile">
                   <description/>
                   <detail>
-                     <field name="file" type="objectlist">
+                     <field name="file" nullable="true" required="false" type="objectlist">
                         <options>
                            <option name="referenceTo">$any</option>
                            <option name="relationshipName">Child</option>
@@ -915,8 +977,8 @@ return
                               name="header">
                   <description>HTTP Header</description>
                   <detail>
-                     <field name="name" type="string"/>
-                     <field name="value" type="string"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="value" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -925,8 +987,8 @@ return
                   <description>Parsed page Links for paging the get list result sets 
 See</description>
                   <detail>
-                     <field name="rel" type="string"/>
-                     <field name="url" type="url"/>
+                     <field name="rel" nullable="true" required="false" type="string"/>
+                     <field name="url" nullable="true" required="false" type="url"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -934,37 +996,73 @@ See</description>
                               name="UserProfile">
                   <description>https://api.github.com/user Profile Data</description>
                   <detail>
-                     <field name="gists_url" type="string"/>
-                     <field name="repos_url" type="string"/>
-                     <field name="following_url" type="string"/>
-                     <field name="bio" type="string"/>
-                     <field name="created_at" type="string"/>
-                     <field name="login" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="blog" type="string"/>
-                     <field name="subscriptions_url" type="string"/>
-                     <field name="updated_at" type="string"/>
-                     <field name="site_admin" type="string"/>
-                     <field name="company" type="string"/>
-                     <field name="id" type="int"/>
-                     <field name="public_repos" type="int"/>
-                     <field name="gravatar_id" type="string"/>
-                     <field name="email" type="string"/>
-                     <field name="organizations_url" type="string"/>
-                     <field name="hireable" type="string"/>
-                     <field name="starred_url" type="string"/>
-                     <field name="followers_url" type="string"/>
-                     <field name="public_gists" type="int"/>
-                     <field name="url" type="string"/>
-                     <field name="received_events_url" type="string"/>
-                     <field name="followers" type="int"/>
-                     <field name="avatar_url" type="string"/>
-                     <field name="events_url" type="string"/>
-                     <field name="html_url" type="string"/>
-                     <field name="following" type="int"/>
-                     <field name="name" type="string"/>
-                     <field name="location" type="string"/>
-                     <field name="node_id" type="string"/>
+                     <field name="gists_url" nullable="true" required="false" type="string"/>
+                     <field name="repos_url" nullable="true" required="false" type="string"/>
+                     <field name="following_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="bio" nullable="true" required="false" type="string"/>
+                     <field name="created_at"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="login" nullable="true" required="false" type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
+                     <field name="blog" nullable="true" required="false" type="string"/>
+                     <field name="subscriptions_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="updated_at"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="site_admin"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="company" nullable="true" required="false" type="string"/>
+                     <field name="id" nullable="true" required="false" type="int"/>
+                     <field name="public_repos" nullable="true" required="false" type="int"/>
+                     <field name="gravatar_id"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="email" nullable="true" required="false" type="string"/>
+                     <field name="organizations_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="hireable" nullable="true" required="false" type="string"/>
+                     <field name="starred_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="followers_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="public_gists" nullable="true" required="false" type="int"/>
+                     <field name="url" nullable="true" required="false" type="string"/>
+                     <field name="received_events_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="followers" nullable="true" required="false" type="int"/>
+                     <field name="avatar_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="events_url"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="html_url" nullable="true" required="false" type="string"/>
+                     <field name="following" nullable="true" required="false" type="int"/>
+                     <field name="name" nullable="true" required="false" type="string"/>
+                     <field name="location" nullable="true" required="false" type="string"/>
+                     <field name="node_id" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
             </objects>
@@ -973,5 +1071,5 @@ See</description>
       <types1:GUID>9T6SRi7SD2Ik90R03f8dsX</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-01T21:43:15.42Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-03T16:58:36.607Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
