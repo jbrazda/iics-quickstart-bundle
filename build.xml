@@ -565,61 +565,74 @@
 	
 	
 	
-	<target name="-set-project-init">
-		<property name="project.dir" location="${basedir}"/>
-		<basename property="project.parent.dir" file="${project.dir}"/>
-    </target>
-	
-   <target name="-set-client-name" unless="iics.customer.name" depends="-set-project-init">
-        <input defaultvalue="IICS_ClientName" 
-            message="Provide Client (Project Group) Name:" addproperty="iics.customer.name"/>
-        
-    </target>
-	
-	<target name="-set-project-name" unless="iics.project.name" depends="-set-project-init">
-		<input defaultvalue="${project.parent.dir}" 
-			message="Provide IICS PojectName:" addproperty="iics.project.name"/>    
-    </target>
-	
-
-    
-    <target name="gen.initial.configs" description="Generates Initial Configurations for CI/CD scripts for provided project name">
+   
+    <target name="-set-project-init">
         <property name="project.dir" location="${basedir}"/>
         <basename property="project.parent.dir" file="${project.dir}"/>
-        <input defaultvalue="${project.parent.dir}" message="Provide IICS PojectName:" addproperty="iics.project.name"/>
+    </target>
+    
+    <target name="-set-client-name" unless="iics.customer.name" depends="-set-project-init">
+        <input defaultvalue="IICS_ClientName" 
+            message="Provide Client (Project Group) Name:" addproperty="iics.customer.name"/>
+    </target>
+    
+    <target name="-set-project-name" unless="iics.project.name" depends="-set-project-init">
+        <input defaultvalue="${project.parent.dir}" 
+            message="Provide IICS PojectName:" addproperty="iics.project.name"/>    
+    </target>
+    
+    <target name="-set-loal-creds-file" unless="iics.local.properties" depends="-set-project-init">
+        <input defaultvalue="${iics.external.properties.dir}/iics.properties" 
+              message="Location of the local credentials file:" addproperty="iics.local.properties"/>
+    </target>
+
+    <target name="initialize.project" 
+        description="Generates Initial Configurations for CI/CD scripts after template cloning"
+        depends="-set-project-init,
+        -set-client-name,
+        -set-project-name,
+        -set-loal-creds-file">
+        
+        <echo level="info">Client Name:  ${iics.customer.name}</echo>
+        <echo level="info">Project Name: ${iics.project.name}</echo>
+        <echo level="info">Local Creds:  ${iics.local.properties}</echo>
+        
+          
         <echo file="${basedir}/conf/all_designs.package.txt">Explore/${iics.project.name}.Project</echo> 
-        <echo file="${basedir}/conf/export_list.txt">Explore/${iics.project.name}.Project</echo> 
+        <echo level="info">Updated ${basedir}/conf/all_designs.package.txt</echo> 
+        <echo file="${basedir}/conf/export_list.txt">Explore/${iics.project.name}.Project</echo>
+        <echo level="info">Updated ${basedir}/conf/export_list.txt</echo>
         <echo file="${basedir}/conf/all_exclude_connections.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
-    	<echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
-    	<echo level="info">Updated ${basedir}/conf/all_exclude_connections.package.txt</echo>
-    	<echo file="${basedir}/conf/push_dev_test.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
+        <echo level="info">Updated ${basedir}/conf/all_exclude_connections.package.txt</echo>
+        <echo file="${basedir}/conf/push_dev_test.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
         <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
-    	<echo level="info">Updated ${basedir}/conf/push_dev_test.package.txt</echo>
-    	<echo file="${basedir}/conf/push_test_prod.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
+        <echo level="info">Updated ${basedir}/conf/push_dev_test.package.txt</echo>
+        <echo file="${basedir}/conf/push_test_prod.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
         <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
-    	<echo level="info">Updated ${basedir}/conf/push_test_prod.packag.package.txt</echo>
+        <echo level="info">Updated ${basedir}/conf/push_test_prod.packag.package.txt</echo>
         <propertyfile file="${basedir}/conf/iics.release.properties" >
             <entry key="iics.project.name" value="${iics.project.name}"/>
-        	<entry key="iics.customer.name" value="${iics.customer.name}"/>
-        	<entry key="iics.external.properties" value="${iics.local.properties}"/>
+            <entry key="iics.customer.name" value="${iics.customer.name}"/>
+            <entry key="iics.external.properties" value="${iics.local.properties}"/>
         </propertyfile>
-    	<echo level="info">Updated ${basedir}/conf/iics.release.properties</echo>
-    	<replace file="${basedir}/.github/workflows/iics_dev_snapshot.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
-    	<replace file="${basedir}/.github/workflows/iics_manual_build_deploy.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
-    	<replace file="${basedir}/.github/workflows/iics_push_prod.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
-    	<replace file="${basedir}/.github/workflows/iics_push_test.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
-    	<echo level="info">Updated ${basedir}/.github/workflows</echo>
-    	<replace file="${basedir}/.project" token="iics-project-template" value="${project.parent.dir}"/>
-    	<echo level="info">Updated ${basedir}/.project</echo>
+        <echo level="info">Updated ${basedir}/conf/iics.release.properties</echo>
+        <replace file="${basedir}/.github/workflows/iics_dev_snapshot.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_manual_build_deploy.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_push_prod.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_push_test.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <echo level="info">Updated ${basedir}/.github/workflows</echo>
+        <replace file="${basedir}/.project" token="iics-project-template" value="${project.parent.dir}"/>
+        <echo level="info">Updated ${basedir}/.project</echo>
     </target>
 
 
