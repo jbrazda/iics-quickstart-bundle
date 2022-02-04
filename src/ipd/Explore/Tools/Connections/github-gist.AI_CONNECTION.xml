@@ -13,10 +13,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-27T17:04:00Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-02T19:22:32Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-10T01:57:24Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:57:40Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/github-gist/github-gist.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -49,5 +49,5 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:GUID>84VdYJTZ6yAbpA2QNIEKix</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.461Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.573Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

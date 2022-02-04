@@ -4,8 +4,8 @@
       <types1:EntryId>hHwzZsMBw8jIw8j-gt-1951633-2020-03-24T18:08:11.123Z::gt.xml</types1:EntryId>
       <types1:Name>How-To_Use_DAS_Service_Wrapper</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Guide Describes How to use Data Access Service Wrapper 
-version: 2.0</types1:Description>
+      <types1:Description>Guide Describes How to use Data Access Service Wrapper
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +14,10 @@ version: 2.0</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-12-09T18:11:31Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:51Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-12-09T18:14:14Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T15:00:29Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_DAS_Service_Wrapper/How_To_Use_DAS_Service_Wrapper.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,8 +28,8 @@ version: 2.0</types1:Description>
                          doneOnEndStep="false"
                          name="How-To_Use_DAS_Service_Wrapper"
                          runAsUser="$current">
-            <description>Guide Describes How to use Data Access Service Wrapper 
-version: 2.0</description>
+            <description>Guide Describes How to use Data Access Service Wrapper
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -774,5 +774,5 @@ This service Supports One SQL statement, but multiple batched updates/inserts&am
       <types1:GUID>4h0oW7LOPMBcUSb4eKwlMZ</types1:GUID>
       <types1:DisplayName>How-To Use DAS Service Wrapper</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:43.897Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:14.4Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

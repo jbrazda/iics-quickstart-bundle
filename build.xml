@@ -117,6 +117,18 @@
                 </and>
             </not>
         </condition>
+    	
+    	<condition property="tools.nzip.installed" value="true" else="false">
+            <available file="${tools.package.nzip}" />
+        </condition>
+
+        <condition property="tools.nzip.install">
+            <not>
+                <and>
+                    <available file="${tools.package.nzip}" />
+                </and>
+            </not>
+        </condition>
 
         <property name="initialized" value="true" />
     </target>
@@ -146,6 +158,7 @@
         <echo level="info">IICS Tool Module Available: ${iics.available}</echo>
         <echo level="info">Reporting Module Available: ${tools.reporting.installed}</echo>
         <echo level="info">Tramsform Module Available: ${tools.transform.installed}</echo>
+    	<echo level="info">Nzip Module Available:      ${tools.nzip.installed}</echo>
         <echo level="info">========================================</echo>
         <property name="env.info.displayed" value="true" />
     </target>
@@ -155,15 +168,13 @@
         <echo level="info">This ant script provides set of scripts to manage and release IICS Assetst</echo>
         <echo level="info">Read the doc/README.MD for more details</echo>
         <echo level="info">use ant -projecthelp to see available targets</echo>
-        <property name="help.file" value="${basedir}/README.md" />
-        <echo level="info">${shell.open} ${help.file}</echo>
+        <property name="help.file" location="${basedir}/README.html" />
+    	<echo level="info">${shell} ${shell.options} ${shell.open} "${help.file}"</echo>
         <exec executable="${shell}" spawn="yes">
             <arg value="${shell.options}" />
-            <arg line="'${shell.open} ${help.file}'" />
+        	<arg line="'${shell.open} ${help.file}'" />
         </exec>
     </target>
-
-
 
     <target name="-download.iics" depends="-env.info" unless="${iics.available}">
         <!-- Download OS Specific version of the tool-->
@@ -196,6 +207,7 @@
     <target name="install.tools.transform" depends="-env.info" if="${tools.transform.install}">
         <echo level="info">Downloading: ${url.download.iics.tools.transform}</echo>
         <mkdir dir="${iics.tools.dir.transform}" />
+        <mkdir dir="${tools.download.dir}" />
         <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}" usetimestamp="true" />
         <unzip dest="${iics.tools.dir.transform}" src="${tools.download.dir}/${url.download.iics.tools.transform.archive}">
             <patternset>
@@ -210,7 +222,8 @@
 
         <echo level="info">Downloading: ${url.download.iics.tools.reporting}</echo>
         <mkdir dir="${iics.tools.dir.reporting}" />
-        <get src="${url.download.iics.tools.reporting}" dest="${tools.download.dir}" usetimestamp="true" />
+        <mkdir dir="${tools.download.dir}" />
+        <get src="${url.download.iics.tools.reporting}" dest="${tools.download.dir}/${url.download.iics.tools.reporting.archive}" usetimestamp="true" />
         <unzip dest="${iics.tools.dir.reporting}" src="${tools.download.dir}/${url.download.iics.tools.reporting.archive}">
             <mapper>
                 <cutdirsmapper dirs="1" />
@@ -218,7 +231,7 @@
         </unzip>
     </target>
 
-    <target name="install.tools.nzip" depends="-env.info">
+    <target name="install.tools.nzip" depends="-env.info" if="${tools.nzip.install}">
         <echo level="info">Downloading: ${url.download.iics.tools.nzip}</echo>
         <mkdir dir="${iics.tools.dir.nzip}" />
         <get src="${url.download.iics.tools.nzip}" dest="${iics.tools.dir.nzip}" usetimestamp="true" />
@@ -463,17 +476,20 @@
 
     <target name="build.ipd.dist.packages" depends="-env.info,
         -select-release,
-        -load.release.properties" if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
-        <property name="iics.binaries.dir" location="${basedir}/dist">
-        </property>
-
-        <iics.package id="initial_release" workspace="${iics.extract.dir}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_designs.package.txt" />
+        -download.iics,
+        -load.release.properties,
+        install.tools.nzip,
+        -copy.designs.transform,
+        iics.prepare.package" if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
+        
+        <property name="iics.binaries.dir" location="${basedir}/target/dist"/>
+        <property name="iics.binaries.dir.location" location="${iics.binaries.dir}"/>   
+        <mkdir dir="${iics.binaries.dir.location}"/>
+        <iics.package id="initial_release" workspace="${transform.src.folder}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir.location}" file="${basedir}/conf/all_designs.package.txt" />
         <echo level="info">Updated All Designs distribution in ${iics.binaries.dir}/${iics.package.output}_InitialInstall_All_Designs.zip</echo>
-        <iics.package id="update_release" workspace="${iics.extract.dir}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_exclude_connections.package.txt" />
+        <iics.package id="update_release" workspace="${transform.src.folder}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir.location}" file="${basedir}/conf/all_exclude_connections.package.txt" />
         <echo level="info">Updated Update Designs distribution in ${iics.binaries.dir}/${iics.package.output}_Update_Excluding_Connections.zip</echo>
     </target>
-
-
 
     <target name="-set-export-report-properties">
         <property name="iics.report.name" value="${iics.package.output}" />
@@ -546,22 +562,77 @@
          iics.import,
          publish" description="Combines package.src, import, publish steps into one step">
     </target>
-    
-    <target name="gen.initial.configs" description="Generates Initial Configurations for CI/CD scripts for provided project name">
+	
+	
+	
+   
+    <target name="-set-project-init">
         <property name="project.dir" location="${basedir}"/>
         <basename property="project.parent.dir" file="${project.dir}"/>
-        <input defaultvalue="${project.parent.dir}" message="Provide IICS PojectName:" addproperty="iics.project.name"/>
+    </target>
+    
+    <target name="-set-client-name" unless="iics.customer.name" depends="-set-project-init">
+        <input defaultvalue="IICS_ClientName" 
+            message="Provide Client (Project Group) Name:" addproperty="iics.customer.name"/>
+    </target>
+    
+    <target name="-set-project-name" unless="iics.project.name" depends="-set-project-init">
+        <input defaultvalue="${project.parent.dir}" 
+            message="Provide IICS PojectName:" addproperty="iics.project.name"/>    
+    </target>
+    
+    <target name="-set-loal-creds-file" unless="iics.local.properties" depends="-set-project-init">
+        <input defaultvalue="${iics.external.properties.dir}/iics.properties" 
+              message="Location of the local credentials file:" addproperty="iics.local.properties"/>
+    </target>
+
+    <target name="initialize.project" 
+        description="Generates Initial Configurations for CI/CD scripts after template cloning"
+        depends="-set-project-init,
+        -set-client-name,
+        -set-project-name,
+        -set-loal-creds-file">
+        
+        <echo level="info">Client Name:  ${iics.customer.name}</echo>
+        <echo level="info">Project Name: ${iics.project.name}</echo>
+        <echo level="info">Local Creds:  ${iics.local.properties}</echo>
+        
+          
         <echo file="${basedir}/conf/all_designs.package.txt">Explore/${iics.project.name}.Project</echo> 
-        <echo file="${basedir}/conf/export_list.txt">Explore/${iics.project.name}.Project</echo> 
+        <echo level="info">Updated ${basedir}/conf/all_designs.package.txt</echo> 
+        <echo file="${basedir}/conf/export_list.txt">Explore/${iics.project.name}.Project</echo>
+        <echo level="info">Updated ${basedir}/conf/export_list.txt</echo>
         <echo file="${basedir}/conf/all_exclude_connections.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
         <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
-        <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Mapplets.Folder${line.separator}</echo>
-        <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Components.Folder${line.separator}</echo>
+        <echo file="${basedir}/conf/all_exclude_connections.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
+        <echo level="info">Updated ${basedir}/conf/all_exclude_connections.package.txt</echo>
+        <echo file="${basedir}/conf/push_dev_test.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
+        <echo file="${basedir}/conf/push_dev_test.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
+        <echo level="info">Updated ${basedir}/conf/push_dev_test.package.txt</echo>
+        <echo file="${basedir}/conf/push_test_prod.package.txt">Explore/${iics.project.name}/Processes.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Guides.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/ProcessObjects.Folder${line.separator}</echo> 
+        <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Mappings.Folder${line.separator}</echo>
+        <echo file="${basedir}/conf/push_test_prod.package.txt" append="true">Explore/${iics.project.name}/Tasks.Folder${line.separator}</echo>
+        <echo level="info">Updated ${basedir}/conf/push_test_prod.packag.package.txt</echo>
         <propertyfile file="${basedir}/conf/iics.release.properties" >
             <entry key="iics.project.name" value="${iics.project.name}"/>
+            <entry key="iics.customer.name" value="${iics.customer.name}"/>
+            <entry key="iics.external.properties" value="${iics.local.properties}"/>
         </propertyfile>
+        <echo level="info">Updated ${basedir}/conf/iics.release.properties</echo>
+        <replace file="${basedir}/.github/workflows/iics_dev_snapshot.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_manual_build_deploy.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_push_prod.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <replace file="${basedir}/.github/workflows/iics_push_test.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
+        <echo level="info">Updated ${basedir}/.github/workflows</echo>
+        <replace file="${basedir}/.project" token="iics-project-template" value="${project.parent.dir}"/>
+        <echo level="info">Updated ${basedir}/.project</echo>
     </target>
 
 
@@ -783,7 +854,6 @@
                     <pathelement location="${iics.tools.dir.nzip}/nzip.jar" />
                 </classpath>
             </java>
-
         </sequential>
     </macrodef>
 

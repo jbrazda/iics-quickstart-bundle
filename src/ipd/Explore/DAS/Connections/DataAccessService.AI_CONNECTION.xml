@@ -6,7 +6,7 @@
       <types1:ParentFlowIds>8rPG9VtsDaaabdv-gt-5281273-2020-03-24T18:08:11.965Z::gt.xml,Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml,f6NFuxTtlI20hEL-gt-19353371-2021-02-10T20:21:44.096Z::pd.xml,FLK2D86CjqFVNN5-gt-5281346-2020-03-24T18:08:15.15Z::gt.xml,hz5chspiRASmvD4-gt-1869991-2020-03-24T18:08:11.18Z::pd.xml,i4WDjz8Uuopz4Kh-gt-1869981-2020-03-24T18:08:11.137Z::pd.xml,iYuHEFsWTzIf6ri-gt-7509874-2020-09-29T18:47:01.13Z::pd.xml,jDlUxQ2Tp5OjG4a-gt-19353391-2021-02-10T20:21:44.157Z::pd.xml,nXVuslqAOclkZ2s-gt-19353411-2021-02-10T20:21:44.219Z::pd.xml,rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml,yvs7xvk0qZF3a-gt-6187074-2020-03-24T18:08:16.391Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 2.0</types1:Description>
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -15,10 +15,10 @@ version: 2.0</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-12-09T17:44:35Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-10T01:57:05Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:57:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/DataAccessService/DataAccessService.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,7 +27,7 @@ version: 2.0</types1:Description>
                      label="DataAccessService"
                      name="DataAccessService">
             <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 2.0</description>
+version: 1.6</description>
             <tags/>
             <agent/>
             <attributes/>
@@ -45,5 +45,5 @@ version: 2.0</description>
       <types1:GUID>4nQ50tIl0DkbgcRRWyJfah</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.518Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.566Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

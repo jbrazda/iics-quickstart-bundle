@@ -4,8 +4,7 @@
       <types1:EntryId>m3nHwzZsMBw8jIw-gt-5281356-2020-03-24T18:08:15.196Z::po.xml</types1:EntryId>
       <types1:Name>ShellCurlOptions</types1:Name>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Object represents Various Curl Options
-Some are defined explicitly for ease of use  other optional params should be placed in the optional-params field</types1:Description>
+      <types1:Description>Object represents Various Curl Options Some are defined explicitly for ease of use other optional params should be placed in the optional-params field version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,7 +13,7 @@ Some are defined explicitly for ease of use  other optional params should be pla
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:45Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,8 +21,7 @@ Some are defined explicitly for ease of use  other optional params should be pla
                         displayName="ShellCurlOptions"
                         isByCopy="true"
                         name="ShellCurlOptions">
-            <description>Object represents Various Curl Options
-Some are defined explicitly for ease of use  other optional params should be placed in the optional-params field</description>
+            <description>Object represents Various Curl Options Some are defined explicitly for ease of use other optional params should be placed in the optional-params field version: 1.6</description>
             <detail>
                <field label="Resource URL" name="url" type="url"/>
                <field label="Output File (-o, --output)" name="output" type="string"/>
@@ -41,5 +39,5 @@ Some are defined explicitly for ease of use  other optional params should be pla
       <types1:GUID>8pDZ6wepJeSlGATEscNQE5</types1:GUID>
       <types1:DisplayName>ShellCurlOptions</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:44.415Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.31Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
