@@ -208,7 +208,7 @@
         <echo level="info">Downloading: ${url.download.iics.tools.transform}</echo>
         <mkdir dir="${iics.tools.dir.transform}" />
         <mkdir dir="${tools.download.dir}" />
-        <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}" usetimestamp="true" />
+        <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}/${url.download.iics.tools.transform.archive}" usetimestamp="true" />
         <unzip dest="${iics.tools.dir.transform}" src="${tools.download.dir}/${url.download.iics.tools.transform.archive}">
             <patternset>
                 <include name="xsl/**" />
