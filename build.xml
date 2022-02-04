@@ -196,7 +196,7 @@
     <target name="install.tools.transform" depends="-env.info" if="${tools.transform.install}">
         <echo level="info">Downloading: ${url.download.iics.tools.transform}</echo>
         <mkdir dir="${iics.tools.dir.transform}" />
-        <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}" usetimestamp="true" />
+        <get src="${url.download.iics.tools.transform}" dest="${tools.download.dir}/${url.download.iics.tools.transform.archive}" usetimestamp="true" verbose="true"/>
         <unzip dest="${iics.tools.dir.transform}" src="${tools.download.dir}/${url.download.iics.tools.transform.archive}">
             <patternset>
                 <include name="xsl/**" />
@@ -463,17 +463,20 @@
 
     <target name="build.ipd.dist.packages" depends="-env.info,
         -select-release,
-        -load.release.properties" if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
-        <property name="iics.binaries.dir" location="${basedir}/dist">
-        </property>
-
-        <iics.package id="initial_release" workspace="${iics.extract.dir}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_designs.package.txt" />
+    	-download.iics,
+        -load.release.properties,
+    	install.tools.nzip,
+    	-copy.designs.transform,
+    	iics.prepare.package" if="iics.release.basename" description="Builds IPD Binary Packages Distribution to pre-defined folder which are available for download in github">
+        
+    	<property name="iics.binaries.dir" location="${basedir}/target/dist"/>
+    	<property name="iics.binaries.dir.location" location="${iics.binaries.dir}"/>	
+        <mkdir dir="${iics.binaries.dir.location}"/>
+        <iics.package id="initial_release" workspace="${transform.src.folder}" output="${iics.package.output}_InitialInstall_All_Designs.zip" todir="${iics.binaries.dir.location}" file="${basedir}/conf/all_designs.package.txt" />
         <echo level="info">Updated All Designs distribution in ${iics.binaries.dir}/${iics.package.output}_InitialInstall_All_Designs.zip</echo>
-        <iics.package id="update_release" workspace="${iics.extract.dir}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir}" file="${basedir}/conf/all_exclude_connections.package.txt" />
+        <iics.package id="update_release" workspace="${transform.src.folder}" output="${iics.package.output}_Update_Excluding_Connections.zip" todir="${iics.binaries.dir.location}" file="${basedir}/conf/all_exclude_connections.package.txt" />
         <echo level="info">Updated Update Designs distribution in ${iics.binaries.dir}/${iics.package.output}_Update_Excluding_Connections.zip</echo>
     </target>
-
-
 
     <target name="-set-export-report-properties">
         <property name="iics.report.name" value="${iics.package.output}" />

@@ -43,7 +43,7 @@ This project contains set of re-usable IICS Designs SDLC utilities, examples and
 - **Read the provided documentation**
 - This bundle is continuously developed and improved, feel free to subscribe and monitor updates that might be useful for you in the future
 - This bundle is not officially supported by Informatica, please report any issues you find via Github issues report
-- Do not or move imported assets Project/Folder Locations after import, this would make updates much more difficult
+- Do not modify or move imported assets Project/Folder Locations after import, this would make updates much more difficult
 - You can update or change imported resources to adjust them for your needs but keep in mind that it would be your responsibility to merge or maintain any changes you have made to provided designs
 - Any of the provided assets can significantly re-designed or removed in the future releases
 
