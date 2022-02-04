@@ -4,7 +4,8 @@
       <types1:EntryId>vZE4O9pH8sVYx8R-gt-1018722-2022-01-12T15:40:27.34Z::tf.xml</types1:EntryId>
       <types1:Name>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
-      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows</types1:Description>
+      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,8 +13,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-12T15:40:27Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-12T18:55:32Z</types1:ModificationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-04T14:57:05Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -25,7 +26,8 @@
                    overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Example Task Flow template to use as a starting point to develop new task flows</description>
+            <description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <tempFields>
@@ -176,6 +178,7 @@
                                  <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Completed</operation>
                                  <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">3</operation>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 
                                  <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
 (:we need to pass quotes to properly parasmetrize the query:)</expression>
                                  </operation>
@@ -242,6 +245,7 @@
                                  <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Failed</operation>
                                  <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">2</operation>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 
                                  <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
 (:we need to pass quotes to properly parasmetrize the query:)</expression>
                                  </operation>
@@ -309,7 +313,7 @@
                               displayName="mt-Logging-CreateJobEntry"
                               isByCopy="true"
                               name="mt-Logging-CreateJobEntry">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -343,7 +347,7 @@
                               displayName="mt-Logging-UpdateJobEntry"
                               isByCopy="true"
                               name="mt-Logging-UpdateJobEntry">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -379,5 +383,5 @@
       <types1:GUID>1lSugbtOqQMbk023Nm7T4F</types1:GUID>
       <types1:DisplayName>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:47.059Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:35.625Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

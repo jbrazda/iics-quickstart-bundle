@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "3SHH2foUYDtbm1QoTKOM8x",
+      "objectName": "ShellServiceLog",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents Shell Service Invocation Log Entry",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "hUfvrTwvhexbgkuWwHktcW",
+            "1WDn9B9dDXrgPkmNZ98loU"
+         ],
+         "repoInfo": {
+            "repoHandle": "spiRASmvD4teIss-gt-65126998-2022-02-01T21:16:30.304Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "hUfvrTwvhexbgkuWwHktcW",
+      "objectName": "ShellServiceRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "chvq9aabds8NTYg-gt-64693350-2022-02-01T21:16:30.034Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "1WDn9B9dDXrgPkmNZ98loU",
+      "objectName": "ShellServiceResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Encapsulates IICS Shell Service Response Fields",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "dx6CjqFVNN5Kaaa-gt-64693359-2022-02-01T21:16:30.061Z::po.xml"
+         }
+      }
+   }
+]

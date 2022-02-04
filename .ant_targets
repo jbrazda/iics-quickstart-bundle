@@ -4,6 +4,7 @@ build.deploy
 build.ipd.dist.packages
 clean.release
 clean.src
+clean.target
 download.src
 gen.initial.configs
 help

@@ -9,7 +9,8 @@ Required parameters are Task Name and Task Type
 Optionally you can set Other Parameters
 if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
 if task completes before timeout it will reply with error on timeout. 
-Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).</types1:Description>
+Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:G01</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -18,10 +19,10 @@ Max Wait = 600 seconds by default. You can override it, but the value is capped 
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-05-20T14:02:52Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:54Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-05-20T14:02:58Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:59:58Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-Run-Job-NA/SP-ICS-Run-Job-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -36,7 +37,8 @@ Required parameters are Task Name and Task Type
 Optionally you can set Other Parameters
 if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
 if task completes before timeout it will reply with error on timeout. 
-Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).</description>
+Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
+version: 1.6</description>
             <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -227,5 +229,5 @@ return ipd:setProcessTitle($process_title)</expression>
       <types1:GUID>9wz3OkHg5VXeQ7DuT78daW</types1:GUID>
       <types1:DisplayName>SP-ICS-Run-Job-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:44.09Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:32.209Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

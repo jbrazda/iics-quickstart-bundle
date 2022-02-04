@@ -5,9 +5,7 @@
       <types1:Name>FaultInfo</types1:Name>
       <types1:ParentFlowIds>if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
- 
-</types1:Description>
+      <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -16,7 +14,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:47Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -24,9 +22,7 @@
                         displayName="FaultInfo"
                         isByCopy="true"
                         name="FaultInfo">
-            <description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
- 
-</description>
+            <description>Represents Generic process or service fault info Expanding built-in fault for logging purposes version: 1.6</description>
             <detail>
                <field label="code" name="code" type="string"/>
                <field label="reason" name="reason" type="string"/>
@@ -39,5 +35,5 @@
       <types1:GUID>0abRd5Zd1IFeRCwPmgXOCy</types1:GUID>
       <types1:DisplayName>FaultInfo</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:44.521Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:31.536Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -7,7 +7,8 @@
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process retrieves a Task list from ICS
 Task types
-AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</types1:Description>
+AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -16,10 +17,10 @@ AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:47Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:54Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-06-03T14:30:09Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:59:38Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskList-Cloud/SP-ICS-GetTaskList-Cloud.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +31,8 @@ AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</types1:Description>
             <appliesTo/>
             <description>Process retrieves a Task list from ICS
 Task types
-AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</description>
+AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW
+version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -96,5 +98,5 @@ AVS, DMASK, DQA, DRS, DSS, MTT, PCS,Workflow DNB_WORKFLOW</description>
       <types1:GUID>6a4ZVnZlQipcUJjkSavwML</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskList-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.13Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:31.874Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

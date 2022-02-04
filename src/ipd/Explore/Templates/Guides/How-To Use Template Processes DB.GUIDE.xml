@@ -4,8 +4,8 @@
       <types1:EntryId>Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:EntryId>
       <types1:Name>How-To_Use_Template_Processes_DB</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend
-version: 2.0</types1:Description>
+      <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as a backend
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +14,10 @@ version: 2.0</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-13T18:21:26Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-13T18:22:37Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T15:00:30Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DB/How_To_Use_Template_Processes_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,8 +28,8 @@ version: 2.0</types1:Description>
                          doneOnEndStep="false"
                          name="How-To_Use_Template_Processes_DB"
                          runAsUser="$current">
-            <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend
-version: 2.0</description>
+            <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as a backend
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -125,5 +125,5 @@ version: 2.0</description>
       <types1:GUID>0TDbowvyedFiXZqIUfUGqs</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:46.68Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:34.108Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

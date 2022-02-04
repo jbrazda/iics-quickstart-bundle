@@ -4,7 +4,8 @@
       <types1:EntryId>6oIuQaaabcmnBtB-gt-1478869-2022-01-10T20:40:49.93Z::tf.xml</types1:EntryId>
       <types1:Name>tf_JOB_Tracking_Template_Sample_Mapping</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
-      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows</types1:Description>
+      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,8 +13,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-10T20:40:50Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-12T18:55:31Z</types1:ModificationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-04T14:57:04Z</types1:ModificationDate>
       <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2022-01-10T23:25:08Z</types1:PublicationDate>
@@ -28,7 +29,8 @@
                    overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Example Task Flow template to use as a starting point to develop new task flows</description>
+            <description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <tempFields>
@@ -353,6 +355,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Completed</operation>
                                  <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">3</operation>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 
                                  <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
 (:we need to pass quotes to properly parasmetrize the query:)</expression>
                                  </operation>
@@ -532,6 +535,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry">temp.Update Job Entry Failed</operation>
                                  <operation source="constant" to="mt-Logging-UpdateJobEntry/inout[1]/prm_status">2</operation>
                                  <operation source="field" to="mt-Logging-UpdateJobEntry/inout[1]/prm_job_ID">temp.tmp_job_ID
+                                 
                                  <expression language="XQuery">concat("'",$temp.tmp_job_ID ,"'")
 (:we need to pass quotes to properly parasmetrize the query:)</expression>
                                  </operation>
@@ -606,7 +610,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Logging-CreateJobEntry"
                               isByCopy="true"
                               name="mt-Logging-CreateJobEntry">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -640,7 +644,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Sample-Mapping"
                               isByCopy="true"
                               name="mt-Sample-Mapping">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="TaskProperties Parameters"
@@ -664,7 +668,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Logging-CreateEventEntry"
                               isByCopy="true"
                               name="mt-Logging-CreateEventEntry">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -698,7 +702,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Logging-UpdateJobEntry"
                               isByCopy="true"
                               name="mt-Logging-UpdateJobEntry">
-                  <description/>
+                  <description> version: 1.6</description>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -734,5 +738,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>8Xv147vkTu0huIQqjnlzWr</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template_Sample_Mapping</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:46.904Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:35.033Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -4,7 +4,7 @@
       <types1:EntryId>g8DfYLnzYLnzYLn-gt-5306450-2020-03-24T18:08:17.097Z::gt.xml</types1:EntryId>
       <types1:Name>Send_Test_Message_to_JMS</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description/>
+      <types1:Description>version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,8 +13,8 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:48Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2020-04-30T14:41:18Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Send_Test_Message_to_JMS/Send_Test_Message_to_JMS.xml</types1:PublishedContributionId>
@@ -27,7 +27,7 @@
                          doneOnEndStep="false"
                          name="Send_Test_Message_to_JMS"
                          runAsUser="$current">
-            <description/>
+            <description>version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Screenflow Designer 9</generator>
@@ -128,5 +128,5 @@
       <types1:GUID>26bdUQ1m248bN7isWZLM8x</types1:GUID>
       <types1:DisplayName>Send Test Message to  JMS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:45.428Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:32.61Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

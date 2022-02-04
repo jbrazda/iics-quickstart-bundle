@@ -1,0 +1,61 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml</types1:EntryId>
+      <types1:Name>IICS-REST-API-V3</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>Platform REST API version 3 
+See Documentation 
+https://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-3-resources.html</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-02-01T21:16:57Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-01T21:19:04Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-01T21:19:14Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/IICS-REST-API-V3/IICS-REST-API-V3.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="IICS-REST-API-V3"
+                     label="IICS-REST-API-V3"
+                     name="IICS-REST-API-V3">
+            <description>Platform REST API version 3 
+See Documentation 
+https://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-3-resources.html</description>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false"
+                          name="service_url"
+                          value="https://dm-us.informaticacloud.com"/>
+               <attribute encrypted="false"
+                          name="username"
+                          value="jbrazda@unicosolution.com.dev"/>
+               <attribute encrypted="true" name="password" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/IICS_REST_API_V3/IICS_REST_API_V3_svcDef.xml"
+                               guid="035COj5HDGMk9BFhGZxqy5"
+                               name="IICS-REST-API-V3"
+                               supportsConnectionTest="false"
+                               uuid="d7548bc0-06f3-49dd-a1d3-19f011e362d4">
+               <description>Platform REST API version 3
+See Documentation: 
+https://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-
+3-resources.html</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>4wVu3utuMQeeJTCmQIYbSI</types1:GUID>
+      <types1:DisplayName>IICS-REST-API-V3</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:32.503Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -6,7 +6,8 @@
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>This Guide  Provides Administrative and troubleshooting functions such as 
 - search IPaaS ICAI Job  logs
-- ability to find job related processes</types1:Description>
+- ability to find job related processes
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -15,10 +16,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:51Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-10T01:58:59Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T15:00:45Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Log_Search_DB/iPaaS_Log_Search_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,7 +33,8 @@
                          runAsUser="$current">
             <description>This Guide  Provides Administrative and troubleshooting functions such as 
 - search IPaaS ICAI Job  logs
-- ability to find job related processes</description>
+- ability to find job related processes
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -853,5 +855,5 @@ $url</expression>
       <types1:GUID>3fMCexzb8UghCGoRLCEX2s</types1:GUID>
       <types1:DisplayName>iPaaS Log Search DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-01-25T01:47:46.138Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T20:05:33.061Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

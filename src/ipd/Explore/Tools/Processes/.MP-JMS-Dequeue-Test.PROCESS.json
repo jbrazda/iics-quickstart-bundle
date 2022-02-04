@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "f7SvBLSGwU9hhyzl6Zc1ks",
+      "objectName": "MP-JMS-Dequeue-Test",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "LVNIW7WHK80FIRi-gt-64692719-2022-02-01T21:16:14.598Z::pd.xml"
+         }
+      }
+   }
+]

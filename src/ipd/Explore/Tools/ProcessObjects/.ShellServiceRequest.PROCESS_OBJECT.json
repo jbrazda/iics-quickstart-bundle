@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "hUfvrTwvhexbgkuWwHktcW",
+      "objectName": "ShellServiceRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "chvq9aabds8NTYg-gt-64693350-2022-02-01T21:16:30.034Z::po.xml"
+         }
+      }
+   }
+]

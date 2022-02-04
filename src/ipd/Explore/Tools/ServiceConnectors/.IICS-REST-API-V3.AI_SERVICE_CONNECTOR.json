@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This service defines actions to connect to IICS through REST API and perform Export/Import and license management activities",
+            "description": "Platform REST API version 3\nSee Documentation: \nhttps://docs.informatica.com/integration-cloud/cloud-platform/current-version/rest-api-reference/platform-rest-api-version-\n3-resources.html",
             "documentState": "VALID"
          },
          "contextAttributes": null,
