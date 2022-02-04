@@ -16,7 +16,7 @@
       <types1:ModificationDate>2020-03-27T17:04:47Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-10T01:57:10Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:57:46Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/AddressDoctor/AddressDoctor.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -47,5 +47,5 @@
       <types1:GUID>58vC2cnmBIOdBfUYH3IdAj</types1:GUID>
       <types1:DisplayName>AddressDoctor</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.31Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:14.721Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

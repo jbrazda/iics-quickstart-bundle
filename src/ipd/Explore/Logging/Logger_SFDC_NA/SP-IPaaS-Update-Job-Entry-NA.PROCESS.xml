@@ -4,7 +4,8 @@
       <types1:EntryId>FDqZF3a-gt-1951817-2020-03-24T18:08:19.504Z::pd.xml</types1:EntryId>
       <types1:Name>SP-IPaaS-Update-Job-Entry-NA</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Generic logging process of jobs in SFDC</types1:Description>
+      <types1:Description>Generic logging process of jobs in SFDC
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,8 +14,8 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:51Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-04T14:57:02Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2020-04-09T21:02:32Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry-NA/SP-IPaaS-Update-Job-Entry-NA.pd.xml</types1:PublishedContributionId>
@@ -25,7 +26,8 @@
                   displayName="SP-IPaaS-Update-Job-Entry-NA"
                   name="SP-IPaaS-Update-Job-Entry-NA">
             <appliesTo/>
-            <description>Generic logging process of jobs in SFDC</description>
+            <description>Generic logging process of jobs in SFDC
+version: 1.6</description>
             <tags>.agent:NA</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -140,5 +142,5 @@ return string-join($parts," ")</expression>
       <types1:GUID>9ghyM8QydIhgVfpujBrZgg</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Update-Job-Entry-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:37.211Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.968Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

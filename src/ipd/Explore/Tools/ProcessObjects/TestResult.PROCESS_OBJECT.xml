@@ -5,7 +5,7 @@
       <types1:Name>TestResult</types1:Name>
       <types1:ParentFlowIds>Ciaaa-gt-1870041-2020-03-24T18:08:14.59Z::pd.xml,EogjER0XabeAzu2-gt-72497801-2021-06-30T18:02:29.492Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>This Object Represent a Test Reults</types1:Description>
+      <types1:Description>This Object Represent a Test Reults version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,7 +14,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:43Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:54Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,7 +22,7 @@
                         displayName="TestResult"
                         isByCopy="true"
                         name="TestResult">
-            <description>This Object Represent a Test Reults</description>
+            <description>This Object Represent a Test Reults version: 1.6</description>
             <tags/>
             <detail>
                <field label="Test Name" name="testName" type="string"/>
@@ -50,5 +50,5 @@
       <types1:GUID>ar2f3TQjvIegmzyWlxpwC0</types1:GUID>
       <types1:DisplayName>TestResult</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.282Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.012Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

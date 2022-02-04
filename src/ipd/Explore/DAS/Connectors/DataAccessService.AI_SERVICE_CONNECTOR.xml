@@ -6,7 +6,7 @@
       <types1:ParentFlowIds>n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml,wfQHhwq9bdsreK8-gt-10328025-2020-07-25T20:17:07.836Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 2.0</types1:Description>
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -15,10 +15,10 @@ version: 2.0</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-12-09T17:44:07Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-12-09T17:45:54Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:57:13Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 2.0</types1:Description>
                             name="DataAccessService"
                             uuid="93d7509e-96fb-4872-b8c1-41f382c1811f">
             <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 2.0</description>
+version: 1.6</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
             <actions>
@@ -167,7 +167,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="ProcedureParameter">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="name" nullable="true" required="false" type="string"/>
                      <field name="sqlType" nullable="true" required="false" type="picklist">
@@ -190,7 +190,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="Parameter">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="sqlType" nullable="true" required="false" type="picklist">
                         <options>
@@ -211,7 +211,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tDataAccessRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="sqlStatement"
                             nullable="true"
@@ -235,13 +235,13 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMetadata">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail/>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMultiDataAccessRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="sqlStatement"
                             nullable="true"
@@ -265,7 +265,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMultiResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="result"
                             nullable="true"
@@ -281,7 +281,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tProcedureSignature">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="parameter"
                             nullable="true"
@@ -297,7 +297,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="statementId"
                             nullable="true"
@@ -329,7 +329,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tRow">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="updatedRows"
                             nullable="true"
@@ -344,7 +344,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tSqlParameterBatch">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="parameter"
                             nullable="true"
@@ -360,7 +360,7 @@ version: 2.0</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tSqlStatement">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="maxRows" nullable="true" required="false" type="double"/>
                      <field name="maxWaitSeconds"
@@ -426,5 +426,5 @@ version: 2.0</description>
       <types1:GUID>fnG0seP4jM2ljV7FCQzLYx</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.501Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:14.984Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

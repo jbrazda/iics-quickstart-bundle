@@ -5,7 +5,7 @@
       <types1:Name>CreateJobLogEventRequest</types1:Name>
       <types1:ParentFlowIds>CuMIYxWPQE8jIw8-gt-1951807-2020-03-24T18:08:19.461Z::pd.xml,CWglH8n55ErhNzU-gt-5281387-2020-03-24T18:08:19.455Z::pd.xml,f6NFuxTtlI20hEL-gt-19353371-2021-02-10T20:21:44.096Z::pd.xml,uaaaaaa-gt-1951787-2020-03-24T18:08:19.331Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>IPaaS Job Log Event</types1:Description>
+      <types1:Description>IPaaS Job Log Event version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,7 +14,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:50Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:57:00Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,7 +22,7 @@
                         displayName="CreateJobLogEventRequest"
                         isByCopy="true"
                         name="CreateJobLogEventRequest">
-            <description>IPaaS Job Log Event </description>
+            <description>IPaaS Job Log Event version: 1.6</description>
             <tags/>
             <detail>
                <field label="event_message" name="event_message" type="string"/>
@@ -52,5 +52,5 @@
       <types1:GUID>a8f1LmXZlzibFVDqCJ5equ</types1:GUID>
       <types1:DisplayName>CreateJobLogEventRequest</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.73Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.512Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

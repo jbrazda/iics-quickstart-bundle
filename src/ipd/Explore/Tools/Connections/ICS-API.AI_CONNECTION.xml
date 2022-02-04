@@ -17,7 +17,7 @@
       <types1:ModificationDate>2022-02-01T21:24:55Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-01T21:25:07Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T14:58:06Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/ICS-API/ICS-API.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -50,5 +50,5 @@
       <types1:GUID>9yKFXii7ZmkiUYE6xjuwuh</types1:GUID>
       <types1:DisplayName>ICS-API</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.256Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.232Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

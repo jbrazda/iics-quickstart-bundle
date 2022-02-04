@@ -5,7 +5,7 @@
       <types1:Name>TEST_DAS</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide To Run Data Access Service Wrapper Tests
-version: 2.0</types1:Description>
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +14,10 @@ version: 2.0</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-12-09T17:49:33Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-12-09T17:50:30Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T15:00:27Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.TEST_DAS/TEST_DAS.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 2.0</types1:Description>
                          name="TEST_DAS"
                          runAsUser="$current">
             <description>Guide To Run Data Access Service Wrapper Tests
-version: 2.0</description>
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -433,5 +433,5 @@ saxon:serialize($output.dataAccessResponse, $saxon_params)</expression>
       <types1:GUID>4a73fqRAXfGdj4QKDZ36SF</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.762Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.53Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

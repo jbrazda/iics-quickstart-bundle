@@ -5,7 +5,7 @@
       <types1:Name>UpdateJobLogEntryRequest</types1:Name>
       <types1:ParentFlowIds>FDqZF3a-gt-1951817-2020-03-24T18:08:19.504Z::pd.xml,HWwjlybduaa-gt-1951827-2020-03-24T18:08:19.545Z::pd.xml,jDlUxQ2Tp5OjG4a-gt-19353391-2021-02-10T20:21:44.157Z::pd.xml,xvk0qZF3a-gt-6187162-2020-03-24T18:08:20.378Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Job Logging Entry Update Existing Record</types1:Description>
+      <types1:Description>Job Logging Entry Update Existing Record version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,7 +14,7 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:50Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,7 +22,7 @@
                         displayName="UpdateJobLogEntryRequest"
                         isByCopy="true"
                         name="UpdateJobLogEntryRequest">
-            <description>Job Logging Entry Update Existing Record</description>
+            <description>Job Logging Entry Update Existing Record version: 1.6</description>
             <tags/>
             <detail>
                <field label="Status" name="Status" type="picklist">
@@ -46,5 +46,5 @@
       <types1:GUID>cNRcz5CBc2Pbg5h9Nn5G4M</types1:GUID>
       <types1:DisplayName>UpdateJobLogEntryRequest</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.778Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.547Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

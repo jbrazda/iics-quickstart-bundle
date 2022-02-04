@@ -4,7 +4,7 @@
       <types1:EntryId>chvq9aabds8NTYg-gt-64693350-2022-02-01T21:16:30.034Z::po.xml</types1:EntryId>
       <types1:Name>ShellServiceRequest</types1:Name>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent</types1:Description>
+      <types1:Description>Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,7 +12,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-02-01T21:16:30Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -20,7 +21,7 @@
                         displayName="ShellServiceRequest"
                         isByCopy="true"
                         name="ShellServiceRequest">
-            <description>Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent</description>
+            <description>Encapsulates IICS Shell Service parameters to invoke shell commands and scripts on secure agent version: 1.6</description>
             <tags/>
             <detail>
                <field label="Command"
@@ -64,5 +65,5 @@
       <types1:GUID>hUfvrTwvhexbgkuWwHktcW</types1:GUID>
       <types1:DisplayName>ShellServiceRequest</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.319Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.053Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

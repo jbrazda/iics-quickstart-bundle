@@ -4,7 +4,8 @@
       <types1:EntryId>w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml</types1:EntryId>
       <types1:Name>EXAMPLE2-ST_Multi_Mapping_Template_Handler</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
-      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows</types1:Description>
+      <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,8 +13,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-12T15:40:25Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-01-12T18:55:31Z</types1:ModificationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-04T14:57:04Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -25,7 +26,8 @@
                    overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Example Task Flow template to use as a starting point to develop new task flows</description>
+            <description>Example Task Flow template to use as a starting point to develop new task flows
+version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -74,5 +76,5 @@
       <types1:GUID>27YdzYRyhpPeBcR0v2huCq</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_Handler</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:38.297Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:17.537Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

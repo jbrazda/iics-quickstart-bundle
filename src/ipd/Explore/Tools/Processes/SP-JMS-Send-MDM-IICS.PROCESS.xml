@@ -5,7 +5,8 @@
       <types1:Name>SP-JMS-Send-MDM-IICS</types1:Name>
       <types1:ParentFlowIds>g8DfYLnzYLnzYLn-gt-5306450-2020-03-24T18:08:17.097Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>TEST process to send JMS message to  Outbound message queue</types1:Description>
+      <types1:Description>TEST process to send JMS message to  Outbound message queue
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:NA</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,8 +15,8 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:43Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2020-04-09T21:02:01Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-JMS-Send-MDM-IICS/SP-JMS-Send-MDM-IICS.pd.xml</types1:PublishedContributionId>
@@ -26,7 +27,8 @@
                   displayName="SP-JMS-Send-MDM-IICS"
                   name="SP-JMS-Send-MDM-IICS">
             <appliesTo/>
-            <description>TEST process to send JMS message to  Outbound message queue</description>
+            <description>TEST process to send JMS message to  Outbound message queue
+version: 1.6</description>
             <tags>.agent:NA</tags>
             <generator>Informatica Process Designer 9</generator>
             <input>
@@ -78,5 +80,5 @@
       <types1:GUID>103LyMAbY9ulFj81aKFTwW</types1:GUID>
       <types1:DisplayName>SP-JMS-Send-MDM-IICS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:36.535Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.021Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

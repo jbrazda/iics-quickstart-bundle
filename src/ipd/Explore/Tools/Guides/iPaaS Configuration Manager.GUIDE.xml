@@ -4,7 +4,8 @@
       <types1:EntryId>rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Configuration_Manager</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database</types1:Description>
+      <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,10 +14,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-09T20:59:50Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-01-10T01:58:51Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-04T15:00:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,7 +28,8 @@
                          doneOnEndStep="true"
                          name="iPaaS_Configuration_Manager"
                          runAsUser="$current">
-            <description>Guide to manage configuration properties stored as a Key/Value pairs in the Database</description>
+            <description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -514,5 +516,5 @@ $query</expression>
       <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-03T16:58:37.012Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-04T15:05:15.79Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
