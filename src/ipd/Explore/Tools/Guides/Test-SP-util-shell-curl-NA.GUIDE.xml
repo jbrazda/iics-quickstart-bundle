@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T18:19:50Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:51Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T18:19:55Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Test_SP_util_shell_curl_NA/Test_SP_util_shell_curl_NA.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -89,7 +89,8 @@ version: 1.6</description>
 &lt;td&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="responseheaders (output)" name="output.responseheaders" readonly="readonly" type="text" value="responseheaders (output)"&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;</body>
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
                      <action alt="null" id="jnng7z67_j8m0nfyt" targetScreen="j8m0nfyt">
@@ -157,31 +158,31 @@ version: 1.6</description>
                   <subflowPath>SP-util-shell-curl-NA</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
-                     <parameter id="jz0fcqft"
+                     <parameter id="kzsprn2o"
                                 name="targetFile"
                                 source="screen"
                                 updatable="true">screen.targetFile</parameter>
-                     <parameter id="jz0fcqfu"
+                     <parameter id="kzsprn2p"
                                 name="resourceUrl"
                                 source="screen"
                                 updatable="true">screen.resourceUrl</parameter>
-                     <parameter id="jz0fcqfv"
+                     <parameter id="kzsprn2q"
                                 name="workingDirectory"
-                                source="constant"
-                                updatable="true">/home/iclab/data/WHO/test</parameter>
-                     <parameter id="jz0fcqfw"
+                                source="screen"
+                                updatable="true">screen.workingDirectory</parameter>
+                     <parameter id="kzsprn2r"
                                 name="verboseOutput"
                                 source="screen"
                                 updatable="true">screen.verboseOutput</parameter>
-                     <parameter id="jz0fcqfx"
+                     <parameter id="kzsprn2s"
                                 name="dumpHeaders"
                                 source="screen"
                                 updatable="true">screen.dumpHeaders</parameter>
-                     <parameter id="jz0fcqfy"
+                     <parameter id="kzsprn2t"
                                 name="optionalParams"
                                 source="screen"
                                 updatable="true">screen.optionalParams</parameter>
-                     <parameter id="jz0fcqfz"
+                     <parameter id="kzsprn2u"
                                 name="createDirs"
                                 source="constant"
                                 updatable="true">true</parameter>
@@ -256,7 +257,11 @@ version: 1.6</description>
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Optional Params&lt;/td&gt;
-&lt;td&gt;&lt;input title="Edit a field to change the field properties." name="screen.optionalParams" type="text" value="optionalParams"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.optionalParams" type="text" value="optionalParams"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Working Directory&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="Edit a field to change the field properties." name="screen.workingDirectory" type="text" value="workingDirectory"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;</body>
@@ -280,7 +285,7 @@ version: 1.6</description>
                            <options>
                               <option name="urlDisplayReadonlyAs">Link</option>
                               <option name="required">true</option>
-                              <option name="defaultvalue">xhttp://apps.who.int/gho/athena/data/xmart.csv?target=GHO/WHS5_512&amp;profile=crosstable&amp;filter=COUNTRY:*;REGION:*&amp;x-sideaxis=COUNTRY;DATASOURCE&amp;x-topaxis=GHO;YEAR;RESIDENCEAREATYPE&amp;x-collapse=true</option>
+                              <option name="defaultvalue">http://apps.who.int/gho/athena/data/xmart.csv?target=GHO/WHS5_512&amp;profile=crosstable&amp;filter=COUNTRY:*;REGION:*&amp;x-sideaxis=COUNTRY;DATASOURCE&amp;x-topaxis=GHO;YEAR;RESIDENCEAREATYPE&amp;x-collapse=true</option>
                               <option name="frame_width">100</option>
                            </options>
                         </screenDataItem>
@@ -313,6 +318,16 @@ version: 1.6</description>
                               <option name="text_width">100</option>
                               <option name="text_height">5</option>
                               <option name="required">false</option>
+                              <option name="defaultvalue">-L</option>
+                           </options>
+                        </screenDataItem>
+                        <screenDataItem name="screen.workingDirectory"
+                                        readonly="false"
+                                        required="false"
+                                        type="string">
+                           <options>
+                              <option name="required">false</option>
+                              <option name="defaultvalue">/tmp</option>
                            </options>
                         </screenDataItem>
                      </screenData>
@@ -332,5 +347,5 @@ version: 1.6</description>
       <types1:GUID>7z4FFhPv8ZhchyzW1G5agL</types1:GUID>
       <types1:DisplayName>Test-SP-util-shell-curl-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.878Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:50.099Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

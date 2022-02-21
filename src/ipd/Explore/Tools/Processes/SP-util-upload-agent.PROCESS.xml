@@ -4,7 +4,7 @@
       <types1:EntryId>if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml</types1:EntryId>
       <types1:Name>SP-util-upload-agent</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Process to push file to Agent File System
+      <types1:Description>Process to push file to Agent File System 
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:G01</types1:Tags>
@@ -14,20 +14,22 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T17:41:03Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:02Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T17:41:19Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-util-upload-agent/SP-util-upload-agent.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="SP-util-upload-agent"
                   name="SP-util-upload-agent"
                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Process to push file to Agent File System
+            <description>Process to push file to Agent File System 
 version: 1.6</description>
             <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
@@ -72,6 +74,18 @@ version: 1.6</description>
                   </options>
                </field>
             </output>
+            <tempFields>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
                <targetLocation>G01</targetLocation>
@@ -79,8 +93,17 @@ version: 1.6</description>
             </deployment>
             <flow id="a">
                <start id="b">
-                  <link id="jog6kk25" targetId="jog6kk2q"/>
+                  <link id="kzsoymiu" targetId="kzsoymit"/>
                </start>
+               <assignment id="kzsoymit">
+                  <title>Inialize</title>
+                  <operation source="formula" to="input.in_fileWriteTask[1]/fileName">
+                     <expression language="XQuery">if (empty($input.in_fileWriteTask[1]/fileName )) 
+then sff:getAttachmentName($input.in_attachment )
+else $input.in_fileWriteTask[1]/fileName</expression>
+                  </operation>
+                  <link id="kzsoymiv" targetId="jog6kk2q"/>
+               </assignment>
                <eventContainer id="jog6kk2q">
                   <service id="jog6kk24">
                      <title>FileWriter</title>
@@ -92,9 +115,34 @@ version: 1.6</description>
                      </serviceInput>
                   </service>
                   <flow id="jog6kk2s">
+                     <assignment id="kzsoymjj">
+                        <title>Set Process Title - Success</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $fileName := concat('file:',$output.fileInfo[1]/fullName )
+let $fileSize := concat('size:',$output.fileInfo[1]/size )
+let $parts := ($temp.tmp_process_name, "UPLOADED",$fileName, $fileSize)
+let $process_title := substring(string-join($parts, " "),1,255)
+return
+ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                     </assignment>
                      <link id="jog6kk2t" targetId="jog6kk2q" type="containerLink"/>
                   </flow>
                   <flow id="jog6kk2v">
+                     <assignment id="kzsoymkg">
+                        <title>Set Process Title/Output - Error</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_name,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return
+ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <operation source="formula" to="output.fileInfo">
+                           <expression language="XQuery">$output.faultInfo </expression>
+                        </operation>
+                     </assignment>
                      <link id="jog6kk2w" targetId="jog6kk2q" type="containerLink"/>
                   </flow>
                   <link id="jog6kk2r" targetId="jog6kk2s" type="containerLink"/>
@@ -112,5 +160,5 @@ version: 1.6</description>
       <types1:GUID>2An540RxDEehMifSJJsx8k</types1:GUID>
       <types1:DisplayName>SP-util-upload-agent</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.491Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.907Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

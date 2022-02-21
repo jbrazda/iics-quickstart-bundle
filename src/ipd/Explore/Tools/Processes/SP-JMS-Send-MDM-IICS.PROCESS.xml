@@ -16,10 +16,7 @@ version: 1.6</types1:Description>
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2020-04-09T21:02:01Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/spi.SP-JMS-Send-MDM-IICS/SP-JMS-Send-MDM-IICS.pd.xml</types1:PublishedContributionId>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -80,5 +77,5 @@ version: 1.6</description>
       <types1:GUID>103LyMAbY9ulFj81aKFTwW</types1:GUID>
       <types1:DisplayName>SP-JMS-Send-MDM-IICS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:31.962Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.02Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

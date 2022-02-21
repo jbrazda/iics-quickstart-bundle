@@ -5,7 +5,7 @@
       <types1:Name>Admin_Shell</types1:Name>
       <types1:ParentFlowIds>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Utility Guide to Invoke Shell commands on the  Secure Agent
+      <types1:Description>Utility Guide to Invoke Shell commands on the  Secure Agent 
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
@@ -15,10 +15,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:00Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T21:07:49Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:55Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T21:07:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Admin_Shell/Admin_Shell.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +29,7 @@ version: 1.6</types1:Description>
                          doneOnEndStep="true"
                          name="Admin_Shell"
                          runAsUser="$current">
-            <description>Utility Guide to Invoke Shell commands on the  Secure Agent
+            <description>Utility Guide to Invoke Shell commands on the  Secure Agent 
 version: 1.6</description>
             <appliesTo/>
             <tags/>
@@ -76,8 +76,10 @@ version: 1.6</description>
                </startScreen>
                <screen id="jkokoon7">
                   <title>Shell Command Tool</title>
-                  <body contentType="text/html">&lt;p&gt;Command in:&amp;nbsp;&lt;input class="" title="tmp_workDir (temporary)" name="temp.tmp_workDir" type="text" value="tmp_workDir (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input title="tmp_command (temporary)" name="temp.tmp_command" type="text" value="tmp_command (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;
+                  <body contentType="text/html">&lt;p&gt;Run Command in: &lt;input class="" title="tmp_workDir (temporary)" name="temp.tmp_workDir" type="text" value="tmp_workDir (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Consolas, 'Fira Code', Menlo, Monaco, 'Courier New', monospace, Consolas, 'Courier New', monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_command (temporary)" name="temp.tmp_command" type="text" value="tmp_command (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Output&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: Consolas, 'Fira Code', Menlo, Monaco, 'Courier New', monospace, Consolas, 'Courier New', monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_ouput (temporary)" name="temp.tmp_ouput" type="text" value="tmp_ouput (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;
 &lt;table cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
@@ -89,15 +91,14 @@ version: 1.6</description>
 &lt;td&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input style="font-family: Lucida Console,Consolas,Currier; -moz-appearance: none; background-color: lightgrey; border: none;" name="output.errorString" readonly="readonly" type="text" value="errorString (output)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_ouput (temporary)" name="temp.tmp_ouput" type="text" value="tmp_ouput (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</body>
+&lt;/table&gt;</body>
                   <actionPrompt/>
                   <actions>
-                     <action alt="null" id="jkokoon7_jkokoooc" targetScreen="jkokoooc">
-                        <text>Run</text>
-                     </action>
                      <action alt="null" id="jkokoon7_jkokoop9" targetScreen="jkokoop9">
                         <text>Exit</text>
+                     </action>
+                     <action alt="null" id="jkokoon7_kzsvff0k" targetScreen="kzsvff0k">
+                        <text>Run</text>
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
@@ -148,6 +149,26 @@ version: 1.6</description>
                      </screenDataItem>
                   </screenData>
                </screen>
+               <service id="kzsvff0k">
+                  <title>SP-Shell-CMD</title>
+                  <serviceName>SP-Shell-CMD</serviceName>
+                  <serviceGUID>6LCl0Gjkdewi7UAhtDFfuY</serviceGUID>
+                  <serviceInput>
+                     <parameter id="kzsopq3z"
+                                name="in_shell_cmd"
+                                source="field"
+                                updatable="true">temp.tmp_command</parameter>
+                     <parameter id="kzsopq40"
+                                name="in_work_dir"
+                                source="field"
+                                updatable="true">temp.tmp_workDir</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="kzsvff0k_jkokooos" targetScreen="jkokooos">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
                <endScreen dontShowScreen="true" id="jkokoop9">
                   <title/>
                   <body contentType="text/html"/>
@@ -156,7 +177,7 @@ version: 1.6</description>
                      <text>Done</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="kz4mjkyn">
+               <empty gatewayType="exclusive" id="kzsw42ln">
                   <actions/>
                </empty>
                <jumpTo id="jkokoopz" targetTitle="Shell Command Tool">
@@ -166,44 +187,6 @@ version: 1.6</description>
                      </action>
                   </actions>
                </jumpTo>
-               <callProcess id="jkokoooc">
-                  <title>SP-Shell-CMD</title>
-                  <subflowGUID>6LCl0Gjkdewi7UAhtDFfuY</subflowGUID>
-                  <subflowPath>SP-Shell-CMD</subflowPath>
-                  <runAsUser>$current</runAsUser>
-                  <serviceInput>
-                     <parameter id="jkokooqm"
-                                name="in_shell_cmd"
-                                source="field"
-                                updatable="true">temp.tmp_command</parameter>
-                     <parameter id="jkokooqn"
-                                name="in_work_dir"
-                                source="field"
-                                updatable="true">temp.tmp_workDir</parameter>
-                  </serviceInput>
-                  <subflowOutput>
-                     <field name="outputString" type="string">
-                        <options>
-                           <option name="required">false</option>
-                        </options>
-                     </field>
-                     <field name="responseCode" type="string">
-                        <options>
-                           <option name="required">false</option>
-                        </options>
-                     </field>
-                     <field name="errorString" type="string">
-                        <options>
-                           <option name="required">false</option>
-                        </options>
-                     </field>
-                  </subflowOutput>
-                  <actions>
-                     <action alt="null" id="jkokoooc_jkokooos" targetScreen="jkokooos">
-                        <text>Continue</text>
-                     </action>
-                  </actions>
-               </callProcess>
                <assignment id="jkokooos">
                   <title>Assignment to tmp_ouput</title>
                   <operation source="field" to="temp.tmp_ouput">output.outputString</operation>
@@ -219,5 +202,5 @@ version: 1.6</description>
       <types1:GUID>aqpUO15ISL4jLLs0xDJxmL</types1:GUID>
       <types1:DisplayName>Admin Shell</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.408Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:50.067Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
