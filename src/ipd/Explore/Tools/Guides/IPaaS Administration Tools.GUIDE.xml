@@ -4,7 +4,7 @@
       <types1:EntryId>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:EntryId>
       <types1:Name>IPaaS_Administration_Tools</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>IIICS Custom Administration Tools Launcher
+      <types1:Description>IIICS Custom Administration Tools Launcher 
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-18T20:40:31Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:52Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T20:44:29Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.IPaaS_Administration_Tools/IPaaS_Administration_Tools.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,7 +28,7 @@ version: 1.6</types1:Description>
                          doneOnEndStep="false"
                          name="IPaaS_Administration_Tools"
                          runAsUser="$current">
-            <description>IIICS Custom Administration Tools Launcher
+            <description>IIICS Custom Administration Tools Launcher 
 version: 1.6</description>
             <appliesTo/>
             <tags/>
@@ -57,6 +57,9 @@ version: 1.6</description>
 &lt;p style="text-align: center;"&gt;&lt;img title="Sales Call Follow-Up 1" src="https://www.informatica.com/content/dam/informatica-com/global/informatica-logo.png" alt=""&gt;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
+                     <action alt="null" id="jthdkbpg_kzsv9r4w" targetScreen="kzsv9r4w">
+                        <text>Exit</text>
+                     </action>
                      <action alt="null" id="jthdkbpg_jthdkbqd" targetScreen="jthdkbqd">
                         <text>View Integration Job Logs</text>
                      </action>
@@ -72,12 +75,9 @@ version: 1.6</description>
                      <action alt="null" id="jthdkbpg_jthdkbvb" targetScreen="jthdkbvb">
                         <text>Encryption Utiliy</text>
                      </action>
-                     <action alt="null" id="jthdkbpg_jthdkbps" targetScreen="jthdkbps">
-                        <text>Exit</text>
-                     </action>
                   </actions>
                </screen>
-               <endScreen id="jd4cwa59">
+               <endScreen id="kzsv9r4w">
                   <title>End</title>
                   <body contentType="text/html"/>
                   <redirectTo type="current_object"/>
@@ -87,11 +87,25 @@ version: 1.6</description>
                </endScreen>
                <empty gatewayType="exclusive" id="jthdkbps">
                   <actions>
-                     <action alt="null" id="jthdkbps_jd4cwa59" targetScreen="jd4cwa59">
+                     <action alt="null" id="jthdkbps_kzsv9r4m" targetScreen="kzsv9r4m">
                         <text>Continue</text>
                      </action>
                   </actions>
                </empty>
+               <empty gatewayType="exclusive" id="kzsv9qul">
+                  <actions>
+                     <action alt="" id="kzsv9qul_jthdkbps" targetScreen="jthdkbps">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <jumpTo id="kzsv9r4m" targetTitle="IICS Administration Tools">
+                  <actions>
+                     <action alt="null" id="kzsv9r4m_jthdkbpg" targetScreen="jthdkbpg">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
                <subflow id="jthdkbqd">
                   <title>iPaaS Log Search SFDC</title>
                   <subflowGUID>3mpz03dfst4hjYMSmmgXes</subflowGUID>
@@ -109,8 +123,11 @@ version: 1.6</description>
                   <subflowPath>iPaaS_Admin_Upload_File_to_Agent</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <actions>
-                     <action alt="null" id="jthdkbrd_jthdkbps" targetScreen="jthdkbps">
-                        <text>Continue</text>
+                     <action alt="null" id="jthdkbrd_kzsv9qul" targetScreen="kzsv9qul">
+                        <text>Uploaded</text>
+                     </action>
+                     <action alt="null" id="jthdkbrd_kzsv9qul_1" targetScreen="kzsv9qul">
+                        <text>Cancelled</text>
                      </action>
                   </actions>
                </subflow>
@@ -168,5 +185,5 @@ version: 1.6</description>
       <types1:GUID>8WPWXuoACwji7tDXMjdfg2</types1:GUID>
       <types1:DisplayName>IPaaS Administration Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:34.094Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:51.088Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

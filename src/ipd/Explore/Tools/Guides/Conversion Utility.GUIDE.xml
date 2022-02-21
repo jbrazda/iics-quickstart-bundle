@@ -8,17 +8,17 @@
       <types1:Description>Guide to convert XML sample data to JSON and vice versa.
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>version: 2.0 </types1:Tags>
+      <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:53Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-11T19:35:10Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:56Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-11T19:35:28Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Conversion_Utility/Conversion_Utility.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,7 +32,7 @@ version: 1.6</types1:Description>
             <description>Guide to convert XML sample data to JSON and vice versa.
 version: 1.6</description>
             <appliesTo/>
-            <tags>version: 2.0 </tags>
+            <tags/>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description=""
@@ -64,6 +64,15 @@ version: 1.6</description>
                   </options>
                </field>
             </output>
+            <tempFields>
+               <field description="" name="tmp_unwrap_json" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
             <runOn target="desktop"/>
             <notes/>
             <deployment/>
@@ -92,20 +101,23 @@ version: 1.6</description>
 &lt;p&gt;&lt;strong&gt;Input&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" name="input.in_payload" type="text" value="in_payload (input)"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Conversion&lt;/strong&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="in_conversion_type (input)" name="input.in_conversion_type" type="text" value="in_conversion_type (input)*"&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="in_conversion_type (input)" name="input.in_conversion_type" type="text" value="in_conversion_type (input)*"&gt;&lt;/span&gt; Unwrap Json &lt;input class="" title="tmp_unwrap_json (temporary)" name="temp.tmp_unwrap_json" type="text" value="tmp_unwrap_json (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Output&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" name="output.out_payload" type="text" value="out_payload (output)"&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
+                     <action alt="null" id="jkmx1fge_jnlwitlx" targetScreen="jnlwitlx">
+                        <text>Exit</text>
+                     </action>
                      <action alt="null" id="jkmx1fge_jnlwitn4" targetScreen="jnlwitn4">
                         <text>Convert XML/JSON</text>
                      </action>
                      <action alt="null" id="jkmx1fge_jsm6b7jt" targetScreen="jsm6b7jt">
                         <text>Simplify XML</text>
                      </action>
-                     <action alt="null" id="jkmx1fge_jnlwitlx" targetScreen="jnlwitlx">
-                        <text>Exit</text>
+                     <action alt="" id="jkmx1fge_kziovw3o" targetScreen="kziovw3o">
+                        <text>Help</text>
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
@@ -140,7 +152,168 @@ version: 1.6</description>
                            <option hide="true" name="valuelist.source">searchservice</option>
                         </options>
                      </screenDataItem>
+                     <screenDataItem name="temp.tmp_unwrap_json"
+                                     readonly="false"
+                                     required="false"
+                                     type="boolean">
+                        <options>
+                           <option name="defaultvalue">false</option>
+                           <option name="boolean_show_as">checkbox</option>
+                           <option name="required">false</option>
+                           <option name="hover_text">Unwraps JSON output - Remove XML Root (applicable only for XMLto JSON conversion)</option>
+                        </options>
+                     </screenDataItem>
                   </screenData>
+               </screen>
+               <screen id="kziovw3o">
+                  <title>Conversion Utility Help</title>
+                  <body contentType="text/html">&lt;h2&gt;IICS Conversion Functions&lt;/h2&gt;
+&lt;p&gt;This guide is a tool which demobnstrates use allows to evaluate outputs of set&amp;nbsp; of key transformation functions to parse an convert JSON or XML xml data.&lt;/p&gt;
+&lt;table class="Default" summary="" cellspacing="0" cellpadding="5" border="1"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;toJSON&lt;/td&gt;
+&lt;td&gt;util:toJSON(elements)&lt;/td&gt;
+&lt;td&gt;Converts the provided list of XML elements to a JSON string.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;toXML&lt;/td&gt;
+&lt;td&gt;util:toXML(element)&lt;/td&gt;
+&lt;td&gt;Converts the provided XML element to an XML string.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parseJSON&lt;/td&gt;
+&lt;td&gt;util:parseJSON(jsonStr)&lt;/td&gt;
+&lt;td&gt;Parses the provided JSON string and converts it to XML elements.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parseXML&lt;/td&gt;
+&lt;td&gt;util:parseXML(xmlStr)&lt;/td&gt;
+&lt;td&gt;Parses the provided XML string and converts it to an XML element.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;simplifyXML&lt;/td&gt;
+&lt;td&gt;util:simplifyXml(element)&lt;/td&gt;
+&lt;td&gt;Function used to remove all namespaces and convert attributes to elements&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;IICS CAI manipulates data as XML and you typically will not interact directly with JSON payloads, these will need to be converted to xml process objects. Such process Objects can be used to extract data or manipulate in process assign expressions.&lt;/p&gt;
+&lt;p&gt;Conversion between XML and and JSON is a frequent use case withing IICS, it brings range of challenges due to sematic differences between JSON and XML.&lt;/p&gt;
+&lt;p&gt;For example XML does not have a concept of arrays which would be converted to repeated elements, it can be also tricky to process certain json types such as simple type arrays or arrays with a single item.&lt;/p&gt;
+&lt;p&gt;Following example demonstrates such scenario, left side XML payload is example request Process object to Create user in IICS via IICS API, note that actual desired wire JSOn payload contains two String arrays (roles, groups)&lt;/p&gt;
+&lt;p&gt;Producing such Json is not trivial as the Process Object model can't describe simple types with miltiple cardinality such as list of strings or list of numbers. Such Conversion based just on Process Object metadata will work correctly only in case when Source XML object contains multiple elements such as in belo case of list of roles. Now take a look at the groups, default json conversion from plain process object would not produce string array if there is only one group element. To achieve desired json format you can use belo not well documented feature of util:toJson function, you can use xml attributes within process object belonging to &lt;span style="color: #ce9178;"&gt;urn:informatica:ae:xquery:json2xml:meta-data&lt;/span&gt; namespace. This namespace instructions can provide necessary metadata to the fucntion to treat corresponding elements correctly as you see in below example. You can use following directives to drive the conversion of the payload, downside of such method is that you have to explicitly mark all the elements with corresponding types and can't use implicit JSON binding convesion in the Service Connectors. Tis is only practical method to handle such use cases.&lt;/p&gt;
+&lt;p&gt;Supported&amp;nbsp; util:toJSON(elements) Directives&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 15.8287%;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Directive&lt;/td&gt;
+&lt;td&gt;Use&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;m:isArray="true"&lt;/td&gt;
+&lt;td&gt;Produce json array&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;m:type="xs:boolean"&lt;/td&gt;
+&lt;td&gt;Treat element value as a boolean&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;m:type="xs:double"&lt;/td&gt;
+&lt;td&gt;Treat element as a number&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;table style="border-collapse: collapse; width: 100%;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;XML&lt;/td&gt;
+&lt;td&gt;JSON&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="vertical-align: top;"&gt;
+&lt;div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Fira Code', Menlo, Monaco, 'Courier New', monospace, Consolas, 'Courier New', monospace; font-weight: normal; font-size: 16px; line-height: 22px;"&gt;
+&lt;div&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;createUserRequest&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;xmlns:m&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"urn:informatica:ae:xquery:json2xml:meta-data"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;name&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;jdoe@.com.edu&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;name&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;firstName&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;John&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;firstName&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;lastName&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;Doe&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;lastName&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;email&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;jdoe@acme.com&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;email&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;phone&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;1234567890&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;phone&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;title&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;User Account&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;title&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;description&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;IICS Demo Account&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;description&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;9gedBDoYQoQibNMohf5KCh&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;5RZKlypdE5QiAIIAngXSS8&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;8hQVJFGyyQkep1g2AeEewB&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;jDzrayqa8ycckXIXPB89Uh&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;4BPvlNjZwXJj5CN6Pf6jUu&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;kIrabY9KNeElcZfw6iUH6A&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;aKOABsXIRP6eI0aEE32bg8&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;9dKyXtuAcJIdKsKZGohq49&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;lObMwXOTigHi5XBJTU1Z8Q&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;9aTuLGRQgHyjpftpLFj7Qg&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;5cAMKPWEVuBePscQdHRaGx&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;i57A1ij0i6PcA6SbHT4EUO&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;l61Xn8zFz4wfYIhb4N6x8l&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;jYxryaaIs0jjAYLQMAYbIU&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;iObMwXOTigHi5XBJTU1Z8N&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;15sm0mkzOLjcU8k6tI478h&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;roles&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;groups&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;m:isArray&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;=&lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"true"&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;3jjrAYgva8mlCV1DZCoLQ1&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;groups&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #808080;"&gt;&amp;lt;/&lt;/span&gt;&lt;span style="color: #569cd6;"&gt;createUserRequest&lt;/span&gt;&lt;span style="color: #808080;"&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;td style="vertical-align: top;"&gt;
+&lt;div style="color: #d4d4d4; background-color: #1e1e1e; font-family: Consolas, 'Fira Code', Menlo, Monaco, 'Courier New', monospace, Consolas, 'Courier New', monospace; font-weight: normal; font-size: 16px; line-height: 22px;"&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;{&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"name"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"jdoe@.com.edu"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"description"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"IICS Demo Account"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"firstName"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"John"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"lastName"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"Doe"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"phone"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"1234567890"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"title"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"User Account"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"email"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"jdoe@acme.com"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"roles"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: [&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"9gedBDoYQoQibNMohf5KCh"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"5RZKlypdE5QiAIIAngXSS8"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"8hQVJFGyyQkep1g2AeEewB"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"jDzrayqa8ycckXIXPB89Uh"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"4BPvlNjZwXJj5CN6Pf6jUu"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"kIrabY9KNeElcZfw6iUH6A"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"aKOABsXIRP6eI0aEE32bg8"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"9dKyXtuAcJIdKsKZGohq49"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"lObMwXOTigHi5XBJTU1Z8Q"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"9aTuLGRQgHyjpftpLFj7Qg"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"5cAMKPWEVuBePscQdHRaGx"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"i57A1ij0i6PcA6SbHT4EUO"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"l61Xn8zFz4wfYIhb4N6x8l"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"jYxryaaIs0jjAYLQMAYbIU"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"iObMwXOTigHi5XBJTU1Z8N"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;,&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"15sm0mkzOLjcU8k6tI478h"&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; ],&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #9cdcfe;"&gt;"groups"&lt;/span&gt;&lt;span style="color: #d4d4d4;"&gt;: [&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &lt;/span&gt;&lt;span style="color: #ce9178;"&gt;"3jjrAYgva8mlCV1DZCoLQ1"&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;&amp;nbsp; &amp;nbsp; ]&lt;/span&gt;&lt;/div&gt;
+&lt;div&gt;&lt;span style="color: #d4d4d4;"&gt;}&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;See a Complete List of &lt;a href="https://network.informatica.com/onlinehelp/IICS/prod/CAI/en/index.htm#page/cc-design/Using_Functions.html"&gt;XQuery Functions&lt;/a&gt; available in IICS.&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="kziovw3o_kziovwbf" targetScreen="kziovwbf">
+                        <text>Cancel</text>
+                     </action>
+                     <action alt="" id="kziovw3o_kziovwbw" targetScreen="kziovwbw">
+                        <text>Insert Sample XML</text>
+                     </action>
+                     <action alt="" id="kziovw3o_kziovwtn" targetScreen="kziovwtn">
+                        <text>Insert Sample JSON</text>
+                     </action>
+                  </actions>
                </screen>
                <endScreen dontShowScreen="true" id="jnlwitlx">
                   <title>End</title>
@@ -171,10 +344,24 @@ version: 1.6</description>
                      </action>
                   </actions>
                </empty>
+               <empty gatewayType="exclusive" id="kziovwmb">
+                  <actions>
+                     <action alt="null" id="kziovwmb_jnlwitp7" targetScreen="jnlwitp7">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
                <empty gatewayType="exclusive" id="jsm6b7kd">
                   <actions>
                      <action alt="" id="jsm6b7kd_jnlwitgl" targetScreen="jnlwitgl">
                         <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="kziovwbf">
+                  <actions>
+                     <action alt="" id="kziovwbf_jnlwitgl" targetScreen="jnlwitgl">
+                        <text>Cancel</text>
                      </action>
                   </actions>
                </empty>
@@ -207,9 +394,21 @@ version: 1.6</description>
                         <text>JSON to XML</text>
                      </action>
                      <action alt="equals XML to JSON"
-                             id="jnlwitp1_jnlwitp5"
-                             targetScreen="jnlwitp5">
+                             id="jnlwitp1_kziovwlg"
+                             targetScreen="kziovwlg">
                         <text>XML to JSON</text>
+                     </action>
+                  </actions>
+               </dataDecision>
+               <dataDecision id="kziovwlg">
+                  <title>tmp_unwrap_json?</title>
+                  <dataName>temp.tmp_unwrap_json</dataName>
+                  <actions>
+                     <action alt="true" id="kziovwlg_kziovwpt" targetScreen="kziovwpt">
+                        <text>Yes</text>
+                     </action>
+                     <action alt="false" id="kziovwlg_kziovwnj" targetScreen="kziovwnj">
+                        <text>No</text>
                      </action>
                   </actions>
                </dataDecision>
@@ -247,13 +446,24 @@ saxon:serialize($xml, $saxon_params)
                      </action>
                   </actions>
                </assignment>
-               <assignment id="jnlwitp5">
+               <assignment id="kziovwpt">
+                  <title>Assignment to out_payload unwrapped</title>
+                  <operation source="formula" to="output.out_payload">
+                     <expression language="XQuery">util:toJSON(util:parseXML($input.in_payload)/*)</expression>
+                  </operation>
+                  <actions>
+                     <action alt="" id="kziovwpt_kziovwmb" targetScreen="kziovwmb">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="kziovwnj">
                   <title>Assignment to out_payload</title>
                   <operation source="formula" to="output.out_payload">
                      <expression language="XQuery">util:toJSON(util:parseXML($input.in_payload ))</expression>
                   </operation>
                   <actions>
-                     <action alt="null" id="jnlwitp5_jnlwitp7" targetScreen="jnlwitp7">
+                     <action alt="" id="kziovwnj_kziovwmb" targetScreen="kziovwmb">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -276,11 +486,103 @@ saxon:serialize(util:simplifyXml(util:parseXML($input.in_payload )), $saxon_para
                      </action>
                   </actions>
                </assignment>
+               <assignment id="kziovwbw">
+                  <title>Assignment to in_payload, in_conversion_type</title>
+                  <operation source="formula" to="input.in_payload">
+                     <expression language="XQuery">let $xml := &lt;createUserRequest xmlns:m="urn:informatica:ae:xquery:json2xml:meta-data"&gt;
+  &lt;name&gt;jdoe@.com.edu&lt;/name&gt;
+  &lt;firstName&gt;John&lt;/firstName&gt;
+  &lt;lastName&gt;Doe&lt;/lastName&gt;
+  &lt;email&gt;jdoe@acme.com&lt;/email&gt;
+  &lt;phone&gt;1234567890&lt;/phone&gt;
+  &lt;title&gt;User Account&lt;/title&gt;
+  &lt;description&gt;IICS Demo Account&lt;/description&gt;
+  &lt;roles m:isArray="true"&gt;9gedBDoYQoQibNMohf5KCh&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;5RZKlypdE5QiAIIAngXSS8&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;8hQVJFGyyQkep1g2AeEewB&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;jDzrayqa8ycckXIXPB89Uh&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;4BPvlNjZwXJj5CN6Pf6jUu&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;kIrabY9KNeElcZfw6iUH6A&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;aKOABsXIRP6eI0aEE32bg8&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;9dKyXtuAcJIdKsKZGohq49&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;lObMwXOTigHi5XBJTU1Z8Q&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;9aTuLGRQgHyjpftpLFj7Qg&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;5cAMKPWEVuBePscQdHRaGx&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;i57A1ij0i6PcA6SbHT4EUO&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;l61Xn8zFz4wfYIhb4N6x8l&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;jYxryaaIs0jjAYLQMAYbIU&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;iObMwXOTigHi5XBJTU1Z8N&lt;/roles&gt;
+  &lt;roles m:isArray="true"&gt;15sm0mkzOLjcU8k6tI478h&lt;/roles&gt;
+  &lt;groups m:isArray="true"&gt;3jjrAYgva8mlCV1DZCoLQ1&lt;/groups&gt;
+&lt;/createUserRequest&gt;
+
+let $saxon_params :=&lt;xsl:output xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:saxon="http://saxon.sf.net/"
+                                method="xml"
+                                omit-xml-declaration="yes"
+                                indent="yes"
+                                saxon:indent-spaces="4"/&gt;
+
+return 
+saxon:serialize($xml, $saxon_params)
+</expression>
+                  </operation>
+                  <operation source="constant" to="input.in_conversion_type">XML to JSON</operation>
+                  <actions>
+                     <action alt="" id="kziovwbw_kziovwbf" targetScreen="kziovwbf">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="kziovwtn">
+                  <title>Assignment to in_payload, in_conversion_type</title>
+                  <operation source="formula" to="input.in_payload">
+                     <expression language="XQuery">let $json := &lt;json&gt;{{
+    "name": "jdoe@.com.edu",
+    "description": "IICS Demo Account",
+    "firstName": "John",
+    "lastName": "Doe",
+    "phone": "1234567890",
+    "title": "User Account",
+    "email": "jdoe@acme.com",
+    "roles": [
+        "9gedBDoYQoQibNMohf5KCh",
+        "5RZKlypdE5QiAIIAngXSS8",
+        "8hQVJFGyyQkep1g2AeEewB",
+        "jDzrayqa8ycckXIXPB89Uh",
+        "4BPvlNjZwXJj5CN6Pf6jUu",
+        "kIrabY9KNeElcZfw6iUH6A",
+        "aKOABsXIRP6eI0aEE32bg8",
+        "9dKyXtuAcJIdKsKZGohq49",
+        "lObMwXOTigHi5XBJTU1Z8Q",
+        "9aTuLGRQgHyjpftpLFj7Qg",
+        "5cAMKPWEVuBePscQdHRaGx",
+        "i57A1ij0i6PcA6SbHT4EUO",
+        "l61Xn8zFz4wfYIhb4N6x8l",
+        "jYxryaaIs0jjAYLQMAYbIU",
+        "iObMwXOTigHi5XBJTU1Z8N",
+        "15sm0mkzOLjcU8k6tI478h"
+    ],
+    "groups": [
+        "3jjrAYgva8mlCV1DZCoLQ1"
+    ]
+}}&lt;/json&gt;
+
+return
+$json/text()</expression>
+                  </operation>
+                  <operation source="constant" to="input.in_conversion_type">JSON to XML</operation>
+                  <actions>
+                     <action alt="" id="kziovwtn_kziovwbf" targetScreen="kziovwbf">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
             </flow>
          </avosScreenflow>
       </types1:Entry>
       <types1:GUID>1iZssfMiHihflxy0AoH4Il</types1:GUID>
       <types1:DisplayName>Conversion Utility</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:31.555Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.043Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

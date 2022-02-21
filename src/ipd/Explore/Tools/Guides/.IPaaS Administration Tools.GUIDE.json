@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "IIICS Custom Administration Tools Launcher",
+            "description": "IIICS Custom Administration Tools Launcher \nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -35,7 +35,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Upload File to Secure Agent",
+            "description": "Utility Guide to Upload File to Secure Agent\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -57,7 +57,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent",
+            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent \nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -79,7 +79,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide to convert XML sample data to JSON and vice versa.\nversion: 2.0",
+            "description": "Guide to convert XML sample data to JSON and vice versa.\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -122,8 +122,8 @@
       "path": "/Explore/Tools/Guides",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
-            "description": "Utility To encrypt Strings for configuration to be used in Automated steps",
+            "contentType": "application/json; charset=utf-8",
+            "description": "Utility To encrypt Strings for configuration to be used in Automated steps\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

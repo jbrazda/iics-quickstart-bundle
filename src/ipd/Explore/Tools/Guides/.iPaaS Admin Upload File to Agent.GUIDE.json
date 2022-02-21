@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Upload File to Secure Agent",
+            "description": "Utility Guide to Upload File to Secure Agent\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,7 +16,8 @@
             "minor": 0
          },
          "objectRefs": [
-            "g6EWDQPAJAWgFg1H9sXx4a"
+            "g6EWDQPAJAWgFg1H9sXx4a",
+            "abnxZAvEI8cc3aejQFxpoV"
          ],
          "repoInfo": {
             "repoHandle": "RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml"
@@ -42,6 +43,28 @@
          "objectRefs": [],
          "repoInfo": {
             "repoHandle": "HQuoJ49ARJi4tci-gt-6187041-2020-03-24T18:08:13.544Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "abnxZAvEI8cc3aejQFxpoV",
+      "objectName": "SP_GetCatalogResource_G01",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "Z5i4rswVYx8R8Wr-gt-28131003-2022-02-18T17:19:44.836Z::pd.xml"
          }
       }
    }

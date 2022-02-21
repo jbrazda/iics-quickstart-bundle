@@ -3,7 +3,6 @@
    <types1:Item>
       <types1:EntryId>28ueJEaaaaaaaaa-gt-5306420-2020-03-24T18:08:15.865Z::pd.xml</types1:EntryId>
       <types1:Name>SP-Shell-CMD</types1:Name>
-      <types1:ParentFlowIds>sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process Invokes arbitrary Shell command in provided work directory
 version: 1.6</types1:Description>
@@ -108,5 +107,5 @@ version: 1.6</description>
       <types1:GUID>6LCl0Gjkdewi7UAhtDFfuY</types1:GUID>
       <types1:DisplayName>SP-Shell-CMD</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:31.93Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:48.993Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

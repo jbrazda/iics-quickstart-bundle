@@ -17,10 +17,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-11T16:59:03Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:46Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-11T16:59:07Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_DB/iPaaS_Job_View_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -254,7 +254,6 @@ version: 1.6</description>
                            <option name="required">false</option>
                            <option name="isCopy">true</option>
                            <option name="guid">aeqQp5Jx2jYdMy5IHkySUZ</option>
-                           <option name="text_height">10</option>
                            <option hide="true" name="valuelist.source">objectListField</option>
                            <option hide="true" name="valuelist.objectlistfield">temp.tmp_job_events</option>
                         </options>
@@ -476,16 +475,23 @@ version: 1.6</description>
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="k2e8c1ze">
+               <empty gatewayType="exclusive" id="kzini812">
+                  <actions>
+                     <action alt="" id="kzini812_jbff8c6k" targetScreen="jbff8c6k">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="kzini7zy">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="k2e8c1yn">
+               <empty gatewayType="exclusive" id="kzini7z7">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="k2e8c1yv">
+               <empty gatewayType="exclusive" id="kzini7zf">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="k2e8c1za">
+               <empty gatewayType="exclusive" id="kzini7zu">
                   <actions/>
                </empty>
                <jumpTo id="jb452xio" targetTitle="Prepare Query">
@@ -579,13 +585,39 @@ version: 1.6</description>
                      </action>
                   </actions>
                </subflow>
+               <dataDecision id="kzini80l">
+                  <title>in_job_id</title>
+                  <dataName>input.in_job_id</dataName>
+                  <actions>
+                     <action alt="equals " id="kzini80l_kzini85e" targetScreen="kzini85e">
+                        <text>Equals</text>
+                     </action>
+                     <action alt="else " id="kzini80l_kzini812" targetScreen="kzini812">
+                        <text>Otherwise</text>
+                     </action>
+                  </actions>
+               </dataDecision>
                <assignment id="jbff8c8j">
                   <title>Initialize</title>
                   <operation source="formula" to="input.in_limit">
                      <expression language="XQuery">if (empty($input.in_limit)) then 100 else $input.in_limit</expression>
                   </operation>
                   <actions>
-                     <action alt="null" id="jbff8c8j_jbff8c6k" targetScreen="jbff8c6k">
+                     <action alt="" id="jbff8c8j_kzini80l" targetScreen="kzini80l">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="kzini85e">
+                  <title>Assignment to tmp_ic_job_log, in_job_id</title>
+                  <operation source="query" to="temp.tmp_ic_job_log">
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_LOG_VIEW">
+                        <where>LIMIT 1</where>
+                     </query>
+                  </operation>
+                  <operation source="field" to="input.in_job_id">temp.tmp_ic_job_log[1]/JOB_ID</operation>
+                  <actions>
+                     <action alt="" id="kzini85e_kzini812" targetScreen="kzini812">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -593,7 +625,7 @@ version: 1.6</description>
                <assignment id="jbff8c6k">
                   <title>Prepare Query</title>
                   <operation source="query" to="temp.tmp_ic_job_log">
-                     <query from="IPaaS-Logging:IC_JOB_LOG_VIEW">
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_LOG_VIEW">
                         <where>JOB_ID = '{$input.in_job_id}'</where>
                      </query>
                   </operation>
@@ -646,7 +678,7 @@ else
                <assignment id="jb452xif">
                   <title>Set Detail Query</title>
                   <operation source="list" to="temp.tmp_job_events">
-                     <query from="IPaaS-Logging:IC_JOB_EVENTS_VIEW">
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_EVENTS_VIEW">
                         <where>{$temp.tmp_event_query}</where>
                      </query>
                   </operation>
@@ -662,5 +694,5 @@ else
       <types1:GUID>dT4a8mv0dmakB8rX5zj8sL</types1:GUID>
       <types1:DisplayName>iPaaS Job View DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.827Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.872Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

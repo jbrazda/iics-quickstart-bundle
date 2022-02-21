@@ -16,18 +16,20 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:53Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T18:21:52Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:37Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T18:22:25Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-util-shell-curl-NA/SP-util-shell-curl-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
                   xmlns:list="urn:activevos:spi:list:functions"
                   displayName="SP-util-shell-curl-NA"
                   name="SP-util-shell-curl-NA"
                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
             <description>Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. 
 process Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent
@@ -109,10 +111,8 @@ version: 1.6</description>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="" name="outputString" type="textarea">
+               <field description="" name="outputString" type="string">
                   <options>
-                     <option name="text_width">100</option>
-                     <option name="text_height">5</option>
                      <option name="required">false</option>
                   </options>
                </field>
@@ -307,7 +307,7 @@ switch (true())
                               <title>Set outRestResponse</title>
                               <operation source="formula" to="output.outRestResponse">
                                  <expression language="XQuery">(:parse all http headers and responses from curl output header file - requires dumpHeaders paramater to be true:)
-let $headers := tokenize($output.outputString, "&amp;#10;")
+let $headers := tokenize($output.responseheaders , "&amp;#10;")
 (:get all responses there will be morre than 1 if http trnasfer is chunked 
 Examples
     HTTP/2 200 
@@ -380,5 +380,5 @@ return
       <types1:GUID>97so2J3JKbaeAdqkOCzhYJ</types1:GUID>
       <types1:DisplayName>SP-util-shell-curl-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:31.321Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:48.766Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "gBMnBPTJHE4knZUl41OVC7",
-      "objectName": "SP-IPaaS-Encrypt-NA",
+      "objectGuid": "abnxZAvEI8cc3aejQFxpoV",
+      "objectName": "SP_GetCatalogResource_G01",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Process calls Automated step on Agent to encrypt Data\nversion: 1.6",
+            "description": "Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "fTlyTjFIMeINciZ-gt-5281336-2020-03-24T18:08:15.085Z::pd.xml"
+            "repoHandle": "Z5i4rswVYx8R8Wr-gt-28131003-2022-02-18T17:19:44.836Z::pd.xml"
          }
       }
    }
