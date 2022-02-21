@@ -15,16 +15,17 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:19Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T17:55:35Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:47Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T17:55:42Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Admin_Upload_File_to_Agent/iPaaS_Admin_Upload_File_to_Agent.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                          xmlns:list="urn:activevos:spi:list:functions"
                          allowRestart="true"
+                         disableScreenRollback="true"
                          displayName="iPaaS Admin Upload File to Agent"
                          doneOnEndStep="false"
                          name="iPaaS_Admin_Upload_File_to_Agent"
@@ -35,14 +36,14 @@ version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <tempFields>
-               <field description="null" name="tmp_attachment" type="attachment">
+               <field description="" name="tmp_attachment" type="attachment">
                   <options>
                      <option hide="true" name="count">1</option>
                      <option name="maxsize">5242880</option>
                      <option name="required">false</option>
                   </options>
                </field>
-               <field description="null" name="tmp_file_writer_task" type="reference">
+               <field description="" name="tmp_file_writer_task" type="reference">
                   <options>
                      <option name="referenceTo">AgentFileWriter:FileWriteTask</option>
                      <option name="required">false</option>
@@ -50,18 +51,46 @@ version: 1.6</description>
                      <option name="guid">g6EWDQPAJAWgFg1H9sXx4a</option>
                   </options>
                </field>
-               <field description="null" name="tmp_relative_path" type="string">
+               <field description="" name="tmp_relative_path" type="string">
                   <options>
                      <option name="required">false</option>
-                     <option name="initialvalue">/home/iclab</option>
                   </options>
                </field>
-               <field description="null" name="tmp_file_name" type="string">
+               <field description="" name="tmp_file_name" type="string">
                   <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_connector_resource_uri" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">project:/rt.connection/AgentFileWriter/AgentFileWriter.conn.xml</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_connector_meta" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_file_writer_base_path" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_connector_xml" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
                      <option name="required">false</option>
                   </options>
                </field>
             </tempFields>
+            <possibleOutcomes>
+               <outcome id="outcome_kzsotisk">Uploaded</outcome>
+               <outcome id="outcome_kzsotiu8">Cancelled</outcome>
+            </possibleOutcomes>
             <runOn target="desktop"/>
             <notes/>
             <deployment/>
@@ -73,7 +102,7 @@ version: 1.6</description>
                   <title>Start</title>
                   <body contentType="text/html"/>
                   <actions>
-                     <action alt="null" id="jd300kk3_jog5sgv1" targetScreen="jog5sgv1">
+                     <action alt="null" id="jd300kk3_kzsolsjq" targetScreen="kzsolsjq">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -82,19 +111,18 @@ version: 1.6</description>
                <screen id="jog5sgv1">
                   <title>Upload File</title>
                   <body contentType="text/html">&lt;p&gt;This Guide allows to upload File to Secure Agent (Testing or Configuration Files)&lt;/p&gt;
-&lt;p&gt;This guide is using the&amp;nbsp;&lt;strong&gt;AgentFileWriter&amp;nbsp;&lt;/strong&gt;connection.&lt;/p&gt;
-&lt;p&gt;It is configured to base path:&amp;nbsp;&lt;strong&gt;/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This guide is using the Tools/Connections/&lt;strong&gt;AgentFileWriter&amp;nbsp;&lt;/strong&gt;connection ( &lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_connector_resource_uri (temporary)" name="temp.tmp_connector_resource_uri" readonly="readonly" type="text" value="tmp_connector_resource_uri (temporary)"&gt; ).&lt;/p&gt;
+&lt;p&gt;It is configured to base path:&amp;nbsp;&lt;strong&gt; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_file_writer_base_path (temporary)" name="temp.tmp_file_writer_base_path" readonly="readonly" type="text" value="tmp_file_writer_base_path (temporary)"&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span style="color: #ff0000;"&gt;Existing files will be overwritten!&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Use visely:&lt;/p&gt;
 &lt;table cellpadding="5"&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;Target File Name&lt;/td&gt;
-&lt;td&gt;&lt;input title="tmp_file_name (temporary)" name="temp.tmp_file_name" type="text" value="tmp_file_name (temporary)"&gt;&amp;nbsp;*&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input title="tmp_file_name (temporary)" name="temp.tmp_file_name" type="text" value="tmp_file_name (temporary)"&gt; use this field to rename uploaded file.&amp;nbsp;&amp;nbsp;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Relative Path&lt;/td&gt;
-&lt;td&gt;&lt;input title="tmp_relative_path (temporary)" name="temp.tmp_relative_path" type="text" value="tmp_relative_path (temporary)"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;td&gt;&lt;input class="" title="tmp_relative_path (temporary)" name="temp.tmp_relative_path" type="text" value="tmp_relative_path (temporary)"&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;File&lt;/td&gt;
@@ -105,11 +133,11 @@ version: 1.6</description>
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
+                     <action alt="null" id="jog5sgv1_kzsotisq" targetScreen="kzsotisq">
+                        <text>Cancel</text>
+                     </action>
                      <action alt="null" id="jog5sgv1_jog5sgxq" targetScreen="jog5sgxq">
                         <text>Upload</text>
-                     </action>
-                     <action alt="null" id="jog5sgv1_jog5sgvf" targetScreen="jog5sgvf">
-                        <text>Exit</text>
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
@@ -119,6 +147,7 @@ version: 1.6</description>
                                      type="string">
                         <options>
                            <option name="required">false</option>
+                           <option name="hover_text">upload file to a specific subdirectory path relative to above base path, child directories will be created if they do not exist</option>
                         </options>
                      </screenDataItem>
                      <screenDataItem name="temp.tmp_attachment"
@@ -139,9 +168,77 @@ version: 1.6</description>
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
+                     <screenDataItem name="temp.tmp_file_writer_base_path"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_connector_resource_uri"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
                   </screenData>
                </screen>
-               <screen id="jogiwqfc">
+               <screen id="kzsotiqa">
+                  <title>Upload Error</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;Upload Error&lt;/strong&gt;&lt;/p&gt;
+&lt;table style="border-collapse: collapse;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr style="height: 18px;"&gt;
+&lt;td&gt;Code&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.faultInfo[1]/code" readonly="readonly" type="text" value="faultInfo&gt;code"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Reason&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.faultInfo[1]/reason" readonly="readonly" type="text" value="faultInfo&gt;reason"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Detail&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.faultInfo[1]/detail" readonly="readonly" type="text" value="faultInfo&gt;detail"&gt;&amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="kzsotiqa_kzsotiu5" targetScreen="kzsotiu5">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.faultInfo[1]/code"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.faultInfo[1]/reason"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.faultInfo[1]/detail"
+                                     readonly="true"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzsotiq0">
                   <title>Upload Results</title>
                   <body contentType="text/html">&lt;table cellpadding="5"&gt;
 &lt;tbody&gt;
@@ -166,7 +263,7 @@ version: 1.6</description>
 &lt;p&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" name="output.faultInfo[1]/reason" readonly="readonly" type="text" value="faultInfo&gt;reason"&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
-                     <action alt="null" id="jogiwqfc_jog5sgvf" targetScreen="jog5sgvf">
+                     <action alt="" id="kzsotiq0_kzsotitx" targetScreen="kzsotitx">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -205,6 +302,22 @@ version: 1.6</description>
                      </screenDataItem>
                   </screenData>
                </screen>
+               <service id="kzsolsjq">
+                  <title>Get File Writer Metadata</title>
+                  <serviceName>SP_GetCatalogResource_G01</serviceName>
+                  <serviceGUID>abnxZAvEI8cc3aejQFxpoV</serviceGUID>
+                  <serviceInput>
+                     <parameter id="kzson3wq"
+                                name="in_resource_location"
+                                source="field"
+                                updatable="true">temp.tmp_connector_resource_uri</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="kzsolsjq_kzsnd4hi" targetScreen="kzsnd4hi">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
                <service id="jog5sgvn">
                   <title>SP-util-upload-agent</title>
                   <serviceName>SP-util-upload-agent</serviceName>
@@ -220,13 +333,17 @@ version: 1.6</description>
                                 updatable="true">temp.tmp_attachment</parameter>
                   </serviceInput>
                   <actions>
-                     <action alt="null" id="jog5sgvn_jogiwqfc" targetScreen="jogiwqfc">
+                     <action alt="" id="jog5sgvn_kzsotip3" targetScreen="kzsotip3">
                         <text>Continue</text>
                      </action>
                   </actions>
                </service>
-               <endScreen id="jd4cwa59">
-                  <title>End</title>
+               <endScreen dontShowScreen="true" id="kzsotisq" outcomeId="outcome_kzsotiu8">
+                  <title>End Cancel</title>
+                  <redirectTo type="current_object"/>
+               </endScreen>
+               <endScreen dontShowScreen="true" id="kzsotitx" outcomeId="outcome_kzsotisk">
+                  <title>End  Uploaded</title>
                   <body contentType="text/html"/>
                   <redirectTo type="current_object"/>
                   <screenActionLabel>
@@ -234,12 +351,41 @@ version: 1.6</description>
                   </screenActionLabel>
                </endScreen>
                <empty gatewayType="exclusive" id="jog5sgvf">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="kzsotipj">
+                  <actions/>
+               </empty>
+               <jumpTo id="kzsotiu5" targetTitle="Upload File">
                   <actions>
-                     <action alt="null" id="jog5sgvf_jd4cwa59" targetScreen="jd4cwa59">
+                     <action alt="null" id="kzsotiu5_jog5sgv1" targetScreen="jog5sgv1">
                         <text>Continue</text>
                      </action>
                   </actions>
-               </empty>
+               </jumpTo>
+               <dataDecision id="kzsotip3">
+                  <title>faultInfo</title>
+                  <dataName>output.faultInfo</dataName>
+                  <actions>
+                     <action alt="set" id="kzsotip3_kzsotiqa" targetScreen="kzsotiqa">
+                        <text>is set</text>
+                     </action>
+                     <action alt="unset" id="kzsotip3_kzsotiq0" targetScreen="kzsotiq0">
+                        <text>is unset</text>
+                     </action>
+                  </actions>
+               </dataDecision>
+               <assignment id="kzsnd4hi">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_file_writer_base_path">
+                     <expression language="XQuery">data($output.out_catalog_reource/*:producers/*:producer[@name='FileWriter']/*:attributes/*:attribute[@name='directoryName']/@value)</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="kzsnd4hi_jog5sgv1" targetScreen="jog5sgv1">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
                <assignment id="jog5sgxq">
                   <title>Assignment to Relative path, File name etc.</title>
                   <operation source="field" to="temp.tmp_file_writer_task[1]/filePath">temp.tmp_relative_path</operation>
@@ -257,5 +403,5 @@ version: 1.6</description>
       <types1:GUID>0FCslbR0FsshCmxMcjULOJ</types1:GUID>
       <types1:DisplayName>iPaaS Admin Upload File to Agent</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.423Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:50.115Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

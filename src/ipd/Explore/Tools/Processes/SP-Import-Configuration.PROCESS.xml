@@ -1,0 +1,227 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>TTiPZx1Xmgaabcl-gt-34666995-2022-02-21T14:30:02.673Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-Import-Configuration</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-02-21T14:30:03Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-21T15:37:10Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-21T15:37:51Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-Import-Configuration/SP-Import-Configuration.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-Import-Configuration"
+                  name="SP-Import-Configuration"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table</description>
+            <tags>.agent:G01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_configuration_properties" type="objectlist">
+                  <options>
+                     <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_count_imported" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="out_count_created" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+               <field description="" name="out_count_updated" type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_das_request" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">4nQ50tIl0DkbgcRRWyJfah</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_config_dataSource" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>G01</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kzwsmlex" targetId="kzwsmlew"/>
+               </start>
+               <assignment id="kzwsmlew">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_config_dataSource">
+                     <expression language="XQuery">if (util:resolveURN('urn:ic_configuration:dataSource')= 'urn:ic_configuration:dataSource' ) then 'DS1' else util:resolveURN('urn:ic_configuration:dataSource')</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_das_request">
+                     <expression language="XQuery">let $config_properties := $input.in_configuration_properties 
+return
+&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;update_ic_configuration&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;UPDATE IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
+      {
+      for $property in $config_properties
+      let $key   := $property/PKEY/text()
+      let $value := $property/PVALUE/text()
+      return
+      &lt;parameterBatch&gt;
+         &lt;parameter&gt;
+             &lt;sqlType&gt;string&lt;/sqlType&gt;
+             &lt;data&gt;{$key}&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;string&lt;/sqlType&gt;
+             &lt;data&gt;{$value}&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;string&lt;/sqlType&gt;
+             &lt;data&gt;{$key}&lt;/data&gt;
+          &lt;/parameter&gt;
+      &lt;/parameterBatch&gt;
+      }
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;{$temp.tmp_config_dataSource }&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+
+</expression>
+                  </operation>
+                  <link id="kzwsmlfd" targetId="kzwsmlfc"/>
+               </assignment>
+               <assignment id="kzwsmlgm">
+                  <title>Count Updated</title>
+                  <operation source="formula" to="output.out_count_updated">
+                     <expression language="XQuery">sum($output.dataAccessResponse[1]/row/updatedRows )</expression>
+                  </operation>
+                  <link id="kzwtyzgc" targetId="kzwtyzgb"/>
+               </assignment>
+               <service id="kzwsmlfc">
+                  <title>Update Properties</title>
+                  <serviceName>execSQL</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="dataAccessRequest" source="field">temp.tmp_das_request</parameter>
+                  </serviceInput>
+                  <link id="kzwsmlgn" targetId="kzwsmlgm"/>
+               </service>
+               <container id="kzwtyzgb" type="exclusive">
+                  <title>out_count_updated</title>
+                  <flow id="kzwtyzgl">
+                     <assignment id="kzwtyzho">
+                        <title>Set Output</title>
+                        <operation source="field" to="output.out_count_imported">output.out_count_updated</operation>
+                     </assignment>
+                     <link id="kzwtyzgm" targetId="kzwtyzgb" type="containerLink"/>
+                  </flow>
+                  <flow id="kzwtyzgn">
+                     <assignment id="kzwtyzgz">
+                        <title>Prepare Insert</title>
+                        <operation source="formula" to="temp.tmp_das_request">
+                           <expression language="XQuery">let $config_properties := $input.in_configuration_properties 
+(: We will insert only records whicg were not updated :)
+return
+&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;insert_ic_configuration&lt;/statementId&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;INSERT INTO IC_CONFIGURATION (PKEY, PVALUE) VALUES (?,?)&lt;/statement&gt;
+      {
+      for $property at $i in $config_properties
+      let $key   := $property/PKEY/text()
+      let $value := $property/PVALUE/text()
+      let $not_exist := $output.dataAccessResponse[1]/row[$i]/updatedRows = 0
+      where $not_exist
+      return
+      &lt;parameterBatch&gt;
+         &lt;parameter&gt;
+             &lt;sqlType&gt;string&lt;/sqlType&gt;
+             &lt;data&gt;{$key}&lt;/data&gt;
+          &lt;/parameter&gt;
+          &lt;parameter&gt;
+             &lt;sqlType&gt;string&lt;/sqlType&gt;
+             &lt;data&gt;{$value}&lt;/data&gt;
+          &lt;/parameter&gt;
+      &lt;/parameterBatch&gt;
+      }
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;{ $temp.tmp_config_dataSource }&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;</expression>
+                        </operation>
+                        <link id="kzwtyzh7" targetId="kzwtyzh6"/>
+                     </assignment>
+                     <assignment id="kzwtyzit">
+                        <title>Set Output</title>
+                        <operation source="formula" to="output.out_count_created">
+                           <expression language="XQuery">sum($output.dataAccessResponse[1]/row/updatedRows )</expression>
+                        </operation>
+                     </assignment>
+                     <service id="kzwtyzh6">
+                        <title>Insert Properties</title>
+                        <serviceName>execSQL</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="dataAccessRequest" source="field">temp.tmp_das_request</parameter>
+                        </serviceInput>
+                        <link id="kzwtyziu" targetId="kzwtyzit"/>
+                     </service>
+                     <link id="kzwtyzgo" targetId="kzwtyzgb" type="containerLink"/>
+                  </flow>
+                  <link id="kzwtyzge" targetId="kzwtyzgl" type="containerLink">
+                     <condition source="formula">
+                        <function name="equals">
+                           <arg name="left">{$output.out_count_updated}</arg>
+                           <arg name="right">{count($input.in_configuration_properties )}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="kzwtyzgh" targetId="kzwtyzgn" type="containerLink"/>
+                  <link id="kzwtyzh5" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4jFrs9zpvTuk3MmAtI7JkF</types1:GUID>
+      <types1:DisplayName>SP-Import-Configuration</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:50.629Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

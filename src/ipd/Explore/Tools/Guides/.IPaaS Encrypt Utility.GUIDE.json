@@ -6,8 +6,8 @@
       "path": "/Explore/Tools/Guides",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
-            "description": "Utility To encrypt Strings for configuration to be used in Automated steps",
+            "contentType": "application/json; charset=utf-8",
+            "description": "Utility To encrypt Strings for configuration to be used in Automated steps\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

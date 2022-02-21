@@ -17,10 +17,10 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-02T19:21:56Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-18T16:40:47Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-02T19:22:00Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T16:41:28Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/github_gist/github_gist_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -335,7 +335,7 @@ return
                      <parameter description="Gist ID"
                                 name="gist_id"
                                 required="true"
-                                testWith="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"
+                                testWith=""
                                 type="string"/>
                      <parameter description="SHA ID of the Gist revision"
                                 name="sha"
@@ -728,6 +728,31 @@ return
                      </field>
                   </output>
                </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="getPublicGist"
+                       maxRedirects="100"
+                       name="getPublicGist"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Retrieves Public Gist using the raw  URL such as 
+https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/fc7f7831c2641b3aa54f1be09062ee9841167c01/IICS_Logging_MDAS_CreateSchema_MSSQL.xml </description>
+                  <input>
+                     <parameter name="raw_url"
+                                required="false"
+                                testWith="https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/fc7f7831c2641b3aa54f1be09062ee9841167c01/IICS_Logging_MDAS_CreateSchema_MSSQL.xml"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding url="{$raw_url}" verb="GET"/>
+                  </binding>
+                  <output>
+                     <field description="" name="gist_content" type="textarea">
+                        <xquery>{$RESTResponse/*:payload/text()}</xquery>
+                     </field>
+                  </output>
+               </action>
             </actions>
             <objects>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
@@ -1071,5 +1096,5 @@ See</description>
       <types1:GUID>9T6SRi7SD2Ik90R03f8dsX</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.286Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.451Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

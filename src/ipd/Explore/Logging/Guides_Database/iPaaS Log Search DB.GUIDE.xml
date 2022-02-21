@@ -16,10 +16,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:20Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-11T16:55:20Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-11T16:55:25Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Log_Search_DB/iPaaS_Log_Search_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -388,7 +388,6 @@ version: 1.6</description>
                                      type="reference">
                         <options>
                            <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PROCESS_ID","type":"double","label":"Process ID","renderingType":"double"},{"name":"PROCESS_NAME","type":"string","label":"Process Name","renderingType":"string"},{"name":"EVENT_MESSAGE","type":"string","label":"Event message","renderingType":"string"},{"name":"LOGGING_LEVEL_LABEL","type":"string","label":"Logging Level","renderingType":"string"},{"name":"LOGGING_LEVEL","type":"double","label":"LOGGING_LEVEL","renderingType":"double"},{"name":"EVENT_DETAIL","type":"string","label":"Event Detail","renderingType":"string"},{"name":"EVENT_TIME","type":"datetime","label":"Event Time","renderingType":"datetime"},{"name":"ENVIRONMENT","type":"string","label":"Environment","renderingType":"string"},{"name":"ORG_ID","type":"string","label":"Org ID","renderingType":"string"},{"name":"INITIATOR","type":"string","label":"Initiator","renderingType":"string"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
-                           <option name="text_height">10</option>
                            <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS_VIEW</option>
                            <option name="required">false</option>
                            <option name="isCopy">true</option>
@@ -599,19 +598,19 @@ version: 1.6</description>
                      <text>Done</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="jzac1tv2">
+               <empty gatewayType="exclusive" id="kzinh846">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jzac1tua">
+               <empty gatewayType="exclusive" id="kzinh83e">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jzac1tu2">
+               <empty gatewayType="exclusive" id="kzinh836">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jzac1ttx">
+               <empty gatewayType="exclusive" id="kzinh831">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="jzac1tv0">
+               <empty gatewayType="exclusive" id="kzinh844">
                   <actions/>
                </empty>
                <empty gatewayType="exclusive" id="jza9gn0o">
@@ -748,7 +747,7 @@ concat(string-join($conditions, "&amp;#10; AND ")," ",$limit_part)</expression>
                <assignment id="jthesmqi">
                   <title>Query Events</title>
                   <operation source="list" to="temp.tmp_job_events">
-                     <query from="IPaaS-Logging:IC_JOB_EVENTS_VIEW">
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_EVENTS_VIEW">
                         <where>{$temp.tmp_event_query}</where>
                      </query>
                   </operation>
@@ -828,7 +827,7 @@ $url</expression>
                <assignment id="jthesmrh">
                   <title>Find Job</title>
                   <operation source="list" to="temp.tmp_ic_job_logs">
-                     <query from="IPaaS-Logging:IC_JOB_LOG_VIEW">
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_LOG_VIEW">
                         <where>JOB_ID = '{$temp.tmp_search_id}'</where>
                      </query>
                   </operation>
@@ -841,7 +840,7 @@ $url</expression>
                <assignment id="jthesmrt">
                   <title>Assignment to tmp_ic_job_logs</title>
                   <operation source="list" to="temp.tmp_ic_job_logs">
-                     <query from="IPaaS-Logging:IC_JOB_LOG_VIEW"/>
+                     <query advanceQuery="false" from="IPaaS-Logging:IC_JOB_LOG_VIEW"/>
                   </operation>
                   <actions>
                      <action alt="null" id="jthesmrt_jthesmru" targetScreen="jthesmru">
@@ -855,5 +854,5 @@ $url</expression>
       <types1:GUID>3fMCexzb8UghCGoRLCEX2s</types1:GUID>
       <types1:DisplayName>iPaaS Log Search DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:33.061Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:50.59Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

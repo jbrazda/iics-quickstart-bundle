@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Test Case for SP-util-shell-curl-NA",
+            "description": "Test Case for SP-util-shell-curl-NA\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -31,7 +31,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. \nprocess Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent",
+            "description": "Process Wraps the curl for basic upload/download  operations, use this tool to offload the large payload operations from process engine runtime. \nprocess Assumes that curl is available on the system path and the Shell service is available on assigned Secure Agent\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

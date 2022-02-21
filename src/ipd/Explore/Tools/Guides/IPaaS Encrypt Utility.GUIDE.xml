@@ -15,10 +15,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-21T16:07:00Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:50Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-18T20:44:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.IPaaS_Encrypt_Utility/IPaaS_Encrypt_Utility.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,7 +32,17 @@ version: 1.6</types1:Description>
             <description>Utility To encrypt Strings for configuration to be used in Automated steps
 version: 1.6</description>
             <appliesTo/>
-            <generator>Informatica Screenflow Designer 8</generator>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_encrypt_input" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
             <runOn target="desktop"/>
             <notes/>
             <deployment/>
@@ -44,20 +54,46 @@ version: 1.6</description>
                   <title>Start</title>
                   <body contentType="text/html"/>
                   <actions>
-                     <action alt="null" id="jc9mq1jb_jc9u1z9r" targetScreen="jc9u1z9r">
+                     <action alt="null" id="jc9mq1jb_kzsvmnhw" targetScreen="kzsvmnhw">
                         <text>Continue</text>
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="true"/>
                </startScreen>
-               <screen id="jc9mq1ji">
+               <screen id="kzsvmnhw">
+                  <title>Encrypt Tool</title>
+                  <body contentType="text/html">&lt;p&gt;Encrypt Text&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_encrypt_input (temporary)" name="temp.tmp_encrypt_input" type="text" value="tmp_encrypt_input (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzsvmnhw_kzsvmni5" targetScreen="kzsvmni5">
+                        <text>Cancel</text>
+                     </action>
+                     <action alt="null" id="kzsvmnhw_kzsvmnif" targetScreen="kzsvmnif">
+                        <text>Encrypt</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_encrypt_input"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">10</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzsvmnim">
                   <title>Result</title>
                   <body contentType="text/html">&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;Encrypted Result:&lt;/p&gt;
 &lt;p&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_encrypted (output)" name="output.out_encrypted" readonly="readonly" type="text" value="out_encrypted (output)"&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
-                     <action alt="null" id="jc9mq1ji_jc9mq1jl" targetScreen="jc9mq1jl">
+                     <action alt="null" id="kzsvmnim_kzsvmni5" targetScreen="kzsvmni5">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -72,37 +108,15 @@ version: 1.6</description>
                      </screenDataItem>
                   </screenData>
                </screen>
-               <service id="jc9u1z9r">
+               <service id="kzsvmnif">
                   <title>SP-IPaaS-Encrypt-NA</title>
                   <serviceName>SP-IPaaS-Encrypt-NA</serviceName>
+                  <serviceGUID/>
                   <serviceInput>
-                     <parameter id="jc9u1yn8"
-                                name="in_encrypt"
-                                source="screen"
-                                updatable="false">screen.in_encrypt</parameter>
+                     <parameter id="kzsvj08e" name="in_encrypt" source="field" updatable="true">temp.tmp_encrypt_input</parameter>
                   </serviceInput>
-                  <screen id="jc9u1z9r-servicescreen">
-                     <title>SP-IPaaS-Encrypt-NA</title>
-                     <body contentType="text/html">&lt;p&gt;&lt;strong&gt;IPaaS Encryption Utility&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Enter String to Encrypt&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;input class="" title="Double click on field to change field properties" name="screen.in_encrypt" type="text" value="screen.in_encrypt"&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
-                     <actionPrompt/>
-                     <actions/>
-                     <screenData skipIfRequiredFilled="false">
-                        <screenDataItem name="screen.in_encrypt"
-                                        readonly="false"
-                                        required="false"
-                                        type="string">
-                           <options>
-                              <option name="required">false</option>
-                              <option name="text_size">120</option>
-                           </options>
-                        </screenDataItem>
-                     </screenData>
-                  </screen>
                   <actions>
-                     <action alt="" id="jc9u1z9r_jc9mq1ji" targetScreen="jc9mq1ji">
+                     <action alt="null" id="kzsvmnif_kzsvmnim" targetScreen="kzsvmnim">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -115,11 +129,18 @@ version: 1.6</description>
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
+               <empty gatewayType="exclusive" id="kzsvmni5">
+                  <actions>
+                     <action alt="null" id="kzsvmni5_jc9mq1jl" targetScreen="jc9mq1jl">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
             </flow>
          </avosScreenflow>
       </types1:Entry>
       <types1:GUID>i2sGIbd2BUUkea7gdkm785</types1:GUID>
       <types1:DisplayName>IPaaS Encrypt Utility</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:31.73Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:49.076Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

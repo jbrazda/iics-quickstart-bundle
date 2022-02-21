@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-21T15:54:23Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:54Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-21T15:54:31Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -52,8 +52,10 @@ version: 1.6</description>
                </field>
                <field description="Temporary Variable to store Search Query to read properties"
                       name="tmp_query"
-                      type="string">
+                      type="textarea">
                   <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
                      <option name="required">false</option>
                   </options>
                </field>
@@ -103,6 +105,35 @@ version: 1.6</description>
                      <option name="initialvalue">DS1</option>
                   </options>
                </field>
+               <field description="" name="tmp_selected_configurations" type="objectlist">
+                  <options>
+                     <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_export_data" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_export_format" type="picklist">
+                  <options>
+                     <option name="values">[{"label":"CSV","value":"CSV"},{"label":"SQL","value":"SQL"},{"label":"XML","value":"XML"}]</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_import_data" type="textarea">
+                  <options>
+                     <option name="text_width">100</option>
+                     <option name="text_height">5</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
             </tempFields>
             <runOn target="desktop"/>
             <notes/>
@@ -126,15 +157,16 @@ version: 1.6</description>
                   <body contentType="text/html">&lt;p&gt;Configuration table&lt;/p&gt;
 &lt;p&gt;&lt;input class="" title="tmp_selected_configuration (temporary)" name="temp.tmp_selected_configuration" type="text" value="tmp_selected_configuration (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;Query&lt;/p&gt;
-&lt;p&gt;&lt;input class="" style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_query (temporary)" name="temp.tmp_query" readonly="readonly" type="text" value="tmp_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Current Configuration of the guide uses DAS Service Data Source with JNDI Name jdbc/&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_config_dataSource (temporary)" name="temp.tmp_config_dataSource" readonly="readonly" type="text" value="tmp_config_dataSource (temporary)"&gt; to write/delete&amp;nbsp; properties.&lt;/li&gt;
-&lt;li&gt;You will need to configure the Data Source In process Engine Secure agent to be able to create, update and delete the properties in the&amp;nbsp; IC_Configuration DB table.&lt;/li&gt;
-&lt;li&gt;You can override the default DS name by defining the urn mapping urn:configuration:dataSource with value DS1 to DS5&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;input class="" title="tmp_query (temporary)" name="temp.tmp_query" type="text" value="tmp_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
+                     <action alt="null" id="jp8dxkub_jp8dxl7x" targetScreen="jp8dxl7x">
+                        <text>Cancel</text>
+                     </action>
+                     <action alt="null" id="jp8dxkub_jp8g7jba" targetScreen="jp8g7jba">
+                        <text>Refresh</text>
+                     </action>
                      <action alt="null" id="jp8dxkub_jp8dxkuu" targetScreen="jp8dxkuu">
                         <text>Add New Configuration Item</text>
                      </action>
@@ -147,11 +179,11 @@ version: 1.6</description>
                      <action alt="null" id="jp8dxkub_jp8dxkv3" targetScreen="jp8dxkv3">
                         <text>Filter</text>
                      </action>
-                     <action alt="null" id="jp8dxkub_jp8g7jba" targetScreen="jp8g7jba">
-                        <text>Refresh</text>
+                     <action alt="null" id="jp8dxkub_kzsr8vca" targetScreen="kzsr8vca">
+                        <text>Export/Import</text>
                      </action>
-                     <action alt="null" id="jp8dxkub_jp8dxl7x" targetScreen="jp8dxl7x">
-                        <text>Exit</text>
+                     <action alt="null" id="jp8dxkub_kzsr8vcr" targetScreen="kzsr8vcr">
+                        <text>Help</text>
                      </action>
                   </actions>
                   <screenData skipIfRequiredFilled="false">
@@ -170,18 +202,12 @@ version: 1.6</description>
                         </options>
                      </screenDataItem>
                      <screenDataItem name="temp.tmp_query"
-                                     readonly="true"
+                                     readonly="false"
                                      required="false"
-                                     type="string">
+                                     type="textarea">
                         <options>
-                           <option name="required">false</option>
-                        </options>
-                     </screenDataItem>
-                     <screenDataItem name="temp.tmp_config_dataSource"
-                                     readonly="true"
-                                     required="false"
-                                     type="string">
-                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
@@ -259,7 +285,7 @@ version: 1.6</description>
                <screen id="jp8dxkv0">
                   <title>Edit Configuration Item</title>
                   <body contentType="text/html">&lt;p&gt;Key:&amp;nbsp; &lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="tmp_property_key (temporary)" name="temp.tmp_property_key" readonly="readonly" type="text" value="tmp_property_key (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;Value&lt;br&gt;&lt;input class="" title="tmp_property_value (temporary)" name="temp.tmp_property_value" type="text" value="tmp_property_value (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Value&lt;br&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_property_value (temporary)" name="temp.tmp_property_value" type="text" value="tmp_property_value (temporary)"&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
@@ -313,6 +339,198 @@ version: 1.6</description>
                         </options>
                      </screenDataItem>
                   </screenData>
+               </screen>
+               <screen id="kzsr8vca">
+                  <title>Configuration Export and Import</title>
+                  <body contentType="text/html">&lt;p&gt;Select Configuration Items to Export&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_selected_configurations (temporary)" name="temp.tmp_selected_configurations" type="text" value="tmp_selected_configurations (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Query:&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_query (temporary)" name="temp.tmp_query" type="text" value="tmp_query (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Export as: &lt;input class="" title="tmp_export_format (temporary)" name="temp.tmp_export_format" type="text" value="tmp_export_format (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Pleas use XML format if you want to migrate configuration from one environment to another. Other export formats can be used to Import directly using DB tools or other import methods, this guide supports XML format&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzsr8vca_kzsr8vef" targetScreen="kzsr8vef">
+                        <text>Cancel</text>
+                     </action>
+                     <action alt="null" id="kzsr8vca_kzstkt27" targetScreen="kzstkt27">
+                        <text>Export</text>
+                     </action>
+                     <action alt="null" id="kzsr8vca_kzsujr01" targetScreen="kzsujr01">
+                        <text>Import</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_selected_configurations"
+                                     readonly="false"
+                                     renderingType="table"
+                                     required="false"
+                                     type="objectlist">
+                        <options>
+                           <option name="referenceTo">IPaaS-Configuration-DB:IC_CONFIGURATION</option>
+                           <option name="display-options">{"display-options":{"columns":{"column":[{"name":"PKEY","type":"string","label":"PKEY","renderingType":"string"},{"name":"PVALUE","type":"string","label":"PVALUE","renderingType":"string","options":{"option":[]}}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                           <option hide="true" name="multiSelect">true</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                           <option hide="true" name="valuelist.source">objectListField</option>
+                           <option hide="true" name="valuelist.objectlistfield">temp.tmp_configurations</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_query"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">5</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="temp.tmp_export_format"
+                                     readonly="false"
+                                     required="false"
+                                     type="picklist">
+                        <options>
+                           <option name="values">[{"label":"CSV","value":"CSV"},{"label":"SQL","value":"SQL"},{"label":"XML","value":"XML"}]</option>
+                           <option name="required">false</option>
+                           <option name="defaultvalue">XML</option>
+                           <option hide="true" name="valuelist.source">searchservice</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzsr8vet">
+                  <title>Export Data</title>
+                  <body contentType="text/html">&lt;p&gt;Export Data&lt;/p&gt;
+&lt;p&gt;&lt;span style="font-family: monospace; font-size: 12px;"&gt;&lt;input class="" title="tmp_export_data (temporary)" name="temp.tmp_export_data" type="text" value="tmp_export_data (temporary)"&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzsr8vet_kzsr8vfj" targetScreen="kzsr8vfj">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_export_data"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">25</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzsujr01">
+                  <title>Import Config Items</title>
+                  <body contentType="text/html">&lt;p&gt;Import Support XMLPaset XML Below&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_import_data (temporary)" name="temp.tmp_import_data" type="text" value="tmp_import_data (temporary)"&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzsujr01_kzwuk5rd" targetScreen="kzwuk5rd">
+                        <text>Cancel</text>
+                     </action>
+                     <action alt="null" id="kzsujr01_kzwuk5rp" targetScreen="kzwuk5rp">
+                        <text>Import</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_import_data"
+                                     readonly="false"
+                                     required="false"
+                                     type="textarea">
+                        <options>
+                           <option name="text_width">100</option>
+                           <option name="text_height">25</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzwuk5s4">
+                  <title>Items Imported</title>
+                  <body contentType="text/html">&lt;p&gt;Configuration Items Imported&lt;/p&gt;
+&lt;table style="border-collapse: collapse; height: 45px; width: 4.87805%;" cellpadding="5"&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Created&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_count_created (output)" name="output.out_count_created" readonly="readonly" type="text" value="out_count_created (output)"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 15px;"&gt;
+&lt;td&gt;Updated&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_count_updated (output)" name="output.out_count_updated" readonly="readonly" type="text" value="out_count_updated (output)"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr style="height: 15px;"&gt;
+&lt;td&gt;Imported&lt;/td&gt;
+&lt;td&gt;&lt;input style="-moz-appearance: none; background-color: lightgrey; border: none;" title="out_count_imported (output)" name="output.out_count_imported" readonly="readonly" type="text" value="out_count_imported (output)"&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzwuk5s4_kzwuk5rd" targetScreen="kzwuk5rd">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="output.out_count_created"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.out_count_updated"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                     <screenDataItem name="output.out_count_imported"
+                                     readonly="true"
+                                     required="false"
+                                     type="int">
+                        <options>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
+               </screen>
+               <screen id="kzsr8vcr">
+                  <title>Help</title>
+                  <body contentType="text/html">&lt;p&gt;&lt;strong&gt;IICS and Configuration Management&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Currently IICS does not provide built-in Configuration facility. Configuration options are limited or ad-hoc as described below&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;URN Mappings&lt;/li&gt;
+&lt;li&gt;Custome Database Tables&lt;/li&gt;
+&lt;li&gt;Process Resource Catalog&lt;/li&gt;
+&lt;li&gt;External Configuration Providers (Github, GitLab)&lt;/li&gt;
+&lt;li&gt;Local File System Files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In many cases we need to make Integration Processes APIs configurable&lt;/p&gt;
+&lt;p&gt;This Utility provide a simple but very flexible method to store configurations which can be used within Integration Processes or tasks&lt;/p&gt;
+&lt;p&gt;This guide manages in simple Key/Value pair&amp;nbsp; database table with a following Structure&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;How to Use this framework&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This Guide uses two connections You will need to configure these two connections&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;JDBC_IC Connection is in Tools/Connections/IPaaS-Configuration-DB&amp;nbsp; is used within IICS Processes to Read the configuration properties&lt;/li&gt;
+&lt;li&gt;DAS JDBC connection is neede to Update/Delete configuration properties&amp;nbsp; (JDBC_IC does not support such operations on tables wthout a primary key)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="null" id="kzsr8vcr_kzsr8vd8" targetScreen="kzsr8vd8">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
                </screen>
                <service id="jp8g7j9u">
                   <title>execSQLProxy Delete Item</title>
@@ -380,6 +598,22 @@ version: 1.6</description>
                      </action>
                   </actions>
                </service>
+               <service id="kzwuk5rp">
+                  <title>SP-Import-Configuration</title>
+                  <serviceName>SP-Import-Configuration</serviceName>
+                  <serviceGUID>4jFrs9zpvTuk3MmAtI7JkF</serviceGUID>
+                  <serviceInput>
+                     <parameter id="kzwujpfw"
+                                name="in_configuration_properties"
+                                source="formula"
+                                updatable="false">xpath util:parseXML($temp.tmp_import_data )/*</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="null" id="kzwuk5rp_kzwuk5s4" targetScreen="kzwuk5s4">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </service>
                <endScreen dontShowScreen="true" id="jp8dxl7x">
                   <title/>
                   <body contentType="text/html"/>
@@ -388,15 +622,39 @@ version: 1.6</description>
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="k2m8yknl">
+               <empty gatewayType="exclusive" id="kzwvpkaa">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="k2m8ykmz">
+               <empty gatewayType="exclusive" id="kzwvpk8k">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="k2m8ykna">
+               <empty gatewayType="exclusive" id="kzwvpk8v">
                   <actions/>
                </empty>
+               <empty gatewayType="exclusive" id="kzwvpka5">
+                  <actions/>
+               </empty>
+               <empty gatewayType="exclusive" id="kzstkt2g">
+                  <actions>
+                     <action alt="null" id="kzstkt2g_kzsr8vet" targetScreen="kzsr8vet">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <empty gatewayType="exclusive" id="kzwuk5rd">
+                  <actions>
+                     <action alt="null" id="kzwuk5rd_kzsujr18" targetScreen="kzsujr18">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </empty>
+               <jumpTo id="jp8g7jba" targetTitle="Set Query">
+                  <actions>
+                     <action alt="null" id="jp8g7jba_jp8dxku3" targetScreen="jp8dxku3">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
                <jumpTo id="jp8dxl1l" targetTitle="Set Query">
                   <actions>
                      <action alt="null" id="jp8dxl1l_jp8dxku3" targetScreen="jp8dxku3">
@@ -439,13 +697,52 @@ version: 1.6</description>
                      </action>
                   </actions>
                </jumpTo>
-               <jumpTo id="jp8g7jba" targetTitle="Set Query">
+               <jumpTo id="kzsr8vef" targetTitle="Query Configurations">
                   <actions>
-                     <action alt="null" id="jp8g7jba_jp8dxku3" targetScreen="jp8dxku3">
+                     <action alt="null" id="kzsr8vef_jp8dxkvq" targetScreen="jp8dxkvq">
                         <text>Continue</text>
                      </action>
                   </actions>
                </jumpTo>
+               <jumpTo id="kzsr8vfj" targetTitle="Query Configurations">
+                  <actions>
+                     <action alt="null" id="kzsr8vfj_jp8dxkvq" targetScreen="jp8dxkvq">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="kzsujr18" targetTitle="Query Configurations">
+                  <actions>
+                     <action alt="null" id="kzsujr18_jp8dxkvq" targetScreen="jp8dxkvq">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <jumpTo id="kzsr8vd8" targetTitle="View/Manage Configuration">
+                  <actions>
+                     <action alt="null" id="kzsr8vd8_jp8dxkub" targetScreen="jp8dxkub">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </jumpTo>
+               <dataDecision id="kzstkt27">
+                  <title>tmp_export_format</title>
+                  <dataName>temp.tmp_export_format</dataName>
+                  <actions>
+                     <action alt="equals CSV" id="kzstkt27_kzstkt3u" targetScreen="kzstkt3u">
+                        <text>CSV</text>
+                     </action>
+                     <action alt="equals SQL" id="kzstkt27_kzstkt4m" targetScreen="kzstkt4m">
+                        <text>SQL</text>
+                     </action>
+                     <action alt="equals XML" id="kzstkt27_kzstkt51" targetScreen="kzstkt51">
+                        <text>XML</text>
+                     </action>
+                     <action alt="else " id="kzstkt27_kzstkt2g" targetScreen="kzstkt2g">
+                        <text>otherwise</text>
+                     </action>
+                  </actions>
+               </dataDecision>
                <create id="jp8dxl0b">
                   <title>IC_CONFIGURATION</title>
                   <entityName>IPaaS-Configuration-DB:IC_CONFIGURATION</entityName>
@@ -460,7 +757,7 @@ version: 1.6</description>
                   </actions>
                </create>
                <assignment id="k2m6wduw">
-                  <title>Assignment to tmp_config_dataSource</title>
+                  <title>Initialize</title>
                   <operation source="formula" to="temp.tmp_config_dataSource">
                      <expression language="XQuery">if (util:resolveURN('urn:ic_configuration:dataSource')= 'urn:ic_configuration:dataSource' ) then 'DS1' else util:resolveURN('urn:ic_configuration:dataSource')</expression>
                   </operation>
@@ -488,9 +785,9 @@ $query</expression>
                   </actions>
                </assignment>
                <assignment id="jp8dxkvq">
-                  <title>Assignment to tmp_configurations</title>
+                  <title>Query Configurations</title>
                   <operation source="list" to="temp.tmp_configurations">
-                     <query from="IPaaS-Configuration-DB:IC_CONFIGURATION">
+                     <query advanceQuery="false" from="IPaaS-Configuration-DB:IC_CONFIGURATION">
                         <where>{$temp.tmp_query} </where>
                      </query>
                   </operation>
@@ -510,11 +807,74 @@ $query</expression>
                      </action>
                   </actions>
                </assignment>
+               <assignment id="kzstkt3u">
+                  <title>Convert to CSV</title>
+                  <operation source="formula" to="temp.tmp_export_data">
+                     <expression language="XQuery">let $export_items := for $item in $temp.tmp_selected_configurations 
+				   let $key := replace($item/PKEY/text(),'[&amp;#10;&amp;#10;]','/n')
+                   let $value := replace($item/PVALUE/text(),'[&amp;#10;&amp;#10;]','/n')
+                   return
+				   concat('"',$key,'","',$value,'"')
+let $header := 'PKEY,PVALUE'
+return string-join(($header,$export_items), '&amp;#10;')
+</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="kzstkt3u_kzstkt2g" targetScreen="kzstkt2g">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="kzstkt4m">
+                  <title>Convert to SQL</title>
+                  <operation source="formula" to="temp.tmp_export_data">
+                     <expression language="XQuery">let $export_items := for $item in $temp.tmp_selected_configurations 
+				   let $key := $item/PKEY/text()
+                   let $value := $item/PVALUE/text()
+                   return
+				   concat("INSERT INTO IC_CONFIGURATION (PKEY, PVALUE) VALUES ('",$key,"','",$value,"')")
+return string-join($export_items, '&amp;#10;')
+</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="kzstkt4m_kzstkt2g" targetScreen="kzstkt2g">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
+               <assignment id="kzstkt51">
+                  <title>Convert to XML</title>
+                  <operation source="formula" to="temp.tmp_export_data">
+                     <expression language="XQuery">let $saxon_params :=&lt;xsl:output xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:saxon="http://saxon.sf.net/"
+                                method="xml"
+                                omit-xml-declaration="yes"
+                                indent="yes"
+                                saxon:indent-spaces="4"/&gt;
+let $xml := &lt;configuration&gt;
+	{for $item in $temp.tmp_selected_configurations
+     return
+     &lt;item&gt;
+     	{$item/*}
+     &lt;/item&gt;
+    }
+    
+&lt;/configuration&gt;
+return 
+saxon:serialize(util:simplifyXml( $xml), $saxon_params)
+</expression>
+                  </operation>
+                  <actions>
+                     <action alt="null" id="kzstkt51_kzstkt2g" targetScreen="kzstkt2g">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
             </flow>
          </avosScreenflow>
       </types1:Entry>
       <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-04T20:05:32.452Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-21T19:33:51.157Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
