@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:ModificationDate>2022-02-22T16:37:41Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T15:00:30Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-22T16:40:26Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DB/How_To_Use_Template_Processes_DB.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -33,6 +33,21 @@ version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="" name="tmp_email_recipients" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">jbrazda@hcg.com</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_parameters" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+            </tempFields>
             <runOn target="desktop"/>
             <notes/>
             <deployment/>
@@ -67,7 +82,32 @@ version: 1.6</description>
                      <action alt="null" id="jkba8tdu_jkba8tec" targetScreen="jkba8tec">
                         <text>Run Example Job - DB Logging</text>
                      </action>
+                     <action alt="" id="jkba8tdu_kzycfue2" targetScreen="kzycfue2">
+                        <text>Run Example Job with Email Alerts</text>
+                     </action>
                   </actions>
+               </screen>
+               <screen id="kzycfue2">
+                  <title>Job Parameters</title>
+                  <body contentType="text/html">&lt;p&gt;Fault Alert Email Recipients (comma separated list)&lt;/p&gt;
+&lt;p&gt;&lt;input class="" title="tmp_email_recipients (temporary)" name="temp.tmp_email_recipients" type="text" value="tmp_email_recipients (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
+                  <actionPrompt/>
+                  <actions>
+                     <action alt="" id="kzycfue2_kzycfugz" targetScreen="kzycfugz">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+                  <screenData skipIfRequiredFilled="false">
+                     <screenDataItem name="temp.tmp_email_recipients"
+                                     readonly="false"
+                                     required="false"
+                                     type="string">
+                        <options>
+                           <option name="text_size">120</option>
+                           <option name="required">false</option>
+                        </options>
+                     </screenDataItem>
+                  </screenData>
                </screen>
                <endScreen id="jd4cwa59">
                   <title>End</title>
@@ -98,6 +138,20 @@ version: 1.6</description>
                      </action>
                   </actions>
                </subflow>
+               <subflow id="kzycfukn">
+                  <title>iPaaS Job View DB</title>
+                  <subflowGUID>dT4a8mv0dmakB8rX5zj8sL</subflowGUID>
+                  <subflowPath>iPaaS_Job_View_DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="kzycfunh" name="in_job_id" source="field" updatable="true">output.out_context[1]/jobId</parameter>
+                  </serviceInput>
+                  <actions>
+                     <action alt="" id="kzycfukn_jkba8te0" targetScreen="jkba8te0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </subflow>
                <callProcess id="jkba8tec">
                   <title>TEMPLATE-MP-Job</title>
                   <subflowGUID>hcH0Cde8Y2GjqGhTQpv9oz</subflowGUID>
@@ -119,11 +173,51 @@ version: 1.6</description>
                      </action>
                   </actions>
                </callProcess>
+               <callProcess id="kzycfufw">
+                  <title>TEMPLATE-MP-Job-Alerts-DB</title>
+                  <subflowGUID>3pP29DIyb25gm1j4NNXmeZ</subflowGUID>
+                  <subflowPath>TEMPLATE-MP-Job-Alerts-DB</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <serviceInput>
+                     <parameter id="kzycfumr"
+                                name="in_parameters"
+                                source="field"
+                                updatable="true">temp.tmp_parameters</parameter>
+                  </serviceInput>
+                  <subflowOutput>
+                     <field name="out_context" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:ProcessExecutionContext</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="" id="kzycfufw_kzycfukn" targetScreen="kzycfukn">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <assignment id="kzycfugz">
+                  <title>Set parameters</title>
+                  <operation source="formula" to="temp.tmp_parameters">
+                     <expression language="XQuery">&lt;parameters&gt;
+	&lt;alertEmailRecipents&gt;{$temp.tmp_email_recipients }&lt;/alertEmailRecipents&gt;
+&lt;/parameters&gt;</expression>
+                  </operation>
+                  <actions>
+                     <action alt="" id="kzycfugz_kzycfufw" targetScreen="kzycfufw">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </assignment>
             </flow>
          </avosScreenflow>
       </types1:Entry>
       <types1:GUID>0TDbowvyedFiXZqIUfUGqs</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-21T19:33:51.103Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-22T17:12:10.042Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

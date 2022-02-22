@@ -55,7 +55,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

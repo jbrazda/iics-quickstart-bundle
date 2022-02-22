@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml</types1:EntryId>
       <types1:Name>Email-G01</types1:Name>
-      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,Gaaa-gt-37438105-2022-02-22T15:23:52.529Z::pd.xml,Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Shared Email Service to send  alerts and notifications on Local Agents group G01</types1:Description>
       <types1:AppliesTo/>
@@ -58,5 +58,5 @@
       <types1:GUID>2ZM6icvXPAkk6jxADngnoK</types1:GUID>
       <types1:DisplayName>Email-G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-21T19:33:48.79Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-22T17:12:07.783Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

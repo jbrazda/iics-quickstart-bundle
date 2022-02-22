@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "hcH0Cde8Y2GjqGhTQpv9oz",
-      "objectName": "TEMPLATE-MP-Job-DB",
+      "objectGuid": "3pP29DIyb25gm1j4NNXmeZ",
+      "objectName": "TEMPLATE-MP-Job-Alerts-DB",
       "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DB",
+      "path": "/Explore/Templates/Jobs_Logging_DB_Alerts",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes\nversion: 2.0",
+            "description": "Template for Main Job Processes\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,12 +16,35 @@
             "minor": 0
          },
          "objectRefs": [
+            "2ZM6icvXPAkk6jxADngnoK",
             "a8f1LmXZlzibFVDqCJ5equ",
             "jJIHZ3UwecldLOFbMHDroh",
-            "7gNn29q0tM6bKwqIv38g4s"
+            "fV6YTLRp1ACbYFS3UhGwSE"
          ],
          "repoInfo": {
-            "repoHandle": "vD4teIssjqluQga-gt-6187152-2020-03-24T18:08:20.338Z::pd.xml"
+            "repoHandle": "Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "2ZM6icvXPAkk6jxADngnoK",
+      "objectName": "Email-G01",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Shared Email Service to send  alerts and notifications on Local Agents group G01",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml"
          }
       }
    },
@@ -70,14 +93,14 @@
       }
    },
    {
-      "objectGuid": "7gNn29q0tM6bKwqIv38g4s",
-      "objectName": "TEMPLATE-SP-ETL-DB",
+      "objectGuid": "fV6YTLRp1ACbYFS3UhGwSE",
+      "objectName": "TEMPLATE-SP-ETL-Alerts-DB",
       "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DB",
+      "path": "/Explore/Templates/Jobs_Logging_DB_Alerts",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Integration Sub-Process (SP) Demo\nversion 2.0",
+            "description": "Template for Integration Sub-Process (SP) Demo\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -87,7 +110,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "9zhFtybduaa-gt-5306440-2020-03-24T18:08:15.976Z::pd.xml"
+            "repoHandle": "Gaaa-gt-37438105-2022-02-22T15:23:52.529Z::pd.xml"
          }
       }
    }
