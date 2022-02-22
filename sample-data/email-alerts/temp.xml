@@ -1,0 +1,42 @@
+<aetgt:output xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">
+ <sf:field name="tmp_process_name">TEMPLATE-SP-ETL-Alerts-DB</sf:field>
+ <sf:field name="tmp_context" objectType="$po:ProcessExecutionContext">
+  <ProcessExecutionContext>
+   <parentProcessId>8813</parentProcessId>  
+   <mainProcessId>8808</mainProcessId>  
+   <jobId>f77b6345-a64b-4f4a-9d4b-9bc301a650c4</jobId>  
+   <orgId>f77b6345-a64b-4f4a-9d4b-9bc301a650c4</orgId>  
+   <baseURI>https://na1.ai.dm-us.informaticacloud.com</baseURI>  
+   <environmentName>g01_agent_01</environmentName>  </ProcessExecutionContext>
+ </sf:field>
+
+ <sf:field name="tmp_faultInfo" objectType="$po:FaultInfo">
+  <FaultInfo>
+   <processName>TEMPLATE-SP-ETL-Alerts-DB pid:8808 job:f77b6345-a64b-4f4a-9d4b-9bc301a650c4</processName>  </FaultInfo>
+ </sf:field>
+
+ <sf:field name="tmp_process_title">TEMPLATE-SP-ETL-Alerts-DB pid:8808 job:f77b6345-a64b-4f4a-9d4b-9bc301a650c4 FAULTED: 500 Simulated Fault</sf:field>
+ <sf:field name="tmp_script_out">true</sf:field>
+ <sf:field name="tmp_email_input" objectType="Email-G01:EmailTaskInput">
+  <EmailTaskInput>
+   <to>jbrazda@hcg.com</to>  
+   <subject>Error in TEMPLATE-SP-ETL-Alerts-DB pid:8808 job:f77b6345-a64b-4f4a-9d4b-9bc301a650c4 FAULTED: 500 Simulated Fault on g01_agent_01</subject>  
+   <contentType>text/html</contentType>  
+   <body>&lt;html>&lt;head>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8">&lt;meta content="Informatica Cloud" name="Generator">&lt;title>Integration Job Notification&lt;/title>&lt;style media="screen" type="text/css"> body { font-size: 12px; font-family: arial, sans-serif; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0; padding: 0; } /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */ .ExternalClass { width: 100%; } /* Force Hotmail to display emails at full width */ .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div { line-height: 100%; } /* Force Hotmail to display normal line spacing. More on that: http://www.emailonacid.com/forum/viewthread/43/ */ #backgroundTable { margin: 0; padding: 0; width: 100% !important; line-height: 100% !important; } p { font-size: 12px; font-family: inherit; } ul { list-style-type: disc; } li { font-size: 12px; font-family: arial, sans-serif; } table{ table-layout: fixed; width: 100%; } table td { border-collapse: collapse; font-size: 12px; background-color: inherit; color: inherit; padding: 5px !important; } td.center { text-align: center; white-space: nowrap; } table th { font-size: 12px; font-weight: bold; background-color: #ddd; text-align: left; } &lt;/style>&lt;/head>&lt;body style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background: #E4E4E4;" width="100%">&lt;table align="center" border="0" cellpadding="0" cellspacing="0" id="backgroundTable" role="presentation" style="width: 100%; background: #FFFFFF; border: 12px solid #FFFFFF; width: 90%; border-collapse: collapse; padding: 10px; font-size: 10pt; font-family: Arial, sans-serif;">&lt;tr style="background: #00558c; color: #FFFFFF;">&lt;td style="padding: 8px; padding-left: 12px; color: #FFFFFF;">&lt;b>IICS - Fault Alert Notification&lt;/b>&lt;/td>&lt;td style="padding: 8px; padding-right: 12px; text-align: right; color: #FFFFFF;">&lt;b>&lt;i>Org:f77b6345-a64b-4f4a-9d4b-9bc301a650c4 Env:g01_agent_01&lt;/i>&lt;/b>&lt;/td>&lt;/tr>&lt;tr>&lt;td colspan="2" style="padding: 0px; padding-top: 10px; background: #FFFFFF; font-size: 10pt;">&lt;table align="center" id="messageTable" style="padding: 0px; border: 0px; width: 100%; background: #F4F4F4; color: #2F2F2F; font-size: 10pt; font-family: Arial, sans-serif;">&lt;tr>&lt;td style="padding: 2em">&lt;h2>Unexpected Process Error&lt;/h2>&lt;p style="padding-bottom: 5px; font-size: 12pt; font-family: Arial, sans-serif;">Error in TEMPLATE-SP-ETL-Alerts-DB Process ID [&lt;a href="https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/8813/TEMPLATE-SP-ETL-Alerts-DB-8813%7Bg01_agent_01%7D">8813&lt;/a>] Job ID: f77b6345-a64b-4f4a-9d4b-9bc301a650c4&lt;/p>&lt;h2>Error Information&lt;/h2>&lt;table align="left" id="AlertTable" style="width: 100%; border: 1px; font-size: 10pt; font-family: Arial, sans-serif; table-layout: fixed;">&lt;tr>&lt;td style="width: 150px">Process Id&lt;/td>&lt;td>&lt;a href="https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/8813/TEMPLATE-SP-ETL-Alerts-DB-8813%7Bg01_agent_01%7D">8813&lt;/a>&lt;/td>&lt;/tr>&lt;tr>&lt;td style="width: 150px">Process Name&lt;/td>&lt;td>TEMPLATE-SP-ETL-Alerts-DB&lt;/td>&lt;/tr>&lt;tr>&lt;td style="width: 150px">Error Time&lt;/td>&lt;td>2022-02-22 11:08:24&lt;/td>&lt;/tr>&lt;tr>&lt;td style="width: 150px">Error Code&lt;/td>&lt;td>&lt;pre>500&lt;/pre>&lt;/td>&lt;/tr>&lt;tr>&lt;td style="width: 150px">Error Reason&lt;/td>&lt;td>&lt;pre>Simulated Fault&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;tr style="padding: 2em">&lt;td>&lt;h2>Fault Detail&lt;/h2>&lt;pre style="border: 1px; padding: 1em; border-color: black; border-style: solid;">&amp;lt;fault hasElementData="true"
+       hasMessageData="false"
+       name="faultResponse"
+       namespaceURI="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+       rethrowable="true"
+       source="/process/flow/scope[@name='Throw_with_parameters']/sequence/throw[@name='Throw_with_parameters']"
+       suspendable="true"&amp;gt;
+    &amp;lt;aetgt:faultResponse xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+                         xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"&amp;gt;
+        &amp;lt;sf:code xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&amp;gt;500&amp;lt;/sf:code&amp;gt;
+        &amp;lt;sf:reason xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&amp;gt;Test&amp;lt;/sf:reason&amp;gt;
+        &amp;lt;sf:details xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&amp;gt;Test Fault Detail&amp;lt;/sf:details&amp;gt;
+    &amp;lt;/aetgt:faultResponse&amp;gt;
+&amp;lt;/fault&amp;gt;
+&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>&lt;/td>&lt;/tr>&lt;/table>&lt;/body>&lt;/html></body>  </EmailTaskInput>
+ </sf:field>
+</aetgt:output>
+

@@ -100,7 +100,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Integration Sub-Process (SP) Demo\nversion: 1.6",
+            "description": "Template for Integration Sub-Process (SP)  Which uses email notification on Error\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

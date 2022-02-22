@@ -5,7 +5,7 @@
       <types1:Name>TEMPLATE-SP-ETL-Alerts-DB</types1:Name>
       <types1:ParentFlowIds>Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Template for Integration Sub-Process (SP) Demo
+      <types1:Description>Template for Integration Sub-Process (SP)  Which uses email notification on Error
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:G01</types1:Tags>
@@ -15,10 +15,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-02-22T15:23:53Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-22T17:07:52Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-02-22T18:43:29Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-22T17:08:15Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-02-22T18:45:43Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-Alerts-DB/TEMPLATE-SP-ETL-Alerts-DB.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 1.6</types1:Description>
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Template for Integration Sub-Process (SP) Demo
+            <description>Template for Integration Sub-Process (SP)  Which uses email notification on Error
 version: 1.6</description>
             <tags>.agent:G01</tags>
             <generator>Informatica Process Designer 11</generator>
@@ -356,11 +356,18 @@ let $email_body :=
                 white-space: nowrap;
             }}
             
+
+            
             table th {{
                 font-size: 12px;
                 font-weight: bold;
                 background-color: #ddd;
                 text-align: left;
+            }}
+        
+            .content table, .content th, .content td {{
+              border: 1px solid black;
+              border-collapse: collapse;
             }}
     &lt;/style&gt;
        
@@ -386,9 +393,8 @@ let $email_body :=
                             
                             
                             &lt;h2&gt;Error Information&lt;/h2&gt;
-                            &lt;table id="AlertTable" align="left"
-                                style="width: 100%; border: 1px; font-size: 10pt; font-family: Arial, sans-serif; table-layout: fixed;"&gt;
-                                &lt;tr&gt;
+                            &lt;table id="AlertTable" class="content" style="border-collapse: collapse; width: unset;" align="left"&gt;
+                                &lt;tr &gt;
                                     &lt;td style="width: 150px"&gt;Process Id&lt;/td&gt;
                                     &lt;td&gt;&lt;a href="{$view_url}"&gt;{$processId}&lt;/a&gt;&lt;/td&gt;
                                 &lt;/tr&gt;
@@ -402,11 +408,11 @@ let $email_body :=
                                 &lt;/tr&gt;
                                 &lt;tr&gt;
                                     &lt;td style="width: 150px"&gt;Error Code&lt;/td&gt;
-                                    &lt;td&gt;&lt;pre&gt;{$faultInfo/code/text()}&lt;/pre&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;pre style="margin: 0px"&gt;{$faultInfo/code/text()}&lt;/pre&gt;&lt;/td&gt;
                                 &lt;/tr&gt;
                                 &lt;tr&gt;
                                     &lt;td style="width: 150px"&gt;Error Reason&lt;/td&gt;
-                                    &lt;td&gt;&lt;pre&gt;{$faultReason}&lt;/pre&gt;&lt;/td&gt;
+                                    &lt;td&gt;&lt;pre style="margin: 0px"&gt;{$faultReason}&lt;/pre&gt;&lt;/td&gt;
                                 &lt;/tr&gt;
                             &lt;/table&gt;
                         &lt;/td&gt;
@@ -414,13 +420,12 @@ let $email_body :=
                     {
                     if (empty($faultDetail)) then () else
                     &lt;tr style="padding: 2em" &gt;
-                    	&lt;td&gt;
-                        	&lt;h2&gt;Fault Detail&lt;/h2&gt;
-
-                        	&lt;pre style="border: 1px; padding: 1em; border-color: black; border-style: solid;"&gt;
-                        	{$faultDetail}
-                        	&lt;/pre&gt;
-                      	&lt;/td&gt;
+                        &lt;td&gt;
+                            &lt;h2&gt;Fault Detail&lt;/h2&gt;
+                            &lt;pre style="border: 1px; padding: 1em; border-color: black; border-style: solid;"&gt;
+                            {$faultDetail}
+                            &lt;/pre&gt;
+                        &lt;/td&gt;
                     &lt;/tr&gt;
                     } 
                 &lt;/table&gt;
@@ -500,5 +505,5 @@ Detail:
       <types1:GUID>fV6YTLRp1ACbYFS3UhGwSE</types1:GUID>
       <types1:DisplayName>TEMPLATE-SP-ETL-Alerts-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-22T17:12:09.223Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-22T18:58:38.493Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
