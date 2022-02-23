@@ -1,0 +1,163 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Informatica Cloud" />
+<title>Integration Job Notification</title>
+<style type="text/css" media="screen">
+body {
+	font-size: 12px;
+	font-family: arial, sans-serif;
+	width: 100% !important;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+.ExternalClass {
+	width: 100%;
+}
+
+/* Force Hotmail to display emails at full width */
+.ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div
+	{
+	line-height: 100%;
+}
+/* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+#backgroundTable {
+	margin: 0;
+	padding: 0;
+	width: 100% !important;
+	line-height: 100% !important;
+}
+
+p {
+	font-size: 12px;
+	font-family: inherit;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+li {
+	font-size: 12px;
+	font-family: arial, sans-serif;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+table td {
+	border-collapse: collapse;
+	font-size: 12px;
+	background-color: inherit;
+	color: inherit;
+	padding: 5px !important;
+}
+
+td.center {
+	text-align: center;
+	white-space: nowrap;
+}
+
+table th {
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #ddd;
+	text-align: left;
+}
+
+.content table,.content th,.content td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body width="100%"
+	style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background: #E4E4E4;">
+	<table id="backgroundTable" align="center" role="presentation"
+		cellspacing="0" cellpadding="0" border="0"
+		style="width: 100%; background: #FFFFFF; border: 12px solid #FFFFFF; width: 90%; border-collapse: collapse; padding: 10px; font-size: 10pt; font-family: Arial, sans-serif;">
+		<tr style="background: #00558c; color: #FFFFFF;">
+			<td style="padding: 8px; padding-left: 12px; color: #FFFFFF;"><b>IICS
+					- Fault Alert Notification</b></td>
+			<td
+				style="padding: 8px; padding-right: 12px; text-align: right; color: #FFFFFF;">
+				<b> <i>Org:f77b6345-a64b-4f4a-9d4b-9bc301a650c4
+						Env:g01_agent_01</i>
+			</b>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"
+				style="padding: 0px; padding-top: 10px; background: #FFFFFF; font-size: 10pt;">
+				<table id="messageTable" align="center"
+					style="padding: 0px; border: 0px; width: 100%; background: #F4F4F4; color: #2F2F2F; font-size: 10pt; font-family: Arial, sans-serif;">
+					<tr>
+
+						<td style="padding: 2em">
+							<h2>Unexpected Process Error</h2>
+							<p
+								style="padding-bottom: 5px; font-size: 12pt; font-family: Arial, sans-serif;">
+								Error in TEMPLATE-SP-ETL-Alerts-DB Process ID [<a
+									href="https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/8813/TEMPLATE-SP-ETL-Alerts-DB-8813%7Bg01_agent_01%7D">8813</a>]
+								Job ID: f77b6345-a64b-4f4a-9d4b-9bc301a650c4
+							</p>
+							<h2>Error Information</h2>
+							<table id="AlertTable" class="content"
+								style="border-collapse: collapse; width: unset;" align="left">
+								<tr>
+									<td style="width: 150px">Process Id</td>
+									<td><a
+										href="https://na1.ai.dm-us.informaticacloud.com/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/8813/TEMPLATE-SP-ETL-Alerts-DB-8813%7Bg01_agent_01%7D">8813</a>
+									</td>
+								</tr>
+								<tr>
+									<td style="width: 150px">Process Name</td>
+									<td>TEMPLATE-SP-ETL-Alerts-DB</td>
+								</tr>
+								<tr>
+									<td style="width: 150px">Error Time</td>
+									<td>2022-02-22 13:42:04</td>
+								</tr>
+								<tr>
+									<td style="width: 150px">Error Code</td>
+									<td><pre style="margin: 0px">500</pre></td>
+								</tr>
+								<tr>
+									<td style="width: 150px">Error Reason</td>
+									<td><pre style="margin: 0px">Simulated Fault</pre></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr style="padding: 2em">
+						<td>
+							<h2>Fault Detail</h2> <pre
+								style="border: 1px; padding: 1em; border-color: black; border-style: solid;">&lt;fault hasElementData="true"
+       hasMessageData="false"
+       name="faultResponse"
+       namespaceURI="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+       rethrowable="true"
+       source="/process/flow/scope[@name='Throw_with_parameters']/sequence/throw[@name='Throw_with_parameters']"
+       suspendable="true"&gt;
+    &lt;aetgt:faultResponse xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+                         xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"&gt;
+        &lt;sf:code xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;500&lt;/sf:code&gt;
+        &lt;sf:reason xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;Test&lt;/sf:reason&gt;
+        &lt;sf:details xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;Test Fault Detail&lt;/sf:details&gt;
+    &lt;/aetgt:faultResponse&gt;
+&lt;/fault&gt;
+</pre>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

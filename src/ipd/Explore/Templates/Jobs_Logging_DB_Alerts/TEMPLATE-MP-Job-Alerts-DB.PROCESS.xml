@@ -1,0 +1,575 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:EntryId>
+      <types1:Name>TEMPLATE-MP-Job-Alerts-DB</types1:Name>
+      <types1:ParentFlowIds>Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Template for Main Job Processes
+version: 1.6</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
+      <types1:CreationDate>2022-02-22T15:23:53Z</types1:CreationDate>
+      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2022-02-22T18:45:29Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-02-22T18:45:43Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-Alerts-DB/TEMPLATE-MP-Job-Alerts-DB.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEMPLATE-MP-Job-Alerts-DB"
+                  name="TEMPLATE-MP-Job-Alerts-DB"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Template for Main Job Processes
+version: 1.6</description>
+            <tags>.agent:G01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Process Execution Context"
+                          name="in_context"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                  </options>
+               </parameter>
+               <parameter description=" Set to true for Synchronous invocation"
+                          name="in_wait_to_complete"
+                          type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="Job Parameters, change the Type to a Custom Specific Process Object"
+                          name="in_parameters"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_UpdateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEventRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">a8f1LmXZlzibFVDqCJ5equ</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_email_input" type="reference">
+                  <options>
+                     <option name="referenceTo">Email-G01:EmailTaskInput</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">2ZM6icvXPAkk6jxADngnoK</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>G01</targetLocation>
+               <rest/>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="getJobStatus">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="job_id"
+                                required="true"
+                                type="int"/>
+                  </input>
+                  <output>
+                     <field description="" name="status" type="string"/>
+                  </output>
+                  <deployment>
+                     <rest/>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <assignment id="c">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
+                  <operation source="formula" to="output.out_context">
+                     <expression language="XQuery">let $pid := util:getProcessId()
+return if (empty($input.in_context)) then
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$pid}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{util:generateUUID()}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+     &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+  &lt;/ProcessExecutionContext&gt;
+else 
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$input.in_context[1]/mainProcessId}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{$input.in_context[1]/jobId}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+     &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+  &lt;/ProcessExecutionContext&gt;
+
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $pid_label := if (empty($output.out_context[1]/parentProcessId)) then ()
+	else concat("pid:",$output.out_context[1]/parentProcessId)
+let $job_label := if (empty($output.out_context[1]/jobId)) then () 
+	else concat("job:",$output.out_context[1]/jobId)
+
+
+let $parts := ($p_name,$pid_label,$job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_CreateJobLogEntryRequest">
+                     <expression language="XQuery">&lt;CreateJobLogEntryRequest&gt;
+   &lt;StartDate&gt;{fn:current-dateTime()}&lt;/StartDate&gt;
+   &lt;JobName&gt;{$temp.tmp_process_title}&lt;/JobName&gt;
+   &lt;ProcessId&gt;{util:getProcessId()}&lt;/ProcessId&gt;
+&lt;/CreateJobLogEntryRequest&gt;
+</expression>
+                  </operation>
+                  <operation source="field"
+                             to="temp.tmp_CreateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                  <link id="jv3ygheo" targetId="jv3yghen"/>
+               </assignment>
+               <service id="jv3yghen">
+                  <title>Create Job Entry</title>
+                  <serviceName>SP-IPaaS-Create-Job-Entry-DB-NA</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="in_CreateJobLogEntryRequest" source="field" updatable="true">temp.tmp_CreateJobLogEntryRequest</parameter>
+                  </serviceInput>
+                  <link id="jv3yghi6" targetId="j9fuax9n"/>
+               </service>
+               <service id="kzyckfp5">
+                  <title>Update Job Entry</title>
+                  <serviceName>SP-IPaaS-Update-Job-Entry-DB-NA</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="in_UpdateJobLogEntryRequest" source="field" updatable="true">temp.tmp_UpdateJobLogEntryRequest</parameter>
+                  </serviceInput>
+                  <link id="kzyckfp7" targetId="d"/>
+               </service>
+               <container id="j9fuax9n" type="exclusive">
+                  <title>Wait for Job to Complete?</title>
+                  <flow id="j9fuax9o">
+                     <assignment id="kihjm3v1">
+                        <title>Set Execution Context</title>
+                        <operation source="field" to="input.in_context">input.in_context</operation>
+                     </assignment>
+                     <link id="j9fuax9t" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <flow id="j9fuax9p">
+                     <milestone id="j9fuax9q"/>
+                     <link id="j9fuax9u" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <link id="j9fuax9r" targetId="j9fuax9o" type="containerLink">
+                     <condition source="formula">
+                        <function name="true">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuax9s" targetId="j9fuax9p" type="containerLink">
+                     <condition source="formula">
+                        <function name="false">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuaxa1" targetId="j84qss48"/>
+               </container>
+               <eventContainer id="j84qss48">
+                  <subflow id="j84qss2l">
+                     <title>Run Integration Process</title>
+                     <subflowGUID>fV6YTLRp1ACbYFS3UhGwSE</subflowGUID>
+                     <subflowPath>TEMPLATE-SP-ETL-Alerts-DB</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="in_context" source="field" updatable="true">output.out_context</parameter>
+                        <parameter name="in_parameters" source="field" updatable="true">input.in_parameters</parameter>
+                     </input>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="j84qss4b">
+                     <assignment id="j9fuaxir">
+                        <title>Assignment to Status, EndDate, etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">3</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                     </assignment>
+                     <link id="j84qss4c" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <flow id="j84qss4f">
+                     <assignment id="j84qss4e">
+                        <title>Update Process Title</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <link id="j9fuaxkr" targetId="j9fuaxkq"/>
+                     </assignment>
+                     <assignment id="j9fuaxkq">
+                        <title>Assignment to Status, EndDate etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">2</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                        <operation source="formula" to="temp.tmp_CreateJobLogEventRequest">
+                           <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;Job Fault&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;Error Code: {$output.faultInfo[1]/code}
+Error Reson: {$output.faultInfo[1]/reason}
+Error Detail:
+{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;process_id&gt;{$output.out_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name }&lt;/process_name&gt;
+   {$output.out_context }
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+&lt;/CreateJobLogEventRequest&gt;
+</expression>
+                        </operation>
+                        <link id="jv3yghio" targetId="jv3yghin"/>
+                     </assignment>
+                     <assignment id="kzyalv4q">
+                        <title>Prepare Email</title>
+                        <operation source="formula" to="temp.tmp_email_input">
+                           <expression language="XQuery">let $context      := $output.out_context 
+let $current-time := current-date()
+let $date_format  := "[Y0001]-[M01]-[D01] [H01]:[m01]:[s01]"
+
+let $org_id       := $context/orgId/text()
+let $environment  := $context/environmentName/text() 
+let $base_uri     := $context/baseURI/text() 
+let $processId    := $context/parentProcessId/text()
+let $processName  := $temp.tmp_process_name
+let $recipients   := distinct-values(tokenize($input.in_parameters/alertEmailRecipents/text(), ','))
+
+(:trying to parse fault details if XML and pretty print:)
+let $serialization-params := &lt;xsl:output 
+                                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                                xmlns:saxon="http://saxon.sf.net/"
+                                method="xml"
+                                omit-xml-declaration="yes"
+                                indent="yes"
+                                saxon:indent-spaces="4"/&gt;
+                                
+let $view_url :=  if (contains($environment, "Cloud"))
+    then concat($base_uri,"/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/",$processId,"/",$processName,"-",$processId,"%7B%7D")
+    else concat($base_uri,"/activevos-central/projres/apps/app-integration/integrationConsole/index.html#/main/processinstance/",$processId,"/",$processName,"-",$processId,"%7B",$environment,"%7D")
+    
+let $faultInfo := $output.faultInfo 
+
+let $detail := $faultInfo/detail/*
+let $reason := $faultInfo/reason/*
+
+let $faultDetail := switch (true())
+                       case ($detail instance of element()) return 
+                            try { saxon:serialize($detail,$serialization-params )
+                            } catch * {
+                              string($detail)
+                            } 
+                       case (not(empty($faultInfo/detail/text()))) return 
+                            try { saxon:serialize(fn:parse-xml(string($faultInfo/detail/text())),$serialization-params )
+                            } catch * {
+                              $faultInfo/detail/text()
+                            }
+                       default return ()
+
+let $faultReason := switch (true())
+                       case ($reason instance of element()) return 
+                            try { saxon:serialize($reason,$serialization-params )
+                            } catch * {
+                              string($reason)
+                            } 
+                       case (not(empty($faultInfo/reason/text()))) return 
+                            try { saxon:serialize(fn:parse-xml(string($faultInfo/reason/text())),$serialization-params )
+                            } catch * {
+                              $faultInfo/reason/text()
+                            }
+                       default return $faultInfo/reason/text()   
+
+let $email_body :=
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+        &lt;meta name="Generator" content="Informatica Cloud" /&gt;
+        &lt;title&gt;Integration Job Notification&lt;/title&gt;
+        &lt;style type="text/css" media="screen"&gt;
+
+            body {{
+                font-size: 12px;
+                font-family: arial, sans-serif;
+                width: 100% !important;
+                -webkit-text-size-adjust: 100%;
+                -ms-text-size-adjust: 100%;
+                margin: 0;
+                padding: 0;
+            }}
+            
+            /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+            .ExternalClass {{
+                width: 100%;
+            }}
+            
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div
+                {{
+                line-height: 100%;
+            }}
+            /* Force Hotmail to display normal line spacing.  More on that: http://www.emailonacid.com/forum/viewthread/43/ */
+            #backgroundTable {{
+                margin: 0;
+                padding: 0;
+                width: 100% !important;
+                line-height: 100% !important;
+            }}
+            
+            p {{
+                font-size: 12px;
+                font-family: inherit;
+            }}
+            
+            ul {{
+                list-style-type: disc;
+            }}
+            
+            li {{
+                font-size: 12px;
+                font-family: arial, sans-serif;
+            }}
+            
+            table{{
+               table-layout: fixed;
+               width: 100%;
+            }}
+            
+            table td {{
+                border-collapse: collapse;
+                font-size: 12px;
+                background-color: inherit;
+                color: inherit;
+                padding: 5px !important;
+            }}
+            
+            td.center {{
+                text-align: center;
+                white-space: nowrap;
+            }}
+            
+
+            
+            table th {{
+                font-size: 12px;
+                font-weight: bold;
+                background-color: #ddd;
+                text-align: left;
+            }}
+        
+            .content table, .content th, .content td {{
+              border: 1px solid black;
+              border-collapse: collapse;
+            }}
+    &lt;/style&gt;
+       
+    &lt;/head&gt;
+    &lt;body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background: #E4E4E4;" &gt;
+    &lt;table id="backgroundTable" align="center"  role="presentation" cellspacing="0" cellpadding="0" border="0"
+        style="width: 100%; background: #FFFFFF; border: 12px solid #FFFFFF; width: 90%; border-collapse: collapse; padding: 10px; font-size: 10pt; font-family: Arial, sans-serif;"&gt;
+        &lt;tr style="background: #00558c; color: #FFFFFF;"&gt;
+            &lt;td style="padding: 8px; padding-left: 12px; color: #FFFFFF;"&gt;&lt;b&gt;IICS - Fault Alert Notification&lt;/b&gt;&lt;/td&gt;
+            &lt;td style="padding: 8px; padding-right: 12px; text-align: right; color: #FFFFFF;"&gt;&lt;b&gt;&lt;i&gt;Org:{$org_id} Env:{$environment}&lt;/i&gt;&lt;/b&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"
+                style="padding: 0px; padding-top: 10px; background: #FFFFFF; font-size: 10pt;"&gt;
+                &lt;table id="messageTable"
+                    align="center"
+                    style="padding: 0px; border: 0px; width: 100%; background: #F4F4F4; color: #2F2F2F; font-size: 10pt; font-family: Arial, sans-serif;"&gt;
+                    &lt;tr&gt;
+                        &lt;td style="padding: 2em"&gt;
+
+                            &lt;h2&gt;Unexpected Process Error&lt;/h2&gt;                            
+                            &lt;p style="padding-bottom: 5px; font-size: 12pt; font-family: Arial, sans-serif;"&gt;Error in {$temp.tmp_process_name} Process ID [&lt;a href="{$view_url}"&gt;{$processId}&lt;/a&gt;] Job ID: {$context/jobId/text()}&lt;/p&gt;
+                            
+                            
+                            &lt;h2&gt;Error Information&lt;/h2&gt;
+                            &lt;table id="AlertTable" class="content" style="border-collapse: collapse; width: unset;" align="left"&gt;
+                                &lt;tr &gt;
+                                    &lt;td style="width: 150px"&gt;Process Id&lt;/td&gt;
+                                    &lt;td&gt;&lt;a href="{$view_url}"&gt;{$processId}&lt;/a&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="width: 150px"&gt;Process Name&lt;/td&gt;
+                                    &lt;td&gt;{$processName}&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="width: 150px"&gt;Error Time&lt;/td&gt;
+                                    &lt;td&gt;{fn:format-dateTime(current-dateTime(),$date_format)}&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="width: 150px"&gt;Error Code&lt;/td&gt;
+                                    &lt;td&gt;&lt;pre style="margin: 0px"&gt;{$faultInfo/code/text()}&lt;/pre&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td style="width: 150px"&gt;Error Reason&lt;/td&gt;
+                                    &lt;td&gt;&lt;pre style="margin: 0px"&gt;{$faultReason}&lt;/pre&gt;&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    {
+                    if (empty($faultDetail)) then () else
+                    &lt;tr style="padding: 2em" &gt;
+                        &lt;td&gt;
+                            &lt;h2&gt;Fault Detail&lt;/h2&gt;
+                            &lt;pre style="border: 1px; padding: 1em; border-color: black; border-style: solid;"&gt;
+                            {$faultDetail}
+                            &lt;/pre&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                    } 
+                &lt;/table&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+return
+&lt;EmailTaskInput&gt;
+   {
+   for $recipient in $recipients
+   return
+   &lt;to&gt;{$recipient}&lt;/to&gt;
+   }
+   &lt;subject&gt;Error in {util:getAssetName()} on {$environment}&lt;/subject&gt;
+   &lt;contentType&gt;text/html&lt;/contentType&gt;
+   &lt;body&gt;{util:toXML($email_body)}&lt;/body&gt;
+&lt;/EmailTaskInput&gt;
+</expression>
+                        </operation>
+                        <link id="kzyckfmf" targetId="kzyckfme"/>
+                     </assignment>
+                     <service id="jv3yghin">
+                        <title>Log Error</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry-DB-NA</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="field" updatable="true">temp.tmp_CreateJobLogEventRequest</parameter>
+                        </serviceInput>
+                        <link id="kzyalv4r" targetId="kzyalv4q"/>
+                     </service>
+                     <service id="kzyckfme">
+                        <title>Send Alert Email</title>
+                        <serviceName>Email-G01:sendEmailService</serviceName>
+                        <serviceGUID>2ZM6icvXPAkk6jxADngnoK</serviceGUID>
+                        <serviceInput>
+                           <parameter name="emailTaskInput" source="field" updatable="true">temp.tmp_email_input</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="j84qss4g" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <link id="j84qss49" targetId="j84qss4b" type="containerLink"/>
+                  <link id="kzyckfp6" targetId="kzyckfp5"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j84qss3z" interrupting="true">
+                        <link id="j84qss4d" targetId="j84qss4f" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>3pP29DIyb25gm1j4NNXmeZ</types1:GUID>
+      <types1:DisplayName>TEMPLATE-MP-Job-Alerts-DB</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2022-02-22T18:58:39.435Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

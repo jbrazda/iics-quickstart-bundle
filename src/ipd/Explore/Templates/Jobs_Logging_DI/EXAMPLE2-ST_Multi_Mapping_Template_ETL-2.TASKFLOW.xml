@@ -451,5 +451,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>9fshaX5sjjjfwaHL7vOyCP</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-21T19:33:51.502Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-02-22T18:58:40.514Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

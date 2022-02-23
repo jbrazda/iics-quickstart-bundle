@@ -23,6 +23,8 @@ Explore/Templates/Jobs_Logging_DB/TEMPLATE-SP-ETL-DB.PROCESS
 Explore/Templates/Jobs_Logging_DB/TEMPLATE-MP-Job-DB.PROCESS
 Explore/Templates/Jobs_Logging_DAS/TEMPLATE-SP-ETL-DAS.PROCESS
 Explore/Templates/Jobs_Logging_DAS/TEMPLATE-MP-Job-DAS.PROCESS
+Explore/Templates/Jobs_Logging_DB_Alerts/TEMPLATE-SP-ETL-Alerts-DB.PROCESS
+Explore/Templates/Jobs_Logging_DB_Alerts/TEMPLATE-MP-Job-Alerts-DB.PROCESS
 Explore/Tools/Processes/SP-JMS-Send-MDM-IICS.PROCESS
 Explore/Tools/Processes/SP-ICS-Create-MCT-NA.PROCESS
 Explore/Tools/Processes/SP-ConvertAttachmentToText.PROCESS
