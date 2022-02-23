@@ -1,0 +1,45 @@
+<aetgt:output
+	xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+	xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">
+	<sf:field name="faultInfo">
+		<faultInfo>
+			<code>500</code>
+			<reason>Simulated Fault</reason>
+			<detail>&lt;fault hasElementData="true" hasMessageData="false" name="faultResponse" namespaceURI="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" rethrowable="true" source="/process/flow/scope[@name='Throw_with_parameters']/sequence/throw[@name='Throw_with_parameters']" suspendable="true">&lt;aetgt:faultResponse xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">&lt;sf:code xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">500&lt;/sf:code>&lt;sf:reason xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">Test&lt;/sf:reason>&lt;sf:details xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">Test Fault Detail&lt;/sf:details>&lt;/aetgt:faultResponse>&lt;/fault></detail>
+		</faultInfo>
+	</sf:field>
+
+	<sf:field
+		name="out_log_event"
+		objectType="$po:JobLogEventResponse">
+		<JobLogEventResponse
+			xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+			xmlns:xsd1="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">
+			<id>2065f32a-ff72-4b40-9a70-adea9eb8a061</id>
+			<job_id>f77b6345-a64b-4f4a-9d4b-9bc301a650c4</job_id>
+			<event_message>TODO: Update this message: Integration Step Failed</event_message>
+			<event_time>2022-02-22T11:08:24.585-06:00</event_time>
+			<event_detail>
+				Code: 500
+				Reason:Simulated Fault
+				Detail:
+				&lt;fault hasElementData="true" hasMessageData="false" name="faultResponse" namespaceURI="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" rethrowable="true" source="/process/flow/scope[@name='Throw_with_parameters']/sequence/throw[@name='Throw_with_parameters']" suspendable="true">&lt;aetgt:faultResponse xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/" xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">&lt;sf:code xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">500&lt;/sf:code>&lt;sf:reason xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">Test&lt;/sf:reason>&lt;sf:details xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">Test Fault Detail&lt;/sf:details>&lt;/aetgt:faultResponse>&lt;/fault></event_detail>
+			<process_id>8813</process_id>
+			<org_id>$public:adoG8hzbqeIgKuWL6vhWQJ</org_id>
+			<logging_level>3</logging_level>
+			<process_name>TEMPLATE-SP-ETL-Alerts-DB</process_name>
+			<process_title>TEMPLATE-SP-ETL-Alerts-DB pid:8808 job:f77b6345-a64b-4f4a-9d4b-9bc301a650c4 FAULTED: 500 Simulated Fault</process_title>
+			<environment>g01_agent_01</environment>
+		</JobLogEventResponse>
+	</sf:field>
+
+	<sf:field
+		name="emailTaskOutput"
+		objectType="Email-G01:EmailTaskOutput">
+		<root xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">
+			<validSentAddress>jbrazda@hcg.com</validSentAddress>
+			<status>Success</status>
+		</root>
+	</sf:field>
+</aetgt:output>
+

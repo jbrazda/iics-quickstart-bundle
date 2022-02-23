@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as  a backend\nversion: 2.0",
+            "description": "This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DB as a backend\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -18,7 +18,8 @@
          "objectRefs": [
             "dT4a8mv0dmakB8rX5zj8sL",
             "hcH0Cde8Y2GjqGhTQpv9oz",
-            "jJIHZ3UwecldLOFbMHDroh"
+            "jJIHZ3UwecldLOFbMHDroh",
+            "3pP29DIyb25gm1j4NNXmeZ"
          ],
          "repoInfo": {
             "repoHandle": "Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml"
@@ -77,7 +78,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Process Object should be used to pass down context information to the child execution process when they are called  from a parent process or keep a status information",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -88,6 +89,28 @@
          "objectRefs": [],
          "repoInfo": {
             "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "3pP29DIyb25gm1j4NNXmeZ",
+      "objectName": "TEMPLATE-MP-Job-Alerts-DB",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs_Logging_DB_Alerts",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml"
          }
       }
    }

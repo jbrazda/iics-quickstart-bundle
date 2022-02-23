@@ -1,0 +1,35 @@
+<aetgt:input
+	xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+	xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+	xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">
+	<sf:parameter
+		name="in_context"
+		objectType="$po:ProcessExecutionContext">
+		<ProcessExecutionContext>
+			<parentProcessId>8808</parentProcessId>
+			<mainProcessId>8808</mainProcessId>
+			<jobId>f77b6345-a64b-4f4a-9d4b-9bc301a650c4</jobId>
+			<orgId>adoG8hzbqeIgKuWL6vhWQJ</orgId>
+			<baseURI>https://na1.ai.dm-us.informaticacloud.com</baseURI>
+			<environmentName>g01_agent_01</environmentName>
+		</ProcessExecutionContext>
+	</sf:parameter>
+
+	<sf:parameter
+		name="in_parameters"
+		objectType="$po:$any">
+		<parameters
+			xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+			xmlns:aesf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+			xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+			xmlns:git="http://schemas.active-endpoints.com/wsdl/guideRuntime/2013/04/guideInterpreter.xsd"
+			xmlns:ns2="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+			xmlns:types="http://schemas.active-endpoints.com/wsdl/guideRuntime/2013/04/guideInterpreter.xsd">
+			<alertEmailRecipents>jbrazda@hcg.com</alertEmailRecipents>
+		</parameters>
+	</sf:parameter>
+
+	<sf:parameter name="Process Title">true</sf:parameter>
+	<sf:parameter name="Current User">jbrazda@unicosolution.com.dev</sf:parameter>
+</aetgt:input>
+
