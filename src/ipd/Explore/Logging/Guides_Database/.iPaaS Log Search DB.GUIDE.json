@@ -17,7 +17,8 @@
          },
          "objectRefs": [
             "1WEsQ1BnaCNlHLEkh8PJca",
-            "dT4a8mv0dmakB8rX5zj8sL"
+            "dT4a8mv0dmakB8rX5zj8sL",
+            "5qIuCPZACbreESh7CW8Z4f"
          ],
          "repoInfo": {
             "repoHandle": "PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml"
@@ -65,6 +66,28 @@
          "objectRefs": [],
          "repoInfo": {
             "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "5qIuCPZACbreESh7CW8Z4f",
+      "objectName": "SP Show Process Links",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide Generates and displays process links for specified environment name and process id. Make sure that the ae:base-uri uri is defined as urn mapping on all agents and Cloud server. This URN must point to corresponding Cloud instance pod URL such as https://na1.ai.dm-us.informaticacloud.com",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "FlprzYLnzYLnzYL-gt-6187094-2020-03-24T18:08:16.501Z::gt.xml"
          }
       }
    }
