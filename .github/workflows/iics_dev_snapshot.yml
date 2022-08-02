@@ -57,7 +57,7 @@ jobs:
         find ./src/ipd -name "*.PROCESS.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
         find ./src/ipd -name "*.GUIDE.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt
     - name: Commit and Push Changes
-      uses: actions-x/commit@v2.9
+      uses: actions-x/commit@v6
       with:
         message: ${{ github.event.inputs.commitMessage }}
         branch: dev
