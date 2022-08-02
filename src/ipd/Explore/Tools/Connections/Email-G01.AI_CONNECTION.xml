@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml</types1:EntryId>
       <types1:Name>Email-G01</types1:Name>
-      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,Gaaa-gt-37438105-2022-02-22T15:23:52.529Z::pd.xml,Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,aaa-gt-1014853-2022-03-10T22:53:38.003Z::pd.xml,Gaaa-gt-37438105-2022-02-22T15:23:52.529Z::pd.xml,RWBFgaa-gt-1552725-2022-03-10T22:53:37.698Z::pd.xml,Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Shared Email Service to send  alerts and notifications on Local Agents group G01</types1:Description>
       <types1:AppliesTo/>
@@ -14,10 +14,10 @@
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2021-07-14T14:43:35Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-07-14T14:47:20Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-04-13T13:56:34Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:57:52Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-04-13T13:56:47Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/Email-G01/Email-G01.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -58,5 +58,5 @@
       <types1:GUID>2ZM6icvXPAkk6jxADngnoK</types1:GUID>
       <types1:DisplayName>Email-G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-24T23:20:35.041Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-05-31T14:35:23.138Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

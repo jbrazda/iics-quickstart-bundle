@@ -15,7 +15,7 @@ version: 1.6</types1:Description>
       <types1:CreationDate>2020-03-24T18:08:22Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
       <types1:ModificationDate>2022-02-22T16:37:41Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
       <types1:PublicationDate>2022-02-22T16:40:26Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DB/How_To_Use_Template_Processes_DB.xml</types1:PublishedContributionId>
@@ -219,5 +219,5 @@ version: 1.6</description>
       <types1:GUID>0TDbowvyedFiXZqIUfUGqs</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-02-24T23:20:38.562Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-05-31T14:35:27.747Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
