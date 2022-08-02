@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up JDK 8
       uses: actions/setup-java@v2.5.0
       with:
@@ -57,7 +57,7 @@ jobs:
         find ./src/ipd -name "*.PROCESS.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt && \
         find ./src/ipd -name "*.GUIDE.xml" | sed -r 's/(\.\/src\/ipd\/)|(\.xml)//g' >> conf/all_designs.publish.txt
     - name: Commit and Push Changes
-      uses: actions-x/commit@v2
+      uses: actions-x/commit@v2.9
       with:
         message: ${{ github.event.inputs.commitMessage }}
         branch: dev
