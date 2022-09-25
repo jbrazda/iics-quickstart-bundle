@@ -1,0 +1,58 @@
+[
+   {
+      "objectGuid": "8zOFiO6xCR5iQVJvdjZ7Eq",
+      "objectName": "zz_OBSOLETE_cn_FF_JDE_to_SP_TEMP",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [
+            "8OoRwZrdncvfN5Q97mLbQt"
+         ],
+         "repoInfo": {
+            "repoHandle": "0118TN0B00000000000Z"
+         }
+      }
+   },
+   {
+      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
+      "objectName": "G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0118TN25000000000003"
+         }
+      }
+   }
+]

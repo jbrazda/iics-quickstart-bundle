@@ -322,5 +322,5 @@ saxon:serialize(util:simplifyXml($output.dataAccessResponse),$saxon_params)</exp
       <types1:GUID>3KGF1ctxe8Th9LaXNFkl6u</types1:GUID>
       <types1:DisplayName>DAS Tools</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-08-02T14:51:34.161Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-09-25T16:24:03.166Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
