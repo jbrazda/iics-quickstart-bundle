@@ -705,5 +705,5 @@ return string-join($messageParts, " ")
       <types1:GUID>1OhIsv9XOryjqHq8x31xGe</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-09-25T16:24:05.402Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2022-11-17T21:19:52.853Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
