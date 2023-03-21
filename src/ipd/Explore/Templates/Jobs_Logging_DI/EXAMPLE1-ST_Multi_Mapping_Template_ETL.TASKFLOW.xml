@@ -13,9 +13,12 @@ version: 1.6</types1:Description>
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-12T15:40:25Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2023-01-16T17:43:12Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2022-12-04T17:35:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.EXAMPLE1-ST_Multi_Mapping_Template_ETL/EXAMPLE1-ST_Multi_Mapping_Template_ETL.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -94,7 +97,7 @@ version: 1.6</description>
                </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <rest/>
             </deployment>
             <flow id="a">
@@ -170,21 +173,21 @@ version: 1.6</description>
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping1[1]/output[1]
 let $detail := &lt;detail&gt;
-Success Source Rows: {$job_output/Success_Source_Rows/text() }
-Failed Source Rows: {$job_output/Failed_Source_Rows/text() }
-Success Target Rows: {$job_output/Success_Target_Rows/text() }
-Failed Target Rows: {$job_output/Failed_Target_Rows/text() }
-Start Time: {$job_output//Start_Time/text() }
-End Time: {$job_output//End_Time/text() }
-Object Name: {$job_output/Object_Name/text() }
-Log ID: {$job_output/Log_Id/text() }
-Run ID: {$job_output/Run_Id/text() }
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
+Object Name: {$job_output/Object_Name/text()}
+Log ID: {$job_output/Log_Id/text()}
+Run ID: {$job_output/Run_Id/text()}
 Task Status: {$job_output/Task_Status/text()}
 Error Message: {$job_output/Error_Message/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
@@ -205,10 +208,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  </operation>
                                  <operation source="field"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping1[1]/output[1]/Object_Name </expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -298,8 +299,8 @@ let $detail := &lt;detail&gt;
 Error Message: {$job_output/reason/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
@@ -318,10 +319,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  </operation>
                                  <operation source="field"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping1[1]/output[1]/Object_Name </expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -385,9 +384,9 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                      <throw id="kyas0egx">
                         <title>Throw Error</title>
                         <throwInput>
-                           <parameter name="code" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/code</parameter>
-                           <parameter name="detail" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/detail</parameter>
-                           <parameter name="reason" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/reason</parameter>
+                           <parameter name="code" source="field" updatable="true">temp.Mapping1[1]/fault[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">temp.Mapping1[1]/fault[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">temp.Mapping1[1]/fault[1]/reason</parameter>
                         </throwInput>
                      </throw>
                   </flow>
@@ -467,21 +466,21 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping2[1]/output[1]
 let $detail := &lt;detail&gt;
-Success Source Rows: {$job_output/Success_Source_Rows/text() }
-Failed Source Rows: {$job_output/Failed_Source_Rows/text() }
-Success Target Rows: {$job_output/Success_Target_Rows/text() }
-Failed Target Rows: {$job_output/Failed_Target_Rows/text() }
-Start Time: {$job_output//Start_Time/text() }
-End Time: {$job_output//End_Time/text() }
-Object Name: {$job_output/Object_Name/text() }
-Log ID: {$job_output/Log_Id/text() }
-Run ID: {$job_output/Run_Id/text() }
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
+Object Name: {$job_output/Object_Name/text()}
+Log ID: {$job_output/Log_Id/text()}
+Run ID: {$job_output/Run_Id/text()}
 Task Status: {$job_output/Task_Status/text()}
 Error Message: {$job_output/Error_Message/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
@@ -502,10 +501,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  </operation>
                                  <operation source="field"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping2[1]/output[1]/Object_Name </expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -598,8 +595,8 @@ let $detail := &lt;detail&gt;
 Error Message: {$job_output/reason/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
@@ -618,10 +615,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                  </operation>
                                  <operation source="field"
                                             to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping2[1]/output[1]/Object_Name </expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -711,7 +706,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Sample-Mapping"
                               isByCopy="true"
                               name="mt-Sample-Mapping">
-                  <description> version: 1.6</description>
+                  <description/>
                   <tags/>
                   <detail>
                      <field label="TaskProperties Parameters"
@@ -735,7 +730,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Logging-CreateEventEntry"
                               isByCopy="true"
                               name="mt-Logging-CreateEventEntry">
-                  <description> version: 1.6</description>
+                  <description/>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -771,5 +766,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>5YzMg2kmS00iQdkQoGCRgD</types1:GUID>
       <types1:DisplayName>EXAMPLE1-ST_Multi_Mapping_Template_ETL</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-11-17T21:19:55.523Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-03-21T23:17:41.236Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

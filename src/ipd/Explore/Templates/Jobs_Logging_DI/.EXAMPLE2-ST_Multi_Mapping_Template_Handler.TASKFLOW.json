@@ -32,7 +32,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -54,7 +54,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

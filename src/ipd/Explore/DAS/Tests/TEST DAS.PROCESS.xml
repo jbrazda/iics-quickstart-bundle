@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2023-02-27T19:40:17Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:58:10Z</types1:PublicationDate>
+      <types1:PublicationDate>2023-02-27T19:40:24Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEST_DAS/TEST_DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -101,9 +101,16 @@ version: 1.6</description>
                      <option name="isCopy">true</option>
                   </options>
                </field>
+               <field description="" name="tmp_binary_data" type="attachments">
+                  <options>
+                     <option name="count">10</option>
+                     <option name="maxsize">5242880</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <targetLocation>G01</targetLocation>
                <rest/>
             </deployment>
@@ -122,6 +129,7 @@ col_varchar VARCHAR(45) NULL,
 col_int INT NULL,
 col_datetime DATETIME2(0) NULL,
 col_bigint BIGINT NULL,
+col_varbinary VARBINARY(max),
 PRIMARY KEY (idtest_table),
 CONSTRAINT idtest_table_UNIQUE UNIQUE (idtest_table ASC));
     &lt;/sql&gt;
@@ -132,6 +140,7 @@ CREATE TABLE test_table (
   col_int INT NULL,
   col_datetime DATETIME NULL,
   col_bigint BIGINT NULL,
+  col_varbinary VARBINARY(65535),
   PRIMARY KEY (idtest_table),
   UNIQUE INDEX idtest_table_UNIQUE (idtest_table ASC));
 &lt;/sql&gt;
@@ -144,6 +153,7 @@ CREATE TABLE test_table (
   col_int INT NULL,
   col_datetime TIMESTAMP(0) NULL,
   col_bigint BIGINT NULL,
+  col_varbinary BIT VARYING(65535),
   PRIMARY KEY (idtest_table),
   CONSTRAINT idtest_table_UNIQUE UNIQUE (idtest_table));
 &lt;/sql&gt;
@@ -173,7 +183,15 @@ $statements/sql[@dbType = string($input.in_db_type) ]/text()</expression>
                         <arg name="new_field">{$temp.testResult}</arg>
                      </function>
                   </operation>
-                  <link id="ivk2b9lc" targetId="ivk2b9lb"/>
+                  <link id="len6h0wy" targetId="len6h0wx"/>
+               </assignment>
+               <assignment id="len6h0wx">
+                  <title>Prepare Binary Content</title>
+                  <operation source="formula" to="temp.tmp_binary_data">
+                     <expression language="XQuery">let $payloaBase64 := util:base64Encode('my test data','UTF-8')
+return sff:createAttachmentFromBase64("test.txt", $payloaBase64  , 'text/plain')</expression>
+                  </operation>
+                  <link id="len6h0wz" targetId="ivk2b9lb"/>
                </assignment>
                <assignment id="ivk2b9lb">
                   <title>Set Insert Statement</title>
@@ -186,8 +204,9 @@ $statements/sql[@dbType = string($input.in_db_type) ]/text()</expression>
 (col_varchar,
 col_int,
 col_datetime,
-col_bigint) 
-values (?,?,?,?)&lt;/statement&gt;
+col_bigint,
+col_varbinary) 
+values (?,?,?,?,?)&lt;/statement&gt;
       &lt;parameter&gt;
          &lt;sqlType&gt;string&lt;/sqlType&gt;
          &lt;data&gt;test&lt;/data&gt;
@@ -203,6 +222,10 @@ values (?,?,?,?)&lt;/statement&gt;
       &lt;parameter&gt;
          &lt;sqlType&gt;double&lt;/sqlType&gt;
          &lt;data&gt;12345678&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;binary&lt;/sqlType&gt;
+         &lt;attachmentId&gt;{sff:getAttachmentProperty($temp.tmp_binary_data ,'Content-Id' )}&lt;/attachmentId&gt;
       &lt;/parameter&gt;
    &lt;/sqlStatement&gt;
    &lt;dataSource&gt;{$input.in_dataSource }&lt;/dataSource&gt;
@@ -401,7 +424,7 @@ return string-join($messageParts, " ")</expression>
                      <link id="ivjwaakb" targetId="ivjwaak3" type="containerLink"/>
                   </flow>
                   <link id="ivjwaak4" targetId="ivjwaak6" type="containerLink"/>
-                  <link id="ivjwaal0" targetId="ivjo3fkm"/>
+                  <link id="len6h0wi" targetId="ivjo3fkm"/>
                   <events>
                      <catch faultField="faultInfo" id="ivjndd6p" interrupting="true">
                         <link id="ivjwaak8" targetId="ivjwaaka" type="containerLink"/>
@@ -415,6 +438,7 @@ return string-join($messageParts, " ")</expression>
                      <serviceGUID/>
                      <serviceInput>
                         <parameter name="dataAccessRequest" source="field">temp.dasRequest</parameter>
+                        <parameter name="dataAccessRequestAttachments" source="field" updatable="true">temp.tmp_binary_data</parameter>
                      </serviceInput>
                   </service>
                   <flow id="ivk2b9me">
@@ -705,5 +729,5 @@ return string-join($messageParts, " ")
       <types1:GUID>1OhIsv9XOryjqHq8x31xGe</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-11-17T21:19:52.853Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-03-21T23:17:36.2Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

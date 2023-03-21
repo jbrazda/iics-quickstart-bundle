@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "Process Objects used by the Logging framework",
+            "description": "Process Objects used by the logging framework",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],
