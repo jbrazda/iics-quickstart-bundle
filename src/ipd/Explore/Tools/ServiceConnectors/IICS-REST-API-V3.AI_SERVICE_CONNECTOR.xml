@@ -1914,5 +1914,5 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
       <types1:GUID>035COj5HDGMk9BFhGZxqy5</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V3</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-03-21T23:17:31.708Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:48:40.322Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Example Task Flow template to use as a starting point to develop new task flows",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -17,7 +17,7 @@
          },
          "objectRefs": [
             "arfQo6Li6wQkR6Rte6APwl",
-            "9fshaX5sjjjfwaHL7vOyCP"
+            "31WCVUAtjlelvyIdlkCyKG"
          ],
          "repoInfo": {
             "repoHandle": "w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml"
@@ -47,7 +47,7 @@
       }
    },
    {
-      "objectGuid": "9fshaX5sjjjfwaHL7vOyCP",
+      "objectGuid": "31WCVUAtjlelvyIdlkCyKG",
       "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-2",
       "objectType": "TASKFLOW",
       "path": "/Explore/Templates/Jobs_Logging_DI",
@@ -64,7 +64,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "YOvGqUlLnzYLnzY-gt-1000002-2022-01-12T15:40:24.816Z::tf.xml"
+            "repoHandle": "oKeERhKGXShOeCF-gt-77785973-2023-06-06T19:39:29.236Z::tf.xml"
          }
       }
    }

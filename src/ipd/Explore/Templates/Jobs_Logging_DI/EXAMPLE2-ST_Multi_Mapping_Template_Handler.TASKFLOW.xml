@@ -13,9 +13,12 @@ version: 1.6</types1:Description>
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-12T15:40:25Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:04Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2023-06-06T19:41:14Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2023-06-06T19:41:35Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.EXAMPLE2-ST_Multi_Mapping_Template_Handler/EXAMPLE2-ST_Multi_Mapping_Template_Handler.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -37,8 +40,19 @@ version: 1.6</description>
                   </options>
                </parameter>
             </input>
+            <tempFields>
+               <field description=""
+                      name="EXAMPLE2-ST_Multi_Mapping_Template_ETL-2"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:InternalInfaSubTaskflowField</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <rest/>
             </deployment>
             <flow id="a">
@@ -54,27 +68,37 @@ version: 1.6</description>
                      <parameter name="in_job_id" source="field" updatable="true">input.in_job_id</parameter>
                   </input>
                   <outputDef/>
-                  <link id="kyazzidk" targetId="kyazzidj"/>
+                  <link id="likono88" targetId="likono87"/>
                </subflow>
-               <subflow id="kyazzidj">
+               <subflow id="likono87">
                   <title>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</title>
-                  <subflowGUID>9fshaX5sjjjfwaHL7vOyCP</subflowGUID>
+                  <subflowGUID>31WCVUAtjlelvyIdlkCyKG</subflowGUID>
                   <subflowPath>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</subflowPath>
                   <runForEach>false</runForEach>
                   <input>
                      <parameter name="in_job_id" source="field" updatable="true">input.in_job_id</parameter>
                   </input>
                   <outputDef/>
-                  <link id="kyazzidq" targetId="kyazzidp"/>
+                  <link id="likono89" targetId="kyazzidp"/>
                </subflow>
                <end id="kyazzidp">
                   <title>End 1</title>
                </end>
             </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="InternalInfaSubTaskflowField"
+                              isByCopy="true"
+                              name="InternalInfaSubTaskflowField">
+                  <description>This process object represents a subtaskflow type reference field.</description>
+                  <tags/>
+                  <detail/>
+               </processObject>
+            </dependencies>
          </taskflow>
       </types1:Entry>
       <types1:GUID>27YdzYRyhpPeBcR0v2huCq</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_Handler</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-03-21T23:17:42.791Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:48:43.594Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
