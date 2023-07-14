@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "Processes to Log Data to DB via DAS Service Wrapper",
+            "description": "Processes to log data to DB via DAS service wrapper",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],
