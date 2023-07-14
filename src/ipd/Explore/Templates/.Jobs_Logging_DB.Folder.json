@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "Binary",
-            "description": "Job Tracking and Integration Templates which use DB for Logging",
+            "description": "Job Tracking and Integration Templates which use DB for logging",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

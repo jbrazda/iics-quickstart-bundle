@@ -5,7 +5,7 @@
       <types1:Name>iPaaS_Configuration_Manager</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
-version: 1.6</types1:Description>
+version: 1.7</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-21T15:54:23Z</types1:ModificationDate>
+      <types1:ModificationDate>2022-08-02T14:11:15Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-21T15:54:31Z</types1:PublicationDate>
+      <types1:PublicationDate>2022-08-02T14:11:27Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,10 +29,20 @@ version: 1.6</types1:Description>
                          name="iPaaS_Configuration_Manager"
                          runAsUser="$current">
             <description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
-version: 1.6</description>
+version: 1.7</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="null"
+                          name="in_property_filter"
+                          required="false"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
             <tempFields>
                <field description="" name="tmp_configurations" type="objectlist">
                   <options>
@@ -320,7 +330,7 @@ version: 1.6</description>
                <screen id="jp8dxkv3">
                   <title>Filter by key</title>
                   <body contentType="text/html">&lt;p&gt;Search for Key Value&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;Use % as a wildcard&lt;/p&gt;
+&lt;p&gt;Use % as a wildcard, you can also separate two keys with ","&lt;/p&gt;
 &lt;p&gt;&lt;input class="" title="tmp_key_search (temporary)" name="temp.tmp_key_search" type="text" value="tmp_key_search (temporary)"&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
@@ -334,7 +344,7 @@ version: 1.6</description>
                                      required="false"
                                      type="string">
                         <options>
-                           <option name="text_size">50</option>
+                           <option name="text_size">120</option>
                            <option name="required">false</option>
                         </options>
                      </screenDataItem>
@@ -622,16 +632,16 @@ version: 1.6</description>
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="kzwvpkaa">
+               <empty gatewayType="exclusive" id="l63q1b2v">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="kzwvpk8k">
+               <empty gatewayType="exclusive" id="l63q1b15">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="kzwvpk8v">
+               <empty gatewayType="exclusive" id="l63q1b1g">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="kzwvpka5">
+               <empty gatewayType="exclusive" id="l63q1b2q">
                   <actions/>
                </empty>
                <empty gatewayType="exclusive" id="kzstkt2g">
@@ -648,9 +658,9 @@ version: 1.6</description>
                      </action>
                   </actions>
                </empty>
-               <jumpTo id="jp8g7jba" targetTitle="Set Query">
+               <jumpTo id="jp8g7jba" targetTitle="Query Configurations">
                   <actions>
-                     <action alt="null" id="jp8g7jba_jp8dxku3" targetScreen="jp8dxku3">
+                     <action alt="null" id="jp8g7jba_jp8dxkvq" targetScreen="jp8dxkvq">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -761,6 +771,7 @@ version: 1.6</description>
                   <operation source="formula" to="temp.tmp_config_dataSource">
                      <expression language="XQuery">if (util:resolveURN('urn:ic_configuration:dataSource')= 'urn:ic_configuration:dataSource' ) then 'DS1' else util:resolveURN('urn:ic_configuration:dataSource')</expression>
                   </operation>
+                  <operation source="field" to="temp.tmp_key_search">input.in_property_filter</operation>
                   <actions>
                      <action alt="null" id="k2m6wduw_jp8dxku3" targetScreen="jp8dxku3">
                         <text>Continue</text>
@@ -770,13 +781,13 @@ version: 1.6</description>
                <assignment id="jp8dxku3">
                   <title>Set Query</title>
                   <operation source="formula" to="temp.tmp_query">
-                     <expression language="XQuery">let $query := switch (true())
-  case empty($temp.tmp_key_search) return concat("LIMIT ", $temp.tmp_query_limit)
-    case contains($temp.tmp_key_search,"%") return concat("PKEY LIKE '",$temp.tmp_key_search,"' LIMIT ",$temp.tmp_query_limit)
-    default return concat("PKEY LIKE '%",$temp.tmp_key_search,"%' LIMIT ",$temp.tmp_query_limit)
-
+                     <expression language="XQuery">let $conditions := for $filter in tokenize($temp.tmp_key_search,',')
+	let $condition := if (contains($temp.tmp_key_search,"%")) then &lt;condition&gt;PKEY LIKE '{$filter}'&lt;/condition&gt;/text()
+    	else &lt;condition&gt;PKEY LIKE '%{$filter}%'&lt;/condition&gt;/text()
+    return 
+    $condition
 return 
-$query</expression>
+concat(string-join($conditions,' or '),' LIMIT ',$temp.tmp_query_limit)</expression>
                   </operation>
                   <actions>
                      <action alt="null" id="jp8dxku3_jp8dxkvq" targetScreen="jp8dxkvq">
@@ -813,6 +824,7 @@ $query</expression>
                      <expression language="XQuery">let $export_items := for $item in $temp.tmp_selected_configurations 
 				   let $key := replace($item/PKEY/text(),'[&amp;#10;&amp;#10;]','/n')
                    let $value := replace($item/PVALUE/text(),'[&amp;#10;&amp;#10;]','/n')
+                   order by $item/PKEY
                    return
 				   concat('"',$key,'","',$value,'"')
 let $header := 'PKEY,PVALUE'
@@ -829,8 +841,9 @@ return string-join(($header,$export_items), '&amp;#10;')
                   <title>Convert to SQL</title>
                   <operation source="formula" to="temp.tmp_export_data">
                      <expression language="XQuery">let $export_items := for $item in $temp.tmp_selected_configurations 
-				   let $key := $item/PKEY/text()
+				   let $key :=  $item/PKEY/text()
                    let $value := $item/PVALUE/text()
+                   order by $item/PKEY
                    return
 				   concat("INSERT INTO IC_CONFIGURATION (PKEY, PVALUE) VALUES ('",$key,"','",$value,"')")
 return string-join($export_items, '&amp;#10;')
@@ -853,6 +866,7 @@ return string-join($export_items, '&amp;#10;')
                                 saxon:indent-spaces="4"/&gt;
 let $xml := &lt;configuration&gt;
 	{for $item in $temp.tmp_selected_configurations
+     order by $item/PKEY
      return
      &lt;item&gt;
      	{$item/*}
@@ -876,5 +890,5 @@ saxon:serialize(util:simplifyXml( $xml), $saxon_params)
       <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-05-31T14:35:27.829Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:59:15.923Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

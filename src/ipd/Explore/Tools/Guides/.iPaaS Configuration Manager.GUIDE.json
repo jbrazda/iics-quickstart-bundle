@@ -7,7 +7,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide to manage configuration properties stored as a Key/Value pairs in the Database\nversion: 1.6",
+            "description": "Guide to manage configuration properties stored as a Key/Value pairs in the Database\nversion: 1.7",
             "documentState": "VALID"
          },
          "contextAttributes": null,

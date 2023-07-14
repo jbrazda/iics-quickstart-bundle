@@ -13,9 +13,12 @@ version: 1.6</types1:Description>
       <types1:ProcessGroup/>
       <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
       <types1:CreationDate>2022-01-12T15:40:25Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
+      <types1:ModificationDate>2023-06-06T18:50:06Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
+      <types1:PublicationDate>2023-06-06T18:50:24Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.EXAMPLE1-ST_Multi_Mapping_Template_ETL/EXAMPLE1-ST_Multi_Mapping_Template_ETL.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -39,11 +42,6 @@ version: 1.6</description>
             </input>
             <tempFields>
                <field description="" name="tmp_environment" type="string">
-                  <options>
-                     <option name="required">false</option>
-                  </options>
-               </field>
-               <field description="" name="tmp_process_name" type="string">
                   <options>
                      <option name="required">false</option>
                   </options>
@@ -94,7 +92,7 @@ version: 1.6</description>
                </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
                <rest/>
             </deployment>
             <flow id="a">
@@ -104,9 +102,6 @@ version: 1.6</description>
                <assignment id="ky2k5239">
                   <title>Initialize</title>
                   <operation source="constant" to="temp.tmp_environment">Data Integration</operation>
-                  <operation source="formula" to="temp.tmp_process_name">
-                     <expression language="XQuery">util:getAssetName()</expression>
-                  </operation>
                   <link id="kyaqzpu7" targetId="ky3jxait"/>
                </assignment>
                <eventContainer id="ky3jxait">
@@ -154,61 +149,96 @@ version: 1.6</description>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
                               <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
                                  <operation source="field" to="mt-Logging-CreateEventEntry">temp.Create Event Entry Completed</operation>
-                                 <operation source="field" to="mt-Logging-CreateEventEntry/inout[1]/prm_job_ID">input.in_job_id</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_event_ID">
+                                 <operation source="field" to="mt-Logging-CreateEventEntry/input[1]/prm_job_ID">input.in_job_id</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_event_ID">
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">
-                                    <expression language="XQuery">util:iif($temp.Mapping1[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')
-</expression>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">
+                                    <expression language="XQuery">util:iif($temp.Mapping1[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping1[1]/output[1]
 let $detail := &lt;detail&gt;
-Success Source Rows: {$job_output/Success_Source_Rows/text() }
-Failed Source Rows: {$job_output/Failed_Source_Rows/text() }
-Success Target Rows: {$job_output/Success_Target_Rows/text() }
-Failed Target Rows: {$job_output/Failed_Target_Rows/text() }
-Start Time: {$job_output//Start_Time/text() }
-End Time: {$job_output//End_Time/text() }
-Object Name: {$job_output/Object_Name/text() }
-Log ID: {$job_output/Log_Id/text() }
-Run ID: {$job_output/Run_Id/text() }
-Task Status: {$job_output/Task_Status/text()}
-Error Message: {$job_output/Error_Message/text()}
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">
-                                    <expression language="XQuery">$temp.Mapping1[1]/output[1]/Task_Status </expression>
-                                 </operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_orgID">
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">temp.Mapping1[1]/output[1]/Task_Status</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_environment">temp.tmp_environment</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_environment">temp.tmp_environment</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_job_ID">input.in_job_id</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping1[1]/output[1]/Object_Name </expression>
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_event_ID">
+                                    <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_event_message">
+                                    <expression language="XQuery">util:iif($temp.Mapping1[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_event_detail">
+                                    <expression language="XQuery">let $job_output := $temp.Mapping1[1]/output[1]
+let $detail := &lt;detail&gt;
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
+&lt;/detail&gt;
+return
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_Initiator">
+                                    <expression language="XQuery">util:getUserName()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_logging_level">temp.Mapping1[1]/output[1]/Task_Status</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_orgID">
+                                    <expression language="XQuery">util:getOrganizationId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_environment">temp.tmp_environment</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_ID">
+                                    <expression language="XQuery">util:getProcessId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_name">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -235,24 +265,6 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                          to="temp.Create Event Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
                               <operation source="field"
                                          to="temp.Create Event Entry Completed/output/FirstErrorCode">First Error Code</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_message">prm_event_message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_detail">prm_event_detail</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_Initiator">prm_Initiator</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_environment">prm_environment</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_orgID">prm_orgID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_logging_level">prm_logging_level</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_ID">prm_event_ID</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_name">prm_process_name</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_ID">prm_process_ID</operation>
                            </serviceOutput>
                         </service>
                         <events>
@@ -282,90 +294,105 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
                               <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
                                  <operation source="field" to="mt-Logging-CreateEventEntry">temp.Create Event Entry Failed</operation>
-                                 <operation source="field" to="mt-Logging-CreateEventEntry/inout[1]/prm_job_ID">input.in_job_id</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_event_ID">
+                                 <operation source="field" to="mt-Logging-CreateEventEntry/input[1]/prm_job_ID">input.in_job_id</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_event_ID">
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
                                  <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">Integration Step Failed</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">Integration Step Failed</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping1[1]/fault[1]
-let $detail := &lt;detail&gt;
+let $detail := &lt;detail&gt; 
 Error Message: {$job_output/reason/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
                                  <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">3</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_orgID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">3</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_environment">temp.tmp_environment</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_environment">temp.tmp_environment</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_job_ID">input.in_job_id</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping1[1]/output[1]/Object_Name </expression>
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_event_ID">
+                                    <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
+                                 <operation source="constant"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_event_message">Integration Step Failed</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_event_detail">
+                                    <expression language="XQuery">let $job_output := $temp.Mapping1[1]/fault[1]
+let $detail := &lt;detail&gt; 
+Error Message: {$job_output/reason/text()}
+&lt;/detail&gt;
+return
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_Initiator">
+                                    <expression language="XQuery">util:getUserName()</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_logging_level">3</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_orgID">
+                                    <expression language="XQuery">util:getOrganizationId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_environment">temp.tmp_environment</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_ID">
+                                    <expression language="XQuery">util:getProcessId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_name">temp.Mapping1[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_title">temp.Mapping1[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Task_Status">Task Status</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Object_Name">Object Name</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Run_Id">Run Id</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Log_Id">Log Id</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Task_Id">Task Id</operation>
+                                         to="temp.Create Event Entry Failed/output/Success_Source_Rows">Success Source Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Task_Status">Task Status</operation>
+                                         to="temp.Create Event Entry Failed/output/Failed_Source_Rows">Failed Source Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Success_Source_Rows">Success Source Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/Success_Target_Rows">Success Target Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Error_Message">Error Message</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Success_Target_Rows">Success Target Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/TotalTransErrors">Total Transformation Errors</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Failed_Target_Rows">Failed Target Rows</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Start_Time">Start Time</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/End_Time">End Time</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Error_Message">Error Message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/FirstErrorCode">First Error Code</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_message">prm_event_message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_detail">prm_event_detail</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_Initiator">prm_Initiator</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_environment">prm_environment</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_orgID">prm_orgID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_logging_level">prm_logging_level</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_ID">prm_event_ID</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_name">prm_process_name</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_ID">prm_process_ID</operation>
+                                         to="temp.Create Event Entry Failed/output/FirstErrorCode">First Error Code</operation>
                            </serviceOutput>
                         </service>
                         <link id="kyas0egy" targetId="kyas0egx"/>
@@ -385,9 +412,9 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                      <throw id="kyas0egx">
                         <title>Throw Error</title>
                         <throwInput>
-                           <parameter name="code" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/code</parameter>
-                           <parameter name="detail" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/detail</parameter>
-                           <parameter name="reason" source="field" updatable="true">temp.Sample Mapping[1]/fault[1]/reason</parameter>
+                           <parameter name="code" source="field" updatable="true">temp.Mapping1[1]/fault[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">temp.Mapping1[1]/fault[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">temp.Mapping1[1]/fault[1]/reason</parameter>
                         </throwInput>
                      </throw>
                   </flow>
@@ -440,8 +467,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                      </serviceOutput>
                   </service>
                   <flow id="kyarq4ty">
-                     <eventContainer id="kyas0e7o">
-                        <service id="kyas0e6q">
+                     <eventContainer id="likk00b0">
+                        <service id="likk00ae">
                            <title>Create Event Entry Completed 2</title>
                            <serviceName>ICSExecuteDataTask</serviceName>
                            <serviceGUID/>
@@ -451,61 +478,96 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
                               <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
                                  <operation source="field" to="mt-Logging-CreateEventEntry">temp.Create Event Entry Completed 2</operation>
-                                 <operation source="field" to="mt-Logging-CreateEventEntry/inout[1]/prm_job_ID">input.in_job_id</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_event_ID">
+                                 <operation source="field" to="mt-Logging-CreateEventEntry/input[1]/prm_job_ID">input.in_job_id</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_event_ID">
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">
-                                    <expression language="XQuery">util:iif($temp.Mapping2[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')
-</expression>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">
+                                    <expression language="XQuery">util:iif($temp.Mapping2[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping2[1]/output[1]
 let $detail := &lt;detail&gt;
-Success Source Rows: {$job_output/Success_Source_Rows/text() }
-Failed Source Rows: {$job_output/Failed_Source_Rows/text() }
-Success Target Rows: {$job_output/Success_Target_Rows/text() }
-Failed Target Rows: {$job_output/Failed_Target_Rows/text() }
-Start Time: {$job_output//Start_Time/text() }
-End Time: {$job_output//End_Time/text() }
-Object Name: {$job_output/Object_Name/text() }
-Log ID: {$job_output/Log_Id/text() }
-Run ID: {$job_output/Run_Id/text() }
-Task Status: {$job_output/Task_Status/text()}
-Error Message: {$job_output/Error_Message/text()}
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">
-                                    <expression language="XQuery">$temp.Mapping2[1]/output[1]/Task_Status </expression>
-                                 </operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_orgID">
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">temp.Mapping2[1]/output[1]/Task_Status</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_environment">temp.tmp_environment</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_environment">temp.tmp_environment</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_job_ID">input.in_job_id</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping2[1]/output[1]/Object_Name </expression>
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_event_ID">
+                                    <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_event_message">
+                                    <expression language="XQuery">util:iif($temp.Mapping2[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_event_detail">
+                                    <expression language="XQuery">let $job_output := $temp.Mapping2[1]/output[1]
+let $detail := &lt;detail&gt;
+Success Source Rows: {$job_output/Success_Source_Rows/text()}
+Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
+Success Target Rows: {$job_output/Success_Target_Rows/text()}
+Failed Target Rows: {$job_output/Failed_Target_Rows/text()}
+Start Time: {$job_output//Start_Time/text()}
+End Time: {$job_output//End_Time/text()}
+&lt;/detail&gt;
+return
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task when string param contains line breaks :)</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_Initiator">
+                                    <expression language="XQuery">util:getUserName()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_logging_level">temp.Mapping2[1]/output[1]/Task_Status</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_orgID">
+                                    <expression language="XQuery">util:getOrganizationId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_environment">temp.tmp_environment</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_process_ID">
+                                    <expression language="XQuery">util:getProcessId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_process_name">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Completed 2[1]/input[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -532,27 +594,9 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                                          to="temp.Create Event Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
                               <operation source="field"
                                          to="temp.Create Event Entry Completed/output/FirstErrorCode">First Error Code</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_message">prm_event_message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_detail">prm_event_detail</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_Initiator">prm_Initiator</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_environment">prm_environment</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_orgID">prm_orgID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_logging_level">prm_logging_level</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_ID">prm_event_ID</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_name">prm_process_name</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_ID">prm_process_ID</operation>
                            </serviceOutput>
                         </service>
-                        <link id="kyas1yko" targetId="kyas1ykn"/>
+                        <link id="likk00af" targetId="kyas1ykn"/>
                         <events>
                            <catch faultField="temp.Create Event Entry Completed 2/fault"
                                   id="ky2k525a"
@@ -571,8 +615,8 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                      </end>
                   </flow>
                   <flow id="kyarq4u1">
-                     <eventContainer id="kyas0efv">
-                        <service id="kyas0eex">
+                     <eventContainer id="likk00ef">
+                        <service id="likk00dt">
                            <title>Create Event Entry Failed 2</title>
                            <serviceName>ICSExecuteDataTask</serviceName>
                            <serviceGUID/>
@@ -582,93 +626,108 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
                               <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
-                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
                                  <operation source="field" to="mt-Logging-CreateEventEntry">temp.Create Event Entry Failed 2</operation>
-                                 <operation source="field" to="mt-Logging-CreateEventEntry/inout[1]/prm_job_ID">input.in_job_id</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_event_ID">
+                                 <operation source="field" to="mt-Logging-CreateEventEntry/input[1]/prm_job_ID">input.in_job_id</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_event_ID">
                                     <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
                                  <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_message">Integration Step Failed</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">Integration Step Failed</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_event_detail">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
                                     <expression language="XQuery">let $job_output := $temp.Mapping2[1]/fault[1]
-let $detail := &lt;detail&gt;
+let $detail := &lt;detail&gt; 
 Error Message: {$job_output/reason/text()}
 &lt;/detail&gt;
 return
-(:We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whenstring param contains line breaks :)
-replace($detail/text(),"&amp;#10;"," ")</expression>
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
                                  </operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_Initiator">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
                                  <operation source="constant"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_logging_level">3</operation>
-                                 <operation source="formula" to="mt-Logging-CreateEventEntry/inout[1]/prm_orgID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">3</operation>
+                                 <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_environment">temp.tmp_environment</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_environment">temp.tmp_environment</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_ID">
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_ID">
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_name">temp.tmp_process_name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_job_ID">input.in_job_id</operation>
                                  <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/inout[1]/prm_process_title">
-                                    <expression language="XQuery">$temp.Mapping2[1]/output[1]/Object_Name </expression>
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_event_ID">
+                                    <expression language="XQuery">util:generateUUID()</expression>
                                  </operation>
+                                 <operation source="constant"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_event_message">Integration Step Failed</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_event_detail">
+                                    <expression language="XQuery">let $job_output := $temp.Mapping2[1]/fault[1]
+let $detail := &lt;detail&gt; 
+Error Message: {$job_output/reason/text()}
+&lt;/detail&gt;
+return
+normalize-space(replace($detail/text(),"&amp;#10;"," "))
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
+                                 </operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_Initiator">
+                                    <expression language="XQuery">util:getUserName()</expression>
+                                 </operation>
+                                 <operation source="constant"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_logging_level">3</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_orgID">
+                                    <expression language="XQuery">util:getOrganizationId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_environment">temp.tmp_environment</operation>
+                                 <operation source="formula"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_process_ID">
+                                    <expression language="XQuery">util:getProcessId()</expression>
+                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_process_name">temp.Mapping2[1]/output[1]/Object_Name</operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed 2[1]/input[1]/prm_process_title">temp.Mapping2[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Task_Status">Task Status</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Object_Name">Object Name</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Run_Id">Run Id</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Log_Id">Log Id</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Task_Id">Task Id</operation>
+                                         to="temp.Create Event Entry Failed/output/Success_Source_Rows">Success Source Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Task_Status">Task Status</operation>
+                                         to="temp.Create Event Entry Failed/output/Failed_Source_Rows">Failed Source Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Success_Source_Rows">Success Source Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/Success_Target_Rows">Success Target Rows</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Create Event Entry Failed/output/Error_Message">Error Message</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Success_Target_Rows">Success Target Rows</operation>
+                                         to="temp.Create Event Entry Failed/output/TotalTransErrors">Total Transformation Errors</operation>
                               <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Failed_Target_Rows">Failed Target Rows</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/Start_Time">Start Time</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/output/End_Time">End Time</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/Error_Message">Error Message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/TotalTransErrors">Total Transformation Errors</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/output/FirstErrorCode">First Error Code</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_message">prm_event_message</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_detail">prm_event_detail</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_Initiator">prm_Initiator</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_environment">prm_environment</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_orgID">prm_orgID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_logging_level">prm_logging_level</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_event_ID">prm_event_ID</operation>
-                              <operation source="field" to="temp.Create Event Entry Completed/inout/prm_job_ID">prm_job_ID</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_name">prm_process_name</operation>
-                              <operation source="field"
-                                         to="temp.Create Event Entry Completed/inout/prm_process_ID">prm_process_ID</operation>
+                                         to="temp.Create Event Entry Failed/output/FirstErrorCode">First Error Code</operation>
                            </serviceOutput>
                         </service>
-                        <link id="kyas1ykg" targetId="kyas1ykf"/>
+                        <link id="likk00du" targetId="kyas1ykf"/>
                         <events>
                            <catch faultField="temp.Create Event Entry Failed 2/fault"
                                   id="ky2k525a"
@@ -711,7 +770,7 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                               displayName="mt-Sample-Mapping"
                               isByCopy="true"
                               name="mt-Sample-Mapping">
-                  <description> version: 1.6</description>
+                  <description/>
                   <tags/>
                   <detail>
                      <field label="TaskProperties Parameters"
@@ -729,13 +788,18 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                             nullable="true"
                             required="false"
                             type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               displayName="mt-Logging-CreateEventEntry"
                               isByCopy="true"
                               name="mt-Logging-CreateEventEntry">
-                  <description> version: 1.6</description>
+                  <description/>
                   <tags/>
                   <detail>
                      <field label="Input Parameters"
@@ -743,11 +807,6 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                             nullable="true"
                             required="false"
                             type="reference"/>
-                     <field label="InOut Parameters"
-                            name="inout"
-                            nullable="true"
-                            required="false"
-                            type="reference"/>
                      <field label="TaskProperties Parameters"
                             name="taskProperties"
                             nullable="true"
@@ -763,6 +822,11 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
                             nullable="true"
                             required="false"
                             type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
                   </detail>
                </processObject>
             </dependencies>
@@ -771,5 +835,5 @@ replace($detail/text(),"&amp;#10;"," ")</expression>
       <types1:GUID>5YzMg2kmS00iQdkQoGCRgD</types1:GUID>
       <types1:DisplayName>EXAMPLE1-ST_Multi_Mapping_Template_ETL</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2022-05-31T14:35:28.313Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:59:16.889Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
