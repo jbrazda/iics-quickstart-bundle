@@ -729,5 +729,5 @@ return string-join($messageParts, " ")
       <types1:GUID>1OhIsv9XOryjqHq8x31xGe</types1:GUID>
       <types1:DisplayName>TEST DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:48:40.916Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:59:14.86Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -890,5 +890,5 @@ saxon:serialize(util:simplifyXml( $xml), $saxon_params)
       <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:48:41.95Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:59:15.923Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

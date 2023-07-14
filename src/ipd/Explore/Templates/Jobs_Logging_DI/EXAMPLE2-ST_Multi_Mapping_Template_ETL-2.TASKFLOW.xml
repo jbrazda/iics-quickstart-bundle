@@ -483,5 +483,5 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
       <types1:GUID>31WCVUAtjlelvyIdlkCyKG</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:48:43.141Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-07-14T13:59:16.865Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
