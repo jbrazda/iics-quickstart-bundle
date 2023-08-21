@@ -160,5 +160,5 @@ return string-join($parts," ")</expression>
       <types1:GUID>j1fgCoBHF4YdotFqs5JW2U</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Update-Job-Entry-DB-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:59:15.194Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-21T15:17:08.966Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

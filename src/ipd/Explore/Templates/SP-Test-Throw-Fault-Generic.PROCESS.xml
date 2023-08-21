@@ -18,7 +18,7 @@ version: 1.6</types1:Description>
       <types1:ModificationDate>2022-02-04T14:56:51Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-22T18:45:43Z</types1:PublicationDate>
+      <types1:PublicationDate>2023-07-25T14:58:19Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-Test-Throw-Fault-Generic/SP-Test-Throw-Fault-Generic.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -74,5 +74,5 @@ version: 1.6</description>
       <types1:GUID>1ZKarw0xpyEfQ1ZSVhods0</types1:GUID>
       <types1:DisplayName>SP-Test-Throw-Fault-Generic</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:59:13.047Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-21T15:17:04.942Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

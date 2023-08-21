@@ -77,7 +77,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes\nversion: 2.0",
+            "description": "Template for Main Job Processes\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,

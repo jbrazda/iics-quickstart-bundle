@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
       <types1:CreationDate>2021-02-10T20:21:44Z</types1:CreationDate>
       <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:01Z</types1:ModificationDate>
+      <types1:ModificationDate>2023-07-25T15:21:40Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:04Z</types1:PublicationDate>
+      <types1:PublicationDate>2023-07-25T15:21:52Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Update-Job-Entry-DB-DAS/SP-IPaaS-Update-Job-Entry-DB-DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -165,5 +165,5 @@ WHERE
       <types1:GUID>2MLp5xCWUgtbj22iGZwhgA</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Update-Job-Entry-DB-DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:59:15.146Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-21T15:17:09Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

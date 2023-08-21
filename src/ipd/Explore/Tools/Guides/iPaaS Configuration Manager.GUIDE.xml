@@ -3,6 +3,7 @@
    <types1:Item>
       <types1:EntryId>rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Configuration_Manager</types1:Name>
+      <types1:ParentFlowIds>PoSRnCKwKBqRi92-gt-12711067-2023-07-21T15:26:42.67Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
 version: 1.7</types1:Description>
@@ -890,5 +891,5 @@ saxon:serialize(util:simplifyXml( $xml), $saxon_params)
       <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:59:15.923Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-21T15:17:09.804Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

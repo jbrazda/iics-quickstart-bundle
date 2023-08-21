@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>HQuoJ49ARJi4tci-gt-6187041-2020-03-24T18:08:13.544Z::conn.xml</types1:EntryId>
       <types1:Name>AgentFileWriter</types1:Name>
-      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,A4oDdvrTdtqSLlB-gt-7651286-2021-07-14T14:14:27.423Z::pd.xml,EogjER0XabeAzu2-gt-72497801-2021-06-30T18:02:29.492Z::pd.xml,if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml,jn9OQcjoYsjqluQ-gt-4435398-2021-07-14T14:14:28.149Z::gt.xml,kgf3yD7tyGoQwg7-gt-4631193-2020-05-01T20:28:12.176Z::pd.xml,RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml,YDdxKlFmVSciY3A-gt-4435408-2021-07-14T14:14:28.2Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>2sBsoZduD2L5SeE-gt-4392225-2021-07-14T14:14:26.856Z::pd.xml,A4oDdvrTdtqSLlB-gt-7651286-2021-07-14T14:14:27.423Z::pd.xml,EogjER0XabeAzu2-gt-72497801-2021-06-30T18:02:29.492Z::pd.xml,if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml,jn9OQcjoYsjqluQ-gt-4435398-2021-07-14T14:14:28.149Z::gt.xml,kgf3yD7tyGoQwg7-gt-4631193-2020-05-01T20:28:12.176Z::pd.xml,RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml,wNXHVOJ2oTVMTon-gt-12848642-2023-07-21T15:26:41.369Z::pd.xml,YDdxKlFmVSciY3A-gt-4435408-2021-07-14T14:14:28.2Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</types1:Description>
       <types1:AppliesTo/>
@@ -80,5 +80,5 @@
       <types1:GUID>g6EWDQPAJAWgFg1H9sXx4a</types1:GUID>
       <types1:DisplayName>AgentFileWriter</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-07-14T13:59:14.342Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2023-08-21T15:17:07.647Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
