@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>dv7yjJYKqUlLnzY-gt-5237472-2020-03-24T18:08:13.058Z::svc.xml</types1:EntryId>
+      <types1:EntryId>iPiTk08jIw8jIw8-gt-10241180-2021-11-23T14:34:25.129Z::svc.xml</types1:EntryId>
       <types1:Name>github-gist</types1:Name>
-      <types1:ParentFlowIds>jEaaaaaaaaaaaaa-gt-5237549-2020-03-24T18:08:18.157Z::conn.xml,qwx8R8WrY1SypmX-gt-7365196-2020-03-25T23:14:02.527Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>IAkRtO3M4WwOC2X-gt-38715180-2024-01-09T22:16:18.55Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Github REST V3 APi to manage Gists
 see https://developer.github.com/v3/gists/
@@ -14,13 +14,13 @@ This connector is useful to store and retrive configurations, templates, snippet
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-18T16:40:47Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-23T14:34:25Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-10T20:39:34Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T16:41:28Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T20:39:49Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/github_gist/github_gist_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -44,6 +44,7 @@ This connector is useful to store and retrive configurations, templates, snippet
                                     testWith="https://api.github.com"
                                     type="string"/>
                <connectionAttribute description="Gist API Access Token"
+                                    label="access_token"
                                     masked="true"
                                     name="access_token"
                                     required="true"
@@ -194,7 +195,6 @@ Note: With pagination, you can fetch up to 3000 gists. For example, you can fetc
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -212,8 +212,19 @@ Note: With pagination, you can fetch up to 3000 gists. For example, you can fetc
                                 type="int"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{(:GET /gists/public:)&#xA;let $uriParts := ($base_uri,&#34;gists/public&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{(:GET /gists/public:)&#xA;let $uriParts := ($base_uri,&#34;gists/public&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="gists" type="objectlist">
@@ -261,7 +272,6 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -279,8 +289,19 @@ return
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{(:GET /gists/starred:)&#xA;let $uriParts := ($base_uri,&#34;gists/starred&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return &#xA;  string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{(:GET /gists/starred:)&#xA;let $uriParts := ($base_uri,&#34;gists/starred&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return &#xA;  string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="gists" type="objectlist">
@@ -328,7 +349,6 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -345,8 +365,19 @@ return
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{if (empty($sha)) then concat($base_uri,&#34;/gists/&#34;,$gist_id)&#xA;else concat($base_uri,&#34;/gists/&#34;,$gist_id,&#34;/&#34;,$sha )}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{if (empty($sha)) then concat($base_uri,&#34;/gists/&#34;,$gist_id)&#xA;else concat($base_uri,&#34;/gists/&#34;,$gist_id,&#34;/&#34;,$sha )}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="gist" type="reference" xmlElement=".">
@@ -367,16 +398,15 @@ return
                        responseEncoding="">
                   <description>Allows you to add a new gist with one or more files.</description>
                   <inheritanceMetadata>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="extend" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
+                        </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -390,7 +420,16 @@ return
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="/gists" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="/gists" verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="true"/>
                      </restSimpleBinding>
                   </binding>
@@ -511,7 +550,6 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -532,7 +570,17 @@ return
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{$raw_url}" verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$raw_url}" verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="file_content" type="textarea">
@@ -579,7 +627,6 @@ default return ()}</xquery>
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -603,8 +650,19 @@ default return ()}</xquery>
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{(:GET /users/:username/gists:)&#xA;let $uriParts := ($base_uri,&#34;users&#34;,$user,&#34;gists&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{(:GET /users/:username/gists:)&#xA;let $uriParts := ($base_uri,&#34;users&#34;,$user,&#34;gists&#34;)&#xA;&#xA;let $p_since &#x9;:= if (empty($since) ) then () else concat(&#34;since=&#34;,encode-for-uri($since ))&#xA;let $p_per_page := if (empty($per_page )) then () else concat(&#34;per_page=&#34;,encode-for-uri($per_page ))&#xA;&#xA;(: action query  parameters:)&#xA;let $paramList := ($p_since, $p_per_page)&#xA;&#xA;return&#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="gists" type="objectlist">
@@ -652,7 +710,6 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -662,7 +719,17 @@ return
                                 type="url"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{$url}" verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$url}" verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="gists" type="objectlist">
@@ -710,12 +777,21 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Authorization" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input/>
                   <binding>
-                     <restSimpleBinding url="/user" verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="/user" verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description=""
@@ -758,7 +834,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="gist">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="owner" nullable="true" required="false" type="reference">
                         <options>
@@ -812,7 +888,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="owner">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="gists_url" nullable="true" required="false" type="url"/>
                      <field name="repos_url" nullable="true" required="false" type="url"/>
@@ -858,7 +934,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="history">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="committed_at"
                             nullable="true"
@@ -886,7 +962,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="change_status">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="total" nullable="true" required="false" type="int"/>
                      <field name="additions" nullable="true" required="false" type="int"/>
@@ -896,7 +972,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="user">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="gists_url" nullable="true" required="false" type="url"/>
                      <field name="repos_url" nullable="true" required="false" type="url"/>
@@ -942,7 +1018,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="files">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="file" nullable="true" required="false" type="objectlist">
                         <options>
@@ -955,7 +1031,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="file">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="filename" nullable="true" required="false" type="string"/>
                      <field name="size" nullable="true" required="false" type="int"/>
@@ -969,7 +1045,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="createGist">
-                  <description>Create Gist PO</description>
+                  <description>Create Gist PO version: 1.6</description>
                   <detail>
                      <field name="description"
                             nullable="true"
@@ -987,7 +1063,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="createGistFile">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="file" nullable="true" required="false" type="objectlist">
                         <options>
@@ -1000,7 +1076,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="header">
-                  <description>HTTP Header</description>
+                  <description>HTTP Header version: 1.6</description>
                   <detail>
                      <field name="name" nullable="true" required="false" type="string"/>
                      <field name="value" nullable="true" required="false" type="string"/>
@@ -1009,8 +1085,7 @@ https://gist.githubusercontent.com/jbrazda/a50b178232eb3d43ec3ca1e117e09cdf/raw/
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="pageLink">
-                  <description>Parsed page Links for paging the get list result sets 
-See</description>
+                  <description>Parsed page Links for paging the get list result sets See version: 1.6</description>
                   <detail>
                      <field name="rel" nullable="true" required="false" type="string"/>
                      <field name="url" nullable="true" required="false" type="url"/>
@@ -1019,7 +1094,7 @@ See</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="UserProfile">
-                  <description>https://api.github.com/user Profile Data</description>
+                  <description>https://api.github.com/user Profile Data version: 1.6</description>
                   <detail>
                      <field name="gists_url" nullable="true" required="false" type="string"/>
                      <field name="repos_url" nullable="true" required="false" type="string"/>
@@ -1093,8 +1168,8 @@ See</description>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>9T6SRi7SD2Ik90R03f8dsX</types1:GUID>
+      <types1:GUID>0yO61p5FySggKnvn08T2cJ</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:05.383Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.427Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

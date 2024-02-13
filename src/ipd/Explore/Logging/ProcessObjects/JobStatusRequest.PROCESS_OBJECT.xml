@@ -1,0 +1,68 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pckbclopz4KhPVE-gt-53237797-2024-01-19T20:58:40.24Z::po.xml</types1:EntryId>
+      <types1:Name>JobStatusRequest</types1:Name>
+      <types1:ParentFlowIds>uXL86zqzm5Y6tMF-gt-52960204-2024-01-19T20:58:41.328Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Request to receive Job Status With Optional Job Events and Filter</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-19T20:58:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="JobStatusRequest"
+                        isByCopy="true"
+                        name="JobStatusRequest">
+            <description>Request to receive Job Status With Optional Job Events and Filter</description>
+            <tags/>
+            <detail>
+               <field label="JobId"
+                      name="JobId"
+                      nullable="false"
+                      required="true"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="ReturnEvents"
+                      name="ReturnEvents"
+                      nullable="true"
+                      required="false"
+                      type="boolean">
+                  <options/>
+               </field>
+               <field label="Filter"
+                      name="Filter"
+                      nullable="true"
+                      required="false"
+                      type="objectlist">
+                  <options>
+                     <option name="relationshipName">Child</option>
+                     <option name="referenceTo">$po:JobEventsFilter</option>
+                     <option name="guid">jvn3xjCsSGFlPIXey8HC6B</option>
+                  </options>
+               </field>
+               <field label="FiltersLogicalOperator"
+                      name="FiltersLogicalOperator"
+                      nullable="true"
+                      required="false"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"label":"OR","value":"OR"},{"label":"AND","value":"AND"}]</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>5neaZotT5GHhh1QalPmA2s</types1:GUID>
+      <types1:DisplayName>JobStatusRequest</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.836Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

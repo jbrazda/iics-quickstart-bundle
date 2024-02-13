@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "7oo6zDUv2Dfkkdu8bCkbAi",
+      "objectGuid": "8tjluLpvEHKgtZgGhIj00V",
       "objectName": "SP-IICS-GetAuditLog",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "9yKFXii7ZmkiUYE6xjuwuh"
+            "877ubKoZcQ3dEKiooBTmSv"
          ],
          "repoInfo": {
-            "repoHandle": "PMaaaa-gt-26584560-2020-06-24T21:45:25.675Z::pd.xml"
+            "repoHandle": "dsIGSM8NciZBpDU-gt-38663067-2024-01-09T22:16:19.054Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "9yKFXii7ZmkiUYE6xjuwuh",
+      "objectGuid": "877ubKoZcQ3dEKiooBTmSv",
       "objectName": "ICS-API",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "pyqaa-gt-1870011-2020-03-24T18:08:14.252Z::conn.xml"
+            "repoHandle": "mpIeIssjqluQgab-gt-9942141-2021-11-23T14:34:25.206Z::conn.xml"
          }
       }
    }

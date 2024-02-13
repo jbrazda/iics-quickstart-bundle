@@ -1,20 +1,19 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>lQdycotFgpKi9zh-gt-5237559-2020-03-24T18:08:18.191Z::po.xml</types1:EntryId>
+      <types1:EntryId>Lgaaa-gt-38663214-2024-01-09T22:16:20.609Z::po.xml</types1:EntryId>
       <types1:Name>UpdateJobLogEntryRequest</types1:Name>
-      <types1:ParentFlowIds>FDqZF3a-gt-1951817-2020-03-24T18:08:19.504Z::pd.xml,HWwjlybduaa-gt-1951827-2020-03-24T18:08:19.545Z::pd.xml,jDlUxQ2Tp5OjG4a-gt-19353391-2021-02-10T20:21:44.157Z::pd.xml,xvk0qZF3a-gt-6187162-2020-03-24T18:08:20.378Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>bbfTQbdxWq9bdsr-gt-38743445-2024-01-09T22:16:21.017Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Job Logging Entry Update Existing Record version: 1.6</types1:Description>
+      <types1:Description>Job Logging Entry Update Existing Record version: 1.6 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:21Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,7 +21,7 @@
                         displayName="UpdateJobLogEntryRequest"
                         isByCopy="true"
                         name="UpdateJobLogEntryRequest">
-            <description>Job Logging Entry Update Existing Record version: 1.6</description>
+            <description>Job Logging Entry Update Existing Record version: 1.6 version: 1.6</description>
             <tags/>
             <detail>
                <field label="Status" name="Status" type="picklist">
@@ -37,14 +36,14 @@
                   <options>
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="relationshipName">Child</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
                   </options>
                </field>
             </detail>
          </processObject>
       </types1:Entry>
-      <types1:GUID>cNRcz5CBc2Pbg5h9Nn5G4M</types1:GUID>
+      <types1:GUID>85ujm2sRrBDh15XqSkgusB</types1:GUID>
       <types1:DisplayName>UpdateJobLogEntryRequest</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.716Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.083Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

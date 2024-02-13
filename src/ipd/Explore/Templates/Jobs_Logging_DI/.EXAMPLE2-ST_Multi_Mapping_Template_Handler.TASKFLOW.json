@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "27YdzYRyhpPeBcR0v2huCq",
+      "objectGuid": "417IUfUrKU8gfak4cRLqiE",
       "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_Handler",
       "objectType": "TASKFLOW",
       "path": "/Explore/Templates/Jobs_Logging_DI",
@@ -16,38 +16,16 @@
             "minor": 0
          },
          "objectRefs": [
-            "arfQo6Li6wQkR6Rte6APwl",
-            "31WCVUAtjlelvyIdlkCyKG"
+            "95c8jVYSP61fE9dhKsJaAr",
+            "66rLTq7BJUkfPEOxvVTyGl"
          ],
          "repoInfo": {
-            "repoHandle": "w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml"
+            "repoHandle": "WHK80FIRi92qBbb-gt-41994706-2024-01-11T16:19:41.778Z::tf.xml"
          }
       }
    },
    {
-      "objectGuid": "arfQo6Li6wQkR6Rte6APwl",
-      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-1",
-      "objectType": "TASKFLOW",
-      "path": "/Explore/Templates/Jobs_Logging_DI",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Example Task Flow template to use as a starting point to develop new task flows\nversion: 1.6",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "EBNjDg8SOlA1vyo-gt-999978-2022-01-12T15:40:24.494Z::tf.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "31WCVUAtjlelvyIdlkCyKG",
+      "objectGuid": "95c8jVYSP61fE9dhKsJaAr",
       "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-2",
       "objectType": "TASKFLOW",
       "path": "/Explore/Templates/Jobs_Logging_DI",
@@ -64,7 +42,29 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "oKeERhKGXShOeCF-gt-77785973-2023-06-06T19:39:29.236Z::tf.xml"
+            "repoHandle": "swPKDC0hCHbf2XZ-gt-47604793-2024-01-11T16:19:40.306Z::tf.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "66rLTq7BJUkfPEOxvVTyGl",
+      "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-1",
+      "objectType": "TASKFLOW",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Example Task Flow template to use as a starting point to develop new task flows\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "8bf3TzAnOjseGbc-gt-47604767-2024-01-11T16:19:39.954Z::tf.xml"
          }
       }
    }

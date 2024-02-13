@@ -1,24 +1,24 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>mUhGdwOLIFvukNX-gt-1951643-2020-03-24T18:08:11.193Z::svc.xml</types1:EntryId>
+      <types1:EntryId>CY7tu2SHCwkNmum-gt-38703729-2024-01-09T22:16:12.467Z::svc.xml</types1:EntryId>
       <types1:Name>DataAccessService</types1:Name>
-      <types1:ParentFlowIds>n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml,wfQHhwq9bdsreK8-gt-10328025-2020-07-25T20:17:07.836Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 1.6</types1:Description>
+version: 2.0</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:11Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:52Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:12Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-30T22:50:22Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:57:13Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-30T22:50:24Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/DataAccessService/DataAccessService_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 1.6</types1:Description>
                             name="DataAccessService"
                             uuid="93d7509e-96fb-4872-b8c1-41f382c1811f">
             <description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL
-version: 1.6</description>
+version: 2.0</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
             <actions>
@@ -68,17 +68,15 @@ version: 1.6</description>
                        responseEncoding="">
                   <description>DO NOT USE THIS SERVICE DIRECTLY  it is defined only to provide metadata definitions for Automated Steps execSQL. Use "Data Access Services/execSQL"</description>
                   <inheritanceMetadata>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
+                        <attribute inherit="inherit" name="url" type="url"/>
                         <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
                            <attribute inherit="overwrite" name="content" type="content"/>
                         </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -92,8 +90,18 @@ version: 1.6</description>
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud"
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud"
                                         verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <httpHeaders>
                            <header name="SOAPAction">""</header>
                         </httpHeaders>
@@ -120,17 +128,15 @@ version: 1.6</description>
                        responseEncoding="">
                   <description>DO NOT USE THIS SERVICE DIRECTLY, it is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL,Use "Data Access Services/execMultiSQL"</description>
                   <inheritanceMetadata>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
+                        <attribute inherit="inherit" name="url" type="url"/>
                         <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
                            <attribute inherit="overwrite" name="content" type="content"/>
                         </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -145,8 +151,18 @@ version: 1.6</description>
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud"
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud"
                                         verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <httpHeaders>
                            <header name="SOAPAction">""</header>
                         </httpHeaders>
@@ -167,7 +183,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="ProcedureParameter">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="name" nullable="true" required="false" type="string"/>
                      <field name="sqlType" nullable="true" required="false" type="picklist">
@@ -190,7 +206,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="Parameter">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="sqlType" nullable="true" required="false" type="picklist">
                         <options>
@@ -211,7 +227,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tDataAccessRequest">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="sqlStatement"
                             nullable="true"
@@ -235,13 +251,13 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMetadata">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail/>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMultiDataAccessRequest">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="sqlStatement"
                             nullable="true"
@@ -265,7 +281,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tMultiResponse">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="result"
                             nullable="true"
@@ -281,7 +297,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tProcedureSignature">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="parameter"
                             nullable="true"
@@ -297,7 +313,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tResponse">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="statementId"
                             nullable="true"
@@ -329,7 +345,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tRow">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="updatedRows"
                             nullable="true"
@@ -344,7 +360,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tSqlParameterBatch">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="parameter"
                             nullable="true"
@@ -360,7 +376,7 @@ version: 1.6</description>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="tSqlStatement">
-                  <description> version: 1.6</description>
+                  <description>version: 1.6 version: 1.6</description>
                   <detail>
                      <field name="maxRows" nullable="true" required="false" type="double"/>
                      <field name="maxWaitSeconds"
@@ -423,8 +439,8 @@ version: 1.6</description>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>fnG0seP4jM2ljV7FCQzLYx</types1:GUID>
+      <types1:GUID>8jsj8PSZ9N8lpukNZObK0P</types1:GUID>
       <types1:DisplayName>DataAccessService</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:07.878Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.465Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3fMCexzb8UghCGoRLCEX2s",
+      "objectGuid": "1mqmZgzL429hPRSemDn0AX",
       "objectName": "iPaaS Log Search DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_Database",
@@ -16,17 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "1WEsQ1BnaCNlHLEkh8PJca",
-            "dT4a8mv0dmakB8rX5zj8sL",
-            "5qIuCPZACbreESh7CW8Z4f"
+            "30tSxUjQpo8jsDn4TE96Aq",
+            "2MDcalYRrqvf3AoXeuFLId",
+            "aFqQ6BNIsNZliqNko27Xe8"
          ],
          "repoInfo": {
-            "repoHandle": "PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml"
+            "repoHandle": "APbdutaaabbgdoG-gt-38704251-2024-01-09T22:16:23.432Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "1WEsQ1BnaCNlHLEkh8PJca",
+      "objectGuid": "30tSxUjQpo8jsDn4TE96Aq",
       "objectName": "IPaaS-Logging",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Logging/Connections",
@@ -43,12 +43,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "cnyXYDdxKlFmVSc-gt-5306363-2020-03-24T18:08:12.045Z::conn.xml"
+            "repoHandle": "v1MuzBq695kchzt-gt-38703713-2024-01-09T22:16:12.344Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "dT4a8mv0dmakB8rX5zj8sL",
+      "objectGuid": "2MDcalYRrqvf3AoXeuFLId",
       "objectName": "iPaaS Job View DB",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides_Database",
@@ -65,12 +65,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
+            "repoHandle": "2Cv2jop81V4Adyp-gt-38715220-2024-01-09T22:16:18.857Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "5qIuCPZACbreESh7CW8Z4f",
+      "objectGuid": "aFqQ6BNIsNZliqNko27Xe8",
       "objectName": "SP Show Process Links",
       "objectType": "GUIDE",
       "path": "/Explore/Logging/Guides",
@@ -87,7 +87,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "FlprzYLnzYLnzYL-gt-6187094-2020-03-24T18:08:16.501Z::gt.xml"
+            "repoHandle": "duypKwKBqRi92qB-gt-38714996-2024-01-09T22:16:15.058Z::gt.xml"
          }
       }
    }

@@ -1,24 +1,24 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml</types1:EntryId>
+      <types1:EntryId>Vox9AWbg0ZkL0jm-gt-38663396-2024-01-09T22:16:23.763Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Configuration_Manager</types1:Name>
-      <types1:ParentFlowIds>PoSRnCKwKBqRi92-gt-12711067-2023-07-21T15:26:42.67Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>0MDVK9Em2kVNKSm-gt-2678635-2024-01-30T18:11:12.998Z::gt.xml,jjymbduaa-gt-615399-2024-01-25T18:08:48.146Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
-version: 1.7</types1:Description>
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-08-02T14:11:15Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:24Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-01T22:59:46Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-08-02T14:11:27Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-01T22:59:49Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.iPaaS_Configuration_Manager/iPaaS_Configuration_Manager.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 1.7</types1:Description>
                          name="iPaaS_Configuration_Manager"
                          runAsUser="$current">
             <description>Guide to manage configuration properties stored as a Key/Value pairs in the Database
-version: 1.7</description>
+version: 1.6</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -51,7 +51,7 @@ version: 1.7</description>
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                     <option name="guid">i3MAdH8uKIlepxyR9cDVK8</option>
                   </options>
                </field>
                <field description="" name="tmp_selected_configuration" type="reference">
@@ -106,6 +106,7 @@ version: 1.7</description>
                      <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
                   </options>
                </field>
                <field description="Data Source Name configured in DAS to strore Configuratiions"
@@ -122,7 +123,7 @@ version: 1.7</description>
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                     <option name="guid">i3MAdH8uKIlepxyR9cDVK8</option>
                   </options>
                </field>
                <field description="" name="tmp_export_data" type="textarea">
@@ -548,14 +549,14 @@ version: 1.7</description>
                   <serviceName>execSQLProxy</serviceName>
                   <serviceGUID/>
                   <serviceInput>
-                     <parameter id="k2m85ggb"
+                     <parameter id="lr7uyuh4"
                                 name="dataAccessRequest"
                                 source="formula"
                                 updatable="false">xpath &lt;tDataAccessRequest&gt;
    &lt;sqlStatement&gt;
       &lt;statementId&gt;delete_from_ic_configuration&lt;/statementId&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;DELETE FROM IC_CONFIGURATION WHERE PKEY = ?&lt;/statement&gt;
+      &lt;statement&gt;DELETE FROM InformaticaLogging.dbo.IC_CONFIGURATION WHERE PKEY = ?&lt;/statement&gt;
       &lt;parameter&gt;
          &lt;sqlType&gt;string&lt;/sqlType&gt;
          &lt;data&gt;{$temp.tmp_selected_configuration[1]/PKEY}&lt;/data&gt;
@@ -577,14 +578,14 @@ version: 1.7</description>
                   <serviceName>execSQLProxy</serviceName>
                   <serviceGUID/>
                   <serviceInput>
-                     <parameter id="k2m85f6c"
+                     <parameter id="lr7uyqeh"
                                 name="dataAccessRequest"
                                 source="formula"
                                 updatable="false">xpath &lt;tDataAccessRequest&gt;
    &lt;sqlStatement&gt;
       &lt;statementId&gt;update_from_ic_configuration&lt;/statementId&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;UPDATE IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
+      &lt;statement&gt;UPDATE InformaticaLogging.dbo.IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
       &lt;parameter&gt;
          &lt;sqlType&gt;string&lt;/sqlType&gt;
          &lt;data&gt;{$temp.tmp_property_key}&lt;/data&gt;
@@ -612,7 +613,7 @@ version: 1.7</description>
                <service id="kzwuk5rp">
                   <title>SP-Import-Configuration</title>
                   <serviceName>SP-Import-Configuration</serviceName>
-                  <serviceGUID>4jFrs9zpvTuk3MmAtI7JkF</serviceGUID>
+                  <serviceGUID>6h346Lf0tOFk0igkHAPxwG</serviceGUID>
                   <serviceInput>
                      <parameter id="kzwujpfw"
                                 name="in_configuration_properties"
@@ -633,16 +634,16 @@ version: 1.7</description>
                      <text>Continue</text>
                   </screenActionLabel>
                </endScreen>
-               <empty gatewayType="exclusive" id="l63q1b2v">
+               <empty gatewayType="exclusive" id="ls3tj7tf">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="l63q1b15">
+               <empty gatewayType="exclusive" id="ls3tj7rp">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="l63q1b1g">
+               <empty gatewayType="exclusive" id="ls3tj7s0">
                   <actions/>
                </empty>
-               <empty gatewayType="exclusive" id="l63q1b2q">
+               <empty gatewayType="exclusive" id="ls3tj7ta">
                   <actions/>
                </empty>
                <empty gatewayType="exclusive" id="kzstkt2g">
@@ -888,8 +889,8 @@ saxon:serialize(util:simplifyXml( $xml), $saxon_params)
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>lAFNi6OSxoJfMExNx8OHia</types1:GUID>
+      <types1:GUID>kJW2XJitKMqi2NFofuqTG5</types1:GUID>
       <types1:DisplayName>iPaaS Configuration Manager</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:09.804Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.809Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

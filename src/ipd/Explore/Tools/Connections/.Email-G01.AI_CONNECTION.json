@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "2ZM6icvXPAkk6jxADngnoK",
+      "objectGuid": "j5Xn5pLxZaRf7O4NHw0qED",
       "objectName": "Email-G01",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml"
+            "repoHandle": "B09kYAOTMneBjra-gt-38703881-2024-01-09T22:16:16.447Z::conn.xml"
          }
       }
    }

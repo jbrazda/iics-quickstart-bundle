@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "2SxjEDCPfYxcZVkA8Q1F2I",
+      "objectGuid": "4dVkJMybyMzi3GE0E2Wnuj",
       "objectName": "SP-Setup-Logging-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Logging/Setup",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Process manages theLogging framework Storage on  Supported Databases PostgreSQL, Oracle, MSSQL, MySQL",
+            "description": "Process manages theLogging framework Storage on Supported Databases PostgreSQL, Oracle, MSSQL, MySQL\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "4nQ50tIl0DkbgcRRWyJfah"
+            "ePzmJyKMdIVlO9LLjqIB6v"
          ],
          "repoInfo": {
-            "repoHandle": "yvs7xvk0qZF3a-gt-6187074-2020-03-24T18:08:16.391Z::pd.xml"
+            "repoHandle": "OOVGuDoWn2sqeEr-gt-38663306-2024-01-09T22:16:22.653Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
       "objectName": "DataAccessService",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/DAS/Connections",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
          }
       }
    }

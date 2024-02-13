@@ -1,0 +1,66 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>02XZPnE29Em2kVN-gt-40208176-2024-01-10T20:27:42.984Z::conn.xml</types1:EntryId>
+      <types1:Name>Email-CAI</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>Shared Email Service to send  alerts and notifications on Local Agents group CAI</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:CAI</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-10T20:27:43Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-10T20:31:42Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T20:32:25Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Email-CAI/Email-CAI.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Email-CAI"
+                     label="Email-CAI"
+                     name="Email-CAI">
+            <description>Shared Email Service to send  alerts and notifications on Local Agents group CAI</description>
+            <tags>.agent:CAI</tags>
+            <agent>CAI</agent>
+            <attributes>
+               <attribute encrypted="false" name="hostName" value="smtp.natl.com"/>
+               <attribute encrypted="false" name="port" value="25"/>
+               <attribute encrypted="false"
+                          name="testToAddress"
+                          value="jaroslav.brazda@natl.com"/>
+               <attribute encrypted="false"
+                          name="fromAddress"
+                          value="noreply-iics-alerts-dev@natl.com"/>
+            </attributes>
+            <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                           agentOnly="false"
+                           plugin="Camel"
+                           supportsConnectionTest="true"
+                           supportsDataPreview="false"
+                           supportsOData="false"
+                           supportsPublishSkipMetadataRefresh="false"
+                           type="Email"
+                           uuid="9a8a03d0-0437-46c4-bedf-70acb4173c1f">
+               <description>Provides connections to email host servers.</description>
+            </javaConnector>
+            <authentication type="$infa_basicform">
+               <attributes>
+                  <attribute encrypted="false" name="Authentication" value="Enable"/>
+                  <attribute encrypted="false" name="username" value="informatica"/>
+                  <attribute encrypted="true" name="password" value=""/>
+                  <attribute encrypted="false" name="security" value="None"/>
+                  <attribute encrypted="false" name="connectionTimeout" value="30000"/>
+               </attributes>
+            </authentication>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>2l42C7YrJ0WdpJwlaVpfIx</types1:GUID>
+      <types1:DisplayName>Email-CAI</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.256Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

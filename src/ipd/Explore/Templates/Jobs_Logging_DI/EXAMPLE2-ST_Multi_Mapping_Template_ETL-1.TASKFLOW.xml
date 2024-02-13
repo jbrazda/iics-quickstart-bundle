@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>EBNjDg8SOlA1vyo-gt-999978-2022-01-12T15:40:24.494Z::tf.xml</types1:EntryId>
+      <types1:EntryId>8bf3TzAnOjseGbc-gt-47604767-2024-01-11T16:19:39.954Z::tf.xml</types1:EntryId>
       <types1:Name>EXAMPLE2-ST_Multi_Mapping_Template_ETL-1</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
@@ -11,14 +11,10 @@ version: 1.6</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-01-12T15:40:24Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2023-06-06T19:36:24Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2023-06-06T19:41:35Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/tf.EXAMPLE2-ST_Multi_Mapping_Template_ETL-1/EXAMPLE2-ST_Multi_Mapping_Template_ETL-1.tf.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-11T16:19:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -90,7 +86,7 @@ version: 1.6</description>
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mt_Sample_Mapping</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">5EzY36uULkYbQqn78T8MKu</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">3ggVlDi6QyieBkvFTihAYb</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
@@ -124,7 +120,7 @@ version: 1.6</description>
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fpSNttEDQY1ckMfnCAah2F</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -272,7 +268,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fpSNttEDQY1ckMfnCAah2F</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -480,8 +476,8 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>arfQo6Li6wQkR6Rte6APwl</types1:GUID>
+      <types1:GUID>66rLTq7BJUkfPEOxvVTyGl</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_ETL-1</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:11.418Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:36.508Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "5bsWceZVI8zezWPk9FlrWN",
+      "objectGuid": "4l9uieknUlxgNBrTtRtXcm",
       "objectName": "SP-IPaaS-Create-Job-Event-Entry-DB-DAS",
       "objectType": "PROCESS",
       "path": "/Explore/Logging/Logger_Database_DAS",
@@ -16,17 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "hWam20mHBmPdPfP0rGjUEF",
-            "a8f1LmXZlzibFVDqCJ5equ",
-            "4nQ50tIl0DkbgcRRWyJfah"
+            "axxwv5guQ8Jb1HxvSy9ZoM",
+            "26cL6twFPqoexROE7JNxGL",
+            "ePzmJyKMdIVlO9LLjqIB6v"
          ],
          "repoInfo": {
-            "repoHandle": "f6NFuxTtlI20hEL-gt-19353371-2021-02-10T20:21:44.096Z::pd.xml"
+            "repoHandle": "lOETyxKf3eFhBJQ-gt-38715366-2024-01-09T22:16:22.191Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "hWam20mHBmPdPfP0rGjUEF",
+      "objectGuid": "axxwv5guQ8Jb1HxvSy9ZoM",
       "objectName": "JobLogEventResponse",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
@@ -43,12 +43,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "cnyXYDdxKlFmVSc-gt-5281326-2020-03-24T18:08:15.045Z::po.xml"
+            "repoHandle": "2EzfYtjCtbdsreK-gt-38703766-2024-01-09T22:16:12.863Z::po.xml"
          }
       }
    },
    {
-      "objectGuid": "a8f1LmXZlzibFVDqCJ5equ",
+      "objectGuid": "26cL6twFPqoexROE7JNxGL",
       "objectName": "CreateJobLogEventRequest",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
@@ -65,12 +65,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "abcoq3xgjATO9pH-gt-5237529-2020-03-24T18:08:18.014Z::po.xml"
+            "repoHandle": "slEt5OjiTIKchzt-gt-38663106-2024-01-09T22:16:19.303Z::po.xml"
          }
       }
    },
    {
-      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
       "objectName": "DataAccessService",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/DAS/Connections",
@@ -87,7 +87,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
          }
       }
    }

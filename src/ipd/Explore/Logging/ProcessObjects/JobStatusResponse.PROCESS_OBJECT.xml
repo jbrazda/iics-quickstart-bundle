@@ -1,0 +1,101 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>sjqluQgabcjk91p-gt-53237811-2024-01-19T20:58:40.302Z::po.xml</types1:EntryId>
+      <types1:Name>JobStatusResponse</types1:Name>
+      <types1:ParentFlowIds>uXL86zqzm5Y6tMF-gt-52960204-2024-01-19T20:58:41.328Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Job Status Response used to retrieve job Status
+
+version: 1.0</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-19T20:58:40Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="JobStatusResponse"
+                        isByCopy="true"
+                        name="JobStatusResponse">
+            <description>Job Status Response used to retrieve job Status
+
+version: 1.0</description>
+            <tags/>
+            <detail>
+               <field label="JobId"
+                      name="JobId"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="JobName"
+                      name="JobName"
+                      nullable="true"
+                      required="false"
+                      type="string"/>
+               <field label="ProcessId"
+                      name="ProcessId"
+                      nullable="true"
+                      required="false"
+                      type="int"/>
+               <field label="Status"
+                      name="Status"
+                      nullable="true"
+                      required="false"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"label":"Running","value":"Running"},{"label":"Faulted","value":"Faulted"},{"label":"Completed","value":"Completed"}]</option>
+                  </options>
+               </field>
+               <field label="StatusCode"
+                      name="StatusCode"
+                      nullable="true"
+                      required="false"
+                      type="int">
+                  <options/>
+               </field>
+               <field label="JobInitiator"
+                      name="JobInitiator"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="StartDate"
+                      name="StartDate"
+                      nullable="true"
+                      required="false"
+                      type="datetime"/>
+               <field label="EndDate"
+                      name="EndDate"
+                      nullable="true"
+                      required="false"
+                      type="datetime">
+                  <options/>
+               </field>
+               <field label="Events"
+                      name="Events"
+                      nullable="true"
+                      required="false"
+                      type="objectlist">
+                  <options>
+                     <option name="relationshipName">Child</option>
+                     <option name="referenceTo">$po:JobEvent</option>
+                     <option name="guid">fgmXHo383Wpf66FUv18KYa</option>
+                  </options>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>6CoVwdXXM9UbkO21fi0Q69</types1:GUID>
+      <types1:DisplayName>JobStatusResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.854Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

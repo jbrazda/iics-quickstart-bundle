@@ -1,24 +1,23 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>o1QLnzYLnzYLnzY-gt-5281366-2020-03-24T18:08:15.241Z::pd.xml</types1:EntryId>
+      <types1:EntryId>2XZPnE29Em2kVNK-gt-38662917-2024-01-09T22:16:15.859Z::pd.xml</types1:EntryId>
       <types1:Name>SP-ICS-GetTaskFlowList-Cloud</types1:Name>
-      <types1:ParentFlowIds>Hi5Xt1T4W6jKsJl-gt-5237579-2020-03-24T18:08:18.539Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>rQbdqVIKchzt1Y6-gt-38743486-2024-01-09T22:16:21.277Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Process retrieves Task Flow  List from ICS
+      <types1:Description>Process retrieves Task Flow List from ICS
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:15Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:54Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:16Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:48Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:50:22Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskFlowList-Cloud/SP-ICS-GetTaskFlowList-Cloud.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -27,7 +26,7 @@ version: 1.6</types1:Description>
                   displayName="SP-ICS-GetTaskFlowList-Cloud"
                   name="SP-ICS-GetTaskFlowList-Cloud">
             <appliesTo/>
-            <description>Process retrieves Task Flow  List from ICS
+            <description>Process retrieves Task Flow List from ICS
 version: 1.6</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -80,8 +79,8 @@ version: 1.6</description>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>8zl4tdNcb0ygudpYfhTAiZ</types1:GUID>
+      <types1:GUID>0LqWD3ldFDGhj284hCMtst</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskFlowList-Cloud</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.101Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.155Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

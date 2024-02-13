@@ -1,8 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml</types1:EntryId>
+      <types1:EntryId>Y3AxtPk7HNCnchK-gt-29341154-2021-11-09T18:17:06.881Z::conn.xml</types1:EntryId>
       <types1:Name>IICS-REST-API-V3</types1:Name>
+      <types1:ParentFlowIds>6sFsdsFsdsFsdsF-gt-276542-2021-11-09T14:34:14.934Z::gt.xml,kR1kUf2hwq9bdsr-gt-43214948-2024-01-12T19:45:08.116Z::pd.xml,Ngbcggaaaaa-gt-20468447-2021-10-21T20:10:57.641Z::gt.xml,whz5chspiRASmvD-gt-43340001-2024-01-12T19:22:03.536Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Platform REST API version 3 
 See Documentation 
@@ -12,13 +13,13 @@ https://docs.informatica.com/integration-cloud/cloud-platform/current-version/re
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-02-01T21:16:57Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-01T21:19:04Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-09T18:17:07Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-10T15:57:49Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-01T21:19:14Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-16T14:32:30Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/IICS-REST-API-V3/IICS-REST-API-V3.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -37,13 +38,13 @@ https://docs.informatica.com/integration-cloud/cloud-platform/current-version/re
                           value="https://dm-us.informaticacloud.com"/>
                <attribute encrypted="false"
                           name="username"
-                          value="jbrazda@unicosolution.com.dev"/>
+                          value="svc_AzureDevOps@natl.com.dev"/>
                <attribute encrypted="true" name="password" value=""/>
             </attributes>
             <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                                agentOnly="false"
                                connectorPath="project:/rt.connector/IICS_REST_API_V3/IICS_REST_API_V3_svcDef.xml"
-                               guid="035COj5HDGMk9BFhGZxqy5"
+                               guid="3Plm7MJWKSLcMDB5DTreqB"
                                name="IICS-REST-API-V3"
                                supportsConnectionTest="false"
                                uuid="d7548bc0-06f3-49dd-a1d3-19f011e362d4">
@@ -54,8 +55,8 @@ https://docs.informatica.com/integration-cloud/cloud-platform/current-version/re
             </businessConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>4wVu3utuMQeeJTCmQIYbSI</types1:GUID>
+      <types1:GUID>2Ua5TwZkNdPhfG5WCeDVkp</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V3</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.511Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.868Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

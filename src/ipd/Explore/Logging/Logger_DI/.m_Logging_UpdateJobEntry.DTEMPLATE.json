@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "j8h4QT1uSsBiEYEK5sJ9gx",
+      "objectGuid": "5gVuPrm33DoeCUFozMRkMi",
       "objectName": "m_Logging_UpdateJobEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -21,15 +21,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "amgbRivrJQhitzHvCcgymi"
+            "ahxIPxCckjFihsHuLLXuev"
          ],
          "repoInfo": {
-            "repoHandle": "0118TN1700000000000I"
+            "repoHandle": "0022AF170000000002EU"
          }
       }
    },
    {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectGuid": "ahxIPxCckjFihsHuLLXuev",
       "objectName": "iPaaS_Logging_DB",
       "objectType": "Connection",
       "path": "/SYS",
@@ -51,7 +51,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
+            "repoHandle": "0022AF0B0000000000FH"
          }
       }
    }

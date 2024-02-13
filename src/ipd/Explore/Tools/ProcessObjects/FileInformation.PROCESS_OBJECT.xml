@@ -1,19 +1,18 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>vxjISUXL86zqzm5-gt-6187029-2020-03-24T18:08:13.51Z::po.xml</types1:EntryId>
+      <types1:EntryId>4IoLCVGkSSHCwkN-gt-38703774-2024-01-09T22:16:12.903Z::po.xml</types1:EntryId>
       <types1:Name>FileInformation</types1:Name>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Extends File-Writer:FileInformation with Additional fileds for user friendly display version: 1.6</types1:Description>
+      <types1:Description>Extends File-Writer:FileInformation with Additional fileds for user friendly display version: 1.6 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:53Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:13Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -21,7 +20,7 @@
                         displayName="FileInformation"
                         isByCopy="true"
                         name="FileInformation">
-            <description>Extends File-Writer:FileInformation with Additional fileds for user friendly display version: 1.6</description>
+            <description>Extends File-Writer:FileInformation with Additional fileds for user friendly display version: 1.6 version: 1.6</description>
             <detail>
                <field label="fullName" name="fullName" type="string"/>
                <field label="name" name="name" type="string"/>
@@ -34,8 +33,8 @@
             </detail>
          </processObject>
       </types1:Entry>
-      <types1:GUID>7zEWCUt5Eklf95FMTmaNqY</types1:GUID>
+      <types1:GUID>7zaShFKWaYYcRbBmJbiWMd</types1:GUID>
       <types1:DisplayName>FileInformation</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:05.285Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.537Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

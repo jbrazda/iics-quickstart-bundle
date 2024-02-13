@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "5mQSVYzXARFdIWEE2wmfwm",
+      "objectGuid": "2fy3qV9VUaskuycPyTxRGo",
       "objectName": "mt_Logging_CreateJobEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
@@ -21,44 +21,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "amgbRivrJQhitzHvCcgymi",
-            "a72tUKwVnPZfY8TJK5T5KF",
-            "8OoRwZrdncvfN5Q97mLbQt"
+            "5xToqfDBVuuix5V0CKPRYt",
+            "ahxIPxCckjFihsHuLLXuev",
+            "eMvazWw2MoBjBanMZKwNUE"
          ],
          "repoInfo": {
-            "repoHandle": "0118TN0Z00000000000I"
+            "repoHandle": "0022AF0Z0000000002Y9"
          }
       }
    },
    {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
-      "objectName": "iPaaS_Logging_DB",
-      "objectType": "Connection",
-      "path": "/SYS",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "JSON",
-            "description": null,
-            "documentState": "COMPLETE"
-         },
-         "contextAttributes": [
-            {
-               "name": "id",
-               "value": "@1"
-            }
-         ],
-         "modelVersion": {
-            "major": 0,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
-         }
-      }
-   },
-   {
-      "objectGuid": "a72tUKwVnPZfY8TJK5T5KF",
+      "objectGuid": "5xToqfDBVuuix5V0CKPRYt",
       "objectName": "m_Logging_CreateJobEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -80,13 +53,40 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN1700000000000K"
+            "repoHandle": "0022AF170000000002ES"
          }
       }
    },
    {
-      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
-      "objectName": "G01",
+      "objectGuid": "ahxIPxCckjFihsHuLLXuev",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0022AF0B0000000000FH"
+         }
+      }
+   },
+   {
+      "objectGuid": "eMvazWw2MoBjBanMZKwNUE",
+      "objectName": "CDI-G01",
       "objectType": "AgentGroup",
       "path": "/SYS",
       "metadata": {
@@ -107,7 +107,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000003"
+            "repoHandle": "0022AF2500000000000A"
          }
       }
    }

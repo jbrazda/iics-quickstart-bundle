@@ -1,24 +1,23 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml</types1:EntryId>
+      <types1:EntryId>0ZXXUfTRgpDqotx-gt-38663140-2024-01-09T22:16:19.994Z::gt.xml</types1:EntryId>
       <types1:Name>Admin_Shell</types1:Name>
-      <types1:ParentFlowIds>lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>3osoq3xgjATO9pH-gt-38663408-2024-01-09T22:16:23.873Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Utility Guide to Invoke Shell commands on the  Secure Agent 
+      <types1:Description>Utility Guide to Invoke Shell commands on the Secure Agent
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-18T21:07:49Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:20Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T21:07:52Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:57:07Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Admin_Shell/Admin_Shell.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +28,7 @@ version: 1.6</types1:Description>
                          doneOnEndStep="true"
                          name="Admin_Shell"
                          runAsUser="$current">
-            <description>Utility Guide to Invoke Shell commands on the  Secure Agent 
+            <description>Utility Guide to Invoke Shell commands on the Secure Agent
 version: 1.6</description>
             <appliesTo/>
             <tags/>
@@ -152,7 +151,7 @@ version: 1.6</description>
                <service id="kzsvff0k">
                   <title>SP-Shell-CMD</title>
                   <serviceName>SP-Shell-CMD</serviceName>
-                  <serviceGUID>6LCl0Gjkdewi7UAhtDFfuY</serviceGUID>
+                  <serviceGUID>0q7j0fyjpwle0TIBL58ZGX</serviceGUID>
                   <serviceInput>
                      <parameter id="kzsopq3z"
                                 name="in_shell_cmd"
@@ -199,8 +198,8 @@ version: 1.6</description>
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>aqpUO15ISL4jLLs0xDJxmL</types1:GUID>
+      <types1:GUID>dvYoAMEb4C7lwWRuiRdqYe</types1:GUID>
       <types1:DisplayName>Admin Shell</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.334Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.887Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

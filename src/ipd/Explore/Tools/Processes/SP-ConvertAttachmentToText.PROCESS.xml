@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>uUHukfRLdqcgm8l-gt-1951773-2020-03-24T18:08:17.327Z::pd.xml</types1:EntryId>
+      <types1:EntryId>LGY2KsJlv58pIO3-gt-9942218-2021-11-23T14:34:27.604Z::pd.xml</types1:EntryId>
       <types1:Name>SP-ConvertAttachmentToText</types1:Name>
-      <types1:ParentFlowIds>aabbeJOSM8NciZB-gt-6346531-2020-03-25T23:14:04.901Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>z5chspiRASmvD4t-gt-10241281-2021-11-23T14:34:32.411Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process converts an Attachment field to text
 version: 1.6</types1:Description>
@@ -12,13 +12,13 @@ version: 1.6</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:56Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-23T14:34:28Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-09T22:16:19Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:33Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:49:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ConvertAttachmentToText/SP-ConvertAttachmentToText.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -59,7 +59,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:AttachmentInformation</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">3SdosLSHKE9jTes0Sbsqo0</option>
+                     <option name="guid">7RYjDu13VOPfLdB9Jm4UYx</option>
                   </options>
                </field>
             </output>
@@ -90,8 +90,8 @@ version: 1.6</description>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>3F9xdqPMhsgjQx07TZa5sr</types1:GUID>
+      <types1:GUID>au7yFsRj9ORe3bHHJcYA2K</types1:GUID>
       <types1:DisplayName>SP-ConvertAttachmentToText</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.486Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.985Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

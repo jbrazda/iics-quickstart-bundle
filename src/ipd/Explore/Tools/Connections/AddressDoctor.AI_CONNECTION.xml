@@ -1,30 +1,28 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>yKAWa-gt-6187008-2020-03-24T18:08:13.394Z::conn.xml</types1:EntryId>
+      <types1:EntryId>mV4pbgchwAQlBWl-gt-38662831-2024-01-09T22:16:14.194Z::conn.xml</types1:EntryId>
       <types1:Name>AddressDoctor</types1:Name>
       <types1:MimeType>application/xml+connection</types1:MimeType>
-      <types1:Description>Informatica Address Doctor Connection</types1:Description>
+      <types1:Description>Informatica Address Doctor Connection
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-03-27T17:04:47Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:57:46Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connection/AddressDoctor/AddressDoctor.conn.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:14Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
                      displayName="AddressDoctor"
                      label="AddressDoctor"
                      name="AddressDoctor">
-            <description>Informatica Address Doctor Connection</description>
+            <description>Informatica Address Doctor Connection
+version: 1.6</description>
             <tags/>
             <agent/>
             <attributes>
@@ -44,8 +42,8 @@
             </businessConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>58vC2cnmBIOdBfUYH3IdAj</types1:GUID>
+      <types1:GUID>1Ex7BgcIWHlihRbfJajX8k</types1:GUID>
       <types1:DisplayName>AddressDoctor</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:05.317Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.659Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

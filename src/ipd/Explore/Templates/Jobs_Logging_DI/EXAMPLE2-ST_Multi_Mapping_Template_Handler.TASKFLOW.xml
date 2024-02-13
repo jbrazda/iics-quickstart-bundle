@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>w5dqAOclkZ2sBso-gt-1018563-2022-01-12T15:40:25.359Z::tf.xml</types1:EntryId>
+      <types1:EntryId>WHK80FIRi92qBbb-gt-41994706-2024-01-11T16:19:41.778Z::tf.xml</types1:EntryId>
       <types1:Name>EXAMPLE2-ST_Multi_Mapping_Template_Handler</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
@@ -11,14 +11,10 @@ version: 1.6</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-01-12T15:40:25Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2023-06-06T19:41:14Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2023-06-06T19:41:35Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/tf.EXAMPLE2-ST_Multi_Mapping_Template_Handler/EXAMPLE2-ST_Multi_Mapping_Template_Handler.tf.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-11T16:19:42Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -61,7 +57,7 @@ version: 1.6</description>
                </start>
                <subflow id="kyazzidd">
                   <title>EXAMPLE2-ST_Multi_Mapping_Template_ETL-1</title>
-                  <subflowGUID>arfQo6Li6wQkR6Rte6APwl</subflowGUID>
+                  <subflowGUID>66rLTq7BJUkfPEOxvVTyGl</subflowGUID>
                   <subflowPath>EXAMPLE2-ST_Multi_Mapping_Template_ETL-1</subflowPath>
                   <runForEach>false</runForEach>
                   <input>
@@ -72,7 +68,7 @@ version: 1.6</description>
                </subflow>
                <subflow id="likono87">
                   <title>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</title>
-                  <subflowGUID>31WCVUAtjlelvyIdlkCyKG</subflowGUID>
+                  <subflowGUID>95c8jVYSP61fE9dhKsJaAr</subflowGUID>
                   <subflowPath>EXAMPLE2-ST_Multi_Mapping_Template_ETL-2</subflowPath>
                   <runForEach>false</runForEach>
                   <input>
@@ -97,8 +93,8 @@ version: 1.6</description>
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>27YdzYRyhpPeBcR0v2huCq</types1:GUID>
+      <types1:GUID>417IUfUrKU8gfak4cRLqiE</types1:GUID>
       <types1:DisplayName>EXAMPLE2-ST_Multi_Mapping_Template_Handler</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:11.955Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:36.652Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

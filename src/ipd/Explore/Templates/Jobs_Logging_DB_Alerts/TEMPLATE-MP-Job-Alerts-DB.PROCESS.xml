@@ -1,25 +1,20 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml</types1:EntryId>
+      <types1:EntryId>VH6jAGE7ppppppp-gt-38663319-2024-01-09T22:16:22.765Z::pd.xml</types1:EntryId>
       <types1:Name>TEMPLATE-MP-Job-Alerts-DB</types1:Name>
-      <types1:ParentFlowIds>Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Template for Main Job Processes
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-02-22T15:23:53Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-22T18:45:29Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-22T18:45:43Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-Alerts-DB/TEMPLATE-MP-Job-Alerts-DB.pd.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:23Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -32,7 +27,7 @@ version: 1.6</types1:Description>
             <appliesTo/>
             <description>Template for Main Job Processes
 version: 1.6</description>
-            <tags>.agent:G01</tags>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="Process Execution Context"
@@ -42,7 +37,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
                   </options>
                </parameter>
                <parameter description=" Set to true for Synchronous invocation"
@@ -71,7 +66,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
                   </options>
                </field>
             </output>
@@ -110,7 +105,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:CreateJobLogEventRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">a8f1LmXZlzibFVDqCJ5equ</option>
+                     <option name="guid">26cL6twFPqoexROE7JNxGL</option>
                   </options>
                </field>
                <field description="" name="tmp_email_input" type="reference">
@@ -118,13 +113,13 @@ version: 1.6</description>
                      <option name="referenceTo">Email-G01:EmailTaskInput</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">2ZM6icvXPAkk6jxADngnoK</option>
+                     <option name="guid">j5Xn5pLxZaRf7O4NHw0qED</option>
                   </options>
                </field>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <eventDefinitions>
@@ -140,6 +135,8 @@ version: 1.6</description>
                      <field description="" name="status" type="string"/>
                   </output>
                   <deployment>
+                     <targetLocation xmlns:sfd="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                     xmlns:rep="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">CAI</targetLocation>
                      <rest/>
                   </deployment>
                </messageDefinition>
@@ -252,7 +249,7 @@ return string-join($parts," ")</expression>
                <eventContainer id="j84qss48">
                   <subflow id="j84qss2l">
                      <title>Run Integration Process</title>
-                     <subflowGUID>fV6YTLRp1ACbYFS3UhGwSE</subflowGUID>
+                     <subflowGUID>4jNe0XnekoDlQ6M5dN2Rqy</subflowGUID>
                      <subflowPath>TEMPLATE-SP-ETL-Alerts-DB</subflowPath>
                      <runForEach>false</runForEach>
                      <input>
@@ -549,7 +546,7 @@ return
                      <service id="kzyckfme">
                         <title>Send Alert Email</title>
                         <serviceName>Email-G01:sendEmailService</serviceName>
-                        <serviceGUID>2ZM6icvXPAkk6jxADngnoK</serviceGUID>
+                        <serviceGUID>j5Xn5pLxZaRf7O4NHw0qED</serviceGUID>
                         <serviceInput>
                            <parameter name="emailTaskInput" source="field" updatable="true">temp.tmp_email_input</parameter>
                         </serviceInput>
@@ -568,8 +565,8 @@ return
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>3pP29DIyb25gm1j4NNXmeZ</types1:GUID>
+      <types1:GUID>7iz5VntSn1bk57RUMXyFMn</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-Alerts-DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:09.236Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.189Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

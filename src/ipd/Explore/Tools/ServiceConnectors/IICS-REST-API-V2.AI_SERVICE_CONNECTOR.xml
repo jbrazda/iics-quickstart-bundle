@@ -1,9 +1,8 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>m2FNBeNTYglxbdy-gt-2226164-2020-04-23T18:07:45.196Z::svc.xml</types1:EntryId>
+      <types1:EntryId>HvYmsK4PvbcjIw8-gt-800904-2021-11-09T18:17:06.54Z::svc.xml</types1:EntryId>
       <types1:Name>IICS-REST-API-V2</types1:Name>
-      <types1:ParentFlowIds>YNqRi92qBbbeJOS-gt-5032181-2020-04-23T18:35:13.816Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>The REST API version 2 resources in this section apply to multiple services in Informatica Intelligent Cloud Services. This connector is complementary ti IICS Built-in connector it ads functionality not impleented in Built in ICS API connector</types1:Description>
       <types1:AppliesTo/>
@@ -11,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-04-23T18:07:45Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2020-04-27T18:45:03Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-09T18:17:07Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-16T14:58:51Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-06-03T15:40:42Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-16T14:58:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/IICS_REST_API_V2/IICS_REST_API_V2_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -44,12 +43,16 @@
                   <description>Base GET Action</description>
                   <input>
                      <parameter description="IICS POD serverUrl ( retrieved from Login Response Operation&#xA;Use IICS Connector V3 or V2 Login Operation first)"
+                                label=""
                                 name="base_url"
+                                nogen="true"
                                 required="true"
                                 testWith="https://na1.dm-us.informaticacloud.com/saas"
                                 type="string"/>
                      <parameter description="icSessionId Parameter passed to the API header"
+                                label=""
                                 name="session_id"
+                                nogen="true"
                                 required="true"
                                 testWith="0u1PQC383QkehOp2B4GkYO"
                                 type="string"/>
@@ -77,18 +80,33 @@
                   <description>Implements abstract POST Action</description>
                   <input>
                      <parameter description="IICS POD serverUrl ( retrieved from Login Response Operation&#xA;Use IICS Connector V3 or V2 Login Operation first)"
+                                label=""
                                 name="base_url"
+                                nogen="true"
                                 required="true"
-                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                testWith="https://use4.dm-us.informaticacloud.com/saas"
                                 type="string"/>
                      <parameter description="icSessionId Parameter passed to the API header"
+                                label=""
                                 name="session_id"
+                                nogen="true"
                                 required="true"
-                                testWith=""
+                                testWith="aB09F35DpuieqgBoBBQOaX"
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_url}" verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="{$base_url}" verb="POST">
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <httpHeaders>
+                           <header name="Accept">application/json</header>
+                           <header name="icSessionId">{$session_id}</header>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body generateUsing="JSON" preserveJsonStringFormatting="false"/>
+                     </restSimpleBinding>
                   </binding>
                   <output/>
                </action>
@@ -109,9 +127,6 @@
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
@@ -119,7 +134,6 @@
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                            <attribute inherit="inherit" name="icSessionId" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -131,8 +145,19 @@
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{if (empty($agent_id )) &#xA;&#x9;then concat($base_url,&#34;/api/v2/agent/details&#34;)&#xA;    else concat($base_url,&#34;/api/v2/agent/details/&#34;,$agent_id )}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{if (empty($agent_id )) &#xA;&#x9;then concat($base_url,&#34;/api/v2/agent/details&#34;)&#xA;    else concat($base_url,&#34;/api/v2/agent/details/&#34;,$agent_id )}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="agentDetails" type="objectlist">
@@ -154,58 +179,195 @@ return
                      </field>
                   </output>
                </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       inherits="basePost"
+                       isAbstract="false"
+                       label="stopJob"
+                       maxRedirects="100"
+                       name="stopJob"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Use this resource to start or stop a task based on ID or name. You can also retrieve job completion status.</description>
+                  <inheritanceMetadata>
+                     <section type="input">
+                        <section type="inputParameters">
+                           <attribute inherit="inherit" name="base_url" type="parameter"/>
+                           <attribute inherit="inherit" name="session_id" type="parameter"/>
+                        </section>
+                     </section>
+                     <section type="restSimpleBinding">
+                        <attribute inherit="extend" name="url" type="url"/>
+                        <section type="mutualAuth">
+                           <attribute inherit="inherit" name="keyStore" type="parameter"/>
+                           <attribute inherit="inherit" name="keyStorePassword" type="parameter"/>
+                        </section>
+                        <section type="body">
+                           <attribute inherit="overwrite" name="generateUsing" type="generateUsing"/>
+                        </section>
+                        <section type="httpHeaders">
+                           <attribute inherit="inherit" name="Accept" type="header"/>
+                           <attribute inherit="inherit" name="icSessionId" type="header"/>
+                           <attribute inherit="inherit" name="Content-Type" type="header"/>
+                        </section>
+                     </section>
+                  </inheritanceMetadata>
+                  <input>
+                     <parameter description=""
+                                label=""
+                                name="stopJobRequest"
+                                nogen="true"
+                                required="true"
+                                testWith="&lt;root&gt;&#xA;    &lt;taskType&gt;MTT&lt;/taskType&gt;&#xA;    &lt;taskFederatedId&gt;0ccpoM1jIJ1euwOq1EhkUV&lt;/taskFederatedId&gt;&#xA;&lt;/root&gt;&#xA;"
+                                type="reference">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">stopJobRequest</option>
+                           <option name="guid">stopJobRequest</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated" url="/api/v2/job/stop" verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                        <body>{let $fields := for $field in $stopJobRequest/element()
+return
+&lt;f&gt;"{local-name( $field)}": "{$field/text()}"&lt;/f&gt;/text() 
+
+let $json := &lt;json&gt;{{
+    "@type": "job",
+    {string-join($fields,",&amp;#10;    ")}
+}}
+    &lt;/json&gt;
+return
+$json/text()}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="StopJobResponse"
+                            type="reference"
+                            xmlElement="">
+                        <options>
+                           <option name="relationshipName">Child</option>
+                           <option name="referenceTo">stopJobResponse</option>
+                           <option name="guid">stopJobResponse</option>
+                        </options>
+                     </field>
+                  </output>
+               </action>
             </actions>
             <objects>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="agentDetail">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
-                     <field name="updatedBy" type="string"/>
-                     <field name="configUpdateTime" type="string"/>
-                     <field name="active" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="agentConfigs" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="packages" type="string"/>
-                     <field name="orgId" type="string"/>
-                     <field name="platform" type="string"/>
-                     <field name="upgradeStatus" type="string"/>
-                     <field name="lastUpgraded" type="string"/>
-                     <field name="proxyPort" type="int"/>
-                     <field name="agentEngines" type="objectlist">
+                     <field name="updatedBy"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="configUpdateTime"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="active" nullable="false" required="false" type="string"/>
+                     <field name="updateTime"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="agentConfigs"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="false" required="false" type="string"/>
+                     <field name="packages" nullable="false" required="false" type="string"/>
+                     <field name="orgId" nullable="false" required="false" type="string"/>
+                     <field name="platform" nullable="false" required="false" type="string"/>
+                     <field name="upgradeStatus"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="lastUpgraded"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="proxyPort" nullable="false" required="false" type="int"/>
+                     <field name="agentEngines"
+                            nullable="false"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">agentEngines</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="createTime" type="string"/>
-                     <field name="createdBy" type="string"/>
-                     <field name="platformAgent" type="string"/>
-                     <field name="serverUrl" type="string"/>
-                     <field name="lastStatusChange" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="agentVersion" type="double"/>
-                     <field name="id" type="string"/>
-                     <field name="agentHost" type="string"/>
-                     <field name="spiUrl" type="string"/>
-                     <field name="lastUpgradeCheck" type="string"/>
+                     <field name="createTime"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="createdBy"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="platformAgent"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="serverUrl"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="lastStatusChange"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="false" required="false" type="string"/>
+                     <field name="agentVersion"
+                            nullable="false"
+                            required="false"
+                            type="double"/>
+                     <field name="id" nullable="false" required="false" type="string"/>
+                     <field name="agentHost"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="spiUrl" nullable="false" required="false" type="string"/>
+                     <field name="lastUpgradeCheck"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="agentEngines">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
-                     <field name="agentEngineConfigs" type="objectlist">
+                     <field name="agentEngineConfigs"
+                            nullable="false"
+                            required="false"
+                            type="objectlist">
                         <options>
                            <option name="referenceTo">agentEngineConfigs</option>
                            <option name="relationshipName">Child</option>
                         </options>
                      </field>
-                     <field name="type" type="string"/>
-                     <field name="packages" type="string"/>
-                     <field name="agentEngineStatus" type="reference">
+                     <field name="type" nullable="false" required="false" type="string"/>
+                     <field name="packages" nullable="false" required="false" type="string"/>
+                     <field name="agentEngineStatus"
+                            nullable="false"
+                            required="false"
+                            type="reference">
                         <options>
                            <option name="referenceTo">agentEngineStatus</option>
                            <option name="relationshipName">Child</option>
@@ -216,37 +378,96 @@ return
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="agentEngineConfigs">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
-                     <field name="customized" type="string"/>
-                     <field name="name" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="value" type="string"/>
-                     <field name="platform" type="string"/>
+                     <field name="customized"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="name" nullable="false" required="false" type="string"/>
+                     <field name="type" nullable="false" required="false" type="string"/>
+                     <field name="value" nullable="false" required="false" type="string"/>
+                     <field name="platform" nullable="false" required="false" type="string"/>
                   </detail>
                </processObject>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="agentEngineStatus">
+                  <description>An automatically generated process object version: 1.6</description>
+                  <detail>
+                     <field name="subState" nullable="false" required="false" type="int"/>
+                     <field name="appname" nullable="false" required="false" type="string"/>
+                     <field name="replacePolicy"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="createTime"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="appDisplayName"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="appversion"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="updateTime"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="false" required="false" type="string"/>
+                     <field name="desiredStatus"
+                            nullable="false"
+                            required="false"
+                            type="string"/>
+                     <field name="status" nullable="false" required="false" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="stopJobRequest">
+                  <description/>
+                  <detail>
+                     <field name="type" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                     <field name="taskFederatedId"
+                            nullable="true"
+                            required="false"
+                            type="string">
+                        <options/>
+                     </field>
+                     <field name="taskType" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                     <field name="taskId" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                     <field name="taskName" nullable="true" required="false" type="string">
+                        <options/>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              xmlns:aetgt="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                              isByCopy="true"
+                              name="stopJobResponse">
                   <description>An automatically generated process object</description>
                   <detail>
-                     <field name="subState" type="int"/>
-                     <field name="appname" type="string"/>
-                     <field name="replacePolicy" type="string"/>
-                     <field name="createTime" type="string"/>
-                     <field name="appDisplayName" type="string"/>
-                     <field name="appversion" type="string"/>
-                     <field name="updateTime" type="string"/>
-                     <field name="type" type="string"/>
-                     <field name="desiredStatus" type="string"/>
-                     <field name="status" type="string"/>
+                     <field name="description"
+                            nullable="true"
+                            required="false"
+                            type="string"/>
+                     <field name="type" nullable="true" required="false" type="string"/>
                   </detail>
                </processObject>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>a3UJFZgHrYziHawHm3HrIE</types1:GUID>
+      <types1:GUID>7hV2D16KhG9hGqLgLEiTcx</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:07.387Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.547Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

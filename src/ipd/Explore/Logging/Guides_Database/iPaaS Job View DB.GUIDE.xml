@@ -1,27 +1,21 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml</types1:EntryId>
+      <types1:EntryId>2Cv2jop81V4Adyp-gt-38715220-2024-01-09T22:16:18.857Z::gt.xml</types1:EntryId>
       <types1:Name>iPaaS_Job_View_DB</types1:Name>
-      <types1:ParentFlowIds>jn9OQcjoYsjqluQ-gt-4435398-2021-07-14T14:14:28.149Z::gt.xml,OlkZ2sBsoZduD2L-gt-1557964-2022-03-10T23:14:53.657Z::gt.xml,ox9AWbg0ZkL0jmu-gt-19357087-2021-02-10T20:21:05.923Z::gt.xml,PHPRPjAXhNUdyOo-gt-5281417-2020-03-24T18:08:19.674Z::gt.xml,PoSRnCKwKBqRi92-gt-12711067-2023-07-21T15:26:42.67Z::gt.xml,Y3wOLIFvukNXHVO-gt-5281452-2020-03-24T18:08:21.817Z::gt.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>0MDVK9Em2kVNKSm-gt-2678635-2024-01-30T18:11:12.998Z::gt.xml,APbdutaaabbgdoG-gt-38704251-2024-01-09T22:16:23.432Z::gt.xml,bds8NTYglxbdypK-gt-20661499-2024-02-08T15:44:23.023Z::gt.xml,G1WFsWTzIf6riX2-gt-43411999-2024-01-12T22:22:14.518Z::gt.xml,jjymbduaa-gt-615399-2024-01-25T18:08:48.146Z::gt.xml,OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
-      <types1:Description>Guide  Provides Administrative and troubleshooting functions such as 
-- Search IPaaS  ICRT Job  logs
-- ability to find job related processes
+      <types1:Description>Guide Provides Administrative and troubleshooting functions such as - Search IPaaS ICRT Job logs - ability to find job related processes
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-11T16:59:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-11T16:59:07Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/sf.iPaaS_Job_View_DB/iPaaS_Job_View_DB.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:19Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -32,9 +26,7 @@ version: 1.6</types1:Description>
                          doneOnEndStep="true"
                          name="iPaaS_Job_View_DB"
                          runAsUser="$current">
-            <description>Guide  Provides Administrative and troubleshooting functions such as 
-- Search IPaaS  ICRT Job  logs
-- ability to find job related processes
+            <description>Guide Provides Administrative and troubleshooting functions such as - Search IPaaS ICRT Job logs - ability to find job related processes
 version: 1.6</description>
             <appliesTo/>
             <tags/>
@@ -60,7 +52,7 @@ version: 1.6</description>
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">1WEsQ1BnaCNlHLEkh8PJca</option>
+                     <option name="guid">30tSxUjQpo8jsDn4TE96Aq</option>
                   </options>
                </field>
                <field description="Selected Job Entry"
@@ -70,7 +62,7 @@ version: 1.6</description>
                      <option name="referenceTo">IPaaS-Logging:IC_JOB_LOG_VIEW</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">1WEsQ1BnaCNlHLEkh8PJca</option>
+                     <option name="guid">30tSxUjQpo8jsDn4TE96Aq</option>
                   </options>
                </field>
                <field description="Selected Job Event"
@@ -80,7 +72,7 @@ version: 1.6</description>
                      <option name="referenceTo">IPaaS-Logging:IC_JOB_EVENTS_VIEW</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">1WEsQ1BnaCNlHLEkh8PJca</option>
+                     <option name="guid">30tSxUjQpo8jsDn4TE96Aq</option>
                   </options>
                </field>
                <field description="Events Object Query"
@@ -531,7 +523,7 @@ version: 1.6</description>
                </jumpTo>
                <subflow id="jthel27d">
                   <title>SP Show Process Links 1</title>
-                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
+                  <subflowGUID>aFqQ6BNIsNZliqNko27Xe8</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -559,7 +551,7 @@ version: 1.6</description>
                </subflow>
                <subflow id="jthel216">
                   <title>SP Show Process Links</title>
-                  <subflowGUID>5qIuCPZACbreESh7CW8Z4f</subflowGUID>
+                  <subflowGUID>aFqQ6BNIsNZliqNko27Xe8</subflowGUID>
                   <subflowPath>SP_Show_Process_Links</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -691,8 +683,8 @@ else
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>dT4a8mv0dmakB8rX5zj8sL</types1:GUID>
+      <types1:GUID>2MDcalYRrqvf3AoXeuFLId</types1:GUID>
       <types1:DisplayName>iPaaS Job View DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.488Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.939Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "arfQo6Li6wQkR6Rte6APwl",
+      "objectGuid": "66rLTq7BJUkfPEOxvVTyGl",
       "objectName": "EXAMPLE2-ST_Multi_Mapping_Template_ETL-1",
       "objectType": "TASKFLOW",
       "path": "/Explore/Templates/Jobs_Logging_DI",
@@ -16,43 +16,16 @@
             "minor": 0
          },
          "objectRefs": [
-            "5EzY36uULkYbQqn78T8MKu",
-            "504jPbKnYu0ep9XgdKq4Qp"
+            "fpSNttEDQY1ckMfnCAah2F",
+            "3ggVlDi6QyieBkvFTihAYb"
          ],
          "repoInfo": {
-            "repoHandle": "EBNjDg8SOlA1vyo-gt-999978-2022-01-12T15:40:24.494Z::tf.xml"
+            "repoHandle": "8bf3TzAnOjseGbc-gt-47604767-2024-01-11T16:19:39.954Z::tf.xml"
          }
       }
    },
    {
-      "objectGuid": "5EzY36uULkYbQqn78T8MKu",
-      "objectName": "mt_Sample_Mapping",
-      "objectType": "MTT",
-      "path": "/Explore/Templates/Jobs_Logging_DI",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "JSON",
-            "description": "",
-            "documentState": "VALID"
-         },
-         "contextAttributes": [
-            {
-               "name": "id",
-               "value": "@1"
-            }
-         ],
-         "modelVersion": {
-            "major": 0,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "0118TN0Z00000000000J"
-         }
-      }
-   },
-   {
-      "objectGuid": "504jPbKnYu0ep9XgdKq4Qp",
+      "objectGuid": "fpSNttEDQY1ckMfnCAah2F",
       "objectName": "mt_Logging_CreateEventEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
@@ -74,7 +47,34 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0Z00000000000H"
+            "repoHandle": "0022AF0Z0000000002Y8"
+         }
+      }
+   },
+   {
+      "objectGuid": "3ggVlDi6QyieBkvFTihAYb",
+      "objectName": "mt_Sample_Mapping",
+      "objectType": "MTT",
+      "path": "/Explore/Templates/Jobs_Logging_DI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": "",
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0022AF0Z0000000002YA"
          }
       }
    }

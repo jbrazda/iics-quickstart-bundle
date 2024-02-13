@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "0FCslbR0FsshCmxMcjULOJ",
+      "objectGuid": "1RORkyExWLGeWU2GldZBIB",
       "objectName": "iPaaS Admin Upload File to Agent",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -16,16 +16,16 @@
             "minor": 0
          },
          "objectRefs": [
-            "g6EWDQPAJAWgFg1H9sXx4a",
-            "abnxZAvEI8cc3aejQFxpoV"
+            "6SYZ9C6pDo5kXfQW8owX05",
+            "5NxAfIJJjAdb3SJxGds8mb"
          ],
          "repoInfo": {
-            "repoHandle": "RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml"
+            "repoHandle": "oAXUCZ4nzYLnzYL-gt-38663092-2024-01-09T22:16:19.233Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "g6EWDQPAJAWgFg1H9sXx4a",
+      "objectGuid": "6SYZ9C6pDo5kXfQW8owX05",
       "objectName": "AgentFileWriter",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -42,12 +42,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "HQuoJ49ARJi4tci-gt-6187041-2020-03-24T18:08:13.544Z::conn.xml"
+            "repoHandle": "dqfUmm7O2htghGZ-gt-38703807-2024-01-09T22:16:13.05Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "abnxZAvEI8cc3aejQFxpoV",
+      "objectGuid": "5NxAfIJJjAdb3SJxGds8mb",
       "objectName": "SP_GetCatalogResource_G01",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -64,7 +64,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Z5i4rswVYx8R8Wr-gt-28131003-2022-02-18T17:19:44.836Z::pd.xml"
+            "repoHandle": "jtYICf5GkeHy2uI-gt-38662940-2024-01-09T22:16:16.152Z::pd.xml"
          }
       }
    }

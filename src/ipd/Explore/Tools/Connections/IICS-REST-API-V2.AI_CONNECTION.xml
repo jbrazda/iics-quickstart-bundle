@@ -1,23 +1,24 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>YNqRi92qBbbeJOS-gt-5032181-2020-04-23T18:35:13.816Z::conn.xml</types1:EntryId>
+      <types1:EntryId>q1aabcmnBtBghuI-gt-29341166-2021-11-09T18:17:06.926Z::conn.xml</types1:EntryId>
       <types1:Name>IICS-REST-API-V2</types1:Name>
-      <types1:ParentFlowIds>cgp5OjG4abck0Kn-gt-5013926-2020-04-23T17:34:19.03Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>kR1kUf2hwq9bdsr-gt-43214948-2024-01-12T19:45:08.116Z::pd.xml,okVNKSmvD4teIss-gt-10138650-2021-11-23T14:34:29.227Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
-      <types1:Description>Connector provides access to get Secure Agent Details via IICS REST V2 API use  built-in IICS connector to get access Token</types1:Description>
+      <types1:Description>Connector provides access to get Secure Agent Details via IICS REST V2 API use  built-in IICS connector to get access Token
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-04-23T18:35:14Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-05-25T13:58:02Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-09T18:17:07Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-09T22:16:18Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:57:59Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-16T14:59:00Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/IICS-REST-API-V2/IICS-REST-API-V2.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -25,14 +26,15 @@
                      displayName="IICS-REST-API-V2"
                      label="IICS-REST-API-V2"
                      name="IICS-REST-API-V2">
-            <description>Connector provides access to get Secure Agent Details via IICS REST V2 API use  built-in IICS connector to get access Token</description>
+            <description>Connector provides access to get Secure Agent Details via IICS REST V2 API use  built-in IICS connector to get access Token
+version: 1.6</description>
             <tags/>
             <agent/>
             <attributes/>
             <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                                agentOnly="false"
                                connectorPath="project:/rt.connector/IICS_REST_API_V2/IICS_REST_API_V2_svcDef.xml"
-                               guid="a3UJFZgHrYziHawHm3HrIE"
+                               guid="7hV2D16KhG9hGqLgLEiTcx"
                                name="IICS-REST-API-V2"
                                supportsConnectionTest="false"
                                uuid="1bed3004-01f4-45c4-9fa4-a5868eb4cd71">
@@ -40,8 +42,8 @@
             </businessConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>0UyujOCpoiokMXGJttFUIU</types1:GUID>
+      <types1:GUID>0KPhhnYX4jth5z2zBr9d2u</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.745Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.852Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

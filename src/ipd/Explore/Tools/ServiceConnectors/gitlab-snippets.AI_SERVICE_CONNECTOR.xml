@@ -1,24 +1,24 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>DNVabbfTQbdxWq9-gt-6187018-2020-03-24T18:08:13.475Z::svc.xml</types1:EntryId>
+      <types1:EntryId>0qjATO9pH8sVYx8-gt-10241164-2021-11-23T14:34:24.991Z::svc.xml</types1:EntryId>
       <types1:Name>gitlab-snippets</types1:Name>
-      <types1:ParentFlowIds>qZx1XmgaabclvAh-gt-7365226-2020-03-25T23:14:02.626Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Provides Support to store  and retrieve configurations or other files as gitlab Snippets
-See https://gitlab.com/help/api/README.md</types1:Description>
+See https://gitlab.com/help/api/README.md
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:13Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-06-03T15:59:00Z</types1:ModificationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-23T14:34:25Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-09T22:16:15Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2021-06-03T16:01:25Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T20:40:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/gitlab_snippets/gitlab_snippets_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,8 @@ See https://gitlab.com/help/api/README.md</types1:Description>
                             name="gitlab-snippets"
                             uuid="7cf5fdba-abb9-48d4-b6d1-e2481c1eddbd">
             <description>Provides Support to store  and retrieve configurations or other files as gitlab Snippets
-See https://gitlab.com/help/api/README.md</description>
+See https://gitlab.com/help/api/README.md
+version: 1.6</description>
             <tags/>
             <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
                <connectionAttribute description="Gitlab API Base URL (example: https://gitlab.example.com/api)"
@@ -446,7 +447,7 @@ default return ()}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="snippet">
-                  <description>Gitlab Snippet Object</description>
+                  <description>Gitlab Snippet Object version: 1.6</description>
                   <detail>
                      <field name="visibility" type="picklist">
                         <options>
@@ -473,7 +474,7 @@ default return ()}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="author">
-                  <description>Rest Resource Author</description>
+                  <description>Rest Resource Author version: 1.6</description>
                   <detail>
                      <field name="avatar_url" type="image"/>
                      <field name="web_url" type="url"/>
@@ -486,8 +487,8 @@ default return ()}</xquery>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>5aLJgZIK8wekZYYldV5Qmz</types1:GUID>
+      <types1:GUID>1TLlOnRbmmKcKJsB1CADQg</types1:GUID>
       <types1:DisplayName>gitlab-snippets</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:07.283Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.421Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

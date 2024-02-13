@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "fgmXHo383Wpf66FUv18KYa",
+      "objectName": "JobEvent",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event\nversion: 1.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0RKWa-gt-53041164-2024-01-19T20:58:38.993Z::po.xml"
+         }
+      }
+   }
+]

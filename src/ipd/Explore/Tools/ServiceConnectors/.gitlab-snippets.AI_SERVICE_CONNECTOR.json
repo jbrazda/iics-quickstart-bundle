@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "5aLJgZIK8wekZYYldV5Qmz",
+      "objectGuid": "1TLlOnRbmmKcKJsB1CADQg",
       "objectName": "gitlab-snippets",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/Tools/ServiceConnectors",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "DNVabbfTQbdxWq9-gt-6187018-2020-03-24T18:08:13.475Z::svc.xml"
+            "repoHandle": "0qjATO9pH8sVYx8-gt-10241164-2021-11-23T14:34:24.991Z::svc.xml"
          }
       }
    }

@@ -1,23 +1,22 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>oRvsGRvDINciZBp-gt-1951753-2020-03-24T18:08:17.238Z::pd.xml</types1:EntryId>
+      <types1:EntryId>XP8Jaa-gt-38703961-2024-01-09T22:16:17.79Z::pd.xml</types1:EntryId>
       <types1:Name>SP-ICS-GetTaskID-G01</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Process to retrive Complete ICS DI Task Log
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:18Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:44Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:50:33Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-GetTaskID-G01/SP-ICS-GetTaskID-G01.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,7 +28,7 @@ version: 1.6</types1:Description>
             <appliesTo/>
             <description>Process to retrive Complete ICS DI Task Log
 version: 1.6</description>
-            <tags>.agent:G01</tags>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="Task name"
@@ -66,13 +65,13 @@ version: 1.6</description>
                      <option name="referenceTo">ICS-API:Task</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">9yKFXii7ZmkiUYE6xjuwuh</option>
+                     <option name="guid">877ubKoZcQ3dEKiooBTmSv</option>
                   </options>
                </field>
             </output>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -82,14 +81,14 @@ version: 1.6</description>
                <service id="justr27t">
                   <title>Login</title>
                   <serviceName>ICS-API:Login</serviceName>
-                  <serviceGUID>9yKFXii7ZmkiUYE6xjuwuh</serviceGUID>
+                  <serviceGUID>877ubKoZcQ3dEKiooBTmSv</serviceGUID>
                   <serviceInput/>
                   <link id="justr280" targetId="justr27z"/>
                </service>
                <service id="justr27z">
                   <title>List Tasks</title>
                   <serviceName>ICS-API:List Tasks</serviceName>
-                  <serviceGUID>9yKFXii7ZmkiUYE6xjuwuh</serviceGUID>
+                  <serviceGUID>877ubKoZcQ3dEKiooBTmSv</serviceGUID>
                   <serviceInput>
                      <parameter name="icsSessionUrl" source="field" updatable="true">output.ICS Server URL</parameter>
                      <parameter name="icSessionId" source="field" updatable="true">output.ICS Session ID</parameter>
@@ -138,8 +137,8 @@ return $tasks[Name/text() = $input.in_task_name]</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>2KxGZQD9iSodU7F2u3zDMy</types1:GUID>
+      <types1:GUID>eajcOhFQ2wIi3snsBVDOsN</types1:GUID>
       <types1:DisplayName>SP-ICS-GetTaskID-G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.299Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.131Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

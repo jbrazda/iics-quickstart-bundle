@@ -1,23 +1,23 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>6oIuQaaabcmnBtB-gt-1478869-2022-01-10T20:40:49.93Z::tf.xml</types1:EntryId>
+      <types1:EntryId>HLGeNTYglxbdypK-gt-47604809-2024-01-11T16:19:40.544Z::tf.xml</types1:EntryId>
       <types1:Name>tf_JOB_Tracking_Template_Sample_Mapping</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
-version: 1.6</types1:Description>
+version: 1.7</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-01-10T20:40:50Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2023-06-06T16:39:55Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-11T16:19:41Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-11T18:05:47Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2023-06-06T16:41:25Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-11T18:05:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/tf.tf_JOB_Tracking_Template_Sample_Mapping/tf_JOB_Tracking_Template_Sample_Mapping.tf.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -30,7 +30,7 @@ version: 1.6</types1:Description>
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
             <description>Example Task Flow template to use as a starting point to develop new task flows
-version: 1.6</description>
+version: 1.7</description>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
             <tempFields>
@@ -56,7 +56,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:mt-Logging-CreateJobEntry</option>
                   </options>
                </field>
-               <field description="" name="Mapping" type="reference">
+               <field description="" name="Task" type="reference">
                   <options>
                      <option name="failOnNotRun">false</option>
                      <option name="failOnFault">false</option>
@@ -91,6 +91,11 @@ version: 1.6</description>
                      <option name="failOnFault">false</option>
                   </options>
                </field>
+               <field description="" name="tmp_error_message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
             </tempFields>
             <notes/>
             <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
@@ -120,7 +125,7 @@ version: 1.6</description>
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateJobEntry</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">5mQSVYzXARFdIWEE2wmfwm</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2fy3qV9VUaskuycPyTxRGo</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
@@ -184,35 +189,35 @@ version: 1.6</description>
                </eventContainer>
                <eventContainer id="ky3jxait">
                   <service id="ky3jxain">
-                     <title>Mapping</title>
+                     <title>Task</title>
                      <serviceName>ICSExecuteDataTask</serviceName>
                      <serviceGUID/>
                      <serviceInput>
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mt_Sample_Mapping</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">5EzY36uULkYbQqn78T8MKu</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">3ggVlDi6QyieBkvFTihAYb</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
-                           <operation source="field" to="mt-Sample-Mapping">temp.Mapping</operation>
+                           <operation source="field" to="mt-Sample-Mapping">temp.Task</operation>
                         </parameter>
                      </serviceInput>
                      <serviceOutput>
-                        <operation source="field" to="temp.Mapping/output/Object_Name">Object Name</operation>
-                        <operation source="field" to="temp.Mapping/output/Run_Id">Run Id</operation>
-                        <operation source="field" to="temp.Mapping/output/Log_Id">Log Id</operation>
-                        <operation source="field" to="temp.Mapping/output/Task_Id">Task Id</operation>
-                        <operation source="field" to="temp.Mapping/output/Task_Status">Task Status</operation>
-                        <operation source="field" to="temp.Mapping/output/Success_Source_Rows">Success Source Rows</operation>
-                        <operation source="field" to="temp.Mapping/output/Failed_Source_Rows">Failed Source Rows</operation>
-                        <operation source="field" to="temp.Mapping/output/Success_Target_Rows">Success Target Rows</operation>
-                        <operation source="field" to="temp.Mapping/output/Failed_Target_Rows">Failed Target Rows</operation>
-                        <operation source="field" to="temp.Mapping/output/Start_Time">Start Time</operation>
-                        <operation source="field" to="temp.Mapping/output/End_Time">End Time</operation>
-                        <operation source="field" to="temp.Mapping/output/Error_Message">Error Message</operation>
-                        <operation source="field" to="temp.Mapping/output/TotalTransErrors">Total Transformation Errors</operation>
-                        <operation source="field" to="temp.Mapping/output/FirstErrorCode">First Error Code</operation>
+                        <operation source="field" to="temp.Task/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.Task/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.Task/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.Task/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.Task/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.Task/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.Task/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.Task/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.Task/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.Task/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.Task/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.Task/output/Error_Message">Error Message</operation>
+                        <operation source="field" to="temp.Task/output/TotalTransErrors">Total Transformation Errors</operation>
+                        <operation source="field" to="temp.Task/output/FirstErrorCode">First Error Code</operation>
                      </serviceOutput>
                   </service>
                   <flow id="ky901a7n">
@@ -225,7 +230,7 @@ version: 1.6</description>
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fpSNttEDQY1ckMfnCAah2F</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -236,11 +241,11 @@ version: 1.6</description>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">
-                                    <expression language="XQuery">util:iif($temp.Mapping[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
+                                    <expression language="XQuery">util:iif($temp.Task[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/output[1]
+                                    <expression language="XQuery">let $job_output := $temp.Task[1]/output[1]
 let $detail := &lt;detail&gt;
 Success Source Rows: {$job_output/Success_Source_Rows/text()}
 Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
@@ -258,7 +263,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">temp.Mapping[1]/output[1]/Task_Status</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_logging_level">temp.Task[1]/output[1]/Task_Status</operation>
                                  <operation source="formula" to="mt-Logging-CreateEventEntry/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
                                  </operation>
@@ -269,9 +274,9 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Task[1]/output[1]/Object_Name</operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Task[1]/output[1]/Object_Name</operation>
                                  <operation source="field"
                                             to="temp.Create Event Entry Completed[1]/input[1]/prm_job_ID">temp.tmp_job_ID</operation>
                                  <operation source="formula"
@@ -280,11 +285,11 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                  </operation>
                                  <operation source="formula"
                                             to="temp.Create Event Entry Completed[1]/input[1]/prm_event_message">
-                                    <expression language="XQuery">util:iif($temp.Mapping[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
+                                    <expression language="XQuery">util:iif($temp.Task[1]/output[1]/Task_Status=2, 'Integration Step Completed with Warning', 'Integration Step Completed')</expression>
                                  </operation>
                                  <operation source="formula"
                                             to="temp.Create Event Entry Completed[1]/input[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/output[1]
+                                    <expression language="XQuery">let $job_output := $temp.Task[1]/output[1]
 let $detail := &lt;detail&gt;
 Success Source Rows: {$job_output/Success_Source_Rows/text()}
 Failed Source Rows: {$job_output/Failed_Source_Rows/text()}
@@ -302,7 +307,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getUserName()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_logging_level">temp.Mapping[1]/output[1]/Task_Status</operation>
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_logging_level">temp.Task[1]/output[1]/Task_Status</operation>
                                  <operation source="formula"
                                             to="temp.Create Event Entry Completed[1]/input[1]/prm_orgID">
                                     <expression language="XQuery">util:getOrganizationId()</expression>
@@ -314,9 +319,9 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_name">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_name">temp.Task[1]/output[1]/Object_Name</operation>
                                  <operation source="field"
-                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_title">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="temp.Create Event Entry Completed[1]/input[1]/prm_process_title">temp.Task[1]/output[1]/Object_Name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -350,9 +355,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                            <catch faultField="temp.Create Event Entry Completed/fault"
                                   id="ky2k525a"
                                   interrupting="true"
-                                  name="error">
-                              <suspend/>
-                           </catch>
+                                  name="error"/>
                            <catch faultField="temp.Create Event Entry Completed/fault"
                                   id="ky2k525b"
                                   interrupting="true"
@@ -368,7 +371,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">bvPSpypzQQKfDlHIBQuIW7</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -410,9 +413,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                            <catch faultField="temp.Update Job Entry Completed/fault"
                                   id="ky2k5275"
                                   interrupting="true"
-                                  name="error">
-                              <suspend/>
-                           </catch>
+                                  name="error"/>
                            <catch faultField="temp.Update Job Entry Completed/fault"
                                   id="ky2k5276"
                                   interrupting="true"
@@ -424,6 +425,19 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                      </end>
                   </flow>
                   <flow id="ky901a7q">
+                     <assignment id="lr9hzalk">
+                        <title>Set Error message</title>
+                        <operation source="formula" to="temp.tmp_error_message">
+                           <expression language="XQuery">let $job_output := $temp.Task[1]/fault[1]
+let $detail := &lt;detail&gt; 
+Error Message: {$job_output/reason/text()}
+&lt;/detail&gt;
+return
+replace(normalize-space(replace($detail/text(),"&amp;#10;"," ")),"['\[\]]","")
+(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
+                        </operation>
+                        <link id="lr9hzall" targetId="ky901a8q"/>
+                     </assignment>
                      <eventContainer id="ky901a8q">
                         <service id="ky901a7u">
                            <title>Create Event Entry Failed</title>
@@ -433,7 +447,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateEventEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">504jPbKnYu0ep9XgdKq4Qp</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">fpSNttEDQY1ckMfnCAah2F</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -444,16 +458,8 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                  </operation>
                                  <operation source="constant"
                                             to="mt-Logging-CreateEventEntry/input[1]/prm_event_message">Integration Step Failed</operation>
-                                 <operation source="formula"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/fault[1]
-let $detail := &lt;detail&gt; 
-Error Message: {$job_output/reason/text()}
-&lt;/detail&gt;
-return
-normalize-space(replace($detail/text(),"&amp;#10;"," "))
-(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_event_detail">temp.tmp_error_message</operation>
                                  <operation source="formula"
                                             to="mt-Logging-CreateEventEntry/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
@@ -470,9 +476,9 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_name">temp.tmp_job_name</operation>
                                  <operation source="field"
-                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="mt-Logging-CreateEventEntry/input[1]/prm_process_title">temp.tmp_job_name</operation>
                                  <operation source="field"
                                             to="temp.Create Event Entry Failed[1]/input[1]/prm_job_ID">temp.tmp_job_ID</operation>
                                  <operation source="formula"
@@ -481,16 +487,8 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                  </operation>
                                  <operation source="constant"
                                             to="temp.Create Event Entry Failed[1]/input[1]/prm_event_message">Integration Step Failed</operation>
-                                 <operation source="formula"
-                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_event_detail">
-                                    <expression language="XQuery">let $job_output := $temp.Mapping[1]/fault[1]
-let $detail := &lt;detail&gt; 
-Error Message: {$job_output/reason/text()}
-&lt;/detail&gt;
-return
-normalize-space(replace($detail/text(),"&amp;#10;"," "))
-(: We have to replace line breaks from the text as there seem to be defect to pass parameters to DI task whens string param contains line breaks :)</expression>
-                                 </operation>
+                                 <operation source="field"
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_event_detail">temp.tmp_error_message</operation>
                                  <operation source="formula"
                                             to="temp.Create Event Entry Failed[1]/input[1]/prm_Initiator">
                                     <expression language="XQuery">util:getUserName()</expression>
@@ -508,9 +506,9 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                                     <expression language="XQuery">util:getProcessId()</expression>
                                  </operation>
                                  <operation source="field"
-                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_name">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_name">temp.tmp_job_name</operation>
                                  <operation source="field"
-                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_title">temp.Mapping[1]/output[1]/Object_Name</operation>
+                                            to="temp.Create Event Entry Failed[1]/input[1]/prm_process_title">temp.tmp_job_name</operation>
                               </parameter>
                            </serviceInput>
                            <serviceOutput>
@@ -541,9 +539,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                            <catch faultField="temp.Create Event Entry Failed/fault"
                                   id="ky2k525a"
                                   interrupting="true"
-                                  name="error">
-                              <suspend/>
-                           </catch>
+                                  name="error"/>
                            <catch faultField="temp.Create Event Entry Failed/fault"
                                   id="ky2k525b"
                                   interrupting="true"
@@ -559,7 +555,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">bvPSpypzQQKfDlHIBQuIW7</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -598,9 +594,7 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                            <catch faultField="temp.Update Job Entry Failed/fault"
                                   id="ky2k5275"
                                   interrupting="true"
-                                  name="error">
-                              <suspend/>
-                           </catch>
+                                  name="error"/>
                            <catch faultField="temp.Update Job Entry Failed/fault"
                                   id="ky2k5276"
                                   interrupting="true"
@@ -610,21 +604,21 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
                      <throw id="ky901ago">
                         <title>Throw Error</title>
                         <throwInput>
-                           <parameter name="code" source="field" updatable="true">temp.Mapping[1]/fault[1]/code</parameter>
-                           <parameter name="detail" source="field" updatable="true">temp.Mapping[1]/fault[1]/detail</parameter>
-                           <parameter name="reason" source="field" updatable="true">temp.Mapping[1]/fault[1]/reason</parameter>
+                           <parameter name="code" source="field" updatable="true">temp.Task[1]/fault[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">temp.Task[1]/fault[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">temp.Task[1]/fault[1]/reason</parameter>
                         </throwInput>
                      </throw>
                   </flow>
                   <link id="ky901a7m" targetId="ky901a7n" type="containerLink"/>
                   <events>
-                     <catch faultField="temp.Mapping/fault"
+                     <catch faultField="temp.Task/fault"
                             id="ky3jxair"
                             interrupting="true"
                             name="error">
                         <link id="ky901a7p" targetId="ky901a7q" type="containerLink"/>
                      </catch>
-                     <catch faultField="temp.Mapping/fault"
+                     <catch faultField="temp.Task/fault"
                             id="ky3jxais"
                             interrupting="true"
                             name="warning"/>
@@ -766,8 +760,8 @@ normalize-space(replace($detail/text(),"&amp;#10;"," "))
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>8Xv147vkTu0huIQqjnlzWr</types1:GUID>
+      <types1:GUID>hKjpBh7ApEEfU74fzQKtec</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template_Sample_Mapping</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:11.443Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:36.58Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

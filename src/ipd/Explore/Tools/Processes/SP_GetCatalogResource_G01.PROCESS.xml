@@ -1,22 +1,22 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>Z5i4rswVYx8R8Wr-gt-28131003-2022-02-18T17:19:44.836Z::pd.xml</types1:EntryId>
+      <types1:EntryId>jtYICf5GkeHy2uI-gt-38662940-2024-01-09T22:16:16.152Z::pd.xml</types1:EntryId>
       <types1:Name>SP_GetCatalogResource_G01</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML</types1:Description>
+      <types1:Description>Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-02-18T17:19:45Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-18T17:23:31Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:16Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T17:23:39Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:50:02Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP_GetCatalogResource_G01/SP_GetCatalogResource_G01.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,8 +28,9 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML</description>
-            <tags>.agent:G01</tags>
+            <description>Get Process Server Catalog resource from Secure Agent Process Engine Catalog on Associated Secure Agent Group, This is useful to retrive metadata Stored in the Catalog It will return resource as XML
+version: 1.6</description>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="Catalog Resource Location"
@@ -49,7 +50,7 @@
             </output>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="none">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -67,8 +68,8 @@
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>abnxZAvEI8cc3aejQFxpoV</types1:GUID>
+      <types1:GUID>5NxAfIJJjAdb3SJxGds8mb</types1:GUID>
       <types1:DisplayName>SP_GetCatalogResource_G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:05.868Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.442Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

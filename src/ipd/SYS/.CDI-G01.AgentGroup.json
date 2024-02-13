@@ -1,0 +1,29 @@
+[
+   {
+      "objectGuid": "eMvazWw2MoBjBanMZKwNUE",
+      "objectName": "CDI-G01",
+      "objectType": "AgentGroup",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "VALID"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "0022AF2500000000000A"
+         }
+      }
+   }
+]

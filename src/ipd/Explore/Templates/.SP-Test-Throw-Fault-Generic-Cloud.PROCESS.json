@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "5QGscpnCI5jfEp0ogG1XQs",
+      "objectGuid": "4N1GidS9Eo8ldJEvF96Hwk",
       "objectName": "SP-Test-Throw-Fault-Generic-Cloud",
       "objectType": "PROCESS",
       "path": "/Explore/Templates",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "rZQT53nQciSrZMS-gt-1951673-2020-03-24T18:08:11.279Z::pd.xml"
+            "repoHandle": "zOZduD2L5SeE1Ko-gt-38714799-2024-01-09T22:16:11.408Z::pd.xml"
          }
       }
    }

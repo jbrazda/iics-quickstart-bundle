@@ -1,28 +1,22 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>iYVIKchzt1Y6tMF-gt-5306383-2020-03-24T18:08:12.134Z::pd.xml</types1:EntryId>
+      <types1:EntryId>zz2YNmumf6S3wOL-gt-38703873-2024-01-09T22:16:16.405Z::pd.xml</types1:EntryId>
       <types1:Name>SP-ICS-Run-Job-NA</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>This process will run an ICS Cloud task
-Required parameters are Task Name and Task Type
-Optionally you can set Other Parameters
-if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
-if task completes before timeout it will reply with error on timeout. 
-Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
+      <types1:Description>This process will run an ICS Cloud task Required parameters are Task Name and Task Type Optionally you can set Other Parameters if the in_max_wait is set to true the process will wait until the task is complete or ‘Max Wait’ time if task completes before timeout it will reply with error on timeout. Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:12Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:54Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:16Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:59:58Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:50:49Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-ICS-Run-Job-NA/SP-ICS-Run-Job-NA.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,14 +26,9 @@ version: 1.6</types1:Description>
                   name="SP-ICS-Run-Job-NA"
                   overrideAPIName="false">
             <appliesTo/>
-            <description>This process will run an ICS Cloud task
-Required parameters are Task Name and Task Type
-Optionally you can set Other Parameters
-if the in_max_wait is set to true the  process will wait until the task is complete or  ‘Max Wait’ time
-if task completes before timeout it will reply with error on timeout. 
-Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
+            <description>This process will run an ICS Cloud task Required parameters are Task Name and Task Type Optionally you can set Other Parameters if the in_max_wait is set to true the process will wait until the task is complete or ‘Max Wait’ time if task completes before timeout it will reply with error on timeout. Max Wait = 600 seconds by default. You can override it, but the value is capped at 604800 seconds (7 days).
 version: 1.6</description>
-            <tags>.agent:G01</tags>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description=""
@@ -114,7 +103,7 @@ version: 1.6</description>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -226,8 +215,8 @@ return ipd:setProcessTitle($process_title)</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>9wz3OkHg5VXeQ7DuT78daW</types1:GUID>
+      <types1:GUID>6s5yrDe7qj4gPtHqpkMJam</types1:GUID>
       <types1:DisplayName>SP-ICS-Run-Job-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:07.971Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.151Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

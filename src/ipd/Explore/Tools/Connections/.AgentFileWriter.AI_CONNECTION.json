@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "g6EWDQPAJAWgFg1H9sXx4a",
+      "objectGuid": "6SYZ9C6pDo5kXfQW8owX05",
       "objectName": "AgentFileWriter",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "HQuoJ49ARJi4tci-gt-6187041-2020-03-24T18:08:13.544Z::conn.xml"
+            "repoHandle": "dqfUmm7O2htghGZ-gt-38703807-2024-01-09T22:16:13.05Z::conn.xml"
          }
       }
    }

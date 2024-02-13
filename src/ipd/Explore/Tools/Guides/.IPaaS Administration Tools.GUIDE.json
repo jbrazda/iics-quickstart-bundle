@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "8WPWXuoACwji7tDXMjdfg2",
+      "objectGuid": "2ERpRSN7cJnllJ2Rm7Gzgz",
       "objectName": "IPaaS Administration Tools",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "IIICS Custom Administration Tools Launcher \nversion: 1.6",
+            "description": "IIICS Custom Administration Tools Launcher\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,63 +16,19 @@
             "minor": 0
          },
          "objectRefs": [
-            "0FCslbR0FsshCmxMcjULOJ",
-            "aqpUO15ISL4jLLs0xDJxmL",
-            "1iZssfMiHihflxy0AoH4Il",
-            "3mpz03dfst4hjYMSmmgXes",
-            "i2sGIbd2BUUkea7gdkm785"
+            "4MTe6NOqrBlb2FPFBwEz8i",
+            "dvYoAMEb4C7lwWRuiRdqYe",
+            "1mqmZgzL429hPRSemDn0AX",
+            "0rmZAIvbvNElBWVPJ1JTaC",
+            "1RORkyExWLGeWU2GldZBIB"
          ],
          "repoInfo": {
-            "repoHandle": "lm34jBvSx0aa-gt-5281442-2020-03-24T18:08:21.78Z::gt.xml"
+            "repoHandle": "3osoq3xgjATO9pH-gt-38663408-2024-01-09T22:16:23.873Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "0FCslbR0FsshCmxMcjULOJ",
-      "objectName": "iPaaS Admin Upload File to Agent",
-      "objectType": "GUIDE",
-      "path": "/Explore/Tools/Guides",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Upload File to Secure Agent\nversion: 1.6",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "RrHY2KsJlv58pIO-gt-5237599-2020-03-24T18:08:18.694Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "aqpUO15ISL4jLLs0xDJxmL",
-      "objectName": "Admin Shell",
-      "objectType": "GUIDE",
-      "path": "/Explore/Tools/Guides",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent \nversion: 1.6",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "sFEkWoKeERhKGXS-gt-1951763-2020-03-24T18:08:17.291Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "1iZssfMiHihflxy0AoH4Il",
+      "objectGuid": "4MTe6NOqrBlb2FPFBwEz8i",
       "objectName": "Conversion Utility",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -89,19 +45,19 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "8RVf4VQT53nQciS-gt-5306339-2020-03-24T18:08:11.962Z::gt.xml"
+            "repoHandle": "zkRxvOdsreK8ZAZ-gt-33021572-2024-01-05T19:37:30.414Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "3mpz03dfst4hjYMSmmgXes",
-      "objectName": "iPaaS Log Search SFDC",
+      "objectGuid": "dvYoAMEb4C7lwWRuiRdqYe",
+      "objectName": "Admin Shell",
       "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_SFDC",
+      "path": "/Explore/Tools/Guides",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes",
+            "description": "Utility Guide to Invoke Shell commands on the  Secure Agent \nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -111,12 +67,34 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "zCZcjKsJlv58pIO-gt-5281377-2020-03-24T18:08:19.405Z::gt.xml"
+            "repoHandle": "0ZXXUfTRgpDqotx-gt-38663140-2024-01-09T22:16:19.994Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "i2sGIbd2BUUkea7gdkm785",
+      "objectGuid": "1mqmZgzL429hPRSemDn0AX",
+      "objectName": "iPaaS Log Search DB",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_Database",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Guide  Provides Administrative and troubleshooting functions such as \n- search IPaaS ICAI Job  logs\n- ability to find job related processes\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "APbdutaaabbgdoG-gt-38704251-2024-01-09T22:16:23.432Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0rmZAIvbvNElBWVPJ1JTaC",
       "objectName": "IPaaS Encrypt Utility",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
@@ -133,7 +111,29 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Ki0lHww43dtQR6k-gt-5306430-2020-03-24T18:08:15.92Z::gt.xml"
+            "repoHandle": "0uQaaabcmnBtBgh-gt-38714968-2024-01-09T22:16:14.99Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "1RORkyExWLGeWU2GldZBIB",
+      "objectName": "iPaaS Admin Upload File to Agent",
+      "objectType": "GUIDE",
+      "path": "/Explore/Tools/Guides",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Utility Guide to Upload File to Secure Agent\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "oAXUCZ4nzYLnzYL-gt-38663092-2024-01-09T22:16:19.233Z::gt.xml"
          }
       }
    }

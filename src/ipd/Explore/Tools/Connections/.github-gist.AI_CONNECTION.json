@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "84VdYJTZ6yAbpA2QNIEKix",
+      "objectGuid": "0a2TkcYGuJvjnuCUx2ttEH",
       "objectName": "github-gist",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "9T6SRi7SD2Ik90R03f8dsX"
+            "0yO61p5FySggKnvn08T2cJ"
          ],
          "repoInfo": {
-            "repoHandle": "jEaaaaaaaaaaaaa-gt-5237549-2020-03-24T18:08:18.157Z::conn.xml"
+            "repoHandle": "IAkRtO3M4WwOC2X-gt-38715180-2024-01-09T22:16:18.55Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "9T6SRi7SD2Ik90R03f8dsX",
+      "objectGuid": "0yO61p5FySggKnvn08T2cJ",
       "objectName": "github-gist",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/Tools/ServiceConnectors",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "dv7yjJYKqUlLnzY-gt-5237472-2020-03-24T18:08:13.058Z::svc.xml"
+            "repoHandle": "iPiTk08jIw8jIw8-gt-10241180-2021-11-23T14:34:25.129Z::svc.xml"
          }
       }
    }

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "4wVu3utuMQeeJTCmQIYbSI",
+      "objectGuid": "2Ua5TwZkNdPhfG5WCeDVkp",
       "objectName": "IICS-REST-API-V3",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "035COj5HDGMk9BFhGZxqy5"
+            "3Plm7MJWKSLcMDB5DTreqB"
          ],
          "repoInfo": {
-            "repoHandle": "bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml"
+            "repoHandle": "Y3AxtPk7HNCnchK-gt-29341154-2021-11-09T18:17:06.881Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "035COj5HDGMk9BFhGZxqy5",
+      "objectGuid": "3Plm7MJWKSLcMDB5DTreqB",
       "objectName": "IICS-REST-API-V3",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/Tools/ServiceConnectors",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml"
+            "repoHandle": "QDn5Smbduaa-gt-800892-2021-11-09T18:17:06.468Z::svc.xml"
          }
       }
    }

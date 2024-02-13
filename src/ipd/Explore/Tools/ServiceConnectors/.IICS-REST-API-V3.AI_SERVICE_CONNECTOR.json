@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "035COj5HDGMk9BFhGZxqy5",
+      "objectGuid": "3Plm7MJWKSLcMDB5DTreqB",
       "objectName": "IICS-REST-API-V3",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/Tools/ServiceConnectors",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml"
+            "repoHandle": "QDn5Smbduaa-gt-800892-2021-11-09T18:17:06.468Z::svc.xml"
          }
       }
    }

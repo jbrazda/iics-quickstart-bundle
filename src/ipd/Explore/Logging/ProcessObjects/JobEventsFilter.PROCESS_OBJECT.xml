@@ -1,0 +1,58 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>ci9zhFtybduaa-gt-53041172-2024-01-19T20:58:39.037Z::po.xml</types1:EntryId>
+      <types1:Name>JobEventsFilter</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Represents Filter Conditions for Job Events Listing</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-19T20:58:39Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="JobEventsFilter"
+                        isByCopy="true"
+                        name="JobEventsFilter">
+            <description>Represents Filter Conditions for Job Events Listing</description>
+            <tags/>
+            <detail>
+               <field label="FieldName"
+                      name="FieldName"
+                      nullable="true"
+                      required="false"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"label":"ProcessId","value":"ProcessId"},{"label":"EventMessage","value":"EventMessage"},{"label":"EventDetail","value":"EventDetail"},{"label":"EventTime","value":"EventTime"},{"label":"LoggingLevel","value":"LoggingLevel"},{"label":"LoggingLevelLabel","value":"LoggingLevelLabel"},{"label":"ProcessName","value":"ProcessName"},{"label":"ProcessTitle","value":"ProcessTitle"},{"label":"OrgId","value":"OrgId"},{"label":"Environment","value":"Environment"},{"label":"Initiator","value":"Initiator"}]</option>
+                  </options>
+               </field>
+               <field label="Condition"
+                      name="Condition"
+                      nullable="true"
+                      required="false"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"label":"equals","value":"equals"},{"label":"gt","value":"gt"},{"label":"lt","value":"lt"},{"label":"gte","value":"gte"},{"label":"lte","value":"lte"},{"label":"contains","value":"contains"}]</option>
+                  </options>
+               </field>
+               <field label="Value"
+                      name="Value"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>jvn3xjCsSGFlPIXey8HC6B</types1:GUID>
+      <types1:DisplayName>JobEventsFilter</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.303Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

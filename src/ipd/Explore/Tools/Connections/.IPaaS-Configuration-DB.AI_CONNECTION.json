@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "6emsaVEsYkyhugVpC1hCOM",
+      "objectGuid": "i3MAdH8uKIlepxyR9cDVK8",
       "objectName": "IPaaS-Configuration-DB",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "aaaa-gt-5306353-2020-03-24T18:08:12.006Z::conn.xml"
+            "repoHandle": "Fkaaaa-gt-38703741-2024-01-09T22:16:12.51Z::conn.xml"
          }
       }
    }

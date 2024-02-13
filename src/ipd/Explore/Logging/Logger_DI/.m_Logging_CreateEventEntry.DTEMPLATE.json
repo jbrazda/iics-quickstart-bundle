@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "2K2VAKKJmGtdTmT20xKa2b",
+      "objectGuid": "40zBj7rnJ4clwNmQhOM4UM",
       "objectName": "m_Logging_CreateEventEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -20,9 +20,38 @@
             "major": 0,
             "minor": 0
          },
+         "objectRefs": [
+            "ahxIPxCckjFihsHuLLXuev"
+         ],
+         "repoInfo": {
+            "repoHandle": "0022AF170000000002ET"
+         }
+      }
+   },
+   {
+      "objectGuid": "ahxIPxCckjFihsHuLLXuev",
+      "objectName": "iPaaS_Logging_DB",
+      "objectType": "Connection",
+      "path": "/SYS",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "JSON",
+            "description": null,
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [
+            {
+               "name": "id",
+               "value": "@1"
+            }
+         ],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN1700000000000J"
+            "repoHandle": "0022AF0B0000000000FH"
          }
       }
    }

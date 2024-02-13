@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>kbclopz4KhPVEQr-gt-5306490-2020-03-24T18:08:17.3Z::gt.xml</types1:EntryId>
+      <types1:EntryId>6KUk1IVDov6or3r-gt-38704003-2024-01-09T22:16:17.925Z::gt.xml</types1:EntryId>
       <types1:Name>Test-SP-util-shell-curl-NA</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>Test Case for SP-util-shell-curl-NA
@@ -11,13 +11,12 @@ version: 1.6</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-18T18:19:50Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:18Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T18:19:55Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-12T16:57:27Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.Test_SP_util_shell_curl_NA/Test_SP_util_shell_curl_NA.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -154,7 +153,7 @@ version: 1.6</description>
                </empty>
                <callProcess id="j8m0nfze">
                   <title>SP-util-shell-curl-NA</title>
-                  <subflowGUID>97so2J3JKbaeAdqkOCzhYJ</subflowGUID>
+                  <subflowGUID>eu7S8rlXF0Jg2Cege7xNQK</subflowGUID>
                   <subflowPath>SP-util-shell-curl-NA</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <serviceInput>
@@ -344,8 +343,8 @@ version: 1.6</description>
             </flow>
          </avosScreenflow>
       </types1:Entry>
-      <types1:GUID>7z4FFhPv8ZhchyzW1G5agL</types1:GUID>
+      <types1:GUID>2icp0XxkUUMjlIGd65pXYK</types1:GUID>
       <types1:DisplayName>Test-SP-util-shell-curl-NA</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.33Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.965Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

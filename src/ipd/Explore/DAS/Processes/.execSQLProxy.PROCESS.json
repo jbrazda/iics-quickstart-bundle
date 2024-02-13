@@ -1,13 +1,37 @@
 [
    {
-      "objectGuid": "aFxmcySpvu8gNf7wdYYOK5",
+      "objectGuid": "hiNj8N8Bd0VlWX8UjrdPW7",
       "objectName": "execSQLProxy",
       "objectType": "PROCESS",
       "path": "/Explore/DAS/Processes",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.\nversion: 2.0",
+            "description": "This service allows to Access the execSQL DAS Services running on the Secure Agent from the cloud process or the guide.\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "ePzmJyKMdIVlO9LLjqIB6v"
+         ],
+         "repoInfo": {
+            "repoHandle": "7CeKF96xZ6or3rp-gt-38714952-2024-01-09T22:16:14.951Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -17,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "hz5chspiRASmvD4-gt-1869991-2020-03-24T18:08:11.18Z::pd.xml"
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
          }
       }
    }

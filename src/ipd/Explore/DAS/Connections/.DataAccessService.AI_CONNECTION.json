@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "4nQ50tIl0DkbgcRRWyJfah",
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
       "objectName": "DataAccessService",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/DAS/Connections",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "fnG0seP4jM2ljV7FCQzLYx"
+            "8jsj8PSZ9N8lpukNZObK0P"
          ],
          "repoInfo": {
-            "repoHandle": "n6Hbf13ErhNzUze-gt-1951653-2020-03-24T18:08:11.221Z::conn.xml"
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
          }
       }
    },
    {
-      "objectGuid": "fnG0seP4jM2ljV7FCQzLYx",
+      "objectGuid": "8jsj8PSZ9N8lpukNZObK0P",
       "objectName": "DataAccessService",
       "objectType": "AI_SERVICE_CONNECTOR",
       "path": "/Explore/DAS/Connectors",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "mUhGdwOLIFvukNX-gt-1951643-2020-03-24T18:08:11.193Z::svc.xml"
+            "repoHandle": "CY7tu2SHCwkNmum-gt-38703729-2024-01-09T22:16:12.467Z::svc.xml"
          }
       }
    }

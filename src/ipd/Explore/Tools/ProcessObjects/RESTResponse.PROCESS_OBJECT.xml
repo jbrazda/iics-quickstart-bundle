@@ -1,20 +1,18 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>K1g7Gaaa-gt-5306410-2020-03-24T18:08:15.81Z::po.xml</types1:EntryId>
+      <types1:EntryId>k6beAzu2JQhtGci-gt-38743475-2024-01-09T22:16:21.171Z::po.xml</types1:EntryId>
       <types1:Name>RESTResponse</types1:Name>
-      <types1:ParentFlowIds>tciSrZMSPfXBiVG-gt-1951703-2020-03-24T18:08:14.316Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Represents Raw REST service Response version: 1.6</types1:Description>
+      <types1:Description>Represents Raw REST service Response version: 1.6 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:57:01Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:21Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,29 +20,29 @@
                         displayName="RESTResponse"
                         isByCopy="true"
                         name="RESTResponse">
-            <description>Represents Raw REST service Response version: 1.6</description>
+            <description>Represents Raw REST service Response version: 1.6 version: 1.6</description>
             <tags/>
             <detail>
                <field label="headers" name="headers" type="reference">
                   <options>
                      <option name="referenceTo">$po:httpHeaders</option>
                      <option name="relationshipName">Child</option>
-                     <option name="guid">0V9FXKnpGo0fe6M0I5RFo2</option>
+                     <option name="guid">armhAqWJgxniPF8q0Sg1E0</option>
                   </options>
                </field>
                <field label="payload" name="payload" type="reference">
                   <options>
                      <option name="referenceTo">$po:httpPayload</option>
                      <option name="relationshipName">Child</option>
-                     <option name="guid">4h8HgsvcOJzbNHL8OonLsf</option>
+                     <option name="guid">5bfkPs1NI0eg95IXeeceIT</option>
                   </options>
                </field>
                <field label="statusCode" name="statusCode" type="int"/>
             </detail>
          </processObject>
       </types1:Entry>
-      <types1:GUID>3OtuNFJzJQtlgd0Fh1VpyW</types1:GUID>
+      <types1:GUID>9NbjBLq1DZTg8kFmBbIkU6</types1:GUID>
       <types1:DisplayName>RESTResponse</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.967Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.28Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

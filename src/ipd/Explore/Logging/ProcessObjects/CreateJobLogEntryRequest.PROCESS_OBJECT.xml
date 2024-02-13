@@ -1,20 +1,19 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>oO3WAiRASmvD4te-gt-5306480-2020-03-24T18:08:17.237Z::po.xml</types1:EntryId>
+      <types1:EntryId>7IS7T1cnFKi9zhF-gt-38704013-2024-01-09T22:16:17.95Z::po.xml</types1:EntryId>
       <types1:Name>CreateJobLogEntryRequest</types1:Name>
-      <types1:ParentFlowIds>bfQnbf6riX2FNBe-gt-6187142-2020-03-24T18:08:20.28Z::pd.xml,EQxiggor3rp3yD7-gt-5281397-2020-03-24T18:08:19.496Z::pd.xml,HYEWNTrKkQIW3Ni-gt-5281407-2020-03-24T18:08:19.536Z::pd.xml,nXVuslqAOclkZ2s-gt-19353411-2021-02-10T20:21:44.219Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>eIi8RVf4VQT53nQ-gt-38743455-2024-01-09T22:16:21.074Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Job Logging Entry Request to create the Record version: 1.6</types1:Description>
+      <types1:Description>Job Logging Entry Request to create the Record version: 1.6 version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-04T14:56:55Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:18Z</types1:CreationDate>
+      <types1:ModifiedBy/>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -22,7 +21,7 @@
                         displayName="CreateJobLogEntryRequest"
                         isByCopy="true"
                         name="CreateJobLogEntryRequest">
-            <description>Job Logging Entry Request to create the Record version: 1.6</description>
+            <description>Job Logging Entry Request to create the Record version: 1.6 version: 1.6</description>
             <tags/>
             <detail>
                <field label="ProcessExecutionContext"
@@ -31,7 +30,7 @@
                   <options>
                      <option name="referenceTo">$po:ProcessExecutionContext</option>
                      <option name="relationshipName">Child</option>
-                     <option name="guid">jJIHZ3UwecldLOFbMHDroh</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
                   </options>
                </field>
                <field label="StartDate" name="StartDate" type="datetime"/>
@@ -40,8 +39,8 @@
             </detail>
          </processObject>
       </types1:Entry>
-      <types1:GUID>0yCYvtJEtRAgdylNn0lcu7</types1:GUID>
+      <types1:GUID>1FldlqA5rKCe2GGaCn03MA</types1:GUID>
       <types1:DisplayName>CreateJobLogEntryRequest</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.409Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.97Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectGuid": "ahxIPxCckjFihsHuLLXuev",
       "objectName": "iPaaS_Logging_DB",
       "objectType": "Connection",
       "path": "/SYS",
@@ -21,16 +21,16 @@
             "minor": 0
          },
          "objectRefs": [
-            "8OoRwZrdncvfN5Q97mLbQt"
+            "eMvazWw2MoBjBanMZKwNUE"
          ],
          "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
+            "repoHandle": "0022AF0B0000000000FH"
          }
       }
    },
    {
-      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
-      "objectName": "G01",
+      "objectGuid": "eMvazWw2MoBjBanMZKwNUE",
+      "objectName": "CDI-G01",
       "objectType": "AgentGroup",
       "path": "/SYS",
       "metadata": {
@@ -51,7 +51,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000003"
+            "repoHandle": "0022AF2500000000000A"
          }
       }
    }

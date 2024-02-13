@@ -1,22 +1,23 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>TTiPZx1Xmgaabcl-gt-34666995-2022-02-21T14:30:02.673Z::pd.xml</types1:EntryId>
+      <types1:EntryId>Khx7rsPFn2H0Fdw-gt-38663296-2024-01-09T22:16:22.584Z::pd.xml</types1:EntryId>
       <types1:Name>SP-Import-Configuration</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table</types1:Description>
+      <types1:Description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-02-21T14:30:03Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-21T15:37:10Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:23Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-01T22:58:36Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-21T15:37:51Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-01T22:58:42Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-Import-Configuration/SP-Import-Configuration.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,8 +29,9 @@
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table</description>
-            <tags>.agent:G01</tags>
+            <description>Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table
+version: 1.6</description>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description="" name="in_configuration_properties" type="objectlist">
@@ -38,7 +40,7 @@
                      <option hide="true" name="multiSelect">true</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">6emsaVEsYkyhugVpC1hCOM</option>
+                     <option name="guid">i3MAdH8uKIlepxyR9cDVK8</option>
                   </options>
                </parameter>
             </input>
@@ -68,7 +70,7 @@
                      <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">4nQ50tIl0DkbgcRRWyJfah</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
                   </options>
                </field>
                <field description="" name="tmp_config_dataSource" type="string">
@@ -78,8 +80,8 @@
                </field>
             </tempFields>
             <notes/>
-            <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -98,7 +100,7 @@ return
    &lt;sqlStatement&gt;
       &lt;statementId&gt;update_ic_configuration&lt;/statementId&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;UPDATE IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
+      &lt;statement&gt;UPDATE InformaticaLogging.dbo.IC_CONFIGURATION SET PKEY = ?, PVALUE = ? WHERE PKEY = ?&lt;/statement&gt;
       {
       for $property in $config_properties
       let $key   := $property/PKEY/text()
@@ -163,7 +165,7 @@ return
    &lt;sqlStatement&gt;
       &lt;statementId&gt;insert_ic_configuration&lt;/statementId&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;INSERT INTO IC_CONFIGURATION (PKEY, PVALUE) VALUES (?,?)&lt;/statement&gt;
+      &lt;statement&gt;INSERT INTO InformaticaLogging.dbo.IC_CONFIGURATION (PKEY, PVALUE) VALUES (?,?)&lt;/statement&gt;
       {
       for $property at $i in $config_properties
       let $key   := $property/PKEY/text()
@@ -220,8 +222,8 @@ return
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>4jFrs9zpvTuk3MmAtI7JkF</types1:GUID>
+      <types1:GUID>6h346Lf0tOFk0igkHAPxwG</types1:GUID>
       <types1:DisplayName>SP-Import-Configuration</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:09.202Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.298Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "lAFNi6OSxoJfMExNx8OHia",
+      "objectGuid": "kJW2XJitKMqi2NFofuqTG5",
       "objectName": "iPaaS Configuration Manager",
       "objectType": "GUIDE",
       "path": "/Explore/Tools/Guides",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Guide to manage configuration properties stored as a Key/Value pairs in the Database\nversion: 1.7",
+            "description": "Guide to manage configuration properties stored as a Key/Value pairs in the Database\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,38 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "4jFrs9zpvTuk3MmAtI7JkF",
-            "6emsaVEsYkyhugVpC1hCOM"
+            "i3MAdH8uKIlepxyR9cDVK8",
+            "6h346Lf0tOFk0igkHAPxwG",
+            "ePzmJyKMdIVlO9LLjqIB6v"
          ],
          "repoInfo": {
-            "repoHandle": "rLWEQT53nQciSrZ-gt-5237569-2020-03-24T18:08:18.275Z::gt.xml"
+            "repoHandle": "Vox9AWbg0ZkL0jm-gt-38663396-2024-01-09T22:16:23.763Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "4jFrs9zpvTuk3MmAtI7JkF",
-      "objectName": "SP-Import-Configuration",
-      "objectType": "PROCESS",
-      "path": "/Explore/Tools/Processes",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "TTiPZx1Xmgaabcl-gt-34666995-2022-02-21T14:30:02.673Z::pd.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "6emsaVEsYkyhugVpC1hCOM",
+      "objectGuid": "i3MAdH8uKIlepxyR9cDVK8",
       "objectName": "IPaaS-Configuration-DB",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -64,7 +43,51 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "aaaa-gt-5306353-2020-03-24T18:08:12.006Z::conn.xml"
+            "repoHandle": "Fkaaaa-gt-38703741-2024-01-09T22:16:12.51Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6h346Lf0tOFk0igkHAPxwG",
+      "objectName": "SP-Import-Configuration",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to Import configuration Properties from XML to IC_CONFIGURATION DB Table\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "Khx7rsPFn2H0Fdw-gt-38663296-2024-01-09T22:16:22.584Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
          }
       }
    }

@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>vZE4O9pH8sVYx8R-gt-1018722-2022-01-12T15:40:27.34Z::tf.xml</types1:EntryId>
+      <types1:EntryId>rhNzUzeA8rJ4pbg-gt-47237186-2024-01-11T16:19:42.285Z::tf.xml</types1:EntryId>
       <types1:Name>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:Name>
       <types1:MimeType>application/xml+taskflow</types1:MimeType>
       <types1:Description>Example Task Flow template to use as a starting point to develop new task flows
@@ -11,14 +11,10 @@ version: 1.6</types1:Description>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>mshmaltsuyev@hcg.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2022-01-12T15:40:27Z</types1:CreationDate>
-      <types1:ModifiedBy>mshmaltsuyev@hcg.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2023-06-06T19:18:53Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>mshmaltsuyev@hcg.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2023-06-06T19:41:35Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/tf.EXAMPLE2-MT_Multi_Mapping_Template_Job/EXAMPLE2-MT_Multi_Mapping_Template_Job.tf.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-11T16:19:42Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
@@ -101,7 +97,7 @@ version: 1.6</description>
                         <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                         <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                         <parameter name="Task Name" source="constant" updatable="true">mt_Logging_CreateJobEntry</parameter>
-                        <parameter name="GUID" source="constant" updatable="true">5mQSVYzXARFdIWEE2wmfwm</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">2fy3qV9VUaskuycPyTxRGo</parameter>
                         <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                         <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                         <parameter name="taskField" source="nested">
@@ -166,7 +162,7 @@ version: 1.6</description>
                <eventContainer id="kyanlzd4">
                   <subflow id="kyanlzd0">
                      <title>Run Integration Process</title>
-                     <subflowGUID>27YdzYRyhpPeBcR0v2huCq</subflowGUID>
+                     <subflowGUID>417IUfUrKU8gfak4cRLqiE</subflowGUID>
                      <subflowPath>EXAMPLE2-ST_Multi_Mapping_Template_Handler</subflowPath>
                      <runForEach>false</runForEach>
                      <input>
@@ -184,7 +180,7 @@ version: 1.6</description>
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">bvPSpypzQQKfDlHIBQuIW7</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -249,7 +245,7 @@ version: 1.6</description>
                               <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
                               <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
                               <parameter name="Task Name" source="constant" updatable="true">mt_Logging_UpdateJobEntry</parameter>
-                              <parameter name="GUID" source="constant" updatable="true">1mAmqoMzIaEblXG9awIMml</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">bvPSpypzQQKfDlHIBQuIW7</parameter>
                               <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
                               <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
                               <parameter name="taskField" source="nested">
@@ -386,8 +382,8 @@ version: 1.6</description>
             </dependencies>
          </taskflow>
       </types1:Entry>
-      <types1:GUID>1lSugbtOqQMbk023Nm7T4F</types1:GUID>
+      <types1:GUID>1MIV2RFOeqTg0Z2a0VFygT</types1:GUID>
       <types1:DisplayName>EXAMPLE2-MT_Multi_Mapping_Template_Job</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:12.269Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:36.703Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

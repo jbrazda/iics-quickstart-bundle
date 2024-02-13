@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "jvn3xjCsSGFlPIXey8HC6B",
+      "objectName": "JobEventsFilter",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents Filter Conditions for Job Events Listing",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "ci9zhFtybduaa-gt-53041172-2024-01-19T20:58:39.037Z::po.xml"
+         }
+      }
+   }
+]

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "lQIftjtUH4ajxX40hlujym",
+      "objectGuid": "3QG2CiWOVAxfRHE6bp5cmb",
       "objectName": "TEMPLATE-SP-ETL-DAS",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DAS",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Template for Integration Sub-Process (SP) Demo\nversion: 2.0",
+            "description": "Template for Integration Sub-Process (SP) Demo\nversion: 1.6",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "1ZKarw0xpyEfQ1ZSVhods0"
+            "0mCkidTNGaPh3z0xEKU7yb"
          ],
          "repoInfo": {
-            "repoHandle": "vyXYDdxKlFmVSci-gt-19357022-2021-02-10T20:21:04.235Z::pd.xml"
+            "repoHandle": "3GVUDv2vSx0aa-gt-38743350-2024-01-09T22:16:13.886Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "1ZKarw0xpyEfQ1ZSVhods0",
+      "objectGuid": "0mCkidTNGaPh3z0xEKU7yb",
       "objectName": "SP-Test-Throw-Fault-Generic",
       "objectType": "PROCESS",
       "path": "/Explore/Templates",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "hK6LlRkPUEbfV3H-gt-1951663-2020-03-24T18:08:11.25Z::pd.xml"
+            "repoHandle": "BFgaa-gt-38714807-2024-01-09T22:16:11.44Z::pd.xml"
          }
       }
    }

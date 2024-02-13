@@ -1,9 +1,9 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>zx1XmgaabclvAhr-gt-1870021-2020-03-24T18:08:14.416Z::svc.xml</types1:EntryId>
+      <types1:EntryId>QDn5Smbduaa-gt-800892-2021-11-09T18:17:06.468Z::svc.xml</types1:EntryId>
       <types1:Name>IICS-REST-API-V3</types1:Name>
-      <types1:ParentFlowIds>bcnS24FsWTzIf6r-gt-33703781-2022-02-01T21:16:57.02Z::conn.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>Y3AxtPk7HNCnchK-gt-29341154-2021-11-09T18:17:06.881Z::conn.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
       <types1:Description>Platform REST API version 3
 See Documentation: 
@@ -14,13 +14,13 @@ https://docs.informatica.com/integration-cloud/cloud-platform/current-version/re
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:14Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-01T21:17:49Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-01T21:18:23Z</types1:PublicationDate>
+      <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2021-11-09T18:17:06Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-12T18:52:42Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T15:58:37Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/IICS_REST_API_V3/IICS_REST_API_V3_svcDef.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -44,12 +44,14 @@ https://docs.informatica.com/integration-cloud/cloud-platform/current-version/re
                                     testWith="https://dm-us.informaticacloud.com"
                                     type="string"/>
                <connectionAttribute description="API User"
+                                    label="username"
                                     masked="false"
                                     name="username"
                                     required="true"
-                                    testWith="jbrazda@unicosolution.com.dev"
+                                    testWith="svc_AzureDevOps@natl.com.dev"
                                     type="string"/>
                <connectionAttribute description="API Password"
+                                    label="password"
                                     masked="true"
                                     name="password"
                                     required="true"
@@ -76,17 +78,16 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="extend" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
+                        </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -100,7 +101,18 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="/public/core/v3/export" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="/public/core/v3/export"
+                                        verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
                      </restSimpleBinding>
                   </binding>
@@ -132,17 +144,16 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
+                        </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -162,7 +173,18 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{concat($base_url,&#34;/public/core/v3/import/&#34;,$id)}" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_url,&#34;/public/core/v3/import/&#34;,$id)}"
+                                        verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
                      </restSimpleBinding>
                   </binding>
@@ -195,23 +217,24 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
+                        </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
-                     <parameter name="lookupRequest"
+                     <parameter description=""
+                                label=""
+                                name="lookupRequest"
                                 required="true"
-                                testWith="{&#xA;    &#34;name&#34; : &#34;testJob1&#34;,&#xA;    &#34;objects&#34; : [&#xA;        {&#xA;            &#34;id&#34;: &#34;l7bgB85m5oGiXObDxwnvK9&#34;,&#xA;            &#34;includeDependencies&#34; : true&#xA;        }&#xA;    ]&#xA;}"
+                                testWith="&lt;LookUpRequest&gt;&#xA;   &lt;objects&gt;&#xA;      &lt;path&gt;NATL_ODS/MappingTasks/mt_SalesforceCDC_OpportunityLineItem_Load&lt;/path&gt;&#xA;      &lt;type&gt;MTT&lt;/type&gt;&#xA;   &lt;/objects&gt;&#xA;&lt;/LookUpRequest&gt;&#xA;"
                                 type="reference">
                         <options>
                            <option name="referenceTo">LookUpRequest</option>
@@ -219,8 +242,18 @@ POST Request: To start the export job, use the following URI: public/core/v3/exp
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/lookup&#34;)&#xA;let $paramList := ()&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $uriParts := ($base_url ,&#34;public/core/v3/lookup&#34;)&#xA;let $paramList := ()&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
                                         verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body generateUsing="UnwrappedJSON" preserveJsonStringFormatting="false"/>
                      </restSimpleBinding>
                   </binding>
@@ -253,16 +286,12 @@ Export state of the individual object, such as IN PROGRESS, SUCCESS, or FAILED.<
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -282,8 +311,19 @@ Export state of the individual object, such as IN PROGRESS, SUCCESS, or FAILED.<
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{let $uriParts := ($base_url,&#34;public/core/v3/export&#34;,$id )&#xA;let $expandP := if (empty($expand) ) then () else concat(&#34;expand=&#34;,encode-for-uri($expand))&#xA;let $paramList := ($expandP)&#xA;return &#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $uriParts := ($base_url,&#34;public/core/v3/export&#34;,$id )&#xA;let $expandP := if (empty($expand) ) then () else concat(&#34;expand=&#34;,encode-for-uri($expand))&#xA;let $paramList := ($expandP)&#xA;return &#xA;string-join((string-join($uriParts,&#34;/&#34;),string-join($paramList, &#34;&amp;amp;&#34;)),&#34;?&#34;)}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description=""
@@ -313,9 +353,6 @@ Export state of the individual object, such as IN PROGRESS, SUCCESS, or FAILED.<
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="extend" name="url" type="url"/>
                         <section type="body">
@@ -326,7 +363,6 @@ Export state of the individual object, such as IN PROGRESS, SUCCESS, or FAILED.<
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -337,7 +373,18 @@ Export state of the individual object, such as IN PROGRESS, SUCCESS, or FAILED.<
                                 type="attachment"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="/public/core/v3/import/package" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="/public/core/v3/import/package"
+                                        verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body generateUsing="Form"/>
                      </restSimpleBinding>
                   </binding>
@@ -370,16 +417,12 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -391,7 +434,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{concat($base_url,&#34;/public/core/v3/import/&#34;,$id )}" verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_url,&#34;/public/core/v3/import/&#34;,$id )}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description=""
@@ -421,16 +476,12 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -441,8 +492,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{concat($base_url,&#34;/public/core/v3/license/org/&#34;,$org_id )}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_url,&#34;/public/core/v3/license/org/&#34;,$org_id )}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description=""
@@ -551,16 +613,12 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -572,8 +630,18 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{concat($base_url,&#34;/public/core/v3/export/&#34;,$id,&#34;/package&#34;)}"
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($base_url,&#34;/public/core/v3/export/&#34;,$id,&#34;/package&#34;)}"
                                         verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <httpHeaders>
                            <header name="Content-Type">application/json</header>
                         </httpHeaders>
@@ -604,9 +672,6 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="body">
@@ -617,12 +682,22 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input/>
                   <binding>
-                     <restSimpleBinding url="{concat($service_url,&#34;/saas/public/core/v3/logout&#34;)}" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{concat($service_url,&#34;/saas/public/core/v3/logout&#34;)}"
+                                        verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body/>
                      </restSimpleBinding>
                   </binding>
@@ -646,16 +721,18 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                   <description>Base action for post requests</description>
                   <input>
                      <parameter description="IICS Base URL retrieved from Login response Note that this URL can be different from the connector base URL. always pass the URL from Login Response&#xA;The URL is specific to the IICS POD i.e. https://na1.dm-us.informaticacloud.com/saas"
+                                label=""
                                 name="base_url"
                                 nogen="true"
                                 required="true"
-                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                testWith="https://use4.dm-us.informaticacloud.com/saas"
                                 type="string"/>
                      <parameter description="Session ID from login response"
+                                label=""
                                 name="session_id"
                                 nogen="true"
                                 required="true"
-                                testWith="7Z02AQc8pe6f8PnLxXXfo7"
+                                testWith="fIlBaLJCm2Sc1SGxTS0S2x"
                                 type="string"/>
                   </input>
                   <binding>
@@ -682,16 +759,18 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                   <description>base action for GET requests</description>
                   <input>
                      <parameter description="IICS Base URL retrieved from Login response Note that this URL can be different from the connector base URL. always pass the URL from Login Response&#xA;The URL is specific to the IICS POD i.e. https://na1.dm-us.informaticacloud.com/saas"
+                                label=""
                                 name="base_url"
                                 nogen="true"
                                 required="true"
-                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                testWith="https://use4.dm-us.informaticacloud.com/saas"
                                 type="string"/>
                      <parameter description="Session ID from login response"
+                                label=""
                                 name="session_id"
                                 nogen="true"
                                 required="true"
-                                testWith="alRpDTaT4aVl8Gdkj24oQ5"
+                                testWith="fmEgZdTmn0ChfbSfIJMXYX"
                                 type="string"/>
                   </input>
                   <binding>
@@ -721,24 +800,21 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
                      <parameter description="Query filter. You can filter using one of the following fields:&#xA;userId. Unique identifier for the user.&#xA;userName. Informatica Intelligent Cloud Services user name.&#xA;&#xA;i.e userName==jbrazda@hcg.com.edu"
+                                label=""
                                 name="q"
                                 nogen="true"
                                 required="false"
-                                testWith="userName==jbrazda@hcg.com.edu"
+                                testWith="userName==&#x9;jaroslav.brazda.dev@natl.com"
                                 type="string"/>
                      <parameter description="Maximum number of users to return.&#xA;Maximum of 200. Default is 100."
                                 name="limit"
@@ -754,8 +830,19 @@ GET Request: To obtain status of the import job, use one of the following URIs: 
                                 type="int"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/users&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $uriParts := ($base_url ,&#34;public/core/v3/users&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="getUsersResponse" type="reference">
@@ -793,9 +880,6 @@ return
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="extend" name="url" type="url"/>
                         <section type="body">
@@ -806,7 +890,6 @@ return
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -820,7 +903,18 @@ return
                      </parameter>
                   </input>
                   <binding>
-                     <restSimpleBinding url="/public/core/v3/users" verb="POST">
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="/public/core/v3/users"
+                                        verb="POST">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
                         <body>{let $payload := $CreateUserRequest 
 return 
 util:toJSON($payload/*)}</body>
@@ -854,16 +948,12 @@ util:toJSON($payload/*)}</body>
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -881,8 +971,19 @@ util:toJSON($payload/*)}</body>
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/roles&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-expand := if (empty($expand )) then () else concat(&#34;expand=&#34;,encode-for-uri($expand))&#xA;&#xA;&#xA;let $paramList := ($p-q,$p-expand)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $uriParts := ($base_url ,&#34;public/core/v3/roles&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-expand := if (empty($expand )) then () else concat(&#34;expand=&#34;,encode-for-uri($expand))&#xA;&#xA;&#xA;let $paramList := ($p-q,$p-expand)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="getRolesResponse" type="reference">
@@ -920,16 +1021,12 @@ return
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="overwrite" name="url" type="url"/>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -953,8 +1050,19 @@ return
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="{let $uriParts := ($base_url ,&#34;public/core/v3/userGroups&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
-                                        verb="GET"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="{let $uriParts := ($base_url ,&#34;public/core/v3/userGroups&#34;)&#xA;&#xA;let $p-q := if (empty($q )) then () else concat(&#34;q=&#34;,encode-for-uri($q))&#xA;let $p-limit := if (empty($limit )) then () else concat(&#34;limit=&#34;,encode-for-uri($limit))&#xA;let $p-skip := if (empty($skip )) then () else concat(&#34;skip=&#34;,encode-for-uri($skip))&#xA;&#xA;let $paramList := ($p-q,$p-limit,$p-skip)&#xA;return concat(string-join($uriParts,&#34;/&#34;),&#34;?&#34;,string-join($paramList, &#34;&amp;amp;&#34;))}"
+                                        verb="GET">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description="" name="getUserGroupsResponse" type="objectlist">
@@ -1027,17 +1135,16 @@ return
                            <attribute inherit="inherit" name="session_id" type="parameter"/>
                         </section>
                      </section>
-                     <section type="output">
-                        <section type="outputFields"/>
-                     </section>
                      <section type="restSimpleBinding">
                         <attribute inherit="extend" name="url" type="url"/>
+                        <section type="body">
+                           <attribute inherit="inherit" name="generateUsing" type="generateUsing"/>
+                        </section>
                         <section type="httpHeaders">
                            <attribute inherit="inherit" name="INFA-SESSION-ID" type="header"/>
                            <attribute inherit="inherit" name="Accept" type="header"/>
                            <attribute inherit="inherit" name="Content-Type" type="header"/>
                         </section>
-                        <section type="otherParams"/>
                      </section>
                   </inheritanceMetadata>
                   <input>
@@ -1049,7 +1156,19 @@ return
                                 type="string"/>
                   </input>
                   <binding>
-                     <restSimpleBinding url="/public/core/v3/users/{$userId}" verb="DELETE"/>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="/public/core/v3/users/{$userId}"
+                                        verb="DELETE">
+                        <authentication>
+                           <username/>
+                           <password/>
+                           <isExpressionInPassword>false</isExpressionInPassword>
+                        </authentication>
+                        <mutualAuth enabled="false">
+                           <keyStore mode="file"/>
+                           <keyStorePassword/>
+                        </mutualAuth>
+                     </restSimpleBinding>
                   </binding>
                   <output>
                      <field description=""
@@ -1098,7 +1217,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartExportJobResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="createTime"
                             nullable="true"
@@ -1123,7 +1242,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LicenseResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="customLimits"
                             nullable="true"
@@ -1144,7 +1263,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LookUpResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="objects"
                             nullable="true"
@@ -1160,7 +1279,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LoginResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="userInfo"
                             nullable="true"
@@ -1185,7 +1304,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartExportJobRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="objects"
                             nullable="true"
@@ -1202,7 +1321,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LicenseLicenseRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="customLimits"
                             nullable="true"
@@ -1221,7 +1340,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="DownloadExportPackageResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="error" nullable="true" required="false" type="object"/>
                   </detail>
@@ -1229,7 +1348,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LookUpRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="objects"
                             nullable="true"
@@ -1245,7 +1364,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="UploadImportPackageRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="Content"
                             nullable="true"
@@ -1257,7 +1376,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LoginRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="password" nullable="true" required="false" type="string"/>
                      <field name="username" nullable="true" required="false" type="string"/>
@@ -1266,7 +1385,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartImportJobResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="createTime"
                             nullable="true"
@@ -1304,7 +1423,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="UploadImportPackageResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="jobId" nullable="true" required="false" type="string"/>
                      <field name="jobStatus"
@@ -1321,7 +1440,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="string">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="string" nullable="true" required="false" type="string"/>
                   </detail>
@@ -1329,7 +1448,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="boolean">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="boolean" nullable="true" required="false" type="boolean"/>
                   </detail>
@@ -1337,7 +1456,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="double">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="double" nullable="true" required="false" type="double"/>
                   </detail>
@@ -1345,7 +1464,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="integer">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="integer" nullable="true" required="false" type="int"/>
                   </detail>
@@ -1353,7 +1472,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LookUpObjectRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="path" nullable="true" required="false" type="string"/>
                      <field name="type" nullable="true" required="false" type="string"/>
@@ -1362,7 +1481,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartExportJobObjectRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="id" nullable="true" required="false" type="string"/>
                   </detail>
@@ -1370,7 +1489,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LoginProductsResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="name" nullable="true" required="false" type="string"/>
                      <field name="baseApiUrl"
@@ -1382,7 +1501,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LoginUserInfoResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="sessionId" nullable="true" required="false" type="string"/>
                      <field name="id" nullable="true" required="false" type="string"/>
@@ -1399,7 +1518,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="LookUpObjectResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="id" nullable="true" required="false" type="string"/>
                      <field name="path" nullable="true" required="false" type="string"/>
@@ -1418,7 +1537,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartExportJobStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="state" nullable="true" required="false" type="string"/>
                      <field name="message" nullable="true" required="false" type="string"/>
@@ -1427,7 +1546,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="GetExportJobStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="id" nullable="true" required="false" type="string"/>
                      <field name="createTime"
@@ -1452,7 +1571,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="GetExportJobStatusStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="state" nullable="true" required="false" type="string"/>
                      <field name="message" nullable="true" required="false" type="string"/>
@@ -1461,7 +1580,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="UploadImportPackageJobStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="state" nullable="true" required="false" type="string"/>
                      <field name="message" nullable="true" required="false" type="string"/>
@@ -1470,7 +1589,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="StartImportJobStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="state" nullable="true" required="false" type="string"/>
                      <field name="message" nullable="true" required="false" type="string"/>
@@ -1479,7 +1598,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="GetImportJobStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="id" nullable="true" required="false" type="string"/>
                      <field name="createTime"
@@ -1517,7 +1636,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="GetImportJobStatusStatusResponse">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="state" nullable="true" required="false" type="string"/>
                      <field name="message" nullable="true" required="false" type="string"/>
@@ -1526,7 +1645,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="error">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="requestId" nullable="true" required="false" type="string"/>
                      <field name="details" nullable="true" required="false" type="string"/>
@@ -1536,7 +1655,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="users">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="user" nullable="true" required="false" type="objectlist">
                         <options>
@@ -1549,7 +1668,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="user">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="lastName" nullable="true" required="false" type="string"/>
                      <field name="updatedBy" nullable="true" required="false" type="string"/>
@@ -1615,7 +1734,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="roles">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="displayDescription"
                             nullable="true"
@@ -1636,7 +1755,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="groups">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="userGroupName"
                             nullable="true"
@@ -1652,7 +1771,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="createUserRequest">
-                  <description/>
+                  <description> version: 1.6</description>
                   <detail>
                      <field name="name" nullable="false" required="true" type="string"/>
                      <field name="firstName" nullable="false" required="true" type="string"/>
@@ -1675,7 +1794,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="getRolesResponse">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="role" nullable="true" required="false" type="objectlist">
                         <options>
@@ -1688,7 +1807,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="role">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="displayDescription"
                             nullable="true"
@@ -1734,7 +1853,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="privileges">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="service" nullable="true" required="false" type="string"/>
                      <field name="name" nullable="true" required="false" type="string"/>
@@ -1749,7 +1868,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="getUserGroupsResponse">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="group" nullable="true" required="false" type="objectlist">
                         <options>
@@ -1762,7 +1881,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="group">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="updatedBy" nullable="true" required="false" type="string"/>
                      <field name="createdBy" nullable="true" required="false" type="string"/>
@@ -1801,7 +1920,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="groupUsers">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="description"
                             nullable="true"
@@ -1814,7 +1933,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="errorWithDetails">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="code" nullable="true" required="false" type="string"/>
                      <field name="requestId" nullable="true" required="false" type="string"/>
@@ -1837,7 +1956,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="details">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="code" nullable="true" required="false" type="string"/>
                      <field name="debugMessage"
@@ -1850,7 +1969,7 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
                <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
                               isByCopy="true"
                               name="createUserResponse">
-                  <description>An automatically generated process object</description>
+                  <description>An automatically generated process object version: 1.6</description>
                   <detail>
                      <field name="lastName" nullable="true" required="false" type="string"/>
                      <field name="updatedBy" nullable="true" required="false" type="string"/>
@@ -1911,8 +2030,8 @@ if ($ResponseStatusCode = 204 ) then () else $responseBody}</xquery>
             </objects>
          </businessConnector>
       </types1:Entry>
-      <types1:GUID>035COj5HDGMk9BFhGZxqy5</types1:GUID>
+      <types1:GUID>3Plm7MJWKSLcMDB5DTreqB</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V3</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:05.165Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.494Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

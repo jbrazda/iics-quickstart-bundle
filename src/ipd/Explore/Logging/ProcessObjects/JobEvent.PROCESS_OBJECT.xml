@@ -1,0 +1,128 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>0RKWa-gt-53041164-2024-01-19T20:58:38.993Z::po.xml</types1:EntryId>
+      <types1:Name>JobEvent</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>IPaaS Job Log Event
+version: 1.0</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-19T20:58:39Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="JobEvent"
+                        isByCopy="true"
+                        name="JobEvent">
+            <description>IPaaS Job Log Event
+version: 1.0</description>
+            <tags/>
+            <detail>
+               <field label="JobId"
+                      name="JobId"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="EventId"
+                      name="EventId"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="ProcessId"
+                      name="ProcessId"
+                      nullable="true"
+                      required="false"
+                      type="int">
+                  <options/>
+               </field>
+               <field label="EventTime"
+                      name="EventTime"
+                      nullable="true"
+                      required="false"
+                      type="datetime">
+                  <options/>
+               </field>
+               <field label="EventMessage"
+                      name="EventMessage"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="EventDetail"
+                      name="EventDetail"
+                      nullable="true"
+                      required="false"
+                      type="textarea">
+                  <options/>
+               </field>
+               <field label="LoggingLevel"
+                      name="LoggingLevel"
+                      nullable="true"
+                      required="false"
+                      type="int">
+                  <options/>
+               </field>
+               <field label="LoggingLevelLabel"
+                      name="LoggingLevelLabel"
+                      nullable="true"
+                      required="false"
+                      type="picklist">
+                  <options>
+                     <option name="values">[{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
+                  </options>
+               </field>
+               <field label="ProcessName"
+                      name="ProcessName"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="ProcessTitle"
+                      name="ProcessTitle"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="OrgId"
+                      name="OrgId"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="Environment"
+                      name="Environment"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="Initiator"
+                      name="Initiator"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>fgmXHo383Wpf66FUv18KYa</types1:GUID>
+      <types1:DisplayName>JobEvent</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.291Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

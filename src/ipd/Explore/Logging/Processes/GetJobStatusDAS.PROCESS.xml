@@ -1,0 +1,378 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>uXL86zqzm5Y6tMF-gt-52960204-2024-01-19T20:58:41.328Z::pd.xml</types1:EntryId>
+      <types1:Name>GetJobStatusDAS</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Get Job Status using DAS Service.
+Needs the DAS Service Configured for Logging DB.
+version: 1.0</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-19T20:58:41Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-01T23:13:54Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-01T23:13:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.GetJobStatusDAS/GetJobStatusDAS.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="GetJobStatusDAS"
+                  name="GetJobStatusDAS"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Get Job Status using DAS Service.
+Needs the DAS Service Configured for Logging DB.
+version: 1.0</description>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_jobStatusRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:JobStatusRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5neaZotT5GHhh1QalPmA2s</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="JobStatus" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:JobStatusResponse</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">6CoVwdXXM9UbkO21fi0Q69</option>
+                  </options>
+               </field>
+               <field description="" name="Message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_multi_das_request" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_das_connection" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_http_verb" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_errors" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_job_found" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedGroups>
+                     <group>ServiceConsumer</group>
+                  </allowedGroups>
+                  <allowedUsers>
+                     <user>jaroslav.brazda.dev@natl.com</user>
+                  </allowedUsers>
+                  <wholePayload inputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="llwj0fz5" targetId="llwj0fyo"/>
+               </start>
+               <assignment id="llwj0fyo">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_http_verb">
+                     <expression language="XQuery">request:getRequestHTTPVerb()</expression>
+                  </operation>
+                  <link id="llwj0fza" targetId="llwj0fz9"/>
+               </assignment>
+               <container id="llwj0fz9" type="exclusive">
+                  <title>tmp_http_verb</title>
+                  <flow id="llwj0fzj">
+                     <assignment id="llwj0g1e">
+                        <title>Validate Input</title>
+                        <operation source="formula" to="temp.tmp_errors">
+                           <expression language="XQuery">let $errors := (
+	)
+return 
+$errors</expression>
+                        </operation>
+                        <link id="llwj0g2k" targetId="llwj0g2j"/>
+                     </assignment>
+                     <container id="llwj0g2j" type="exclusive">
+                        <title>tmp_errors</title>
+                        <flow id="llwj0g2u">
+                           <end id="llwj0g43">
+                              <title>400 Bad Request</title>
+                              <httpStatus>400</httpStatus>
+                           </end>
+                        </flow>
+                        <flow id="llwj0g2w">
+                           <assignment id="llwj0g38">
+                              <title>Prepare Status Read</title>
+                              <operation source="formula" to="temp.tmp_multi_das_request">
+                                 <expression language="XQuery">(:read Data Source From URN mapping and if not set use default DS1:)
+let $dataSource := if (util:resolveURN("urn:logging:DataSource") = 'urn:logging:DataSource') 
+	then 'DS1' else util:resolveURN('urn:logging:DataSource')
+(:read DB Schema name From URN mapping and if not set use default empty schema :)
+
+let $dbSchema   := if (util:resolveURN("urn:logging:SchemaName") = 'urn:logging:SchemaName') 
+	then () else concat('"',util:resolveURN('urn:logging:SchemaName'),'".')
+
+let $request := $input.in_jobStatusRequest 
+let $jobID := $request/JobId/text()
+
+ let $fieldMap := &lt;fields&gt;
+      &lt;field name="EventId" dbName="EVENT_ID" dbType="string"/&gt;
+      &lt;field name="ProcessId" dbName="PROCESS_ID" dbType="double"/&gt;
+      &lt;field name="EventMessage" dbName="EVENT_MESSAGE" dbType="string"/&gt;
+      &lt;field name="EventDetail" dbName="EVENT_DETAIL" dbType="string"/&gt;
+      &lt;field name="EventTime" dbName="EVENT_TIME" dbType="date"/&gt;
+      &lt;field name="LoggingLevel" dbName="LOGGING_LEVEL" dbType="int"/&gt;
+      &lt;field name="LoggingLevelLabel" dbName="LOGGING_LEVEL_LABEL" dbType="strig"/&gt;
+      &lt;field name="ProcessName" dbName="PROCESS_NAME" dbType="string"/&gt;
+      &lt;field name="ProcessTitle" dbName="PROCESS_TITLE" dbType="string"/&gt;
+      &lt;field name="OrgId" dbName="ORG_ID" dbType="string"/&gt;
+      &lt;field name="Environment" dbName="ENVIRONMENT" dbType="string"/&gt;
+      &lt;field name="Initiator" dbName="INITIATOR" dbType="string"/&gt;
+   &lt;/fields&gt;
+ 
+let $eventsFilterParams := for $filter in  $request/Filter
+       let $fieldMeta := $fieldMap/field[@name=$filter/FieldName/text()] 
+       let $value := if ($filter/Condition/text() = 'contains') 
+            then concat('%',$filter/Value/text(),'%')
+            else $filter/Value/text() 
+       where not(empty($fieldMeta))
+       return
+       &lt;parameter&gt;
+         &lt;sqlType&gt;{data($fieldMeta/@dbType)}&lt;/sqlType&gt;
+         &lt;data&gt;{$value}&lt;/data&gt;
+       &lt;/parameter&gt;
+
+let $eventsFilterConditions := for $filter in $request/Filter 
+    let $fieldMeta := $fieldMap/field[@name=$filter/FieldName/text()] 
+    let $operator := switch ($filter/Condition/text())
+                     case 'gt' return '&amp;gt;'
+                     case 'gte' return '&amp;gt;='
+                     case 'lt' return '&amp;lt;'
+                     case 'lte' return '&amp;lt;='
+                     case 'contains' return 'LIKE'
+                     default return '='
+    where not(empty($fieldMeta))
+    return
+    &lt;condition&gt;"{data($fieldMeta/@dbName)}" {$operator} ?&lt;/condition&gt;
+let $logicalOperator := if (empty($request/FiltersLogicalOperator/text())) 
+    then ' OR ' 
+    else concat(' ',$request/FiltersLogicalOperator/text(),' ')
+let $sqlWhereclouse := if (count($eventsFilterConditions) &gt; 0 ) 
+    then concat ('"JOB_ID" = ? AND (',string-join($eventsFilterConditions/text(),$logicalOperator),')' )
+    else '"JOB_ID" = ?'
+return
+&lt;tMultiDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;select_job_log&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;false&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;true&lt;/hasResultSet&gt;
+      &lt;statement&gt;SELECT * FROM {$dbSchema}"IC_JOB_LOG_VIEW" WHERE "JOB_ID" = ?&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$jobID}&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   {
+   if ($input.in_jobStatusRequest[1]/ReturnEvents != 'true' ) then ()
+   else
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;select_job_events&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;false&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;true&lt;/hasResultSet&gt;
+      &lt;statement&gt;SELECT * FROM {$dbSchema}"IC_JOB_EVENTS_VIEW" WHERE {$sqlWhereclouse}&lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$jobID}&lt;/data&gt;
+      &lt;/parameter&gt;
+      {$eventsFilterParams}
+   &lt;/sqlStatement&gt;
+   
+   }
+   &lt;dataSource&gt;{$dataSource}&lt;/dataSource&gt;
+&lt;/tMultiDataAccessRequest&gt;</expression>
+                              </operation>
+                              <link id="llwj0g3i" targetId="llwj0g3h"/>
+                           </assignment>
+                           <assignment id="llwj0g3t">
+                              <title>Set Output</title>
+                              <operation source="formula" to="output.JobStatus">
+                                 <expression language="XQuery">let $job    := $output.multiDataAccessResponse[1]/result[statementId = 'select_job_log']/row[1]
+(: Example record
+&lt;row&gt;
+  &lt;JOB_ID&gt;2b6d2424-cc2e-40a7-8458-753749ac2642&lt;/JOB_ID&gt;
+  &lt;JOB_PROCESS_ID&gt;1233&lt;/JOB_PROCESS_ID&gt;
+  &lt;JOB_NAME&gt;TEMPLATE-MP-Job-DAS pid:1233 job:2b6d2424-cc2e-40a7-8458-753749ac2642&lt;/JOB_NAME&gt;
+  &lt;START_DATE&gt;2023-08-18T13:29:40.366Z&lt;/START_DATE&gt;
+  &lt;END_DATE&gt;2023-08-18T13:29:40.704Z&lt;/END_DATE&gt;
+  &lt;STATUS&gt;2&lt;/STATUS&gt;
+  &lt;INITIATOR&gt;anonymous&lt;/INITIATOR&gt;
+  &lt;ORG_ID&gt;8ngZP2lTHASghIrDM0tHyW&lt;/ORG_ID&gt;
+  &lt;ENVIRONMENT&gt;tk2adcics1&lt;/ENVIRONMENT&gt;
+&lt;/row&gt;
+:)
+let $events := $output.multiDataAccessResponse[1]/result[statementId = 'select_job_events']
+(: Example Record
+&lt;row&gt;
+  &lt;EVENT_ID&gt;ff16909e-468b-4408-a939-56fcc95ba387&lt;/EVENT_ID&gt;
+  &lt;JOB_ID&gt;2b6d2424-cc2e-40a7-8458-753749ac2642&lt;/JOB_ID&gt;
+  &lt;PROCESS_ID&gt;1237&lt;/PROCESS_ID&gt;
+  &lt;PROCESS_NAME&gt;TEMPLATE-SP-ETL-DAS&lt;/PROCESS_NAME&gt;
+  &lt;PROCESS_TITLE&gt;TEMPLATE-SP-ETL-DAS pid:1233 job:2b6d2424-cc2e-40a7-8458-753749ac2642&lt;/PROCESS_TITLE&gt;
+  &lt;EVENT_MESSAGE&gt;TODO: Integration Started Message&lt;/EVENT_MESSAGE&gt;
+  &lt;EVENT_DETAIL&gt;TODO: ADD DETAIL&lt;/EVENT_DETAIL&gt;
+  &lt;EVENT_TIME&gt;2023-08-18T13:29:40.527Z&lt;/EVENT_TIME&gt;
+  &lt;LOGGING_LEVEL&gt;1&lt;/LOGGING_LEVEL&gt;
+  &lt;LOGGING_LEVEL_LABEL&gt;INFO&lt;/LOGGING_LEVEL_LABEL&gt;
+  &lt;ORG_ID&gt;8ngZP2lTHASghIrDM0tHyW&lt;/ORG_ID&gt;
+  &lt;ENVIRONMENT&gt;tk2adcics1&lt;/ENVIRONMENT&gt;
+  &lt;INITIATOR&gt;anonymous&lt;/INITIATOR&gt;
+&lt;/row&gt;
+:)
+
+return
+&lt;JobStatusResponse&gt;
+   &lt;JobId&gt;{$job/JOB_ID/text()}&lt;/JobId&gt;
+   &lt;JobName&gt;{$job/JOB_NAME/text()}&lt;/JobName&gt;
+   &lt;ProcessId&gt;{$job/JOB_PROCESS_ID/text()}&lt;/ProcessId&gt;
+   &lt;Status&gt;{$job/STATUS_LABEL/text()}&lt;/Status&gt;
+   &lt;StatusCode&gt;{$job/STATUS/text()}&lt;/StatusCode&gt;
+   &lt;JobInitiator&gt;{$job/INITIATOR/text()}&lt;/JobInitiator&gt;
+   &lt;StartDate&gt;{$job/START_DATE/text()}&lt;/StartDate&gt;
+   &lt;EndDate&gt;{$job/END_DATE/text()}&lt;/EndDate&gt;
+   &lt;OrgId&gt;{$job/ORG_ID/text()}&lt;/OrgId&gt;
+   &lt;Environment&gt;{$job/ENVIRONMENT/text()}&lt;/Environment&gt;
+   {
+   for $event in $events/row 
+   return
+      &lt;Events&gt;
+         &lt;EventId&gt;{$event/ORG_ID/text()}&lt;/EventId&gt;
+         &lt;ProcessId&gt;{$event/PROCESS_ID/text()}&lt;/ProcessId&gt;
+         &lt;EventMessage&gt;{$event/EVENT_MESSAGE/text()}&lt;/EventMessage&gt;
+         &lt;EventDetail&gt;{$event/EVENT_DETAIL/text()}&lt;/EventDetail&gt;
+         &lt;EventTime&gt;{$event/EVENT_TIME/text()}&lt;/EventTime&gt;
+         &lt;LoggingLevel&gt;{$event/LOGGING_LEVEL/text()}&lt;/LoggingLevel&gt;
+         &lt;LoggingLevelLabel&gt;{$event/LOGGING_LEVEL_LABEL/text()}&lt;/LoggingLevelLabel&gt;
+         &lt;ProcessName&gt;{$event/PROCESS_NAME/text()}&lt;/ProcessName&gt;
+         &lt;ProcessTitle&gt;{$event/PROCESS_TITLE/text()}&lt;/ProcessTitle&gt;
+         &lt;OrgId&gt;{$event/ORG_ID/text()}&lt;/OrgId&gt;
+         &lt;Environment&gt;{$event/ENVIRONMENT/text()}&lt;/Environment&gt;
+         &lt;Initiator&gt;{$event/INITIATOR/text()}&lt;/Initiator&gt;
+      &lt;/Events&gt;
+   }
+&lt;/JobStatusResponse&gt;
+</expression>
+                              </operation>
+                              <link id="llwj0g4h" targetId="llwj0g4g"/>
+                           </assignment>
+                           <service id="llwj0g3h">
+                              <title>exec SQL Read Status</title>
+                              <serviceName>execMultiSQLProxy</serviceName>
+                              <serviceGUID>8SpjgpbAspth8YzYts5SOx</serviceGUID>
+                              <serviceInput>
+                                 <parameter name="multiDataAccessrequest" source="field" updatable="true">temp.tmp_multi_das_request</parameter>
+                              </serviceInput>
+                              <link id="lly4gnmq" targetId="llwj0g3t"/>
+                           </service>
+                           <end id="llwj0g4g"/>
+                        </flow>
+                        <link id="llwj0g2n" targetId="llwj0g2u" type="containerLink">
+                           <condition source="formula">
+                              <function name="not-empty">
+                                 <arg name="field">{$temp.tmp_errors}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="llwj0g2q" targetId="llwj0g2w" type="containerLink">
+                           <condition source="formula">
+                              <function name="empty">
+                                 <arg name="field">{$temp.tmp_errors}</arg>
+                              </function>
+                           </condition>
+                        </link>
+                     </container>
+                  </flow>
+                  <flow id="llwj0fzl">
+                     <end id="llwj0fzz">
+                        <title>405 Unsupported Method</title>
+                        <httpStatus>405</httpStatus>
+                     </end>
+                  </flow>
+                  <link id="llwj0fzc" targetId="llwj0fzj" type="containerLink">
+                     <condition source="formula">
+                        <function name="string-equals">
+                           <arg name="left">{$temp.tmp_http_verb}</arg>
+                           <arg name="right">POST</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="llwj0fzf" targetId="llwj0fzl" type="containerLink"/>
+               </container>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>63512e79-f33f-4349-b515-f8f109db0017</ns1:Id>
+               <ns1:Name>TEST with filter</ns1:Name>
+               <ns1:CreatedBy>jaroslav.brazda.dev@natl.com</ns1:CreatedBy>
+               <ns1:CreationDate>2024-01-19T20:58:42Z</ns1:CreationDate>
+               <ns1:ModifiedBy>jaroslav.brazda.dev@natl.com</ns1:ModifiedBy>
+               <ns1:ModificationDate>2024-01-19T20:58:42Z</ns1:ModificationDate>
+               <ns1:Data format="json">{
+	 "in_jobStatusRequest": {
+	 	 "JobId": "843bcaec-fb64-409a-bee4-0c71df627dab",
+	 	 "ReturnEvents": "true",
+	 	 "Filter": {
+	 	 	 "FieldName": "LoggingLevel",
+	 	 	 "Condition": "gt",
+	 	 	 "Value": "2"
+	 	 },
+	 	 "FiltersLogicalOperator": ""
+	 }
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>0qb5n9FVxQld33wgwqAj4q</types1:GUID>
+      <types1:DisplayName>GetJobStatusDAS</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.873Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

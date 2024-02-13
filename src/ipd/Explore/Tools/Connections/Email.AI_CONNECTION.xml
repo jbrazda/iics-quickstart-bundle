@@ -1,30 +1,28 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>VlDjAqQHhwq9bds-gt-5306400-2020-03-24T18:08:15.762Z::conn.xml</types1:EntryId>
+      <types1:EntryId>VxYi0Nmumf6S3wO-gt-38662895-2024-01-09T22:16:15.764Z::conn.xml</types1:EntryId>
       <types1:Name>Email</types1:Name>
       <types1:MimeType>application/xml+connection</types1:MimeType>
-      <types1:Description>Shared Email Service to send  alerts and notifications</types1:Description>
+      <types1:Description>Shared Email Service to send  alerts and notifications
+version: 1.6</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:16Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2021-05-25T13:55:45Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-04T14:57:49Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/rt.connection/Email/Email.conn.xml</types1:PublishedContributionId>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:16Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
                      displayName="Email"
                      label="Email"
                      name="Email">
-            <description>Shared Email Service to send  alerts and notifications</description>
+            <description>Shared Email Service to send  alerts and notifications
+version: 1.6</description>
             <tags/>
             <agent/>
             <attributes>
@@ -54,8 +52,8 @@
             </javaConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>4KKTgnBrayxkDx06mAWaQo</types1:GUID>
+      <types1:GUID>65wNicRhCaLg3vUFIhyaca</types1:GUID>
       <types1:DisplayName>Email</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:07.527Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.469Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

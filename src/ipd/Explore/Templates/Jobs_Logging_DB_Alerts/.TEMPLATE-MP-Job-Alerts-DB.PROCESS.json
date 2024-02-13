@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3pP29DIyb25gm1j4NNXmeZ",
+      "objectGuid": "7iz5VntSn1bk57RUMXyFMn",
       "objectName": "TEMPLATE-MP-Job-Alerts-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DB_Alerts",
@@ -16,62 +16,18 @@
             "minor": 0
          },
          "objectRefs": [
-            "2ZM6icvXPAkk6jxADngnoK",
-            "a8f1LmXZlzibFVDqCJ5equ",
-            "jJIHZ3UwecldLOFbMHDroh",
-            "fV6YTLRp1ACbYFS3UhGwSE"
+            "2QfZeXrDYnxllsH2E5Ln0p",
+            "26cL6twFPqoexROE7JNxGL",
+            "j5Xn5pLxZaRf7O4NHw0qED",
+            "4jNe0XnekoDlQ6M5dN2Rqy"
          ],
          "repoInfo": {
-            "repoHandle": "Y8DglxbdypKwKBq-gt-37421436-2022-02-22T15:23:52.812Z::pd.xml"
+            "repoHandle": "VH6jAGE7ppppppp-gt-38663319-2024-01-09T22:16:22.765Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "2ZM6icvXPAkk6jxADngnoK",
-      "objectName": "Email-G01",
-      "objectType": "AI_CONNECTION",
-      "path": "/Explore/Tools/Connections",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Shared Email Service to send  alerts and notifications on Local Agents group G01",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "nYmWR7hsAVR3aaa-gt-7627851-2021-07-14T14:43:35.219Z::conn.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "a8f1LmXZlzibFVDqCJ5equ",
-      "objectName": "CreateJobLogEventRequest",
-      "objectType": "PROCESS_OBJECT",
-      "path": "/Explore/Logging/ProcessObjects",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "IPaaS Job Log Event",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "abcoq3xgjATO9pH-gt-5237529-2020-03-24T18:08:18.014Z::po.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "jJIHZ3UwecldLOFbMHDroh",
+      "objectGuid": "2QfZeXrDYnxllsH2E5Ln0p",
       "objectName": "ProcessExecutionContext",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
@@ -88,12 +44,56 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
+            "repoHandle": "txcnfXjISUXL86z-gt-38662849-2024-01-09T22:16:14.322Z::po.xml"
          }
       }
    },
    {
-      "objectGuid": "fV6YTLRp1ACbYFS3UhGwSE",
+      "objectGuid": "26cL6twFPqoexROE7JNxGL",
+      "objectName": "CreateJobLogEventRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "slEt5OjiTIKchzt-gt-38663106-2024-01-09T22:16:19.303Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "j5Xn5pLxZaRf7O4NHw0qED",
+      "objectName": "Email-G01",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/Tools/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Shared Email Service to send  alerts and notifications on Local Agents group G01",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "B09kYAOTMneBjra-gt-38703881-2024-01-09T22:16:16.447Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "4jNe0XnekoDlQ6M5dN2Rqy",
       "objectName": "TEMPLATE-SP-ETL-Alerts-DB",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DB_Alerts",
@@ -110,7 +110,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Gaaa-gt-37438105-2022-02-22T15:23:52.529Z::pd.xml"
+            "repoHandle": "PoIxWPQE8jIw8jI-gt-38715200-2024-01-09T22:16:18.665Z::pd.xml"
          }
       }
    }

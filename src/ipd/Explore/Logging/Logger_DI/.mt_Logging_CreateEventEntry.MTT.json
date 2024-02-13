@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "504jPbKnYu0ep9XgdKq4Qp",
+      "objectGuid": "fpSNttEDQY1ckMfnCAah2F",
       "objectName": "mt_Logging_CreateEventEntry",
       "objectType": "MTT",
       "path": "/Explore/Logging/Logger_DI",
@@ -21,17 +21,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "amgbRivrJQhitzHvCcgymi",
-            "2K2VAKKJmGtdTmT20xKa2b",
-            "8OoRwZrdncvfN5Q97mLbQt"
+            "ahxIPxCckjFihsHuLLXuev",
+            "40zBj7rnJ4clwNmQhOM4UM",
+            "eMvazWw2MoBjBanMZKwNUE"
          ],
          "repoInfo": {
-            "repoHandle": "0118TN0Z00000000000H"
+            "repoHandle": "0022AF0Z0000000002Y8"
          }
       }
    },
    {
-      "objectGuid": "amgbRivrJQhitzHvCcgymi",
+      "objectGuid": "ahxIPxCckjFihsHuLLXuev",
       "objectName": "iPaaS_Logging_DB",
       "objectType": "Connection",
       "path": "/SYS",
@@ -53,12 +53,12 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN0B000000000002"
+            "repoHandle": "0022AF0B0000000000FH"
          }
       }
    },
    {
-      "objectGuid": "2K2VAKKJmGtdTmT20xKa2b",
+      "objectGuid": "40zBj7rnJ4clwNmQhOM4UM",
       "objectName": "m_Logging_CreateEventEntry",
       "objectType": "DTEMPLATE",
       "path": "/Explore/Logging/Logger_DI",
@@ -80,13 +80,13 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN1700000000000J"
+            "repoHandle": "0022AF170000000002ET"
          }
       }
    },
    {
-      "objectGuid": "8OoRwZrdncvfN5Q97mLbQt",
-      "objectName": "G01",
+      "objectGuid": "eMvazWw2MoBjBanMZKwNUE",
+      "objectName": "CDI-G01",
       "objectType": "AgentGroup",
       "path": "/SYS",
       "metadata": {
@@ -107,7 +107,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0118TN25000000000003"
+            "repoHandle": "0022AF2500000000000A"
          }
       }
    }

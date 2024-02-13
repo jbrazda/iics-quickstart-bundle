@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "9yKFXii7ZmkiUYE6xjuwuh",
+      "objectGuid": "877ubKoZcQ3dEKiooBTmSv",
       "objectName": "ICS-API",
       "objectType": "AI_CONNECTION",
       "path": "/Explore/Tools/Connections",
@@ -17,7 +17,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "pyqaa-gt-1870011-2020-03-24T18:08:14.252Z::conn.xml"
+            "repoHandle": "mpIeIssjqluQgab-gt-9942141-2021-11-23T14:34:25.206Z::conn.xml"
          }
       }
    }

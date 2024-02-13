@@ -1,0 +1,117 @@
+[
+   {
+      "objectGuid": "0qb5n9FVxQld33wgwqAj4q",
+      "objectName": "GetJobStatusDAS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Get Job Status using DAS Service.\nNeeds the DAS Service Configured for Logging DB.\nversion: 1.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "8SpjgpbAspth8YzYts5SOx",
+            "6CoVwdXXM9UbkO21fi0Q69",
+            "5neaZotT5GHhh1QalPmA2s",
+            "ePzmJyKMdIVlO9LLjqIB6v"
+         ],
+         "repoInfo": {
+            "repoHandle": "uXL86zqzm5Y6tMF-gt-52960204-2024-01-19T20:58:41.328Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "8SpjgpbAspth8YzYts5SOx",
+      "objectName": "execMultiSQLProxy",
+      "objectType": "PROCESS",
+      "path": "/Explore/DAS/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This service allows to Access the execMultiSQL DAS Services running on the Secure Agent from the cloud process or the guide.\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "lAkRtO3M4WwOC2X-gt-38714857-2024-01-09T22:16:12.185Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6CoVwdXXM9UbkO21fi0Q69",
+      "objectName": "JobStatusResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Status Response used to retrieve job Status\n\nversion: 1.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "sjqluQgabcjk91p-gt-53237811-2024-01-19T20:58:40.302Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "5neaZotT5GHhh1QalPmA2s",
+      "objectName": "JobStatusRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Request to receive Job Status With Optional Job Events and Filter",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "pckbclopz4KhPVE-gt-53237797-2024-01-19T20:58:40.24Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
+         }
+      }
+   }
+]

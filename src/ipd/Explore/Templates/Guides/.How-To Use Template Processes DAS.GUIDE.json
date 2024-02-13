@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "2NOuSfUhfMGdsxPwINAuIO",
+      "objectGuid": "hInELXjA58Njc8ls6j2727",
       "objectName": "How-To Use Template Processes DAS",
       "objectType": "GUIDE",
       "path": "/Explore/Templates/Guides",
@@ -16,61 +16,17 @@
             "minor": 0
          },
          "objectRefs": [
-            "dT4a8mv0dmakB8rX5zj8sL",
-            "jJIHZ3UwecldLOFbMHDroh",
-            "cv6B8oAoQuVhlw4vywQvcH"
+            "1R7HR8lHtqokk5PjBqd5Ot",
+            "2QfZeXrDYnxllsH2E5Ln0p",
+            "2MDcalYRrqvf3AoXeuFLId"
          ],
          "repoInfo": {
-            "repoHandle": "ox9AWbg0ZkL0jmu-gt-19357087-2021-02-10T20:21:05.923Z::gt.xml"
+            "repoHandle": "OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml"
          }
       }
    },
    {
-      "objectGuid": "dT4a8mv0dmakB8rX5zj8sL",
-      "objectName": "iPaaS Job View DB",
-      "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_Database",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes\nversion: 1.6",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "gppaa-gt-5237539-2020-03-24T18:08:18.111Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "jJIHZ3UwecldLOFbMHDroh",
-      "objectName": "ProcessExecutionContext",
-      "objectType": "PROCESS_OBJECT",
-      "path": "/Explore/Logging/ProcessObjects",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 1.6",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "vKLjLYqBGZkL0jm-gt-1951713-2020-03-24T18:08:14.354Z::po.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "cv6B8oAoQuVhlw4vywQvcH",
+      "objectGuid": "1R7HR8lHtqokk5PjBqd5Ot",
       "objectName": "TEMPLATE-MP-Job-DAS",
       "objectType": "PROCESS",
       "path": "/Explore/Templates/Jobs_Logging_DAS",
@@ -87,7 +43,51 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "yxaa-gt-38882483-2021-02-10T20:21:05.739Z::pd.xml"
+            "repoHandle": "u8QhxOSM8NciZBp-gt-38704198-2024-01-09T22:16:21.331Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "2QfZeXrDYnxllsH2E5Ln0p",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "txcnfXjISUXL86z-gt-38662849-2024-01-09T22:16:14.322Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "2MDcalYRrqvf3AoXeuFLId",
+      "objectName": "iPaaS Job View DB",
+      "objectType": "GUIDE",
+      "path": "/Explore/Logging/Guides_Database",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Guide  Provides Administrative and troubleshooting functions such as \n- Search IPaaS  ICRT Job  logs\n- ability to find job related processes\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "2Cv2jop81V4Adyp-gt-38715220-2024-01-09T22:16:18.857Z::gt.xml"
          }
       }
    }

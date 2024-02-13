@@ -1,6 +1,6 @@
 [
    {
-      "objectGuid": "3F9xdqPMhsgjQx07TZa5sr",
+      "objectGuid": "au7yFsRj9ORe3bHHJcYA2K",
       "objectName": "SP-ConvertAttachmentToText",
       "objectType": "PROCESS",
       "path": "/Explore/Tools/Processes",
@@ -16,15 +16,15 @@
             "minor": 0
          },
          "objectRefs": [
-            "3SdosLSHKE9jTes0Sbsqo0"
+            "7RYjDu13VOPfLdB9Jm4UYx"
          ],
          "repoInfo": {
-            "repoHandle": "uUHukfRLdqcgm8l-gt-1951773-2020-03-24T18:08:17.327Z::pd.xml"
+            "repoHandle": "LGY2KsJlv58pIO3-gt-9942218-2021-11-23T14:34:27.604Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "3SdosLSHKE9jTes0Sbsqo0",
+      "objectGuid": "7RYjDu13VOPfLdB9Jm4UYx",
       "objectName": "AttachmentInformation",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Tools/ProcessObjects",
@@ -41,7 +41,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "0Izx6i4tciSrZMS-gt-5281283-2020-03-24T18:08:11.997Z::po.xml"
+            "repoHandle": "aaa-gt-9878602-2021-11-23T14:34:27.004Z::po.xml"
          }
       }
    }

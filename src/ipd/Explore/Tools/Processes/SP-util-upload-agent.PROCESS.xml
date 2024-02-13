@@ -1,23 +1,22 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>if6A1vyoY2G7QnG-gt-5306460-2020-03-24T18:08:17.144Z::pd.xml</types1:EntryId>
+      <types1:EntryId>oZduD2L5SeE1KoJ-gt-38663165-2024-01-09T22:16:20.24Z::pd.xml</types1:EntryId>
       <types1:Name>SP-util-upload-agent</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Process to push file to Agent File System 
+      <types1:Description>Process to push file to Agent File System
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:17Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-18T17:41:03Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T17:41:19Z</types1:PublicationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:20Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T16:13:12Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-util-upload-agent/SP-util-upload-agent.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,9 +28,9 @@ version: 1.6</types1:Description>
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>Process to push file to Agent File System 
+            <description>Process to push file to Agent File System
 version: 1.6</description>
-            <tags>.agent:G01</tags>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description=""
@@ -42,7 +41,7 @@ version: 1.6</description>
                      <option name="referenceTo">AgentFileWriter:FileWriteTask</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">g6EWDQPAJAWgFg1H9sXx4a</option>
+                     <option name="guid">6SYZ9C6pDo5kXfQW8owX05</option>
                   </options>
                </parameter>
                <parameter description=""
@@ -62,7 +61,7 @@ version: 1.6</description>
                      <option name="referenceTo">AgentFileWriter:FileInformation</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">g6EWDQPAJAWgFg1H9sXx4a</option>
+                     <option name="guid">6SYZ9C6pDo5kXfQW8owX05</option>
                   </options>
                </field>
                <field description="" name="faultInfo" type="reference">
@@ -70,7 +69,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:FaultInfo</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">0abRd5Zd1IFeRCwPmgXOCy</option>
+                     <option name="guid">1sWKQHaXUVmfaoL47WarSX</option>
                   </options>
                </field>
             </output>
@@ -88,7 +87,7 @@ version: 1.6</description>
             </tempFields>
             <notes/>
             <deployment suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -157,8 +156,8 @@ ipd:setProcessTitle($process_title)</expression>
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>2An540RxDEehMifSJJsx8k</types1:GUID>
+      <types1:GUID>6mEkopYQCC8kulu3FEaQeF</types1:GUID>
       <types1:DisplayName>SP-util-upload-agent</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.812Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.839Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

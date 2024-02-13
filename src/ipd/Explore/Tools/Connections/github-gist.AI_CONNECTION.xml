@@ -1,7 +1,7 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>jEaaaaaaaaaaaaa-gt-5237549-2020-03-24T18:08:18.157Z::conn.xml</types1:EntryId>
+      <types1:EntryId>IAkRtO3M4WwOC2X-gt-38715180-2024-01-09T22:16:18.55Z::conn.xml</types1:EntryId>
       <types1:Name>github-gist</types1:Name>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>GitHub Giost Connection, useful to store and retrive service configurations</types1:Description>
@@ -10,13 +10,13 @@
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2020-03-24T18:08:18Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2022-02-02T19:22:32Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:19Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-01-10T20:40:25Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2022-02-18T16:42:34Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-01-10T20:41:11Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/github-gist/github-gist.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -35,7 +35,7 @@
             <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                                agentOnly="false"
                                connectorPath="project:/rt.connector/github_gist/github_gist_svcDef.xml"
-                               guid="9T6SRi7SD2Ik90R03f8dsX"
+                               guid="0yO61p5FySggKnvn08T2cJ"
                                name="github-gist"
                                supportsConnectionTest="false"
                                uuid="3eca5d7c-ee39-4e22-9c8e-5380c7f358f0">
@@ -46,8 +46,8 @@ This connector is useful to store and retrive configurations, templates, snippet
             </businessConnector>
          </connection>
       </types1:Entry>
-      <types1:GUID>84VdYJTZ6yAbpA2QNIEKix</types1:GUID>
+      <types1:GUID>0a2TkcYGuJvjnuCUx2ttEH</types1:GUID>
       <types1:DisplayName>github-gist</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:08.62Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:34.871Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

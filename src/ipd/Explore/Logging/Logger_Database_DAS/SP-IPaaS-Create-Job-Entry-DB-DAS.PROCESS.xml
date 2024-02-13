@@ -1,23 +1,23 @@
 <aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
-      <types1:EntryId>nXVuslqAOclkZ2s-gt-19353411-2021-02-10T20:21:44.219Z::pd.xml</types1:EntryId>
+      <types1:EntryId>eIi8RVf4VQT53nQ-gt-38743455-2024-01-09T22:16:21.074Z::pd.xml</types1:EntryId>
       <types1:Name>SP-IPaaS-Create-Job-Entry-DB-DAS</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>generic logging process of jobs
 version: 1.6</types1:Description>
       <types1:AppliesTo/>
-      <types1:Tags>.agent:G01</types1:Tags>
+      <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
       <types1:State>CURRENT</types1:State>
       <types1:ProcessGroup/>
-      <types1:CreatedBy>jbrazda@unicosolution.com.dev</types1:CreatedBy>
-      <types1:CreationDate>2021-02-10T20:21:44Z</types1:CreationDate>
-      <types1:ModifiedBy>jbrazda@unicosolution.com.dev</types1:ModifiedBy>
-      <types1:ModificationDate>2023-07-25T15:21:40Z</types1:ModificationDate>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-01-09T22:16:21Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-02T00:49:45Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
-      <types1:PublishedBy>jbrazda@unicosolution.com.dev</types1:PublishedBy>
-      <types1:PublicationDate>2023-07-25T15:21:54Z</types1:PublicationDate>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-02T00:50:09Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Create-Job-Entry-DB-DAS/SP-IPaaS-Create-Job-Entry-DB-DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -31,7 +31,7 @@ version: 1.6</types1:Description>
             <appliesTo/>
             <description>generic logging process of jobs
 version: 1.6</description>
-            <tags>.agent:G01</tags>
+            <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
                <parameter description=""
@@ -42,7 +42,7 @@ version: 1.6</description>
                      <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">0yCYvtJEtRAgdylNn0lcu7</option>
+                     <option name="guid">1FldlqA5rKCe2GGaCn03MA</option>
                   </options>
                </parameter>
             </input>
@@ -74,7 +74,7 @@ version: 1.6</description>
                      <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
                      <option name="required">false</option>
                      <option name="isCopy">true</option>
-                     <option name="guid">4nQ50tIl0DkbgcRRWyJfah</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
                   </options>
                </field>
                <field description="" name="tmp_data_source" type="string">
@@ -85,7 +85,7 @@ version: 1.6</description>
             </tempFields>
             <notes/>
             <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
-               <targetLocation>G01</targetLocation>
+               <targetLocation>CAI</targetLocation>
                <rest/>
             </deployment>
             <flow id="a">
@@ -121,7 +121,7 @@ return
       &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
       &lt;includeMetadata&gt;true&lt;/includeMetadata&gt;
       &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
-      &lt;statement&gt;INSERT INTO dbo.IC_JOB_LOG
+      &lt;statement&gt;INSERT INTO InformaticaLogging.dbo.IC_JOB_LOG
 ( 
    [JOB_ID]
  , [JOB_NAME]
@@ -167,7 +167,7 @@ VALUES
       &lt;/parameter&gt;
       &lt;parameter&gt;
          &lt;sqlType&gt;string&lt;/sqlType&gt;
-         &lt;data&gt;{util:resolveURN("urn:environment:name")}&lt;/data&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/ProcessExecutionContext[1]/environmentName}&lt;/data&gt;
       &lt;/parameter&gt;
    &lt;/sqlStatement&gt;
    &lt;dataSource&gt;{$temp.tmp_data_source}&lt;/dataSource&gt;
@@ -211,8 +211,8 @@ return ipd:setProcessTitle($process_title)
             </flow>
          </process>
       </types1:Entry>
-      <types1:GUID>6tVLnJckNT1kjjAu4TDycj</types1:GUID>
+      <types1:GUID>3vNk9nrSJSfbXTjcelRa8i</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Create-Job-Entry-DB-DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2023-08-21T15:17:09.032Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T15:24:35.333Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
