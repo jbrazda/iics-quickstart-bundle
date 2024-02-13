@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "3vNk9nrSJSfbXTjcelRa8i",
-      "objectName": "SP-IPaaS-Create-Job-Entry-DB-DAS",
+      "objectGuid": "bNiW1XFcekDgnYubnopkU4",
+      "objectName": "SP-IPaaS-Update-Job-Entry-CAI-G01",
       "objectType": "PROCESS",
-      "path": "/Explore/Logging/Logger_Database_DAS",
+      "path": "/Explore/Logging/Logger-Database-CAI-G01",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "generic logging process of jobs\nversion: 1.6",
+            "description": "Update Existing Job Entry with a status and End Date\nversion: 1.7",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,23 +16,23 @@
             "minor": 0
          },
          "objectRefs": [
-            "1FldlqA5rKCe2GGaCn03MA",
+            "85ujm2sRrBDh15XqSkgusB",
             "ePzmJyKMdIVlO9LLjqIB6v"
          ],
          "repoInfo": {
-            "repoHandle": "eIi8RVf4VQT53nQ-gt-38743455-2024-01-09T22:16:21.074Z::pd.xml"
+            "repoHandle": "IKUzeA8rJ4pbgch-gt-28590786-2024-02-13T15:30:37.55Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "1FldlqA5rKCe2GGaCn03MA",
-      "objectName": "CreateJobLogEntryRequest",
+      "objectGuid": "85ujm2sRrBDh15XqSkgusB",
+      "objectName": "UpdateJobLogEntryRequest",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Job Logging Entry Request to create the Record",
+            "description": "Job Logging Entry Update Existing Record",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -42,7 +42,7 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "7IS7T1cnFKi9zhF-gt-38704013-2024-01-09T22:16:17.95Z::po.xml"
+            "repoHandle": "Lgaaa-gt-38663214-2024-01-09T22:16:20.609Z::po.xml"
          }
       }
    },

@@ -19,17 +19,23 @@ Explore/Tools/Connections/IPaaS-Configuration-DB.AI_CONNECTION
 Explore/DAS/Processes/execMultiSQLProxy.PROCESS
 Explore/DAS/Processes/execSQLProxy.PROCESS
 Explore/DAS/Tests/TEST DAS.PROCESS
-Explore/Logging/Logger_Database_DAS/SP-IPaaS-Create-Job-Entry-DB-DAS.PROCESS
-Explore/Logging/Logger_Database_DAS/SP-IPaaS-Create-Job-Event-Entry-DB-DAS.PROCESS
-Explore/Logging/Logger_Database_DAS/SP-IPaaS-Update-Job-Entry-DB-DAS.PROCESS
+Explore/Logging/Logger-Database-CAI/SP-IPaaS-Create-Job-Entry-DB-DAS.PROCESS
+Explore/Logging/Logger-Database-CAI/SP-IPaaS-Create-Job-Event-Entry-DB-DAS.PROCESS
+Explore/Logging/Logger-Database-CAI/SP-IPaaS-Update-Job-Entry-DB-DAS.PROCESS
+Explore/Logging/Logger-Database-CAI-G01/SP-IPaaS-Create-Job-Entry-CAI-G01.PROCESS
+Explore/Logging/Logger-Database-CAI-G01/SP-IPaaS-Create-Job-Event-Entry-CAI-G01.PROCESS
+Explore/Logging/Logger-Database-CAI-G01/SP-IPaaS-Update-Job-Entry-CAI-G01.PROCESS
 Explore/Logging/Processes/GetJobStatusDAS.PROCESS
 Explore/Logging/Setup/SP-Setup-Logging-DB.PROCESS
-Explore/Templates/Jobs_Logging_DAS/TEMPLATE-MP-Job-DAS.PROCESS
-Explore/Templates/Jobs_Logging_DAS/TEMPLATE-SP-ETL-DAS.PROCESS
+Explore/Templates/Jobs-Logging-CAI/SP-Test-Throw-Fault-Generic.PROCESS
+Explore/Templates/Jobs-Logging-CAI/TEMPLATE-MP-Job-DAS.PROCESS
+Explore/Templates/Jobs-Logging-CAI/TEMPLATE-SP-ETL-DAS.PROCESS
+Explore/Templates/Jobs-Logging-CAI-G01/SP-Test-Throw-Fault-Generic-CAI-G01.PROCESS
+Explore/Templates/Jobs-Logging-CAI-G01/TEMPLATE-MP-Job-CAI-G01.PROCESS
+Explore/Templates/Jobs-Logging-CAI-G01/TEMPLATE-SP-ETL-CAI-G01.PROCESS
 Explore/Templates/Jobs_Logging_DB_Alerts/TEMPLATE-MP-Job-Alerts-DB.PROCESS
 Explore/Templates/Jobs_Logging_DB_Alerts/TEMPLATE-SP-ETL-Alerts-DB.PROCESS
 Explore/Templates/SP-Test-Throw-Fault-Generic-Cloud.PROCESS
-Explore/Templates/SP-Test-Throw-Fault-Generic.PROCESS
 Explore/Tools/Processes/MP-JMS-Dequeue-Test.PROCESS
 Explore/Tools/Processes/SP-ConvertAttachmentToText.PROCESS
 Explore/Tools/Processes/SP-ICS-Create-MCT-NA.PROCESS
@@ -58,7 +64,7 @@ Explore/Logging/Guides/SP Show Process Links.GUIDE
 Explore/Logging/Guides_Database/iPaaS Job View DB.GUIDE
 Explore/Logging/Guides_Database/iPaaS Log Search DB.GUIDE
 Explore/Logging/Setup/Setup Logging DB.GUIDE
-Explore/Templates/Guides/How-To Use Template Processes DAS.GUIDE
+Explore/Templates/Guides/How-To Use Template Processes CAI.GUIDE
 Explore/Tools/Guides/Admin Shell.GUIDE
 Explore/Tools/Guides/Conversion Utility.GUIDE
 Explore/Tools/Guides/DAS Tools.GUIDE

@@ -1,0 +1,218 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>TTiPZx1Xmgaabcl-gt-28327275-2024-02-13T15:30:37.3Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-IPaaS-Create-Job-Entry-CAI-G01</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Generic logging process To create a job Entry in the DB
+version: 1.7</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:CAI-G01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-02-13T15:30:37Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-13T15:40:51Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-13T15:40:57Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-IPaaS-Create-Job-Entry-CAI-G01/SP-IPaaS-Create-Job-Entry-CAI-G01.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-IPaaS-Create-Job-Entry-CAI-G01"
+                  name="SP-IPaaS-Create-Job-Entry-CAI-G01"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Generic logging process To create a job Entry in the DB
+version: 1.7</description>
+            <tags>.agent:CAI-G01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="in_CreateJobLogEntryRequest"
+                          required="true"
+                          type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">1FldlqA5rKCe2GGaCn03MA</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="Dynamically Updated Process Title"
+                      name="tmp_process_title"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Temporary script output"
+                      name="tmp_script_outTemporary script output"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="Process Name used to generate Process Title"
+                      name="tmp_process_name"
+                      type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">SP-IPaaS-Create-Job-Entry-DB-NA</option>
+                  </options>
+               </field>
+               <field description="" name="  tmp_dataAccesRequest " type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_data_source" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>CAI-G01</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j9ecswqs" targetId="j9ecswqr"/>
+               </start>
+               <assignment id="j9ecswqr">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $context := $input.in_CreateJobLogEntryRequest[1]/ProcessExecutionContext
+let $pid_label := if (empty($context/parentProcessId/text())) then ()
+	else concat("pid:",$context/parentProcessId/text())
+let $job_label := if (empty($context/jobId/text())) then () 
+	else concat("job:",$context/jobId/text())
+
+let $parts := ($p_name,$pid_label, $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_outTemporary script output">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_data_source">
+                     <expression language="XQuery">util:resolveURN("urn:logging:DataSource")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.  tmp_dataAccesRequest ">
+                     <expression language="XQuery">let $orgID := if (util:getOrganizationId() = 'public') then string-join((util:getOrganizationId(),util:resolveURN("urn:environment:orgid")),":")
+			  else util:getOrganizationId() 
+return
+&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;insert_job_log_entry&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;true&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;false&lt;/hasResultSet&gt;
+      &lt;statement&gt;INSERT INTO InformaticaLogging.dbo.IC_JOB_LOG
+( 
+   [JOB_ID]
+ , [JOB_NAME]
+ , [JOB_PROCESS_ID]
+ , [START_DATE]
+ , [STATUS]
+ , [ORG_ID]
+ , [INITIATOR]
+ , [ENVIRONMENT]
+)
+VALUES
+(
+ ?, ?, ?, ?, ?, ?, ?, ?
+)
+	  &lt;/statement&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/ProcessExecutionContext[1]/jobId }&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/JobName }&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;long&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/ProcessId }&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;date&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/StartDate} &lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;int&lt;/sqlType&gt;
+         &lt;data&gt;1&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$orgID}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{util:getUserName()}&lt;/data&gt;
+      &lt;/parameter&gt;
+      &lt;parameter&gt;
+         &lt;sqlType&gt;string&lt;/sqlType&gt;
+         &lt;data&gt;{$input.in_CreateJobLogEntryRequest[1]/ProcessExecutionContext[1]/environmentName}&lt;/data&gt;
+      &lt;/parameter&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;{$temp.tmp_data_source}&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;</expression>
+                  </operation>
+                  <link id="kiixeawi" targetId="kiixeau3"/>
+               </assignment>
+               <eventContainer id="kiixeau3">
+                  <service id="kiixeatw">
+                     <title>Insert Job Entry</title>
+                     <serviceName>execSQL</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="dataAccessRequest" source="field">temp.  tmp_dataAccesRequest </parameter>
+                     </serviceInput>
+                  </service>
+                  <flow id="kiixeau5">
+                     <link id="kiixeau6" targetId="kiixeau3" type="containerLink"/>
+                  </flow>
+                  <flow id="kiixeau8">
+                     <assignment id="kiixeaui">
+                        <title>Assignment to tmp_script_out</title>
+                        <operation source="formula" to="temp.tmp_script_outTemporary script output">
+                           <expression language="XQuery">let $parts := ($temp.tmp_process_title, "FAULTED", $output.faultInfo[1]/reason)
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)
+</expression>
+                        </operation>
+                     </assignment>
+                     <link id="kiixeau9" targetId="kiixeau3" type="containerLink"/>
+                  </flow>
+                  <link id="kiixeau4" targetId="kiixeau5" type="containerLink"/>
+                  <link id="kiixeaus" targetId="j9aagkn6"/>
+                  <events>
+                     <catch faultField="faultInfo" id="jau3ki4o" interrupting="true">
+                        <link id="kiixeau7" targetId="kiixeau8" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="j9aagkn6"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>4rHj3RE4mUPfluL9IlEsEV</types1:GUID>
+      <types1:DisplayName>SP-IPaaS-Create-Job-Entry-CAI-G01</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T16:33:59.922Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

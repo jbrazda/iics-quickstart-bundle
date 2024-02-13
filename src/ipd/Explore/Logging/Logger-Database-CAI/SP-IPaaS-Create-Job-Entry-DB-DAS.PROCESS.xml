@@ -4,8 +4,8 @@
       <types1:EntryId>eIi8RVf4VQT53nQ-gt-38743455-2024-01-09T22:16:21.074Z::pd.xml</types1:EntryId>
       <types1:Name>SP-IPaaS-Create-Job-Entry-DB-DAS</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>generic logging process of jobs
-version: 1.6</types1:Description>
+      <types1:Description>Generic logging process To create a job Entry in the DB
+version: 1.7</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.agent:CAI</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -14,10 +14,10 @@ version: 1.6</types1:Description>
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-09T22:16:21Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
-      <types1:ModificationDate>2024-02-02T00:49:45Z</types1:ModificationDate>
+      <types1:ModificationDate>2024-02-13T15:41:32Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-02-02T00:50:09Z</types1:PublicationDate>
+      <types1:PublicationDate>2024-02-13T15:55:25Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.SP-IPaaS-Create-Job-Entry-DB-DAS/SP-IPaaS-Create-Job-Entry-DB-DAS.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -29,8 +29,8 @@ version: 1.6</types1:Description>
                   overrideAPIName="false">
             <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
             <appliesTo/>
-            <description>generic logging process of jobs
-version: 1.6</description>
+            <description>Generic logging process To create a job Entry in the DB
+version: 1.7</description>
             <tags>.agent:CAI</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -214,5 +214,5 @@ return ipd:setProcessTitle($process_title)
       <types1:GUID>3vNk9nrSJSfbXTjcelRa8i</types1:GUID>
       <types1:DisplayName>SP-IPaaS-Create-Job-Entry-DB-DAS</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-13T15:24:35.333Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T16:34:00.083Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "e4L7yRWx0U4fHrjdmOd02O",
-      "objectName": "SP-IPaaS-Update-Job-Entry-DB-DAS",
+      "objectGuid": "dvJlgEvTbY0iTO9fAeRo64",
+      "objectName": "SP-IPaaS-Create-Job-Event-Entry-CAI-G01",
       "objectType": "PROCESS",
-      "path": "/Explore/Logging/Logger_Database_DAS",
+      "path": "/Explore/Logging/Logger-Database-CAI-G01",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Update Existing Job Entry withy a status and End Date\nversion: 1.6",
+            "description": "Generic process to create Job logging event entries\nversion: 1.7",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -16,23 +16,24 @@
             "minor": 0
          },
          "objectRefs": [
-            "85ujm2sRrBDh15XqSkgusB",
+            "axxwv5guQ8Jb1HxvSy9ZoM",
+            "26cL6twFPqoexROE7JNxGL",
             "ePzmJyKMdIVlO9LLjqIB6v"
          ],
          "repoInfo": {
-            "repoHandle": "bbfTQbdxWq9bdsr-gt-38743445-2024-01-09T22:16:21.017Z::pd.xml"
+            "repoHandle": "eH2PKDC0hCHbf2X-gt-28695872-2024-02-13T15:30:37.073Z::pd.xml"
          }
       }
    },
    {
-      "objectGuid": "85ujm2sRrBDh15XqSkgusB",
-      "objectName": "UpdateJobLogEntryRequest",
+      "objectGuid": "axxwv5guQ8Jb1HxvSy9ZoM",
+      "objectName": "JobLogEventResponse",
       "objectType": "PROCESS_OBJECT",
       "path": "/Explore/Logging/ProcessObjects",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "Job Logging Entry Update Existing Record",
+            "description": "IpaaS Job Log Event",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -42,7 +43,29 @@
          },
          "objectRefs": [],
          "repoInfo": {
-            "repoHandle": "Lgaaa-gt-38663214-2024-01-09T22:16:20.609Z::po.xml"
+            "repoHandle": "2EzfYtjCtbdsreK-gt-38703766-2024-01-09T22:16:12.863Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "26cL6twFPqoexROE7JNxGL",
+      "objectName": "CreateJobLogEventRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "IPaaS Job Log Event",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "slEt5OjiTIKchzt-gt-38663106-2024-01-09T22:16:19.303Z::po.xml"
          }
       }
    },

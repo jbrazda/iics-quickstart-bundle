@@ -3,7 +3,7 @@
       "objectGuid": "1R7HR8lHtqokk5PjBqd5Ot",
       "objectName": "TEMPLATE-MP-Job-DAS",
       "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DAS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
@@ -73,7 +73,7 @@
       "objectGuid": "3QG2CiWOVAxfRHE6bp5cmb",
       "objectName": "TEMPLATE-SP-ETL-DAS",
       "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs_Logging_DAS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",

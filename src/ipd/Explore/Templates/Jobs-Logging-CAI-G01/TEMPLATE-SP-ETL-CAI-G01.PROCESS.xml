@@ -1,0 +1,245 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>aa-gt-28634357-2024-02-13T16:02:47.002Z::pd.xml</types1:EntryId>
+      <types1:Name>TEMPLATE-SP-ETL-CAI-G01</types1:Name>
+      <types1:ParentFlowIds>xxxxxxxxxxxxxxx-gt-28368981-2024-02-13T16:02:47.379Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Template for Integration Sub-Process (SP) Demo
+version: 1.7</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:CAI-G01</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-02-13T16:02:47Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-13T16:31:57Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-13T16:32:05Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEMPLATE-SP-ETL-CAI-G01/TEMPLATE-SP-ETL-CAI-G01.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEMPLATE-SP-ETL-CAI-G01"
+                  name="TEMPLATE-SP-ETL-CAI-G01"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Template for Integration Sub-Process (SP) Demo
+version: 1.7</description>
+            <tags>.agent:CAI-G01</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_faultInfo" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FaultInfo</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">TEMPLATE-SP-ETL-DAS</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>CAI-G01</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="j84pnuy0" targetId="j84ih0fn"/>
+               </start>
+               <assignment id="j84ih0fn">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $title := $temp.tmp_process_name 
+let $pid_label := if (empty($input.in_context[1]/parentProcessId)) then ()
+	else concat("pid:",$input.in_context[1]/parentProcessId)
+let $job_label := if (empty($input.in_context[1]/jobId)) then () 
+	else concat("job:",$input.in_context[1]/jobId)
+let $parts := ($title, $pid_label,  $job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_context">
+                     <expression language="XQuery">let $pid := util:getProcessId()
+return if (empty($input.in_context)) then
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$pid}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{util:generateUUID()}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+   	 &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+     &lt;jobProcessName&gt;{$temp.tmp_process_name}&lt;/jobProcessName&gt;
+  &lt;/ProcessExecutionContext&gt;
+else 
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$input.in_context[1]/mainProcessId}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{$input.in_context[1]/jobId}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+   	 &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+     &lt;jobProcessName&gt;{$input.in_context[1]/jobProcessName}&lt;/jobProcessName&gt;
+  &lt;/ProcessExecutionContext&gt;
+  </expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <link id="jv3ynlsr" targetId="jv3ynlsq"/>
+               </assignment>
+               <service id="jv3ynlsq">
+                  <title>Log Integration Start</title>
+                  <serviceName>SP-IPaaS-Create-Job-Event-Entry-CAI-G01</serviceName>
+                  <serviceGUID>dvJlgEvTbY0iTO9fAeRo64</serviceGUID>
+                  <serviceInput>
+                     <parameter name="in_CreateJobLogEventRequest" source="formula">
+                        <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;TODO: Integration Started Message&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;TODO: ADD DETAIL&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;1&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;</expression>
+                     </parameter>
+                  </serviceInput>
+                  <link id="jv3ynlwy" targetId="j9iq3fev"/>
+               </service>
+               <eventContainer id="j9iq3fev">
+                  <subflow id="j9iq3ff2">
+                     <title>Simulate Error</title>
+                     <subflowGUID>2VSAuxGc6iZefCrNZdU0W6</subflowGUID>
+                     <subflowPath>SP-Test-Throw-Fault-Generic-CAI-G01</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input/>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="j9iq3few">
+                     <service id="jv3ynlyx">
+                        <title>Log Completed</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry-DB-DAS</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="formula">
+                              <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;TODO: Step Completed Message&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;TODDO: Sete Detail Info&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;1&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="jzkcwq38" targetId="jzkcwq37"/>
+                     </service>
+                     <end id="jzkcwq37"/>
+                  </flow>
+                  <flow id="j9iq3fez">
+                     <assignment id="j9iqk5zk">
+                        <title>Update fault Info, Process Title</title>
+                        <operation source="field" to="temp.tmp_faultInfo[1]/processName">temp.tmp_process_title</operation>
+                        <operation source="formula" to="temp.tmp_process_title">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return $process_title</expression>
+                        </operation>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                        </operation>
+                        <link id="jv3ynm29" targetId="jv3ynm28"/>
+                     </assignment>
+                     <service id="jv3ynm28">
+                        <title>Log Error</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry-CAI-G01</serviceName>
+                        <serviceGUID>dvJlgEvTbY0iTO9fAeRo64</serviceGUID>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="formula">
+                              <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;TODO: Update this message: Integration Step Failed&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;
+Code: {$output.faultInfo[1]/code} 
+Reason:{$output.faultInfo[1]/reason}   
+Detail:
+{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;process_id&gt;{$temp.tmp_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name}&lt;/process_name&gt;
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+   {$temp.tmp_context[1]}
+&lt;/CreateJobLogEventRequest&gt;</expression>
+                           </parameter>
+                        </serviceInput>
+                        <link id="jzkcwq2n" targetId="jzkcwq2m"/>
+                     </service>
+                     <throw id="jzkcwq2m">
+                        <title>Throw Error</title>
+                        <throwInput>
+                           <parameter name="code" source="field" updatable="true">output.faultInfo[1]/code</parameter>
+                           <parameter name="detail" source="field" updatable="true">output.faultInfo[1]/detail</parameter>
+                           <parameter name="reason" source="field" updatable="true">output.faultInfo[1]/reason</parameter>
+                        </throwInput>
+                     </throw>
+                  </flow>
+                  <link id="j9iq3ff3" targetId="j9iq3few" type="containerLink"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j83fl9t4" interrupting="true">
+                        <link id="j9iq3ff4" targetId="j9iq3fez" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>7A6PKmJkTExjypxZ78mMKC</types1:GUID>
+      <types1:DisplayName>TEMPLATE-SP-ETL-CAI-G01</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-02-13T16:34:00.55Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

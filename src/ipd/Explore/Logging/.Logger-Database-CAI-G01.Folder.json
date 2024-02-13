@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "koQv6cs0aEUlq0jrg7Olo0",
-      "objectName": "Logger_Database_DAS",
+      "objectGuid": "d58Es2x3l4RgxS2p3IBBA1",
+      "objectName": "Logger-Database-CAI-G01",
       "objectType": "Folder",
       "path": "/Explore/Logging",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
-            "description": "Processes to log data to DB via DAS service wrapper",
+            "contentType": null,
+            "description": "Processes to log data to DB via DAS service wrapper Targeting CA-G01  agent group",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

@@ -1,13 +1,13 @@
 [
    {
-      "objectGuid": "7aTl4PHJVAqca200UezhOz",
-      "objectName": "Jobs_Logging_DAS",
+      "objectGuid": "k4W2H1G0U8iiXo3oSE7BmI",
+      "objectName": "Jobs-Logging-CAI-G01",
       "objectType": "Folder",
       "path": "/Explore/Templates",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
-            "description": "Job Tracking and Integration Templates which use DAS for logging (use this when you do not have license for JDBC_IC connector)",
+            "contentType": null,
+            "description": "Job Tracking and Integration Templates which use DAS for logging Deployed to CAI-G01 agent Group",
             "documentState": "COMPLETE"
          },
          "contextAttributes": [],

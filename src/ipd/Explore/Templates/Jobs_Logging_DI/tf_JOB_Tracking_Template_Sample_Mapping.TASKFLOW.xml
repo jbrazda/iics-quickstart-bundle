@@ -763,5 +763,5 @@ replace(normalize-space(replace($detail/text(),"&amp;#10;"," ")),"['\[\]]","")
       <types1:GUID>hKjpBh7ApEEfU74fzQKtec</types1:GUID>
       <types1:DisplayName>tf_JOB_Tracking_Template_Sample_Mapping</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-13T15:24:36.58Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T16:34:02.291Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

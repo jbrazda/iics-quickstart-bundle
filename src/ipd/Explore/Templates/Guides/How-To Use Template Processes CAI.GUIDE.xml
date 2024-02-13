@@ -2,10 +2,10 @@
                    xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
    <types1:Item>
       <types1:EntryId>OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml</types1:EntryId>
-      <types1:Name>How-To_Use_Template_Processes_DAS</types1:Name>
+      <types1:Name>How-To_Use_Template_Processes_CAI</types1:Name>
       <types1:MimeType>application/xml+screenflow</types1:MimeType>
       <types1:Description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DAS as a backend
-version: 1.6</types1:Description>
+version: 1.7</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,22 +13,23 @@ version: 1.6</types1:Description>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-09T22:16:24Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-13T16:18:32Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-02-01T23:16:49Z</types1:PublicationDate>
-      <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_DAS/How_To_Use_Template_Processes_DAS.xml</types1:PublishedContributionId>
+      <types1:PublicationDate>2024-02-13T16:18:38Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_CAI/How_To_Use_Template_Processes_CAI.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
          <avosScreenflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
                          xmlns:list="urn:activevos:spi:list:functions"
                          allowRestart="true"
-                         displayName="How-To Use Template Processes DAS"
+                         displayName="How-To Use Template Processes CAI"
                          doneOnEndStep="false"
-                         name="How-To_Use_Template_Processes_DAS"
+                         name="How-To_Use_Template_Processes_CAI"
                          runAsUser="$current">
             <description>This Guide Demonstrates How to use Logging/Tracking pattern for Integration Tracking with DAS as a backend
-version: 1.6</description>
+version: 1.7</description>
             <appliesTo/>
             <tags/>
             <generator>Informatica Process Designer 11</generator>
@@ -53,21 +54,40 @@ version: 1.6</description>
                   <title>Template use guide</title>
                   <body contentType="text/html">&lt;h2&gt;Informatica Cloud Process Guides&lt;/h2&gt;
 &lt;h3&gt;How-to use templates provided in this package&lt;/h3&gt;
-&lt;p&gt;1. Copy template process to desired destination project&lt;/p&gt;
-&lt;p&gt;2. Rename process to desired name, follow naming conventions&lt;/p&gt;
-&lt;p&gt;3. Update Inti Secition of the template, make sute that Set process Title is updated accordingly to reflect new process name&lt;/p&gt;
-&lt;p&gt;4. Update any other activities in the template as desired.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Copy template process to desired target project/Processes Folder&lt;/li&gt;
+&lt;li&gt;Open and reename process to desired name, follow naming conventions
+&lt;ol&gt;
+&lt;li&gt;MP-System-Function-Job-AGENT-GROUP&lt;/li&gt;
+&lt;li&gt;SP-System-Function-ETL-AGENT-GROP&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Update Init Secition of the template, Add Input paramters as needed Add Logging Steps As needd&lt;/li&gt;
+&lt;li&gt;Rename Sub processes to similar naming Convention&amp;nbsp; and re-link MP to SP process call Make sure You apss in out_context and input parameters to SP sub process layers&lt;/li&gt;
+&lt;li&gt;Update any other activities in the template as desired.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</body>
                   <actionPrompt/>
                   <actions>
-                     <action alt="null" id="jkba8tdu_jkba8te0" targetScreen="jkba8te0">
+                     <action alt="null" id="jkba8tdu_lskk5h14" targetScreen="lskk5h14">
                         <text>Exit</text>
                      </action>
                      <action alt="null" id="jkba8tdu_jkba8tec" targetScreen="jkba8tec">
                         <text>Run Example Job - DB Logging</text>
                      </action>
+                     <action alt="" id="jkba8tdu_lskk5gvj" targetScreen="lskk5gvj">
+                        <text>Runs Template Job on CAI-G01 Agent Group</text>
+                     </action>
                   </actions>
                </screen>
+               <endScreen id="lskk5h14">
+                  <title>End 1</title>
+                  <body contentType="text/html"/>
+                  <redirectTo type="current_object"/>
+                  <screenActionLabel>
+                     <text/>
+                  </screenActionLabel>
+               </endScreen>
                <endScreen id="jd4cwa59">
                   <title>End</title>
                   <body contentType="text/html"/>
@@ -78,12 +98,12 @@ version: 1.6</description>
                </endScreen>
                <empty gatewayType="exclusive" id="jkba8te0">
                   <actions>
-                     <action alt="null" id="jkba8te0_jd4cwa59" targetScreen="jd4cwa59">
+                     <action alt="" id="jkba8te0_lskk5h1g" targetScreen="lskk5h1g">
                         <text>Continue</text>
                      </action>
                   </actions>
                </empty>
-               <subflow id="kkzweu17">
+               <subflow id="lskk5h1g">
                   <title>iPaaS Job View DB</title>
                   <subflowGUID>2MDcalYRrqvf3AoXeuFLId</subflowGUID>
                   <subflowPath>iPaaS_Job_View_DB</subflowPath>
@@ -92,7 +112,7 @@ version: 1.6</description>
                      <parameter id="kkzweu1u" name="in_job_id" source="field" updatable="true">output.out_context[1]/jobId</parameter>
                   </serviceInput>
                   <actions>
-                     <action alt="null" id="kkzweu17_jkba8te0" targetScreen="jkba8te0">
+                     <action alt="" id="lskk5h1g_jd4cwa59" targetScreen="jd4cwa59">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -113,7 +133,28 @@ version: 1.6</description>
                      </field>
                   </subflowOutput>
                   <actions>
-                     <action alt="null" id="jkba8tec_kkzweu17" targetScreen="kkzweu17">
+                     <action alt="null" id="jkba8tec_jkba8te0" targetScreen="jkba8te0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <callProcess id="lskk5gvj">
+                  <title>TEMPLATE-MP-Job-CAI-G01</title>
+                  <subflowGUID>9KO5u6gMsBfeY609orgMEk</subflowGUID>
+                  <subflowPath>TEMPLATE-MP-Job-CAI-G01</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <subflowOutput>
+                     <field name="out_context" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:ProcessExecutionContext</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="" id="lskk5gvj_jkba8te0" targetScreen="jkba8te0">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -122,7 +163,7 @@ version: 1.6</description>
          </avosScreenflow>
       </types1:Entry>
       <types1:GUID>hInELXjA58Njc8ls6j2727</types1:GUID>
-      <types1:DisplayName>How-To Use Template Processes DAS</types1:DisplayName>
+      <types1:DisplayName>How-To Use Template Processes CAI</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-13T15:24:35.834Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-13T16:34:02.339Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

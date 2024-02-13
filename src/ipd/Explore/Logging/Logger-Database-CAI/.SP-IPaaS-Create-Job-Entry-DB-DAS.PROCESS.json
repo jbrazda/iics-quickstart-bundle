@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "3vNk9nrSJSfbXTjcelRa8i",
+      "objectName": "SP-IPaaS-Create-Job-Entry-DB-DAS",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger-Database-CAI",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Generic logging process To create a job Entry in the DB\nversion: 1.7",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "1FldlqA5rKCe2GGaCn03MA",
+            "ePzmJyKMdIVlO9LLjqIB6v"
+         ],
+         "repoInfo": {
+            "repoHandle": "eIi8RVf4VQT53nQ-gt-38743455-2024-01-09T22:16:21.074Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "1FldlqA5rKCe2GGaCn03MA",
+      "objectName": "CreateJobLogEntryRequest",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Job Logging Entry Request to create the Record",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "7IS7T1cnFKi9zhF-gt-38704013-2024-01-09T22:16:17.95Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
+         }
+      }
+   }
+]

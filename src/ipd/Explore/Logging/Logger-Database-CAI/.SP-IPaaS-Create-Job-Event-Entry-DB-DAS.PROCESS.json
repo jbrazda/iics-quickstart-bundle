@@ -3,11 +3,11 @@
       "objectGuid": "4l9uieknUlxgNBrTtRtXcm",
       "objectName": "SP-IPaaS-Create-Job-Event-Entry-DB-DAS",
       "objectType": "PROCESS",
-      "path": "/Explore/Logging/Logger_Database_DAS",
+      "path": "/Explore/Logging/Logger-Database-CAI",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "generic logging for IPAAS events\nversion: 1.6",
+            "description": "Generic process to create Job logging event entries\nversion: 1.7",
             "documentState": "VALID"
          },
          "contextAttributes": null,
