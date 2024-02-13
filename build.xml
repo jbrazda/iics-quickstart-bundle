@@ -51,7 +51,7 @@
     		</and>
         </condition>
     	
-        <property name="shell.open" value="" />
+        <property name="shell.open" value=" rundll32 url.dll,FileProtocolHandler " />
 
         <condition property="shell.options" value="-c">
             <os family="unix" />
@@ -449,12 +449,12 @@
     </target>
 
     <target name="iics.import" depends="-download.iics,-load.release.properties">
-        <iics.import id="${iics.release.basename}" region="${iics.region}" file="${iics.import.dir}/${release.package.label}.zip" user="${iics.target.user}" password="${iics.target.password}" />
+        <iics.import id="${iics.release.basename}" region="${iics.region}" file="${iics.import.dir}/${release.package.label}.zip" user="${iics.target.user}" password="${iics.target.password}" maxwaittime="${iics.api.maxWaitTime}"  />
     </target>
 
 
     <target name="iics.publish" depends="-download.iics,-load.release.properties">
-        <iics.publish id="${iics.release.basename}" region="${iics.region}" file="${iics.target.publish.config}" user="${iics.target.user}" password="${iics.target.password}" />
+        <iics.publish id="${iics.release.basename}" region="${iics.region}" file="${iics.target.publish.config}" user="${iics.target.user}" password="${iics.target.password}" maxwaittime="${iics.api.maxWaitTime}" />
     </target>
 
     <target name="clean.release" depends="-load.release.properties" if="iics.release.basename" description="Cleans Export/import files in ${basedir}/target/${iics.release.basename}">
@@ -562,10 +562,7 @@
          iics.import,
          publish" description="Combines package.src, import, publish steps into one step">
     </target>
-	
-	
-	
-   
+    
     <target name="-set-project-init">
         <property name="project.dir" location="${basedir}"/>
         <basename property="project.parent.dir" file="${project.dir}"/>
@@ -631,7 +628,7 @@
         <replace file="${basedir}/.github/workflows/iics_push_prod.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
         <replace file="${basedir}/.github/workflows/iics_push_test.yml" token="IICS_ClientName" value="${iics.customer.name}_${iics.project.name}"/>
         <echo level="info">Updated ${basedir}/.github/workflows</echo>
-        <replace file="${basedir}/.project" token="iics-project-template" value="${project.parent.dir}"/>
+        <replace file="${basedir}/.project" token="iics-project-template" value="${iics.project.name}"/>
         <echo level="info">Updated ${basedir}/.project</echo>
     </target>
 
@@ -667,13 +664,14 @@
         <attribute name="outputfile" description="Defines Output Zip File Name." />
         <attribute name="listFile" description="Defines the path and file name of the file that contains a list of artifacts to be exported as a zip file from IICS." />
         <attribute name="region" default="us" description="Defines the IICS region to which the organization belongs. For example, us, eu, ap." />
+        <attribute name="maxWaitTime" default="300" description="Optional. Indicates the maximum time to wait for the request to complete (in seconds). Applicable only with --sync. (default 120)" />
         <attribute name="user" description="Defines the user name to log in to IICS." />
         <attribute name="password" description="Password to login with." />
         <sequential>
             <mkdir dir="@{toDir}" />
             <echo level="info">Exporting package using: @{listFile}</echo>
-            <property name="iics.export.command.@{id}" value='export -r @{region} -u "@{user}" -p "@{password}" -f "@{listFile}" -z "@{toDir}/@{outputfile}"' />
-            <echo level="info">Running iics export -r @{region} -u "@{user}" -p "******" -f "@{listFile}" -z "@{toDir}/@{outputfile}"</echo>
+            <property name="iics.export.command.@{id}" value='export -r @{region} -u "@{user}" -p "@{password}" -m @{maxWaitTime} -f "@{listFile}" -z "@{toDir}/@{outputfile}"' />
+            <echo level="info">Running iics export -r @{region} -u "@{user}" -p "******" -m @{maxWaitTime} -f "@{listFile}" -z "@{toDir}/@{outputfile}"</echo>
             <exec dir="${basedir}" executable="${tool.iics}" outputproperty="iics.export.output.@{id}">
                 <arg line="${iics.export.command.@{id}}" />
             </exec>
