@@ -13,8 +13,8 @@
       <types1:CreatedBy>philip.bidinger.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2021-11-09T18:17:07Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
-      <types1:ModificationDate>2024-01-16T14:58:51Z</types1:ModificationDate>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModificationDate>2024-02-13T16:53:14Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
       <types1:PublicationDate>2024-01-16T14:58:54Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connector/IICS_REST_API_V2/IICS_REST_API_V2_svcDef.xml</types1:PublishedContributionId>
@@ -47,14 +47,14 @@
                                 name="base_url"
                                 nogen="true"
                                 required="true"
-                                testWith="https://na1.dm-us.informaticacloud.com/saas"
+                                testWith="https://use4.dm-us.informaticacloud.com/saas"
                                 type="string"/>
                      <parameter description="icSessionId Parameter passed to the API header"
                                 label=""
                                 name="session_id"
                                 nogen="true"
                                 required="true"
-                                testWith="0u1PQC383QkehOp2B4GkYO"
+                                testWith="jm8qbR30OWre47iZj535W6"
                                 type="string"/>
                   </input>
                   <binding>
@@ -469,5 +469,5 @@ $json/text()}</body>
       <types1:GUID>7hV2D16KhG9hGqLgLEiTcx</types1:GUID>
       <types1:DisplayName>IICS-REST-API-V2</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-13T16:33:59.288Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-02-19T14:13:52.401Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
