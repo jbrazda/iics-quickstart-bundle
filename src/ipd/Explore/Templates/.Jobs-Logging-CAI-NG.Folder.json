@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "2jqOvHNo1w3iCkBEzmrVYT",
+      "objectName": "Jobs-Logging-CAI-NG",
+      "objectType": "Folder",
+      "path": "/Explore/Templates",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Job Tracking and Integration Templates which use DAS for logging   - refactored Version using Automated Step BPEL process as a Logger eliminates the need to have different logger processes for each Agent Group",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

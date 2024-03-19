@@ -5,7 +5,9 @@
       <types1:Name>FaultInfo</types1:Name>
       <types1:ParentFlowIds>oZduD2L5SeE1KoJ-gt-38663165-2024-01-09T22:16:20.24Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+processobject</types1:MimeType>
-      <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes version: 1.6 version: 1.6</types1:Description>
+      <types1:Description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
+ 
+</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags/>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -13,7 +15,8 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-09T22:16:15Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-03-04T16:50:39Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -21,18 +24,43 @@
                         displayName="FaultInfo"
                         isByCopy="true"
                         name="FaultInfo">
-            <description>Represents Generic process or service fault info Expanding built-in fault for logging purposes version: 1.6 version: 1.6</description>
+            <description>Represents Generic process or service fault info Expanding built-in fault for logging purposes
+ 
+</description>
+            <tags/>
             <detail>
-               <field label="code" name="code" type="string"/>
-               <field label="reason" name="reason" type="string"/>
-               <field label="detail" name="detail" type="string"/>
-               <field label="processName" name="processName" type="string"/>
-               <field label="processId" name="processId" type="int"/>
+               <field label="code"
+                      name="code"
+                      nullable="true"
+                      required="false"
+                      type="string"/>
+               <field label="reason"
+                      name="reason"
+                      nullable="true"
+                      required="false"
+                      type="string"/>
+               <field label="detail"
+                      name="detail"
+                      nullable="true"
+                      required="false"
+                      type="textarea">
+                  <options/>
+               </field>
+               <field label="processName"
+                      name="processName"
+                      nullable="true"
+                      required="false"
+                      type="string"/>
+               <field label="processId"
+                      name="processId"
+                      nullable="true"
+                      required="false"
+                      type="int"/>
             </detail>
          </processObject>
       </types1:Entry>
       <types1:GUID>1sWKQHaXUVmfaoL47WarSX</types1:GUID>
       <types1:DisplayName>FaultInfo</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:52.421Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:41.588Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "bh8XWvjsAu1k7qfbCM3KOu",
+      "objectName": "SP-ReadConfiguration",
+      "objectType": "PROCESS",
+      "path": "/Explore/Tools/Processes",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process Reads Configuration properties from the Configuration Database  As a set of Key Value Pairs",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "ePzmJyKMdIVlO9LLjqIB6v",
+            "kK2XE6nUuqwiLvXzbtUWCc"
+         ],
+         "repoInfo": {
+            "repoHandle": "UBM7zsZvEIAkRtO-gt-4292379-2024-02-23T15:46:44.74Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "ePzmJyKMdIVlO9LLjqIB6v",
+      "objectName": "DataAccessService",
+      "objectType": "AI_CONNECTION",
+      "path": "/Explore/DAS/Connections",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata defintions for Automated Steps execSQL and execMultiSQL\nversion: 2.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "A0nYNmumf6S3wOL-gt-38663200-2024-01-09T22:16:20.424Z::conn.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "kK2XE6nUuqwiLvXzbtUWCc",
+      "objectName": "ConfigurationProperty",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents Key/Value Configuration Property  This is the same Stucture as the  IC_CONFIGURATION table also supplied by IPaaS-Configuration-DB Connection the  to remove Dependency on IC_JDBC connection\n\nversion: 1.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "BomsvE3C7snSDg8-gt-4318617-2024-02-23T15:59:50.438Z::po.xml"
+         }
+      }
+   }
+]

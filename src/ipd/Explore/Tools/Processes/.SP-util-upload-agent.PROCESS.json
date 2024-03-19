@@ -53,7 +53,7 @@
       "path": "/Explore/Logging/ProcessObjects",
       "metadata": {
          "additionalInfo": {
-            "contentType": "Binary",
+            "contentType": "application/json; charset=utf-8",
             "description": "Represents Generic process or service fault info Expanding built-in fault for logging purposes\n \n",
             "documentState": "VALID"
          },

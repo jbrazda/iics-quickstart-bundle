@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "kK2XE6nUuqwiLvXzbtUWCc",
+      "objectName": "ConfigurationProperty",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Tools/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents Key/Value Configuration Property  This is the same Stucture as the  IC_CONFIGURATION table also supplied by IPaaS-Configuration-DB Connection the  to remove Dependency on IC_JDBC connection\n\nversion: 1.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "BomsvE3C7snSDg8-gt-4318617-2024-02-23T15:59:50.438Z::po.xml"
+         }
+      }
+   }
+]

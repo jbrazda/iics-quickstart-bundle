@@ -16,13 +16,58 @@
             "minor": 0
          },
          "objectRefs": [
+            "6IfwoyUG6wXeazFHo9rH2b",
+            "2VjAhuEee9dbH387gXwQma",
             "1R7HR8lHtqokk5PjBqd5Ot",
             "2QfZeXrDYnxllsH2E5Ln0p",
-            "2MDcalYRrqvf3AoXeuFLId",
-            "9KO5u6gMsBfeY609orgMEk"
+            "2MDcalYRrqvf3AoXeuFLId"
          ],
          "repoInfo": {
             "repoHandle": "OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "6IfwoyUG6wXeazFHo9rH2b",
+      "objectName": "TEMPLATE-MP-JobNG-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI-NG",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes\nversion: 1.7",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "zET1cnFKi9zhFty-gt-39470840-2024-03-19T13:03:25.418Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "2VjAhuEee9dbH387gXwQma",
+      "objectName": "TEMPLATE-MP-Job-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI-G02",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Main Job Processes\nversion: 1.7",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "YZ06NYcmYsGuDoW-gt-376161-2024-02-21T02:52:45.817Z::pd.xml"
          }
       }
    },
@@ -56,7 +101,7 @@
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
-            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 1.6",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 2.0",
             "documentState": "VALID"
          },
          "contextAttributes": null,
@@ -74,7 +119,7 @@
       "objectGuid": "2MDcalYRrqvf3AoXeuFLId",
       "objectName": "iPaaS Job View DB",
       "objectType": "GUIDE",
-      "path": "/Explore/Logging/Guides_Database",
+      "path": "/Explore/Logging/Guides",
       "metadata": {
          "additionalInfo": {
             "contentType": "application/json; charset=utf-8",
@@ -89,28 +134,6 @@
          "objectRefs": [],
          "repoInfo": {
             "repoHandle": "2Cv2jop81V4Adyp-gt-38715220-2024-01-09T22:16:18.857Z::gt.xml"
-         }
-      }
-   },
-   {
-      "objectGuid": "9KO5u6gMsBfeY609orgMEk",
-      "objectName": "TEMPLATE-MP-Job-CAI-G01",
-      "objectType": "PROCESS",
-      "path": "/Explore/Templates/Jobs-Logging-CAI-G01",
-      "metadata": {
-         "additionalInfo": {
-            "contentType": "application/json; charset=utf-8",
-            "description": "Template for Main Job Processes\nversion: 1.7",
-            "documentState": "VALID"
-         },
-         "contextAttributes": null,
-         "modelVersion": {
-            "major": 1,
-            "minor": 0
-         },
-         "objectRefs": [],
-         "repoInfo": {
-            "repoHandle": "xxxxxxxxxxxxxxx-gt-28368981-2024-02-13T16:02:47.379Z::pd.xml"
          }
       }
    }

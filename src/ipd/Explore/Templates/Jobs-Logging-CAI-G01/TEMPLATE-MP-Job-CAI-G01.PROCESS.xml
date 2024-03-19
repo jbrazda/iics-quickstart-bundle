@@ -3,7 +3,6 @@
    <types1:Item>
       <types1:EntryId>xxxxxxxxxxxxxxx-gt-28368981-2024-02-13T16:02:47.379Z::pd.xml</types1:EntryId>
       <types1:Name>TEMPLATE-MP-Job-CAI-G01</types1:Name>
-      <types1:ParentFlowIds>OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+process</types1:MimeType>
       <types1:Description>Template for Main Job Processes
 version: 1.7</types1:Description>
@@ -16,9 +15,9 @@ version: 1.7</types1:Description>
       <types1:CreationDate>2024-02-13T16:02:47Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
       <types1:ModificationDate>2024-02-13T16:29:35Z</types1:ModificationDate>
-      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-02-13T16:29:45Z</types1:PublicationDate>
+      <types1:PublicationDate>2024-02-21T02:52:07Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-CAI-G01/TEMPLATE-MP-Job-CAI-G01.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -317,5 +316,5 @@ Error Detail:
       <types1:GUID>9KO5u6gMsBfeY609orgMEk</types1:GUID>
       <types1:DisplayName>TEMPLATE-MP-Job-CAI-G01</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:54.359Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:45.639Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

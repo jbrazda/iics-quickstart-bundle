@@ -1,0 +1,48 @@
+[
+   {
+      "objectGuid": "a9NjXKsdpiLbDlQMRXwGm1",
+      "objectName": "CreateJobLogEntryResponse",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Represents the Job Entry  Create or Update Response with",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "2QfZeXrDYnxllsH2E5Ln0p"
+         ],
+         "repoInfo": {
+            "repoHandle": "3kPaaaaaaaaa-gt-38218552-2024-03-18T17:41:35.88Z::po.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "2QfZeXrDYnxllsH2E5Ln0p",
+      "objectName": "ProcessExecutionContext",
+      "objectType": "PROCESS_OBJECT",
+      "path": "/Explore/Logging/ProcessObjects",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "This Process Object should be used to pass down context information to the child execution process when they are called from a parent process or keep a status information version: 2.0",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "txcnfXjISUXL86z-gt-38662849-2024-01-09T22:16:14.322Z::po.xml"
+         }
+      }
+   }
+]

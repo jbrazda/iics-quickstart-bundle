@@ -13,10 +13,10 @@
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-10T20:27:43Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
-      <types1:ModificationDate>2024-01-10T20:31:42Z</types1:ModificationDate>
+      <types1:ModificationDate>2024-02-19T19:12:56Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-01-10T20:32:25Z</types1:PublicationDate>
+      <types1:PublicationDate>2024-02-20T22:38:29Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/Email-CAI/Email-CAI.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -28,14 +28,12 @@
             <tags>.agent:CAI</tags>
             <agent>CAI</agent>
             <attributes>
-               <attribute encrypted="false" name="hostName" value="smtp.natl.com"/>
+               <attribute encrypted="false" name="hostName" value="smtp-ex.natl.com"/>
                <attribute encrypted="false" name="port" value="25"/>
                <attribute encrypted="false"
                           name="testToAddress"
-                          value="jaroslav.brazda@natl.com"/>
-               <attribute encrypted="false"
-                          name="fromAddress"
-                          value="noreply-iics-alerts-dev@natl.com"/>
+                          value="jacob.bernhard@natl.com"/>
+               <attribute encrypted="false" name="fromAddress" value="informatica@natl.com"/>
             </attributes>
             <javaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
                            agentOnly="false"
@@ -50,10 +48,10 @@
             </javaConnector>
             <authentication type="$infa_basicform">
                <attributes>
-                  <attribute encrypted="false" name="Authentication" value="Enable"/>
-                  <attribute encrypted="false" name="username" value="informatica"/>
+                  <attribute encrypted="false" name="Authentication" value="Disable"/>
+                  <attribute encrypted="false" name="username" value=""/>
                   <attribute encrypted="true" name="password" value=""/>
-                  <attribute encrypted="false" name="security" value="None"/>
+                  <attribute encrypted="false" name="security" value="TLS"/>
                   <attribute encrypted="false" name="connectionTimeout" value="30000"/>
                </attributes>
             </authentication>
@@ -62,5 +60,5 @@
       <types1:GUID>2l42C7YrJ0WdpJwlaVpfIx</types1:GUID>
       <types1:DisplayName>Email-CAI</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:52.178Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:40.755Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

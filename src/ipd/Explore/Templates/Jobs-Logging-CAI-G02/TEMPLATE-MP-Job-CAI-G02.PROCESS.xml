@@ -1,0 +1,321 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>YZ06NYcmYsGuDoW-gt-376161-2024-02-21T02:52:45.817Z::pd.xml</types1:EntryId>
+      <types1:Name>TEMPLATE-MP-Job-CAI-G02</types1:Name>
+      <types1:ParentFlowIds>OiVhC2g0aaaaaaa-gt-38715426-2024-01-09T22:16:23.649Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Template for Main Job Processes
+version: 1.7</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:CAI-G02</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-02-21T02:52:46Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-21T03:01:41Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-21T03:37:21Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.TEMPLATE-MP-Job-CAI-G02/TEMPLATE-MP-Job-CAI-G02.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="TEMPLATE-MP-Job-CAI-G02"
+                  name="TEMPLATE-MP-Job-CAI-G02"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Template for Main Job Processes
+version: 1.7</description>
+            <tags>.agent:CAI-G02</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="in_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_wait_to_complete" type="boolean">
+                  <options>
+                     <option name="defaultvalue">false</option>
+                     <option name="boolean_show_as">checkbox</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="out_context" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_process_title" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_script_out" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_UpdateJobLogEntryRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:UpdateJobLogEntryRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_process_name" type="string">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">TEMPLATE-MP-Job-DAS</option>
+                  </options>
+               </field>
+               <field description="" name="tmp_CreateJobLogEventRequest" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:CreateJobLogEventRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">26cL6twFPqoexROE7JNxGL</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>CAI-G02</targetLocation>
+               <rest/>
+            </deployment>
+            <eventDefinitions>
+               <messageDefinition name="getJobStatus">
+                  <input>
+                     <parameter correlationPath="."
+                                description=""
+                                name="job_id"
+                                required="true"
+                                type="int"/>
+                  </input>
+                  <output>
+                     <field description="" name="status" type="string"/>
+                  </output>
+                  <deployment>
+                     <rest/>
+                  </deployment>
+               </messageDefinition>
+            </eventDefinitions>
+            <flow id="a">
+               <start id="b">
+                  <link id="link1" targetId="c"/>
+               </start>
+               <assignment id="c">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_process_name">
+                     <expression language="XQuery">util:getAssetName()</expression>
+                  </operation>
+                  <operation source="formula" to="output.out_context">
+                     <expression language="XQuery">let $pid := util:getProcessId()
+return if (empty($input.in_context)) then
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$pid}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{util:generateUUID()}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+   	 &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+     &lt;jobProcessName&gt;{$temp.tmp_process_name}&lt;/jobProcessName&gt;
+  &lt;/ProcessExecutionContext&gt;
+else 
+  &lt;ProcessExecutionContext&gt;
+     &lt;parentProcessId&gt;{$pid}&lt;/parentProcessId&gt;
+     &lt;mainProcessId&gt;{$input.in_context[1]/mainProcessId}&lt;/mainProcessId&gt;
+     &lt;jobId&gt;{$input.in_context[1]/jobId}&lt;/jobId&gt;
+     &lt;orgId&gt;{util:resolveURN('urn:environment:orgid')}&lt;/orgId&gt;
+     &lt;baseURI&gt;{util:resolveURN('ae:base-uri')}&lt;/baseURI&gt;
+   	 &lt;environmentName&gt;{util:resolveURN('urn:environment:name')}&lt;/environmentName&gt;
+     &lt;jobProcessName&gt;{$temp.tmp_process_name}&lt;/jobProcessName&gt;
+  &lt;/ProcessExecutionContext&gt;
+</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_process_title">
+                     <expression language="XQuery">let $p_name := $temp.tmp_process_name 
+let $pid_label := if (empty($output.out_context[1]/parentProcessId)) then ()
+	else concat("pid:",$output.out_context[1]/parentProcessId)
+let $job_label := if (empty($output.out_context[1]/jobId)) then () 
+	else concat("job:",$output.out_context[1]/jobId)
+
+
+let $parts := ($p_name,$pid_label,$job_label)
+return string-join($parts," ")</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_script_out">
+                     <expression language="XQuery">ipd:setProcessTitle($temp.tmp_process_title)</expression>
+                  </operation>
+                  <operation source="formula" to="temp.tmp_CreateJobLogEntryRequest">
+                     <expression language="XQuery">&lt;CreateJobLogEntryRequest&gt;
+   &lt;StartDate&gt;{fn:current-dateTime()}&lt;/StartDate&gt;
+   &lt;JobName&gt;{$temp.tmp_process_title}&lt;/JobName&gt;
+   &lt;ProcessId&gt;{util:getProcessId()}&lt;/ProcessId&gt;
+&lt;/CreateJobLogEntryRequest&gt;
+</expression>
+                  </operation>
+                  <operation source="field"
+                             to="temp.tmp_CreateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                  <link id="jv3ygheo" targetId="jv3yghen"/>
+               </assignment>
+               <service id="jv3yghen">
+                  <title>Create Job Entry</title>
+                  <serviceName>SP-IPaaS-Create-Job-Entry-CAI-G02</serviceName>
+                  <serviceGUID>aGFxLIBDqTmf1VT2EGmTAg</serviceGUID>
+                  <serviceInput>
+                     <parameter name="in_CreateJobLogEntryRequest" source="field" updatable="true">temp.tmp_CreateJobLogEntryRequest</parameter>
+                  </serviceInput>
+                  <link id="jv3yghi6" targetId="j9fuax9n"/>
+               </service>
+               <service id="jv3yghar">
+                  <title>Update Job Entry</title>
+                  <serviceName>SP-IPaaS-Update-Job-Entry-CAI-G02</serviceName>
+                  <serviceGUID>7O0Ur4DA2JZjX1mSqOSvIE</serviceGUID>
+                  <serviceInput>
+                     <parameter name="in_UpdateJobLogEntryRequest" source="field" updatable="true">temp.tmp_UpdateJobLogEntryRequest</parameter>
+                  </serviceInput>
+                  <link id="jv3yghdm" targetId="d"/>
+               </service>
+               <container id="j9fuax9n" type="exclusive">
+                  <title>Wait for Job to Complete?</title>
+                  <flow id="j9fuax9o">
+                     <link id="j9fuax9t" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <flow id="j9fuax9p">
+                     <milestone id="j9fuax9q"/>
+                     <link id="j9fuax9u" targetId="j9fuax9n" type="containerLink"/>
+                  </flow>
+                  <link id="j9fuax9r" targetId="j9fuax9o" type="containerLink">
+                     <condition source="formula">
+                        <function name="true">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuax9s" targetId="j9fuax9p" type="containerLink">
+                     <condition source="formula">
+                        <function name="false">
+                           <arg name="field">{$input.in_wait_to_complete}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="j9fuaxa1" targetId="j84qss48"/>
+               </container>
+               <eventContainer id="j84qss48">
+                  <subflow id="j84qss2l">
+                     <title>Run Integration Process</title>
+                     <subflowGUID>9s7KRE358rahItuCkORWcL</subflowGUID>
+                     <subflowPath>TEMPLATE-SP-ETL-CAI-G02</subflowPath>
+                     <runForEach>false</runForEach>
+                     <input>
+                        <parameter name="in_context" source="field" updatable="true">output.out_context</parameter>
+                     </input>
+                     <outputDef/>
+                  </subflow>
+                  <flow id="j84qss4b">
+                     <assignment id="j9fuaxir">
+                        <title>Assignment to Status, EndDate, etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">3</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                     </assignment>
+                     <link id="j84qss4c" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <flow id="j84qss4f">
+                     <assignment id="j84qss4e">
+                        <title>Update Process Title</title>
+                        <operation source="formula" to="temp.tmp_script_out">
+                           <expression language="XQuery">let $code := $output.faultInfo[1]/code
+let $error := $output.faultInfo[1]/reason
+let $parts := ($temp.tmp_process_title,  "FAULTED:",$code, $error)
+let $process_title := substring(string-join($parts, " "),1,255)
+return ipd:setProcessTitle($process_title)</expression>
+                        </operation>
+                        <link id="j9fuaxkr" targetId="j9fuaxkq"/>
+                     </assignment>
+                     <assignment id="j9fuaxkq">
+                        <title>Assignment to Status, EndDate etc.</title>
+                        <operation source="constant" to="temp.tmp_UpdateJobLogEntryRequest[1]/Status">2</operation>
+                        <operation source="formula" to="temp.tmp_UpdateJobLogEntryRequest[1]/EndDate">
+                           <function name="time_from_now">
+                              <arg name="value">0</arg>
+                              <arg name="HM_flag">M</arg>
+                           </function>
+                        </operation>
+                        <operation source="field"
+                                   to="temp.tmp_UpdateJobLogEntryRequest[1]/ProcessExecutionContext">output.out_context</operation>
+                        <operation source="formula" to="temp.tmp_CreateJobLogEventRequest">
+                           <expression language="XQuery">&lt;CreateJobLogEventRequest&gt;
+   &lt;event_message&gt;Job Fault&lt;/event_message&gt;
+   &lt;event_time&gt;{current-dateTime()}&lt;/event_time&gt;
+   &lt;event_detail&gt;Error Code: {$output.faultInfo[1]/code}
+Error Reson: {$output.faultInfo[1]/reason}
+Error Detail:
+{$output.faultInfo[1]/detail}&lt;/event_detail&gt;
+   &lt;process_id&gt;{$output.out_context[1]/parentProcessId}&lt;/process_id&gt;
+   &lt;logging_level&gt;3&lt;/logging_level&gt;
+   &lt;process_name&gt;{$temp.tmp_process_name }&lt;/process_name&gt;
+   {$output.out_context }
+   &lt;process_title&gt;{$temp.tmp_process_title}&lt;/process_title&gt;
+&lt;/CreateJobLogEventRequest&gt;
+</expression>
+                        </operation>
+                        <link id="jv3yghio" targetId="jv3yghin"/>
+                     </assignment>
+                     <service id="jv3yghin">
+                        <title>Log Error</title>
+                        <serviceName>SP-IPaaS-Create-Job-Event-Entry-CAI-G02</serviceName>
+                        <serviceGUID>0hfCfZjYYdUeS0MbfOfVUW</serviceGUID>
+                        <serviceInput>
+                           <parameter name="in_CreateJobLogEventRequest" source="field" updatable="true">temp.tmp_CreateJobLogEventRequest</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="j84qss4g" targetId="j84qss48" type="containerLink"/>
+                  </flow>
+                  <link id="j84qss49" targetId="j84qss4b" type="containerLink"/>
+                  <link id="jv3yghas" targetId="jv3yghar"/>
+                  <events>
+                     <catch faultField="faultInfo" id="j84qss3z" interrupting="true">
+                        <link id="j84qss4d" targetId="j84qss4f" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="d"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>2VjAhuEee9dbH387gXwQma</types1:GUID>
+      <types1:DisplayName>TEMPLATE-MP-Job-CAI-G02</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:45.614Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

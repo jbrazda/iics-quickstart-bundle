@@ -1,0 +1,52 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>BomsvE3C7snSDg8-gt-4318617-2024-02-23T15:59:50.438Z::po.xml</types1:EntryId>
+      <types1:Name>ConfigurationProperty</types1:Name>
+      <types1:ParentFlowIds>QQK5BjE7ppppppp-gt-4528673-2024-02-23T18:31:11.683Z::pd.xml,UBM7zsZvEIAkRtO-gt-4292379-2024-02-23T15:46:44.74Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Represents Key/Value Configuration Property  This is the same Stucture as the  IC_CONFIGURATION table also supplied by IPaaS-Configuration-DB Connection the  to remove Dependency on IC_JDBC connection
+
+version: 1.0</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-02-23T15:59:50Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="ConfigurationProperty"
+                        isByCopy="true"
+                        name="ConfigurationProperty">
+            <description>Represents Key/Value Configuration Property  This is the same Stucture as the  IC_CONFIGURATION table also supplied by IPaaS-Configuration-DB Connection the  to remove Dependency on IC_JDBC connection
+
+version: 1.0</description>
+            <tags/>
+            <detail>
+               <field label="PKEY"
+                      name="PKEY"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+               <field label="PVALUE"
+                      name="PVALUE"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>kK2XE6nUuqwiLvXzbtUWCc</types1:GUID>
+      <types1:DisplayName>ConfigurationProperty</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:41.501Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

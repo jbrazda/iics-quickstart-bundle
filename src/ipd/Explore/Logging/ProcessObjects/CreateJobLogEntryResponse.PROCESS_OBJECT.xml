@@ -1,0 +1,62 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>3kPaaaaaaaaa-gt-38218552-2024-03-18T17:41:35.88Z::po.xml</types1:EntryId>
+      <types1:Name>CreateJobLogEntryResponse</types1:Name>
+      <types1:MimeType>application/xml+processobject</types1:MimeType>
+      <types1:Description>Represents the Job Entry  Create or Update Response with</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-03-18T17:41:36Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-03-18T21:16:39Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                        displayName="CreateJobLogEntryResponse"
+                        isByCopy="true"
+                        name="CreateJobLogEntryResponse">
+            <description>Represents the Job Entry  Create or Update Response with</description>
+            <tags/>
+            <detail>
+               <field label="DasResponse"
+                      name="DasResponse"
+                      nullable="true"
+                      required="false"
+                      type="reference">
+                  <options>
+                     <option name="relationshipName">Child</option>
+                     <option name="referenceTo">$po:$any</option>
+                  </options>
+               </field>
+               <field label="ProcessExecutionContext"
+                      name="ProcessExecutionContext"
+                      nullable="true"
+                      required="false"
+                      type="reference">
+                  <options>
+                     <option name="relationshipName">Child</option>
+                     <option name="referenceTo">$po:ProcessExecutionContext</option>
+                     <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
+                  </options>
+               </field>
+               <field label="JobName"
+                      name="JobName"
+                      nullable="true"
+                      required="false"
+                      type="string">
+                  <options/>
+               </field>
+            </detail>
+         </processObject>
+      </types1:Entry>
+      <types1:GUID>a9NjXKsdpiLbDlQMRXwGm1</types1:GUID>
+      <types1:DisplayName>CreateJobLogEntryResponse</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:43.812Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

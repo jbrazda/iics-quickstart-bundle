@@ -3,7 +3,7 @@
    <types1:Item>
       <types1:EntryId>dqfUmm7O2htghGZ-gt-38703807-2024-01-09T22:16:13.05Z::conn.xml</types1:EntryId>
       <types1:Name>AgentFileWriter</types1:Name>
-      <types1:ParentFlowIds>COshBnJKoJBUhty-gt-2347752-2024-01-30T15:34:33.465Z::pd.xml,oAXUCZ4nzYLnzYL-gt-38663092-2024-01-09T22:16:19.233Z::gt.xml,oZduD2L5SeE1KoJ-gt-38663165-2024-01-09T22:16:20.24Z::pd.xml,zeHbcjqbdpIO3M4-gt-549864-2024-01-25T17:24:27.413Z::pd.xml</types1:ParentFlowIds>
+      <types1:ParentFlowIds>oAXUCZ4nzYLnzYL-gt-38663092-2024-01-09T22:16:19.233Z::gt.xml,oZduD2L5SeE1KoJ-gt-38663165-2024-01-09T22:16:20.24Z::pd.xml</types1:ParentFlowIds>
       <types1:MimeType>application/xml+connection</types1:MimeType>
       <types1:Description>Generic file writer allows to stage and upload files on Associated Secure Agent or group of Agents</types1:Description>
       <types1:AppliesTo/>
@@ -14,10 +14,10 @@
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-09T22:16:13Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
-      <types1:ModificationDate>2024-01-26T16:41:08Z</types1:ModificationDate>
+      <types1:ModificationDate>2024-02-23T14:13:10Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-01-26T16:41:58Z</types1:PublicationDate>
+      <types1:PublicationDate>2024-02-23T14:13:26Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/AgentFileWriter/AgentFileWriter.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -32,9 +32,7 @@
                <producer enabled="true" name="FileWriter" typeName="FileWriter">
                   <description>Use this event target to write output to a file.</description>
                   <attributes>
-                     <attribute encrypted="false"
-                                name="directoryName"
-                                value="\\prdfs01\departmental\IT\BI\InfaTST"/>
+                     <attribute encrypted="false" name="directoryName" value="C:\Informatica"/>
                      <attribute encrypted="false" name="fileExist" value="Override"/>
                      <attribute encrypted="false" name="moveExisting" value=""/>
                      <attribute encrypted="false" name="eagerDeleteTargetFile" value="true"/>
@@ -50,9 +48,7 @@
                          typeName="DelimitedContentWriter">
                   <description>Use this event target to serialize process objects to delimited content files, such as CSV, and save them to files on a disk.</description>
                   <attributes>
-                     <attribute encrypted="false"
-                                name="directoryName"
-                                value="\\prdfs01\departmental\IT\BI\InfaTST"/>
+                     <attribute encrypted="false" name="directoryName" value="C:\Informatica"/>
                      <attribute encrypted="false" name="fileExist" value="Override"/>
                      <attribute encrypted="false" name="moveExisting" value=""/>
                      <attribute encrypted="false" name="eagerDeleteTargetFile" value="true"/>
@@ -84,5 +80,5 @@
       <types1:GUID>6SYZ9C6pDo5kXfQW8owX05</types1:GUID>
       <types1:DisplayName>AgentFileWriter</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:52.333Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:40.704Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

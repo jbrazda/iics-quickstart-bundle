@@ -1,0 +1,24 @@
+[
+   {
+      "objectGuid": "3SOM1qzBVykfl6iwf67uan",
+      "objectName": "SP-Test-Throw-Fault-Generic-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI-NG",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Process to Simulate Faults in Processess\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "71WFsWTzIf6riX2-gt-39380942-2024-03-19T13:03:24.937Z::pd.xml"
+         }
+      }
+   }
+]

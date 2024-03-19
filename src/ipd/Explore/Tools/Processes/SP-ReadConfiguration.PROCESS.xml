@@ -1,0 +1,154 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>UBM7zsZvEIAkRtO-gt-4292379-2024-02-23T15:46:44.74Z::pd.xml</types1:EntryId>
+      <types1:Name>SP-ReadConfiguration</types1:Name>
+      <types1:ParentFlowIds>A6S3wOLIFvukNXH-gt-4429059-2024-02-23T17:12:45.435Z::gt.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Process Reads Configuration properties from the Configuration Database  As a set of Key Value Pairs</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:CAI</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
+      <types1:CreationDate>2024-02-23T15:46:45Z</types1:CreationDate>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-02-23T17:58:48Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
+      <types1:PublicationDate>2024-02-23T17:58:56Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.SP-ReadConfiguration/SP-ReadConfiguration.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="SP-ReadConfiguration"
+                  name="SP-ReadConfiguration"
+                  overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description>Process Reads Configuration properties from the Configuration Database  As a set of Key Value Pairs</description>
+            <tags>.agent:CAI</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="Comma Separated list Configuration prefixes such as "
+                          name="in_configuration_prefixes"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="Configuration Procsess Object Represnting list of Properties With Values translated to &lt;property&gt;Value&lt;/property&gt; PO"
+                      name="out_configuration_po"
+                      type="reference">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="Raw Configuration Data from the DB with full PKEY PVALUE names"
+                      name="out_configuration_data"
+                      type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:ConfigurationProperty</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">kK2XE6nUuqwiLvXzbtUWCc</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_das_request" type="reference">
+                  <options>
+                     <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">ePzmJyKMdIVlO9LLjqIB6v</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>CAI</targetLocation>
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="lsyto7dt" targetId="lsyto7ds"/>
+               </start>
+               <assignment id="lsyto7ds">
+                  <title>Initialize</title>
+                  <operation source="formula" to="temp.tmp_das_request">
+                     <expression language="XQuery">let $conditions := for $filter in tokenize($input.in_configuration_prefixes  ,',')
+	let $condition := if (contains($input.in_configuration_prefixes  ,"%")) then &lt;condition&gt;PKEY LIKE '{$filter}'&lt;/condition&gt;/text()
+    	else &lt;condition&gt;PKEY LIKE '{$filter}%'&lt;/condition&gt;/text()
+    return 
+    $condition
+let $conditionString := string-join($conditions,' or ')
+
+return
+&lt;tDataAccessRequest&gt;
+   &lt;sqlStatement&gt;
+      &lt;statementId&gt;READ IC_CONFIGURATION&lt;/statementId&gt;
+      &lt;columnCase&gt;unchanged&lt;/columnCase&gt;
+      &lt;includeMetadata&gt;false&lt;/includeMetadata&gt;
+      &lt;hasResultSet&gt;true&lt;/hasResultSet&gt;
+      &lt;statement&gt;SELECT 
+       [PKEY]
+      ,[PVALUE]
+  FROM [InformaticaLogging].[dbo].[IC_CONFIGURATION]
+  {if (empty($conditions)) then () else  concat("WHERE ",$conditionString)}
+      &lt;/statement&gt;
+   &lt;/sqlStatement&gt;
+   &lt;dataSource&gt;{util:resolveURN('urn:ic_configuration:dataSource')}&lt;/dataSource&gt;
+&lt;/tDataAccessRequest&gt;
+</expression>
+                  </operation>
+                  <link id="lsyto7e0" targetId="lsyto7dz"/>
+               </assignment>
+               <assignment id="lsyto7e6">
+                  <title>Set Output</title>
+                  <operation source="formula" to="output.out_configuration_po">
+                     <expression language="XQuery">let $properties := $output.dataAccessResponse[1]/row  
+let $jobParams := 
+  &lt;parameters&gt;
+     {for $item in  $properties
+      let $key := $item/PKEY/text()
+      let $fieldName := tokenize($key,'\.')[last()]
+      let $value := $item/PVALUE/text()
+      return
+      element {$fieldName} {$value}
+      }
+  &lt;/parameters&gt;
+return
+$jobParams</expression>
+                  </operation>
+                  <operation source="formula" to="output.out_configuration_data">
+                     <expression language="XQuery">$output.dataAccessResponse[1]/row </expression>
+                  </operation>
+                  <link id="lsyto7e8" targetId="c"/>
+               </assignment>
+               <service id="lsyto7dz">
+                  <title>execSQL</title>
+                  <serviceName>execSQL</serviceName>
+                  <serviceGUID/>
+                  <serviceInput>
+                     <parameter name="dataAccessRequest" source="field">temp.tmp_das_request</parameter>
+                  </serviceInput>
+                  <link id="lsyto7e7" targetId="lsyto7e6"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>bh8XWvjsAu1k7qfbCM3KOu</types1:GUID>
+      <types1:DisplayName>SP-ReadConfiguration</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:44.282Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

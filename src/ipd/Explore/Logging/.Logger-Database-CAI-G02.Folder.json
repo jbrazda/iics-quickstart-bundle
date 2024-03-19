@@ -1,0 +1,22 @@
+[
+   {
+      "objectGuid": "aVjElIgnktDhHLOBDGDgaD",
+      "objectName": "Logger-Database-CAI-G02",
+      "objectType": "Folder",
+      "path": "/Explore/Logging",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": null,
+            "description": "Processes to log data to DB via DAS service wrapper Targeting CA-G02  agent group",
+            "documentState": "COMPLETE"
+         },
+         "contextAttributes": [],
+         "modelVersion": {
+            "major": 0,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": null
+      }
+   }
+]

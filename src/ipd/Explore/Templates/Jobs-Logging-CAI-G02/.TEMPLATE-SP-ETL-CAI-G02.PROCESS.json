@@ -1,0 +1,71 @@
+[
+   {
+      "objectGuid": "9s7KRE358rahItuCkORWcL",
+      "objectName": "TEMPLATE-SP-ETL-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI-G02",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Template for Integration Sub-Process (SP) Demo\nversion: 1.7",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [
+            "aLW1WfAB4xieepI5J9b9oY",
+            "0hfCfZjYYdUeS0MbfOfVUW"
+         ],
+         "repoInfo": {
+            "repoHandle": "EPOiVhC2g0aaaaa-gt-358188-2024-02-21T02:52:45.486Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "aLW1WfAB4xieepI5J9b9oY",
+      "objectName": "SP-Test-Throw-Fault-Generic-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Templates/Jobs-Logging-CAI-G02",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Process to Simulate Faults in Processess\nversion: 1.6",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "uGfYLnzYLnzYLnz-gt-358175-2024-02-21T02:52:45.324Z::pd.xml"
+         }
+      }
+   },
+   {
+      "objectGuid": "0hfCfZjYYdUeS0MbfOfVUW",
+      "objectName": "SP-IPaaS-Create-Job-Event-Entry-CAI-G02",
+      "objectType": "PROCESS",
+      "path": "/Explore/Logging/Logger-Database-CAI-G02",
+      "metadata": {
+         "additionalInfo": {
+            "contentType": "application/json; charset=utf-8",
+            "description": "Generic process to create Job logging event entries\nversion: 1.7",
+            "documentState": "VALID"
+         },
+         "contextAttributes": null,
+         "modelVersion": {
+            "major": 1,
+            "minor": 0
+         },
+         "objectRefs": [],
+         "repoInfo": {
+            "repoHandle": "93aaa-gt-321029-2024-02-21T02:28:36.979Z::pd.xml"
+         }
+      }
+   }
+]

@@ -14,10 +14,10 @@ version: 1.7</types1:Description>
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-09T22:16:24Z</types1:CreationDate>
       <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
-      <types1:ModificationDate>2024-02-13T16:18:32Z</types1:ModificationDate>
+      <types1:ModificationDate>2024-03-19T18:43:26Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>jaroslav.brazda.dev@natl.com</types1:PublishedBy>
-      <types1:PublicationDate>2024-02-13T16:18:38Z</types1:PublicationDate>
+      <types1:PublicationDate>2024-03-19T18:43:28Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/sf.How_To_Use_Template_Processes_CAI/How_To_Use_Template_Processes_CAI.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -75,8 +75,11 @@ version: 1.7</description>
                      <action alt="null" id="jkba8tdu_jkba8tec" targetScreen="jkba8tec">
                         <text>Run Example Job - DB Logging</text>
                      </action>
-                     <action alt="" id="jkba8tdu_lskk5gvj" targetScreen="lskk5gvj">
+                     <action alt="null" id="jkba8tdu_lsv7dndd" targetScreen="lsv7dndd">
                         <text>Runs Template Job on CAI-G01 Agent Group</text>
+                     </action>
+                     <action alt="null" id="jkba8tdu_ltye99qn" targetScreen="ltye99qn">
+                        <text>Run template on CAI-G02</text>
                      </action>
                   </actions>
                </screen>
@@ -98,7 +101,7 @@ version: 1.7</description>
                </endScreen>
                <empty gatewayType="exclusive" id="jkba8te0">
                   <actions>
-                     <action alt="" id="jkba8te0_lskk5h1g" targetScreen="lskk5h1g">
+                     <action alt="null" id="jkba8te0_lskk5h1g" targetScreen="lskk5h1g">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -112,7 +115,7 @@ version: 1.7</description>
                      <parameter id="kkzweu1u" name="in_job_id" source="field" updatable="true">output.out_context[1]/jobId</parameter>
                   </serviceInput>
                   <actions>
-                     <action alt="" id="lskk5h1g_jd4cwa59" targetScreen="jd4cwa59">
+                     <action alt="null" id="lskk5h1g_jd4cwa59" targetScreen="jd4cwa59">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -138,10 +141,10 @@ version: 1.7</description>
                      </action>
                   </actions>
                </callProcess>
-               <callProcess id="lskk5gvj">
-                  <title>TEMPLATE-MP-Job-CAI-G01</title>
-                  <subflowGUID>9KO5u6gMsBfeY609orgMEk</subflowGUID>
-                  <subflowPath>TEMPLATE-MP-Job-CAI-G01</subflowPath>
+               <callProcess id="lsv7dndd">
+                  <title>TEMPLATE-MP-Job-CAI-G02</title>
+                  <subflowGUID>2VjAhuEee9dbH387gXwQma</subflowGUID>
+                  <subflowPath>TEMPLATE-MP-Job-CAI-G02</subflowPath>
                   <runAsUser>$current</runAsUser>
                   <subflowOutput>
                      <field name="out_context" type="reference">
@@ -154,7 +157,28 @@ version: 1.7</description>
                      </field>
                   </subflowOutput>
                   <actions>
-                     <action alt="" id="lskk5gvj_jkba8te0" targetScreen="jkba8te0">
+                     <action alt="null" id="lsv7dndd_jkba8te0" targetScreen="jkba8te0">
+                        <text>Continue</text>
+                     </action>
+                  </actions>
+               </callProcess>
+               <callProcess id="ltye99qn">
+                  <title>TEMPLATE-MP-Job-CAI-G02</title>
+                  <subflowGUID>6IfwoyUG6wXeazFHo9rH2b</subflowGUID>
+                  <subflowPath>TEMPLATE-MP-JobNG-CAI-G02</subflowPath>
+                  <runAsUser>$current</runAsUser>
+                  <subflowOutput>
+                     <field name="out_context" type="reference">
+                        <options>
+                           <option name="referenceTo">$po:ProcessExecutionContext</option>
+                           <option name="required">false</option>
+                           <option name="isCopy">true</option>
+                           <option name="guid">2QfZeXrDYnxllsH2E5Ln0p</option>
+                        </options>
+                     </field>
+                  </subflowOutput>
+                  <actions>
+                     <action alt="" id="ltye99qn_jkba8te0" targetScreen="jkba8te0">
                         <text>Continue</text>
                      </action>
                   </actions>
@@ -165,5 +189,5 @@ version: 1.7</description>
       <types1:GUID>hInELXjA58Njc8ls6j2727</types1:GUID>
       <types1:DisplayName>How-To Use Template Processes CAI</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:54.492Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:46.664Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

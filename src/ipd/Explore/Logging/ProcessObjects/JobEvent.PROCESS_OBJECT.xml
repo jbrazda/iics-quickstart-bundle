@@ -13,7 +13,8 @@ version: 1.0</types1:Description>
       <types1:ProcessGroup/>
       <types1:CreatedBy>jaroslav.brazda.dev@natl.com</types1:CreatedBy>
       <types1:CreationDate>2024-01-19T20:58:39Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>jaroslav.brazda.dev@natl.com</types1:ModifiedBy>
+      <types1:ModificationDate>2024-03-04T16:54:29Z</types1:ModificationDate>
       <types1:PublicationStatus>unpublished</types1:PublicationStatus>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -80,7 +81,7 @@ version: 1.0</description>
                       required="false"
                       type="picklist">
                   <options>
-                     <option name="values">[{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
+                     <option name="values">[{"label":"DEBUG","value":"DEBUG"},{"label":"INFO","value":"INFO"},{"label":"WARNING","value":"WARNING"},{"label":"ERROR","value":"ERROR"}]</option>
                   </options>
                </field>
                <field label="ProcessName"
@@ -124,5 +125,5 @@ version: 1.0</description>
       <types1:GUID>fgmXHo383Wpf66FUv18KYa</types1:GUID>
       <types1:DisplayName>JobEvent</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-02-19T14:13:52.452Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-19T19:06:40.855Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
