@@ -960,5 +960,5 @@ concat(string-join($conditions, "&amp;#10; AND ")," ",$order_by_part,$limit_part
       <types1:GUID>1mqmZgzL429hPRSemDn0AX</types1:GUID>
       <types1:DisplayName>iPaaS Log Search DB</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2024-03-19T19:06:44.351Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2024-03-20T13:09:10.54Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>
